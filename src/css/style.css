@@ -317,7 +317,7 @@ body P {
   transition: var(--T_F);
 }
 .modal .modal_window {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

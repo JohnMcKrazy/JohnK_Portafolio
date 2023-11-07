@@ -357,7 +357,7 @@ body {
     opacity: 0;
     transition: var(--T_F);
     .modal_window {
-        position: fixed;
+        position: absolute;
         @include flexDirection(column, flex-start, flex-start);
         display: none;
         top: 4rem;
