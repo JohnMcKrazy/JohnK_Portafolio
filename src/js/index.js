@@ -472,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const rem = 20;
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
-        let borderRadius = "2rem";
+        let borderRadius = "1rem";
 
         if (navTop >= windowHeight) {
             nav.style.height = "8rem";
@@ -529,7 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 objectCount = 0;
             }
             aboutTextAnimationContainer.innerHTML = setAnimationText(aboutLegends[objectCount]);
-        }, 4000);
+        }, 3000);
     };
     textAnimationAction();
 

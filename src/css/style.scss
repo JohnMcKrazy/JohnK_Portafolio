@@ -644,7 +644,10 @@ body {
         color: var(--TC);
         margin-top: 1rem;
         H2 {
+            opacity: 0;
             font-size: var(--FS_X);
+            animation: textAnimation 2500ms linear 1;
+            transition: var(--T_M);
         }
     }
     .accent_text {
@@ -693,6 +696,7 @@ body {
                 left: 50%;
                 transform: translateX(-50%);
                 transition: var(--T_M);
+                border-radius: 0.25rem;
             }
             .top_bar {
                 top: 0.5rem;
@@ -761,7 +765,6 @@ body {
     left: 0;
     right: 0;
     opacity: 0;
-    padding-top: 1rem;
     border-radius: 0.5rem 0.5rem 0 0;
     @include flexDirection(column, center, center);
     display: none;
@@ -779,6 +782,7 @@ body {
     .nav_menu_link_btns {
         width: 100%;
         @include flexDirection(column, flex-start, center);
+        padding: 0;
         .phone_menu_btn {
             height: 4rem;
         }
@@ -786,7 +790,6 @@ body {
 
     .extra_btns_container {
         @include flexDirection(row, space-between, center);
-        padding: 0 2rem;
     }
     .social_btns_container {
         @include flexDirection(row, space-evenly, center);
@@ -1324,6 +1327,8 @@ body {
     width: 4rem;
     height: 4rem;
     padding: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
     fill: var(--FC);
     &:hover {
         background: var(--FC);
@@ -1369,6 +1374,8 @@ body {
     @include flex(center, center);
     fill: var(--TC);
     height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
     .icon_container {
         padding: 1rem;
         width: 4rem;

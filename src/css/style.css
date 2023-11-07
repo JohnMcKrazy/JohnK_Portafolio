@@ -640,7 +640,10 @@ body P {
   margin-top: 1rem;
 }
 .about_section .about_text_animation_container H2 {
+  opacity: 0;
   font-size: var(--FS_X);
+  animation: textAnimation 2500ms linear 1;
+  transition: var(--T_M);
 }
 .about_section .accent_text {
   color: var(--FC);
@@ -697,6 +700,7 @@ body P {
   left: 50%;
   transform: translateX(-50%);
   transition: var(--T_M);
+  border-radius: 0.25rem;
 }
 .nav_menu .menu_btn .btn_construction .top_bar {
   top: 0.5rem;
@@ -761,7 +765,6 @@ body P {
   left: 0;
   right: 0;
   opacity: 0;
-  padding-top: 1rem;
   border-radius: 0.5rem 0.5rem 0 0;
   display: flex;
   flex-direction: column;
@@ -786,6 +789,7 @@ body P {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding: 0;
 }
 .phone_menu_controler .nav_menu_link_btns .phone_menu_btn {
   height: 4rem;
@@ -795,7 +799,6 @@ body P {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
 }
 .phone_menu_controler .social_btns_container {
   display: flex;
@@ -1327,6 +1330,8 @@ body P {
   width: 4rem;
   height: 4rem;
   padding: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
   fill: var(--FC);
 }
 .close_btn:hover {
@@ -1384,6 +1389,8 @@ body P {
   align-items: center;
   fill: var(--TC);
   height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .extra_btn .icon_container {
   padding: 1rem;
