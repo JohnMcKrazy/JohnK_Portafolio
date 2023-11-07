@@ -861,33 +861,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const pageObserver = new IntersectionObserver(watchPage, optionsIO_sections);
         pageObserver.observe(section);
     });
-    const watchIlustration = ([entry]) => {
-        const deskImags = selectorAll(".desk_img");
-        if (entry.isIntersecting) {
-            console.log("bring the pain");
-            deskImags.forEach((img) => (img.style.transform = "translateX(0)"));
-        } else {
-            deskImags.forEach((img) => {
-                const imgName = img.getAttribute("data-name");
-                const thisImg = selector(`.${imgName}`);
-                console.log(imgName);
-                if (imgName === "rex") {
-                    thisImg.style.transform = "translateX(3rem)";
-                } else if (imgName === "me") {
-                    thisImg.style.transform = "translateX(15rem)";
-                } else if (imgName === "desk") {
-                    thisImg.style.transform = "translateX(7rem)";
-                }
-            });
-        }
-    };
-    const optionsIO_Ilustration = {
-        threshold: 0.7,
-    };
-    const ilustrationObserver = new IntersectionObserver(watchIlustration, optionsIO_Ilustration);
-
-    ilustrationObserver.observe(selector(".contact_section"));
-
     const navResizeObserve = new ResizeObserver(([entry]) => {
         configSize(entry.contentRect.width);
     });

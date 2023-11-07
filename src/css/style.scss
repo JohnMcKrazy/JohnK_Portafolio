@@ -306,34 +306,6 @@ body {
         color: var(--TC);
     }
 }
-.desk_img {
-    position: absolute;
-    width: auto;
-    transition: all 1000ms ease-in-out;
-    IMG {
-        height: 100%;
-        width: auto;
-    }
-}
-.desk {
-    height: 30rem;
-    bottom: 13rem;
-    right: -4rem;
-    transform: translateX(7rem);
-}
-.me {
-    height: 30rem;
-    bottom: 11rem;
-    right: 6rem;
-    transform: translateX(15rem);
-}
-
-.rex {
-    height: 8rem;
-    right: 21rem;
-    bottom: 11rem;
-    transform: translateX(3rem);
-}
 .form {
     background: var(--NVC);
     padding: 2rem 3rem;
