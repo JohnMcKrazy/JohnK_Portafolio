@@ -688,6 +688,10 @@ body P {
   height: 4.5rem;
   color: var(--TC);
 }
+.nav_menu .menu_btn .label_btn {
+  font-size: var(--FS_N);
+  line-height: 1;
+}
 .nav_menu .menu_btn .btn_construction {
   position: relative;
   width: 4rem;
@@ -881,6 +885,10 @@ body P {
   gap: 2rem;
 }
 
+.subtitle_section {
+  margin-bottom: 1rem;
+}
+
 .title_section {
   display: flex;
   justify-content: center;
@@ -892,6 +900,10 @@ body P {
   -webkit-text-stroke: 1px var(--FC);
   color: transparent;
   font-size: var(--FS_X);
+}
+
+.title_subsection {
+  margin-bottom: 1rem;
 }
 
 .impulso_icon_svg .cls-1 {
@@ -1666,6 +1678,7 @@ body P {
   justify-content: center;
   align-items: center;
   overflow: visible;
+  margin-bottom: 0.5rem;
 }
 .drop_down_container .btn:not(.search_list_btn) {
   border: none;

@@ -685,6 +685,10 @@ body {
         width: 5rem;
         height: 4.5rem;
         color: var(--TC);
+        .label_btn {
+            font-size: var(--FS_N);
+            line-height: 1;
+        }
         .btn_construction {
             position: relative;
             width: 4rem;
@@ -869,6 +873,9 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
+.subtitle_section {
+    margin-bottom: 1rem;
+}
 .title_section {
     @include flex(center, center);
     text-align: center;
@@ -878,6 +885,9 @@ body {
     -webkit-text-stroke: 1px var(--FC);
     color: transparent;
     font-size: var(--FS_X);
+}
+.title_subsection {
+    margin-bottom: 1rem;
 }
 //^ CLIENTS LOGO COLORS
 .impulso_icon_svg {
@@ -1648,6 +1658,7 @@ body {
     height: 4rem;
     @include flex(center, center);
     overflow: visible;
+    margin-bottom: 0.5rem;
     .btn:not(.search_list_btn) {
         border: none;
     }
