@@ -95,7 +95,7 @@
     //¿ FONT SIZES--START
     --FS_XS: 0.8rem;
     --FS_S: 1rem;
-    --FS_N: 1.2rem;
+    --FS_N: 1.4rem;
     --FS_L: 1.8rem;
     --FS_X: 2.8rem;
     --FS_XL: 6rem;
@@ -235,6 +235,7 @@ body {
     height: 100%;
     position: relative;
     scroll-behavior: smooth;
+    overflow-x: hidden;
     color: var(--TC);
     background: var(--bgC);
     img {
@@ -432,6 +433,7 @@ body {
         width: 100%;
     }
 }
+
 .section:not(.hero_section) {
     width: 100%;
     margin-bottom: 2rem;
