@@ -124,7 +124,7 @@
     --FS: 12px;
 
     --NVH_F: 6rem;
-    --NVH: 10rem;
+    --NVH: 8rem;
     --FS_NVH: calc(100vh - var(--NVH));
 
     --titanimFont: "Titillium Web", sans-serif;
@@ -347,8 +347,8 @@ body {
 }
 .modal {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     background: var(--bgM);
@@ -705,8 +705,7 @@ body {
     .menu_btn {
         @include flexDirection(column, center, center);
         width: 5rem;
-        height: 4rem;
-        height: 100%;
+        height: 4.5rem;
         color: var(--TC);
         .btn_construction {
             position: relative;

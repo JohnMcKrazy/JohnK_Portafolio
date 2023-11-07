@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let borderRadius = "2rem";
 
         if (navTop >= windowHeight) {
-            nav.style.height = "10rem";
+            nav.style.height = "8rem";
             menuBtn.style.height = "6rem";
 
             menuSocialContainer.style.bottom = "inherit";
