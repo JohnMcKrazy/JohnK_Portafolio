@@ -339,6 +339,7 @@ body {
 .form {
     background: var(--NVC);
     padding: 2rem 3rem;
+    border-radius: 1rem;
     .btn {
         width: 100%;
     }
@@ -369,6 +370,8 @@ body {
         opacity: 0;
         transition: var(--T_M);
         transform: translate(-50%, -50%);
+        border-radius: 1rem;
+        overflow: hidden;
     }
     .btn {
         width: 100%;
@@ -1600,6 +1603,7 @@ body {
         align-items: center;
         background: var(--bgM);
         opacity: 0;
+        border-radius: 1rem;
 
         .title {
             width: 100%;

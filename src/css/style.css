@@ -297,6 +297,7 @@ body P {
 .form {
   background: var(--NVC);
   padding: 2rem 3rem;
+  border-radius: 1rem;
 }
 .form .btn {
   width: 100%;
@@ -333,6 +334,8 @@ body P {
   opacity: 0;
   transition: var(--T_M);
   transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .modal .btn {
   width: 100%;
@@ -1616,6 +1619,7 @@ body P {
   align-items: center;
   background: var(--bgM);
   opacity: 0;
+  border-radius: 1rem;
 }
 .project_card .info_card .title {
   width: 100%;
