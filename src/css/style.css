@@ -77,6 +77,7 @@
   --whiteOff: hsl(0, 0%, 85%);
   --midLight: hsl(0, 0%, 50%);
   --FS_XS: 0.8rem;
+  --FS_S: 1rem;
   --FS_N: 1.2rem;
   --FS_L: 1.8rem;
   --FS_X: 2.8rem;
@@ -435,7 +436,7 @@ body P {
 }
 .legals_section .link_text,
 .legals_section .copyright_text {
-  font-size: var(--FS_XS);
+  font-size: var(--FS_S);
   color: var(--TC);
 }
 .legals_section .made_content .btns_container :not(:first-child) {
@@ -793,7 +794,7 @@ body P {
   width: 100%;
   background: var(--NVC);
   z-index: 6;
-  transition: var(--T_S);
+  transition: var(--T_M);
   overflow: hidden;
 }
 .phone_menu_controler .btn_container,
@@ -1330,10 +1331,12 @@ body P {
   color: var(--TC_C);
   text-align: center;
   transition: var(--T_F);
+  border-radius: 2rem;
+  min-height: 4rem;
 }
-.btn h3 {
+.btn .label_btn {
   font-weight: var(--FW_N);
-  font-size: var(--FS__);
+  font-size: var(--FS_N);
 }
 .btn:hover, .btn:active, .btn:focus {
   background: var(--FC_H);

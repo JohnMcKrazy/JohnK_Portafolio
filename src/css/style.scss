@@ -94,6 +94,7 @@
     //¿FONTS START
     //¿ FONT SIZES--START
     --FS_XS: 0.8rem;
+    --FS_S: 1rem;
     --FS_N: 1.2rem;
     --FS_L: 1.8rem;
     --FS_X: 2.8rem;
@@ -457,7 +458,7 @@ body {
     }
     .link_text,
     .copyright_text {
-        font-size: var(--FS_XS);
+        font-size: var(--FS_S);
         color: var(--TC);
     }
     .made_content {
@@ -791,7 +792,7 @@ body {
     width: 100%;
     background: var(--NVC);
     z-index: 6;
-    transition: var(--T_S);
+    transition: var(--T_M);
     overflow: hidden;
     .btn_container,
     .extra_btns_container,
@@ -1329,9 +1330,11 @@ body {
     color: var(--TC_C);
     text-align: center;
     transition: var(--T_F);
-    h3 {
+    border-radius: 2rem;
+    min-height: 4rem;
+    .label_btn {
         font-weight: var(--FW_N);
-        font-size: var(--FS__);
+        font-size: var(--FS_N);
     }
     &:hover,
     &:active,
