@@ -1521,7 +1521,7 @@ body P {
 .card .info_card {
   color: var(--TC);
   padding: 1rem 1.5rem 2rem;
-  transition: var(--T_S);
+  transition: var(--T_F);
 }
 .card .info_card P,
 .card .info_card H3,
@@ -1555,7 +1555,6 @@ body P {
   justify-content: flex-start;
   align-items: center;
   background: var(--bgC_UT);
-  transition: var(--T_S);
   width: 100%;
   height: 100%;
 }
@@ -1612,7 +1611,6 @@ body P {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: var(--T_S);
   background: var(--bgM);
   opacity: 0;
 }
