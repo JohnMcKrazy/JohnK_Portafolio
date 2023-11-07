@@ -1,0 +1,398 @@
+[
+    {
+        "client_name": "Pokedex",
+        "db_name": "pokedex",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/pokedex.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/Pokedex-V2/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Tribute To Kobe",
+        "db_name": "tribute",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/tributo.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "JS Documentation",
+        "db_name": "js_documentation",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/jsDocumentation.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Bar Chart Data Visualization",
+        "db_name": "bar_map",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/barMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Scatterplo Chart Data Visualization",
+        "db_name": "scatterplo_map",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/scatterploMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Tree Map Data Visualization",
+        "db_name": "tree_map",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/treeMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Choroplet Map Data Visualization",
+        "db_name": "choroplet_map",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/choroplethMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Leiru",
+        "db_name": "leiru",
+        "client_logo": "",
+        "projects": {
+            "type": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
+            "type_data": ["identidad_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "technologies": ["Illustrator", "Photoshop"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/leiru.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181117109/Leiru"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Afroduck",
+        "db_name": "afroduck",
+        "client_logo": "",
+        "projects": {
+            "type": ["Identidad Corporativa", "Papeleria", "Logotipo"],
+            "type_data": ["identidad_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "technologies": ["Illustrator", "Photoshop"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/afroduck.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181117581/Afroduck"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Verona",
+        "db_name": "verona",
+        "client_logo": "",
+        "projects": {
+            "type": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
+            "type_data": ["identidad_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
+            "technologies": ["Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/verona.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181175109/Verona"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Creaciones Hermed",
+        "db_name": "creaciones_hermed",
+        "client_logo": "",
+        "projects": {
+            "type": ["Edicion de imagen", "Papeleria", "Promocionales"],
+            "type_data": ["papeleria"],
+            "description": "",
+            "reach": ["Tarjeta de presentacion", "Promocionales", "Edicion de imagen", "Redes Sociales"],
+            "technologies": ["Photoshop"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/hermed.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/107080483/Creaciones-Hermed"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Krazy Sports",
+        "db_name": "krazy_sports",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["papeleria"],
+            "description": "",
+            "reach": ["Uniformes", "Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/krazySports.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    }
+]
