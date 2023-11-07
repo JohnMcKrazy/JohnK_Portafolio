@@ -414,23 +414,29 @@ body {
     background: var(--NVC);
     @include flex(center, center);
     padding: 2rem 0;
-    .icons_container {
-        @include flexDirection(row, flex-end, center);
+    .made_container {
+        @include flexDirection(column, flex-start, flex-end);
+        .icons_container {
+            @include flexDirection(row, center, center);
+        }
     }
+
     .lebels_container {
-        @include flexDirection(row, space-between, center);
+        margin-top: 1rem;
+        @include flexDirection(row, space-between, flex-end);
     }
     .social_btns_container {
         width: auto;
         justify-content: center;
     }
     .icon_container {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.25rem;
     }
     .link_text,
     .copyright_text {
-        font-size: var(--FS_S);
+        font-size: var(--FS_XS);
         color: var(--TC);
     }
     .made_content {
@@ -869,23 +875,6 @@ body {
     -webkit-text-stroke: 1px var(--FC);
     color: transparent;
     font-size: var(--FS_X);
-}
-.coffee_mug_icon_svg {
-    .cls-1 {
-        fill: #999;
-    }
-    .cls-2 {
-        fill: #f2f2f2;
-    }
-    .cls-3 {
-        fill: #f2f2f2;
-    }
-    .cls-4 {
-        fill: #42210b;
-    }
-    .cls-5 {
-        fill: #c69c6d;
-    }
 }
 //^ CLIENTS LOGO COLORS
 .impulso_icon_svg {
@@ -1454,6 +1443,9 @@ body {
 }
 .link_btn {
     color: var(--midGray);
+    .label_btn {
+        font-size: var(--FS_S);
+    }
 }
 .footer_social_btn:hover {
     animation: zoom 1s ease-in-out 2 forwards;

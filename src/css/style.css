@@ -385,29 +385,37 @@ body P {
   align-items: center;
   padding: 2rem 0;
 }
-.legals_section .icons_container {
+.legals_section .made_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.legals_section .made_container .icons_container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 .legals_section .lebels_container {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 .legals_section .social_btns_container {
   width: auto;
   justify-content: center;
 }
 .legals_section .icon_container {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.25rem;
 }
 .legals_section .link_text,
 .legals_section .copyright_text {
-  font-size: var(--FS_S);
+  font-size: var(--FS_XS);
   color: var(--TC);
 }
 .legals_section .made_content .btns_container :not(:first-child) {
@@ -881,22 +889,6 @@ body P {
   -webkit-text-stroke: 1px var(--FC);
   color: transparent;
   font-size: var(--FS_X);
-}
-
-.coffee_mug_icon_svg .cls-1 {
-  fill: #999;
-}
-.coffee_mug_icon_svg .cls-2 {
-  fill: #f2f2f2;
-}
-.coffee_mug_icon_svg .cls-3 {
-  fill: #f2f2f2;
-}
-.coffee_mug_icon_svg .cls-4 {
-  fill: #42210b;
-}
-.coffee_mug_icon_svg .cls-5 {
-  fill: #c69c6d;
 }
 
 .impulso_icon_svg .cls-1 {
@@ -1462,6 +1454,9 @@ body P {
 
 .link_btn {
   color: var(--midGray);
+}
+.link_btn .label_btn {
+  font-size: var(--FS_S);
 }
 
 .footer_social_btn:hover {
