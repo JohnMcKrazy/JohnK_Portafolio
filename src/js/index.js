@@ -189,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const listBtnsFragment = $d.createDocumentFragment();
     const btnListTemplate = selector("#list_btn_template").content;
     const cardProjectTemplate = selector("#card_project_template").content;
-    const markersTemplate = selector("#marker_slider_template").content;
 
     const loadersContainers = selectorAll(".loader_container");
     const loaderSearchCardsContainer = selector("#loader_cards_hot_container");
@@ -228,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBtn = selector(".search_list_btn");
     const arrow = selector(".arrow_icon");
     const titleSubsectionCardsSearch = selector(".title_subsection_search_type");
-    const sliderContainer = selector(".slider_window_container");
     const menuSocialBtnsContainer = selector(".menu_social_btns_container");
     const btnsMenuSocial = selectorAll(".social_btn");
 
@@ -731,66 +729,6 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         const loadersObserver = new IntersectionObserver(watchCardsContainers, optionsIO_loaders);
         loadersObserver.observe(loader);
-    });
-    selectorAll(".slider_container_project").forEach((slider) => {
-        slidersServicesCount++;
-        const cloneMarker = markersTemplate.cloneNode(true);
-        const newMarker = cloneMarker.querySelector(".marker_slider_btn");
-        newMarker.setAttribute("id", `marker_slider_btn_${slidersServicesCount}`);
-        newMarker.classList.add("marker_slider_services_btn");
-        newMarker.setAttribute("name", slider.id);
-        markersFragment.appendChild(newMarker);
-
-        const watchSliders = ([entry]) => {
-            const sliderMarkers = selectorAll(".marker_slider_services_btn");
-            if (entry.isIntersecting) {
-                const currentId = entry.target.id;
-                //*console.log(currentId);
-                sliderMarkers.forEach((marker) => {
-                    let currentMarker = marker.getAttribute("id");
-                    let currentMarkerName = marker.getAttribute("name");
-                    //*console.log(currentMarker);
-                    if (currentMarkerName === currentId) {
-                        const markerActive = selector(`#${currentMarker}`);
-                        markerActive.style.background = "var(--secondColor)";
-                    } else {
-                        const markerInactive = selector(`#${currentMarker}`);
-                        markerInactive.style.background = "var(--firstColor)";
-                    }
-                });
-            }
-        };
-        const optionsIO_sliders = {
-            threshold: 0.4,
-        };
-        let sliderObserver = new IntersectionObserver(watchSliders, optionsIO_sliders);
-        sliderObserver.observe(slider);
-    });
-    let dinamicSliderWidth = slidersServicesCount * 100;
-    sliderContainer.style.width = `${dinamicSliderWidth}%`;
-    selector(".markers_container").appendChild(markersFragment);
-    //& CREATE SLIDER MARKERS BTNS
-    selectorAll(".marker_btn").forEach((marker) => {
-        const checkSlider = () => {
-            const sliderId = marker.name;
-            const sliderSearched = selector(`#${sliderId}`).getBoundingClientRect().left;
-            const sliderWidth = sliderContainer.getBoundingClientRect().width;
-            //*console.log(sliderFullCountServices, sliderSearched, sliderWidth);
-
-            if (sliderSearched > 0) {
-                sliderFullCountServices += sliderSearched;
-                sliderContainer.style.transform = `translateX(-${sliderFullCountServices}px)`;
-                console.log(sliderFullCountServices, sliderSearched, sliderWidth, "by higher than 0");
-            } else if (sliderSearched < 0) {
-                sliderFullCountServices += sliderSearched;
-                sliderContainer.style.transform = `translateX(-${sliderFullCountServices}px)`;
-                console.log(sliderFullCountServices, sliderSearched, sliderWidth, "by lower than 0");
-            } else if (sliderSearched === 0) {
-                console.log(sliderFullCountServices, sliderSearched, sliderWidth, "by equal than 0");
-            }
-        };
-        marker.addEventListener("enter", checkSlider);
-        marker.addEventListener("click", checkSlider);
     });
 
     selector(".storage_accept").addEventListener("click", () => {

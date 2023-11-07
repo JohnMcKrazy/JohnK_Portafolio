@@ -1630,13 +1630,13 @@ body {
 }
 //!  *//
 
-/* .animation_up,
+.animation_up,
 .card_up {
     opacity: 0;
     transform: translateY(4rem);
-    transition: var(--T-S);
-} 
-
+    transition: var(--T_M);
+}
+/*
 //^ SWIPER LEFT CONTAINER
 .animation_left {
     opacity: 0;
