@@ -232,7 +232,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    height: auto;
     position: relative;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -306,36 +306,33 @@ body {
         color: var(--TC);
     }
 }
-.content_wrapper {
-    position: relative;
-    .desk_img {
-        position: absolute;
+.desk_img {
+    position: absolute;
+    width: auto;
+    transition: all 1000ms ease-in-out;
+    IMG {
+        height: 100%;
         width: auto;
-        transition: all 1000ms ease-in-out;
-        IMG {
-            height: 100%;
-            width: auto;
-        }
     }
-    .desk {
-        height: 30rem;
-        bottom: -2rem;
-        right: -6rem;
-        transform: translateX(5rem);
-    }
-    .me {
-        height: 30rem;
-        bottom: -4rem;
-        right: 4rem;
-        transform: translateX(7rem);
-    }
+}
+.desk {
+    height: 30rem;
+    bottom: 13rem;
+    right: -2rem;
+    transform: translateX(5rem);
+}
+.me {
+    height: 30rem;
+    bottom: 11rem;
+    right: 10rem;
+    transform: translateX(7rem);
+}
 
-    .rex {
-        height: 8rem;
-        right: 21rem;
-        bottom: -4rem;
-        transform: translateX(2rem);
-    }
+.rex {
+    height: 8rem;
+    right: 21rem;
+    bottom: 11rem;
+    transform: translateX(2rem);
 }
 .form {
     background: var(--NVC);

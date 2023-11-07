@@ -191,7 +191,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   position: relative;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -264,34 +264,34 @@ body P {
   color: var(--TC);
 }
 
-.content_wrapper {
-  position: relative;
-}
-.content_wrapper .desk_img {
+.desk_img {
   position: absolute;
   width: auto;
   transition: all 1000ms ease-in-out;
 }
-.content_wrapper .desk_img IMG {
+.desk_img IMG {
   height: 100%;
   width: auto;
 }
-.content_wrapper .desk {
+
+.desk {
   height: 30rem;
-  bottom: -2rem;
-  right: -6rem;
+  bottom: 13rem;
+  right: -2rem;
   transform: translateX(5rem);
 }
-.content_wrapper .me {
+
+.me {
   height: 30rem;
-  bottom: -4rem;
-  right: 4rem;
+  bottom: 11rem;
+  right: 10rem;
   transform: translateX(7rem);
 }
-.content_wrapper .rex {
+
+.rex {
   height: 8rem;
   right: 21rem;
-  bottom: -4rem;
+  bottom: 11rem;
   transform: translateX(2rem);
 }
 
