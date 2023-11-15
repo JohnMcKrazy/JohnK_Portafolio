@@ -4,10 +4,10 @@
         "db_name": "pokedex",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web", "API Rest"],
+            "type": ["Desarrollo Web", "API Rest", "Programación"],
             "type_data": ["desarrollo_web"],
             "description": "",
-            "reach": ["Desarrollo Web"],
+            "reach": ["Desarrollo Web", "Programación"],
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
             "images": {
                 "avatar": "",
@@ -41,7 +41,7 @@
             "type_data": ["desarrollo_web"],
             "description": "",
             "reach": ["Desarrollo Web"],
-            "technologies": ["HTML", "CSS", "JavaScript"],
+            "technologies": ["HTML", "CSS"],
             "images": {
                 "avatar": "",
                 "hero": {
@@ -392,6 +392,39 @@
                 }
             },
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Weather App",
+        "db_name": "weather",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "API Rest", "Programación"],
+            "type_data": ["desarrolo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web", "Programación"],
+            "technologies": ["HTML", "CSS", "Python"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/weather.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://python-weather-app-tvey.onrender.com/"
         },
         "votes": 2
     }

@@ -103,7 +103,7 @@
     --FW_N: 400;
     --FW_B: 600;
     --FW_BB: 700;
-
+    --CRD_GAP: 2rem;
     --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
     --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
     --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
@@ -125,17 +125,18 @@
 
     --NVH_F: 6rem;
     --NVH: 8rem;
-    --FS_NVH: calc(100vh - var(--NVH));
+    --FS_NVH: calc(70rem - var(--NVH));
 
     --titanimFont: "Titillium Web", sans-serif;
 
     font-family: var(--titanimFont);
     font-size: var(--FS);
     line-break: loose;
+    line-height: 1.2;
     letter-spacing: 0.15rem;
     scroll-behavior: smooth;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 .svg_gradients {
     position: absolute;
@@ -289,6 +290,10 @@ body {
         padding: 0;
         margin: 0;
     }
+    H1,
+    H2 {
+        text-align: center;
+    }
     H1 {
         color: var(--FC);
         font-size: var(--FS_L);
@@ -331,10 +336,11 @@ body {
         display: none;
         top: 4rem;
         left: 50%;
-        width: clamp(300px, 800px, 90%);
+        width: 90%;
+        max-width: 800px;
         height: fit-content;
         background: var(--NVC);
-        padding: 1rem 1.5rem 2rem;
+        padding: 2rem;
         opacity: 0;
         transition: var(--T_M);
         transform: translate(-50%, -50%);
@@ -352,9 +358,6 @@ body {
     .modal_header {
         padding: 1rem 0;
         width: 100%;
-        .title_modal {
-            text-align: center;
-        }
     }
 }
 .alert_modal {
@@ -402,11 +405,12 @@ body {
 }
 
 .section:not(.hero_section) {
-    width: 100%;
     margin-bottom: 2rem;
-    min-height: calc(100vh - var(--NVH_F));
+    /* min-height: calc(100vh - var(--NVH_F)); */
+    height: auto;
     @include flexDirection(column, flex-start, center);
 }
+
 .hero_section {
     height: var(--FS_NVH);
 }
@@ -438,6 +442,9 @@ body {
     .copyright_text {
         font-size: var(--FS_XS);
         color: var(--TC);
+    }
+    .link_text {
+        line-height: 1.5;
     }
     .made_content {
         .btns_container :not(:first-child) {
@@ -572,8 +579,8 @@ body {
 .skills_section {
     .skills_icons_container {
         .icon_container {
-            height: 5rem;
-            width: 5rem;
+            height: 8rem;
+            width: 8rem;
         }
     }
 }
@@ -617,7 +624,6 @@ body {
     width: 100%;
     .header_section {
         padding: 0 2rem;
-        width: 100%;
     }
     .about_salute {
         @include flexDirection(column, flex-start, flex-start);
@@ -679,20 +685,18 @@ body {
     @include flex(center, center);
     .menu_container {
         @include flexDirection(row, space-between, center);
+        height: 100%;
     }
     .menu_btn {
-        @include flexDirection(column, center, center);
-        width: 5rem;
-        height: 4.5rem;
+        @include flex(center, center);
+        width: auto;
+        height: 100%;
         color: var(--TC);
-        .label_btn {
-            font-size: var(--FS_N);
-            line-height: 1;
-        }
+
         .btn_construction {
             position: relative;
-            width: 4rem;
-            height: 100%;
+            width: 3rem;
+            height: 3rem;
             .bar {
                 position: absolute;
                 height: 4px;
@@ -714,10 +718,10 @@ body {
             }
             .bottom_bar,
             .top_bar {
-                width: 5rem;
+                width: 4rem;
             }
             .center_bar {
-                width: 7rem;
+                width: 6rem;
             }
         }
     }
@@ -725,7 +729,7 @@ body {
         .bottom_bar,
         .top_bar,
         .center_bar {
-            width: 4rem;
+            width: 3rem;
         }
     }
 
@@ -870,7 +874,7 @@ body {
     display: flex;
 }
 .flex_responsive {
-    flex-direction: column;
+    @include flexDirection(column, flex-start, center);
     gap: 2rem;
 }
 .subtitle_section {
@@ -878,7 +882,7 @@ body {
 }
 .title_section {
     @include flex(center, center);
-    text-align: center;
+
     width: 100%;
     height: auto;
     margin: 2rem 0 2rem;
@@ -1299,7 +1303,7 @@ body {
 }
 .btn {
     padding: 1rem 0.5rem;
-    background: var(--FC);
+    background: linear-gradient(45deg, var(--FC), var(--SC));
     color: var(--TC_C);
     text-align: center;
     transition: var(--T_F);
@@ -1312,7 +1316,7 @@ body {
     &:hover,
     &:active,
     &:focus {
-        background: var(--FC_H);
+        filter: hue-rotate(45deg);
         color: var(--TC_C);
     }
 }
@@ -1358,9 +1362,10 @@ body {
     @include flexDirection(row, space-between, center);
 }
 .max_width {
-    height: 100%;
-    max-width: 1400px;
-    min-width: 90%;
+    min-width: 300px;
+    width: 1600px;
+    max-width: 90%;
+    /* width: clamp(300px, 800px, 1600px); */
 }
 .nav_btn {
     height: 100%;
@@ -1467,12 +1472,14 @@ body {
 .footer_social_btn:hover {
     animation: zoom 1s ease-in-out 2 forwards;
 }
-
-.card {
+.card,
+.bullet_card {
     width: 100%;
-    height: 30rem;
-    position: relative;
     overflow: hidden;
+    border-radius: 1rem;
+}
+.card {
+    position: relative;
     .bg_card {
         position: absolute;
         top: 0;
@@ -1504,21 +1511,38 @@ body {
         }
     }
 }
+.bullet_card {
+    background: var(--NVC);
+    height: 15rem;
+}
+.bullets_container,
 .cards_container {
-    position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    min-height: 30rem;
+    gap: var(--CRD_GAP);
     width: 100%;
     margin-bottom: 2rem;
+}
+.cards_container {
+    position: relative;
+    min-height: 30rem;
+}
+.bullets_container {
+    min-height: auto;
+    .bullet_content {
+        padding: 2rem;
+        H1 {
+            margin-bottom: 1rem;
+        }
+    }
 }
 //* &SERVICE CARD - START */
 
 .service_card {
     background: linear-gradient(var(--bgC), transparent, var(--bgC));
-
+    height: 15rem;
     .info_card {
         @include flexDirection(column, flex-start, center);
         background: var(--bgC_UT);
@@ -1526,14 +1550,13 @@ body {
         height: 100%;
         H2 {
             width: 100%;
-            text-align: center;
             color: var(--TC);
             font-size: var(--FS_L);
             transition: var(--T_M);
             text-shadow: 1px 1px 5px var(--TC_C);
             opacity: 0.9;
             transform: translateY(100%);
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
         P {
             padding: 1rem 1.5rem;
@@ -1547,6 +1570,8 @@ body {
     IMG:not(.not) {
         width: auto;
         height: 100%;
+        object-position: center;
+        object-fit: cover;
     }
     &:hover .bg_card {
         transform: scale(1.2);
@@ -1564,6 +1589,8 @@ body {
 }
 .project_card {
     @include flex(center, center);
+
+    height: 30rem;
     background: var(--FC);
     background-repeat: no-repeat;
     background-position: center;
@@ -1584,7 +1611,7 @@ body {
 
         .title {
             width: 100%;
-            text-align: center;
+
             margin-bottom: 1rem;
             font-size: var(--FS_L);
             color: var(--FC);
@@ -1603,7 +1630,7 @@ body {
             text-align: center;
             .icon_container {
                 width: auto;
-                height: 100%;
+                height: auto;
             }
             .tech_icon_card {
                 width: auto;
@@ -1659,6 +1686,9 @@ body {
     @include flex(center, center);
     overflow: visible;
     margin-bottom: 0.5rem;
+    .btn {
+        border-radius: 0.5rem;
+    }
     .btn:not(.search_list_btn) {
         border: none;
     }
@@ -1675,9 +1705,16 @@ body {
     color: var(--TC);
 }
 .search_list_btn:hover,
-.list_btn:hover {
+.list_btn:hover,
+.search_list_btn:active,
+.list_btn:active,
+.search_list_btn:focus,
+.list_btn:focus {
     color: var(--TC_C);
     background: var(--FC_H);
+    .icon_svg {
+        fill: var(--TC_C);
+    }
 }
 .search_list_btn {
     position: absolute;
@@ -1702,9 +1739,6 @@ body {
     .icon_svg {
         padding: 0;
         fill: var(--FC);
-    }
-    &:hover .icon_svg {
-        fill: var(--TC_C);
     }
 }
 
@@ -1742,9 +1776,10 @@ body {
     }
 }
 
-@media screen and (min-width: 600px) {
-    .card {
-        width: 50%;
+@media screen and (min-width: 750px) {
+    .card,
+    .bullet_card {
+        width: calc(50% - var(--CRD_GAP));
     }
 
     .flex_responsive {
@@ -1759,10 +1794,11 @@ body {
     }
 }
 @media screen and (min-width: 900px) {
-    .card {
-        width: 33.3%;
+    /* .card,
+    .bullet_card {
+        width: calc(33.3% - var(--CRD_GAP));
     }
-
+ */
     .client_logo_container {
         height: 5rem;
     }
@@ -1770,17 +1806,24 @@ body {
         flex-direction: row;
     }
 }
-
 @media screen and (min-width: 1100px) {
-    .skills_containers {
-        @include flexDirection(row, center, flex-start);
+    .card,
+    .bullet_card {
+        width: calc(33.3% - var(--CRD_GAP));
     }
+    /* .skills_containers {
+        @include flexDirection(row, center, flex-start);
+    } */
+}
+@media screen and (min-width: 1400px) {
+    .card,
+    .bullet_card {
+        width: calc(25% - var(--CRD_GAP));
+    }
+    /* .skills_containers {
+        @include flexDirection(row, center, flex-start);
+    } */
 }
 
-@media screen and (min-width: 1400px) {
-    .card {
-        width: 25%;
-    }
-}
 @media (prefers-reduced-motion) {
 }
