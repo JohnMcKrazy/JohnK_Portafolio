@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         page_view_count: 1,
         page_alert_status: open,
         page_legal_content: accepted,
+        paga_theme: none,
     };
 
     console.log("Dom Ready");
@@ -452,18 +453,24 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 modalWindowActions(alertModal, open);
             }, 200);
-        } else if (storageContent && storageContent["page_alert_status"] === open) {
-            johnK_storage["page_view_count"] = storageContent["page_view_count"] + 1;
-            localStorage.setItem(storageName, JSON.stringify(johnK_storage));
-            console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
-            setTimeout(() => {
-                modalWindowActions(alertModal, open);
-            }, 200);
-        } else if (storageContent && storageContent["page_alert_status"] === close) {
-            johnK_storage["page_alert_status"] = close;
-            johnK_storage["page_view_count"] = storageContent["page_view_count"] + 1;
-            localStorage.setItem(storageName, JSON.stringify(johnK_storage));
-            console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
+        } else {
+            if (storageContent["page_alert_status"] === open) {
+                storageContent["page_view_count"] += 1;
+                localStorage.setItem(storageName, JSON.stringify(storageContent));
+                console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
+                setTimeout(() => {
+                    modalWindowActions(alertModal, open);
+                }, 200);
+            } else if (storageContent["page_alert_status"] === close) {
+                storageContent["page_alert_status"] = close;
+                storageContent["page_view_count"] += 1;
+                localStorage.setItem(storageName, JSON.stringify(storageContent));
+                console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
+            }
+            if (storageContent["page_theme"] !== none) {
+                currentTheme = storageContent["page_theme"];
+                BODY.className = storageContent["page_theme"];
+            }
         }
     };
     checkAlertStorageAnswer();
@@ -957,9 +964,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
         }
+
+        storageContent["page_theme"] = currentTheme;
+        localStorage.setItem(storageName, JSON.stringify(storageContent));
         BODY.className = currentTheme;
+        console.log(storageContent);
     };
-    changeTheme();
+
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });

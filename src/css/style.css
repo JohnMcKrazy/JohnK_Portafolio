@@ -86,7 +86,6 @@
   --FW_N: 400;
   --FW_B: 600;
   --FW_BB: 700;
-  --CRD_GAP: 2rem;
   --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
   --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
   --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
@@ -95,16 +94,11 @@
   --T_F: all 500ms ease-in-out;
   --T_M: all 750ms ease-in-out;
   --T_S: all 1000ms ease-in-out;
-  --P_XS: 0.25rem;
-  --P_S: 0.5rem;
-  --P_M: 1rem;
-  --P_L: 1.5rem;
-  --P_X: 2rem;
-  --P_XX: 2.5rem;
   --FS: 12px;
   --NVH_F: 6rem;
   --NVH: 8rem;
-  --FS_NVH: calc(70rem - var(--NVH));
+  --FS_NVH: calc(100svh - var(--NVH));
+  --FS-FNVH: calc(100svh - var(--NVH_F));
   --titanimFont: "Titillium Web", sans-serif;
   font-family: var(--titanimFont);
   font-size: var(--FS);
@@ -372,10 +366,15 @@ body P {
   margin-bottom: 2rem;
   /* min-height: calc(100vh - var(--NVH_F)); */
   height: auto;
+  min-height: var(--FS-FNVH);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.section_content {
+  width: 100%;
 }
 
 .hero_section {
@@ -432,7 +431,7 @@ body P {
 .sliders_container {
   position: relative;
   width: 100%;
-  height: calc(100vh - var(--NVH_F) - 8rem);
+  height: calc(100svh - var(--NVH_F) - 8rem);
   overflow: hidden;
   margin: 3rem 0 6rem;
 }
@@ -1491,7 +1490,6 @@ body P {
 .bullet_card {
   width: 100%;
   overflow: hidden;
-  border-radius: 1rem;
 }
 
 .card {
@@ -1534,6 +1532,7 @@ body P {
 .bullet_card {
   background: var(--NVC);
   height: 15rem;
+  border-radius: 1rem;
 }
 
 .bullets_container,
@@ -1542,7 +1541,6 @@ body P {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: var(--CRD_GAP);
   width: 100%;
   margin-bottom: 2rem;
 }
@@ -1562,9 +1560,14 @@ body P {
   margin-bottom: 1rem;
 }
 
+.bullets_container {
+  margin: 0 auto;
+  gap: 2rem;
+}
+
 .service_card {
   background: linear-gradient(var(--bgC), transparent, var(--bgC));
-  height: 15rem;
+  height: 20rem;
 }
 .service_card .info_card {
   display: flex;
@@ -1819,7 +1822,7 @@ body P {
 @media screen and (min-width: 750px) {
   .card,
   .bullet_card {
-    width: calc(50% - var(--CRD_GAP));
+    width: 50%;
   }
   .flex_responsive {
     display: flex;
@@ -1850,7 +1853,7 @@ body P {
 @media screen and (min-width: 1100px) {
   .card,
   .bullet_card {
-    width: calc(33.3% - var(--CRD_GAP));
+    width: 33.3%;
   }
   /* .skills_containers {
       @include flexDirection(row, center, flex-start);
@@ -1859,7 +1862,7 @@ body P {
 @media screen and (min-width: 1400px) {
   .card,
   .bullet_card {
-    width: calc(25% - var(--CRD_GAP));
+    width: 25%;
   }
   /* .skills_containers {
       @include flexDirection(row, center, flex-start);
