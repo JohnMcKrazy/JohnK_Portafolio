@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const open = "open";
     const accepted = "accepted";
 
-    const lightT = "light_theme";
-    const darkT = "dark_theme";
-    let currentTheme = darkT;
+    let currentTheme = "dark_theme";
 
     let menuStatus = close;
     let menuSocialStatus = close;
@@ -173,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
         page_view_count: 1,
         page_alert_status: open,
         page_legal_content: accepted,
-        paga_theme: none,
+        page_theme: none,
     };
 
     console.log("Dom Ready");
@@ -468,10 +466,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
             }
             if (storageContent["page_theme"] !== none) {
+                console.log(storageContent["page_theme"]);
                 currentTheme = storageContent["page_theme"];
-                BODY.className = storageContent["page_theme"];
             }
         }
+        console.log(storageContent);
+        BODY.className = currentTheme;
     };
     checkAlertStorageAnswer();
     const configSize = (widConf) => {
@@ -562,6 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkWindowHeight = () => {
         const rem = 20;
         const navTop = nav.getBoundingClientRect().top;
+        console.log(navTop);
         const windowHeight = window.innerHeight / 2;
         let borderRadius = "1rem";
 
@@ -607,8 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500);
         }
     };
-
-    checkWindowHeight();
+    setTimeout(() => checkWindowHeight(), 500);
 
     const textAnimationAction = () => {
         let objectCount = 0;
@@ -939,30 +939,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const BODY = selector("body");
         const lightT = "light_theme";
         const darkT = "dark_theme";
-        if (!tm) {
-            const date = new Date();
-            const time = date.getHours();
-            const isNight = time < 8 || time > 17;
-            switch (isNight) {
-                case true:
-                    currentTheme = darkT;
-                    break;
-                case false:
-                    currentTheme = lightT;
-                    break;
-                default:
-                    console.log("tienes un problema con tu funcion changeTheme");
-                    return;
-            }
-        } else {
-            switch (tm) {
-                case lightT:
-                    currentTheme = darkT;
-                    break;
-                case darkT:
-                    currentTheme = lightT;
-                    break;
-            }
+
+        switch (tm) {
+            case lightT:
+                currentTheme = darkT;
+                break;
+            case darkT:
+                currentTheme = lightT;
+                break;
         }
 
         storageContent["page_theme"] = currentTheme;

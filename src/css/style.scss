@@ -768,6 +768,7 @@ body {
     position: fixed;
     left: 0;
     right: 0;
+    top: 0;
     opacity: 0;
     border-radius: 0.5rem 0.5rem 0 0;
     @include flexDirection(column, center, center);
