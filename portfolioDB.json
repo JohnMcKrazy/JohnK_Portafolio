@@ -33,6 +33,39 @@
         "votes": 5
     },
     {
+        "client_name": "Rick And Morty Character Search",
+        "db_name": "rick_and_morty",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "API Rest", "Programación"],
+            "type_data": ["desarrolo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web", "Programación"],
+            "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/rickandmorty.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/rick_and_morty_character_search/"
+        },
+        "votes": 2
+    },
+    {
         "client_name": "Tribute To Kobe",
         "db_name": "tribute",
         "client_logo": "",
@@ -99,6 +132,72 @@
         "votes": 2
     },
     {
+        "client_name": "Choroplet Map Data Visualization",
+        "db_name": "choroplet_map",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/choroplethMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Tree Map Data Visualization",
+        "db_name": "tree_map",
+        "client_logo": "",
+        "projects": {
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type_data": ["desarrollo_web"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/treeMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
+        },
+        "votes": 5
+    },
+    {
         "client_name": "Bar Chart Data Visualization",
         "db_name": "bar_map",
         "client_logo": "",
@@ -161,72 +260,6 @@
                 }
             },
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
-        },
-        "votes": 5
-    },
-    {
-        "client_name": "Tree Map Data Visualization",
-        "db_name": "tree_map",
-        "client_logo": "",
-        "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
-            "type_data": ["desarrollo_web"],
-            "description": "",
-            "reach": ["Desarrollo Web"],
-            "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "src/img/treeMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
-            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
-        },
-        "votes": 5
-    },
-    {
-        "client_name": "Choroplet Map Data Visualization",
-        "db_name": "choroplet_map",
-        "client_logo": "",
-        "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
-            "type_data": ["desarrollo_web"],
-            "description": "",
-            "reach": ["Desarrollo Web"],
-            "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "src/img/choroplethMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
-            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
         },
         "votes": 5
     },
@@ -363,19 +396,217 @@
         "votes": 2
     },
     {
-        "client_name": "Krazy Sports",
-        "db_name": "krazy_sports",
+        "client_name": "Bucefalos",
+        "db_name": "bucefalos",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["papeleria"],
+            "type_data": ["imagen_corporativa"],
             "description": "",
-            "reach": ["Uniformes", "Logotipo", "Imagen Deportiva"],
+            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/krazySports.jpg",
+                    "small": "src/img/bucefalos_1.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Bucefalos",
+        "db_name": "bucefalos",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["imagen_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/bucefalos_2.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Panteras",
+        "db_name": "panteras",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["imagen_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/panteras.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Bulldogs",
+        "db_name": "bulldogs",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["imagen_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/bulldogs.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Berserkers",
+        "db_name": "berserkers",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["imagen_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/berserkers_1.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Berserkers",
+        "db_name": "berserkers",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["imagen_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/berserkers_2.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Berserkers",
+        "db_name": "berserkers",
+        "client_logo": "",
+        "projects": {
+            "type": ["Imagen Deportiva", "Logotipo"],
+            "type_data": ["imagen_corporativa"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/berserkers_3.png",
                     "big": ""
                 },
                 "1": {

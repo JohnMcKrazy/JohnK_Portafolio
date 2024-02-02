@@ -195,8 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const loaderHotCardsContainer = selector("#loader_cards_search_container");
     const spinnerSearchCardContainer = selector("#spinner_container_cards_search");
 
-    const swipeAnimationContainersFull = selectorAll(".swipe_animation_container_full");
-    const swipeAnimationContainersHalf = selectorAll(".swipe_animation_container_half");
     const animationContainerText = selectorAll(".text_animation_container");
     //^ SELECTORES
     const BODY = selector("body");
@@ -276,25 +274,34 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     //^ANIMATION ITEM SWIPE
     const swipingAnimation = () => {
-        swipeAnimationContainersFull.forEach((container) => {
+        selectorAll(".swipe_animation_container_full").forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationLeftContainers = entry.target.querySelectorAll(".animation_left");
-                const animationRightContainers = entry.target.querySelectorAll(".animation_right");
                 const animationUpContainers = entry.target.querySelectorAll(".animation_up");
                 if (entry.isIntersecting) {
-                    animationLeftContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "1", "translateX(0)");
-                    });
-                    animationRightContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "1", "translateX(0)");
-                    });
                     animationUpContainers.forEach((container) => {
                         const currentItem = selector(`#${container.id}`);
                         animateItem(currentItem, "1", "translateY(0)");
                     });
-                } /*  else {
+                }
+            };
+            const optionsIO_up = {
+                threshold: ".9",
+            };
+
+            const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_up);
+            skillsContainersObserver.observe(container);
+        });
+
+        selectorAll(".swipe_animation_container_half").forEach((container) => {
+            const watchSwipeAnimationContainer = ([entry]) => {
+                const animationUpContainers = entry.target.querySelectorAll(".animation_up");
+                animationUpContainers.forEach((container) => {
+                    if (entry.isIntersecting) {
+                        const currentItem = selector(`#${container.id}`);
+                        animateItem(currentItem, "1", "translateY(0)");
+                    }
+                });
+                /* else {
                     animationLeftContainers.forEach((container) => {
                         const currentItem = selector(`#${container.id}`);
                         animateItem(currentItem, "0", "translateX(-50%)");
@@ -311,47 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             const optionsIO_skills = {
                 threshold: "1",
-            };
-
-            const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_skills);
-            skillsContainersObserver.observe(container);
-        });
-
-        swipeAnimationContainersHalf.forEach((container) => {
-            const watchSwipeAnimationContainer = ([entry]) => {
-                const animationLeftContainers = entry.target.querySelectorAll(".animation_left");
-                const animationRightContainers = entry.target.querySelectorAll(".animation_right");
-                const animationUpContainers = entry.target.querySelectorAll(".animation_up");
-                if (entry.isIntersecting) {
-                    animationLeftContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "1", "translateX(0)");
-                    });
-                    animationRightContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "1", "translateX(0)");
-                    });
-                    animationUpContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "1", "translateY(0)");
-                    });
-                } /* else {
-                    animationLeftContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "0", "translateX(-50%)");
-                    });
-                    animationRightContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "0", "translateX(50%)");
-                    });
-                    animationUpContainers.forEach((container) => {
-                        const currentItem = selector(`#${container.id}`);
-                        animateItem(currentItem, "0", "translateY(50%)");
-                    });
-                } */
-            };
-            const optionsIO_skills = {
-                threshold: ".4",
             };
 
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_skills);
@@ -562,7 +528,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkWindowHeight = () => {
         const rem = 20;
         const navTop = nav.getBoundingClientRect().top;
-        console.log(navTop);
         const windowHeight = window.innerHeight / 2;
         let borderRadius = "1rem";
 
@@ -853,6 +818,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     );
+    selector(".legal_modal_accept_btn").addEventListener("click", () => {
+        modalWindowActions(legalModal, close);
+    });
     selectorAll(".close_modal").forEach((btn) =>
         btn.addEventListener("click", () => {
             const btnName = btn.getAttribute("data-name");
