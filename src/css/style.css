@@ -608,7 +608,10 @@ body P {
   fill: hsl(190, 100%, 40%);
 }
 .deskwork_icon .cls-txt {
-  fill: var(--whiteOff);
+  fill: var(--TC);
+}
+.deskwork_icon .cls-mid {
+  fill: var(--midLight);
 }
 .deskwork_icon .watch_num {
   animation: blink 1s 0s infinite alternate;
@@ -1951,17 +1954,9 @@ body P {
   animation: blink 500ms 0s infinite alternate;
   color: var(--SC);
 }
-.about_section .about_text_animation_container {
-  color: var(--TC);
+.about_section .about_salute .about_text {
   margin-top: 1rem;
-  height: calc(var(--FS_X) * 2.5);
-}
-.about_section .about_text_animation_container H2 {
-  opacity: 0;
-  font-size: var(--FS_X);
-  animation: textAnimation 2500ms linear 1;
-  transition: var(--T_M);
-  text-align: left;
+  font-size: var(--fontSizeMClamp);
 }
 .about_section .accent_text {
   color: var(--FC);

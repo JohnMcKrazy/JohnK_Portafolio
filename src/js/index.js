@@ -198,7 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const animationContainerText = selectorAll(".text_animation_container");
     //^ SELECTORES
     const BODY = selector("body");
-    const aboutTextAnimationContainer = selector(".about_text_animation_container");
     const modal = selector(".modal");
     const nav = selector(".nav_menu");
     const menuBtnConst = selector(".btn_construction");

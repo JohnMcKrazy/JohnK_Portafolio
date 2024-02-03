@@ -701,7 +701,10 @@ body {
         fill: hsl(190, 100%, 40%);
     }
     .cls-txt {
-        fill: var(--whiteOff);
+        fill: var(--TC);
+    }
+    .cls-mid {
+        fill: var(--midLight);
     }
     .watch_num {
         animation: blink 1s 0s infinite alternate;
@@ -1979,19 +1982,12 @@ body {
             animation: blink 500ms 0s infinite alternate;
             color: var(--SC);
         }
-    }
-    .about_text_animation_container {
-        color: var(--TC);
-        margin-top: 1rem;
-        height: calc(var(--FS_X) * 2.5);
-        H2 {
-            opacity: 0;
-            font-size: var(--FS_X);
-            animation: textAnimation 2500ms linear 1;
-            transition: var(--T_M);
-            text-align: left;
+        .about_text {
+            margin-top: 1rem;
+            font-size: var(--fontSizeMClamp);
         }
     }
+
     .accent_text {
         color: var(--FC);
     }
