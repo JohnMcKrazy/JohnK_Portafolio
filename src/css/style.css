@@ -24,6 +24,11 @@
     transform: translateY(1rem);
   }
 }
+@keyframes bounceUp {
+  50% {
+    transform: translateY(-10rem);
+  }
+}
 @keyframes zoom {
   50% {
     transform: scale(1.2);
@@ -311,120 +316,336 @@ body P {
   margin-bottom: 1rem;
 }
 
-.desk_icon_svg .cls-1 {
+.animation_key {
+  font-weight: 600;
+  color: var(--FC);
+}
+
+.deskwork_icon .cls-1 {
   fill: #999;
 }
-.desk_icon_svg .cls-1,
-.desk_icon_svg .cls-2,
-.desk_icon_svg .cls-3,
-.desk_icon_svg .cls-4,
-.desk_icon_svg .cls-5,
-.desk_icon_svg .cls-6,
-.desk_icon_svg .cls-7,
-.desk_icon_svg .cls-8,
-.desk_icon_svg .cls-9,
-.desk_icon_svg .cls-10,
-.desk_icon_svg .cls-11,
-.desk_icon_svg .cls-12,
-.desk_icon_svg .cls-13,
-.desk_icon_svg .cls-14,
-.desk_icon_svg .cls-15,
-.desk_icon_svg .cls-16,
-.desk_icon_svg .cls-17,
-.desk_icon_svg .cls-18,
-.desk_icon_svg .cls-19,
-.desk_icon_svg .cls-20,
-.desk_icon_svg .cls-21,
-.desk_icon_svg .cls-22,
-.desk_icon_svg .cls-23 {
+.deskwork_icon .cls-1,
+.deskwork_icon .cls-2,
+.deskwork_icon .cls-3,
+.deskwork_icon .cls-4,
+.deskwork_icon .cls-5,
+.deskwork_icon .cls-6,
+.deskwork_icon .cls-7,
+.deskwork_icon .cls-8,
+.deskwork_icon .cls-9,
+.deskwork_icon .cls-10,
+.deskwork_icon .cls-11,
+.deskwork_icon .cls-12,
+.deskwork_icon .cls-13,
+.deskwork_icon .cls-14,
+.deskwork_icon .cls-15,
+.deskwork_icon .cls-16,
+.deskwork_icon .cls-17,
+.deskwork_icon .cls-18,
+.deskwork_icon .cls-19,
+.deskwork_icon .cls-20,
+.deskwork_icon .cls-21,
+.deskwork_icon .cls-22,
+.deskwork_icon .cls-23,
+.deskwork_icon .cls-24,
+.deskwork_icon .cls-25,
+.deskwork_icon .cls-26,
+.deskwork_icon .cls-27,
+.deskwork_icon .cls-28,
+.deskwork_icon .cls-29,
+.deskwork_icon .cls-30,
+.deskwork_icon .cls-31,
+.deskwork_icon .cls-32,
+.deskwork_icon .cls-33,
+.deskwork_icon .cls-34,
+.deskwork_icon .cls-35,
+.deskwork_icon .cls-36,
+.deskwork_icon .cls-37,
+.deskwork_icon .cls-38,
+.deskwork_icon .cls-39,
+.deskwork_icon .cls-40,
+.deskwork_icon .cls-41,
+.deskwork_icon .cls-42,
+.deskwork_icon .cls-43,
+.deskwork_icon .cls-44,
+.deskwork_icon .cls-45,
+.deskwork_icon .cls-46,
+.deskwork_icon .cls-47,
+.deskwork_icon .cls-48,
+.deskwork_icon .cls-49,
+.deskwork_icon .cls-50,
+.deskwork_icon .cls-51,
+.deskwork_icon .cls-52,
+.deskwork_icon .cls-53,
+.deskwork_icon .cls-54,
+.deskwork_icon .cls-55,
+.deskwork_icon .cls-56,
+.deskwork_icon .cls-57 {
   stroke-width: 0px;
 }
-.desk_icon_svg .cls-2 {
+.deskwork_icon .cls-2 {
+  fill: #280a54;
+}
+.deskwork_icon .cls-3 {
   fill: #c99;
 }
-.desk_icon_svg .cls-3 {
+.deskwork_icon .cls-4 {
   fill: #4d4d4d;
 }
-.desk_icon_svg .cls-4 {
+.deskwork_icon .cls-5 {
   fill: #666;
 }
-.desk_icon_svg .cls-5 {
+.deskwork_icon .cls-6 {
   fill: #fcc;
 }
-.desk_icon_svg .cls-6 {
+.deskwork_icon .cls-7 {
+  fill: #d4643e;
+}
+.deskwork_icon .cls-8 {
+  fill: #2eef49;
+}
+.deskwork_icon .cls-9,
+.deskwork_icon .cls-17,
+.deskwork_icon .cls-50 {
+  fill: #0ac;
+}
+.deskwork_icon .cls-9,
+.deskwork_icon .cls-25,
+.deskwork_icon .cls-37,
+.deskwork_icon .cls-42,
+.deskwork_icon .cls-44,
+.deskwork_icon .cls-47,
+.deskwork_icon .cls-55,
+.deskwork_icon .cls-56 {
+  opacity: 0.5;
+}
+.deskwork_icon .cls-10,
+.deskwork_icon .cls-29,
+.deskwork_icon .cls-50 {
+  opacity: 0.4;
+}
+.deskwork_icon .cls-10,
+.deskwork_icon .cls-37 {
+  fill: #ea82f9;
+}
+.deskwork_icon .cls-11 {
   fill: #339;
 }
-.desk_icon_svg .cls-7 {
+.deskwork_icon .cls-12 {
   fill: #633;
 }
-.desk_icon_svg .cls-8 {
-  fill: #c60;
+.deskwork_icon .cls-58 {
+  stroke-width: 2px;
 }
-.desk_icon_svg .cls-24 {
-  fill: none;
-  stroke: #e42320;
+.deskwork_icon .cls-58,
+.deskwork_icon .cls-59,
+.deskwork_icon .cls-60,
+.deskwork_icon .cls-61,
+.deskwork_icon .cls-62 {
   stroke-miterlimit: 10;
-  stroke-width: 4.28px;
 }
-.desk_icon_svg .cls-10 {
-  fill: #e42320;
-}
-.desk_icon_svg .cls-11 {
-  fill: #930;
-}
-.desk_icon_svg .cls-12 {
-  fill: #600e0e;
-}
-.desk_icon_svg .cls-13 {
-  fill: #39c;
-}
-.desk_icon_svg .cls-14 {
-  fill: #333;
-}
-.desk_icon_svg .cls-15 {
-  fill: #ccc;
-}
-.desk_icon_svg .cls-16 {
-  fill: #c6b198;
-}
-.desk_icon_svg .cls-17 {
+.deskwork_icon .cls-58,
+.deskwork_icon .cls-32 {
   fill: #fff;
 }
-.desk_icon_svg .cls-18 {
+.deskwork_icon .cls-58,
+.deskwork_icon .cls-61,
+.deskwork_icon .cls-62 {
+  stroke-linecap: round;
+}
+.deskwork_icon .cls-58,
+.deskwork_icon .cls-62 {
+  stroke: gray;
+}
+.deskwork_icon .cls-13 {
+  fill: #c60;
+}
+.deskwork_icon .cls-59 {
+  stroke: #e42320;
+  stroke-width: 4.28px;
+}
+.deskwork_icon .cls-59,
+.deskwork_icon .cls-61 {
+  fill: none;
+}
+.deskwork_icon .cls-15 {
+  fill: #e42320;
+}
+.deskwork_icon .cls-16 {
+  fill: #930;
+}
+.deskwork_icon .cls-18 {
+  fill: #aef4d1;
+}
+.deskwork_icon .cls-19 {
+  fill: #2b2827;
+}
+.deskwork_icon .cls-20 {
+  fill: #600e0e;
+}
+.deskwork_icon .cls-21 {
+  fill: #9b4ee5;
+}
+.deskwork_icon .cls-22 {
+  opacity: 0.2;
+}
+.deskwork_icon .cls-23,
+.deskwork_icon .cls-29,
+.deskwork_icon .cls-55 {
+  fill: #38166d;
+}
+.deskwork_icon .cls-24 {
+  fill: gray;
+}
+.deskwork_icon .cls-25,
+.deskwork_icon .cls-36 {
+  fill: #6161d1;
+}
+.deskwork_icon .cls-26 {
+  fill: #333;
+}
+.deskwork_icon .cls-27 {
+  fill: #732a14;
+}
+.deskwork_icon .cls-28 {
+  fill: #ccc;
+}
+.deskwork_icon .cls-30,
+.deskwork_icon .cls-60 {
+  fill: #494949;
+}
+.deskwork_icon .cls-31 {
+  fill: #85edb9;
+}
+.deskwork_icon .cls-63 {
+  opacity: 0.75;
+}
+.deskwork_icon .cls-33 {
   opacity: 0.6;
 }
-.desk_icon_svg .cls-19 {
+.deskwork_icon .cls-34 {
   fill: #963;
 }
-.desk_icon_svg .cls-20 {
-  fill: #68c2e7;
+.deskwork_icon .cls-35 {
+  fill: #c49d65;
 }
-.desk_icon_svg .cls-21 {
+.deskwork_icon .cls-38 {
+  fill: #f7e8bc;
+}
+.deskwork_icon .cls-39 {
+  fill: #dbb579;
+}
+.deskwork_icon .cls-40 {
   fill: #336;
 }
-.desk_icon_svg .cls-22 {
-  fill: #c96;
+.deskwork_icon .cls-41 {
+  fill: #5a5b5a;
 }
-.desk_icon_svg .cls-sOn {
+.deskwork_icon .cls-42 {
+  fill: #f79b16;
+}
+.deskwork_icon .cls-43 {
+  fill: #a6a6a6;
+}
+.deskwork_icon .cls-44 {
+  fill: #aae8f9;
+}
+.deskwork_icon .cls-45 {
+  fill: #93d6e5;
+}
+.deskwork_icon .cls-46 {
+  fill: #222223;
+}
+.deskwork_icon .cls-47 {
+  fill: #e5c528;
+}
+.deskwork_icon .cls-48 {
+  fill: #d2dbda;
+}
+.deskwork_icon .cls-49 {
+  fill: #b3d4e5;
+}
+.deskwork_icon .cls-60 {
+  stroke: #fff;
+  stroke-width: 0.25px;
+}
+.deskwork_icon .cls-61 {
+  stroke: #280a54;
+}
+.deskwork_icon .cls-51 {
+  fill: #838483;
+}
+.deskwork_icon .cls-62 {
+  fill: #ede848;
+}
+.deskwork_icon .cls-52 {
+  fill: #eaeaea;
+}
+.deskwork_icon .cls-53 {
   fill: #9cf;
 }
-.desk_icon_svg .cls-st {
+.deskwork_icon .cls-54 {
+  fill: #cecece;
+}
+.deskwork_icon .cls-56 {
+  fill: #94edad;
+}
+.deskwork_icon .cls-57 {
+  fill: #d8caa4;
+}
+.deskwork_icon .desk_tablet_screen {
   transition: fill 250ms ease-in-out;
   fill: rgb(3, 28, 53);
 }
-.desk_icon_svg .desk_tablet:active .cls-st,
-.desk_icon_svg .desk_tablet:hover .cls-st {
+.deskwork_icon .desk_tablet_screen:active,
+.deskwork_icon .desk_tablet_screen:hover {
   fill: #9cf;
 }
-.desk_icon_svg .cls-a {
+.deskwork_icon .tablet_screen_on {
+  fill: #9cf;
+}
+.deskwork_icon .watch_time {
   fill: hsl(190, 100%, 40%);
 }
-.desk_icon_svg .cls-txt {
+.deskwork_icon .cls-txt {
   fill: var(--whiteOff);
 }
-.desk_icon_svg .desk_watch_blink {
+.deskwork_icon .watch_num {
   animation: blink 1s 0s infinite alternate;
 }
+.deskwork_icon .watch_mer,
+.deskwork_icon .icon_hide {
+  opacity: 0;
+}
+.deskwork_icon .icon_hide {
+  transform: translateY(4rem);
+  transition: all 1000ms ease-in-out;
+}
+.deskwork_icon .icon_show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.deskwork_icon .screen_hide {
+  opacity: 0;
+  transition: all 500ms ease;
+}
+.deskwork_icon .screen_show {
+  opacity: 1;
+}
+.deskwork_icon .desk_portfolio,
+.deskwork_icon .desk_ball {
+  transition: all 500ms ease;
+}
+.deskwork_icon .desk_portfolio:hover {
+  transform: translateX(7rem);
+}
+.deskwork_icon .desk_ball {
+  margin-top: 10rem;
+}
+.deskwork_icon .desk_ball:hover {
+  animation: bounceUp 1000ms 250ms infinite ease-in-out;
+}
+
 .desk_icon_container {
   width: 100%;
   height: auto;

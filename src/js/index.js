@@ -226,7 +226,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleSubsectionCardsSearch = selector(".title_subsection_search_type");
     const menuSocialBtnsContainer = selector(".menu_social_btns_container");
     const btnsMenuSocial = selectorAll(".social_btn");
-
+    const watchMerAM = selector(".watch_am");
+    const watchMerPM = selector(".watch_pm");
+    const designScreen = selector(".design_screen");
+    const devScreen = selector(".dev_screen");
+    const shieldScreen = selector(".shield_screen");
+    const illustrationScreen = selector(".illustration_screen");
     const deleteChildElements = (parentElement) => {
         let child = parentElement.lastElementChild;
         while (child) {
@@ -234,10 +239,6 @@ document.addEventListener("DOMContentLoaded", () => {
             child = parentElement.lastElementChild;
         }
     };
-
-    const aboutLegends = ["Diseñador", "Ilustrador", "Desarrollador Front-End", "Deportista"];
-
-    aboutTextAnimationContainer.innerHTML = setAnimationText(aboutLegends[0]);
     const menuActions = (status) => {
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
@@ -325,6 +326,63 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
     swipingAnimation();
+
+    selectorAll(".animation_key").forEach((key) => {
+        const tabletScreen = selector(".desk_tablet_screen");
+        key.addEventListener("mouseenter", () => {
+            console.log(key.getAttribute("data-key"));
+            switch (key.getAttribute("data-key")) {
+                case "dev":
+                    selectorAll(".dev_icon").forEach((icon) => {
+                        icon.classList.add("icon_show");
+                    });
+                    shieldScreen.style.opacity = 1;
+                    setTimeout(() => (devScreen.style.opacity = 1), 500);
+                    break;
+                case "illustration":
+                    selectorAll(".illustration_icon").forEach((icon) => {
+                        icon.classList.add("icon_show");
+                    });
+                    //*illustrationScreen.style.opacity = 1;
+                    break;
+                case "design":
+                    selectorAll(".design_icon").forEach((icon) => {
+                        icon.classList.add("icon_show");
+                    });
+                    designScreen.style.opacity = 1;
+
+                    break;
+            }
+
+            tabletScreen.classList.add("tablet_screen_on");
+        });
+
+        key.addEventListener("mouseleave", () => {
+            switch (key.getAttribute("data-key")) {
+                case "dev":
+                    selectorAll(".dev_icon").forEach((icon) => {
+                        icon.classList.remove("icon_show");
+                    });
+                    devScreen.style.opacity = 0;
+                    setTimeout(() => (shieldScreen.style.opacity = 0), 500);
+                    break;
+                case "illustration":
+                    selectorAll(".illustration_icon").forEach((icon) => {
+                        icon.classList.remove("icon_show");
+                    });
+                    //* illustrationScreen.style.opacity = 0;
+                    break;
+                case "design":
+                    selectorAll(".design_icon").forEach((icon) => {
+                        icon.classList.remove("icon_show");
+                    });
+                    designScreen.style.opacity = 0;
+
+                    break;
+            }
+            tabletScreen.classList.remove("tablet_screen_on");
+        });
+    });
 
     const createCard = (item, frac) => {
         let iconsRow = "";
@@ -435,6 +493,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(storageContent["page_theme"]);
                 currentTheme = storageContent["page_theme"];
             }
+        }
+
+        if (currentTheme === "dark_theme") {
+            watchMerAM.style.opacity = 1;
+        } else if (currentTheme === "light_theme") {
+            watchMerPM.style.opacity = 1;
         }
         console.log(storageContent);
         BODY.className = currentTheme;
@@ -574,18 +638,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     setTimeout(() => checkWindowHeight(), 500);
-
-    const textAnimationAction = () => {
-        let objectCount = 0;
-        setInterval(() => {
-            objectCount += 1;
-            if (objectCount === aboutLegends.length) {
-                objectCount = 0;
-            }
-            aboutTextAnimationContainer.innerHTML = setAnimationText(aboutLegends[objectCount]);
-        }, 3000);
-    };
-    textAnimationAction();
 
     const toTheTop = () => {
         const currentPosition = BODY.getBoundingClientRect().top;
@@ -911,13 +963,20 @@ document.addEventListener("DOMContentLoaded", () => {
         switch (tm) {
             case lightT:
                 currentTheme = darkT;
+                watchMerPM.style.opacity = 0;
+                watchMerAM.style.opacity = 1;
+
                 break;
             case darkT:
                 currentTheme = lightT;
+                watchMerAM.style.opacity = 0;
+                watchMerPM.style.opacity = 1;
+
                 break;
         }
 
         storageContent["page_theme"] = currentTheme;
+
         localStorage.setItem(storageName, JSON.stringify(storageContent));
         BODY.className = currentTheme;
         console.log(storageContent);

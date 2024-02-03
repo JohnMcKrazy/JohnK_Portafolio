@@ -136,7 +136,7 @@
         "db_name": "choroplet_map",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
+            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest", "Programación"],
             "type_data": ["desarrollo_web"],
             "description": "",
             "reach": ["Desarrollo Web"],
@@ -161,105 +161,6 @@
                 }
             },
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
-        },
-        "votes": 5
-    },
-    {
-        "client_name": "Tree Map Data Visualization",
-        "db_name": "tree_map",
-        "client_logo": "",
-        "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
-            "type_data": ["desarrollo_web"],
-            "description": "",
-            "reach": ["Desarrollo Web"],
-            "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "src/img/treeMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
-            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
-        },
-        "votes": 5
-    },
-    {
-        "client_name": "Bar Chart Data Visualization",
-        "db_name": "bar_map",
-        "client_logo": "",
-        "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
-            "type_data": ["desarrollo_web"],
-            "description": "",
-            "reach": ["Desarrollo Web"],
-            "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "src/img/barMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
-            "project_link": "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/"
-        },
-        "votes": 5
-    },
-    {
-        "client_name": "Scatterplo Chart Data Visualization",
-        "db_name": "scatterplo_map",
-        "client_logo": "",
-        "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest"],
-            "type_data": ["desarrollo_web"],
-            "description": "",
-            "reach": ["Desarrollo Web"],
-            "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "src/img/scatterploMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
-            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
         },
         "votes": 5
     },
