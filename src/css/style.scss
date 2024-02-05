@@ -1639,6 +1639,9 @@ body {
         fill: var(--FC);
     }
 }
+.accent_text {
+    color: var(--FC);
+}
 .drop_down_container {
     position: relative;
     width: 100%;
@@ -1932,11 +1935,19 @@ body {
         align-items: center;
         padding: 0 2rem;
     }
-    .title_container H1 {
-        color: var(--TC);
-        font-size: var(--fontSizeXLClamp);
-        line-height: 6rem;
-        text-align: right;
+    .title_container {
+        H2 {
+            color: var(--TC);
+            font-size: var(--fontSizeMClamp);
+            text-align: right;
+            margin-top: 1rem;
+        }
+        H1 {
+            color: var(--TC);
+            font-size: var(--fontSizeXLClamp);
+            line-height: 6rem;
+            text-align: right;
+        }
     }
     .btns_container {
         display: flex;
@@ -1984,10 +1995,6 @@ body {
             font-size: var(--fontSizeMClamp);
             font-weight: 800;
         }
-    }
-
-    .accent_text {
-        color: var(--FC);
     }
 }
 .services_container {

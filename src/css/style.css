@@ -1570,6 +1570,10 @@ body P {
   fill: var(--FC);
 }
 
+.accent_text {
+  color: var(--FC);
+}
+
 .drop_down_container {
   position: relative;
   width: 100%;
@@ -1889,6 +1893,12 @@ body P {
   align-items: center;
   padding: 0 2rem;
 }
+.hero_section .title_container H2 {
+  color: var(--TC);
+  font-size: var(--fontSizeMClamp);
+  text-align: right;
+  margin-top: 1rem;
+}
 .hero_section .title_container H1 {
   color: var(--TC);
   font-size: var(--fontSizeXLClamp);
@@ -1946,9 +1956,6 @@ body P {
   margin-top: 1rem;
   font-size: var(--fontSizeMClamp);
   font-weight: 800;
-}
-.about_section .accent_text {
-  color: var(--FC);
 }
 
 .services_container {
