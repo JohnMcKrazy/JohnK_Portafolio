@@ -512,12 +512,12 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         //~~SET CARD CHANGES--OVER
         //~~ ************************************************************************************************** *//
-        const firstBreak = 1100;
-        const secondBreak = 839;
+        const firstBreak = 899;
+        const secondBreak = 749;
         if (widConf > firstBreak) {
             lebelBtnMain.innerHTML = setBtnLabel("Inicio");
             lebelBtnAbout.innerHTML = setBtnLabel("Acerca de");
-            lebelBtnSkills.innerHTML = setBtnLabel("Conocimientos");
+            lebelBtnSkills.innerHTML = setBtnLabel("Habilidades");
             lebelBtnServices.innerHTML = setBtnLabel("Servicios");
             lebelBtnPortfolio.innerHTML = setBtnLabel("Portafolio");
             lebelBtnClients.innerHTML = setBtnLabel("Clientes");
@@ -536,7 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 '<svg class="icon_svg nav_menu_icon_svg" id="about_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Acerca de</title><circle class="cls-1" cx="12" cy="4" r="2"></circle><path class="cls-1"  d="M15 22V9h5V7H4v2h5v13h2v-7h2v7z"></path></svg>'
             );
             lebelBtnSkills.innerHTML = setIconContainer(
-                '<svg class="icon_svg nav_menu_icon_svg" id="skills_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Conocimientos</title><path class="cls-1" d="M9.973 18H11v-5h2v5h1.027c.132-1.202.745-2.194 1.74-3.277.113-.122.832-.867.917-.973a6 6 0 1 0-9.37-.002c.086.107.807.853.918.974.996 1.084 1.609 2.076 1.741 3.278zM10 20v1h4v-1h-4zm-4.246-5a8 8 0 1 1 12.49.002C17.624 15.774 16 17 16 18.5V21a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.5C8 17 6.375 15.774 5.754 15z"/></svg>'
+                '<svg class="icon_svg nav_menu_icon_svg" id="skills_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Habilidades</title><path class="cls-1" d="M9.973 18H11v-5h2v5h1.027c.132-1.202.745-2.194 1.74-3.277.113-.122.832-.867.917-.973a6 6 0 1 0-9.37-.002c.086.107.807.853.918.974.996 1.084 1.609 2.076 1.741 3.278zM10 20v1h4v-1h-4zm-4.246-5a8 8 0 1 1 12.49.002C17.624 15.774 16 17 16 18.5V21a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.5C8 17 6.375 15.774 5.754 15z"/></svg>'
             );
             lebelBtnServices.innerHTML = setIconContainer(
                 '<svg class="icon_svg nav_menu_icon_svg" id="services_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Servicios</title><path class="cls-1" d="M21 8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1.062A8.001 8.001 0 0 1 12 23v-2a6 6 0 0 0 6-6V9A6 6 0 1 0 6 9v7H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1.062a8.001 8.001 0 0 1 15.876 0H21zM7.76 15.785l1.06-1.696A5.972 5.972 0 0 0 12 15a5.972 5.972 0 0 0 3.18-.911l1.06 1.696A7.963 7.963 0 0 1 12 17a7.963 7.963 0 0 1-4.24-1.215z"/></svg>'
@@ -938,6 +938,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", () => checkWindowHeight());
 
+    selector(".btn_down").addEventListener("click", () => {
+        const windowHeight = window.innerHeight;
+        const navHeight = nav.getBoundingClientRect().height;
+        const fixHeight = windowHeight - navHeight;
+        window.scrollTo(0, fixHeight);
+    });
+    selectorAll(".btn_hero").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            scrollToSection(btn);
+        });
+    });
     searchBtn.addEventListener("enter", () => searchBtnActions(dropDownStatus));
     searchBtn.addEventListener("click", () => searchBtnActions(dropDownStatus));
 

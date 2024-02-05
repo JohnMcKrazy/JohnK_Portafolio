@@ -134,7 +134,7 @@
     line-height: 1.2;
     letter-spacing: 0.15rem;
     scroll-behavior: smooth;
-    width: 100%;
+    width: calc(100% - 5rem);
     height: 100%;
 }
 .svg_gradients {
@@ -312,6 +312,9 @@ body {
         text-wrap: pretty;
     }
 }
+.icon_svg {
+    transition: transform 1000ms ease-in-out;
+}
 .bullet {
     background: var(--bgC_T);
     width: calc(100% - 4rem);
@@ -350,6 +353,7 @@ body {
 .animation_key {
     font-weight: 600;
     color: var(--FC);
+    cursor: pointer;
 }
 .deskwork_icon {
     .cls-1 {
@@ -1094,7 +1098,12 @@ body {
         fill-rule: evenodd;
     }
 }
-
+.react_icon_svg {
+    .cls-1 {
+        fill: #61dafb;
+        stroke-width: 0px;
+    }
+}
 //^^TECH ICONS COLORS--OVER
 //^^SOCIAL ICONS COLORS-- START
 .wa_icon_svg,
@@ -1116,24 +1125,23 @@ body {
 .fb_icon_svg {
     transform: scale(0.75);
 }
-
-.accessibility_btn {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
+.btn_active {
     background: var(--FC);
     color: var(--TC_C);
-    font-size: var(--FS_L);
-    padding: 1rem;
-    transition: var(--T_M);
-    translate: 0 -100%;
-    z-index: 999;
+    .label_btn {
+        color: var(--TC_C);
+
+        animation: bounce 2s ease-in-out infinite;
+    }
+    .icon_svg {
+        .cls-1 {
+            fill: var(--TC_C);
+        }
+    }
 }
-.accessibility_btn:focus {
-    translate: 0;
+.btns_container,
+.btn_container {
+    padding-top: 1rem;
 }
 .loader_container {
     position: absolute;
@@ -1168,6 +1176,11 @@ body {
     height: fit-content;
     margin-bottom: 1rem;
 }
+.label_btn {
+    font-size: var(--FS_N);
+    font-weight: var(--FW_N);
+    display: block;
+}
 .btn {
     padding: 1rem 0.5rem;
     background: linear-gradient(45deg, var(--FC), var(--SC));
@@ -1176,15 +1189,33 @@ body {
     transition: var(--T_F);
     border-radius: 2rem;
     min-height: 4rem;
+    cursor: pointer;
     .label_btn {
-        font-weight: var(--FW_N);
-        font-size: var(--FS_N);
+        color: var(--whiteOff);
     }
     &:hover,
     &:active,
     &:focus {
         filter: hue-rotate(45deg);
-        color: var(--TC_C);
+    }
+}
+.btn_down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 6rem;
+    opacity: var(--opacityBtn);
+    color: var(--TC);
+    transition: var(--T-M);
+    margin-top: 4rem;
+    .arrow_down_svg {
+        margin-top: 0.5rem;
+        width: 2rem;
+        animation: bounceDown 1s ease infinite;
+        fill: var(--SC);
+        fill-rule: evenodd;
     }
 }
 .more_btn {
@@ -1194,12 +1225,6 @@ body {
     width: 100%;
     font-weight: var(--FW_B);
     font-size: var(--FS_N);
-}
-.label_btn {
-    font-size: var(--FS_N);
-    font-weight: var(--FW_N);
-
-    display: block;
 }
 .close_btn {
     position: absolute;
@@ -1215,18 +1240,6 @@ body {
         background: var(--FC);
         fill: var(--TC_C);
     }
-}
-.icon_container {
-    @include flex(center, center);
-    padding: 0.5rem;
-    width: 100%;
-    height: auto;
-    .icon_svg {
-        fill: var(--FC);
-    }
-}
-.social_btns_container {
-    @include flexDirection(row, space-between, center);
 }
 
 .nav_btn {
@@ -1334,6 +1347,37 @@ body {
 .footer_social_btn:hover {
     animation: zoom 1s ease-in-out 2 forwards;
 }
+.accessibility_btn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background: var(--FC);
+    color: var(--TC_C);
+    font-size: var(--FS_L);
+    padding: 1rem;
+    transition: var(--T_M);
+    translate: 0 -100%;
+    z-index: 999;
+}
+.accessibility_btn:focus {
+    translate: 0;
+}
+.icon_container {
+    @include flex(center, center);
+    padding: 0.5rem;
+    width: 100%;
+    height: auto;
+    .icon_svg {
+        fill: var(--FC);
+    }
+}
+.social_btns_container {
+    @include flexDirection(row, space-between, center);
+}
+
 .card,
 .bullet_card {
     width: 100%;
@@ -1545,20 +1589,6 @@ body {
 }
 */
 //!
-.drop_down_container {
-    position: relative;
-    width: 100%;
-    height: 4rem;
-    @include flex(center, center);
-    overflow: visible;
-    margin-bottom: 0.5rem;
-    .btn {
-        border-radius: 0.5rem;
-    }
-    .btn:not(.search_list_btn) {
-        border: none;
-    }
-}
 .list_btn {
     padding: 0.5rem 3rem;
 }
@@ -1607,9 +1637,19 @@ body {
         fill: var(--FC);
     }
 }
-
-.icon_svg {
-    transition: transform 1000ms ease-in-out;
+.drop_down_container {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    @include flex(center, center);
+    overflow: visible;
+    margin-bottom: 0.5rem;
+    .btn {
+        border-radius: 0.5rem;
+    }
+    .btn:not(.search_list_btn) {
+        border: none;
+    }
 }
 .list_btns_container {
     position: absolute;
@@ -1626,22 +1666,6 @@ body {
         width: 100%;
     }
 }
-
-.btn_active {
-    background: var(--FC);
-    color: var(--TC_C);
-    .label_btn {
-        color: var(--TC_C);
-
-        animation: bounce 2s ease-in-out infinite;
-    }
-    .icon_svg {
-        .cls-1 {
-            fill: var(--TC_C);
-        }
-    }
-}
-
 .form {
     background: var(--NVC);
     padding: 2rem 3rem;
@@ -1732,61 +1756,6 @@ body {
     position: relative;
     .modal_form {
         width: 100%;
-    }
-}
-
-.section:not(.hero_section) {
-    margin-bottom: 2rem;
-    /* min-height: calc(100vh - var(--NVH_F)); */
-    height: auto;
-    /* min-height: var(--FS-FNVH); */
-    @include flexDirection(column, flex-start, center);
-}
-.section_content {
-    min-width: 300px;
-    width: 1600px;
-    max-width: 100%;
-}
-.hero_section {
-    height: var(--FS_NVH);
-}
-.legals_section {
-    background: var(--NVC);
-    @include flex(center, center);
-    padding: 2rem;
-    .made_container {
-        @include flexDirection(column, flex-start, flex-end);
-        .icons_container {
-            @include flexDirection(row, center, center);
-        }
-    }
-
-    .lebels_container {
-        margin-top: 1rem;
-        @include flexDirection(row, space-between, flex-end);
-    }
-    .social_btns_container {
-        width: auto;
-        justify-content: center;
-    }
-    .icon_container {
-        width: 3rem;
-        height: 3rem;
-        padding: 0.25rem;
-    }
-    .link_text,
-    .copyright_text {
-        font-size: var(--FS_XS);
-        color: var(--TC);
-    }
-    .link_text {
-        line-height: 1.5;
-    }
-    .made_content {
-        margin-left: 5rem;
-        .btns_container :not(:first-child) {
-            margin-left: 2rem;
-        }
     }
 }
 .sliders_container {
@@ -1913,45 +1882,72 @@ body {
         right: 0;
     }
 }
-.skills_section {
-    .skills_icons_container {
-        .icon_container {
-            height: 8rem;
-            width: 8rem;
-        }
-    }
+.icons_container {
+    flex-wrap: wrap;
+    @include flexDirection(row, center, center);
 }
-.services_container {
+.section {
+    margin-bottom: 2rem;
+    /* min-height: calc(100vh - var(--NVH_F)); */
+    height: auto;
+    /* min-height: var(--FS-FNVH); */
+
+    @include flexDirection(column, flex-start, center);
+}
+.section_content {
+    min-width: 300px;
+    width: 1600px;
+    max-width: 100%;
+    padding: 0 2rem;
+}
+.with_bg {
     position: relative;
+
+    height: var(--FS_NVH);
+    min-height: calc(100vh - var(--NVH));
+    min-height: calc(100svh - var(--NVH));
+    justify-content: center;
 }
-.clients_section {
-    @include flex(center, center);
-    .clients_container {
-        @include flexDirection(row, center, center);
-
-        flex-wrap: wrap;
+.bg_section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    z-index: -1;
+}
+.hero_section {
+    .bg_section {
+        background: var(--backgroundHero);
+    }
+    .section_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    .title_container H1 {
+        color: var(--TC);
+        font-size: var(--fontSizeXLClamp);
+        line-height: 6rem;
+        text-align: right;
+    }
+    .btns_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        margin-top: 2rem;
         width: 100%;
-        height: fit-content;
-        //*padding-bottom: 4rem;
-        .client_logo_container {
-            @include flex(center, center);
-            padding: 1rem 1.5rem;
-            height: 8rem;
-            width: 12.5rem;
-            filter: grayscale(1);
-            transition: all 0.5s ease;
-            .client_icon_svg {
-                width: 100%;
-                height: auto;
-            }
-
-            &:hover,
-            :focus,
-            :active {
-                position: relative;
-                filter: grayscale(0);
-                animation: zoom 1000ms ease-out;
-            }
+        height: auto;
+        .btn {
+            min-width: 15rem;
+            width: 20rem;
+            max-width: 90%;
         }
     }
 }
@@ -1959,9 +1955,7 @@ body {
     position: relative;
     @include flexDirection(column, flex-start, center);
     width: 100%;
-    .header_section {
-        padding: 0 2rem;
-    }
+
     .about_salute {
         @include flexDirection(column, flex-start, flex-start);
         margin-top: 2rem;
@@ -1985,34 +1979,111 @@ body {
         .about_text {
             margin-top: 1rem;
             font-size: var(--fontSizeMClamp);
+            font-weight: 800;
         }
     }
 
     .accent_text {
         color: var(--FC);
     }
-    /* .bg_section {
-        background: linear-gradient(var(--bgC_UT), var(--bgC) 75%), url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg") center no-repeat;
-    } */
+}
+.services_container {
+    position: relative;
+}
+.icon_container,
+.client_logo_container {
+    cursor: pointer;
+}
+.skills_section {
+    .skills_icon_container {
+        margin-top: 2rem;
+    }
+    .icon_container {
+        height: 8rem;
+        width: 8rem;
+        &:hover,
+        &:focus,
+        &:active {
+            animation: zoom 1000ms ease-out;
+        }
+    }
+}
+
+.clients_section {
+    @include flex(center, center);
+    .clients_container {
+        width: 100%;
+        height: fit-content;
+        //*padding-bottom: 4rem;
+    }
+    .client_logo_container {
+        @include flex(center, center);
+        padding: 1rem 1.5rem;
+        height: 8rem;
+        width: 12.5rem;
+        filter: grayscale(1);
+        transition: all 0.5s ease;
+
+        .client_icon_svg {
+            width: 100%;
+            height: auto;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            filter: grayscale(0);
+            animation: zoom 1000ms ease-out;
+        }
+    }
 }
 .contact_section {
     padding: 0 2rem;
-
     .form {
         width: calc(100% - 4rem);
         min-width: 260px;
     }
+    .bg_section {
+        background: var(--bgHeaderSectionContact);
+    }
 }
+.legals_section {
+    background: var(--NVC);
+    @include flex(center, center);
+    padding: 2rem;
+    .made_container {
+        @include flexDirection(column, flex-start, flex-end);
+        .icons_container {
+            @include flexDirection(row, center, center);
+        }
+    }
 
-.bg_section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: var(--FS_NVH);
-    width: 100%;
-    background-size: cover !important;
-    background-position: center !important;
-    z-index: -1;
+    .lebels_container {
+        margin-top: 1rem;
+        @include flexDirection(row, space-between, flex-end);
+    }
+    .social_btns_container {
+        width: auto;
+        justify-content: center;
+    }
+    .icon_container {
+        width: 3rem;
+        height: 3rem;
+        padding: 0.25rem;
+    }
+    .link_text,
+    .copyright_text {
+        font-size: var(--FS_XS);
+        color: var(--TC);
+    }
+    .link_text {
+        line-height: 1.5;
+    }
+    .made_content {
+        margin-left: 5rem;
+        .btns_container :not(:first-child) {
+            margin-left: 2rem;
+        }
+    }
 }
 .nav_menu {
     position: sticky;
@@ -2210,10 +2281,6 @@ body {
             }
         }
     }
-}
-.btns_container,
-.btn_container {
-    padding-top: 1rem;
 }
 
 @media screen and (min-width: 750px) {
