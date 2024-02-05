@@ -1514,6 +1514,9 @@ body P {
 .search_list_btn {
   padding: 0.5rem 1rem;
 }
+.search_list_btn .label_btn {
+  color: var(--TC);
+}
 
 .list_btn,
 .search_list_btn {
@@ -1862,6 +1865,7 @@ body P {
   min-height: calc(100vh - var(--NVH));
   min-height: calc(100svh - var(--NVH));
   justify-content: center;
+  margin-bottom: 0;
 }
 
 .bg_section {

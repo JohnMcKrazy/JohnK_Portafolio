@@ -1377,7 +1377,6 @@ body {
 .social_btns_container {
     @include flexDirection(row, space-between, center);
 }
-
 .card,
 .bullet_card {
     width: 100%;
@@ -1594,6 +1593,9 @@ body {
 }
 .search_list_btn {
     padding: 0.5rem 1rem;
+    .label_btn {
+        color: var(--TC);
+    }
 }
 .list_btn,
 .search_list_btn {
@@ -1907,6 +1909,7 @@ body {
     min-height: calc(100vh - var(--NVH));
     min-height: calc(100svh - var(--NVH));
     justify-content: center;
+    margin-bottom: 0;
 }
 .bg_section {
     position: absolute;
