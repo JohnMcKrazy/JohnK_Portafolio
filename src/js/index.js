@@ -701,8 +701,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const optionValue = item["value"];
                 const template = btnListTemplate.cloneNode(true);
                 const newBtn = template.querySelector("BUTTON");
+                const labelBtn = template.querySelector(".label_btn");
                 newBtn.setAttribute("name", optionValue);
-                newBtn.textContent = optionValue;
+                labelBtn.textContent = optionValue;
 
                 listBtnsFragment.append(newBtn);
             });

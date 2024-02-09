@@ -1104,11 +1104,14 @@ body P {
   margin-top: 4rem;
 }
 .btn_down .arrow_down_svg {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   width: 2rem;
   animation: bounceDown 1s ease infinite;
+  fill: var(--FC);
+  transition: fill 500ms ease;
+}
+.btn_down:hover .arrow_down_svg {
   fill: var(--SC);
-  fill-rule: evenodd;
 }
 
 .more_btn {
@@ -1512,46 +1515,16 @@ body P {
 }
 
 .search_list_btn {
-  padding: 0.5rem 1rem;
-}
-.search_list_btn .label_btn {
-  color: var(--TC);
-}
-
-.list_btn,
-.search_list_btn {
-  background: none;
-  color: var(--TC);
-}
-
-.search_list_btn:hover,
-.list_btn:hover,
-.search_list_btn:active,
-.list_btn:active,
-.search_list_btn:focus,
-.list_btn:focus {
-  color: var(--TC_C);
-  background: var(--FC_H);
-}
-.search_list_btn:hover .icon_svg,
-.list_btn:hover .icon_svg,
-.search_list_btn:active .icon_svg,
-.list_btn:active .icon_svg,
-.search_list_btn:focus .icon_svg,
-.list_btn:focus .icon_svg {
-  fill: var(--TC_C);
-}
-
-.search_list_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   border: solid 1px var(--FC);
   background: none;
   min-height: 4rem;
   width: 15rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  padding: 0.5rem 1rem;
 }
 .search_list_btn .label_btn,
 .search_list_btn .icon_container {
@@ -1568,6 +1541,37 @@ body P {
 .search_list_btn .icon_svg {
   padding: 0;
   fill: var(--FC);
+}
+
+.list_btn,
+.search_list_btn {
+  background: none;
+}
+.list_btn .label_btn,
+.search_list_btn .label_btn {
+  color: var(--TC);
+}
+.list_btn:hover .label_btn,
+.search_list_btn:hover .label_btn {
+  color: var(--whiteOff);
+}
+
+.search_list_btn:hover,
+.list_btn:hover,
+.search_list_btn:active,
+.list_btn:active,
+.search_list_btn:focus,
+.list_btn:focus {
+  color: var(--TC_C);
+  background: linear-gradient(45deg, var(--FC), var(--SC));
+}
+.search_list_btn:hover .icon_svg,
+.list_btn:hover .icon_svg,
+.search_list_btn:active .icon_svg,
+.list_btn:active .icon_svg,
+.search_list_btn:focus .icon_svg,
+.list_btn:focus .icon_svg {
+  fill: var(--TC_C);
 }
 
 .accent_text {
@@ -2024,6 +2028,7 @@ body P {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  margin: 0;
 }
 .legals_section .made_container {
   display: flex;

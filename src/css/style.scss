@@ -86,7 +86,6 @@
     justify-content: $jc;
     align-items: $ai;
 }
-
 :root {
     //¿GENERAL COLORS START
     --logoGray: hsl(0, 0%, 65%);
@@ -134,7 +133,7 @@
     line-height: 1.2;
     letter-spacing: 0.15rem;
     scroll-behavior: smooth;
-    width: calc(100% - 5rem);
+    width: 100%;
     height: 100%;
 }
 .svg_gradients {
@@ -1211,11 +1210,14 @@ body {
     transition: var(--T-M);
     margin-top: 4rem;
     .arrow_down_svg {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         width: 2rem;
         animation: bounceDown 1s ease infinite;
+        fill: var(--FC);
+        transition: fill 500ms ease;
+    }
+    &:hover .arrow_down_svg {
         fill: var(--SC);
-        fill-rule: evenodd;
     }
 }
 .more_btn {
@@ -1592,35 +1594,13 @@ body {
     padding: 0.5rem 3rem;
 }
 .search_list_btn {
-    padding: 0.5rem 1rem;
-    .label_btn {
-        color: var(--TC);
-    }
-}
-.list_btn,
-.search_list_btn {
-    background: none;
-    color: var(--TC);
-}
-.search_list_btn:hover,
-.list_btn:hover,
-.search_list_btn:active,
-.list_btn:active,
-.search_list_btn:focus,
-.list_btn:focus {
-    color: var(--TC_C);
-    background: var(--FC_H);
-    .icon_svg {
-        fill: var(--TC_C);
-    }
-}
-.search_list_btn {
+    @include flexDirection(row, center, center);
     position: absolute;
     border: solid 1px var(--FC);
     background: none;
     min-height: 4rem;
     width: 15rem;
-    @include flexDirection(row, center, center);
+    padding: 0.5rem 1rem;
 
     .label_btn,
     .icon_container {
@@ -1637,6 +1617,29 @@ body {
     .icon_svg {
         padding: 0;
         fill: var(--FC);
+    }
+}
+.list_btn,
+.search_list_btn {
+    background: none;
+    .label_btn {
+        color: var(--TC);
+    }
+
+    &:hover .label_btn {
+        color: var(--whiteOff);
+    }
+}
+.search_list_btn:hover,
+.list_btn:hover,
+.search_list_btn:active,
+.list_btn:active,
+.search_list_btn:focus,
+.list_btn:focus {
+    color: var(--TC_C);
+    background: linear-gradient(45deg, var(--FC), var(--SC));
+    .icon_svg {
+        fill: var(--TC_C);
     }
 }
 .accent_text {
@@ -2060,6 +2063,7 @@ body {
     background: var(--NVC);
     @include flex(center, center);
     padding: 2rem;
+    margin: 0;
     .made_container {
         @include flexDirection(column, flex-start, flex-end);
         .icons_container {
