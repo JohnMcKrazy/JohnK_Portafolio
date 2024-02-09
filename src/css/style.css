@@ -111,7 +111,7 @@
   line-height: 1.2;
   letter-spacing: 0.15rem;
   scroll-behavior: smooth;
-  width: calc(100% - 5rem);
+  width: 100%;
   height: 100%;
 }
 
@@ -385,218 +385,223 @@ body P {
 .deskwork_icon .cls-54,
 .deskwork_icon .cls-55,
 .deskwork_icon .cls-56,
-.deskwork_icon .cls-57 {
+.deskwork_icon .cls-57,
+.deskwork_icon .cls-58,
+.deskwork_icon .cls-59,
+.deskwork_icon .cls-60,
+.deskwork_icon .cls-61,
+.deskwork_icon .cls-62 {
   stroke-width: 0px;
 }
 .deskwork_icon .cls-2 {
   fill: #280a54;
 }
 .deskwork_icon .cls-3 {
-  fill: #c99;
+  fill: url(#Degradado_sin_nombre_36);
 }
 .deskwork_icon .cls-4 {
-  fill: #4d4d4d;
+  fill: #c99;
 }
 .deskwork_icon .cls-5 {
-  fill: #666;
+  fill: #4d4d4d;
 }
 .deskwork_icon .cls-6 {
-  fill: #fcc;
+  fill: #666;
 }
 .deskwork_icon .cls-7 {
-  fill: #d4643e;
+  fill: #fcc;
 }
 .deskwork_icon .cls-8 {
+  fill: #d4643e;
+}
+.deskwork_icon .cls-9 {
   fill: #2eef49;
 }
-.deskwork_icon .cls-9,
-.deskwork_icon .cls-17,
-.deskwork_icon .cls-50 {
-  fill: #0ac;
-}
-.deskwork_icon .cls-9,
-.deskwork_icon .cls-25,
-.deskwork_icon .cls-37,
-.deskwork_icon .cls-42,
-.deskwork_icon .cls-44,
-.deskwork_icon .cls-47,
-.deskwork_icon .cls-55,
+.deskwork_icon .cls-10,
+.deskwork_icon .cls-19,
 .deskwork_icon .cls-56 {
-  opacity: 0.5;
+  fill: #0ac;
 }
 .deskwork_icon .cls-10,
 .deskwork_icon .cls-29,
-.deskwork_icon .cls-50 {
+.deskwork_icon .cls-41,
+.deskwork_icon .cls-47,
+.deskwork_icon .cls-49,
+.deskwork_icon .cls-52,
+.deskwork_icon .cls-61,
+.deskwork_icon .cls-62 {
+  opacity: 0.5;
+}
+.deskwork_icon .cls-11,
+.deskwork_icon .cls-33,
+.deskwork_icon .cls-56 {
   opacity: 0.4;
 }
-.deskwork_icon .cls-10,
-.deskwork_icon .cls-37 {
+.deskwork_icon .cls-11,
+.deskwork_icon .cls-41 {
   fill: #ea82f9;
 }
-.deskwork_icon .cls-11 {
+.deskwork_icon .cls-12 {
   fill: #339;
 }
-.deskwork_icon .cls-12 {
+.deskwork_icon .cls-13 {
   fill: #633;
 }
-.deskwork_icon .cls-58 {
-  stroke-width: 2px;
-}
-.deskwork_icon .cls-58,
-.deskwork_icon .cls-59,
-.deskwork_icon .cls-60,
-.deskwork_icon .cls-61,
-.deskwork_icon .cls-62 {
-  stroke-miterlimit: 10;
-}
-.deskwork_icon .cls-58,
-.deskwork_icon .cls-32 {
-  fill: #fff;
-}
-.deskwork_icon .cls-58,
-.deskwork_icon .cls-61,
-.deskwork_icon .cls-62 {
-  stroke-linecap: round;
-}
-.deskwork_icon .cls-58,
-.deskwork_icon .cls-62 {
-  stroke: gray;
-}
-.deskwork_icon .cls-13 {
+.deskwork_icon .cls-14 {
   fill: #c60;
 }
-.deskwork_icon .cls-59 {
+.deskwork_icon .cls-63 {
   stroke: #e42320;
   stroke-width: 4.28px;
 }
-.deskwork_icon .cls-59,
-.deskwork_icon .cls-61 {
+.deskwork_icon .cls-63,
+.deskwork_icon .cls-64,
+.deskwork_icon .cls-65 {
+  stroke-miterlimit: 10;
+}
+.deskwork_icon .cls-63,
+.deskwork_icon .cls-65 {
   fill: none;
 }
-.deskwork_icon .cls-15 {
+.deskwork_icon .cls-16 {
+  fill: #909799;
+}
+.deskwork_icon .cls-17 {
   fill: #e42320;
 }
-.deskwork_icon .cls-16 {
+.deskwork_icon .cls-18 {
   fill: #930;
 }
-.deskwork_icon .cls-18 {
+.deskwork_icon .cls-20 {
   fill: #aef4d1;
 }
-.deskwork_icon .cls-19 {
+.deskwork_icon .cls-21 {
   fill: #2b2827;
 }
-.deskwork_icon .cls-20 {
+.deskwork_icon .cls-22 {
+  fill: url(#Degradado_sin_nombre_30);
+}
+.deskwork_icon .cls-23 {
   fill: #600e0e;
 }
-.deskwork_icon .cls-21 {
+.deskwork_icon .cls-24 {
   fill: #9b4ee5;
 }
-.deskwork_icon .cls-22 {
-  opacity: 0.2;
-}
-.deskwork_icon .cls-23,
-.deskwork_icon .cls-29,
-.deskwork_icon .cls-55 {
-  fill: #38166d;
-}
-.deskwork_icon .cls-24 {
-  fill: gray;
-}
-.deskwork_icon .cls-25,
-.deskwork_icon .cls-36 {
-  fill: #6161d1;
+.deskwork_icon .cls-25 {
+  fill: #1f3c90;
 }
 .deskwork_icon .cls-26 {
-  fill: #333;
+  opacity: 0.2;
 }
-.deskwork_icon .cls-27 {
-  fill: #732a14;
+.deskwork_icon .cls-27,
+.deskwork_icon .cls-33,
+.deskwork_icon .cls-61 {
+  fill: #38166d;
 }
 .deskwork_icon .cls-28 {
-  fill: #ccc;
+  fill: gray;
 }
-.deskwork_icon .cls-30,
-.deskwork_icon .cls-60 {
-  fill: #494949;
+.deskwork_icon .cls-29,
+.deskwork_icon .cls-40 {
+  fill: #6161d1;
+}
+.deskwork_icon .cls-30 {
+  fill: #333;
 }
 .deskwork_icon .cls-31 {
-  fill: #85edb9;
+  fill: #732a14;
 }
-.deskwork_icon .cls-63 {
-  opacity: 0.75;
+.deskwork_icon .cls-32 {
+  fill: #ccc;
 }
-.deskwork_icon .cls-33 {
-  opacity: 0.6;
-}
-.deskwork_icon .cls-34 {
-  fill: #963;
+.deskwork_icon .cls-34,
+.deskwork_icon .cls-64 {
+  fill: #494949;
 }
 .deskwork_icon .cls-35 {
-  fill: #c49d65;
+  fill: #85edb9;
+}
+.deskwork_icon .cls-36 {
+  fill: #fff;
+}
+.deskwork_icon .cls-66 {
+  opacity: 0.75;
+}
+.deskwork_icon .cls-37,
+.deskwork_icon .cls-43 {
+  opacity: 0.6;
 }
 .deskwork_icon .cls-38 {
-  fill: #f7e8bc;
+  fill: #963;
 }
 .deskwork_icon .cls-39 {
-  fill: #dbb579;
-}
-.deskwork_icon .cls-40 {
-  fill: #336;
-}
-.deskwork_icon .cls-41 {
-  fill: #5a5b5a;
+  fill: #c49d65;
 }
 .deskwork_icon .cls-42 {
-  fill: #f79b16;
+  fill: #dbb579;
 }
 .deskwork_icon .cls-43 {
-  fill: #a6a6a6;
+  fill: #0b1138;
 }
 .deskwork_icon .cls-44 {
-  fill: #aae8f9;
+  fill: #336;
 }
 .deskwork_icon .cls-45 {
-  fill: #93d6e5;
+  fill: #5a5b5a;
 }
 .deskwork_icon .cls-46 {
-  fill: #222223;
+  fill: #ede848;
 }
 .deskwork_icon .cls-47 {
-  fill: #e5c528;
+  fill: #f79b16;
 }
 .deskwork_icon .cls-48 {
-  fill: #d2dbda;
+  fill: #a6a6a6;
 }
 .deskwork_icon .cls-49 {
+  fill: #aae8f9;
+}
+.deskwork_icon .cls-50 {
+  fill: #93d6e5;
+}
+.deskwork_icon .cls-51 {
+  fill: #222223;
+}
+.deskwork_icon .cls-52 {
+  fill: #e5c528;
+}
+.deskwork_icon .cls-53 {
+  fill: #d2dbda;
+}
+.deskwork_icon .cls-54 {
   fill: #b3d4e5;
 }
-.deskwork_icon .cls-60 {
+.deskwork_icon .cls-55 {
+  fill: #b74e29;
+  opacity: 0.85;
+}
+.deskwork_icon .cls-64 {
   stroke: #fff;
   stroke-width: 0.25px;
 }
-.deskwork_icon .cls-61 {
+.deskwork_icon .cls-65 {
   stroke: #280a54;
-}
-.deskwork_icon .cls-51 {
-  fill: #838483;
-}
-.deskwork_icon .cls-62 {
-  fill: #ede848;
-}
-.deskwork_icon .cls-52 {
-  fill: #eaeaea;
-}
-.deskwork_icon .cls-53 {
-  fill: #9cf;
-}
-.deskwork_icon .cls-54 {
-  fill: #cecece;
-}
-.deskwork_icon .cls-56 {
-  fill: #94edad;
+  stroke-linecap: round;
 }
 .deskwork_icon .cls-57 {
-  fill: #d8caa4;
+  fill: #838483;
+}
+.deskwork_icon .cls-58 {
+  fill: #eaeaea;
+}
+.deskwork_icon .cls-59 {
+  fill: #9cf;
+}
+.deskwork_icon .cls-60 {
+  fill: #cecece;
+}
+.deskwork_icon .cls-62 {
+  fill: #94edad;
 }
 .deskwork_icon .desk_tablet_screen {
   transition: fill 250ms ease-in-out;
@@ -645,7 +650,7 @@ body P {
   transition: all 500ms ease;
 }
 .deskwork_icon .desk_portfolio:hover {
-  transform: translateX(7rem);
+  transform: translateX(-10rem);
 }
 .deskwork_icon .desk_ball {
   margin-top: 10rem;
