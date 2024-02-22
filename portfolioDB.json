@@ -298,7 +298,7 @@
     },
     {
         "client_name": "Bucefalos",
-        "db_name": "bucefalos",
+        "db_name": "bucefalos_1",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
@@ -331,7 +331,7 @@
     },
     {
         "client_name": "Bucefalos",
-        "db_name": "bucefalos",
+        "db_name": "bucefalos_2",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
@@ -364,7 +364,7 @@
     },
     {
         "client_name": "Panteras",
-        "db_name": "panteras",
+        "db_name": "panteras_1",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
@@ -397,7 +397,7 @@
     },
     {
         "client_name": "Bulldogs",
-        "db_name": "bulldogs",
+        "db_name": "bulldogs_1",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
@@ -430,7 +430,7 @@
     },
     {
         "client_name": "Berserkers",
-        "db_name": "berserkers",
+        "db_name": "berserkers_1",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
@@ -463,7 +463,7 @@
     },
     {
         "client_name": "Berserkers",
-        "db_name": "berserkers",
+        "db_name": "berserkers_2",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],
@@ -496,7 +496,7 @@
     },
     {
         "client_name": "Berserkers",
-        "db_name": "berserkers",
+        "db_name": "berserkers_3",
         "client_logo": "",
         "projects": {
             "type": ["Imagen Deportiva", "Logotipo"],

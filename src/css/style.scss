@@ -160,6 +160,8 @@
     --bgC_T: hsla(0, 0%, 95%, 0.75);
     --bgC_UT: hsla(0, 0%, 95%, 0.25);
     --bgC_C: hsl(0, 0%, 10%);
+    --bgC_C_T: hsla(0, 0%, 10%, 0.15);
+    --BS_SB: rgba(0, 0, 0, 0.1);
     --bgOff: hsl(0, 0%, 80%);
     --bgM: hsla(0, 0%, 90%, 0.75);
     --vueIconText: hsl(0, 0%, 20%);
@@ -203,6 +205,8 @@
     --bgC_T: hsla(0, 0%, 5%, 0.75);
     --bgC_UT: hsla(0, 0%, 5%, 0.25);
     --bgC_C: hsl(0, 0%, 90%);
+    --bgC_C_T: hsla(0, 0%, 90%, 0.15);
+    --BS_SB: rgba(255, 255, 255, 0.1);
     --bgOff: hsl(0, 0%, 20%);
     --bgM: hsla(0, 0%, 10%, 0.75);
     --vueIconText: hsl(0, 0%, 80%);
@@ -1064,20 +1068,6 @@ body {
 .fb_icon_svg {
     transform: scale(0.75);
 }
-.btn_active {
-    background: var(--FC);
-    color: var(--TC_C);
-    .label_btn {
-        color: var(--TC_C);
-
-        animation: bounce 2s ease-in-out infinite;
-    }
-    .icon_svg {
-        .cls-1 {
-            fill: var(--TC_C);
-        }
-    }
-}
 .btns_container,
 .btn_container {
     padding-top: 1rem;
@@ -1832,7 +1822,8 @@ body {
 }
 .icons_container {
     flex-wrap: wrap;
-    @include flexDirection(row, center, center);
+    @include flexDirection(row, center, flex-start);
+    gap: 1rem;
 }
 .section {
     margin-bottom: 2rem;
@@ -1875,7 +1866,6 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0 2rem;
     }
     .title_container {
         H2 {
@@ -1946,6 +1936,36 @@ body {
 .client_logo_container {
     cursor: pointer;
 }
+.skill_badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--bgC_C_T);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 30px var(--BS_SB);
+    color: var(--TC_C);
+    padding: 1rem;
+    .skill_name {
+        color: var(--TC);
+        font-size: var(--fontSizeSClamp);
+        line-height: 1;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        .icon_container {
+            animation: zoom 1000ms ease-out;
+        }
+    }
+}
 .skills_section {
     .skills_icon_container {
         margin-top: 2rem;
@@ -1953,11 +1973,6 @@ body {
     .icon_container {
         height: 8rem;
         width: 8rem;
-        &:hover,
-        &:focus,
-        &:active {
-            animation: zoom 1000ms ease-out;
-        }
     }
 }
 
@@ -2236,6 +2251,21 @@ body {
     }
 }
 
+.btn_active {
+    background: var(--FC) !important;
+    color: var(--TC_C) !important;
+    .label_btn {
+        color: var(--TC_C) !important;
+
+        animation: bounce 2s ease-in-out infinite;
+    }
+    .icon_svg {
+        fill: var(--TC_C) !important;
+        .cls-1 {
+            fill: var(--TC_C);
+        }
+    }
+}
 @media screen and (min-width: 750px) {
     .card {
         width: 50%;
@@ -2253,11 +2283,11 @@ body {
     .flex_info {
         flex-basis: 70%;
     }
-    .contact_section {
+    /* .contact_section {
         .form {
             width: 40%;
         }
-    }
+    } */
 }
 @media screen and (min-width: 900px) {
     /* .card,

@@ -138,6 +138,8 @@
   --bgC_T: hsla(0, 0%, 95%, 0.75);
   --bgC_UT: hsla(0, 0%, 95%, 0.25);
   --bgC_C: hsl(0, 0%, 10%);
+  --bgC_C_T: hsla(0, 0%, 10%, 0.15);
+  --BS_SB: rgba(0, 0, 0, 0.1);
   --bgOff: hsl(0, 0%, 80%);
   --bgM: hsla(0, 0%, 90%, 0.75);
   --vueIconText: hsl(0, 0%, 20%);
@@ -173,6 +175,8 @@
   --bgC_T: hsla(0, 0%, 5%, 0.75);
   --bgC_UT: hsla(0, 0%, 5%, 0.25);
   --bgC_C: hsl(0, 0%, 90%);
+  --bgC_C_T: hsla(0, 0%, 90%, 0.15);
+  --BS_SB: rgba(255, 255, 255, 0.1);
   --bgOff: hsl(0, 0%, 20%);
   --bgM: hsla(0, 0%, 10%, 0.75);
   --vueIconText: hsl(0, 0%, 80%);
@@ -952,18 +956,6 @@ body P {
 
 .fb_icon_svg {
   transform: scale(0.75);
-}
-
-.btn_active {
-  background: var(--FC);
-  color: var(--TC_C);
-}
-.btn_active .label_btn {
-  color: var(--TC_C);
-  animation: bounce 2s ease-in-out infinite;
-}
-.btn_active .icon_svg .cls-1 {
-  fill: var(--TC_C);
 }
 
 .btns_container,
@@ -1789,7 +1781,8 @@ body P {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .section {
@@ -1837,7 +1830,6 @@ body P {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
 }
 .hero_section .title_container H2 {
   color: var(--TC);
@@ -1913,15 +1905,39 @@ body P {
   cursor: pointer;
 }
 
+.skill_badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--bgC_C_T);
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px var(--BS_SB);
+  color: var(--TC_C);
+  padding: 1rem;
+}
+.skill_badge .skill_name {
+  color: var(--TC);
+  font-size: var(--fontSizeSClamp);
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skill_badge:hover .icon_container, .skill_badge:focus .icon_container, .skill_badge:active .icon_container {
+  animation: zoom 1000ms ease-out;
+}
+
 .skills_section .skills_icon_container {
   margin-top: 2rem;
 }
 .skills_section .icon_container {
   height: 8rem;
   width: 8rem;
-}
-.skills_section .icon_container:hover, .skills_section .icon_container:focus, .skills_section .icon_container:active {
-  animation: zoom 1000ms ease-out;
 }
 
 .clients_section {
@@ -2227,6 +2243,21 @@ body P {
   fill: var(--TC_C);
 }
 
+.btn_active {
+  background: var(--FC) !important;
+  color: var(--TC_C) !important;
+}
+.btn_active .label_btn {
+  color: var(--TC_C) !important;
+  animation: bounce 2s ease-in-out infinite;
+}
+.btn_active .icon_svg {
+  fill: var(--TC_C) !important;
+}
+.btn_active .icon_svg .cls-1 {
+  fill: var(--TC_C);
+}
+
 @media screen and (min-width: 750px) {
   .card {
     width: 50%;
@@ -2246,9 +2277,11 @@ body P {
   .flex_info {
     flex-basis: 70%;
   }
-  .contact_section .form {
-    width: 40%;
-  }
+  /* .contact_section {
+      .form {
+          width: 40%;
+      }
+  } */
 }
 @media screen and (min-width: 900px) {
   /* .card,

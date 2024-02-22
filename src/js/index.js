@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storageContent;
     const portfolioData = "./portfolioDB.json";
     const storageName = "JohnK_Maker";
-    const hotCardsSelection = ["js_documentation", "pokedex", "verona", "creaciones_hermed"];
+    const hotCardsSelection = ["js_documentation", "pokedex", "tribute", "berserkers_2", "creaciones_hermed", "verona"];
     const btnLabels = [
         {
             welcome_section: {
@@ -808,7 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(error);
         }
     };
-    loadersContainers.forEach((loader) => {
+    /*   loadersContainers.forEach((loader) => {
         const watchCardsContainers = ([entry]) => {
             animateItem(spinnerSearchCardContainer, "0", "translateY(-4rem)");
             setTimeout(() => {
@@ -825,7 +825,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         const loadersObserver = new IntersectionObserver(watchCardsContainers, optionsIO_loaders);
         loadersObserver.observe(loader);
-    });
+    }); */
 
     selector(".storage_accept").addEventListener("click", () => {
         johnK_storage["page_alert_status"] = close;
@@ -946,8 +946,17 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollToSection(btn);
         });
     });
-    searchBtn.addEventListener("enter", () => searchBtnActions(dropDownStatus));
-    searchBtn.addEventListener("click", () => searchBtnActions(dropDownStatus));
+    selectorAll(".portfolio_btn").forEach((btn) => {
+        const handleClick = () => {
+            const modalToOpen = btn.getAttribute("data-name");
+            console.log("checando btn de portafolio");
+            console.log();
+            modalWindowActions(selector(`.${modalToOpen}`), open);
+        };
+        btn.addEventListener("click", handleClick);
+    });
+    /*  searchBtn.addEventListener("enter", () => searchBtnActions(dropDownStatus));
+    searchBtn.addEventListener("click", () => searchBtnActions(dropDownStatus)); */
 
     /*  selector("#contact_form_send_btn").addEventListener("click", (e) => {
         e.preventDefault();
