@@ -320,16 +320,12 @@ document.addEventListener("DOMContentLoaded", () => {
         selectorAll(".swipe_animation_container_half").forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
                 const animationUpContainers = entry.target.querySelectorAll(".animation_up");
-                const cardUpContainers = entry.target.querySelectorAll(".card_up");
-                if (entry.isIntersecting) {
-                    console.log(entry.target);
-                    animationUpContainers.forEach((container) => {
-                        animateItem(selector(`#${container.id}`), "1", "translateY(0)");
-                    });
-                    cardUpContainers.forEach((container) => {
-                        animateItem(selector(`#${container.id}`), "1", "translateY(0)");
-                    });
-                }
+
+                console.log(entry.target);
+
+                animationUpContainers.forEach((container) => {
+                    animateItem(selector(`#${container.id}`), "1", "translateY(0)");
+                });
 
                 /* else {
                     animationLeftContainers.forEach((container) => {
@@ -347,11 +343,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 } */
             };
             const optionsIO_skills = {
-                threshold: ".2",
+                threshold: ".3",
             };
 
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_skills);
             skillsContainersObserver.observe(container);
+        });
+
+        selectorAll(".card_up").forEach((container) => {
+            const watchSwipeAnimationContainer = ([entry]) => {
+                if (entry.isIntersecting) {
+                    animateItem(selector(`#${container.id}`), "1", "translateY(0)");
+                }
+            };
+
+            const optionsIO_cards = {
+                threshold: ".3",
+            };
+
+            const cardsObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_cards);
+            cardsObserver.observe(container);
         });
     };
 
