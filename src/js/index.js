@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
             const optionsIO_up = {
-                threshold: ".9",
+                threshold: ".8",
             };
 
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_up);
@@ -321,10 +321,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const watchSwipeAnimationContainer = ([entry]) => {
                 const animationUpContainers = entry.target.querySelectorAll(".animation_up");
 
-                console.log(entry.target);
-
                 animationUpContainers.forEach((container) => {
-                    animateItem(selector(`#${container.id}`), "1", "translateY(0)");
+                    if (entry.isIntersecting) {
+                        animateItem(selector(`#${container.id}`), "1", "translateY(0)");
+                    }
                 });
 
                 /* else {
@@ -343,26 +343,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 } */
             };
             const optionsIO_skills = {
-                threshold: ".3",
+                threshold: ".4",
             };
 
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_skills);
             skillsContainersObserver.observe(container);
         });
 
-        selectorAll(".card_up").forEach((container) => {
+        selectorAll(".card_up").forEach((card) => {
             const watchSwipeAnimationContainer = ([entry]) => {
+                console.log(card.target);
                 if (entry.isIntersecting) {
-                    animateItem(selector(`#${container.id}`), "1", "translateY(0)");
+                    animateItem(selector(`#${card.id}`), "1", "translateY(0)");
                 }
             };
 
             const optionsIO_cards = {
-                threshold: ".3",
+                threshold: ".4",
             };
 
             const cardsObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_cards);
-            cardsObserver.observe(container);
+            cardsObserver.observe(card);
         });
     };
 
@@ -807,9 +808,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 createCard(item, fragmentHotProjects);
             });
             selector("#cards_hot_container").appendChild(fragmentHotProjects);
-            setTimeout(() => {
-                swipingAnimation();
-            }, 500);
+            setTimeout(swipingAnimation, 500);
         } catch (error) {
             console.log(error);
         }
