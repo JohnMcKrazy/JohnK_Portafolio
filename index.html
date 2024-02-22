@@ -311,7 +311,7 @@
                 </button>
             </div>
         </div>
-
+        <span class="info_bubble"> </span>
         <!-- !PAGE START -->
         <header class="section with_bg hero_section" id="hero_section">
             <div class="section_content">
@@ -1433,26 +1433,7 @@
                         </div>
                     </div>
                 </div>
-                <!--   <h1 class="subtitle_section animation_up" id="subtitle_section_search" style="opacity: 1; transform: translateY(0px)">Busqueda por tipo</h1>
-                <nav class="drop_down_container">
-                    <button type="button" class="btn search_list_btn">
-                        <span class="label_btn">Categorias</span>
-                        <span class="icon_container arrow_icon_container">
-                            <svg class="icon_svg arrow_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="clr-1" d="M16 12L10 18V6L16 12Z"></path></svg>
-                        </span>
-                    </button>
-                    <div class="list_btns_container"></div>
-                </nav>
-                <h2 class="title_subsection title_subsection_search_type">Busqueda de proyecto</h2>
 
-                <div class="cards_container swipe_animation_container_half cards_search_container">
-                    <div class="loader_container" data-name="loader_cards_search_container" id="loader_cards_search_container">
-                        <div class="spinner_container" id="spinner_container_cards_search">
-                            <div class="loading_spinner"></div>
-                            <h1 class="loading_text">Loading</h1>
-                        </div>
-                    </div>
-                </div> -->
                 <button type="button" class="btn more_btn portfolio_btn" data-name="portfolio_modal">
                     <span class="label_btn"> Ver Todos Los Trabajos </span>
                 </button>
@@ -2400,44 +2381,46 @@
         </section>
         <section class="section with_bg contact_section" id="contact_section">
             <div class="bg_section"></div>
-            <div class="swipe_animation_container_full">
-                <h1 class="title_section animation_up" id="title_contact">Contacto</h1>
-            </div>
-            <h2 class="subtitle_section">Estoy ancioso de hacer proyectos interesantes con tus ideas</h2>
-            <div class="flex flex_responsive section_content">
-                <div class="bullet">
-                    <h1 class="bullet_title">Trabajemos Juntos</h1>
-                    <p>Estoy ancioso de hacer proyectos interesantes con tus ideas</p>
+            <div class="section_content">
+                <div class="swipe_animation_container_full">
+                    <h1 class="title_section animation_up" id="title_contact">Contacto</h1>
                 </div>
-                <form class="form contact_form" id="contact_form">
-                    <div class="input_container">
-                        <label for="input_name">Nombre/s</label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="input_name" name="name" />
+                <h2 class="subtitle_section">Estoy ancioso de hacer proyectos interesantes con tus ideas</h2>
+                <div class="flex flex_responsive">
+                    <div class="bullet">
+                        <h1 class="bullet_title">Trabajemos Juntos</h1>
+                        <p>Estoy ancioso de hacer proyectos interesantes con tus ideas</p>
                     </div>
+                    <form class="form contact_form" id="contact_form">
+                        <div class="input_container">
+                            <label for="input_name">Nombre/s</label>
+                            <input type="text" placeholder="Escribe tu/s Nombre/s" id="input_name" name="name" />
+                        </div>
 
-                    <div class="input_container">
-                        <label for="input_last_name">Apellidos</label>
-                        <input type="text" placeholder="Escribe tu Apellido" id="input_last_name" name="last_name" />
-                    </div>
+                        <div class="input_container">
+                            <label for="input_last_name">Apellidos</label>
+                            <input type="text" placeholder="Escribe tu Apellido" id="input_last_name" name="last_name" />
+                        </div>
 
-                    <div class="input_container">
-                        <label for="input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="input_email" name="email" />
-                    </div>
+                        <div class="input_container">
+                            <label for="input_email">Email</label>
+                            <input type="email" placeholder="Escribe tu Email" id="input_email" name="email" />
+                        </div>
 
-                    <div class="input_container last">
-                        <label for="input_textarea">Descripción</label>
-                        <textarea id="input_textarea" name="description" placeholder="Comparte me un resumen de tu idea"></textarea>
-                    </div>
-                    <button type="submit" class="btn send_btn" id="contact_form_send_btn">
-                        <span class="label_btn">Enviar</span>
-                    </button>
-                </form>
+                        <div class="input_container last">
+                            <label for="input_textarea">Descripción</label>
+                            <textarea id="input_textarea" name="description" placeholder="Comparte me un resumen de tu idea"></textarea>
+                        </div>
+                        <button type="submit" class="btn send_btn" id="contact_form_send_btn">
+                            <span class="label_btn">Enviar</span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
 
         <footer class="section legals_section" id="legals_section">
-            <div class="footer_content section_content">
+            <div class="footer_content">
                 <div class="made_container">
                     <span class="title_footer" id="title_footer_id">Página realizada con:</span>
                     <div class="icons_container">
@@ -2544,7 +2527,7 @@
     </body>
     <!--^^TEAMPLATES-->
     <template id="card_project_template">
-        <article class="card card_up project_card" id="" tabindex="0">
+        <article class="card project_card card_up" id="" tabindex="0">
             <div class="info_card">
                 <h2 class="title"></h2>
                 <h3 class="subtitle">Realizado con:</h3>

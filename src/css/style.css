@@ -275,6 +275,18 @@ body P {
   text-wrap: pretty;
 }
 
+.info_bubble {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  background: red;
+  border-radius: 0.5rem;
+  opacity: 0;
+  display: none;
+  z-index: 10;
+}
+
 .icon_svg {
   transition: transform 1000ms ease-in-out;
 }
@@ -973,6 +985,7 @@ body P {
   align-items: center;
   height: 100%;
   width: 100%;
+  display: none;
 }
 .loader_container .spinner_container {
   transition: var(--T_S);
@@ -1800,13 +1813,17 @@ body P {
   min-width: 300px;
   width: 1600px;
   max-width: 100%;
+  min-height: calc(100vh - var(--NVH));
+  min-height: var(--FS_NVH);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .with_bg {
   position: relative;
-  min-height: calc(100vh - var(--NVH));
-  min-height: var(--FS_NVH);
   justify-content: center;
   margin-bottom: 0;
 }
@@ -1824,12 +1841,6 @@ body P {
 
 .hero_section .bg_section {
   background: var(--backgroundHero);
-}
-.hero_section .section_content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .hero_section .title_container H2 {
   color: var(--TC);
@@ -1894,6 +1905,9 @@ body P {
   margin-top: 1rem;
   font-size: var(--fontSizeMClamp);
   font-weight: 800;
+}
+.about_section .desk_icon_container {
+  float: right;
 }
 
 .services_container {
@@ -1988,6 +2002,12 @@ body P {
   padding: 2rem;
   margin: 0;
 }
+.legals_section .footer_content {
+  min-width: 300px;
+  width: 1600px;
+  max-width: 100%;
+  padding: 0 2rem;
+}
 .legals_section .made_container {
   display: flex;
   flex-direction: column;
@@ -1997,8 +2017,9 @@ body P {
 .legals_section .made_container .icons_container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  gap: 0;
 }
 .legals_section .lebels_container {
   margin-top: 1rem;
