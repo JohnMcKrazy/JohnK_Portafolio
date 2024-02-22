@@ -1911,9 +1911,11 @@ body {
 }
 .about_section {
     position: relative;
-    @include flexDirection(column, flex-start, center);
+    @include flexDirection(column, center, center);
     width: 100%;
-
+    .section_content {
+        position: relative;
+    }
     .about_salute {
         @include flexDirection(column, flex-start, flex-start);
         margin-top: 2rem;
@@ -1939,9 +1941,6 @@ body {
             font-size: var(--fontSizeMClamp);
             font-weight: 800;
         }
-    }
-    .desk_icon_container {
-        float: right;
     }
 }
 .services_container {
@@ -2296,7 +2295,7 @@ body {
         width: calc(50% - 2rem);
     }
     .flex_responsive {
-        @include flexDirection(row, center, flex-start);
+        @include flexDirection(row, center, denter);
     }
     .flex_img {
         flex-basis: 30%;

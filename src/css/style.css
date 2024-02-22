@@ -1874,9 +1874,12 @@ body P {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
+}
+.about_section .section_content {
+  position: relative;
 }
 .about_section .about_salute {
   display: flex;
@@ -1905,9 +1908,6 @@ body P {
   margin-top: 1rem;
   font-size: var(--fontSizeMClamp);
   font-weight: 800;
-}
-.about_section .desk_icon_container {
-  float: right;
 }
 
 .services_container {
@@ -2290,7 +2290,7 @@ body P {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: denter;
   }
   .flex_img {
     flex-basis: 30%;
