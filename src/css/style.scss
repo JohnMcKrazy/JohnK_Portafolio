@@ -122,8 +122,8 @@
 
     --NVH_F: 6rem;
     --NVH: 8rem;
-    --FS_NVH: calc(60rem - var(--NVH));
-    --FS-FNVH: calc(60rem - var(--NVH_F));
+    --FS_NVH: calc(100svh - var(--NVH));
+    --FS-FNVH: calc(100svh - var(--NVH_F));
 
     --titanimFont: "Titillium Web", sans-serif;
 
@@ -358,72 +358,6 @@ body {
     .cls-1 {
         fill: #999;
     }
-
-    .cls-1,
-    .cls-2,
-    .cls-3,
-    .cls-4,
-    .cls-5,
-    .cls-6,
-    .cls-7,
-    .cls-8,
-    .cls-9,
-    .cls-10,
-    .cls-11,
-    .cls-12,
-    .cls-13,
-    .cls-14,
-    .cls-15,
-    .cls-16,
-    .cls-17,
-    .cls-18,
-    .cls-19,
-    .cls-20,
-    .cls-21,
-    .cls-22,
-    .cls-23,
-    .cls-24,
-    .cls-25,
-    .cls-26,
-    .cls-27,
-    .cls-28,
-    .cls-29,
-    .cls-30,
-    .cls-31,
-    .cls-32,
-    .cls-33,
-    .cls-34,
-    .cls-35,
-    .cls-36,
-    .cls-37,
-    .cls-38,
-    .cls-39,
-    .cls-40,
-    .cls-41,
-    .cls-42,
-    .cls-43,
-    .cls-44,
-    .cls-45,
-    .cls-46,
-    .cls-47,
-    .cls-48,
-    .cls-49,
-    .cls-50,
-    .cls-51,
-    .cls-52,
-    .cls-53,
-    .cls-54,
-    .cls-55,
-    .cls-56,
-    .cls-57,
-    .cls-58,
-    .cls-59,
-    .cls-60,
-    .cls-61,
-    .cls-62 {
-        stroke-width: 0px;
-    }
-
     .cls-2 {
         fill: #280a54;
     }
@@ -1580,6 +1514,7 @@ body {
     transform: translateY(4rem);
     transition: var(--T_M);
 }
+
 /*
 //^ SWIPER LEFT CONTAINER
 .animation_left {
@@ -1729,20 +1664,24 @@ body {
         width: 100%;
     }
 }
-.alert_modal {
+.inner_link_btn {
+    text-decoration: underline;
+    color: var(--SC);
+    &:visited {
+        color: inherit;
+    }
+}
+.alert_modal,
+.legal_modal {
     .btn_container {
         @include flex(center, center);
         width: 100%;
         height: auto;
-        .inner_link_btn {
-            text-decoration: underline;
-            color: var(--SC);
-        }
-        .inner_link_btn:visited {
-            color: inherit;
-        }
     }
+}
+.alert_modal {
     .modal_info {
+        text-align: center;
         .btn_container {
             padding: 0;
         }
@@ -1756,13 +1695,8 @@ body {
         overflow: auto;
         scroll-behavior: smooth;
         padding-right: 1rem;
-        .btn_container {
+        .more_btn {
             width: 100%;
-
-            padding: 2rem 0;
-            .more_btn {
-                width: 100%;
-            }
         }
     }
 }
@@ -1912,14 +1846,13 @@ body {
     min-width: 300px;
     width: 1600px;
     max-width: 100%;
-    padding: 0 2rem;
+    padding: 2rem;
 }
 .with_bg {
     position: relative;
 
-    height: var(--FS_NVH);
     min-height: calc(100vh - var(--NVH));
-    min-height: calc(100svh - var(--NVH));
+    min-height: var(--FS_NVH);
     justify-content: center;
     margin-bottom: 0;
 }

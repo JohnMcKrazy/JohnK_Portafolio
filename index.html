@@ -51,7 +51,7 @@
                 <div class="modal_info">
                     <p class="description_modal">Esta pagina no utiliza cookies ni ninguno de sus datos</p>
                     <div class="btn_container">
-                        <button type="button" class="inner_link_btn" data-name="legal_modal">
+                        <button type="button" class="inner_link_btn" data-current="alert_modal" data-next="legal_modal">
                             <span class="label_btn">Avisos legales</span>
                         </button>
                     </div>
@@ -88,11 +88,17 @@
                         enim, recusandae voluptatibus laborum obcaecati. Maiores aut quae architecto molestiae quisquam nemo odio est soluta ut!
                     </p>
                     <div class="btn_container">
+                        <button type="button" class="inner_link_btn" data-current="legal_modal" data-next="alert_modal">
+                            <span class="label_btn">Avisos De Datos</span>
+                        </button>
+                    </div>
+                    <div class="btn_container">
                         <button type="button" class="btn more_btn legal_modal_accept_btn">
                             <span class="label_btn">Aceptar</span>
                         </button>
                     </div>
                 </div>
+
                 <button class="close_btn close_modal" id="modal_legal_close_btn" data-name="legal_modal">
                     <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
                         <title>Cerrar</title>

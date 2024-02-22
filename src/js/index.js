@@ -774,6 +774,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(error);
         }
     };
+    createProjectCardHot();
     //^CREATE PROJECT RANDOM CARDS
     const createProjectCardRandom = async () => {
         const arrayLenght = typesOfProjects.length;
@@ -809,28 +810,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     loadersContainers.forEach((loader) => {
         const watchCardsContainers = ([entry]) => {
-            const dataNameContainer = entry.target.attributes["data-name"].value;
-            if (entry.isIntersecting && dataNameContainer === "loader_cards_hot_container") {
-                animateItem(spinnerHotCardsContainer, "0", "translateY(-4rem)");
-                setTimeout(() => {
-                    loaderSearchCardsContainer.style.display = none;
-                    createProjectCardHot();
+            animateItem(spinnerSearchCardContainer, "0", "translateY(-4rem)");
+            setTimeout(() => {
+                loaderHotCardsContainer.style.display = none;
 
-                    setTimeout(() => {
-                        loadersObserver.unobserve(spinnerHotCardsContainer);
-                    }, 500);
-                }, 1200);
-            } else if (entry.isIntersecting && dataNameContainer === "loader_cards_search_container") {
-                animateItem(spinnerSearchCardContainer, "0", "translateY(-4rem)");
+                createProjectCardRandom();
                 setTimeout(() => {
-                    loaderHotCardsContainer.style.display = none;
-
-                    createProjectCardRandom();
-                    setTimeout(() => {
-                        loadersObserver.unobserve(spinnerSearchCardContainer);
-                    }, 500);
-                }, 1200);
-            }
+                    loadersObserver.unobserve(spinnerSearchCardContainer);
+                }, 500);
+            }, 1200);
         };
         const optionsIO_loaders = {
             threshold: ".5",
@@ -847,15 +835,23 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(localStorage.getItem(storageName));
     });
     const legalModal = selector(".legal_modal");
-    selector(".inner_link_btn").addEventListener("click", () => {
-        animateItem(alertModal, 0, "translate(-50%,-50%)");
-        setTimeout(() => {
-            alertModal.style.display = none;
-            legalModal.style.display = flx;
+    selectorAll(".inner_link_btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const current = btn.getAttribute("data-current");
+            const next = btn.getAttribute("data-next");
+            console.log(current, next);
+            const currentModal = selector(`.${current}`);
+            const nextModal = selector(`.${next}`);
+            console.log(currentModal, nextModal);
+            animateItem(currentModal, 0, "translate(-50%,-50%)");
             setTimeout(() => {
-                animateItem(legalModal, 1, "translate(-50%,0)");
-            }, 200);
-        }, 1000);
+                currentModal.style.display = none;
+                nextModal.style.display = flx;
+                setTimeout(() => {
+                    animateItem(nextModal, 1, "translate(-50%,0)");
+                }, 200);
+            }, 600);
+        });
     });
     selectorAll(".link_btn").forEach((btn) =>
         btn.addEventListener("click", () => {
