@@ -504,7 +504,40 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 200);
         }
     };
+    const animationIn = (item, display, delay = 1000) => {
+        item.style.display = display;
+        const timer = delay + 200;
+        setTimeout(() => {
+            item.animate([{ opacity: `0` }, { opacity: `1` }], { duration: delay, fill: `forwards` });
+        }, timer);
+    };
+    const animationOut = (item, delay = 1000) => {
+        const timer = delay + 200;
+        item.animate([{ opacity: `1` }, { opacity: `0` }], { duration: delay, fill: `forwards` });
+        setTimeout(() => {
+            item.style.display = `none`;
+        }, timer);
+    };
+    const myIllustration = selector(".desk_me");
+    const bioBubble = selector(".bio_bubble");
+    myIllustration.addEventListener("mouseover", (e) => {
+        if (bioBubble.style.display === "none") {
+            animationIn(bioBubble, "flex", 300);
+        }
+        const containerWidth = bioBubble.getClientRects()[0].width;
+        const containerHeight = bioBubble.getClientRects()[0].height;
+        console.log(e.layerX, myIllustration.getClientRects()[0].width);
+        setTimeout(() => {
+            bioBubble.style.transform = `translate(${e.layerX - containerWidth + 20}px, ${e.layerY - containerHeight + 20}px)`;
+        }, 250);
+    });
+    /*  myIllustration.addEventListener("mouseleave", () => {
+        animationOut(bioBubble, 300);
+    }); */
 
+    bioBubble.addEventListener("mouseleave", () => {
+        animationOut(bioBubble, 300);
+    });
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
         if (!storageContent) {
@@ -566,7 +599,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuContainer.style.display = flx;
             menuSocialContainer.style.display = flx;
         } else if (widConf > secondBreak || (widConf < firstBreak && widConf > secondBreak)) {
-            copyrightText.style.marginLeft = "5rem";
+            copyrightText.style.marginLeft = "3rem";
             lebelBtnMain.innerHTML = setIconContainer(
                 '<svg class="icon_svg nav_menu_icon_svg" id="home_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Inicio</title><path class="cls-1" d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"></path></svg>'
             );
@@ -940,6 +973,8 @@ document.addEventListener("DOMContentLoaded", () => {
         pageObserver.observe(section);
     });
     const navResizeObserve = new ResizeObserver(([entry]) => {
+        console.log(myIllustration.offSetTop);
+
         configSize(entry.contentRect.width);
     });
     navResizeObserve.observe(nav);

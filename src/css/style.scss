@@ -316,15 +316,81 @@ body {
     }
 }
 .info_bubble {
-    position: fixed;
     top: 0;
     left: 0;
-    padding: 2rem;
-    background: red;
-    border-radius: 0.5rem;
     opacity: 0;
     display: none;
-    z-index: 10;
+}
+.bio_bubble {
+    @include flexDirection(row, center, center);
+    gap: 2rem;
+
+    top: 0;
+    left: 0;
+    transition: all 500ms ease;
+    padding: 2em;
+    .info_container {
+        @include flexDirection(row, center, center);
+        gap: 1rem;
+        SPAN {
+            display: block;
+            text-align: left;
+            font-weight: 400;
+        }
+        .bio_name {
+            color: var(--FC);
+            font-size: var(--FS_L);
+        }
+        .bio_skill,
+        .bio_place {
+            font-size: var(--FS_N);
+            line-height: 1;
+        }
+        .bio_skill {
+            color: var(--TC);
+        }
+        .bio_place {
+            color: var(--midGray);
+        }
+        .info {
+            @include flexDirection(column, center, flex-start);
+            gap: 0.25rem;
+        }
+    }
+    IMG {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        overflow: hidden;
+        object-position: center;
+        object-fit: cover;
+    }
+    .icons_container {
+        width: fit-content;
+        padding: 0;
+        @include flexDirection(column, flex-start, center);
+        gap: 0;
+        background: var(--NVC_T);
+        color: var(--TC);
+        border-radius: 0.5rem;
+        .icon_container {
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+}
+
+.bubble {
+    position: absolute;
+    /* opacity: 0;
+    display: none; */
+    z-index: 2;
+    .info_container {
+        padding: 1rem;
+        background: var(--NVC_T);
+        color: var(--TC_C);
+        border-radius: 0.5rem;
+    }
 }
 .icon_svg {
     transition: transform 1000ms ease-in-out;
@@ -705,6 +771,7 @@ body {
     }
 }
 .desk_icon_container {
+    position: relative;
     width: 100%;
     height: auto;
 }
@@ -2071,7 +2138,7 @@ body {
         line-height: 1.5;
     }
     .made_content {
-        margin-left: 5rem;
+        margin-left: 3rem;
         .btns_container :not(:first-child) {
             margin-left: 2rem;
         }

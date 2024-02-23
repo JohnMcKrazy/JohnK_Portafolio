@@ -276,15 +276,96 @@ body P {
 }
 
 .info_bubble {
-  position: fixed;
   top: 0;
   left: 0;
-  padding: 2rem;
-  background: red;
-  border-radius: 0.5rem;
   opacity: 0;
   display: none;
-  z-index: 10;
+}
+
+.bio_bubble {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  padding: 2em;
+}
+.bio_bubble .info_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.bio_bubble .info_container SPAN {
+  display: block;
+  text-align: left;
+  font-weight: 400;
+}
+.bio_bubble .info_container .bio_name {
+  color: var(--FC);
+  font-size: var(--FS_L);
+}
+.bio_bubble .info_container .bio_skill,
+.bio_bubble .info_container .bio_place {
+  font-size: var(--FS_N);
+  line-height: 1;
+}
+.bio_bubble .info_container .bio_skill {
+  color: var(--TC);
+}
+.bio_bubble .info_container .bio_place {
+  color: var(--midGray);
+}
+.bio_bubble .info_container .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+.bio_bubble IMG {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.bio_bubble .icons_container {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  background: var(--NVC_T);
+  color: var(--TC);
+  border-radius: 0.5rem;
+}
+.bio_bubble .icons_container .icon_container {
+  height: 3rem;
+  width: 3rem;
+}
+
+.bubble {
+  position: absolute;
+  /* opacity: 0;
+  display: none; */
+  z-index: 2;
+}
+.bubble .info_container {
+  padding: 1rem;
+  background: var(--NVC_T);
+  color: var(--TC_C);
+  border-radius: 0.5rem;
 }
 
 .icon_svg {
@@ -615,6 +696,7 @@ body P {
 }
 
 .desk_icon_container {
+  position: relative;
   width: 100%;
   height: auto;
 }
@@ -2049,7 +2131,7 @@ body P {
   line-height: 1.5;
 }
 .legals_section .made_content {
-  margin-left: 5rem;
+  margin-left: 3rem;
 }
 .legals_section .made_content .btns_container :not(:first-child) {
   margin-left: 2rem;
