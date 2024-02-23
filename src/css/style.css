@@ -275,6 +275,18 @@ body P {
   text-wrap: pretty;
 }
 
+.bubble {
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+.bubble .info_container {
+  padding: 1rem;
+  background: var(--NVC_T);
+  color: var(--TC_C);
+  border-radius: 0.5rem;
+}
+
 .info_bubble {
   top: 0;
   left: 0;
@@ -283,6 +295,7 @@ body P {
 }
 
 .bio_bubble {
+  display: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -355,19 +368,6 @@ body P {
   width: 3rem;
 }
 
-.bubble {
-  position: absolute;
-  /* opacity: 0;
-  display: none; */
-  z-index: 2;
-}
-.bubble .info_container {
-  padding: 1rem;
-  background: var(--NVC_T);
-  color: var(--TC_C);
-  border-radius: 0.5rem;
-}
-
 .icon_svg {
   transition: transform 1000ms ease-in-out;
 }
@@ -423,6 +423,11 @@ body P {
   cursor: pointer;
 }
 
+.deskwork_icon {
+  /* .watch_num {
+      animation: blink 1s 0s infinite alternate;
+  } */
+}
 .deskwork_icon .cls-1 {
   fill: #999;
 }
@@ -655,9 +660,6 @@ body P {
 }
 .deskwork_icon .cls-mid {
   fill: var(--midLight);
-}
-.deskwork_icon .watch_num {
-  animation: blink 1s 0s infinite alternate;
 }
 .deskwork_icon .watch_mer,
 .deskwork_icon .icon_hide {

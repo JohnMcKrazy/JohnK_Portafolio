@@ -528,7 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const containerHeight = bioBubble.getClientRects()[0].height;
         console.log(e.layerX, myIllustration.getClientRects()[0].width);
         setTimeout(() => {
-            bioBubble.style.transform = `translate(${e.layerX - containerWidth + 20}px, ${e.layerY - containerHeight + 20}px)`;
+            bioBubble.style.transform = `translate(${e.layerX - containerWidth / 2}px, ${e.layerY - containerHeight / 2}px)`;
         }, 250);
     });
     /*  myIllustration.addEventListener("mouseleave", () => {
