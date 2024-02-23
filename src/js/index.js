@@ -192,7 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         },
     ];
-
     let johnK_storage = {
         page_view_count: 1,
         page_alert_status: open,
@@ -211,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const fragmentSearchProjects = $d.createDocumentFragment();
     const markersFragment = $d.createDocumentFragment();
     const listBtnsFragment = $d.createDocumentFragment();
-    const btnListTemplate = selector("#list_btn_template").content;
     const cardProjectTemplate = selector("#card_project_template").content;
 
     const loadersContainers = selectorAll(".loader_container");
@@ -256,6 +254,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const devScreen = selector(".dev_screen");
     const shieldScreen = selector(".shield_screen");
     const illustrationScreen = selector(".illustration_screen");
+    const myIllustration = selector(".desk_me");
+    const bioBubble = selector(".bio_bubble");
     const deleteChildElements = (parentElement) => {
         let child = parentElement.lastElementChild;
         while (child) {
@@ -364,63 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
             cardsObserver.observe(card);
         });
     };
-
-    selectorAll(".animation_key").forEach((key) => {
-        const tabletScreen = selector(".desk_tablet_screen");
-        key.addEventListener("mouseover", () => {
-            switch (key.getAttribute("data-key")) {
-                case "dev":
-                    selectorAll(".dev_icon").forEach((icon) => {
-                        icon.classList.add("icon_show");
-                    });
-                    shieldScreen.style.opacity = 1;
-                    setTimeout(() => (devScreen.style.opacity = 1), 500);
-                    break;
-                case "illustration":
-                    selectorAll(".illustration_icon").forEach((icon) => {
-                        icon.classList.add("icon_show");
-                    });
-                    //*illustrationScreen.style.opacity = 1;
-                    break;
-                case "design":
-                    selectorAll(".design_icon").forEach((icon) => {
-                        icon.classList.add("icon_show");
-                    });
-                    designScreen.style.opacity = 1;
-
-                    break;
-            }
-
-            tabletScreen.classList.add("tablet_screen_on");
-        });
-
-        key.addEventListener("mouseleave", () => {
-            switch (key.getAttribute("data-key")) {
-                case "dev":
-                    selectorAll(".dev_icon").forEach((icon) => {
-                        icon.classList.remove("icon_show");
-                    });
-                    devScreen.style.opacity = 0;
-                    setTimeout(() => (shieldScreen.style.opacity = 0), 500);
-                    break;
-                case "illustration":
-                    selectorAll(".illustration_icon").forEach((icon) => {
-                        icon.classList.remove("icon_show");
-                    });
-                    //* illustrationScreen.style.opacity = 0;
-                    break;
-                case "design":
-                    selectorAll(".design_icon").forEach((icon) => {
-                        icon.classList.remove("icon_show");
-                    });
-                    designScreen.style.opacity = 0;
-
-                    break;
-            }
-            tabletScreen.classList.remove("tablet_screen_on");
-        });
-    });
-
     const createCard = (item, frac) => {
         let iconsRow = "";
         const cloneProjectCard = cardProjectTemplate.cloneNode(true);
@@ -452,7 +395,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         frac.appendChild(projectCard);
     };
-
     const menuSocialActions = (action) => {
         if (action === open) {
             /* console.log("cerrando menu social"); */
@@ -471,7 +413,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 200);
         }
     };
-
     const modalActions = (action) => {
         if (action === close) {
             modal.style.opacity = 0;
@@ -481,7 +422,6 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => (modal.style.opacity = 1), 500);
         }
     };
-
     const modalWindowActions = (window, action) => {
         if (action === close) {
             animateItem(window, 0, "translate(-50%,-50%)");
@@ -518,24 +458,6 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.display = `none`;
         }, timer);
     };
-    const myIllustration = selector(".desk_me");
-    const bioBubble = selector(".bio_bubble");
-    myIllustration.addEventListener("mouseover", (e) => {
-        animationIn(bioBubble, "flex", 300);
-
-        setTimeout(() => {
-            const containerWidth = bioBubble.getClientRects()[0].width;
-            const containerHeight = bioBubble.getClientRects()[0].height;
-            bioBubble.style.transform = `translate(${e.layerX - containerWidth / 2}px, ${e.layerY - containerHeight / 2}px)`;
-        }, 250);
-    });
-    /*  myIllustration.addEventListener("mouseleave", () => {
-        animationOut(bioBubble, 300);
-    }); */
-
-    bioBubble.addEventListener("mouseleave", () => {
-        animationOut(bioBubble, 300);
-    });
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
         if (!storageContent) {
@@ -651,7 +573,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     };
-
     setTimeout(() => configSize(window.innerWidth), 200);
     //! */
 
@@ -728,88 +649,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const createSelectionTypeBtns = async () => {
+    /*  const createSelectionTypeBtns = async () => {
         try {
             const rawData = await fetch(portfolioData);
             const data = await rawData.json();
             data.forEach((item) => {
-                const type = item["projects"]["type"];
-                if (!typesOfProjects.includes(type)) {
-                    typesOfProjects.push(type);
-                }
+              console.log(item);
             });
-            console.log(typesOfProjects);
-            /*  typesOfProjects.sort().forEach((type) => {
-                let newProjectTypeData = { value: type };
-                newProjectsListData.push(newProjectTypeData);
-            }); */
-            const allTemplate = btnListTemplate.cloneNode(true);
-            const btnAll = allTemplate.querySelector("BUTTON");
-            const labelBtn = allTemplate.querySelector(".label_btn");
-            btnAll.setAttribute("data-name", "all");
-            btnAll.classList.add("list_btn_active");
-            labelBtn.textContent = "Todos";
-
-            listBtnsFragment.append(btnAll);
-            typesOfProjects.sort().forEach((item) => {
-                const template = btnListTemplate.cloneNode(true);
-                const newBtn = template.querySelector("BUTTON");
-                const labelBtn = template.querySelector(".label_btn");
-                newBtn.setAttribute("data-name", item);
-                labelBtn.textContent = item;
-
-                listBtnsFragment.append(newBtn);
-            });
-
-            selector(".list_btns_container").append(listBtnsFragment);
-            const checkPortfolioBtns = (current) => {
-                selectorAll(".list_btn").forEach((btn) => {
-                    btn.classList.remove("list_btn_active");
-                });
-
-                current.classList.add("list_btn_active");
-                const currentNameData = current.getAttribute("data-name");
-                console.log(currentNameData);
-            };
-            selectorAll(".list_btn").forEach((btn) => {
-                btn.addEventListener("click", () => checkPortfolioBtns(btn));
-            });
-
-            /*  selectorAll(".list_btn").forEach((itemBtn) => {
-                const createSearchedCards = (e) => {
-                    deleteChildElements(porfolioPortfolioCardsContainer);
-
-                    const currentNameData = e.target.getAttribute("data-name");
-                    console.log(currentNameData);
-
-                    data.forEach((item) => {
-                        const dataIncludedResponse = item["projects"]["type"].includes(currentNameData);
-                        if (dataIncludedResponse) {
-                            //todo CREAR TARJETAS ESPECIFICAS DE BUSQUEDA
-                            //*console.log(item);
-
-                            createCard(item, fragmentSearchProjects);
-                            titleSubsectionCardsSearch.textContent = currentNameData;
-                            porfolioPortfolioCardsContainer.appendChild(fragmentSearchProjects);
-                            const projectCards = document.querySelectorAll(".project_card");
-                            projectCards.forEach((card) => {
-                                setTimeout(() => {
-                                    animateItem(card, "1", "translateY(0)");
-                                }, 500);
-                            });
-                        } else if (!dataIncludedResponse) {
-                            //*console.log('este es el boton que abre la lista, deberia de');
-                        }
-                    });
-                };
-                itemBtn.addEventListener("enter", createSearchedCards);
-                itemBtn.addEventListener("click", createSearchedCards);
-            }); */
         } catch (error) {
             console.log(error);
         }
-    };
-    createSelectionTypeBtns();
+    }; */
 
     const createProjectCardHot = async () => {
         try {
@@ -967,10 +817,28 @@ document.addEventListener("DOMContentLoaded", () => {
         configSize(entry.contentRect.width);
     });
     navResizeObserve.observe(nav);
+
     //! NO BORRAR --EDITAR SOLO MIENTRAS ES DEBIDO
+    myIllustration.addEventListener("mouseover", (e) => {
+        animationIn(bioBubble, "flex", 300);
+
+        setTimeout(() => {
+            const containerWidth = bioBubble.getClientRects()[0].width;
+            const containerHeight = bioBubble.getClientRects()[0].height;
+            bioBubble.style.transform = `translate(${e.layerX - containerWidth / 2}px, ${e.layerY - containerHeight / 2}px)`;
+        }, 250);
+    });
+    bioBubble.addEventListener("mouseleave", () => {
+        animationOut(bioBubble, 300);
+    });
     btnLogo.addEventListener("click", toTheTop);
-    const accessibilityBtns = selectorAll(".accessibility_btn");
-    accessibilityBtns.forEach((btn) => {
+    selector(".btn_down").addEventListener("click", () => {
+        const windowHeight = window.innerHeight;
+        const navHeight = nav.getBoundingClientRect().height;
+        const fixHeight = windowHeight - navHeight;
+        window.scrollTo(0, fixHeight);
+    });
+    selectorAll(".accessibility_btn").forEach((btn) => {
         btn.addEventListener("click", () => scrollToSection(btn));
     });
     selectorAll(".action_menu").forEach((btn) => {
@@ -989,15 +857,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("enter", () => modalWindowActions(contactModal, open));
         btn.addEventListener("click", () => modalWindowActions(contactModal, open));
     });
-
-    window.addEventListener("scroll", () => checkWindowHeight());
-
-    selector(".btn_down").addEventListener("click", () => {
-        const windowHeight = window.innerHeight;
-        const navHeight = nav.getBoundingClientRect().height;
-        const fixHeight = windowHeight - navHeight;
-        window.scrollTo(0, fixHeight);
-    });
     selectorAll(".btn_hero").forEach((btn) => {
         btn.addEventListener("click", () => {
             scrollToSection(btn);
@@ -1010,7 +869,63 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         btn.addEventListener("click", handleClick);
     });
+    selectorAll(".animation_key").forEach((key) => {
+        const tabletScreen = selector(".desk_tablet_screen");
+        key.addEventListener("mouseover", () => {
+            switch (key.getAttribute("data-key")) {
+                case "dev":
+                    selectorAll(".dev_icon").forEach((icon) => {
+                        icon.classList.add("icon_show");
+                    });
+                    shieldScreen.style.opacity = 1;
+                    setTimeout(() => (devScreen.style.opacity = 1), 500);
+                    break;
+                case "illustration":
+                    selectorAll(".illustration_icon").forEach((icon) => {
+                        icon.classList.add("icon_show");
+                    });
+                    //*illustrationScreen.style.opacity = 1;
+                    break;
+                case "design":
+                    selectorAll(".design_icon").forEach((icon) => {
+                        icon.classList.add("icon_show");
+                    });
+                    designScreen.style.opacity = 1;
 
+                    break;
+            }
+
+            tabletScreen.classList.add("tablet_screen_on");
+        });
+
+        key.addEventListener("mouseleave", () => {
+            switch (key.getAttribute("data-key")) {
+                case "dev":
+                    selectorAll(".dev_icon").forEach((icon) => {
+                        icon.classList.remove("icon_show");
+                    });
+                    devScreen.style.opacity = 0;
+                    setTimeout(() => (shieldScreen.style.opacity = 0), 500);
+                    break;
+                case "illustration":
+                    selectorAll(".illustration_icon").forEach((icon) => {
+                        icon.classList.remove("icon_show");
+                    });
+                    //* illustrationScreen.style.opacity = 0;
+                    break;
+                case "design":
+                    selectorAll(".design_icon").forEach((icon) => {
+                        icon.classList.remove("icon_show");
+                    });
+                    designScreen.style.opacity = 0;
+
+                    break;
+            }
+            tabletScreen.classList.remove("tablet_screen_on");
+        });
+    });
+
+    window.addEventListener("scroll", () => checkWindowHeight());
     /*  selector("#contact_form_send_btn").addEventListener("click", (e) => {
         e.preventDefault();
     }); */
@@ -1021,8 +936,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
     });
  */
-    //! NO BORRAR --
-    /* THEME ACTIONS - START */
 
     const changeTheme = (tm) => {
         const BODY = selector("body");
@@ -1054,5 +967,4 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });
-    /* THEME ACTIONS - OVER */
 });

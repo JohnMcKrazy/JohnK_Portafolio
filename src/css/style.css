@@ -1836,7 +1836,8 @@ body P {
   align-items: center;
 }
 .section_divider .content {
-  width: calc(100% - 16rem);
+  min-width: 250px;
+  width: 80%;
   max-width: 1200px;
   height: 100%;
 }
@@ -1869,12 +1870,16 @@ body P {
   fill: var(--TC_C);
 }
 .section_divider .author_container {
-  padding-right: 8rem;
+  transform: translateX(-7rem);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 .section_divider .author_container SPAN,
 .section_divider .author_container Q {
   display: block;
-  width: 100%;
   text-align: right;
 }
 .section_divider .author_container .author {
@@ -1884,7 +1889,11 @@ body P {
 }
 .section_divider .author_container .author_info {
   color: var(--TC_C);
-  font-size: var(--FS_N);
+  font-size: var(--fontSizeSClamp);
+}
+.section_divider .author_container .author,
+.section_divider .author_container .author_info {
+  line-height: 1;
 }
 
 .section {
@@ -2374,6 +2383,8 @@ body P {
 
 .list_btn_active {
   background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
+}
+.list_btn_active .label_btn {
   color: var(--TC_C) !important;
 }
 

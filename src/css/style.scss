@@ -1881,7 +1881,8 @@ body {
     padding: 4rem 0;
     @include flexCenter();
     .content {
-        width: calc(100% - 16rem);
+        min-width: 250px;
+        width: 80%;
         max-width: 1200px;
         height: 100%;
     }
@@ -1913,11 +1914,12 @@ body {
         }
     }
     .author_container {
-        padding-right: 8rem;
+        transform: translateX(-7rem);
+        margin-top: 2rem;
+        @include flexDirection(column, flex-end, flex-end);
         SPAN,
         Q {
             display: block;
-            width: 100%;
             text-align: right;
         }
         .author {
@@ -1927,7 +1929,11 @@ body {
         }
         .author_info {
             color: var(--TC_C);
-            font-size: var(--FS_N);
+            font-size: var(--fontSizeSClamp);
+        }
+        .author,
+        .author_info {
+            line-height: 1;
         }
     }
 }
@@ -2386,7 +2392,9 @@ body {
 }
 .list_btn_active {
     background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
-    color: var(--TC_C) !important;
+    .label_btn {
+        color: var(--TC_C) !important;
+    }
 }
 @media screen and (min-width: 750px) {
     .card {

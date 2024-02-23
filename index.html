@@ -148,7 +148,20 @@
                         <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
                     </svg>
                 </button>
-                <div class="list_btns_container"></div>
+                <div class="list_btns_container">
+                    <button type="button" class="btn list_btn list_btn_active" data-name="all">
+                        <span class="label_btn">Todo</span>
+                    </button>
+                    <button type="button" class="btn list_btn" data-name="design">
+                        <span class="label_btn">Diseño</span>
+                    </button>
+                    <button type="button" class="btn list_btn" data-name="dev">
+                        <span class="label_btn">Desarrollo</span>
+                    </button>
+                    <button type="button" class="btn list_btn" data-name="illustration">
+                        <span class="label_btn">Ilustración</span>
+                    </button>
+                </div>
                 <div class="sublist_btns_container"></div>
                 <div class="cards_container cards_portfolio_container"></div>
             </div>
@@ -2636,8 +2649,8 @@
             </div>
         </article>
     </template>
-    <template id="list_btn_template">
-        <button type="button" class="btn list_btn" data-name="">
+    <template id="sublist_btn_template">
+        <button type="button" class="btn sublist_btn" name="">
             <span class="label_btn"></span>
         </button>
     </template>
