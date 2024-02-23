@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storageContent;
     const portfolioData = "./portfolioDB.json";
     const storageName = "JohnK_Maker";
-    const hotCardsSelection = ["js_documentation", "pokedex", "tribute", "berserkers_2", "creaciones_hermed", "verona"];
+    const hotCardsSelection = ["berserkers_2", "verona", "creaciones_hermed", "leiru", "pokedex", "js_documentation", "rick_and_morty", "tribute"];
     const infoSoftware = [
         {
             db_name: "illustrator",
@@ -200,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
         page_theme: none,
     };
 
-    console.log("Dom Ready");
     const $d = document;
     const selector = (tag) => $d.querySelector(`${tag}`);
     const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
@@ -352,7 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         selectorAll(".card_up").forEach((card) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                console.log(card.target);
                 if (entry.isIntersecting) {
                     animateItem(selector(`#${card.id}`), "1", "translateY(0)");
                 }
@@ -370,7 +368,6 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".animation_key").forEach((key) => {
         const tabletScreen = selector(".desk_tablet_screen");
         key.addEventListener("mouseenter", () => {
-            console.log(key.getAttribute("data-key"));
             switch (key.getAttribute("data-key")) {
                 case "dev":
                     selectorAll(".dev_icon").forEach((icon) => {
@@ -531,7 +528,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
             }
             if (storageContent["page_theme"] !== none) {
-                console.log(storageContent["page_theme"]);
                 currentTheme = storageContent["page_theme"];
             }
         }
@@ -878,10 +874,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             const current = btn.getAttribute("data-current");
             const next = btn.getAttribute("data-next");
-            console.log(current, next);
             const currentModal = selector(`.${current}`);
             const nextModal = selector(`.${next}`);
-            console.log(currentModal, nextModal);
             animateItem(currentModal, 0, "translate(-50%,-50%)");
             setTimeout(() => {
                 currentModal.style.display = none;

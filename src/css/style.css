@@ -610,6 +610,9 @@ body P {
 .deskwork_icon .desk_ball:hover {
   animation: bounceUp 1000ms 250ms infinite ease-in-out;
 }
+.deskwork_icon .svg_btn {
+  cursor: crosshair;
+}
 
 .desk_icon_container {
   width: 100%;
