@@ -86,6 +86,11 @@
     justify-content: $jc;
     align-items: $ai;
 }
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 :root {
     //¿GENERAL COLORS START
     --logoGray: hsl(0, 0%, 65%);
@@ -150,7 +155,7 @@
     --FC_H: hsl(260, 85%, 15%);
     --SC: hsl(195, 85%, 60%);
     --SC_H: hsl(195, 63%, 48%);
-
+    --quote: rgb(150, 150, 245);
     --TC: hsl(0, 0%, 10%);
     --TC_C: hsl(0, 0%, 90%);
     --NVC: hsl(0, 0%, 95%);
@@ -193,6 +198,7 @@
     --FC_H: hsl(190, 100%, 70%);
     --FC: hsl(190, 100%, 40%);
     --FC: hsl(190, 100%, 40%);
+    --quote: rgb(150, 215, 245);
     --SC: hsl(240, 55%, 60%);
     --SC_H: hsl(240, 55%, 40%);
     --TC: hsl(0, 0%, 90%);
@@ -314,18 +320,17 @@ body {
         color: var(--TC);
         text-wrap: pretty;
     }
+    scrollbar-color: var(--FC) var(--SC);
+    scrollbar-width: thin;
 }
 
 .bubble {
     position: absolute;
     opacity: 0;
+    background: var(--NVC_T);
+    color: var(--TC_C);
+    border-radius: 0.5rem;
     z-index: 2;
-    .info_container {
-        padding: 1rem;
-        background: var(--NVC_T);
-        color: var(--TC_C);
-        border-radius: 0.5rem;
-    }
 }
 .info_bubble {
     top: 0;
@@ -334,41 +339,26 @@ body {
     display: none;
 }
 .bio_bubble {
+    @include flexDirection(column, center, center);
     display: none;
-    @include flexDirection(row, center, center);
     top: 0;
     left: 0;
     transition: all 500ms ease;
-    padding: 2em;
-    .info_container {
-        @include flexDirection(row, center, center);
-        gap: 1rem;
-        SPAN {
-            display: block;
-            text-align: left;
-            font-weight: 400;
-        }
-        .bio_name {
-            color: var(--FC);
-            font-size: var(--FS_L);
-        }
-        .bio_skill,
-        .bio_place {
-            font-size: var(--FS_N);
-            line-height: 1;
-        }
-        .bio_skill {
-            color: var(--TC);
-        }
-        .bio_place {
-            color: var(--midGray);
-        }
-        .info {
-            @include flexDirection(column, center, flex-start);
-            gap: 0.25rem;
-        }
+    gap: 1rem;
+    overflow: hidden;
+    .header_bubble {
+        height: 6rem;
+        width: 100%;
+        background: url(../img/backgrounds/basketball-g9fd537503_1920.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     IMG {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
         width: 6rem;
         height: 6rem;
         border-radius: 50%;
@@ -376,17 +366,39 @@ body {
         object-position: center;
         object-fit: cover;
     }
+    .info {
+        @include flexDirection(column, center, flex-start);
+        gap: 0.25rem;
+        padding: 1rem 1rem 0;
+        SPAN {
+            display: block;
+            text-align: left;
+        }
+        .bio_name {
+            color: var(--FC);
+            font-size: var(--FS_L);
+            font-weight: 800;
+        }
+        .bio_skill,
+        .bio_place {
+            font-size: var(--FS_N);
+            line-height: 1;
+            font-weight: 400;
+            text-align: center;
+            @include flexCenter();
+            color: var(--TC);
+            width: 100%;
+        }
+    }
+
     .icons_container {
-        width: fit-content;
         padding: 0;
-        @include flexDirection(column, flex-start, center);
         gap: 0;
-        background: var(--NVC_T);
-        color: var(--TC);
-        border-radius: 0.5rem;
+        width: 100%;
         .icon_container {
             height: 3rem;
             width: 3rem;
+            padding: 0.5rem;
         }
     }
 }
@@ -640,7 +652,7 @@ body {
     }
 
     .cls-46 {
-        fill: #ede848;
+        fill: orange;
     }
 
     .cls-47 {
@@ -1197,6 +1209,7 @@ body {
     color: var(--TC_C);
     text-align: center;
     transition: var(--T_F);
+
     border-radius: 2rem;
     min-height: 4rem;
     cursor: pointer;
@@ -1602,89 +1615,44 @@ body {
 }
 */
 //!
-.list_btn {
-    padding: 0.5rem 3rem;
-}
-.search_list_btn {
-    @include flexDirection(row, center, center);
-    position: absolute;
-    border: solid 1px var(--FC);
-    background: none;
-    min-height: 4rem;
-    width: 15rem;
-    padding: 0.5rem 1rem;
-
-    .label_btn,
-    .icon_container {
-        display: block;
-    }
-    .arrow_icon {
-        transform: rotate(0);
-    }
-    .icon_container {
-        width: 2rem;
-        height: 2rem;
-        padding: 0;
-    }
-    .icon_svg {
-        padding: 0;
-        fill: var(--FC);
-    }
-}
-.list_btn,
-.search_list_btn {
-    background: none;
-    .label_btn {
-        color: var(--TC);
-    }
-
-    &:hover .label_btn {
-        color: var(--whiteOff);
-    }
-}
-.search_list_btn:hover,
-.list_btn:hover,
-.search_list_btn:active,
-.list_btn:active,
-.search_list_btn:focus,
-.list_btn:focus {
-    color: var(--TC_C);
-    background: linear-gradient(45deg, var(--FC), var(--SC));
-    .icon_svg {
-        fill: var(--TC_C);
-    }
-}
 .accent_text {
     color: var(--FC);
 }
-.drop_down_container {
-    position: relative;
-    width: 100%;
-    height: 4rem;
-    @include flex(center, center);
-    overflow: visible;
-    margin-bottom: 0.5rem;
-    .btn {
-        border-radius: 0.5rem;
-    }
-    .btn:not(.search_list_btn) {
-        border: none;
-    }
-}
+
 .list_btns_container {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
-    @include flexDirection(column, flex-start, center);
-    display: none;
+    @include flexDirection(row, space-between, flex-start);
     background: var(--bgM);
-    overflow: hidden;
-    z-index: 3;
+    width: 100%;
+
     .list_btn {
         text-transform: uppercase;
         width: 100%;
+        padding: 0.5rem 3rem;
+        border-radius: 0.25rem;
+        background: none;
+        .label_btn {
+            color: var(--TC);
+            pointer-events: none;
+        }
+
+        &:hover .label_btn {
+            color: var(--whiteOff);
+        }
     }
+    .list_btn:hover,
+    .list_btn:active,
+    .list_btn:focus {
+        color: var(--TC_C);
+        background: linear-gradient(45deg, var(--FC), var(--SC));
+        .icon_svg {
+            fill: var(--TC_C);
+        }
+    }
+}
+.sublist_btns_container {
+    background: rgba(150, 150, 150, 0.2);
+    padding: 1rem;
+    width: 100%;
 }
 .form {
     background: var(--NVC);
@@ -1906,6 +1874,63 @@ body {
     @include flexDirection(row, center, flex-start);
     gap: 1rem;
 }
+.section_divider {
+    width: 100%;
+    min-height: 25rem;
+    background: var(--FC);
+    padding: 4rem 0;
+    @include flexCenter();
+    .content {
+        width: calc(100% - 16rem);
+        max-width: 1200px;
+        height: 100%;
+    }
+
+    .quote_container {
+        @include flexDirection(row, center, center);
+        height: 100%;
+        .quote {
+            color: var(--TC_C);
+            font-size: var(--fontSizeXClamp);
+        }
+        .quote_icon {
+            height: 100%;
+            width: 6rem;
+        }
+        .quote_start {
+            align-self: flex-start;
+            transform: translateY(-3rem);
+        }
+
+        .quote_end {
+            transform: translateY(3rem);
+            align-self: flex-end;
+        }
+        .icon_container {
+            width: 6rem;
+            height: 6rem;
+            fill: var(--TC_C);
+        }
+    }
+    .author_container {
+        padding-right: 8rem;
+        SPAN,
+        Q {
+            display: block;
+            width: 100%;
+            text-align: right;
+        }
+        .author {
+            font-size: var(--fontSizeMClamp);
+            color: var(--quote);
+            font-weight: 600;
+        }
+        .author_info {
+            color: var(--TC_C);
+            font-size: var(--FS_N);
+        }
+    }
+}
 .section {
     margin-bottom: 2rem;
     /* min-height: calc(100vh - var(--NVH_F)); */
@@ -2058,7 +2083,6 @@ body {
         width: 8rem;
     }
 }
-
 .clients_section {
     @include flex(center, center);
     .clients_container {
@@ -2141,6 +2165,11 @@ body {
         .btns_container :not(:first-child) {
             margin-left: 2rem;
         }
+    }
+}
+.portfolio_section {
+    .portfolio_btn {
+        border-radius: 0.5rem;
     }
 }
 .nav_menu {
@@ -2340,7 +2369,6 @@ body {
         }
     }
 }
-
 .btn_active {
     background: var(--FC) !important;
     color: var(--TC_C) !important;
@@ -2355,6 +2383,10 @@ body {
             fill: var(--TC_C);
         }
     }
+}
+.list_btn_active {
+    background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
+    color: var(--TC_C) !important;
 }
 @media screen and (min-width: 750px) {
     .card {

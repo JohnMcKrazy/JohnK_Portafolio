@@ -4,8 +4,9 @@
         "db_name": "pokedex",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web", "API Rest", "Programación"],
-            "type_data": ["desarrollo_web"],
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "API Rest", "Programación"],
             "description": "",
             "reach": ["Desarrollo Web", "Programación"],
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
@@ -37,8 +38,9 @@
         "db_name": "rick_and_morty",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web", "API Rest", "Programación"],
-            "type_data": ["desarrolo_web"],
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "API Rest", "Programación"],
             "description": "",
             "reach": ["Desarrollo Web", "Programación"],
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
@@ -70,8 +72,9 @@
         "db_name": "tribute",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web"],
-            "type_data": ["desarrollo_web"],
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web"],
             "description": "",
             "reach": ["Desarrollo Web"],
             "technologies": ["HTML", "CSS"],
@@ -103,8 +106,9 @@
         "db_name": "js_documentation",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web"],
-            "type_data": ["desarrollo_web"],
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web"],
             "description": "",
             "reach": ["Desarrollo Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
@@ -136,8 +140,9 @@
         "db_name": "choroplet_map",
         "client_logo": "",
         "projects": {
-            "type": ["Desarrollo Web", "Visualización de Datos", "API Rest", "Programación"],
-            "type_data": ["desarrollo_web"],
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "Visualización de Datos", "API Rest", "Programación"],
             "description": "",
             "reach": ["Desarrollo Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
@@ -165,12 +170,47 @@
         "votes": 5
     },
     {
+        "client_name": "Weather App",
+        "db_name": "weather",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "API Rest", "Programación"],
+            "description": "",
+            "reach": ["Desarrollo Web", "Programación"],
+            "technologies": ["HTML", "CSS", "Python"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/weather.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://python-weather-app-tvey.onrender.com/"
+        },
+        "votes": 2
+    },
+    {
         "client_name": "Leiru",
         "db_name": "leiru",
         "client_logo": "",
         "projects": {
-            "type": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
-            "type_data": ["identidad_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
@@ -202,8 +242,9 @@
         "db_name": "afroduck",
         "client_logo": "",
         "projects": {
-            "type": ["Identidad Corporativa", "Papeleria", "Logotipo"],
-            "type_data": ["identidad_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Identidad Corporativa", "Papeleria", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
@@ -235,8 +276,9 @@
         "db_name": "verona",
         "client_logo": "",
         "projects": {
-            "type": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
-            "type_data": ["identidad_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
             "technologies": ["Illustrator"],
@@ -268,8 +310,9 @@
         "db_name": "creaciones_hermed",
         "client_logo": "",
         "projects": {
-            "type": ["Edicion de imagen", "Papeleria", "Promocionales"],
-            "type_data": ["papeleria"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Edicion de imagen", "Papeleria", "Promocionales"],
             "description": "",
             "reach": ["Tarjeta de presentacion", "Promocionales", "Edicion de imagen", "Redes Sociales"],
             "technologies": ["Photoshop"],
@@ -301,8 +344,9 @@
         "db_name": "bucefalos_1",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -334,8 +378,9 @@
         "db_name": "bucefalos_2",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -367,8 +412,9 @@
         "db_name": "panteras_1",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -400,8 +446,9 @@
         "db_name": "bulldogs_1",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -433,8 +480,9 @@
         "db_name": "berserkers_1",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -466,8 +514,9 @@
         "db_name": "berserkers_2",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -499,8 +548,9 @@
         "db_name": "berserkers_3",
         "client_logo": "",
         "projects": {
-            "type": ["Imagen Deportiva", "Logotipo"],
-            "type_data": ["imagen_corporativa"],
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Imagen Deportiva", "Logotipo"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
@@ -524,39 +574,6 @@
                 }
             },
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
-    },
-    {
-        "client_name": "Weather App",
-        "db_name": "weather",
-        "client_logo": "",
-        "projects": {
-            "type": ["Desarrollo Web", "API Rest", "Programación"],
-            "type_data": ["desarrolo_web"],
-            "description": "",
-            "reach": ["Desarrollo Web", "Programación"],
-            "technologies": ["HTML", "CSS", "Python"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "src/img/weather.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
-            "project_link": "https://python-weather-app-tvey.onrender.com/"
         },
         "votes": 2
     }

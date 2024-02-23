@@ -129,6 +129,7 @@
   --FC_H: hsl(260, 85%, 15%);
   --SC: hsl(195, 85%, 60%);
   --SC_H: hsl(195, 63%, 48%);
+  --quote: rgb(150, 150, 245);
   --TC: hsl(0, 0%, 10%);
   --TC_C: hsl(0, 0%, 90%);
   --NVC: hsl(0, 0%, 95%);
@@ -164,6 +165,7 @@
   --FC_H: hsl(190, 100%, 70%);
   --FC: hsl(190, 100%, 40%);
   --FC: hsl(190, 100%, 40%);
+  --quote: rgb(150, 215, 245);
   --SC: hsl(240, 55%, 60%);
   --SC_H: hsl(240, 55%, 40%);
   --TC: hsl(0, 0%, 90%);
@@ -203,6 +205,8 @@ body {
   overflow-x: hidden;
   color: var(--TC);
   background: var(--bgC);
+  scrollbar-color: var(--FC) var(--SC);
+  scrollbar-width: thin;
 }
 body img {
   width: 100%;
@@ -278,13 +282,10 @@ body P {
 .bubble {
   position: absolute;
   opacity: 0;
-  z-index: 2;
-}
-.bubble .info_container {
-  padding: 1rem;
   background: var(--NVC_T);
   color: var(--TC_C);
   border-radius: 0.5rem;
+  z-index: 2;
 }
 
 .info_bubble {
@@ -295,52 +296,30 @@ body P {
 }
 
 .bio_bubble {
-  display: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  top: 0;
-  left: 0;
-  transition: all 500ms ease;
-  padding: 2em;
-}
-.bio_bubble .info_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.bio_bubble .info_container SPAN {
-  display: block;
-  text-align: left;
-  font-weight: 400;
-}
-.bio_bubble .info_container .bio_name {
-  color: var(--FC);
-  font-size: var(--FS_L);
-}
-.bio_bubble .info_container .bio_skill,
-.bio_bubble .info_container .bio_place {
-  font-size: var(--FS_N);
-  line-height: 1;
-}
-.bio_bubble .info_container .bio_skill {
-  color: var(--TC);
-}
-.bio_bubble .info_container .bio_place {
-  color: var(--midGray);
-}
-.bio_bubble .info_container .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 0.25rem;
+  align-items: center;
+  display: none;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  gap: 1rem;
+  overflow: hidden;
+}
+.bio_bubble .header_bubble {
+  height: 6rem;
+  width: 100%;
+  background: url(../img/backgrounds/basketball-g9fd537503_1920.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .bio_bubble IMG {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
@@ -350,22 +329,44 @@ body P {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.bio_bubble .icons_container {
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0;
+.bio_bubble .info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1rem 1rem 0;
+}
+.bio_bubble .info SPAN {
+  display: block;
+  text-align: left;
+}
+.bio_bubble .info .bio_name {
+  color: var(--FC);
+  font-size: var(--FS_L);
+  font-weight: 800;
+}
+.bio_bubble .info .bio_skill,
+.bio_bubble .info .bio_place {
+  font-size: var(--FS_N);
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0;
-  background: var(--NVC_T);
   color: var(--TC);
-  border-radius: 0.5rem;
+  width: 100%;
+}
+.bio_bubble .icons_container {
+  padding: 0;
+  gap: 0;
+  width: 100%;
 }
 .bio_bubble .icons_container .icon_container {
   height: 3rem;
   width: 3rem;
+  padding: 0.5rem;
 }
 
 .icon_svg {
@@ -588,7 +589,7 @@ body P {
   fill: #5a5b5a;
 }
 .deskwork_icon .cls-46 {
-  fill: #ede848;
+  fill: orange;
 }
 .deskwork_icon .cls-47 {
   fill: #f79b16;
@@ -1543,107 +1544,47 @@ body P {
     transition: var(--T-S);
 }
 */
-.list_btn {
-  padding: 0.5rem 3rem;
-}
-
-.search_list_btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  border: solid 1px var(--FC);
-  background: none;
-  min-height: 4rem;
-  width: 15rem;
-  padding: 0.5rem 1rem;
-}
-.search_list_btn .label_btn,
-.search_list_btn .icon_container {
-  display: block;
-}
-.search_list_btn .arrow_icon {
-  transform: rotate(0);
-}
-.search_list_btn .icon_container {
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-}
-.search_list_btn .icon_svg {
-  padding: 0;
-  fill: var(--FC);
-}
-
-.list_btn,
-.search_list_btn {
-  background: none;
-}
-.list_btn .label_btn,
-.search_list_btn .label_btn {
-  color: var(--TC);
-}
-.list_btn:hover .label_btn,
-.search_list_btn:hover .label_btn {
-  color: var(--whiteOff);
-}
-
-.search_list_btn:hover,
-.list_btn:hover,
-.search_list_btn:active,
-.list_btn:active,
-.search_list_btn:focus,
-.list_btn:focus {
-  color: var(--TC_C);
-  background: linear-gradient(45deg, var(--FC), var(--SC));
-}
-.search_list_btn:hover .icon_svg,
-.list_btn:hover .icon_svg,
-.search_list_btn:active .icon_svg,
-.list_btn:active .icon_svg,
-.search_list_btn:focus .icon_svg,
-.list_btn:focus .icon_svg {
-  fill: var(--TC_C);
-}
-
 .accent_text {
   color: var(--FC);
 }
 
-.drop_down_container {
-  position: relative;
-  width: 100%;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: visible;
-  margin-bottom: 0.5rem;
-}
-.drop_down_container .btn {
-  border-radius: 0.5rem;
-}
-.drop_down_container .btn:not(.search_list_btn) {
-  border: none;
-}
-
 .list_btns_container {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   background: var(--bgM);
-  overflow: hidden;
-  z-index: 3;
+  width: 100%;
 }
 .list_btns_container .list_btn {
   text-transform: uppercase;
+  width: 100%;
+  padding: 0.5rem 3rem;
+  border-radius: 0.25rem;
+  background: none;
+}
+.list_btns_container .list_btn .label_btn {
+  color: var(--TC);
+  pointer-events: none;
+}
+.list_btns_container .list_btn:hover .label_btn {
+  color: var(--whiteOff);
+}
+.list_btns_container .list_btn:hover,
+.list_btns_container .list_btn:active,
+.list_btns_container .list_btn:focus {
+  color: var(--TC_C);
+  background: linear-gradient(45deg, var(--FC), var(--SC));
+}
+.list_btns_container .list_btn:hover .icon_svg,
+.list_btns_container .list_btn:active .icon_svg,
+.list_btns_container .list_btn:focus .icon_svg {
+  fill: var(--TC_C);
+}
+
+.sublist_btns_container {
+  background: rgba(150, 150, 150, 0.2);
+  padding: 1rem;
   width: 100%;
 }
 
@@ -1883,6 +1824,67 @@ body P {
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
+}
+
+.section_divider {
+  width: 100%;
+  min-height: 25rem;
+  background: var(--FC);
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section_divider .content {
+  width: calc(100% - 16rem);
+  max-width: 1200px;
+  height: 100%;
+}
+.section_divider .quote_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.section_divider .quote_container .quote {
+  color: var(--TC_C);
+  font-size: var(--fontSizeXClamp);
+}
+.section_divider .quote_container .quote_icon {
+  height: 100%;
+  width: 6rem;
+}
+.section_divider .quote_container .quote_start {
+  align-self: flex-start;
+  transform: translateY(-3rem);
+}
+.section_divider .quote_container .quote_end {
+  transform: translateY(3rem);
+  align-self: flex-end;
+}
+.section_divider .quote_container .icon_container {
+  width: 6rem;
+  height: 6rem;
+  fill: var(--TC_C);
+}
+.section_divider .author_container {
+  padding-right: 8rem;
+}
+.section_divider .author_container SPAN,
+.section_divider .author_container Q {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.section_divider .author_container .author {
+  font-size: var(--fontSizeMClamp);
+  color: var(--quote);
+  font-weight: 600;
+}
+.section_divider .author_container .author_info {
+  color: var(--TC_C);
+  font-size: var(--FS_N);
 }
 
 .section {
@@ -2139,6 +2141,10 @@ body P {
   margin-left: 2rem;
 }
 
+.portfolio_section .portfolio_btn {
+  border-radius: 0.5rem;
+}
+
 .nav_menu {
   position: sticky;
   top: 0;
@@ -2364,6 +2370,11 @@ body P {
 }
 .btn_active .icon_svg .cls-1 {
   fill: var(--TC_C);
+}
+
+.list_btn_active {
+  background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
+  color: var(--TC_C) !important;
 }
 
 @media screen and (min-width: 750px) {

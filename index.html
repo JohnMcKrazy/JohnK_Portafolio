@@ -11,8 +11,6 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <!--!JAVASCRIPT-->
         <script type="module" charset="utf-8" src="./src/js/index.js"></script>
         <link rel="icon" type="image/svg" href="" />
         <link rel="apple-touch-icon" href="" />
@@ -22,8 +20,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet" />
-
-        <!--!STYLES-->
+        <!--!GOOGLE FONTS-->
         <link rel="stylesheet" href="./src/css/normalize.css" />
         <link rel="stylesheet" href="./src/css/moderCss.css" />
         <link rel="stylesheet" href="./src/css/style.css" />
@@ -44,8 +41,6 @@
 
         <!-- !MODAL -->
         <div class="modal">
-            <!--!MODALS-->
-            <!--^^FIRST MESSAGE MODAL -->
             <div class="modal_window alert_modal" id="alert_modal">
                 <div class="modal_header"><h1 class="title_modal">Aviso de uso de datos</h1></div>
                 <div class="modal_info">
@@ -69,7 +64,6 @@
                     </svg>
                 </button>
             </div>
-            <!--^^LEGAL MODAL-->
             <div class="modal_window legal_modal" id="legal_modal">
                 <div class="modal_header">
                     <h1 class="title_modal">Aviso Legal</h1>
@@ -107,7 +101,6 @@
                     </svg>
                 </button>
             </div>
-            <!--^^CONTACT MODAL-->
             <div class="modal_window contact_modal" id="contact_modal">
                 <div class="modal_header">
                     <h1 class="title_modal">Como te puedo ayudar?</h1>
@@ -155,6 +148,9 @@
                         <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
                     </svg>
                 </button>
+                <div class="list_btns_container"></div>
+                <div class="sublist_btns_container"></div>
+                <div class="cards_container cards_portfolio_container"></div>
             </div>
         </div>
         <div class="menu_controler phone_menu_controler">
@@ -393,6 +389,31 @@
                 </div>
             </div>
         </nav>
+        <div class="section_divider">
+            <div class="content">
+                <div class="quote_container">
+                    <div class="quote_icon quote_start">
+                        <div class="icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h1 class="quote">Nunca trato de probar nada a nadie, Quiero probarme algo a mi mismo</h1>
+                    <div class="quote_icon quote_end">
+                        <div class="icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="author_container">
+                    <span class="author"><i>Kobe Bryant</i></span>
+                    <span class="author_info">NBA Basketball Champion</span>
+                </div>
+            </div>
+        </div>
         <section class="section about_section" id="about_section">
             <div class="bg_section"></div>
             <div class="section_content flex flex_responsive">
@@ -411,13 +432,14 @@
 
                 <div class="desk_icon_container">
                     <span class="bubble bio_bubble">
-                        <div class="info_container">
-                            <img src="./src/img/pagina/johnKPhoto.jpg" alt="" />
-                            <div class="info">
-                                <span class="bio_name">Jonathan Grajeda</span>
-                                <span class="bio_skill">Diseñador Gráfico</span>
-                                <span class="bio_place">México CDMX</span>
-                            </div>
+                        <div class="header_bubble"></div>
+                        <img src="./src/img/pagina/johnKPhoto.jpg" alt="" />
+                        <div class="info">
+                            <span class="bio_name">Jonathan Grajeda</span>
+                            <!--  <span class="bio_skill">Diseñador Gráfico</span>
+                            <span class="bio_skill">Programador</span>
+                            <span class="bio_skill">Ilustrador</span> -->
+                            <span class="bio_place">México CDMX</span>
                         </div>
                         <div class="icons_container">
                             <a href="https://www.behance.net/jg_john_design" target="_blank" class="icon_container footer_social_btn">
@@ -1222,7 +1244,7 @@
                                 d="m904.12,848.36c-5.96,8.96-13.55,16.19-22.11,21.56-1.75,1.1-3.54,2.11-5.36,3.05-10.46,5.39-22.08,8.18-33.8,8.17-2.73,0-5.46-.15-8.19-.46h0c-11.22-1.27-22.3-5.15-32.35-11.83-8.59-5.71-15.59-12.92-20.88-21.05-2.16-3.32-4.04-6.79-5.62-10.38-2.35-5.31-4.05-10.88-5.09-16.57-1.12-6.12-1.46-12.39-1-18.65,1.17,2.3,2.46,4.54,3.88,6.71,5.29,8.13,12.29,15.33,20.88,21.05,10.05,6.68,21.13,10.56,32.35,11.83h0c2.73.31,5.46.46,8.19.46,11.72,0,23.34-2.78,33.8-8.17,1.82-.94,3.61-1.96,5.36-3.05,8.56-5.37,16.15-12.6,22.11-21.56,4.76-7.17,8.11-14.86,10.09-22.76.89-3.54,1.51-7.11,1.85-10.7h0c.06-.57.11-1.14.15-1.72,6.37,12.49,9.04,26.62,7.68,40.59h0c-.35,3.59-.97,7.16-1.85,10.7-1.98,7.9-5.32,15.59-10.09,22.76Z"
                             />
                         </g>
-                        <g class="desk_me">
+                        <g class="desk_me svg_btn">
                             <ellipse class="cls-37" cx="534.24" cy="870.09" rx="177.76" ry="17.77" />
                             <g>
                                 <path class="cls-4" d="m462.25,518.79l-90.16,25.36c-9.39-1.67-19.67-3.71-25.38-10.44l-4.52-13.37c-2.19-10.84,13.29-22.78,17.69-23.57l57.03-10.28c4.4-.79,30.28,3.06,31.39,9.24l19.92,10.37c1.11,6.18-1.57,11.89-5.97,12.68Z" />
@@ -1418,6 +1440,7 @@
                 </div>
             </div>
         </section>
+
         <section class="section services_section" id="services_section">
             <div class="section_content">
                 <!--~~TITLE SECTION-->
@@ -1487,6 +1510,31 @@
                 </button>
             </div>
         </section>
+        <div class="section_divider">
+            <div class="content">
+                <div class="quote_container">
+                    <div class="quote_icon quote_start">
+                        <div class="icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h1 class="quote">No es acerca de cuantas horas entrenas, es acerca de cuantas horas tu mente esta presente en el entrenamiento</h1>
+                    <div class="quote_icon quote_end">
+                        <div class="icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="author_container">
+                    <span class="author"><i>Kobe Bryant</i></span>
+                    <span class="author_info">NBA Basketball Champion</span>
+                </div>
+            </div>
+        </div>
         <section class="section skills_section" id="skills_section">
             <div class="section_content">
                 <div class="swipe_animation_container_full">
@@ -2589,7 +2637,7 @@
         </article>
     </template>
     <template id="list_btn_template">
-        <button type="button" class="btn list_btn" name="">
+        <button type="button" class="btn list_btn" data-name="">
             <span class="label_btn"></span>
         </button>
     </template>

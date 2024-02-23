@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storageContent;
     const portfolioData = "./portfolioDB.json";
     const storageName = "JohnK_Maker";
-    const hotCardsSelection = ["berserkers_2", "verona", "creaciones_hermed", "leiru", "pokedex", "js_documentation", "rick_and_morty", "tribute"];
+    const hotCardsSelection = ["berserkers_2", "verona", "creaciones_hermed", "afroduck", "pokedex", "js_documentation", "rick_and_morty", "tribute"];
     const infoSoftware = [
         {
             db_name: "illustrator",
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalInfoLegal = selector(".modal_info_legal");
     const alertModal = selector(".alert_modal");
     const contactModal = selector(".contact_modal");
-    const porfolioSearchCardsContainer = selector(".cards_search_container");
+    const porfolioPortfolioCardsContainer = selector(".cards_portfolio_container");
     const listBtnsContainer = selector(".list_btns_container");
     const searchBtn = selector(".search_list_btn");
     const arrow = selector(".arrow_icon");
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectorAll(".animation_key").forEach((key) => {
         const tabletScreen = selector(".desk_tablet_screen");
-        key.addEventListener("mouseenter", () => {
+        key.addEventListener("mouseover", () => {
             switch (key.getAttribute("data-key")) {
                 case "dev":
                     selectorAll(".dev_icon").forEach((icon) => {
@@ -521,13 +521,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const myIllustration = selector(".desk_me");
     const bioBubble = selector(".bio_bubble");
     myIllustration.addEventListener("mouseover", (e) => {
-        if (bioBubble.style.display === "none") {
-            animationIn(bioBubble, "flex", 300);
-        }
-        const containerWidth = bioBubble.getClientRects()[0].width;
-        const containerHeight = bioBubble.getClientRects()[0].height;
-        console.log(e.layerX, myIllustration.getClientRects()[0].width);
+        animationIn(bioBubble, "flex", 300);
+
         setTimeout(() => {
+            const containerWidth = bioBubble.getClientRects()[0].width;
+            const containerHeight = bioBubble.getClientRects()[0].height;
             bioBubble.style.transform = `translate(${e.layerX - containerWidth / 2}px, ${e.layerY - containerHeight / 2}px)`;
         }, 250);
     });
@@ -730,64 +728,59 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const searchBtnActions = (action) => {
-        const searchBtnHeight = searchBtn.getBoundingClientRect().height;
-        //! console.log(searchBtnTop, searchBtnX);
-        //! console.log(action);
-        if (action === open) {
-            dropDownStatus = close;
-            arrow.style.transform = "rotate(0)";
-            listBtnsContainer.style.display = none;
-            searchBtn.focus();
-        } else if (action === close) {
-            dropDownStatus = open;
-            arrow.style.transform = "rotate(270deg)";
-            listBtnsContainer.style.top = `${searchBtnHeight + 10}px`;
-            listBtnsContainer.style.display = flx;
-            listBtnsContainer.childNodes[0].focus();
-        }
-    };
-    /*  const createSelectionTypeBtns = async () => {
+    const createSelectionTypeBtns = async () => {
         try {
             const rawData = await fetch(portfolioData);
             const data = await rawData.json();
-            let newID;
             data.forEach((item) => {
-                const projectTypes = item["projects"]["type"];
-
-                projectTypes.forEach((type) => {
-                    if (!typesOfProjects.includes(type)) {
-                        typesOfProjects.push(type);
-                    }
-                });
+                const type = item["projects"]["type"];
+                if (!typesOfProjects.includes(type)) {
+                    typesOfProjects.push(type);
+                }
             });
-            typesOfProjects.sort().forEach((type) => {
-                const createID = type.toLowerCase().split(" ").join("_");
-                newID = createID;
+            console.log(typesOfProjects);
+            /*  typesOfProjects.sort().forEach((type) => {
                 let newProjectTypeData = { value: type };
                 newProjectsListData.push(newProjectTypeData);
-            });
+            }); */
+            const allTemplate = btnListTemplate.cloneNode(true);
+            const btnAll = allTemplate.querySelector("BUTTON");
+            const labelBtn = allTemplate.querySelector(".label_btn");
+            btnAll.setAttribute("data-name", "all");
+            btnAll.classList.add("list_btn_active");
+            labelBtn.textContent = "Todos";
 
-            newProjectsListData.forEach((item) => {
-                const optionValue = item["value"];
+            listBtnsFragment.append(btnAll);
+            typesOfProjects.sort().forEach((item) => {
                 const template = btnListTemplate.cloneNode(true);
                 const newBtn = template.querySelector("BUTTON");
                 const labelBtn = template.querySelector(".label_btn");
-                newBtn.setAttribute("name", optionValue);
-                labelBtn.textContent = optionValue;
+                newBtn.setAttribute("data-name", item);
+                labelBtn.textContent = item;
 
                 listBtnsFragment.append(newBtn);
             });
+
             selector(".list_btns_container").append(listBtnsFragment);
+            const checkPortfolioBtns = (current) => {
+                selectorAll(".list_btn").forEach((btn) => {
+                    btn.classList.remove("list_btn_active");
+                });
 
-            
+                current.classList.add("list_btn_active");
+                const currentNameData = current.getAttribute("data-name");
+                console.log(currentNameData);
+            };
+            selectorAll(".list_btn").forEach((btn) => {
+                btn.addEventListener("click", () => checkPortfolioBtns(btn));
+            });
 
-            selectorAll(".list_btn").forEach((itemBtn) => {
+            /*  selectorAll(".list_btn").forEach((itemBtn) => {
                 const createSearchedCards = (e) => {
-                    deleteChildElements(porfolioSearchCardsContainer);
-                    searchBtnActions(dropDownStatus);
-                    const currentNameData = e.target.getAttribute("name");
-                     console.log(currentNameData); 
+                    deleteChildElements(porfolioPortfolioCardsContainer);
+
+                    const currentNameData = e.target.getAttribute("data-name");
+                    console.log(currentNameData);
 
                     data.forEach((item) => {
                         const dataIncludedResponse = item["projects"]["type"].includes(currentNameData);
@@ -797,7 +790,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             createCard(item, fragmentSearchProjects);
                             titleSubsectionCardsSearch.textContent = currentNameData;
-                            porfolioSearchCardsContainer.appendChild(fragmentSearchProjects);
+                            porfolioPortfolioCardsContainer.appendChild(fragmentSearchProjects);
                             const projectCards = document.querySelectorAll(".project_card");
                             projectCards.forEach((card) => {
                                 setTimeout(() => {
@@ -811,14 +804,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 };
                 itemBtn.addEventListener("enter", createSearchedCards);
                 itemBtn.addEventListener("click", createSearchedCards);
-            });
-        
+            }); */
         } catch (error) {
             console.log(error);
         }
-    }; 
+    };
     createSelectionTypeBtns();
-    */
 
     const createProjectCardHot = async () => {
         try {
@@ -864,7 +855,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 createCard(item, fragmentSearchProjects);
             });
 
-            porfolioSearchCardsContainer.appendChild(fragmentSearchProjects);
+            porfolioPortfolioCardsContainer.appendChild(fragmentSearchProjects);
             const projectCards = selectorAll(".project_card");
 
             projectCards.forEach((card) => {
@@ -973,8 +964,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pageObserver.observe(section);
     });
     const navResizeObserve = new ResizeObserver(([entry]) => {
-        console.log(myIllustration.offSetTop);
-
         configSize(entry.contentRect.width);
     });
     navResizeObserve.observe(nav);
@@ -1017,14 +1006,10 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".portfolio_btn").forEach((btn) => {
         const handleClick = () => {
             const modalToOpen = btn.getAttribute("data-name");
-            console.log("checando btn de portafolio");
-            console.log();
             modalWindowActions(selector(`.${modalToOpen}`), open);
         };
         btn.addEventListener("click", handleClick);
     });
-    /*  searchBtn.addEventListener("enter", () => searchBtnActions(dropDownStatus));
-    searchBtn.addEventListener("click", () => searchBtnActions(dropDownStatus)); */
 
     /*  selector("#contact_form_send_btn").addEventListener("click", (e) => {
         e.preventDefault();
