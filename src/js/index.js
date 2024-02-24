@@ -242,12 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const alertModal = selector(".alert_modal");
     const contactModal = selector(".contact_modal");
     const porfolioPortfolioCardsContainer = selector(".cards_portfolio_container");
-    const listBtnsContainer = selector(".list_btns_container");
-    const searchBtn = selector(".search_list_btn");
-    const arrow = selector(".arrow_icon");
+    const arrow = selector(".arrow");
     const titleSubsectionCardsSearch = selector(".title_subsection_search_type");
     const menuSocialBtnsContainer = selector(".menu_social_btns_container");
-    const btnsMenuSocial = selectorAll(".social_btn");
     const watchMerAM = selector(".watch_am");
     const watchMerPM = selector(".watch_pm");
     const designScreen = selector(".design_screen");
@@ -627,7 +624,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     setTimeout(() => checkWindowHeight(), 500);
-
     const toTheTop = () => {
         const currentPosition = BODY.getBoundingClientRect().top;
         window.scrollTo(currentPosition, 0);
@@ -648,19 +644,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollBy(windowTop, fixTop);
         }
     };
-
-    /*  const createSelectionTypeBtns = async () => {
-        try {
-            const rawData = await fetch(portfolioData);
-            const data = await rawData.json();
-            data.forEach((item) => {
-              console.log(item);
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    }; */
-
     const createProjectCardHot = async () => {
         try {
             const rawData = await fetch(portfolioData);
@@ -685,45 +668,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     createProjectCardHot();
     //^CREATE PROJECT RANDOM CARDS
-    const createProjectCardRandom = async () => {
-        const arrayLenght = typesOfProjects.length;
-        const randomItem = Math.floor(Math.random() * arrayLenght);
-        let randomTypeSelection = typesOfProjects[randomItem];
-        try {
-            const rawData = await fetch(portfolioData);
-            const data = await rawData.json();
-            let randomItems = [];
-            data.forEach((item) => {
-                const itemsTypesOfProjects = item["projects"]["type"];
-                if (itemsTypesOfProjects.includes(randomTypeSelection)) {
-                    randomItems.push(item);
-                    titleSubsectionCardsSearch.textContent = randomTypeSelection;
-                }
-            });
-            //*console.log(randomItems);
-            randomItems.forEach((item) => {
-                createCard(item, fragmentSearchProjects);
-            });
 
-            porfolioPortfolioCardsContainer.appendChild(fragmentSearchProjects);
-            const projectCards = selectorAll(".project_card");
-
-            projectCards.forEach((card) => {
-                setTimeout(() => {
-                    animateItem(card, "1", "translateY(0)");
-                }, 500);
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
     /* loadersContainers.forEach((loader) => {
         const watchCardsContainers = ([entry]) => {
             animateItem(spinnerSearchCardContainer, "0", "translateY(-4rem)");
             setTimeout(() => {
                 loaderHotCardsContainer.style.display = none;
-
-                createProjectCardRandom();
                 setTimeout(() => {
                     loadersObserver.unobserve(spinnerSearchCardContainer);
                 }, 500);
@@ -925,6 +875,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    const searchListBtn = selector(".search_list_btn");
+    const portfolioListContainer = selector(".portfolio_list_btns_container");
+    searchListBtn.addEventListener("click", () => {
+        portfolioListContainer.classList.toggle("list_down");
+    });
+    selectorAll(".list_btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const oldLabel = btn.querySelector(".label_btn").textContent;
+            const oldDataBtn = btn.getAttribute("data-name");
+
+            searchListBtn.setAttribute("data-name", oldDataBtn);
+            searchListBtn.querySelector(".label_btn").textContent = oldLabel;
+            portfolioListContainer.classList.toggle("list_down");
+        });
+    });
     window.addEventListener("scroll", () => checkWindowHeight());
     /*  selector("#contact_form_send_btn").addEventListener("click", (e) => {
         e.preventDefault();

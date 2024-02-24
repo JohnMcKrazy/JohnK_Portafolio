@@ -310,7 +310,7 @@ body P {
 .bio_bubble .header_bubble {
   height: 6rem;
   width: 100%;
-  background: url(../img/backgrounds/basketball-g9fd537503_1920.jpg);
+  background: url(../img/backgrounds/graffitiSmall.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1550,42 +1550,80 @@ body P {
 
 .list_btns_container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  background: var(--bgM);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
 }
-.list_btns_container .list_btn {
-  text-transform: uppercase;
+.list_btns_container .btns_container {
   width: 100%;
-  padding: 0.5rem 3rem;
-  border-radius: 0.25rem;
-  background: none;
 }
-.list_btns_container .list_btn .label_btn {
-  color: var(--TC);
-  pointer-events: none;
+.list_btns_container .portfolio_list_btns_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 500ms ease;
+  display: none;
 }
-.list_btns_container .list_btn:hover .label_btn {
-  color: var(--whiteOff);
+.list_btns_container .list_down {
+  display: flex;
 }
-.list_btns_container .list_btn:hover,
-.list_btns_container .list_btn:active,
-.list_btns_container .list_btn:focus {
-  color: var(--TC_C);
-  background: linear-gradient(45deg, var(--FC), var(--SC));
-}
-.list_btns_container .list_btn:hover .icon_svg,
-.list_btns_container .list_btn:active .icon_svg,
-.list_btns_container .list_btn:focus .icon_svg {
-  fill: var(--TC_C);
+.list_btns_container .list_down > .arrow {
+  transform: rotate(-180deg);
 }
 
 .sublist_btns_container {
   background: rgba(150, 150, 150, 0.2);
   padding: 1rem;
   width: 100%;
+}
+
+.list_btn {
+  background: var(--bgM);
+  display: block;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 0.5rem 3rem;
+  border-radius: 0.25rem;
+  background: none;
+  min-width: auto;
+}
+.list_btn .label_btn {
+  color: var(--TC);
+  pointer-events: none;
+  line-height: 1;
+}
+.list_btn:hover, .list_btn:active, .list_btn:focus {
+  filter: hue-rotate(45deg);
+}
+.list_btn:hover .label_btn, .list_btn:active .label_btn, .list_btn:focus .label_btn {
+  color: var(--whiteOff);
+}
+
+.list_btn:hover,
+.list_btn:active,
+.list_btn:focus {
+  color: var(--TC_C);
+  background: linear-gradient(45deg, var(--FC), var(--SC));
+}
+.list_btn:hover .icon_svg,
+.list_btn:active .icon_svg,
+.list_btn:focus .icon_svg {
+  fill: var(--TC_C);
+}
+
+.search_list_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search_list_btn .icon_container {
+  display: block;
+  height: 3rem;
+  width: 3rem;
 }
 
 .form {
