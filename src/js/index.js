@@ -265,7 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const raw = await fetch(portfolioData);
             const data = await raw.json();
             fetchData = data;
-            console.log(fetchData);
             createProjectCardHot();
             return data;
         } catch (error) {
@@ -1001,7 +1000,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const BODY = selector("body");
         const lightT = "light_theme";
         const darkT = "dark_theme";
-
         switch (tm) {
             case lightT:
                 currentTheme = darkT;
@@ -1016,12 +1014,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 break;
         }
-
         storageContent["page_theme"] = currentTheme;
-
         localStorage.setItem(storageName, JSON.stringify(storageContent));
         BODY.className = currentTheme;
-        console.log(storageContent);
     };
 
     selectorAll(".theme_btn").forEach((btn) => {
