@@ -1432,11 +1432,6 @@ body {
         color: var(--TC);
         padding: 1rem 1.5rem 2rem;
         transition: var(--T_F);
-        P,
-        H3,
-        H4 {
-            margin: 0.5rem 0;
-        }
     }
     .btn {
         color: var(--TC_C);
@@ -1518,11 +1513,10 @@ body {
 
             font-size: var(--FS_L);
             color: var(--FC);
-            padding: 1rem;
             line-height: 1;
         }
         .subtitle {
-            margin-bottom: 0.5rem;
+            font-weight: 400;
         }
         .icons_project_container {
             @include flexDirection(row, center, center);
@@ -1540,13 +1534,10 @@ body {
                 height: 4rem;
             }
         }
-        .margin_bottom {
-            margin-bottom: 1rem;
-        }
         .btn_container {
             width: 100%;
             padding: 0;
-            margin: 0;
+            margin-top: 0.5rem;
             .btn {
                 width: 100%;
             }
@@ -1613,7 +1604,7 @@ body {
     min-height: auto;
 }
 .cards_hot_container {
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 .cards_portfolio_container {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -1623,12 +1614,12 @@ body {
         .info_card {
             .title {
                 font-size: var(--FS_N);
+                margin-bottom: 1rem;
             }
             .subtitle {
                 font-size: var(--FS_S);
             }
             .btn_container {
-                margin-top: 0.5rem;
                 .btn {
                     padding: 0.5rem;
                     min-height: fit-content;
@@ -2478,6 +2469,9 @@ body {
     }
 }
 @media screen and (min-width: 750px) {
+    .cards_hot_container {
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
     .flex_responsive {
         @include flexDirection(row, center, denter);
     }

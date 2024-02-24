@@ -776,7 +776,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     );
     selector(".legal_modal_accept_btn").addEventListener("click", () => {
-        modalWindowActions(legalModal, close);
+        selector(".modal_info_legal").scrollTo({ top: 0, behavior: `smooth` });
+        setTimeout(() => modalWindowActions(legalModal, close), 250);
     });
     selectorAll(".close_modal").forEach((btn) =>
         btn.addEventListener("click", () => {
@@ -852,6 +853,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     selectorAll(".list_portfolio_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
+            selector(".cards_portfolio_container").scrollTo({ top: 0, behavior: `smooth` });
             clearListBtns();
             const newLabel = btn.querySelector(".label_btn").textContent;
             const newName = btn.getAttribute("data-name");

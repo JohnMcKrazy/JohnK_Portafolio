@@ -1352,11 +1352,6 @@ body P {
   padding: 1rem 1.5rem 2rem;
   transition: var(--T_F);
 }
-.card .info_card P,
-.card .info_card H3,
-.card .info_card H4 {
-  margin: 0.5rem 0;
-}
 .card .btn {
   color: var(--TC_C);
 }
@@ -1442,11 +1437,10 @@ body P {
   width: 100%;
   font-size: var(--FS_L);
   color: var(--FC);
-  padding: 1rem;
   line-height: 1;
 }
 .project_card .info_card .subtitle {
-  margin-bottom: 0.5rem;
+  font-weight: 400;
 }
 .project_card .info_card .icons_project_container {
   display: flex;
@@ -1468,13 +1462,10 @@ body P {
   width: auto;
   height: 4rem;
 }
-.project_card .info_card .margin_bottom {
-  margin-bottom: 1rem;
-}
 .project_card .info_card .btn_container {
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin-top: 0.5rem;
 }
 .project_card .info_card .btn_container .btn {
   width: 100%;
@@ -1539,7 +1530,7 @@ body P {
 }
 
 .cards_hot_container {
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 
 .cards_portfolio_container {
@@ -1551,12 +1542,10 @@ body P {
 }
 .cards_portfolio_container .project_card .info_card .title {
   font-size: var(--FS_N);
+  margin-bottom: 1rem;
 }
 .cards_portfolio_container .project_card .info_card .subtitle {
   font-size: var(--FS_S);
-}
-.cards_portfolio_container .project_card .info_card .btn_container {
-  margin-top: 0.5rem;
 }
 .cards_portfolio_container .project_card .info_card .btn_container .btn {
   padding: 0.5rem;
@@ -2470,6 +2459,9 @@ body P {
 }
 
 @media screen and (min-width: 750px) {
+  .cards_hot_container {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
   .flex_responsive {
     display: flex;
     flex-direction: row;
