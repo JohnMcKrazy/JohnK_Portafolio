@@ -170,6 +170,108 @@
         "votes": 5
     },
     {
+        "client_name": "Tree Map Diagram Data Visualization",
+        "db_name": "tree_map",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "Visualización de Datos", "API Rest", "Programación"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/treeMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Scatterplo Chart Data Visualization",
+        "db_name": "scatterplo_chart",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "Visualización de Datos", "API Rest", "Programación"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/scatterploMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Bar Chart Data Visualization",
+        "db_name": "bar_chart",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "Visualización de Datos", "API Rest", "Programación"],
+            "description": "",
+            "reach": ["Desarrollo Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/barMap.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/"
+        },
+        "votes": 5
+    },
+    {
         "client_name": "Weather App",
         "db_name": "weather",
         "client_logo": "",

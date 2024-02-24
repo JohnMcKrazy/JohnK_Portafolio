@@ -180,6 +180,7 @@
                         </button>
                         <div class="btns_container list_container extra_list_btns_container"></div>
                     </div>
+                    <div class="description_portfolio"><span class="type_name">Todo</span> <span class="separator"></span> <span class="extra_types_name">Todo</span> <span class="separator"></span> <span class="project_name"></span></div>
                 </div>
                 <div class="cards_container cards_portfolio_container"></div>
             </div>
@@ -1525,7 +1526,7 @@
                     <h1 class="title_section animation_up" id="title_portfolio">Portafolio</h1>
                 </div>
                 <h2 class="subtitle_section">Proyectos Destacados</h2>
-                <div class="cards_container swipe_animation_container_half" id="cards_hot_container">
+                <div class="cards_container swipe_animation_container_half cards_hot_container">
                     <div class="loader_container" data-name="loader_cards_hot_container" id="loader_cards_hot_container">
                         <div class="spinner_container" id="spinner_container_cards_hot">
                             <div class="loading_spinner"></div>
@@ -2028,7 +2029,7 @@
     </body>
     <!--^^TEAMPLATES-->
     <template id="card_project_template">
-        <article class="card project_card card_up" id="" tabindex="0">
+        <article class="card project_card" id="" tabindex="0">
             <div class="info_card">
                 <h2 class="title"></h2>
                 <h3 class="subtitle">Realizado con:</h3>
@@ -2041,8 +2042,8 @@
             </div>
         </article>
     </template>
-    <template id="sublist_btn_template">
-        <button type="button" class="btn sublist_btn" name="">
+    <template class="list_btn extra_list_btn_template">
+        <button type="button" class="btn list_btn extra_list_btn" name="">
             <span class="label_btn"></span>
         </button>
     </template>

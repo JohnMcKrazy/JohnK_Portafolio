@@ -1203,6 +1203,13 @@ body {
     font-weight: var(--FW_N);
     display: block;
 }
+.separator {
+    display: block;
+    background: var(--FC);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
 .btn {
     padding: 1rem 0.5rem;
     background: linear-gradient(45deg, var(--FC), var(--SC));
@@ -1267,7 +1274,6 @@ body {
         fill: var(--TC_C);
     }
 }
-
 .nav_btn {
     height: 100%;
     color: var(--TC);
@@ -1634,7 +1640,20 @@ body {
 }
 .lists_container {
     @include flexDirection(row, flex-start, flex-start);
+    flex-wrap: wrap;
     width: 100%;
+}
+.description_portfolio {
+    @include flexDirection(row, flex-start, center);
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: 5rem;
+    width: fit-content;
+    padding: 1rem;
+    SPAN {
+        display: block;
+        font-size: var(--fontSizeMClamp);
+    }
 }
 .list_btns_container {
     @include flexDirection(column, flex-start, flex-start);
@@ -1733,6 +1752,9 @@ body {
         width: 100%;
     }
 }
+.cards_portfolio_container {
+    overflow-y: auto;
+}
 .modal {
     position: fixed;
     width: 100%;
@@ -1751,7 +1773,7 @@ body {
         top: 4rem;
         left: 50%;
         width: 90%;
-        max-width: 800px;
+        max-width: 720px;
         height: fit-content;
         background: var(--NVC);
         padding: 2rem;
@@ -1759,6 +1781,7 @@ body {
         transition: var(--T_M);
         transform: translate(-50%, -50%);
         border-radius: 1rem;
+        max-height: calc(100svh - 8rem);
         overflow: hidden;
     }
     .btn {
@@ -1773,6 +1796,42 @@ body {
         padding: 1rem 0;
         width: 100%;
     }
+    .portfolio_modal {
+        max-width: 1800px;
+    }
+
+    .alert_modal,
+    .legal_modal {
+        .btn_container {
+            @include flex(center, center);
+            width: 100%;
+            height: auto;
+        }
+    }
+    .alert_modal {
+        .modal_info {
+            text-align: center;
+            .btn_container {
+                padding: 0;
+            }
+        }
+    }
+    .legal_modal {
+        .modal_info {
+            overflow: auto;
+            scroll-behavior: smooth;
+            padding-right: 1rem;
+            .more_btn {
+                width: 100%;
+            }
+        }
+    }
+    .contact_modal {
+        position: relative;
+        .modal_form {
+            width: 100%;
+        }
+    }
 }
 .inner_link_btn {
     text-decoration: underline;
@@ -1781,41 +1840,7 @@ body {
         color: inherit;
     }
 }
-.alert_modal,
-.legal_modal {
-    .btn_container {
-        @include flex(center, center);
-        width: 100%;
-        height: auto;
-    }
-}
-.alert_modal {
-    .modal_info {
-        text-align: center;
-        .btn_container {
-            padding: 0;
-        }
-    }
-}
-.legal_modal {
-    max-height: 90vh;
-    overflow: hidden;
 
-    .modal_info {
-        overflow: auto;
-        scroll-behavior: smooth;
-        padding-right: 1rem;
-        .more_btn {
-            width: 100%;
-        }
-    }
-}
-.contact_modal {
-    position: relative;
-    .modal_form {
-        width: 100%;
-    }
-}
 .sliders_container {
     position: relative;
     width: 100%;

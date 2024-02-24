@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const setAnimationText = (text) => `<h2 class="up_animation">${text}</h2>`;
 
     const fragmentHotProjects = $d.createDocumentFragment();
-    const fragmentSearchProjects = $d.createDocumentFragment();
+    const fragmentPortfolioProjects = $d.createDocumentFragment();
     const markersFragment = $d.createDocumentFragment();
     const listBtnsFragment = $d.createDocumentFragment();
     const cardProjectTemplate = selector("#card_project_template").content;
@@ -256,12 +256,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioListContainer = selector(".portfolio_list_btns_container");
     const searchExtraListBtn = selector(".search_extra_list_btn");
     const extraListContainer = selector(".extra_list_btns_container");
+    // ! FETCH DATA //
 
+    let fetchData = [];
+
+    const fetchProjectsData = async () => {
+        try {
+            const raw = await fetch(portfolioData);
+            const data = await raw.json();
+            fetchData = data;
+            console.log(fetchData);
+            createProjectCardHot();
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    fetchProjectsData();
     const deleteChildElements = (parentElement) => {
         let child = parentElement.lastElementChild;
         while (child) {
             parentElement.removeChild(child);
             child = parentElement.lastElementChild;
+        }
+    };
+    const deleteArrElements = (parentElement) => {
+        while (parentElement.length > 0) {
+            parentElement.forEach((item) => {
+                parentElement.pop(item);
+            });
         }
     };
     const menuActions = (status) => {
@@ -644,29 +667,59 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollBy(windowTop, fixTop);
         }
     };
+
     const createProjectCardHot = async () => {
-        try {
-            const rawData = await fetch(portfolioData);
-            const data = await rawData.json();
-            let hotData = [];
-            hotCardsSelection.forEach((proyectHot) => {
-                data.forEach((proyect) => {
-                    if (proyect.db_name === proyectHot) {
-                        hotData.push(proyect);
+        let filterHotData = [];
+        hotCardsSelection.forEach((hotProject) => {
+            fetchData.forEach((project) => {
+                if (hotProject === project.db_name) {
+                    filterHotData.push(project);
+                }
+            });
+        });
+        filterHotData.forEach((item) => {
+            createCard(item, fragmentHotProjects);
+        });
+        selector(".cards_hot_container").appendChild(fragmentHotProjects);
+        setTimeout(() => {
+            selector(".cards_hot_container")
+                .querySelectorAll(".project_card")
+                .forEach((card) => {
+                    card.classList.add("card_up");
+                });
+        }, 100);
+        setTimeout(swipingAnimation, 500);
+    };
+
+    const clearPortfolio = () => {
+        deleteArrElements(fragmentPortfolioProjects);
+        deleteChildElements(selector(".cards_portfolio_container"));
+    };
+    const portfolioCardsContainer = selector(".cards_portfolio_container");
+    const openPortfolioModal = (target) => {
+        clearListBtns();
+        clearPortfolio();
+        const modalToOpen = target.getAttribute("data-name");
+        const currentProjectDetails = [];
+        const createPortfolioProjects = () => {
+            fetchData.forEach((data) => {
+                data.projects.skills.forEach((skill) => {
+                    if (!currentProjectDetails.includes(skill)) {
+                        currentProjectDetails.push(skill);
                     }
                 });
+                createCard(data, fragmentPortfolioProjects);
             });
-            /* console.log(hotData); */
-            hotData.forEach((item) => {
-                createCard(item, fragmentHotProjects);
+            currentProjectDetails.forEach((detail) => {
+                createExtraListbtn(detail);
             });
-            selector("#cards_hot_container").appendChild(fragmentHotProjects);
-            setTimeout(swipingAnimation, 500);
-        } catch (error) {
-            console.log(error);
-        }
+            extraListContainer.appendChild(fragmentBtns);
+            portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
+        };
+
+        createPortfolioProjects();
+        modalWindowActions(selector(`.${modalToOpen}`), open);
     };
-    createProjectCardHot();
     //^CREATE PROJECT RANDOM CARDS
 
     /* loadersContainers.forEach((loader) => {
@@ -773,7 +826,7 @@ document.addEventListener("DOMContentLoaded", () => {
         containerList.classList.toggle("list_down");
         searchBtn.classList.toggle("list_btn_active");
         searchBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
-        containerList.querySelector(".first_list_btn").focus();
+        containerList.children[0].focus();
     };
     searchPortfolioListBtn.addEventListener("click", () => {
         listActions(searchPortfolioListBtn, portfolioListContainer);
@@ -783,16 +836,54 @@ document.addEventListener("DOMContentLoaded", () => {
         listActions(searchExtraListBtn, extraListContainer);
     });
     // ! START FETCHING PROJECTS DATA FOR ALL CARDS  //
-
+    let portfolioFilterData = [];
+    const extraListBtnTemplate = selector(".extra_list_btn_template").content;
+    const fragmentBtns = $d.createDocumentFragment();
+    const clearListBtns = () => {
+        deleteArrElements(fragmentBtns);
+        deleteChildElements(extraListContainer);
+    };
+    const createExtraListbtn = (type) => {
+        const newTemplate = extraListBtnTemplate.cloneNode(true);
+        const newBtn = newTemplate.querySelector(".extra_list_btn");
+        const btnLabel = newTemplate.querySelector(".label_btn");
+        btnLabel.textContent = type;
+        newBtn.setAttribute("data-name", type);
+        fragmentBtns.appendChild(newBtn);
+    };
     selectorAll(".list_portfolio_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-            const oldLabel = btn.querySelector(".label_btn").textContent;
-            const oldDataBtn = btn.getAttribute("data-name");
-            searchPortfolioListBtn.setAttribute("data-name", oldDataBtn);
-            searchPortfolioListBtn.querySelector(".label_btn").textContent = oldLabel;
+            clearListBtns();
+            const newLabel = btn.querySelector(".label_btn").textContent;
+            const newName = btn.getAttribute("data-name");
+            searchPortfolioListBtn.setAttribute("data-name", newName);
+            selector(".type_name").textContent = newLabel;
+            searchPortfolioListBtn.querySelector(".label_btn").textContent = newLabel;
             listActions(searchPortfolioListBtn, portfolioListContainer);
+            clearPortfolio();
+            let dataToCheck = [];
+            newName !== "all" ? (dataToCheck = fetchData.filter((item) => item.projects.type === newName)) : (dataToCheck = fetchData);
+
+            const currentProjectDetails = [];
+            console.log(dataToCheck);
+            dataToCheck.forEach((project) => {
+                project.projects.skills.forEach((skill) => {
+                    if (!currentProjectDetails.includes(skill)) {
+                        currentProjectDetails.push(skill);
+                    }
+                });
+            });
+            currentProjectDetails.forEach((detail) => {
+                createExtraListbtn(detail);
+            });
+            extraListContainer.appendChild(fragmentBtns);
+            dataToCheck.forEach((data) => {
+                createCard(data, fragmentPortfolioProjects);
+            });
+            portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
         });
     });
+
     myIllustration.addEventListener("mouseover", (e) => {
         animationIn(bioBubble, "flex", 300);
 
@@ -837,11 +928,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     selectorAll(".portfolio_btn").forEach((btn) => {
-        const handleClick = () => {
-            const modalToOpen = btn.getAttribute("data-name");
-            modalWindowActions(selector(`.${modalToOpen}`), open);
-        };
-        btn.addEventListener("click", handleClick);
+        btn.addEventListener("click", () => openPortfolioModal(btn));
     });
     selectorAll(".animation_key").forEach((key) => {
         const tabletScreen = selector(".desk_tablet_screen");
