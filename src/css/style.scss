@@ -1598,7 +1598,21 @@ body {
     transform: translateY(4rem);
     transition: var(--T_M);
 }
+.btn_active {
+    background: var(--FC) !important;
+    color: var(--TC_C) !important;
+    .label_btn {
+        color: var(--TC_C) !important;
 
+        animation: bounce 2s ease-in-out infinite;
+    }
+    .icon_svg {
+        fill: var(--TC_C) !important;
+        .cls-1 {
+            fill: var(--TC_C);
+        }
+    }
+}
 /*
 //^ SWIPER LEFT CONTAINER
 .animation_left {
@@ -1618,72 +1632,98 @@ body {
 .accent_text {
     color: var(--FC);
 }
-
-.list_btns_container {
-    @include flexDirection(column, flex-start, center);
-    gap: 1rem;
+.lists_container {
+    @include flexDirection(row, flex-start, flex-start);
     width: 100%;
+}
+.list_btns_container {
+    @include flexDirection(column, flex-start, flex-start);
+    gap: 0.5rem;
+    width: 20rem;
+    min-width: auto;
+    max-width: 100%;
+    flex-wrap: wrap;
+
+    .list_btn {
+        background: var(--bgM);
+        display: block;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 0.5rem 3rem;
+        border-radius: 0.25rem;
+        background: none;
+        min-width: auto;
+        .label_btn {
+            color: var(--TC);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            filter: hue-rotate(45deg);
+            .label_btn {
+                color: var(--whiteOff);
+            }
+        }
+    }
+    .list_btn:hover,
+    .list_btn:active,
+    .list_btn:focus {
+        color: var(--TC_C);
+        background: linear-gradient(45deg, var(--FC), var(--SC));
+        .icon_svg {
+            fill: var(--TC_C);
+        }
+    }
+    .search_list_btn {
+        text-transform: uppercase;
+        @include flexDirection(row, center, center);
+        background: none;
+        border-radius: 0;
+        border-bottom: solid 2px var(--FC);
+        .label_btn {
+            color: var(--TC);
+            pointer-events: none;
+            line-height: 1;
+        }
+        .icon_container {
+            display: block;
+            height: 3rem;
+            width: 3rem;
+        }
+    }
     .btns_container {
         width: 100%;
     }
 
-    .portfolio_list_btns_container {
+    .list_container {
         @include flexDirection(column, flex-start, center);
-        transition: all 500ms ease;
+        transition: all 100ms ease;
         display: none;
     }
     .list_down {
         display: flex;
     }
-    .list_down > .arrow {
+    .arrow_list_icon {
+        fill: var(--whiteOff);
         transform: rotate(-180deg);
     }
-}
-.sublist_btns_container {
-    background: rgba(150, 150, 150, 0.2);
-    padding: 1rem;
-    width: 100%;
-}
-.list_btn {
-    background: var(--bgM);
-    display: block;
-    text-transform: uppercase;
-    width: 100%;
-    padding: 0.5rem 3rem;
-    border-radius: 0.25rem;
-    background: none;
-    min-width: auto;
-    .label_btn {
-        color: var(--TC);
-        pointer-events: none;
-        line-height: 1;
+    .arrow_list_icon_active {
+        fill: var(--TC);
+        transform: rotate(0);
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-        filter: hue-rotate(45deg);
+    .list_btn_active {
+        background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
         .label_btn {
-            color: var(--whiteOff);
+            color: var(--whiteOff) !important;
         }
     }
 }
-.list_btn:hover,
-.list_btn:active,
-.list_btn:focus {
-    color: var(--TC_C);
-    background: linear-gradient(45deg, var(--FC), var(--SC));
-    .icon_svg {
-        fill: var(--TC_C);
-    }
-}
-.search_list_btn {
-    @include flexDirection(row, center, center);
-    .icon_container {
-        display: block;
-        height: 3rem;
-        width: 3rem;
-    }
+.list_extra_btns_container {
+    width: 100%;
 }
 .form {
     background: var(--NVC);
@@ -2404,27 +2444,6 @@ body {
                 }
             }
         }
-    }
-}
-.btn_active {
-    background: var(--FC) !important;
-    color: var(--TC_C) !important;
-    .label_btn {
-        color: var(--TC_C) !important;
-
-        animation: bounce 2s ease-in-out infinite;
-    }
-    .icon_svg {
-        fill: var(--TC_C) !important;
-        .cls-1 {
-            fill: var(--TC_C);
-        }
-    }
-}
-.list_btn_active {
-    background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
-    .label_btn {
-        color: var(--TC_C) !important;
     }
 }
 @media screen and (min-width: 750px) {

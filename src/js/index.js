@@ -235,15 +235,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const lebelBtnSkills = selector(".skills_nav_btn");
     const lebelBtnServices = selector(".services_nav_btn");
     const lebelBtnPortfolio = selector(".portfolio_nav_btn");
-    const lebelBtnClients = selector(".clients_nav_btn");
     const lebelBtnContact = selector(".contact_nav_btn");
     const lebelBtnLegals = selector(".legals_nav_btn");
     const modalInfoLegal = selector(".modal_info_legal");
     const alertModal = selector(".alert_modal");
     const contactModal = selector(".contact_modal");
-    const porfolioPortfolioCardsContainer = selector(".cards_portfolio_container");
-    const arrow = selector(".arrow");
-    const titleSubsectionCardsSearch = selector(".title_subsection_search_type");
+    const arrowPortfolioList = selector(".arrow_portfolio_list_icon");
+    const arrowExtraList = selector(".arrow_extra_list_icon");
     const menuSocialBtnsContainer = selector(".menu_social_btns_container");
     const watchMerAM = selector(".watch_am");
     const watchMerPM = selector(".watch_pm");
@@ -253,6 +251,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const illustrationScreen = selector(".illustration_screen");
     const myIllustration = selector(".desk_me");
     const bioBubble = selector(".bio_bubble");
+
+    const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
+    const portfolioListContainer = selector(".portfolio_list_btns_container");
+    const searchExtraListBtn = selector(".search_extra_list_btn");
+    const extraListContainer = selector(".extra_list_btns_container");
+
     const deleteChildElements = (parentElement) => {
         let child = parentElement.lastElementChild;
         while (child) {
@@ -508,7 +512,6 @@ document.addEventListener("DOMContentLoaded", () => {
             lebelBtnSkills.innerHTML = setBtnLabel("Habilidades");
             lebelBtnServices.innerHTML = setBtnLabel("Servicios");
             lebelBtnPortfolio.innerHTML = setBtnLabel("Portafolio");
-            lebelBtnClients.innerHTML = setBtnLabel("Clientes");
             lebelBtnContact.innerHTML = setBtnLabel("Contacto");
             lebelBtnLegals.innerHTML = setBtnLabel("Legales");
             menuBtn.style.display = none;
@@ -534,9 +537,6 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             //*'<svg class="nav_menu_icon_svg" id="portfolio_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Portafolio</title><path class="cls-1" d="M17.409 19c-.776-2.399-2.277-3.885-4.266-5.602A10.954 10.954 0 0 1 20 11V3h1.008c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3H6V1h2v4H4v7c5.22 0 9.662 2.462 11.313 7h2.096zM18 1v4h-8V3h6V1h2zm-1.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>';
             //*'<svg class="nav_menu_icon_svg" id="portfolio_icon_svg" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Portafolio</title><path class="cls-1" d="m2 19v-14c0-.552.447-1 1-1 .542 0 4.418 2.028 9 2.028 4.593 0 8.456-2.028 9-2.028.55 0 1 .447 1 1v14c0 .553-.45 1-1 1-.544 0-4.407-2.028-9-2.028-4.582 0-8.458 2.028-9 2.028-.553 0-1-.448-1-1zm1.5-.791 6.449-7.691c.289-.344.879-.338 1.16.012 0 0 1.954 2.434 1.954 2.434l1.704-1.283c.319-.24.816-.168 1.054.154l4.679 6.335v-12.44c-1.58.58-4.819 1.798-8.5 1.798-3.672 0-6.918-1.218-8.5-1.799zm2.657-.834c1.623-.471 3.657-.903 5.843-.903 2.309 0 4.444.479 6.105.98l-3.041-4.117-1.065.802.275.344c.259.323.206.796-.117 1.054-.323.259-.795.207-1.054-.117l-2.591-3.236zm.698-9.534c-1.051 0-1.905.854-1.905 1.905s.854 1.904 1.905 1.904 1.904-.853 1.904-1.904-.853-1.905-1.904-1.905zm0 1.3c.333 0 .604.271.604.605 0 .333-.271.604-.604.604-.334 0-.605-.271-.605-.604 0-.334.271-.605.605-.605z" fill-rule="nonzero"/></svg>';
-            lebelBtnClients.innerHTML = setIconContainer(
-                '<svg class="icon_svg nav_menu_icon_svg" id="clients_icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Clientes</title><path class="cls-1" d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"></path></svg>'
-            );
             //*'<svg class="nav_menu_icon_svg" id="clients_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Clientes</title><path class="cls-1" d="M12 8.5l2.116 5.088 5.492.44-4.184 3.584 1.278 5.36L12 20.1l-4.702 2.872 1.278-5.36-4.184-3.584 5.492-.44L12 8.5zM8 2v9H6V2h2zm10 0v9h-2V2h2zm-5 0v5h-2V2h2z"/></svg>';
             //*'<svg class="nav_menu_icon_svg" id="clients_icon_svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path class="cls-1" d="M3.5 16.343l1.07 2.207 2.43.335-1.769 1.7.432 2.415-2.163-1.157-2.163 1.157.432-2.415-1.769-1.7 2.43-.335 1.07-2.207zm8.5 0l1.07 2.207 2.43.335-1.769 1.7.432 2.415-2.163-1.157-2.163 1.157.432-2.415-1.769-1.7 2.43-.335 1.07-2.207zm8.5 0l1.07 2.207 2.43.335-1.769 1.7.432 2.415-2.163-1.157-2.163 1.157.432-2.415-1.769-1.7 2.43-.335 1.07-2.207zm-.993-3.343h-.01c.022-4.906-2.246-2.772-2.246-6.676 0-1.507.983-2.324 2.248-2.324 1.869 0 3.169 1.787 1.399 5.129-.581 1.099.62 1.359 1.91 1.657 1.118.258 1.192.805 1.192 1.751v2.463h-4.493v-2zm-19.507 2v-2.463c0-.946.074-1.493 1.192-1.751 1.29-.298 2.491-.558 1.91-1.657-1.77-3.342-.47-5.129 1.399-5.129 1.265 0 2.248.817 2.248 2.324 0 3.904-2.268 1.77-2.246 6.676h.005v2h-4.508zm6 0v-2.623c0-1.258.1-1.985 1.588-2.329 1.684-.389 3.344-.736 2.545-2.209-2.366-4.364-.674-6.839 1.866-6.839 2.491 0 4.226 2.383 1.866 6.839-.775 1.464.826 1.812 2.545 2.209 1.49.344 1.589 1.072 1.589 2.333l.001 2.619h-12z"/></svg>';
             lebelBtnContact.innerHTML = setIconContainer(
@@ -769,6 +769,30 @@ document.addEventListener("DOMContentLoaded", () => {
     navResizeObserve.observe(nav);
 
     //! NO BORRAR --EDITAR SOLO MIENTRAS ES DEBIDO
+    const listActions = (searchBtn, containerList) => {
+        containerList.classList.toggle("list_down");
+        searchBtn.classList.toggle("list_btn_active");
+        searchBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
+        containerList.querySelector(".first_list_btn").focus();
+    };
+    searchPortfolioListBtn.addEventListener("click", () => {
+        listActions(searchPortfolioListBtn, portfolioListContainer);
+    });
+    searchExtraListBtn.addEventListener("click", () => {
+        const name = searchExtraListBtn.getAttribute("data-name");
+        listActions(searchExtraListBtn, extraListContainer);
+    });
+    // ! START FETCHING PROJECTS DATA FOR ALL CARDS  //
+
+    selectorAll(".list_portfolio_btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const oldLabel = btn.querySelector(".label_btn").textContent;
+            const oldDataBtn = btn.getAttribute("data-name");
+            searchPortfolioListBtn.setAttribute("data-name", oldDataBtn);
+            searchPortfolioListBtn.querySelector(".label_btn").textContent = oldLabel;
+            listActions(searchPortfolioListBtn, portfolioListContainer);
+        });
+    });
     myIllustration.addEventListener("mouseover", (e) => {
         animationIn(bioBubble, "flex", 300);
 
@@ -872,22 +896,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
             tabletScreen.classList.remove("tablet_screen_on");
-        });
-    });
-
-    const searchListBtn = selector(".search_list_btn");
-    const portfolioListContainer = selector(".portfolio_list_btns_container");
-    searchListBtn.addEventListener("click", () => {
-        portfolioListContainer.classList.toggle("list_down");
-    });
-    selectorAll(".list_btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const oldLabel = btn.querySelector(".label_btn").textContent;
-            const oldDataBtn = btn.getAttribute("data-name");
-
-            searchListBtn.setAttribute("data-name", oldDataBtn);
-            searchListBtn.querySelector(".label_btn").textContent = oldLabel;
-            portfolioListContainer.classList.toggle("list_down");
         });
     });
     window.addEventListener("scroll", () => checkWindowHeight());

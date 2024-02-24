@@ -148,29 +148,39 @@
                         <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
                     </svg>
                 </button>
-                <div class="list_btns_container">
-                    <button class="btn search_list_btn" data-name="all">
-                        <span class="label_btn">Todo</span>
-                        <span class="icon_container">
-                            <svg class="icon_svg arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
-                        </span>
-                    </button>
-                    <div class="btns_container portfolio_list_btns_container">
-                        <button class="btn list_btn" data-name="all">
+                <div class="lists_container">
+                    <div class="list_btns_container">
+                        <button class="btn search_list_btn search_portfolio_list_btn list_btn_active" data-name="all" tabindex="0">
                             <span class="label_btn">Todo</span>
+                            <span class="icon_container">
+                                <svg class="icon_svg arrow_list_icon arrow_portfolio_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+                            </span>
                         </button>
-                        <button class="btn list_btn" data-name="design">
-                            <span class="label_btn">Diseño</span>
+                        <div class="btns_container list_container portfolio_list_btns_container">
+                            <button class="btn list_btn list_portfolio_btn first_list_btn" data-name="all" tabindex="0">
+                                <span class="label_btn">Todo</span>
+                            </button>
+                            <button class="btn list_btn list_portfolio_btn" data-name="design" tabindex="0">
+                                <span class="label_btn">Diseño</span>
+                            </button>
+                            <button class="btn list_btn list_portfolio_btn" data-name="dev" tabindex="0">
+                                <span class="label_btn">Desarrollo</span>
+                            </button>
+                            <button class="btn list_btn list_portfolio_btn" data-name="illustration" tabindex="0">
+                                <span class="label_btn">Ilustración</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="list_btns_container">
+                        <button class="btn search_list_btn search_extra_list_btn list_btn_active" data-name="all" tabindex="0">
+                            <span class="label_btn">Todo</span>
+                            <span class="icon_container">
+                                <svg class="icon_svg arrow_list_icon arrow_extra_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+                            </span>
                         </button>
-                        <button class="btn list_btn" data-name="dev">
-                            <span class="label_btn">Desarrollo</span>
-                        </button>
-                        <button class="btn list_btn" data-name="illustration">
-                            <span class="label_btn">Ilustración</span>
-                        </button>
+                        <div class="btns_container list_container extra_list_btns_container"></div>
                     </div>
                 </div>
-                <div class="sublist_btns_container"></div>
                 <div class="cards_container cards_portfolio_container"></div>
             </div>
         </div>
