@@ -858,7 +858,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const newLabel = btn.querySelector(".label_btn").textContent;
             const newName = btn.getAttribute("data-name");
             searchPortfolioListBtn.setAttribute("data-name", newName);
-            selector(".type_name").textContent = newLabel;
             searchPortfolioListBtn.querySelector(".label_btn").textContent = newLabel;
             listActions(searchPortfolioListBtn, portfolioListContainer);
             clearPortfolio();

@@ -1642,6 +1642,9 @@ body {
     @include flexDirection(row, flex-start, flex-start);
     flex-wrap: wrap;
     width: 100%;
+    overflow: visible;
+    height: 5rem;
+    z-index: 2;
 }
 .description_portfolio {
     @include flexDirection(row, flex-start, center);
@@ -1721,6 +1724,8 @@ body {
         @include flexDirection(column, flex-start, center);
         transition: all 100ms ease;
         display: none;
+
+        background: var(--NVC_T);
     }
     .list_down {
         display: flex;
@@ -1740,9 +1745,9 @@ body {
             color: var(--whiteOff) !important;
         }
     }
-}
-.list_extra_btns_container {
-    width: 100%;
+    .list_extra_btns_container {
+        width: 100%;
+    }
 }
 .form {
     background: var(--NVC);
@@ -1795,6 +1800,7 @@ body {
     }
     .portfolio_modal {
         max-width: 1800px;
+        min-height: 25rem;
     }
 
     .alert_modal,

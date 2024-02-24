@@ -1569,6 +1569,9 @@ body P {
   align-items: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  overflow: visible;
+  height: 5rem;
+  z-index: 2;
 }
 
 .description_portfolio {
@@ -1661,6 +1664,7 @@ body P {
   align-items: center;
   transition: all 100ms ease;
   display: none;
+  background: var(--NVC_T);
 }
 .list_btns_container .list_down {
   display: flex;
@@ -1679,8 +1683,7 @@ body P {
 .list_btns_container .list_btn_active .label_btn {
   color: var(--whiteOff) !important;
 }
-
-.list_extra_btns_container {
+.list_btns_container .list_extra_btns_container {
   width: 100%;
 }
 
@@ -1742,6 +1745,7 @@ body P {
 }
 .modal .portfolio_modal {
   max-width: 1800px;
+  min-height: 25rem;
 }
 .modal .alert_modal .btn_container,
 .modal .legal_modal .btn_container {
