@@ -1570,8 +1570,12 @@ body P {
   flex-wrap: wrap;
   width: 100%;
   overflow: visible;
-  height: 5rem;
+  height: 3rem;
   z-index: 2;
+}
+.lists_container .btn {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
 }
 
 .description_portfolio {
@@ -1643,6 +1647,9 @@ body P {
   background: none;
   border-radius: 0;
   border-bottom: solid 2px var(--FC);
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  padding: 0;
 }
 .list_btns_container .search_list_btn .label_btn {
   color: var(--TC);
@@ -1745,7 +1752,7 @@ body P {
 }
 .modal .portfolio_modal {
   max-width: 1800px;
-  min-height: 25rem;
+  min-height: 20rem;
 }
 .modal .alert_modal .btn_container,
 .modal .legal_modal .btn_container {

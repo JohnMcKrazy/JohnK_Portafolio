@@ -1643,8 +1643,11 @@ body {
     flex-wrap: wrap;
     width: 100%;
     overflow: visible;
-    height: 5rem;
+    height: 3rem;
     z-index: 2;
+    .btn {
+        min-height: fit-content;
+    }
 }
 .description_portfolio {
     @include flexDirection(row, flex-start, center);
@@ -1705,6 +1708,8 @@ body {
         background: none;
         border-radius: 0;
         border-bottom: solid 2px var(--FC);
+        min-height: fit-content;
+        padding: 0;
         .label_btn {
             color: var(--TC);
             pointer-events: none;
@@ -1800,7 +1805,7 @@ body {
     }
     .portfolio_modal {
         max-width: 1800px;
-        min-height: 25rem;
+        min-height: 20rem;
     }
 
     .alert_modal,
