@@ -1747,6 +1747,7 @@ body P {
 .modal .portfolio_modal {
   max-width: 1800px;
   min-height: 20rem;
+  overflow: visible;
 }
 .modal .alert_modal .btn_container,
 .modal .legal_modal .btn_container {

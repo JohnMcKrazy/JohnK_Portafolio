@@ -718,6 +718,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
         createPortfolioProjects();
         modalWindowActions(selector(`.${modalToOpen}`), open);
+        let dataToCheck = [];
+        const activateExtraBtns = (btn) => {
+            listExtrasActions();
+            selector(".cards_portfolio_container").scrollTo({ top: 0, behavior: `smooth` });
+            const newName = btn.getAttribute("data-name");
+            searchExtraListBtn.setAttribute("data-name", newName);
+            searchExtraListBtn.querySelector(".label_btn").textContent = newName;
+            if (dataToCheck.length === 0) {
+                dataToCheck = fetchData;
+            }
+            let extraDataToCheck = [];
+            clearPortfolio();
+            if (btn.getAttribute("data-name") !== "Todo") {
+                dataToCheck.forEach((data) => {
+                    if (data.projects.skills.includes(btn.getAttribute("data-name"))) {
+                        extraDataToCheck.push(data);
+                    }
+                });
+            } else {
+                extraDataToCheck = dataToCheck;
+            }
+
+            extraDataToCheck.forEach((extraData) => {
+                createCard(extraData, fragmentPortfolioProjects);
+            });
+            portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
+        };
+        selectorAll(".list_portfolio_btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                searchExtraListBtn.setAttribute("data-name", "Todo");
+                searchExtraListBtn.querySelector(".label_btn").textContent = "Todo";
+                selector(".cards_portfolio_container").scrollTo({ top: 0, behavior: `smooth` });
+                clearListBtns();
+                const newName = btn.getAttribute("data-name");
+                searchPortfolioListBtn.setAttribute("data-name", newName);
+                searchPortfolioListBtn.querySelector(".label_btn").textContent = newName;
+                listPortfolioActions();
+                clearPortfolio();
+                dataToCheck = [];
+                newName !== "Todo" ? (dataToCheck = fetchData.filter((item) => item.projects.type_name === newName)) : (dataToCheck = fetchData);
+
+                const currentProjectDetails = [];
+                console.log(dataToCheck);
+                dataToCheck.forEach((project) => {
+                    project.projects.skills.forEach((skill) => {
+                        if (!currentProjectDetails.includes(skill)) {
+                            currentProjectDetails.push(skill);
+                        }
+                    });
+                });
+                currentProjectDetails.unshift("Todo");
+                currentProjectDetails.forEach((detail) => {
+                    createExtraListbtn(detail);
+                });
+
+                extraListContainer.appendChild(fragmentBtns);
+                dataToCheck.forEach((data) => {
+                    createCard(data, fragmentPortfolioProjects);
+                });
+                portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
+                selectorAll(".extra_list_btn").forEach((btn) => {
+                    btn.addEventListener("click", () => activateExtraBtns(btn));
+                });
+            });
+        });
+        selectorAll(".extra_list_btn").forEach((btn) => {
+            btn.addEventListener("click", () => activateExtraBtns(btn));
+        });
     };
     //^CREATE PROJECT RANDOM CARDS
 
@@ -822,18 +890,24 @@ document.addEventListener("DOMContentLoaded", () => {
     navResizeObserve.observe(nav);
 
     //! NO BORRAR --EDITAR SOLO MIENTRAS ES DEBIDO
-    const listActions = (searchBtn, containerList) => {
-        containerList.classList.toggle("list_down");
-        searchBtn.classList.toggle("list_btn_active");
-        searchBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
-        containerList.children[0].focus();
+
+    const listPortfolioActions = () => {
+        portfolioListContainer.classList.toggle("list_down");
+        searchPortfolioListBtn.classList.toggle("list_btn_active");
+        searchPortfolioListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
+        portfolioListContainer.children[0].focus();
+    };
+    const listExtrasActions = () => {
+        extraListContainer.classList.toggle("list_down");
+        searchExtraListBtn.classList.toggle("list_btn_active");
+        searchExtraListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
+        extraListContainer.children[0].focus();
     };
     searchPortfolioListBtn.addEventListener("click", () => {
-        listActions(searchPortfolioListBtn, portfolioListContainer);
+        listPortfolioActions();
     });
     searchExtraListBtn.addEventListener("click", () => {
-        const name = searchExtraListBtn.getAttribute("data-name");
-        listActions(searchExtraListBtn, extraListContainer);
+        listExtrasActions();
     });
     // ! START FETCHING PROJECTS DATA FOR ALL CARDS  //
     let portfolioFilterData = [];
@@ -851,38 +925,6 @@ document.addEventListener("DOMContentLoaded", () => {
         newBtn.setAttribute("data-name", type);
         fragmentBtns.appendChild(newBtn);
     };
-    selectorAll(".list_portfolio_btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            selector(".cards_portfolio_container").scrollTo({ top: 0, behavior: `smooth` });
-            clearListBtns();
-            const newLabel = btn.querySelector(".label_btn").textContent;
-            const newName = btn.getAttribute("data-name");
-            searchPortfolioListBtn.setAttribute("data-name", newName);
-            searchPortfolioListBtn.querySelector(".label_btn").textContent = newLabel;
-            listActions(searchPortfolioListBtn, portfolioListContainer);
-            clearPortfolio();
-            let dataToCheck = [];
-            newName !== "all" ? (dataToCheck = fetchData.filter((item) => item.projects.type === newName)) : (dataToCheck = fetchData);
-
-            const currentProjectDetails = [];
-            console.log(dataToCheck);
-            dataToCheck.forEach((project) => {
-                project.projects.skills.forEach((skill) => {
-                    if (!currentProjectDetails.includes(skill)) {
-                        currentProjectDetails.push(skill);
-                    }
-                });
-            });
-            currentProjectDetails.forEach((detail) => {
-                createExtraListbtn(detail);
-            });
-            extraListContainer.appendChild(fragmentBtns);
-            dataToCheck.forEach((data) => {
-                createCard(data, fragmentPortfolioProjects);
-            });
-            portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-        });
-    });
 
     myIllustration.addEventListener("mouseover", (e) => {
         animationIn(bioBubble, "flex", 300);
@@ -895,7 +937,6 @@ document.addEventListener("DOMContentLoaded", () => {
     bioBubble.addEventListener("mouseleave", () => {
         animationOut(bioBubble, 300);
     });
-    btnLogo.addEventListener("click", toTheTop);
     selector(".btn_down").addEventListener("click", () => {
         const windowHeight = window.innerHeight;
         const navHeight = nav.getBoundingClientRect().height;
@@ -984,7 +1025,6 @@ document.addEventListener("DOMContentLoaded", () => {
             tabletScreen.classList.remove("tablet_screen_on");
         });
     });
-    window.addEventListener("scroll", () => checkWindowHeight());
     /*  selector("#contact_form_send_btn").addEventListener("click", (e) => {
         e.preventDefault();
     }); */
@@ -1018,8 +1058,9 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem(storageName, JSON.stringify(storageContent));
         BODY.className = currentTheme;
     };
-
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });
+    btnLogo.addEventListener("click", toTheTop);
+    window.addEventListener("scroll", () => checkWindowHeight());
 });
