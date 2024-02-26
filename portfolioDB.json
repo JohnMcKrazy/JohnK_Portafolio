@@ -712,5 +712,73 @@
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
+    },
+    {
+        "client_name": "Personal",
+        "db_name": "guason_tradicional",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Tradicional"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/guason.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Aline Qkracha",
+        "db_name": "bojack",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Digital"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Photoshop", "Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/bojack.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
     }
 ]
