@@ -1640,11 +1640,8 @@ body {
 }
 .lists_container {
     @include flexDirection(row, flex-start, flex-start);
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: 100%;
-    overflow: visible;
-    height: 3rem;
-    z-index: 2;
     .btn {
         min-height: fit-content;
     }
@@ -1662,12 +1659,9 @@ body {
     }
 }
 .list_btns_container {
-    @include flexDirection(column, flex-start, flex-start);
-    gap: 0.5rem;
-    width: 20rem;
+    position: relative;
     min-width: auto;
     max-width: 100%;
-    flex-wrap: wrap;
 
     .list_btn {
         background: var(--bgM);
@@ -1676,7 +1670,6 @@ body {
         width: 100%;
         padding: 0.5rem 3rem;
         border-radius: 0.25rem;
-        background: none;
         min-width: auto;
         .label_btn {
             color: var(--TC);
@@ -1705,11 +1698,11 @@ body {
     .search_list_btn {
         text-transform: uppercase;
         @include flexDirection(row, center, center);
-        background: none;
+        background: var(--bgM);
         border-radius: 0;
         border-bottom: solid 2px var(--FC);
         min-height: fit-content;
-        padding: 0;
+        padding: 0.5rem 1rem;
         .label_btn {
             color: var(--TC);
             pointer-events: none;
@@ -1717,20 +1710,23 @@ body {
         }
         .icon_container {
             display: block;
-            height: 3rem;
-            width: 3rem;
+            height: 2rem;
+            width: 2rem;
+            padding: 0;
         }
-    }
-    .btns_container {
-        width: 100%;
     }
 
     .list_container {
+        position: absolute;
         @include flexDirection(column, flex-start, center);
         transition: all 100ms ease;
         display: none;
-
+        bottom: 0;
+        left: 0;
+        width: auto;
         background: var(--NVC_T);
+        transform: translateY(100%);
+        z-index: 2;
     }
     .list_down {
         display: flex;
@@ -1783,7 +1779,7 @@ body {
         max-width: 720px;
         height: fit-content;
         background: var(--NVC);
-        padding: 2rem;
+        padding: 4rem 2rem 2rem;
         opacity: 0;
         transition: var(--T_M);
         transform: translate(-50%, -50%);

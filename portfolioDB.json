@@ -272,6 +272,40 @@
         "votes": 5
     },
     {
+        "client_name": "Tic-Tac-Toe",
+        "db_name": "tic_tac_tac",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Desarrollo Web", "API Rest", "Programación"],
+            "description": "",
+            "reach": ["Desarrollo Web", "Programación"],
+            "technologies": ["HTML", "CSS", "SASS", "React"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/tic-tac-toe.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/React_Tic-Tac-Toe/"
+        },
+        "votes": 2
+    },
+    {
         "client_name": "Weather App",
         "db_name": "weather",
         "client_logo": "",

@@ -886,7 +886,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     myIllustration.addEventListener("mouseover", (e) => {
         animationIn(bioBubble, "flex", 300);
-
         setTimeout(() => {
             const containerWidth = bioBubble.getClientRects()[0].width;
             const containerHeight = bioBubble.getClientRects()[0].height;
