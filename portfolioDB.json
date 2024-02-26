@@ -761,7 +761,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/bojack.png",
+                    "small": "src/img/boJack.png",
                     "big": ""
                 },
                 "1": {
