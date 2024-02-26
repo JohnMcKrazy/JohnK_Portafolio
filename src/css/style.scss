@@ -1773,7 +1773,7 @@ body {
         position: absolute;
         @include flexDirection(column, flex-start, flex-start);
         display: none;
-        top: 4rem;
+        top: 2rem;
         left: 50%;
         width: 90%;
         max-width: 720px;
@@ -1784,7 +1784,7 @@ body {
         transition: var(--T_M);
         transform: translate(-50%, -50%);
         border-radius: 1rem;
-        max-height: calc(100svh - 8rem);
+        max-height: calc(100svh - 4rem);
         overflow: hidden;
     }
     .btn {

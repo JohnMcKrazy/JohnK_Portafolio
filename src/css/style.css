@@ -1716,7 +1716,7 @@ body P {
   justify-content: flex-start;
   align-items: flex-start;
   display: none;
-  top: 4rem;
+  top: 2rem;
   left: 50%;
   width: 90%;
   max-width: 720px;
@@ -1728,7 +1728,7 @@ body P {
   transition: var(--T_M);
   transform: translate(-50%, -50%);
   border-radius: 1rem;
-  max-height: calc(100svh - 8rem);
+  max-height: calc(100svh - 4rem);
   overflow: hidden;
 }
 .modal .btn {
