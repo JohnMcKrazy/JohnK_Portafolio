@@ -1981,12 +1981,6 @@ body {
     background: var(--FC);
     padding: 4rem 0;
     @include flexCenter();
-    .content {
-        min-width: 250px;
-        width: 80%;
-        max-width: 1200px;
-        height: 100%;
-    }
 
     .quote_container {
         @include flexDirection(row, center, center);
@@ -2040,17 +2034,10 @@ body {
 }
 .section {
     margin-bottom: 2rem;
-    /* min-height: calc(100vh - var(--NVH_F)); */
     height: auto;
-    /* min-height: var(--FS-FNVH); */
-
     @include flexDirection(column, flex-start, center);
 }
 .section_content {
-    min-width: 300px;
-    width: 1600px;
-    max-width: 100%;
-
     min-height: calc(100vh - var(--NVH));
     min-height: var(--FS_NVH);
     padding: 2rem;
@@ -2232,12 +2219,7 @@ body {
     @include flex(center, center);
     padding: 2rem;
     margin: 0;
-    .footer_content {
-        min-width: 300px;
-        width: 1600px;
-        max-width: 100%;
-        padding: 0 2rem;
-    }
+
     .made_container {
         @include flexDirection(column, flex-start, flex-end);
         .icons_container {
@@ -2279,6 +2261,11 @@ body {
         border-radius: 0 0 0.5rem 0.5rem;
     }
 }
+.content {
+    min-width: 250px;
+    width: 1600px;
+    max-width: 95%;
+}
 .nav_menu {
     position: sticky;
     top: 0;
@@ -2292,9 +2279,6 @@ body {
     .menu_container {
         @include flexDirection(row, space-between, center);
         height: 100%;
-        min-width: 300px;
-        width: 1600px;
-        max-width: 95%;
     }
     .menu_btn {
         @include flex(center, center);
