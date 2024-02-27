@@ -516,12 +516,19 @@ body P {
   transition: fill 250ms ease-in-out;
   fill: rgb(3, 28, 53);
 }
-.deskwork_icon .desk_tablet_screen:active,
-.deskwork_icon .desk_tablet_screen:hover {
+.deskwork_icon .desk_tablet:active .desk_tablet_screen,
+.deskwork_icon .desk_tablet:hover .desk_tablet_screen {
   fill: #9cf;
 }
 .deskwork_icon .tablet_screen_on {
   fill: #9cf;
+}
+.deskwork_icon .computer_monitor:hover .design_screen,
+.deskwork_icon .computer_monitor:hover .dev_screen {
+  opacity: 1;
+}
+.deskwork_icon .computer_monitor:hover .windows_screen {
+  opacity: 0;
 }
 .deskwork_icon .watch_time {
   fill: rgb(0, 170, 204);
@@ -1602,6 +1609,7 @@ body P {
 
 .cards_portfolio_container {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 0.5rem;
   overflow-y: auto;
 }
 .cards_portfolio_container .project_card {

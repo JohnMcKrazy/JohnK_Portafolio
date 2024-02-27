@@ -749,7 +749,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 newName !== "Todo" ? (dataToCheck = fetchData.filter((item) => item.projects.type_name === newName)) : (dataToCheck = fetchData);
 
                 const currentProjectDetails = [];
-                console.log(dataToCheck);
                 dataToCheck.forEach((project) => {
                     project.projects.skills.forEach((skill) => {
                         if (!currentProjectDetails.includes(skill)) {
@@ -966,26 +965,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectorAll(".dev_icon").forEach((icon) => {
                         icon.classList.add("icon_show");
                     });
-                    shieldScreen.style.opacity = 1;
-                    setTimeout(() => (devScreen.style.opacity = 1), 500);
+                    shieldScreen.classList.remove("screen_hide");
+                    setTimeout(() => devScreen.classList.remove("screen_hide"), 500);
                     break;
                 case "illustration":
                     selectorAll(".illustration_icon").forEach((icon) => {
                         icon.classList.add("icon_show");
                     });
-                    illustrationScreen.style.opacity = 1;
-                    illustrationTabletScreen.style.opacity = 1;
+                    illustrationScreen.classList.remove("screen_hide");
+                    illustrationTabletScreen.classList.remove("screen_hide");
                     break;
                 case "design":
                     selectorAll(".design_icon").forEach((icon) => {
                         icon.classList.add("icon_show");
                     });
-                    designScreen.style.opacity = 1;
+                    designScreen.classList.remove("screen_hide");
 
                     break;
             }
 
-            tabletScreen.classList.add("tablet_screen_on");
+            tabletScreen.classList.remove("tablet_screen_on");
         });
 
         key.addEventListener("mouseleave", () => {
@@ -994,21 +993,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectorAll(".dev_icon").forEach((icon) => {
                         icon.classList.remove("icon_show");
                     });
-                    devScreen.style.opacity = 0;
-                    setTimeout(() => (shieldScreen.style.opacity = 0), 500);
+                    devScreen.classList.add("screen_hide");
+                    setTimeout(() => shieldScreen.classList.add("screen_hide"), 500);
                     break;
                 case "illustration":
                     selectorAll(".illustration_icon").forEach((icon) => {
                         icon.classList.remove("icon_show");
                     });
-                    illustrationScreen.style.opacity = 0;
-                    illustrationTabletScreen.style.opacity = 0;
+                    illustrationScreen.classList.add("screen_hide");
+                    illustrationTabletScreen.classList.add("screen_hide");
                     break;
                 case "design":
                     selectorAll(".design_icon").forEach((icon) => {
                         icon.classList.remove("icon_show");
                     });
-                    designScreen.style.opacity = 0;
+                    designScreen.classList.add("screen_hide");
 
                     break;
             }

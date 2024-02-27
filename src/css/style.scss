@@ -615,12 +615,25 @@ body {
         transition: fill 250ms ease-in-out;
         fill: rgb(3, 28, 53);
     }
-    .desk_tablet_screen:active,
-    .desk_tablet_screen:hover {
-        fill: #9cf;
+    .desk_tablet:active,
+    .desk_tablet:hover {
+        .desk_tablet_screen {
+            fill: #9cf;
+        }
     }
     .tablet_screen_on {
         fill: #9cf;
+    }
+    .computer_monitor {
+        &:hover {
+            .design_screen,
+            .dev_screen {
+                opacity: 1;
+            }
+            .windows_screen {
+                opacity: 0;
+            }
+        }
     }
     .watch_time {
         fill: rgb(0, 170, 204);
@@ -1685,6 +1698,7 @@ body {
 }
 .cards_portfolio_container {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 0.5rem;
     overflow-y: auto;
     .project_card {
         height: 20rem;
