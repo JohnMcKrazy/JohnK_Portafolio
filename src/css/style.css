@@ -511,6 +511,9 @@ body P {
 .deskwork_icon .cls-62 {
   fill: #94edad;
 }
+.deskwork_icon .cls-67 {
+  fill: #F2F2F2;
+}
 .deskwork_icon .desk_tablet_screen {
   transition: fill 250ms ease-in-out;
   fill: rgb(3, 28, 53);
@@ -565,6 +568,54 @@ body P {
 }
 .deskwork_icon .svg_btn {
   cursor: crosshair;
+}
+
+.design_table .cls-1 {
+  fill: #0ac;
+}
+.design_table .cls-1,
+.design_table .cls-2,
+.design_table .cls-3,
+.design_table .cls-4,
+.design_table .cls-5,
+.design_table .cls-6,
+.design_table .cls-8,
+.design_table .cls-9 {
+  opacity: 0.5;
+}
+.design_table .cls-2 {
+  fill: #6161d1;
+}
+.design_table .cls-3 {
+  fill: #ea82f9;
+}
+.design_table .cls-4 {
+  fill: #f79b16;
+}
+.design_table .cls-5 {
+  fill: #aae8f9;
+}
+.design_table .cls-6 {
+  fill: #e5c528;
+}
+.design_table .cls-7 {
+  fill: var(--bgC_C_T);
+}
+.design_table .cls-8 {
+  fill: #38166d;
+}
+.design_table .cls-9 {
+  fill: #94edad;
+}
+
+.dev_table .cls-1 {
+  fill: #0ac;
+}
+.dev_table .cls-2 {
+  fill: #6161d1;
+}
+.dev_table .cls-3 {
+  fill: #a6a6a6;
 }
 
 .desk_icon_container {
@@ -1343,16 +1394,11 @@ body P {
 }
 
 .service_card {
-  height: 20rem;
+  height: 35rem;
 }
 .service_card .info_card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background: var(--bgC_UT);
   width: 100%;
-  height: 100%;
+  height: 15rem;
 }
 .service_card .info_card .title {
   width: 100%;
@@ -1360,10 +1406,20 @@ body P {
   font-size: var(--FS_L);
   transition: var(--T_M);
   text-align: inherit;
+  margin-bottom: 1rem;
 }
 .service_card .info_card .info {
   transition: var(--T_M);
   font-size: var(--FS_N);
+}
+.service_card .icon_container {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 20rem;
+}
+.service_card .icon_container .icon_svg {
+  width: auto;
+  height: 100%;
 }
 
 .project_card {

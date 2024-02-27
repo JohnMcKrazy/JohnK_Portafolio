@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const devScreen = selector(".dev_screen");
     const shieldScreen = selector(".shield_screen");
     const illustrationScreen = selector(".illustration_screen");
+    const illustrationTabletScreen = selector(".illustration_tablet_screen");
     const myIllustration = selector(".desk_me");
     const bioBubble = selector(".bio_bubble");
     const infoBubble = selector(".info_bubble");
@@ -972,7 +973,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectorAll(".illustration_icon").forEach((icon) => {
                         icon.classList.add("icon_show");
                     });
-                    //*illustrationScreen.style.opacity = 1;
+                    illustrationScreen.style.opacity = 1;
+                    illustrationTabletScreen.style.opacity = 1;
                     break;
                 case "design":
                     selectorAll(".design_icon").forEach((icon) => {
@@ -999,7 +1001,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectorAll(".illustration_icon").forEach((icon) => {
                         icon.classList.remove("icon_show");
                     });
-                    //* illustrationScreen.style.opacity = 0;
+                    illustrationScreen.style.opacity = 0;
+                    illustrationTabletScreen.style.opacity = 0;
                     break;
                 case "design":
                     selectorAll(".design_icon").forEach((icon) => {

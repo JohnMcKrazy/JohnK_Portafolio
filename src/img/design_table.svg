@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="principal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592.72 554.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0ac;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-8, .cls-9 {
+        opacity: .5;
+      }
+
+      .cls-2 {
+        fill: #6161d1;
+      }
+
+      .cls-3 {
+        fill: #ea82f9;
+      }
+
+      .cls-4 {
+        fill: #f79b16;
+      }
+
+      .cls-5 {
+        fill: #aae8f9;
+      }
+
+      .cls-6 {
+        fill: #e5c528;
+      }
+
+      .cls-7 {
+        fill: #d2dbda;
+      }
+
+      .cls-8 {
+        fill: #38166d;
+      }
+
+      .cls-9 {
+        fill: #94edad;
+      }
+    </style>
+  </defs>
+  <g id="desk_desig_icons">
+    <g id="column_right_icon">
+      <g id="column_right">
+        <rect class="cls-7" x="341.07" y="350.64" width="81.96" height="178.79" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="341.07" y="311.57" width="174.6" height="29.83" rx="4.37" ry="4.37"/>
+        <rect class="cls-7" x="433.71" y="350.64" width="81.96" height="73.78" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="433.71" y="437.87" width="81.96" height="73.78" rx="7.57" ry="7.57"/>
+      </g>
+    </g>
+    <g id="column_left_icon">
+      <g id="column_left">
+        <rect class="cls-7" x="229.28" y="31.63" width="40.97" height="29.83" rx="4.37" ry="4.37"/>
+        <rect class="cls-7" x="188.3" y="70.7" width="81.94" height="101.45" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="95.68" y="70.7" width="81.94" height="40.39" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="95.68" y="118.55" width="81.94" height="40.39" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="95.68" y="166.41" width="81.94" height="40.39" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="95.22" y="214.26" width="81.94" height="40.39" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="188.3" y="180.88" width="81.94" height="73.77" rx="7.57" ry="7.57"/>
+        <rect class="cls-7" x="95.68" y="31.63" width="124.66" height="29.83" rx="4.37" ry="4.37"/>
+      </g>
+    </g>
+    <g id="logo_2_right_icon">
+      <g id="logo_2_right">
+        <rect class="cls-7" x="419.34" y="191.36" width="97.85" height="18.88" rx="3.96" ry="3.96"/>
+        <circle class="cls-7" cx="468.27" cy="166.89" r="37.71"/>
+      </g>
+    </g>
+    <g id="logo_1_right_icon">
+      <g id="logo_1_right">
+        <rect class="cls-7" x="343.38" y="142.69" width="79.89" height="15.41" rx="3.24" ry="3.24"/>
+        <rect class="cls-7" x="350.43" y="103.91" width="65.79" height="48.24" rx="10.13" ry="10.13"/>
+      </g>
+    </g>
+    <g id="logo_1_left_icon">
+      <g id="logo_1_left">
+        <rect class="cls-7" x="100.64" y="483.2" width="97.85" height="18.88" rx="3.96" ry="3.96"/>
+        <circle class="cls-7" cx="149.57" cy="458.73" r="37.71"/>
+      </g>
+    </g>
+    <g id="logo_2_left_icon">
+      <g id="logo_2_left">
+        <rect class="cls-7" x="196.26" y="440.17" width="79.89" height="15.41" rx="3.24" ry="3.24"/>
+        <rect class="cls-7" x="203.31" y="401.38" width="65.79" height="48.24" rx="10.13" ry="10.13"/>
+      </g>
+    </g>
+    <g id="logo_3_left_icon">
+      <g id="logo_3_left">
+        <rect class="cls-7" x="167.56" y="380.64" width="57.41" height="11.53" rx="2.42" ry="2.42"/>
+        <rect class="cls-7" x="171.44" y="333.58" width="49.64" height="36.39" rx="5.44" ry="5.44" transform="translate(-155.51 548.03) rotate(-90)"/>
+      </g>
+    </g>
+    <circle id="elipse_2" class="cls-2" cx="136.19" cy="272.38" r="44.2"/>
+    <circle id="elipse_1" class="cls-4" cx="428.37" cy="316.44" r="51.15"/>
+    <polygon id="triangle_2" class="cls-9" points="552.22 420.98 449.55 492.02 562.4 545.42 552.22 420.98"/>
+    <polygon id="triangle_1" class="cls-5" points="364.4 89.5 283.14 145.73 372.46 187.99 364.4 89.5"/>
+    <polygon id="pentagono_2" class="cls-8" points="479.92 7.64 418.91 27.46 418.91 91.61 479.92 111.44 517.63 59.54 479.92 7.64"/>
+    <polygon id="pentagono_1" class="cls-3" points="188.95 452.78 166.8 502.53 207.27 538.97 254.43 511.74 243.11 458.47 188.95 452.78"/>
+    <rect id="square_1" class="cls-1" x="29.38" y="33.1" width="95.48" height="95.48" rx="4.6" ry="4.6" transform="translate(-18.77 23.49) rotate(-15.47)"/>
+    <rect id="square_2" class="cls-6" x="259.14" y="294.17" width="79.4" height="79.4" rx="4.6" ry="4.6" transform="translate(323.61 -113.52) rotate(45)"/>
+  </g>
+</svg>
