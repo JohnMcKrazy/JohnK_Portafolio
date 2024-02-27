@@ -1681,6 +1681,7 @@ body {
 }
 .cards_hot_container {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1rem;
 }
 .cards_portfolio_container {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -2112,7 +2113,6 @@ body {
 .section_content {
     min-height: calc(100vh - var(--NVH));
     min-height: var(--FS_NVH);
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2270,10 +2270,9 @@ body {
     }
 }
 .contact_section {
-    padding: 0 2rem;
     .form {
-        width: calc(100% - 4rem);
-        min-width: 260px;
+        max-width: 800px;
+        width: 100%;
     }
     .bg_section {
         background: var(--bgHeaderSectionContact);
@@ -2520,9 +2519,9 @@ body {
         }
     }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 720px) {
     .cards_hot_container {
-        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     }
     .flex_responsive {
         @include flexDirection(row, center, denter);
@@ -2536,6 +2535,9 @@ body {
     }
 }
 @media screen and (min-width: 900px) {
+    .cards_hot_container {
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
     .flex_responsive {
         flex-direction: row;
     }

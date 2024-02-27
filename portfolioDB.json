@@ -273,7 +273,7 @@
     },
     {
         "client_name": "Tic-Tac-Toe",
-        "db_name": "tic_tac_tac",
+        "db_name": "tic_tac_toe",
         "client_logo": "",
         "projects": {
             "type": "dev",
@@ -715,7 +715,7 @@
     },
     {
         "client_name": "Joker",
-        "db_name": "guason_tradicional",
+        "db_name": "joker_tradicional",
         "client_logo": "",
         "projects": {
             "type": "illustration",
@@ -749,7 +749,7 @@
     },
     {
         "client_name": "BoJack Horseman",
-        "db_name": "bojack",
+        "db_name": "boJack",
         "client_logo": "",
         "projects": {
             "type": "illustration",

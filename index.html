@@ -23,7 +23,7 @@
         <!--!GOOGLE FONTS-->
         <link rel="stylesheet" href="./src/css/normalize.css" />
         <link rel="stylesheet" href="./src/css/moderCss.css" />
-        <link rel="stylesheet" href="./src/css/style.min.css" />
+        <link rel="stylesheet" href="./src/css/style.css" />
     </head>
     <body class="dark_theme">
         <span class="bubble info_bubble">
@@ -4747,36 +4747,30 @@
                     <h1 class="title_section animation_up" id="title_contact">Contacto</h1>
                 </div>
                 <h2 class="subtitle_section">Estoy ancioso de hacer proyectos interesantes con tus ideas</h2>
-                <div class="flex flex_responsive">
-                    <div class="bullet">
-                        <h1 class="bullet_title">Trabajemos Juntos</h1>
-                        <p>Estoy ancioso de hacer proyectos interesantes con tus ideas</p>
+                <form class="form contact_form" id="contact_form">
+                    <div class="input_container">
+                        <label for="input_name">Nombre/s</label>
+                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="input_name" name="name" />
                     </div>
-                    <form class="form contact_form" id="contact_form">
-                        <div class="input_container">
-                            <label for="input_name">Nombre/s</label>
-                            <input type="text" placeholder="Escribe tu/s Nombre/s" id="input_name" name="name" />
-                        </div>
 
-                        <div class="input_container">
-                            <label for="input_last_name">Apellidos</label>
-                            <input type="text" placeholder="Escribe tu Apellido" id="input_last_name" name="last_name" />
-                        </div>
+                    <div class="input_container">
+                        <label for="input_last_name">Apellidos</label>
+                        <input type="text" placeholder="Escribe tu Apellido" id="input_last_name" name="last_name" />
+                    </div>
 
-                        <div class="input_container">
-                            <label for="input_email">Email</label>
-                            <input type="email" placeholder="Escribe tu Email" id="input_email" name="email" />
-                        </div>
+                    <div class="input_container">
+                        <label for="input_email">Email</label>
+                        <input type="email" placeholder="Escribe tu Email" id="input_email" name="email" />
+                    </div>
 
-                        <div class="input_container last">
-                            <label for="input_textarea">Descripción</label>
-                            <textarea id="input_textarea" name="description" placeholder="Comparte me un resumen de tu idea"></textarea>
-                        </div>
-                        <button type="submit" class="btn send_btn" id="contact_form_send_btn">
-                            <span class="label_btn">Enviar</span>
-                        </button>
-                    </form>
-                </div>
+                    <div class="input_container last">
+                        <label for="input_textarea">Descripción</label>
+                        <textarea id="input_textarea" name="description" placeholder="Comparte me un resumen de tu idea"></textarea>
+                    </div>
+                    <button type="submit" class="btn send_btn" id="contact_form_send_btn">
+                        <span class="label_btn">Enviar</span>
+                    </button>
+                </form>
             </div>
         </section>
 
