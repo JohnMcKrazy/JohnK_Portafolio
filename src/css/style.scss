@@ -440,10 +440,6 @@ body {
         fill: #930;
     }
 
-    .cls-20 {
-        fill: #aef4d1;
-    }
-
     .cls-21 {
         fill: #2b2827;
     }
@@ -545,6 +541,7 @@ body {
         fill: orange;
     }
 
+    .cls-20,
     .cls-47 {
         fill: #f79b16;
     }
@@ -611,8 +608,8 @@ body {
     .cls-62 {
         fill: #94edad;
     }
-    .cls-67{
-        fill:#F2F2F2;
+    .cls-67 {
+        fill: #f2f2f2;
     }
     .desk_tablet_screen {
         transition: fill 250ms ease-in-out;
@@ -672,66 +669,6 @@ body {
     }
     .svg_btn {
         cursor: crosshair;
-    }
-}
-.design_table {
-    .cls-1 {
-        fill: #0ac;
-    }
-    .cls-1,
-    .cls-2,
-    .cls-3,
-    .cls-4,
-    .cls-5,
-    .cls-6,
-    .cls-8,
-    .cls-9 {
-        opacity: 0.5;
-    }
-
-    .cls-2 {
-        fill: #6161d1;
-    }
-
-    .cls-3 {
-        fill: #ea82f9;
-    }
-
-    .cls-4 {
-        fill: #f79b16;
-    }
-
-    .cls-5 {
-        fill: #aae8f9;
-    }
-
-    .cls-6 {
-        fill: #e5c528;
-    }
-
-    .cls-7 {
-        fill: var(--bgC_C_T);
-    }
-
-    .cls-8 {
-        fill: #38166d;
-    }
-
-    .cls-9 {
-        fill: #94edad;
-    }
-}
-.dev_table {
-    .cls-1 {
-        fill: #0ac;
-    }
-
-    .cls-2 {
-        fill: #6161d1;
-    }
-
-    .cls-3 {
-        fill: #a6a6a6;
     }
 }
 .desk_icon_container {
@@ -1490,6 +1427,7 @@ body {
     }
 }
 .service_card {
+    @include flexDirection(column, center, center);
     height: 35rem;
     .info_card {
         width: 100%;
@@ -1499,7 +1437,6 @@ body {
             color: var(--TC);
             font-size: var(--FS_L);
             transition: var(--T_M);
-            text-align: inherit;
             margin-bottom: 1rem;
         }
         .info {
@@ -1514,6 +1451,70 @@ body {
             width: auto;
             height: 100%;
         }
+    }
+
+    .design_table {
+        .cls-1 {
+            fill: #0ac;
+        }
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5,
+        .cls-6,
+        .cls-8,
+        .cls-9 {
+            opacity: 0.5;
+        }
+
+        .cls-2 {
+            fill: #6161d1;
+        }
+
+        .cls-3 {
+            fill: #ea82f9;
+        }
+
+        .cls-4 {
+            fill: #f79b16;
+        }
+
+        .cls-5 {
+            fill: #aae8f9;
+        }
+
+        .cls-6 {
+            fill: #e5c528;
+        }
+
+        .cls-7 {
+            fill: var(--bgC_C_T);
+        }
+
+        .cls-8 {
+            fill: #38166d;
+        }
+
+        .cls-9 {
+            fill: #94edad;
+        }
+    }
+    .dev_table {
+        .cls-1 {
+            fill: #0ac;
+        }
+
+        .cls-2 {
+            fill: #6161d1;
+        }
+
+        .cls-3 {
+            fill: #a6a6a6;
+        }
+    }
+    .illustration_table {
+        fill: var(--bgC_C);
     }
 }
 .project_card {
@@ -1662,6 +1663,7 @@ body {
     }
 }
 //^
+
 .input_container {
     width: 100%;
     height: fit-content;

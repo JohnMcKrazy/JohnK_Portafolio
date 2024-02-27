@@ -380,9 +380,6 @@ body P {
 .deskwork_icon .cls-18 {
   fill: #930;
 }
-.deskwork_icon .cls-20 {
-  fill: #aef4d1;
-}
 .deskwork_icon .cls-21 {
   fill: #2b2827;
 }
@@ -460,6 +457,7 @@ body P {
 .deskwork_icon .cls-46 {
   fill: orange;
 }
+.deskwork_icon .cls-20,
 .deskwork_icon .cls-47 {
   fill: #f79b16;
 }
@@ -512,7 +510,7 @@ body P {
   fill: #94edad;
 }
 .deskwork_icon .cls-67 {
-  fill: #F2F2F2;
+  fill: #f2f2f2;
 }
 .deskwork_icon .desk_tablet_screen {
   transition: fill 250ms ease-in-out;
@@ -568,54 +566,6 @@ body P {
 }
 .deskwork_icon .svg_btn {
   cursor: crosshair;
-}
-
-.design_table .cls-1 {
-  fill: #0ac;
-}
-.design_table .cls-1,
-.design_table .cls-2,
-.design_table .cls-3,
-.design_table .cls-4,
-.design_table .cls-5,
-.design_table .cls-6,
-.design_table .cls-8,
-.design_table .cls-9 {
-  opacity: 0.5;
-}
-.design_table .cls-2 {
-  fill: #6161d1;
-}
-.design_table .cls-3 {
-  fill: #ea82f9;
-}
-.design_table .cls-4 {
-  fill: #f79b16;
-}
-.design_table .cls-5 {
-  fill: #aae8f9;
-}
-.design_table .cls-6 {
-  fill: #e5c528;
-}
-.design_table .cls-7 {
-  fill: var(--bgC_C_T);
-}
-.design_table .cls-8 {
-  fill: #38166d;
-}
-.design_table .cls-9 {
-  fill: #94edad;
-}
-
-.dev_table .cls-1 {
-  fill: #0ac;
-}
-.dev_table .cls-2 {
-  fill: #6161d1;
-}
-.dev_table .cls-3 {
-  fill: #a6a6a6;
 }
 
 .desk_icon_container {
@@ -1394,6 +1344,10 @@ body P {
 }
 
 .service_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 35rem;
 }
 .service_card .info_card {
@@ -1405,7 +1359,6 @@ body P {
   color: var(--TC);
   font-size: var(--FS_L);
   transition: var(--T_M);
-  text-align: inherit;
   margin-bottom: 1rem;
 }
 .service_card .info_card .info {
@@ -1420,6 +1373,55 @@ body P {
 .service_card .icon_container .icon_svg {
   width: auto;
   height: 100%;
+}
+.service_card .design_table .cls-1 {
+  fill: #0ac;
+}
+.service_card .design_table .cls-1,
+.service_card .design_table .cls-2,
+.service_card .design_table .cls-3,
+.service_card .design_table .cls-4,
+.service_card .design_table .cls-5,
+.service_card .design_table .cls-6,
+.service_card .design_table .cls-8,
+.service_card .design_table .cls-9 {
+  opacity: 0.5;
+}
+.service_card .design_table .cls-2 {
+  fill: #6161d1;
+}
+.service_card .design_table .cls-3 {
+  fill: #ea82f9;
+}
+.service_card .design_table .cls-4 {
+  fill: #f79b16;
+}
+.service_card .design_table .cls-5 {
+  fill: #aae8f9;
+}
+.service_card .design_table .cls-6 {
+  fill: #e5c528;
+}
+.service_card .design_table .cls-7 {
+  fill: var(--bgC_C_T);
+}
+.service_card .design_table .cls-8 {
+  fill: #38166d;
+}
+.service_card .design_table .cls-9 {
+  fill: #94edad;
+}
+.service_card .dev_table .cls-1 {
+  fill: #0ac;
+}
+.service_card .dev_table .cls-2 {
+  fill: #6161d1;
+}
+.service_card .dev_table .cls-3 {
+  fill: #a6a6a6;
+}
+.service_card .illustration_table {
+  fill: var(--bgC_C);
 }
 
 .project_card {
