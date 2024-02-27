@@ -901,6 +901,16 @@ body P {
   stroke-width: 0px;
 }
 
+.python_icon_svg .cls-1 {
+  fill: #366a96;
+}
+.python_icon_svg .cls-2 {
+  fill: #ffc836;
+}
+.python_icon_svg .cls-3 {
+  fill: #fff;
+}
+
 .wa_icon_svg,
 .fb_icon_svg,
 .behance_icon_svg,
