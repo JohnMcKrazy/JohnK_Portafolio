@@ -1097,12 +1097,13 @@ body {
     @include flexDirection(column, center, center);
     position: absolute;
     opacity: 0;
-    background: var(--NVC_T);
+    background: var(--NVC);
     color: var(--TC_C);
     border-radius: 0.5rem;
     z-index: 2;
     display: none;
     transition: all 250ms ease;
+    user-select: none;
 }
 
 .bio_bubble {

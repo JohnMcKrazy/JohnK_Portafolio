@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: '<div class="icon_container"><svg class="xd_icon_svg adobe_icon tech_icon_card" data-name="xd_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25"><title>Adobe Xd</title><path class="cls-1" d="M3.91,0H21.09A3.91,3.91,0,0,1,25,3.91V21.09A3.91,3.91,0,0,1,21.09,25H3.91A3.91,3.91,0,0,1,0,21.09V3.91A3.91,3.91,0,0,1,3.91,0" /><path class="cls-2" d="M13.25,7.42l-3.07,4.94,3.29,5.36a.16.16,0,0,1,0,.12s-.05.06-.12.07H11a.36.36,0,0,1-.34-.16c-.22-.43-.44-.83-.66-1.25s-.46-.86-.71-1.3-.49-.88-.73-1.33h0c-.22.44-.45.88-.68,1.32l-.7,1.31c-.24.44-.47.84-.72,1.27a.24.24,0,0,1-.23.15H4a.07.07,0,0,1-.07-.06h0a.17.17,0,0,1,0-.12l3.19-5.2L4,7.4s0-.08,0-.11a.15.15,0,0,1,.1,0H6.42a.32.32,0,0,1,.14,0,.22.22,0,0,1,.1.09c.2.44.42.75.66,1.19s.49.88.74,1.31a14.67,14.67,0,0,1,.68,1.3h0c.22-.45.44-.89.67-1.32l.69-1.29c.24-.44.47-.75.69-1.17a.16.16,0,0,1,.07-.11.28.28,0,0,1,.13,0h2.16a.11.11,0,0,1,.12.07.12.12,0,0,1,0,.1"/><path class="cls-2" d="M17.83,18.27a5.11,5.11,0,0,1-2.21-.47,3.51,3.51,0,0,1-1.54-1.39,4.45,4.45,0,0,1-.56-2.34,4.2,4.2,0,0,1,.56-2.16,4,4,0,0,1,1.63-1.59,5.2,5.2,0,0,1,2.6-.59h.21l.4,0V6.84a.26.26,0,0,1,.22-.3h1.6a.29.29,0,0,1,.3.3v9.41c0,.19,0,.39,0,.61s0,.42.05.6a.16.16,0,0,1,0,.09.16.16,0,0,1-.07.07,8.24,8.24,0,0,1-1.6.5,10.43,10.43,0,0,1-1.58.15m1.05-2.05V11.71a1.77,1.77,0,0,0-.32-.05l-.34,0a2.69,2.69,0,0,0-1.15.26A2.14,2.14,0,0,0,15.86,14,3,3,0,0,0,16,15a1.91,1.91,0,0,0,.47.72,1.81,1.81,0,0,0,.69.42,2.7,2.7,0,0,0,.85.13l.43,0a2.9,2.9,0,0,0,.41-.06"/></svg></div>',
         },
         {
-            tech_name: "Figma",
             db_name: "figma",
+            tech_name: "Figma",
             tech_complete_name: "Figma",
             tech_info: "Figma es un editor de gráficos vectorial y una herramienta de generación de prototipos, principalmente basada en la web.",
             icon: '<div class="icon_container"><svg class="figma_icon_svg adobe_icon tech_icon_card" data-name="figma_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25"><title>Figma</title><circle class="cls-1" cx="16.67" cy="12.5" r="4.17" /><path class="cls-2" d="M8.33,16.67a4.17,4.17,0,1,0,4.17,4.16V16.67Z" /><path class="cls-3" d="M16.67,0H12.5V8.33h4.17a4.17,4.17,0,0,0,0-8.33Z" /><path class="cls-4" d="M8.33,0a4.17,4.17,0,0,0,0,8.33H12.5V0Z" /><path class="cls-5" d="M8.33,8.33a4.17,4.17,0,0,0,0,8.34H12.5V8.33Z" /></svg></div>',
@@ -898,7 +898,6 @@ document.addEventListener("DOMContentLoaded", () => {
         listExtrasActions();
     });
     // ! START FETCHING PROJECTS DATA FOR ALL CARDS  //
-    let portfolioFilterData = [];
     const extraListBtnTemplate = selector(".extra_list_btn_template").content;
     const fragmentBtns = $d.createDocumentFragment();
     const clearListBtns = () => {
@@ -947,17 +946,16 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".portfolio_btn").forEach((btn) => {
         btn.addEventListener("click", () => openPortfolioModal(btn));
     });
-
     myIllustration.addEventListener("mouseover", (e) => {
-        animationIn(bioBubble, "flex", 300);
-        setTimeout(() => {
-            const containerWidth = bioBubble.getClientRects()[0].width;
-            const containerHeight = bioBubble.getClientRects()[0].height;
-            bioBubble.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
-        }, 250);
+        bioBubble.style.display = flx;
+        bioBubble.style.opacity = 1;
+        const containerWidth = bioBubble.getClientRects()[0].width;
+        const containerHeight = bioBubble.getClientRects()[0].height;
+        bioBubble.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
     });
     bioBubble.addEventListener("mouseleave", () => {
-        animationOut(bioBubble, 300);
+        bioBubble.style.display = none;
+        bioBubble.style.opacity = 0;
     });
     selectorAll(".animation_key").forEach((key) => {
         const tabletScreen = selector(".desk_tablet_screen");
@@ -1016,18 +1014,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     selectorAll(".skill_badge").forEach((badge) => {
         badge.addEventListener("mouseover", (e) => {
-            animationIn(infoBubble, flx, 300);
             const newData = infoSoftware.filter((item) => item.db_name === badge.getAttribute("data-name"));
             infoBubble.querySelector(".title").textContent = newData[0].tech_complete_name;
             infoBubble.querySelector(".description").textContent = newData[0].tech_info;
-            setTimeout(() => {
-                const containerWidth = infoBubble.getClientRects()[0].width;
-                const containerHeight = infoBubble.getClientRects()[0].height;
-                infoBubble.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
-            }, 250);
+
+            infoBubble.style.display = flx;
+            infoBubble.style.opacity = 1;
+            const containerWidth = infoBubble.getClientRects()[0].width;
+            const containerHeight = infoBubble.getClientRects()[0].height;
+            infoBubble.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
         });
         infoBubble.addEventListener("mouseleave", () => {
-            animationOut(infoBubble, 300);
+            infoBubble.style.opacity = 0;
+            infoBubble.style.display = none;
         });
     });
     /*  selector("#contact_form_send_btn").addEventListener("click", (e) => {

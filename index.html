@@ -1561,7 +1561,7 @@
                     <div class="skills_icon_container">
                         <!--? SKILLS ICONS-->
                         <h2 class="subtitle_section">Diseño</h2>
-                        <div class="icons_container">
+                        <div class="icons_container" data-ref="design">
                             <div class="skill_badge" data-name="illustrator">
                                 <div class="icon_container">
                                     <svg class="illustrator_icon_svg adobe_icon" data-name="illustrator_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
@@ -1667,7 +1667,7 @@
                     <div class="skills_icon_container">
                         <h2 class="subtitle_section">Desarrollo</h2>
                         <!--? SKILLS ICONS-->
-                        <div class="icons_container">
+                        <div class="icons_container" data-ref="dev">
                             <div class="skill_badge" data-name="html">
                                 <div class="icon_container">
                                     <svg class="html_icon_svg" data-name="html_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
@@ -1788,7 +1788,7 @@
                     <div class="skills_icon_container">
                         <h2 class="subtitle_section">En Proceso</h2>
                         <!--? SKILLS ICONS-->
-                        <div class="icons_container">
+                        <div class="icons_container" data-ref="next">
                             <div class="skill_badge" data-name="react">
                                 <div class="icon_container">
                                     <svg class="react_icon_svg icon_svg" data-name="react_icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
@@ -2033,5 +2033,12 @@
         <button type="button" class="btn list_btn extra_list_btn">
             <span class="label_btn"></span>
         </button>
+    </template>
+    <template class="skill_badge_template">
+        <div class="skill_badge" data-name="">
+            <div class="icon_container"></div>
+            <span class="skill_name_pre"></span>
+            <span class="skill_name"></span>
+        </div>
     </template>
 </html>
