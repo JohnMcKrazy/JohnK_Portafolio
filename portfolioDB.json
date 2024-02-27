@@ -278,7 +278,7 @@
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
-            "skills": ["Web", "API Rest", "Programación"],
+            "skills": ["Web", "Programación"],
             "description": "",
             "reach": ["Web", "Programación"],
             "technologies": ["HTML", "CSS", "SASS", "React"],
