@@ -93,13 +93,13 @@
 }
 :root {
     //¿GENERAL COLORS START
-    --logoGray: hsl(0, 0%, 65%);
-    --lightray: hsl(0, 0%, 75%);
-    --midGray: hsl(0, 0%, 50%);
-    --darkGray: hsl(0, 0%, 25%);
-    --blackOff: hsl(0, 0%, 15%);
-    --whiteOff: hsl(0, 0%, 85%);
-    --midLight: hsl(0, 0%, 50%);
+    --logoGray: rgb(166, 166, 166);
+    --lightray: rgb(191, 191, 191);
+    --midGray: rgb(128, 128, 128);
+    --darkGray: rgb(64, 64, 64);
+    --blackOff: rgb(38, 38, 38);
+    --whiteOff: rgb(217, 217, 217);
+    --midLight: rgb(128, 128, 128);
 
     //¿FONTS START
     //¿ FONT SIZES--START
@@ -151,25 +151,25 @@
 }
 //!THEMES START
 .light_theme {
-    --FC: hsl(260, 84%, 25%);
-    --FC_H: hsl(260, 85%, 15%);
-    --SC: hsl(195, 85%, 60%);
-    --SC_H: hsl(195, 63%, 48%);
-    --quote: rgb(150, 150, 245);
-    --TC: hsl(0, 0%, 10%);
-    --TC_C: hsl(0, 0%, 90%);
-    --NVC: hsl(0, 0%, 95%);
-    --NVC_T: hsla(0, 0%, 95%, 0.75);
-    --tooltipColor: hsl(0, 0%, 5%);
-    --bgC: hsl(0, 0%, 90%);
-    --bgC_T: hsla(0, 0%, 95%, 0.75);
-    --bgC_UT: hsla(0, 0%, 95%, 0.25);
-    --bgC_C: hsl(0, 0%, 10%);
-    --bgC_C_T: hsla(0, 0%, 10%, 0.15);
+    --FC: rgb(46, 10, 117);
+    --FC_H: rgb(27, 6, 71);
+    --SC: rgb(66, 196, 240);
+    --SC_H: rgb(45, 161, 200);
+    --quote: rgb(148, 148, 245);
+    --TC: rgb(26, 26, 26);
+    --TC_C: rgb(230, 230, 230);
+    --NVC: rgb(242, 242, 242);
+    --NVC_T: rgba(242, 242, 242, 0.75);
+    --tooltipColor: rgb(13, 13, 13);
+    --bgC: rgb(230, 230, 230);
+    --bgC_T: rgba(242, 242, 242, 0.75);
+    --bgC_UT: rgba(242, 242, 242, 0.25);
+    --bgC_C: rgb(26, 26, 26);
+    --bgC_C_T: rgba(26, 26, 26, 0.15);
     --BS_SB: rgba(0, 0, 0, 0.1);
-    --bgOff: hsl(0, 0%, 80%);
-    --bgM: hsla(0, 0%, 90%, 0.75);
-    --vueIconText: hsl(0, 0%, 20%);
+    --bgOff: rgb(204, 204, 204);
+    --bgM: rgba(230, 230, 230, 0.75);
+    --vueIconText: rgb(51, 51, 51);
     //~ GENERALS
     color: var(--TC);
 
@@ -179,14 +179,14 @@
     --bgHeaderSectionAbout2: linear-gradient(var(--bgColorUT), var(--bgColor) 75%), url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionSkills: linear-gradient(var(--bgC), hsla(0, 0%, 100%, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
-    --bgHeaderSectionContact: linear-gradient(var(--bgC), hsla(0, 0%, 100%, 0.5), var(--bgC)), url("../img/backgrounds/pexels-alex-andrews-821754.jpg") center no-repeat fixed;
+    --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
+    --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-alex-andrews-821754.jpg") center no-repeat fixed;
 
     .leiru_icon_svg {
         .brand,
         .brand-append {
             .cls-1 {
-                fill: hsl(134, 74%, 36%);
+                fill: rgb(24, 160, 56);
             }
         }
         .text {
@@ -195,27 +195,27 @@
     }
 }
 .dark_theme {
-    --FC_H: hsl(190, 100%, 70%);
-    --FC: hsl(190, 100%, 40%);
-    --FC: hsl(190, 100%, 40%);
-    --quote: rgb(150, 215, 245);
-    --SC: hsl(240, 55%, 60%);
-    --SC_H: hsl(240, 55%, 40%);
-    --TC: hsl(0, 0%, 90%);
-    --TC_C: hsl(0, 0%, 10%);
-    --NVC: hsl(0, 0%, 5%);
-    --NVC_T: hsla(0, 0%, 5%, 0.75);
+    --FC_H: rgb(102, 230, 255);
+    --FC: rgb(0, 170, 204);
+    --FC: rgb(0, 170, 204);
+    --quote: rgb(148, 214, 245);
+    --SC: rgb(97, 97, 209);
+    --SC_H: rgb(46, 46, 158);
+    --TC: rgb(230, 230, 230);
+    --TC_C: rgb(26, 26, 26);
+    --NVC: rgb(13, 13, 13);
+    --NVC_T: rgba(13, 13, 13, 0.75);
 
-    --tooltipColor: hsl(0, 0%, 95%);
-    --bgC: hsl(0, 0%, 10%);
-    --bgC_T: hsla(0, 0%, 5%, 0.75);
-    --bgC_UT: hsla(0, 0%, 5%, 0.25);
-    --bgC_C: hsl(0, 0%, 90%);
-    --bgC_C_T: hsla(0, 0%, 90%, 0.15);
+    --tooltipColor: rgb(242, 242, 242);
+    --bgC: rgb(26, 26, 26);
+    --bgC_T: rgba(13, 13, 13, 0.75);
+    --bgC_UT: rgba(13, 13, 13, 0.25);
+    --bgC_C: rgb(230, 230, 230);
+    --bgC_C_T: rgba(230, 230, 230, 0.15);
     --BS_SB: rgba(255, 255, 255, 0.1);
-    --bgOff: hsl(0, 0%, 20%);
-    --bgM: hsla(0, 0%, 10%, 0.75);
-    --vueIconText: hsl(0, 0%, 80%);
+    --bgOff: rgb(51, 51, 51);
+    --bgM: rgba(26, 26, 26, 0.75);
+    --vueIconText: rgb(204, 204, 204);
     //¿GENERALS
 
     //~SECTION BACKGROUNDS
@@ -223,8 +223,8 @@
     --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, hsla(0, 0%, 0%, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, hsla(0, 0%, 0%, 0.5), var(--bgC) 90%), url("../img/backgrounds/post-letter-2828146_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/post-letter-2828146_1920.jpg") center no-repeat fixed;
 
     color: var(--TC);
 
@@ -623,7 +623,7 @@ body {
         fill: #9cf;
     }
     .watch_time {
-        fill: hsl(190, 100%, 40%);
+        fill: rgb(0, 170, 204);
     }
     .cls-txt {
         fill: var(--TC);
@@ -686,13 +686,13 @@ body {
 }
 .verona_icon_svg {
     .cls-1 {
-        fill: hsl(53, 84%, 38%);
+        fill: rgb(178, 159, 16);
     }
     .cls-2 {
         fill: var(--TC);
     }
     .cls-3 {
-        fill: hsl(357, 91%, 45%);
+        fill: rgb(219, 10, 21);
     }
     .cls-4 {
         fill: #ffffff;
@@ -701,7 +701,7 @@ body {
 .gorgona_icon_svg {
     .cls-1,
     .cls-2 {
-        fill: hsl(32, 55%, 66%);
+        fill: rgb(216, 171, 121);
     }
     .cls-2 {
         fill-rule: evenodd;
@@ -753,7 +753,7 @@ body {
 }
 .leiru_icon_svg {
     .polygon {
-        fill: hsl(134, 74%, 36%);
+        fill: rgb(24, 160, 56);
     }
     .text {
         .cls-2 {
