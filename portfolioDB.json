@@ -720,10 +720,10 @@
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
-            "skills": ["Tradicional"],
+            "skills": ["Ilustración Tradicional"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
+            "technologies": ["Ilustracion Tradicional"],
             "images": {
                 "avatar": "",
                 "hero": {
@@ -754,10 +754,10 @@
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
-            "skills": ["Digital"],
+            "skills": ["Ilustración Digital"],
             "description": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
+            "technologies": ["Illustrator"],
             "images": {
                 "avatar": "",
                 "hero": {

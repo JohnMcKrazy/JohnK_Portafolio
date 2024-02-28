@@ -26,6 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "boJack", "creaciones_hermed", "rick_and_morty", "tribute", "choroplet_map", "joker_tradicional", "tic_tac_toe"];
     const infoSoftware = [
         {
+            db_name: "",
+            tech_name_pre: "",
+            tech_name: "Ilustracion Tradicional",
+            tech_complete_name: "",
+            tech_info: "",
+            icon: '<div class="icon_container"><svg class="pallet_icon icon_svg tech_icon_card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.98 64"><title>Ilustración Tradicional</title><g ><><path class="cls-1" d="M48.84,41.61a11.58,11.58,0,0,1,0-19.22h0c8.78-6.33,5.84-19.17-5.1-21.52A39.79,39.79,0,0,0,35.51,0C15.07,0-1.34,15.57.09,34.26,1.3,50.13,15.63,62.95,33.25,63.94a39.81,39.81,0,0,0,10.19-.74C54.54,60.92,57.74,48,48.84,41.61ZM43,56a5,5,0,1,1,5-5A5,5,0,0,1,43,56Z"/><path class="cls-2" d="M59.32,16.67h0a2.25,2.25,0,0,0-3-.16L36.26,32.75A44.12,44.12,0,0,0,23.47,49.66h0l2.87,2.87h0A44.12,44.12,0,0,0,43.25,39.74L59.48,19.69A2.25,2.25,0,0,0,59.32,16.67Z"/><path class="cls-3" d="M26.34,52.53S26.34,64,12,64c0-14.34,11.47-14.34,11.47-14.34Z"/><circle class="cls-4" cx="41" cy="13" r="5"/><circle class="cls-5" cx="13" cy="33" r="5"/><circle class="cls-6" cx="23" cy="17" r="5"/></g></g></svg></div>',
+        },
+        {
             db_name: "illustrator",
             tech_name_pre: "Adobe",
             tech_name: "Illustrator",

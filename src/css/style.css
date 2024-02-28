@@ -581,6 +581,25 @@ body P {
   height: auto;
 }
 
+.pallet_icon .cls-1 {
+  fill: var(--bgC_C);
+}
+.pallet_icon .cls-2 {
+  fill: var(--SC);
+}
+.pallet_icon .cls-3 {
+  fill: #fafafa;
+}
+.pallet_icon .cls-4 {
+  fill: #f74f80;
+}
+.pallet_icon .cls-5 {
+  fill: #74d800;
+}
+.pallet_icon .cls-6 {
+  fill: #00cde2;
+}
+
 .impulso_icon_svg .cls-1 {
   fill: #c01918;
 }
@@ -1598,7 +1617,7 @@ body P {
 }
 
 .cards_service_container {
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: 1fr;
   min-height: auto;
 }
 
@@ -2507,6 +2526,9 @@ body P {
 }
 
 @media screen and (min-width: 720px) {
+  .cards_service_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .cards_hot_container {
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   }
@@ -2524,6 +2546,9 @@ body P {
   }
 }
 @media screen and (min-width: 900px) {
+  .cards_service_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .cards_hot_container {
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   }
