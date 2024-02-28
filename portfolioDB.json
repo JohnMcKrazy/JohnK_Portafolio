@@ -281,7 +281,7 @@
             "skills": ["Web", "Programación"],
             "description": "",
             "reach": ["Web", "Programación"],
-            "technologies": ["HTML", "CSS", "SASS", "React"],
+            "technologies": ["HTML", "SASS", "React"],
             "images": {
                 "avatar": "",
                 "hero": {
