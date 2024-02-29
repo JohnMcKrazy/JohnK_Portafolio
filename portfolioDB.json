@@ -916,5 +916,107 @@
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
+    },
+    {
+        "client_name": "Chp-Chp Buggy (Tematica One Piece)",
+        "db_name": "chop_chop_buggy",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Digital"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/chopBuggy.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Jolly Roger (Tematica One Piece)",
+        "db_name": "jolly_roger",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Digital"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/jolly_roger.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Jolly Roger (Tematica One Piece)",
+        "db_name": "jolly_roger_2",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Digital"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Illustrator"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/jolly_roger_2.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
     }
 ]
