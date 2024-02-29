@@ -748,6 +748,142 @@
         "votes": 2
     },
     {
+        "client_name": "Conejos",
+        "db_name": "bunnies",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/conejos.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Capitan Planeta",
+        "db_name": "captain_planet",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/captainPlanet.jpg",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "We Are Venom",
+        "db_name": "we_are_disney",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/weAreDisney.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Mjolnir",
+        "db_name": "mjolnir",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "description": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "src/img/mjolnir.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
         "client_name": "BoJack Horseman",
         "db_name": "boJack",
         "client_logo": "",

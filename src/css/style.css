@@ -877,7 +877,7 @@ body P {
 }
 
 .js_icon_svg {
-  transform: scale(0.7);
+  transform: scale(0.8);
 }
 .js_icon_svg .cls-1 {
   fill: #f7df1e;
@@ -909,18 +909,7 @@ body P {
 }
 
 .node_icon_svg .cls-1 {
-  fill: #689f63;
-}
-.node_icon_svg .cls-2,
-.node_icon_svg .cls-4 {
-  fill: #689f63;
-}
-.node_icon_svg .cls-3 {
-  fill: var(--vueIconText);
-}
-.node_icon_svg .cls-3,
-.node_icon_svg .cls-4 {
-  fill-rule: evenodd;
+  fill: #539e43;
 }
 
 .react_icon_svg .cls-1 {
@@ -2206,7 +2195,7 @@ body P {
 }
 .skill_badge .skill_name {
   color: var(--TC);
-  font-size: var(--fontSizeSClamp);
+  font-size: var(--FS_N);
   line-height: 1;
   text-align: center;
   width: 100%;
