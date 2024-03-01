@@ -957,26 +957,26 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".portfolio_btn").forEach((btn) => {
         btn.addEventListener("click", () => openPortfolioModal(btn));
     });
-    selector(".desk_me").addEventListener("mouseover", (e) => {
+    const tooltipMargin = 12;
+    const illustrationMe = selector(".desk_me");
+    const illustrationRex = selector(".dog");
+    illustrationMe.addEventListener("mouseover", (e) => {
         bubbleBio.style.display = flx;
         bubbleBio.style.opacity = 1;
         const containerWidth = bubbleBio.getClientRects()[0].width;
-        const containerHeight = bubbleBio.getClientRects()[0].height;
-        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY}px)`;
+        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
     });
-
-    bubbleBio.addEventListener("mouseleave", () => {
+    illustrationMe.addEventListener("mouseleave", () => {
         bubbleBio.style.display = none;
         bubbleBio.style.opacity = 0;
     });
-    selector(".dog").addEventListener("mouseover", (e) => {
+    illustrationRex.addEventListener("mouseover", (e) => {
         bubbleRex.style.display = flx;
         bubbleRex.style.opacity = 1;
         const containerWidth = bubbleRex.getClientRects()[0].width;
-        const containerHeight = bubbleRex.getClientRects()[0].height;
-        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY}px)`;
+        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
     });
-    bubbleRex.addEventListener("mouseleave", () => {
+    illustrationRex.addEventListener("mouseleave", () => {
         bubbleRex.style.display = none;
         bubbleRex.style.opacity = 0;
     });
@@ -1046,10 +1046,9 @@ document.addEventListener("DOMContentLoaded", () => {
             bubbleInfo.style.opacity = 1;
 
             const containerWidth = bubbleInfo.getClientRects()[0].width;
-            const containerHeight = bubbleInfo.getClientRects()[0].height;
-            bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY}px)`;
+            bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
         });
-        bubbleInfo.addEventListener("mouseleave", () => {
+        badge.addEventListener("mouseleave", () => {
             bubbleInfo.style.opacity = 0;
             bubbleInfo.style.display = none;
         });
