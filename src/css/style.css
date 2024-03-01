@@ -1462,6 +1462,8 @@ body P {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  border-radius: 0.5rem;
+  overflow: hidden;
   transition: var(--T_F);
   z-index: var(--zIndexStart);
 }
@@ -1637,6 +1639,7 @@ body P {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 0.5rem;
   overflow-y: auto;
+  padding-top: 0.5rem;
 }
 .cards_portfolio_container .project_card {
   height: 20rem;
@@ -2222,6 +2225,9 @@ body P {
 .certification_badge {
   height: 230px;
   justify-content: space-between;
+}
+.certification_badge .badge_name {
+  margin-top: 0.5rem;
 }
 .certification_badge .link {
   color: var(--FC);
