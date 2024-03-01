@@ -224,7 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = selector(".menu_btn");
     const phoneMenu = selector(".phone_menu_controler");
     const menuContainer = selector(".nav_menu_controler");
-    const sections = selectorAll(".section");
     const menuSocialContainer = selector(".menu_social_container");
     const lebelBtnMain = selector(".main_nav_btn");
     const lebelBtnAbout = selector(".about_nav_btn");
@@ -250,7 +249,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const bubbleBio = selector(".bio_bubble");
     const bubbleInfo = selector(".info_bubble");
     const bubbleRex = selector(".rex_bubble");
-    const bubbleCertifications = selector(".certification_bubble");
 
     const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
     const portfolioListContainer = selector(".portfolio_list_btns_container");
@@ -863,7 +861,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     );
-    sections.forEach((section) => {
+    selectorAll(".section").forEach((section) => {
         const watchPage = ([entry]) => {
             if (entry.isIntersecting) {
                 const entryName = entry.target.attributes.id.value;
@@ -878,7 +876,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
         const optionsIO_sections = {
-            threshold: 0.4,
+            rootMargin: "5%",
+            threshold: 0.3,
         };
         const pageObserver = new IntersectionObserver(watchPage, optionsIO_sections);
         pageObserver.observe(section);
@@ -964,6 +963,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bubbleBio.style.display = flx;
         bubbleBio.style.opacity = 1;
         const containerWidth = bubbleBio.getClientRects()[0].width;
+        const containerHeight = bubbleBio.getClientRects()[0].height;
         bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
     });
     illustrationMe.addEventListener("mouseleave", () => {
