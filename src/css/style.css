@@ -2209,7 +2209,6 @@ body P {
   gap: 0.5rem;
   color: var(--TC_C);
   padding: 1rem;
-  max-width: 200px;
 }
 .badge .badge_name {
   color: var(--TC);
@@ -2222,8 +2221,13 @@ body P {
   align-items: center;
 }
 
+.skill_badge {
+  max-width: 200px;
+}
+
 .certification_badge {
-  height: 230px;
+  max-width: 350px;
+  height: 320px;
   justify-content: space-between;
 }
 .certification_badge .badge_name {

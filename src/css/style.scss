@@ -2264,7 +2264,6 @@ body {
     gap: 0.5rem;
     color: var(--TC_C);
     padding: 1rem;
-    max-width: 200px;
     .badge_name {
         color: var(--TC);
         font-size: var(--FS_N);
@@ -2276,8 +2275,12 @@ body {
         align-items: center;
     }
 }
+.skill_badge {
+    max-width: 200px;
+}
 .certification_badge {
-    height: 230px;
+    max-width: 350px;
+    height: 320px;
     justify-content: space-between;
     .badge_name {
         margin-top: 0.5rem;
