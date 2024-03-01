@@ -1140,7 +1140,6 @@ body {
     display: none;
     transition: all 250ms ease;
     user-select: none;
-
     max-width: 250px;
     width: 100%;
     .header_bubble {
@@ -1202,8 +1201,11 @@ body {
 .bio_bubble {
     top: 0;
     left: 0;
-    gap: 1rem;
+
     overflow: hidden;
+    .info {
+        margin-top: 1rem;
+    }
 }
 .rex_bubble {
     .header_bubble {
@@ -1226,15 +1228,9 @@ body {
     }
 }
 .info_bubble {
-    top: 0;
-    left: 0;
     padding: 1rem;
-    gap: 1rem;
-    .header_bubble {
-        background: url(../img/backgrounds/graffitiSmall.png);
-    }
+    gap: 0.5rem;
 }
-
 .btn {
     padding: 1rem 0.5rem;
     background: linear-gradient(45deg, var(--FC), var(--SC));
@@ -2262,6 +2258,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 0.5rem;
     color: var(--TC_C);
     padding: 1rem;
     max-width: 200px;
@@ -2276,6 +2273,24 @@ body {
         align-items: center;
     }
 }
+.certification_badge {
+    height: 230px;
+    justify-content: space-between;
+    .link {
+        color: var(--FC);
+        border: solid 2px var(--FC);
+        width: 100%;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-weight: 600;
+        &:hover,
+        &:active,
+        &:focus {
+            background: var(--FC);
+            color: var(--whiteOff);
+        }
+    }
+}
 .skills_section {
     .skills_icon_container {
         margin-top: 2rem;
@@ -2286,8 +2301,13 @@ body {
     }
 }
 .certification_badge {
-    .icon_container {
-        fill: rgb(140, 137, 42);
+    .medal_icon {
+        .cls-1 {
+            fill: var(--TC);
+        }
+        .cls-2 {
+            fill: rgb(140, 137, 42);
+        }
     }
 }
 .clients_section {
