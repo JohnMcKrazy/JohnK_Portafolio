@@ -237,6 +237,10 @@
         }
     }
 }
+:focus {
+    outline: 2px solid var(--FC);
+    outline-offset: 0.1rem;
+}
 //! GENERAL PAGE
 body {
     margin: 0;
@@ -323,7 +327,6 @@ body {
     scrollbar-color: var(--FC) var(--SC);
     scrollbar-width: thin;
 }
-
 .icon_svg {
     transition: transform 1000ms ease-in-out;
 }
@@ -1132,28 +1135,41 @@ body {
     position: absolute;
     opacity: 0;
     background: var(--NVC);
-    color: var(--TC_C);
     border-radius: 0.5rem;
     z-index: 2;
     display: none;
     transition: all 250ms ease;
     user-select: none;
-}
 
-.bio_bubble {
-    top: 0;
-    left: 0;
-    gap: 1rem;
-    overflow: hidden;
+    max-width: 250px;
+    width: 100%;
     .header_bubble {
         height: 6rem;
         width: 100%;
-        background: url(../img/backgrounds/graffitiSmall.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
     }
-    IMG {
+    .info {
+        @include flexDirection(column, center, flex-start);
+        gap: 0.25rem;
+        padding: 1rem;
+        SPAN {
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .description {
+        font-size: var(--T_M);
+    }
+    .title {
+        color: var(--TC);
+    }
+    .image {
+        height: auto;
+    }
+    .photo {
         position: absolute;
         top: 2rem;
         left: 50%;
@@ -1165,33 +1181,41 @@ body {
         object-position: center;
         object-fit: cover;
     }
-    .info {
-        @include flexDirection(column, center, flex-start);
-        gap: 0.25rem;
-        padding: 1rem 1rem 0;
-        SPAN {
-            display: block;
-            text-align: left;
-        }
-        .bio_name {
-            color: var(--FC);
-            font-size: var(--FS_L);
-            font-weight: 800;
-        }
-        .bio_skill,
-        .bio_place {
-            font-size: var(--FS_N);
-            line-height: 1;
-            font-weight: 400;
-            text-align: center;
-            @include flexCenter();
-            color: var(--TC);
-            width: 100%;
-        }
+    .name {
+        color: var(--FC);
+        font-size: var(--FS_L);
+        font-weight: 800;
+        text-align: center;
+    }
+    .skill,
+    .place {
+        font-size: var(--FS_N);
+        line-height: 1;
+        font-weight: 400;
+        text-align: center;
+        @include flexCenter();
+        color: var(--TC);
+        width: 100%;
+    }
+}
+.rex_bubble,
+.bio_bubble {
+    top: 0;
+    left: 0;
+    gap: 1rem;
+    overflow: hidden;
+}
+.rex_bubble {
+    .header_bubble {
+        background: url(../img/backgrounds/parkSmall.png);
+    }
+}
+.bio_bubble {
+    .header_bubble {
+        background: url(../img/backgrounds/graffitiSmall.png);
     }
 
     .icons_container {
-        padding: 0;
         gap: 0;
         width: 100%;
         .icon_container {
@@ -1204,20 +1228,13 @@ body {
 .info_bubble {
     top: 0;
     left: 0;
-    width: 250px;
     padding: 1rem;
     gap: 1rem;
-    .description {
-        font-size: var(--T_M);
-    }
-    .icon_container {
-        width: 10rem;
-        height: 10rem;
-        SVG {
-            pointer-events: none;
-        }
+    .header_bubble {
+        background: url(../img/backgrounds/graffitiSmall.png);
     }
 }
+
 .btn {
     padding: 1rem 0.5rem;
     background: linear-gradient(45deg, var(--FC), var(--SC));
@@ -1454,6 +1471,7 @@ body {
     height: 35rem;
     .info_card {
         width: 100%;
+        max-width: 400px;
         height: 15rem;
         .title {
             width: 100%;
@@ -1592,9 +1610,14 @@ body {
             width: 100%;
             padding: 0;
             margin-top: 0.5rem;
-            .btn {
-                width: 100%;
-            }
+        }
+    }
+    .btn {
+        width: 100%;
+
+        &:focus-within {
+            opacity: 1;
+            transform: scale(1);
         }
     }
     &:hover .info_card,
@@ -2234,19 +2257,15 @@ body {
     position: relative;
 }
 
-.skill_badge {
+.badge {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: var(--NVC_T);
-    border-radius: 1rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 4px 30px var(--BS_SB);
     color: var(--TC_C);
     padding: 1rem;
-    .skill_name {
+    max-width: 200px;
+    .badge_name {
         color: var(--TC);
         font-size: var(--FS_N);
         line-height: 1;
@@ -2264,6 +2283,11 @@ body {
     .icon_container {
         height: 8rem;
         width: 8rem;
+    }
+}
+.certification_badge {
+    .icon_container {
+        fill: rgb(140, 137, 42);
     }
 }
 .clients_section {
@@ -2543,7 +2567,7 @@ body {
         }
     }
 }
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 767px) {
     .cards_service_container {
         grid-template-columns: repeat(2, 1fr);
     }

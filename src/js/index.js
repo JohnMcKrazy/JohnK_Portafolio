@@ -150,6 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: '<div class="icon_container"><svg class="react_icon_svg tech_icon_card" data-name="react_icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path class="cls-1" d="M20.56 8.59c-.27-.09-.53-.18-.8-.25.04-.18.09-.37.12-.55.61-2.96.21-5.34-1.15-6.12-1.3-.75-3.44.03-5.59 1.91-.21.19-.42.38-.62.57-.14-.13-.27-.26-.41-.38C9.84 1.75 7.58.91 6.22 1.69c-1.3.75-1.69 2.99-1.14 5.8.05.28.12.55.18.83-.32.09-.63.19-.93.29-2.65.92-4.34 2.37-4.34 3.87s1.81 3.1 4.57 4.05c.22.08.45.15.68.21-.07.3-.14.59-.2.89-.52 2.75-.11 4.94 1.18 5.69 1.34.77 3.59-.02 5.79-1.94.17-.15.35-.31.52-.48.22.21.44.42.68.62 2.12 1.83 4.22 2.57 5.52 1.82 1.34-.78 1.78-3.13 1.21-5.98-.04-.22-.09-.44-.15-.67.16-.05.31-.1.46-.15 2.87-.95 4.73-2.48 4.73-4.05s-1.74-2.96-4.44-3.89Zm-6.72-4.21c1.85-1.61 3.57-2.24 4.36-1.79.84.48 1.16 2.43.64 4.98-.03.17-.07.33-.11.5-1.1-.25-2.22-.43-3.34-.53-.64-.93-1.35-1.81-2.11-2.64.19-.18.38-.36.57-.53Zm-6.45 9.39a33.615 33.615 0 0 0 1.49 2.57c-.77-.08-1.54-.21-2.3-.37.22-.71.49-1.45.81-2.21Zm0-2.51c-.31-.74-.58-1.46-.79-2.16.71-.16 1.47-.29 2.27-.39-.27.41-.52.83-.77 1.26-.25.43-.48.86-.71 1.29Zm.57 1.26a29.68 29.68 0 0 1 2.27-3.95c.74-.06 1.51-.09 2.28-.09s1.54.03 2.28.09c.42.63.83 1.27 1.2 1.92.38.66.74 1.33 1.08 2.01-.33.69-.69 1.36-1.07 2.02-.38.66-.78 1.3-1.2 1.94-.74.05-1.51.08-2.29.08s-1.53-.02-2.26-.07c-.43-.63-.84-1.28-1.22-1.94-.38-.66-.74-1.33-1.07-2.01Zm8.97 2.54c.25-.44.49-.88.72-1.32.32.72.6 1.45.84 2.2-.77.17-1.55.31-2.33.4.26-.42.52-.84.77-1.27Zm.71-3.8c-.23-.44-.47-.87-.72-1.3-.24-.42-.5-.84-.76-1.25.8.1 1.56.23 2.28.4-.23.73-.5 1.45-.8 2.15Zm-5.12-5.58c.52.57 1.01 1.16 1.47 1.78-.98-.05-1.97-.05-2.95 0 .49-.64.98-1.24 1.48-1.78ZM6.76 2.63c.84-.48 2.69.21 4.64 1.94l.38.35c-.77.83-1.48 1.71-2.13 2.64-1.12.1-2.24.27-3.34.52-.06-.26-.12-.51-.17-.77-.47-2.4-.16-4.21.63-4.67ZM5.54 15.72c-.21-.06-.41-.12-.62-.19A9.026 9.026 0 0 1 2 13.98c-.5-.35-.84-.88-.93-1.49 0-.91 1.36-2.07 3.62-2.86.28-.1.57-.19.86-.27.34 1.08.74 2.13 1.22 3.16-.48 1.04-.89 2.11-1.23 3.2Zm5.79 4.87c-.82.75-1.77 1.34-2.8 1.75-.55.26-1.18.29-1.75.07-.79-.45-1.12-2.21-.67-4.57.05-.28.11-.55.18-.83 1.11.24 2.24.4 3.37.49.66.93 1.37 1.82 2.15 2.65-.16.15-.31.3-.48.44Zm1.22-1.21c-.51-.55-1.01-1.15-1.5-1.8a37.653 37.653 0 0 0 2.97 0c-.46.63-.95 1.23-1.47 1.81Zm6.49 1.49c-.05.61-.34 1.17-.82 1.55-.79.46-2.47-.14-4.29-1.7-.21-.18-.42-.37-.63-.57.76-.84 1.46-1.73 2.1-2.66 1.14-.1 2.27-.27 3.39-.52.05.21.1.41.14.6.24 1.08.28 2.2.12 3.3Zm.91-5.33c-.14.05-.28.09-.42.13-.35-1.08-.77-2.14-1.27-3.17.47-1.01.88-2.05 1.22-3.12.26.07.5.15.74.23 2.31.8 3.72 1.97 3.72 2.88 0 .97-1.52 2.22-4 3.04Z"/><path class="cls-1" d="M12.5 10.25c1.23 0 2.23 1 2.23 2.23s-1 2.23-2.23 2.23-2.23-1-2.23-2.23 1-2.23 2.23-2.23"/></svg></div>',
         },
     ];
+    const infoCertifications = [
+        { ref: "responsive_web", certification_name: "Responsive Web Design", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design", img: "./src/img/certifications/responsive_web_design.png" },
+        { ref: "js_algorithms", certification_name: "JavaScript Algoritms and Data Structures", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures", img: "./src/img/certifications/legacy_js.png" },
+        { ref: "data_visualization", certification_name: "Data Visualization", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization", img: "./src/img/certifications/data_visualization.png" },
+        { ref: "scientific_python", certification_name: "Scientific Computing With Python", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7", img: "./src/img/certifications/scientific_computing_python.png" },
+    ];
     const btnLabels = [
         {
             welcome_section: {
@@ -245,9 +251,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const shieldScreen = selector(".shield_screen");
     const illustrationScreen = selector(".illustration_screen");
     const illustrationTabletScreen = selector(".illustration_tablet_screen");
-    const myIllustration = selector(".desk_me");
-    const bioBubble = selector(".bio_bubble");
-    const infoBubble = selector(".info_bubble");
+
+    const bubbleBio = selector(".bio_bubble");
+    const bubbleInfo = selector(".info_bubble");
+    const bubbleRex = selector(".rex_bubble");
+    const bubbleCertifications = selector(".certification_bubble");
 
     const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
     const portfolioListContainer = selector(".portfolio_list_btns_container");
@@ -954,16 +962,28 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".portfolio_btn").forEach((btn) => {
         btn.addEventListener("click", () => openPortfolioModal(btn));
     });
-    myIllustration.addEventListener("mouseover", (e) => {
-        bioBubble.style.display = flx;
-        bioBubble.style.opacity = 1;
-        const containerWidth = bioBubble.getClientRects()[0].width;
-        const containerHeight = bioBubble.getClientRects()[0].height;
-        bioBubble.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
+    selector(".desk_me").addEventListener("mouseover", (e) => {
+        bubbleBio.style.display = flx;
+        bubbleBio.style.opacity = 1;
+        const containerWidth = bubbleBio.getClientRects()[0].width;
+        const containerHeight = bubbleBio.getClientRects()[0].height;
+        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
     });
-    bioBubble.addEventListener("mouseleave", () => {
-        bioBubble.style.display = none;
-        bioBubble.style.opacity = 0;
+
+    bubbleBio.addEventListener("mouseleave", () => {
+        bubbleBio.style.display = none;
+        bubbleBio.style.opacity = 0;
+    });
+    selector(".dog").addEventListener("mouseover", (e) => {
+        bubbleRex.style.display = flx;
+        bubbleRex.style.opacity = 1;
+        const containerWidth = bubbleRex.getClientRects()[0].width;
+        const containerHeight = bubbleRex.getClientRects()[0].height;
+        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
+    });
+    bubbleRex.addEventListener("mouseleave", () => {
+        bubbleRex.style.display = none;
+        bubbleRex.style.opacity = 0;
     });
     selectorAll(".animation_key").forEach((key) => {
         const tabletScreen = selector(".desk_tablet_screen");
@@ -1025,21 +1045,38 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".skill_badge").forEach((badge) => {
         badge.addEventListener("mouseover", (e) => {
             const newData = infoSoftware.filter((item) => item.db_name === badge.getAttribute("data-name"));
-            infoBubble.querySelector(".title").textContent = newData[0].tech_complete_name;
-            infoBubble.querySelector(".description").textContent = newData[0].tech_info;
+            bubbleInfo.querySelector(".title").textContent = newData[0].tech_complete_name;
+            bubbleInfo.querySelector(".description").textContent = newData[0].tech_info;
+            bubbleInfo.style.display = flx;
+            bubbleInfo.style.opacity = 1;
 
-            infoBubble.style.display = flx;
-            infoBubble.style.opacity = 1;
-            const containerWidth = infoBubble.getClientRects()[0].width;
-            const containerHeight = infoBubble.getClientRects()[0].height;
-            infoBubble.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
+            const containerWidth = bubbleInfo.getClientRects()[0].width;
+            const containerHeight = bubbleInfo.getClientRects()[0].height;
+            bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
         });
-        infoBubble.addEventListener("mouseleave", () => {
-            infoBubble.style.opacity = 0;
-            infoBubble.style.display = none;
+        bubbleInfo.addEventListener("mouseleave", () => {
+            bubbleInfo.style.opacity = 0;
+            bubbleInfo.style.display = none;
         });
     });
+    selectorAll(".certification_badge").forEach((badge) => {
+        badge.addEventListener("mouseover", (e) => {
+            const newData = infoCertifications.filter((item) => item.ref === badge.getAttribute("data-ref"));
+            bubbleCertifications.style.display = flx;
+            bubbleCertifications.style.opacity = 1;
+            bubbleCertifications.querySelector(".title").textContent = newData[0].certification_name;
+            bubbleCertifications.querySelector(".image").setAttribute("src", newData[0].img);
+            bubbleCertifications.querySelector(".link").setAttribute("href", newData[0].link);
 
+            const containerWidth = bubbleCertifications.getClientRects()[0].width;
+            const containerHeight = bubbleCertifications.getClientRects()[0].height;
+            bubbleCertifications.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
+        });
+    });
+    selector(".certification_bubble").addEventListener("mouseleave", (e) => {
+        bubbleCertifications.style.opacity = 0;
+        bubbleCertifications.style.display = none;
+    });
     /* selector("#contact_form_send_btn").addEventListener("click", (e) => {
         e.preventDefault();
     });

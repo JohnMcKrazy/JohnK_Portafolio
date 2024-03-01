@@ -13,7 +13,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/pokedex2.png",
+                    "small": "./src/img/pokedex2.png",
                     "big": ""
                 },
                 "1": {
@@ -47,7 +47,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/rickandmorty.png",
+                    "small": "./src/img/rickandmorty.png",
                     "big": ""
                 },
                 "1": {
@@ -81,7 +81,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/tributo.png",
+                    "small": "./src/img/tributo.png",
                     "big": ""
                 },
                 "1": {
@@ -115,7 +115,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/jsDocumentation.jpg",
+                    "small": "./src/img/jsDocumentation.jpg",
                     "big": ""
                 },
                 "1": {
@@ -149,7 +149,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/choroplethMap.jpg",
+                    "small": "./src/img/choroplethMap.jpg",
                     "big": ""
                 },
                 "1": {
@@ -183,7 +183,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/treeMap.jpg",
+                    "small": "./src/img/treeMap.jpg",
                     "big": ""
                 },
                 "1": {
@@ -217,7 +217,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/scatterploMap.jpg",
+                    "small": "./src/img/scatterploMap.jpg",
                     "big": ""
                 },
                 "1": {
@@ -251,7 +251,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/barMap.jpg",
+                    "small": "./src/img/barMap.jpg",
                     "big": ""
                 },
                 "1": {
@@ -285,7 +285,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/tic-tac-toe.png",
+                    "small": "./src/img/tic-tac-toe.png",
                     "big": ""
                 },
                 "1": {
@@ -319,7 +319,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/weather.png",
+                    "small": "./src/img/weather.png",
                     "big": ""
                 },
                 "1": {
@@ -353,7 +353,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/leiru.jpg",
+                    "small": "./src/img/leiru.jpg",
                     "big": ""
                 },
                 "1": {
@@ -387,7 +387,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/afroduck.jpg",
+                    "small": "./src/img/afroduck.jpg",
                     "big": ""
                 },
                 "1": {
@@ -421,7 +421,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/verona.jpg",
+                    "small": "./src/img/verona.jpg",
                     "big": ""
                 },
                 "1": {
@@ -455,7 +455,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/hermed.png",
+                    "small": "./src/img/hermed.png",
                     "big": ""
                 },
                 "1": {
@@ -489,7 +489,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/bucefalos_1.jpg",
+                    "small": "./src/img/bucefalos_1.jpg",
                     "big": ""
                 },
                 "1": {
@@ -523,7 +523,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/bucefalos_2.jpg",
+                    "small": "./src/img/bucefalos_2.jpg",
                     "big": ""
                 },
                 "1": {
@@ -557,7 +557,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/panteras.jpg",
+                    "small": "./src/img/panteras.jpg",
                     "big": ""
                 },
                 "1": {
@@ -591,7 +591,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/bulldogs.jpg",
+                    "small": "./src/img/bulldogs.jpg",
                     "big": ""
                 },
                 "1": {
@@ -625,7 +625,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/berserkers_1.jpg",
+                    "small": "./src/img/berserkers_1.jpg",
                     "big": ""
                 },
                 "1": {
@@ -659,7 +659,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/berserkers_2.png",
+                    "small": "./src/img/berserkers_2.png",
                     "big": ""
                 },
                 "1": {
@@ -693,7 +693,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/berserkers_3.png",
+                    "small": "./src/img/berserkers_3.png",
                     "big": ""
                 },
                 "1": {
@@ -727,7 +727,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/guason.png",
+                    "small": "./src/img/guason.png",
                     "big": ""
                 },
                 "1": {
@@ -761,7 +761,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/conejos.png",
+                    "small": "./src/img/conejos.png",
                     "big": ""
                 },
                 "1": {
@@ -795,7 +795,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/captainPlanet.jpg",
+                    "small": "./src/img/captainPlanet.jpg",
                     "big": ""
                 },
                 "1": {
@@ -829,7 +829,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/weAreDisney.png",
+                    "small": "./src/img/weAreDisney.png",
                     "big": ""
                 },
                 "1": {
@@ -863,7 +863,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/mjolnir.png",
+                    "small": "./src/img/mjolnir.png",
                     "big": ""
                 },
                 "1": {
@@ -897,7 +897,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/boJack.png",
+                    "small": "./src/img/boJack.png",
                     "big": ""
                 },
                 "1": {
@@ -931,7 +931,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/chopBuggy.png",
+                    "small": "./src/img/chopBuggy.png",
                     "big": ""
                 },
                 "1": {
@@ -965,7 +965,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/jolly_roger.png",
+                    "small": "./src/img/jolly_roger.png",
                     "big": ""
                 },
                 "1": {
@@ -999,7 +999,7 @@
             "images": {
                 "avatar": "",
                 "hero": {
-                    "small": "src/img/jolly_roger_2.png",
+                    "small": "./src/img/jolly_roger_2.png",
                     "big": ""
                 },
                 "1": {

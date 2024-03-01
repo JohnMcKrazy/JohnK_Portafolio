@@ -195,6 +195,11 @@
   fill: var(--TC);
 }
 
+:focus {
+  outline: 2px solid var(--FC);
+  outline-offset: 0.1rem;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1014,7 +1019,6 @@ body P {
   position: absolute;
   opacity: 0;
   background: var(--NVC);
-  color: var(--TC_C);
   border-radius: 0.5rem;
   z-index: 2;
   display: none;
@@ -1022,23 +1026,38 @@ body P {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  max-width: 250px;
+  width: 100%;
 }
-
-.bio_bubble {
-  top: 0;
-  left: 0;
-  gap: 1rem;
-  overflow: hidden;
-}
-.bio_bubble .header_bubble {
+.bubble .header_bubble {
   height: 6rem;
   width: 100%;
-  background: url(../img/backgrounds/graffitiSmall.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.bio_bubble IMG {
+.bubble .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1rem;
+}
+.bubble .info SPAN {
+  display: block;
+  text-align: left;
+}
+.bubble .description {
+  font-size: var(--T_M);
+}
+.bubble .title {
+  color: var(--TC);
+}
+.bubble .image {
+  height: auto;
+}
+.bubble .photo {
   position: absolute;
   top: 2rem;
   left: 50%;
@@ -1052,25 +1071,14 @@ body P {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.bio_bubble .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.25rem;
-  padding: 1rem 1rem 0;
-}
-.bio_bubble .info SPAN {
-  display: block;
-  text-align: left;
-}
-.bio_bubble .info .bio_name {
+.bubble .name {
   color: var(--FC);
   font-size: var(--FS_L);
   font-weight: 800;
+  text-align: center;
 }
-.bio_bubble .info .bio_skill,
-.bio_bubble .info .bio_place {
+.bubble .skill,
+.bubble .place {
   font-size: var(--FS_N);
   line-height: 1;
   font-weight: 400;
@@ -1081,8 +1089,23 @@ body P {
   color: var(--TC);
   width: 100%;
 }
+
+.rex_bubble,
+.bio_bubble {
+  top: 0;
+  left: 0;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.rex_bubble .header_bubble {
+  background: url(../img/backgrounds/parkSmall.png);
+}
+
+.bio_bubble .header_bubble {
+  background: url(../img/backgrounds/graffitiSmall.png);
+}
 .bio_bubble .icons_container {
-  padding: 0;
   gap: 0;
   width: 100%;
 }
@@ -1095,19 +1118,11 @@ body P {
 .info_bubble {
   top: 0;
   left: 0;
-  width: 250px;
   padding: 1rem;
   gap: 1rem;
 }
-.info_bubble .description {
-  font-size: var(--T_M);
-}
-.info_bubble .icon_container {
-  width: 10rem;
-  height: 10rem;
-}
-.info_bubble .icon_container SVG {
-  pointer-events: none;
+.info_bubble .header_bubble {
+  background: url(../img/backgrounds/graffitiSmall.png);
 }
 
 .btn {
@@ -1367,6 +1382,7 @@ body P {
 }
 .service_card .info_card {
   width: 100%;
+  max-width: 400px;
   height: 15rem;
 }
 .service_card .info_card .title {
@@ -1498,8 +1514,12 @@ body P {
   padding: 0;
   margin-top: 0.5rem;
 }
-.project_card .info_card .btn_container .btn {
+.project_card .btn {
   width: 100%;
+}
+.project_card .btn:focus-within {
+  opacity: 1;
+  transform: scale(1);
 }
 .project_card:hover .info_card, .project_card:focus .info_card, .project_card:active .info_card {
   opacity: 1;
@@ -2180,20 +2200,16 @@ body P {
   position: relative;
 }
 
-.skill_badge {
+.badge {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background: var(--NVC_T);
-  border-radius: 1rem;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0 4px 30px var(--BS_SB);
   color: var(--TC_C);
   padding: 1rem;
+  max-width: 200px;
 }
-.skill_badge .skill_name {
+.badge .badge_name {
   color: var(--TC);
   font-size: var(--FS_N);
   line-height: 1;
@@ -2210,6 +2226,10 @@ body P {
 .skills_section .icon_container {
   height: 8rem;
   width: 8rem;
+}
+
+.certification_badge .icon_container {
+  fill: rgb(140, 137, 42);
 }
 
 .clients_section {
@@ -2514,7 +2534,7 @@ body P {
   fill: var(--TC_C);
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 767px) {
   .cards_service_container {
     grid-template-columns: repeat(2, 1fr);
   }
