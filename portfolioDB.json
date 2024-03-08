@@ -281,7 +281,7 @@
             "skills": ["Web", "Programación"],
             "description": "",
             "reach": ["Web", "Programación"],
-            "technologies": ["HTML", "SASS", "React"],
+            "technologies": ["HTML", "CSS", "React"],
             "images": {
                 "avatar": "",
                 "hero": {
@@ -302,6 +302,40 @@
                 }
             },
             "project_link": "https://johnmckrazy.github.io/React_Tic-Tac-Toe/"
+        },
+        "votes": 2
+    },
+    {
+        "client_name": "Random Quote Machine",
+        "db_name": "quote_machine",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web", "Programación"],
+            "description": "",
+            "reach": ["Web", "Programación"],
+            "technologies": ["HTML", "CSS", "React"],
+            "images": {
+                "avatar": "",
+                "hero": {
+                    "small": "./src/img/quote_machine.png",
+                    "big": ""
+                },
+                "1": {
+                    "small": "",
+                    "big": ""
+                },
+                "2": {
+                    "small": "",
+                    "big": ""
+                },
+                "3": {
+                    "small": "",
+                    "big": ""
+                }
+            },
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Random_Quote_Machine_Project/"
         },
         "votes": 2
     },

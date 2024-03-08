@@ -334,7 +334,7 @@ body {
 }
 //^ CLIENTS LOGO COLORS
 .animation_key {
-    font-weight: 600;
+    font-weight: 800;
     color: var(--FC);
     cursor: pointer;
 }
@@ -2381,8 +2381,7 @@ body {
         height: 3rem;
         padding: 0.25rem;
     }
-    .link_text,
-    .copyright_text {
+    .link_text {
         font-size: var(--FS_XS);
         color: var(--TC);
     }

@@ -292,7 +292,7 @@ body P {
 }
 
 .animation_key {
-  font-weight: 600;
+  font-weight: 800;
   color: var(--FC);
   cursor: pointer;
 }
@@ -2334,8 +2334,7 @@ body P {
   height: 3rem;
   padding: 0.25rem;
 }
-.legals_section .link_text,
-.legals_section .copyright_text {
+.legals_section .link_text {
   font-size: var(--FS_XS);
   color: var(--TC);
 }

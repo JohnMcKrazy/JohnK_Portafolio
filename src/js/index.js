@@ -964,9 +964,9 @@ document.addEventListener("DOMContentLoaded", () => {
         bubbleBio.style.opacity = 1;
         const containerWidth = bubbleBio.getClientRects()[0].width;
         const containerHeight = bubbleBio.getClientRects()[0].height;
-        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
+        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
     });
-    illustrationMe.addEventListener("mouseleave", () => {
+    bubbleBio.addEventListener("mouseleave", () => {
         bubbleBio.style.display = none;
         bubbleBio.style.opacity = 0;
     });
