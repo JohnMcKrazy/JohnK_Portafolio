@@ -252,6 +252,7 @@ body {
     color: var(--TC);
     background: var(--bgC);
     img {
+        display: block;
         width: 100%;
     }
     a {
@@ -1430,7 +1431,7 @@ body {
 .social_btns_container {
     @include flexDirection(row, space-between, center);
 }
-.card {
+/* .card {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -1454,13 +1455,11 @@ body {
         padding: 1rem 1.5rem 2rem;
         transition: var(--T_F);
     }
-    .btn {
+    btn{
         color: var(--TC_C);
-        &:visited {
-            color: var(--TC_C);
-        }
     }
-}
+    
+} */
 .service_card {
     @include flexDirection(column, center, center);
     height: 35rem;
@@ -1468,6 +1467,7 @@ body {
         width: 100%;
         max-width: 400px;
         height: 15rem;
+        padding: 1rem;
         .title {
             width: 100%;
             color: var(--TC);
@@ -1554,28 +1554,25 @@ body {
     }
 }
 .project_card {
-    @include flex(center, center);
-
-    height: 30rem;
-    background: var(--FC);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     border-radius: 0.5rem;
-    overflow: hidden;
     transition: var(--T_F);
-    z-index: var(--zIndexStart);
+    background: var(--bgC_T);
+    .card_content {
+        width: 100%;
+    }
+    .img_card {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
     .info_card {
-        transform: scale(0);
-        width: 90%;
-        height: 90%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        background: var(--bgM);
-        opacity: 0;
-        border-radius: 1rem;
+        width: 100%;
+        margin-top: 1rem;
         .title {
             width: 100%;
 
@@ -1611,17 +1608,40 @@ body {
     }
     .btn {
         width: 100%;
-
-        &:focus-within {
-            opacity: 1;
-            transform: scale(1);
-        }
+        color: var(--TC_C);
     }
-    &:hover .info_card,
-    &:focus .info_card,
-    &:active .info_card {
-        opacity: 1;
+}
+.hot_project_card {
+    @include flexDirection(column, space-between, center);
+    height: 50rem;
+    padding: 1rem;
+}
+.mini_project_card {
+    @include flex(center, center);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    .card_content {
+        width: 90%;
+        height: 90%;
+        transform: scale(0);
+        background: var(--bgM);
+        opacity: 0;
+        transition: var(--T_M);
+        border-radius: 0.5rem;
+        @include flexDirection(column, space-between, center);
+        padding: 0.5rem;
+    }
+    .info_card {
+        @include flexDirection(column, center, center);
+        color: var(--TC);
+    }
+    &:hover .card_content,
+    &:active .card_content,
+    &:focus .card_content {
         transform: scale(1);
+        opacity: 1;
     }
 }
 //!  *//
@@ -2254,7 +2274,6 @@ body {
 .services_container {
     position: relative;
 }
-
 .badge {
     display: flex;
     flex-direction: column;
@@ -2279,24 +2298,12 @@ body {
 }
 .certification_badge {
     max-width: 350px;
-    height: 320px;
+    height: 350px;
     justify-content: space-between;
+    background: var(--bgC_T);
+    border-radius: 0.5rem;
     .badge_name {
         margin-top: 0.5rem;
-    }
-    .link {
-        color: var(--FC);
-        border: solid 2px var(--FC);
-        width: 100%;
-        border-radius: 0.5rem;
-        text-align: center;
-        font-weight: 600;
-        &:hover,
-        &:active,
-        &:focus {
-            background: var(--FC);
-            color: var(--whiteOff);
-        }
     }
 }
 .skills_section {

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storageContent;
     const portfolioData = "./portfolioDB.json";
     const storageName = "JohnK_Maker";
-    const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "boJack", "creaciones_hermed", "rick_and_morty", "tribute", "choroplet_map", "we_are_disney", "tic_tac_toe"];
+    const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "black_jack", "creaciones_hermed", "rick_and_morty", "tribute", "choropleth_map", "we_are_disney", "tic_tac_toe"];
     const infoSoftware = [
         {
             db_name: "",
@@ -207,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const markersFragment = $d.createDocumentFragment();
     const listBtnsFragment = $d.createDocumentFragment();
     const cardProjectTemplate = selector("#card_project_template").content;
+    const miniCardProjectTemplate = selector("#mini_card_project_template").content;
 
     const loadersContainers = selectorAll(".loader_container");
     const loaderSearchCardsContainer = selector("#loader_cards_hot_container");
@@ -385,18 +386,55 @@ document.addEventListener("DOMContentLoaded", () => {
             cardsObserver.observe(card);
         });
     };
+    const createMiniCard = (item, frac) => {
+        let iconsRow = "";
+        const cloneProjectCard = miniCardProjectTemplate.cloneNode(true);
+        const projectCard = cloneProjectCard.querySelector(".project_card");
+        const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
+        const cardTitle = cloneProjectCard.querySelector(".title");
+        const cardInfo = cloneProjectCard.querySelector(".info");
+        const moreBtn = cloneProjectCard.querySelector(".more_btn");
+        //* ******************************************************************************** *//
+        const clientName = item["client_name"];
+        const cardImg = item["projects"]["img"];
+        projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
+        projectCard.style.backgroundImage = `url(${cardImg})`;
+        cardInfo.textContent = item["projects"]["info"];
+        const clientTechnologiesInProjects = item["projects"]["technologies"];
+        clientTechnologiesInProjects.forEach((tech) => {
+            /* console.log(tech); */
+            infoSoftware.forEach((technology) => {
+                if (technology.tech_name === tech) {
+                    iconsRow += technology.icon;
+                }
+            });
+        });
+        projectCardIconsContainer.innerHTML = iconsRow;
+        cardTitle.textContent = clientName;
+
+        if (item["projects"]["project_link"] !== null && item["projects"]["project_link"] !== "") {
+            moreBtn.setAttribute("href", `${item["projects"]["project_link"]}`);
+        } else {
+            moreBtn.setAttribute("href", "");
+        }
+        frac.appendChild(projectCard);
+    };
     const createCard = (item, frac) => {
         let iconsRow = "";
         const cloneProjectCard = cardProjectTemplate.cloneNode(true);
         const projectCard = cloneProjectCard.querySelector(".project_card");
+        const imgCard = cloneProjectCard.querySelector(".img_card");
+        const infoCard = cloneProjectCard.querySelector(".info");
         const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
         const cardTitle = cloneProjectCard.querySelector(".title");
         const moreBtn = cloneProjectCard.querySelector(".more_btn");
         //* ******************************************************************************** *//
         const clientName = item["client_name"];
-        const cardImg = item["projects"]["images"]["hero"]["small"];
+        const cardImg = item["projects"]["img"];
+        const cardInfo = item["projects"]["info"];
+        infoCard.textContent = cardInfo;
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
-        projectCard.style.backgroundImage = `url("${cardImg}")`;
+        imgCard.setAttribute("src", cardImg);
         const clientTechnologiesInProjects = item["projects"]["technologies"];
         clientTechnologiesInProjects.forEach((tech) => {
             /* console.log(tech); */
@@ -688,11 +726,11 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(swipingAnimation, 500);
     };
 
+    const portfolioCardsContainer = selector(".cards_portfolio_container");
     const clearPortfolio = () => {
         deleteArrElements(fragmentPortfolioProjects);
-        deleteChildElements(selector(".cards_portfolio_container"));
+        deleteChildElements(portfolioCardsContainer);
     };
-    const portfolioCardsContainer = selector(".cards_portfolio_container");
     const openPortfolioModal = (target) => {
         clearListBtns();
         clearPortfolio();
@@ -705,7 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         currentProjectDetails.push(skill);
                     }
                 });
-                createCard(data, fragmentPortfolioProjects);
+                createMiniCard(data, fragmentPortfolioProjects);
             });
             currentProjectDetails.forEach((detail) => {
                 createExtraListbtn(detail);
@@ -719,7 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let dataToCheck = [];
         const activateExtraBtns = (btn) => {
             listExtrasActions();
-            selector(".cards_portfolio_container").scrollTo({ top: 0, behavior: `smooth` });
+            portfolioCardsContainer.scrollTo({ top: 0, behavior: `smooth` });
             const newName = btn.getAttribute("data-name");
             searchExtraListBtn.setAttribute("data-name", newName);
             searchExtraListBtn.querySelector(".label_btn").textContent = newName;
@@ -739,7 +777,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             extraDataToCheck.forEach((extraData) => {
-                createCard(extraData, fragmentPortfolioProjects);
+                createMiniCard(extraData, fragmentPortfolioProjects);
             });
             portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
         };
@@ -747,7 +785,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", () => {
                 searchExtraListBtn.setAttribute("data-name", "Todo");
                 searchExtraListBtn.querySelector(".label_btn").textContent = "Todo";
-                selector(".cards_portfolio_container").scrollTo({ top: 0, behavior: `smooth` });
+                portfolioCardsContainer.scrollTo({ top: 0, behavior: `smooth` });
                 clearListBtns();
                 const newName = btn.getAttribute("data-name");
                 searchPortfolioListBtn.setAttribute("data-name", newName);
@@ -772,7 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 extraListContainer.appendChild(fragmentBtns);
                 dataToCheck.forEach((data) => {
-                    createCard(data, fragmentPortfolioProjects);
+                    createMiniCard(data, fragmentPortfolioProjects);
                 });
                 portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
                 selectorAll(".extra_list_btn").forEach((btn) => {
@@ -855,6 +893,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 infoModal.scrollTo(infoModal.getBoundingClientRect().top, 0);
                 setTimeout(() => {
                     modalWindowActions(currentBtn, close);
+                }, 500);
+            } else if (btnName === "portfolio_modal") {
+                portfolioCardsContainer.scrollTo(portfolioCardsContainer.getBoundingClientRect().top, 0);
+
+                setTimeout(() => {
+                    modalWindowActions(currentBtn, close);
+                    setTimeout(() => {
+                        searchExtraListBtn.setAttribute("data-name", "Todo");
+                        searchExtraListBtn.querySelector(".label_btn").textContent = "Todo";
+                        searchPortfolioListBtn.setAttribute("data-name", "Todo");
+                        searchPortfolioListBtn.querySelector(".label_btn").textContent = "Todo";
+                    }, 250);
                 }, 500);
             } else {
                 modalWindowActions(currentBtn, close);

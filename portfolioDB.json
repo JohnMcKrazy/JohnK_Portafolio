@@ -7,28 +7,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web", "Programación"],
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/pokedex2.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/pokedex.png",
             "project_link": "https://johnmckrazy.github.io/Pokedex-V2/"
         },
         "votes": 5
@@ -41,28 +23,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web", "Programación"],
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/rickandmorty.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/rickAndMorty.png",
             "project_link": "https://johnmckrazy.github.io/rick_and_morty_character_search/"
         },
         "votes": 2
@@ -75,31 +39,29 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web"],
-            "description": "",
+            "info": "Proyecto para certificación en FreeCodeCamp",
             "reach": ["Web"],
             "technologies": ["HTML", "CSS"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/tributo.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/tributo.png",
             "project_link": "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/"
         },
         "votes": 5
+    },
+    {
+        "client_name": "Black Jack Game",
+        "db_name": "black_jack",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web"],
+            "info": "",
+            "reach": ["Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "img": "./src/img/portfolio/blackJack.png",
+            "project_link": "https://johnmckrazy.github.io/BlackJack_Game/"
+        },
+        "votes": 2
     },
     {
         "client_name": "JS Documentation",
@@ -109,62 +71,42 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web"],
-            "description": "",
+            "info": "",
             "reach": ["Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/jsDocumentation.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/jsDocumentation.png",
             "project_link": "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/"
         },
         "votes": 2
     },
     {
-        "client_name": "Choroplet Map Data Visualization",
-        "db_name": "choroplet_map",
+        "client_name": "Choropleth Map Data Visualization",
+        "db_name": "choropleth_map",
         "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/choroplethMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/choroplethMap.png",
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
+        },
+        "votes": 5
+    },
+    {
+        "client_name": "Heat Map Data Visualization",
+        "db_name": "heat_map",
+        "client_logo": "",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
+            "info": "",
+            "reach": ["Web"],
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "img": "./src/img/portfolio/heatMap.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
         },
         "votes": 5
@@ -177,28 +119,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/treeMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/treeMap.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
         },
         "votes": 5
@@ -211,28 +135,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/scatterploMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/scatterploMap.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
         },
         "votes": 5
@@ -245,28 +151,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web"],
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/barMap.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/barChart.png",
             "project_link": "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/"
         },
         "votes": 5
@@ -279,28 +167,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web", "Programación"],
             "technologies": ["HTML", "CSS", "React"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/tic-tac-toe.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/tic-tac-toe.png",
             "project_link": "https://johnmckrazy.github.io/React_Tic-Tac-Toe/"
         },
         "votes": 2
@@ -313,28 +183,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web", "Programación"],
             "technologies": ["HTML", "CSS", "React"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/quote_machine.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/quoteMachine.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Random_Quote_Machine_Project/"
         },
         "votes": 2
@@ -347,28 +199,10 @@
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "API Rest", "Programación"],
-            "description": "",
+            "info": "",
             "reach": ["Web", "Programación"],
             "technologies": ["HTML", "CSS", "Python"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/weather.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/weather.png",
             "project_link": "https://python-weather-app-tvey.onrender.com/"
         },
         "votes": 2
@@ -381,28 +215,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/leiru.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/leiru.png",
             "project_link": "https://www.behance.net/gallery/181117109/Leiru"
         },
         "votes": 2
@@ -415,28 +231,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/afroduck.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/afroduck.png",
             "project_link": "https://www.behance.net/gallery/181117581/Afroduck"
         },
         "votes": 5
@@ -449,28 +247,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
             "technologies": ["Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/verona.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/verona.png",
             "project_link": "https://www.behance.net/gallery/181175109/Verona"
         },
         "votes": 5
@@ -483,28 +263,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Edicion de imagen", "Papeleria", "Promocionales"],
-            "description": "",
+            "info": "",
             "reach": ["Tarjeta de presentacion", "Promocionales", "Edicion de imagen", "Redes Sociales"],
             "technologies": ["Photoshop"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/hermed.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/hermed.png",
             "project_link": "https://www.behance.net/gallery/107080483/Creaciones-Hermed"
         },
         "votes": 2
@@ -517,28 +279,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/bucefalos_1.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/bucefalos_1.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -551,28 +295,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/bucefalos_2.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/bucefalos_2.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -585,28 +311,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/panteras.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/panteras.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -619,28 +327,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/bulldogs.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/bulldogs.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -653,28 +343,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/berserkers_1.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/berserkers_1.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -687,28 +359,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/berserkers_2.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/berserkers_2.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -721,28 +375,10 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/berserkers_3.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/berserkers_3.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -755,28 +391,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/guason.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/guason.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -789,28 +407,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/conejos.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/conejos.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -823,28 +423,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/captainPlanet.jpg",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/captainPlanet.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -857,28 +439,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/weAreDisney.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/weAreDisney.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -891,28 +455,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/mjolnir.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/mjolnir.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -925,28 +471,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/boJack.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/boJack.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -959,28 +487,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/chopBuggy.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/chopBuggy.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -993,28 +503,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/jolly_roger.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/jolly_roger.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -1027,28 +519,10 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
-            "description": "",
+            "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "images": {
-                "avatar": "",
-                "hero": {
-                    "small": "./src/img/jolly_roger_2.png",
-                    "big": ""
-                },
-                "1": {
-                    "small": "",
-                    "big": ""
-                },
-                "2": {
-                    "small": "",
-                    "big": ""
-                },
-                "3": {
-                    "small": "",
-                    "big": ""
-                }
-            },
+            "img": "./src/img/portfolio/jolly_roger_2.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2

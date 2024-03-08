@@ -33,7 +33,7 @@
         </div>
         <div class="bubble bio_bubble">
             <div class="header_bubble"></div>
-            <img class="photo" src="./src/img/pagina/johnKPhoto.jpg" alt="" />
+            <img class="photo" src="./src/img/photos/johnKPhoto.jpg" alt="" />
             <div class="info">
                 <h3 class="name">Jonathan Grajeda</h3>
                 <h3 class="place">México CDMX</h3>
@@ -77,7 +77,7 @@
         </div>
         <div class="bubble rex_bubble">
             <div class="header_bubble"></div>
-            <img class="photo" src="./src/img/pagina/rex.png" alt="" />
+            <img class="photo" src="./src/img/photos/rex.png" alt="" />
             <div class="info">
                 <h3 class="name">Maximo Décimo Reximiliano</h3>
                 <h3 class="place">México CDMX</h3>
@@ -1898,7 +1898,7 @@
                     <h1 class="title_section animation_up" id="title_services">Servicios</h1>
                 </div>
                 <div class="cards_container cards_service_container">
-                    <article class="card service_card illustration_card">
+                    <article class="service_card illustration_card">
                         <div class="icon_container">
                             <svg class="illustration_table icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.22 390.5">
                                 <path
@@ -2075,7 +2075,7 @@
                             <p class="info">La creación de pagina web es importante, asi como es importante darle al usuario una buena experiencia, facilidad de uso, y que tu contenido sea mejor visto por tus clientes.</p>
                         </div>
                     </article>
-                    <article class="card service_card graphic_design_service_card">
+                    <article class="service_card graphic_design_service_card">
                         <div class="icon_container">
                             <svg class="design_table icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592.72 554.86">
                                 <g class="desk_desig_icons">
@@ -2145,7 +2145,7 @@
                             <p class="info">Es necesaria la comunicación gráfica para muchas aréas de negocios/empresas, desde papeleria basica hasta promocionales digitales e impresos, cada necesidad se majeda desde angulos diferentes como originalidad en cada paso de la creación.</p>
                         </div>
                     </article>
-                    <article class="card service_card web_card">
+                    <article class="service_card web_card">
                         <div class="icon_container">
                             <svg class="dev_table icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562.37 505.22">
                                 <g class="desk_dev_icons">
@@ -2483,28 +2483,28 @@
                             <img class="image" src="./src/img/certifications/responsive_web_design.png" aria-label="" />
                             <h3 class="badge_name">Responsive Web Design</h3>
                         </div>
-                        <a class="link" href="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" aria-label="" target="_blank">Ver</a>
+                        <a class="btn more_btn" href="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" aria-label="" target="_blank">Ver</a>
                     </div>
                     <div class="badge certification_badge">
                         <div>
                             <img class="image" src="./src/img/certifications/legacy_js.png" aria-label="" />
                             <h3 class="badge_name">Legacy - JavaScript Algoritms and Data Structures</h3>
                         </div>
-                        <a class="link" href="https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" aria-label="" target="_blank">Ver</a>
+                        <a class="btn more_btn" href="https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" aria-label="" target="_blank">Ver</a>
                     </div>
                     <div class="badge certification_badge">
                         <div>
                             <img class="image" src="./src/img/certifications/data_visualization.png" aria-label="" />
                             <h3 class="badge_name">Data Visualization</h3>
                         </div>
-                        <a class="link" href="https://www.freecodecamp.org/certification/JohnGC/data-visualization" aria-label="" target="_blank">Ver</a>
+                        <a class="btn more_btn" href="https://www.freecodecamp.org/certification/JohnGC/data-visualization" aria-label="" target="_blank">Ver</a>
                     </div>
                     <div class="badge certification_badge">
                         <div>
                             <img class="image" src="./src/img/certifications/scientific_computing_python.png" aria-label="" />
                             <h3 class="badge_name">Scientific Computing With Python</h3>
                         </div>
-                        <a class="link" href="https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" aria-label="" target="_blank">Ver</a>
+                        <a class="btn more_btn" href="https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" aria-label="" target="_blank">Ver</a>
                     </div>
                 </div>
             </div>
@@ -2649,12 +2649,32 @@
     </body>
     <!--^^TEAMPLATES-->
     <template id="card_project_template">
-        <article class="card project_card" id="" tabindex="0">
-            <div class="info_card">
-                <h1 class="title"></h1>
-                <h2 class="subtitle">Realizado con:</h2>
-                <div class="icons_project_container"></div>
-                <a href="" class="more_btn btn" tabindex="0" data-link="" target="_blank">
+        <article class="project_card hot_project_card" id="">
+            <div class="card_content">
+                <img class="img_card" src="" aria-label="" />
+                <div class="info_card">
+                    <h1 class="title"></h1>
+
+                    <p class="info"></p>
+                    <h2 class="subtitle">Realizado con:</h2>
+                    <div class="icons_project_container"></div>
+                </div>
+            </div>
+            <a href="" class="more_btn btn" data-link="" target="_blank">
+                <span class="label_btn">Ver Proyecto</span>
+            </a>
+        </article>
+    </template>
+    <template id="mini_card_project_template">
+        <article class="project_card mini_project_card" id="" tabindex="0">
+            <div class="card_content">
+                <div class="info_card">
+                    <h1 class="title"></h1>
+                    <p class="info"></p>
+                    <h2 class="subtitle">Realizado con:</h2>
+                    <div class="icons_project_container"></div>
+                </div>
+                <a href="" class="more_btn btn" data-link="" target="_blank" tabindex="1">
                     <span class="label_btn">Ver Proyecto</span>
                 </a>
             </div>

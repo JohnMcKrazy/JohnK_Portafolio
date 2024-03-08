@@ -213,6 +213,7 @@ body {
   scrollbar-width: thin;
 }
 body img {
+  display: block;
   width: 100%;
 }
 body a {
@@ -1337,39 +1338,35 @@ body P {
   align-items: center;
 }
 
-.card {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.card .bg_card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: var(--T_S);
-  z-index: -1;
-}
-.card .bg_card IMG {
-  display: block;
-  -o-object-position: center;
-     object-position: center;
-  width: auto;
-  height: 100%;
-}
-.card .info_card {
-  color: var(--TC);
-  padding: 1rem 1.5rem 2rem;
-  transition: var(--T_F);
-}
-.card .btn {
-  color: var(--TC_C);
-}
-.card .btn:visited {
-  color: var(--TC_C);
-}
+/* .card {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .bg_card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: var(--T_S);
+        z-index: -1;
+        IMG {
+            display: block;
+            object-position: center;
+            width: auto;
+            height: 100%;
+        }
+    }
+    .info_card {
+        color: var(--TC);
+        padding: 1rem 1.5rem 2rem;
+        transition: var(--T_F);
+    }
+    btn{
+        color: var(--TC_C);
+    }
 
+} */
 .service_card {
   display: flex;
   flex-direction: column;
@@ -1381,6 +1378,7 @@ body P {
   width: 100%;
   max-width: 400px;
   height: 15rem;
+  padding: 1rem;
 }
 .service_card .info_card .title {
   width: 100%;
@@ -1453,30 +1451,27 @@ body P {
 }
 
 .project_card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30rem;
-  background: var(--FC);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   border-radius: 0.5rem;
-  overflow: hidden;
   transition: var(--T_F);
-  z-index: var(--zIndexStart);
+  background: var(--bgC_T);
+}
+.project_card .card_content {
+  width: 100%;
+}
+.project_card .img_card {
+  width: 100%;
+  height: 30rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
 }
 .project_card .info_card {
-  transform: scale(0);
-  width: 90%;
-  height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: var(--bgM);
-  opacity: 0;
-  border-radius: 1rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 .project_card .info_card .title {
   width: 100%;
@@ -1515,14 +1510,52 @@ body P {
 }
 .project_card .btn {
   width: 100%;
+  color: var(--TC_C);
 }
-.project_card .btn:focus-within {
-  opacity: 1;
-  transform: scale(1);
+
+.hot_project_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 50rem;
+  padding: 1rem;
 }
-.project_card:hover .info_card, .project_card:focus .info_card, .project_card:active .info_card {
-  opacity: 1;
+
+.mini_project_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mini_project_card .card_content {
+  width: 90%;
+  height: 90%;
+  transform: scale(0);
+  background: var(--bgM);
+  opacity: 0;
+  transition: var(--T_M);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+.mini_project_card .info_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--TC);
+}
+.mini_project_card:hover .card_content, .mini_project_card:active .card_content, .mini_project_card:focus .card_content {
   transform: scale(1);
+  opacity: 1;
 }
 
 .animation_up {
@@ -2226,23 +2259,13 @@ body P {
 
 .certification_badge {
   max-width: 350px;
-  height: 320px;
+  height: 350px;
   justify-content: space-between;
+  background: var(--bgC_T);
+  border-radius: 0.5rem;
 }
 .certification_badge .badge_name {
   margin-top: 0.5rem;
-}
-.certification_badge .link {
-  color: var(--FC);
-  border: solid 2px var(--FC);
-  width: 100%;
-  border-radius: 0.5rem;
-  text-align: center;
-  font-weight: 600;
-}
-.certification_badge .link:hover, .certification_badge .link:active, .certification_badge .link:focus {
-  background: var(--FC);
-  color: var(--whiteOff);
 }
 
 .skills_section .skills_icon_container {
