@@ -288,8 +288,8 @@
         "votes": 2
     },
     {
-        "project_name": "Smurffs",
-        "db_name": "smurffs",
+        "project_name": "Smuffs",
+        "db_name": "smuffs",
         "client_logo": "",
         "projects": {
             "type": "design",
@@ -299,7 +299,7 @@
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/smurffs.png",
-            "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
+            "project_link": "https://www.behance.net/gallery/193494415/https://www.behance.net/gallery/193496187/Smuffs"
         },
         "votes": 2
     },

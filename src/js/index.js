@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storageContent;
     const portfolioData = "./portfolioDB.json";
     const storageName = "JohnK_Maker";
-    const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "black_jack", "creaciones_hermed", "smurffs", "tribute", "choropleth_map", "we_are_disney", "navidad_2024"];
+    const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "black_jack", "creaciones_hermed", "smuffs", "tribute", "choropleth_map", "we_are_disney", "navidad_2024"];
     const infoSoftware = [
         {
             db_name: "",
