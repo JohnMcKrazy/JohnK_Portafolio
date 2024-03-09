@@ -1,6 +1,6 @@
 [
     {
-        "client_name": "Pokedex",
+        "project_name": "Pokedex",
         "db_name": "pokedex",
         "client_logo": "",
         "projects": {
@@ -16,7 +16,7 @@
         "votes": 5
     },
     {
-        "client_name": "Rick And Morty Character Search",
+        "project_name": "Rick And Morty Character Search",
         "db_name": "rick_and_morty",
         "client_logo": "",
         "projects": {
@@ -32,7 +32,7 @@
         "votes": 2
     },
     {
-        "client_name": "Tribute To Kobe",
+        "project_name": "Tribute To Kobe",
         "db_name": "tribute",
         "client_logo": "",
         "projects": {
@@ -48,7 +48,7 @@
         "votes": 5
     },
     {
-        "client_name": "Black Jack Game",
+        "project_name": "Black Jack Game",
         "db_name": "black_jack",
         "client_logo": "",
         "projects": {
@@ -64,7 +64,7 @@
         "votes": 2
     },
     {
-        "client_name": "JS Documentation",
+        "project_name": "JS Documentation",
         "db_name": "js_documentation",
         "client_logo": "",
         "projects": {
@@ -80,7 +80,7 @@
         "votes": 2
     },
     {
-        "client_name": "Choropleth Map Data Visualization",
+        "project_name": "Choropleth Map Data Visualization",
         "db_name": "choropleth_map",
         "client_logo": "",
         "projects": {
@@ -96,7 +96,7 @@
         "votes": 5
     },
     {
-        "client_name": "Heat Map Data Visualization",
+        "project_name": "Heat Map Data Visualization",
         "db_name": "heat_map",
         "client_logo": "",
         "projects": {
@@ -112,7 +112,7 @@
         "votes": 5
     },
     {
-        "client_name": "Tree Map Diagram Data Visualization",
+        "project_name": "Tree Map Diagram Data Visualization",
         "db_name": "tree_map",
         "client_logo": "",
         "projects": {
@@ -128,7 +128,7 @@
         "votes": 5
     },
     {
-        "client_name": "Scatterplo Chart Data Visualization",
+        "project_name": "Scatterplo Chart Data Visualization",
         "db_name": "scatterplo_chart",
         "client_logo": "",
         "projects": {
@@ -144,7 +144,7 @@
         "votes": 5
     },
     {
-        "client_name": "Bar Chart Data Visualization",
+        "project_name": "Bar Chart Data Visualization",
         "db_name": "bar_chart",
         "client_logo": "",
         "projects": {
@@ -160,7 +160,7 @@
         "votes": 5
     },
     {
-        "client_name": "Tic-Tac-Toe",
+        "project_name": "Tic-Tac-Toe",
         "db_name": "tic_tac_toe",
         "client_logo": "",
         "projects": {
@@ -176,7 +176,7 @@
         "votes": 2
     },
     {
-        "client_name": "Random Quote Machine",
+        "project_name": "Random Quote Machine",
         "db_name": "quote_machine",
         "client_logo": "",
         "projects": {
@@ -192,7 +192,7 @@
         "votes": 2
     },
     {
-        "client_name": "Weather App",
+        "project_name": "Weather App",
         "db_name": "weather",
         "client_logo": "",
         "projects": {
@@ -208,7 +208,103 @@
         "votes": 2
     },
     {
-        "client_name": "Leiru",
+        "project_name": "Deseos de Navidad",
+        "db_name": "navidad_2024",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Ilustración Digital", "Edición de Video", "Animación 2D"],
+            "info": "",
+            "reach": ["Poster"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/navidad2024.png",
+            "project_link": "https://www.behance.net/gallery/189873453/Deseos-de-Navidad"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Think Different",
+        "db_name": "think_different",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Ilustración Digital", "Poster"],
+            "info": "",
+            "reach": ["Poster"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/think_different.png",
+            "project_link": "https://www.behance.net/gallery/101963205/Posters"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Handball Panteras Negras",
+        "db_name": "handball_panteras",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Poster"],
+            "info": "",
+            "reach": ["Poster"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/handball_panteras.png",
+            "project_link": "https://www.behance.net/gallery/101963205/Posters"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Aplasta",
+        "db_name": "handball_panteras",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Poster"],
+            "info": "",
+            "reach": ["Poster"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/aplasta_verde.png",
+            "project_link": "https://www.behance.net/gallery/101963205/Posters"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "IMPULSO",
+        "db_name": "impulso",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo", "Packaging"],
+            "info": "",
+            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/impulso.png",
+            "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Smurffs",
+        "db_name": "smurffs",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Identidad Corporativa", "Logotipo", "Packaging"],
+            "info": "",
+            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/smurffs.png",
+            "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Leiru",
         "db_name": "leiru",
         "client_logo": "",
         "projects": {
@@ -224,7 +320,7 @@
         "votes": 2
     },
     {
-        "client_name": "Afroduck",
+        "project_name": "Afroduck",
         "db_name": "afroduck",
         "client_logo": "",
         "projects": {
@@ -240,7 +336,7 @@
         "votes": 5
     },
     {
-        "client_name": "Verona",
+        "project_name": "Verona",
         "db_name": "verona",
         "client_logo": "",
         "projects": {
@@ -256,15 +352,15 @@
         "votes": 5
     },
     {
-        "client_name": "Creaciones Hermed",
+        "project_name": "Creaciones Hermed",
         "db_name": "creaciones_hermed",
         "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
-            "skills": ["Edicion de imagen", "Papeleria", "Promocionales"],
+            "skills": ["Edición de imagen", "Papeleria", "Promocionales"],
             "info": "",
-            "reach": ["Tarjeta de presentacion", "Promocionales", "Edicion de imagen", "Redes Sociales"],
+            "reach": ["Tarjeta de presentacion", "Promocionales", "Edición de imagen", "Redes Sociales"],
             "technologies": ["Photoshop"],
             "img": "./src/img/portfolio/hermed.png",
             "project_link": "https://www.behance.net/gallery/107080483/Creaciones-Hermed"
@@ -272,7 +368,7 @@
         "votes": 2
     },
     {
-        "client_name": "Bucefalos",
+        "project_name": "Bucefalos",
         "db_name": "bucefalos_1",
         "client_logo": "",
         "projects": {
@@ -288,7 +384,7 @@
         "votes": 2
     },
     {
-        "client_name": "Bucefalos",
+        "project_name": "Bucefalos",
         "db_name": "bucefalos_2",
         "client_logo": "",
         "projects": {
@@ -304,7 +400,7 @@
         "votes": 2
     },
     {
-        "client_name": "Panteras",
+        "project_name": "Panteras",
         "db_name": "panteras_1",
         "client_logo": "",
         "projects": {
@@ -320,7 +416,7 @@
         "votes": 2
     },
     {
-        "client_name": "Bulldogs",
+        "project_name": "Bulldogs",
         "db_name": "bulldogs_1",
         "client_logo": "",
         "projects": {
@@ -336,7 +432,7 @@
         "votes": 2
     },
     {
-        "client_name": "Berserkers",
+        "project_name": "Berserkers",
         "db_name": "berserkers_1",
         "client_logo": "",
         "projects": {
@@ -352,7 +448,7 @@
         "votes": 2
     },
     {
-        "client_name": "Berserkers",
+        "project_name": "Berserkers",
         "db_name": "berserkers_2",
         "client_logo": "",
         "projects": {
@@ -368,7 +464,7 @@
         "votes": 2
     },
     {
-        "client_name": "Berserkers",
+        "project_name": "Berserkers",
         "db_name": "berserkers_3",
         "client_logo": "",
         "projects": {
@@ -384,88 +480,8 @@
         "votes": 2
     },
     {
-        "client_name": "Joker",
-        "db_name": "joker_tradicional",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/guason.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "client_name": "Conejos",
-        "db_name": "bunnies",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/conejos.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "client_name": "Capitan Planeta",
-        "db_name": "captain_planet",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/captainPlanet.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "client_name": "We Are Venom",
-        "db_name": "we_are_disney",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/weAreDisney.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "client_name": "Mjolnir",
-        "db_name": "mjolnir",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/mjolnir.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "client_name": "BoJack Horseman",
-        "db_name": "boJack",
+        "project_name": "System Smasher",
+        "db_name": "system_smasher",
         "client_logo": "",
         "projects": {
             "type": "illustration",
@@ -474,13 +490,13 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/boJack.png",
+            "img": "./src/img/portfolio/system_smasher.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
     },
     {
-        "client_name": "Chp-Chp Buggy (Tematica One Piece)",
+        "project_name": "Chop-Chop Buggy (Tematica One Piece)",
         "db_name": "chop_chop_buggy",
         "client_logo": "",
         "projects": {
@@ -496,7 +512,7 @@
         "votes": 2
     },
     {
-        "client_name": "Jolly Roger (Tematica One Piece)",
+        "project_name": "Jolly Roger (Tematica One Piece)",
         "db_name": "jolly_roger",
         "client_logo": "",
         "projects": {
@@ -512,7 +528,7 @@
         "votes": 2
     },
     {
-        "client_name": "Jolly Roger (Tematica One Piece)",
+        "project_name": "Jolly Roger (Tematica One Piece)",
         "db_name": "jolly_roger_2",
         "client_logo": "",
         "projects": {
@@ -523,6 +539,102 @@
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/jolly_roger_2.png",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "BoJack Horseman",
+        "db_name": "boJack",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Digital"],
+            "info": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/boJack.png",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Joker",
+        "db_name": "joker_tradicional",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "info": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "img": "./src/img/portfolio/guason.png",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Conejos",
+        "db_name": "bunnies",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "info": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "img": "./src/img/portfolio/conejos.png",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Capitan Planeta",
+        "db_name": "captain_planet",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "info": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "img": "./src/img/portfolio/captainPlanet.png",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "We Are Venom",
+        "db_name": "we_are_disney",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "info": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "img": "./src/img/portfolio/weAreDisney.png",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Mjolnir",
+        "db_name": "mjolnir",
+        "client_logo": "",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Tradicional"],
+            "info": "",
+            "reach": ["Logotipo", "Imagen Deportiva"],
+            "technologies": ["Ilustracion Tradicional"],
+            "img": "./src/img/portfolio/mjolnir.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2

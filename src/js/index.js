@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let storageContent;
     const portfolioData = "./portfolioDB.json";
     const storageName = "JohnK_Maker";
-    const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "black_jack", "creaciones_hermed", "rick_and_morty", "tribute", "choropleth_map", "we_are_disney", "tic_tac_toe"];
+    const hotCardsSelection = ["berserkers_2", "pokedex", "verona", "afroduck", "js_documentation", "black_jack", "creaciones_hermed", "smurffs", "tribute", "choropleth_map", "we_are_disney", "navidad_2024"];
     const infoSoftware = [
         {
             db_name: "",
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardInfo = cloneProjectCard.querySelector(".info");
         const moreBtn = cloneProjectCard.querySelector(".more_btn");
         //* ******************************************************************************** *//
-        const clientName = item["client_name"];
+        const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         projectCard.style.backgroundImage = `url(${cardImg})`;
@@ -429,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardTitle = cloneProjectCard.querySelector(".title");
         const moreBtn = cloneProjectCard.querySelector(".more_btn");
         //* ******************************************************************************** *//
-        const clientName = item["client_name"];
+        const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
         const cardInfo = item["projects"]["info"];
         infoCard.textContent = cardInfo;
