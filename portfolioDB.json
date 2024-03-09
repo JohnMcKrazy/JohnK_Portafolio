@@ -217,7 +217,7 @@
             "skills": ["Ilustración Digital", "Edición de Video", "Animación 2D"],
             "info": "",
             "reach": ["Poster"],
-            "technologies": ["Illustrator"],
+            "technologies": ["Illustrator", "AfterEffects"],
             "img": "./src/img/portfolio/navidad2024.png",
             "project_link": "https://www.behance.net/gallery/189873453/Deseos-de-Navidad"
         },
@@ -272,13 +272,29 @@
         "votes": 2
     },
     {
+        "project_name": "Afluentes",
+        "db_name": "afluentes",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Poster"],
+            "info": "",
+            "reach": ["Poster", "Infograf{ia"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/afluentes.png",
+            "project_link": "https://www.behance.net/gallery/101963205/Posters"
+        },
+        "votes": 2
+    },
+    {
         "project_name": "IMPULSO",
         "db_name": "impulso",
         "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
-            "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo", "Packaging"],
+            "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo", "Packaging", "Poster"],
             "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator"],
@@ -411,22 +427,6 @@
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/panteras.png",
-            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Bulldogs",
-        "db_name": "bulldogs_1",
-        "client_logo": "",
-        "projects": {
-            "type": "design",
-            "type_name": "Diseño",
-            "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/bulldogs.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -576,22 +576,6 @@
         "votes": 2
     },
     {
-        "project_name": "Conejos",
-        "db_name": "bunnies",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/conejos.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
         "project_name": "Capitan Planeta",
         "db_name": "captain_planet",
         "client_logo": "",
@@ -619,22 +603,6 @@
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
             "img": "./src/img/portfolio/weAreDisney.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Mjolnir",
-        "db_name": "mjolnir",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/mjolnir.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
