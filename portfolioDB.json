@@ -234,7 +234,7 @@
             "info": "",
             "reach": ["Poster"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/think_different.png",
+            "img": "./src/img/portfolio/think_different.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
         },
         "votes": 2
@@ -250,7 +250,7 @@
             "info": "",
             "reach": ["Poster"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/handball_panteras.png",
+            "img": "./src/img/portfolio/handball_panteras.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
         },
         "votes": 2
@@ -266,7 +266,7 @@
             "info": "",
             "reach": ["Poster"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/aplasta_verde.png",
+            "img": "./src/img/portfolio/aplasta_blanco.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
         },
         "votes": 2
@@ -282,8 +282,24 @@
             "info": "",
             "reach": ["Poster", "Infograf{ia"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/afluentes.png",
+            "img": "./src/img/portfolio/afluentes.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
+        },
+        "votes": 2
+    },
+    {
+        "project_name": "Mitos Y Leyendas",
+        "db_name": "mitos_y_leyendas",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Diseño Editorial", "Poster", "Portada"],
+            "info": "",
+            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "technologies": ["Illustrator"],
+            "img": "./src/img/portfolio/mitos_y_leyendas.webp",
+            "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
         },
         "votes": 2
     },
@@ -298,7 +314,7 @@
             "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/impulso.png",
+            "img": "./src/img/portfolio/impulso.webp",
             "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
         },
         "votes": 2
@@ -314,7 +330,7 @@
             "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/smurffs.png",
+            "img": "./src/img/portfolio/smuffs.webp",
             "project_link": "https://www.behance.net/gallery/193494415/https://www.behance.net/gallery/193496187/Smuffs"
         },
         "votes": 2
@@ -330,7 +346,7 @@
             "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
-            "img": "./src/img/portfolio/leiru.png",
+            "img": "./src/img/portfolio/leiru.webp",
             "project_link": "https://www.behance.net/gallery/181117109/Leiru"
         },
         "votes": 2
@@ -346,7 +362,7 @@
             "info": "",
             "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
-            "img": "./src/img/portfolio/afroduck.png",
+            "img": "./src/img/portfolio/afroduck.webp",
             "project_link": "https://www.behance.net/gallery/181117581/Afroduck"
         },
         "votes": 5
@@ -362,8 +378,24 @@
             "info": "",
             "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/verona.png",
+            "img": "./src/img/portfolio/verona.webp",
             "project_link": "https://www.behance.net/gallery/181175109/Verona"
+        },
+        "votes": 5
+    },
+    {
+        "project_name": "Pasión por México",
+        "db_name": "pasion_por_mexico",
+        "client_logo": "",
+        "projects": {
+            "type": "design",
+            "type_name": "Diseño",
+            "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
+            "info": "",
+            "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
+            "technologies": ["Illustrator", "Photoshop"],
+            "img": "./src/img/portfolio/pasion_por_mexico.webp",
+            "project_link": "https://www.behance.net/gallery/181175109/Pasion"
         },
         "votes": 5
     },
@@ -394,46 +426,14 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/bucefalos_1.png",
-            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Bucefalos",
-        "db_name": "bucefalos_2",
-        "client_logo": "",
-        "projects": {
-            "type": "design",
-            "type_name": "Diseño",
-            "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/bucefalos_2.png",
-            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Panteras",
-        "db_name": "panteras_1",
-        "client_logo": "",
-        "projects": {
-            "type": "design",
-            "type_name": "Diseño",
-            "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/panteras.png",
+            "img": "./src/img/portfolio/bucefalos.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
     },
     {
         "project_name": "Berserkers",
-        "db_name": "berserkers_1",
+        "db_name": "berserkers",
         "client_logo": "",
         "projects": {
             "type": "design",
@@ -442,39 +442,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/berserkers_1.png",
-            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Berserkers",
-        "db_name": "berserkers_2",
-        "client_logo": "",
-        "projects": {
-            "type": "design",
-            "type_name": "Diseño",
-            "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/berserkers_2.png",
-            "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Berserkers",
-        "db_name": "berserkers_3",
-        "client_logo": "",
-        "projects": {
-            "type": "design",
-            "type_name": "Diseño",
-            "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/berserkers_3.png",
+            "img": "./src/img/portfolio/berserkers.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         },
         "votes": 2
@@ -489,8 +457,8 @@
             "skills": ["Ilustración Digital"],
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/system_smasher.png",
+            "technologies": ["Photoshop", "Illustrator"],
+            "img": "./src/img/portfolio/system_smasher.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -505,14 +473,14 @@
             "skills": ["Ilustración Digital"],
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Illustrator"],
+            "technologies": ["Photoshop"],
             "img": "./src/img/portfolio/chopBuggy.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
     },
     {
-        "project_name": "Jolly Roger (Tematica One Piece)",
+        "project_name": "Jolly Roger",
         "db_name": "jolly_roger",
         "client_logo": "",
         "projects": {
@@ -522,23 +490,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/jolly_roger.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
-    },
-    {
-        "project_name": "Jolly Roger (Tematica One Piece)",
-        "db_name": "jolly_roger_2",
-        "client_logo": "",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Digital"],
-            "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
-            "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/jolly_roger_2.png",
+            "img": "./src/img/portfolio/jolly_roger.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -554,7 +506,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/boJack.png",
+            "img": "./src/img/portfolio/boJack.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -570,7 +522,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/guason.png",
+            "img": "./src/img/portfolio/guason.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -586,7 +538,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/captainPlanet.png",
+            "img": "./src/img/portfolio/captainPlanet.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -602,7 +554,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/weAreDisney.png",
+            "img": "./src/img/portfolio/weAreDisney.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2

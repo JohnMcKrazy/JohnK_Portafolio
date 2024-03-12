@@ -1626,7 +1626,7 @@ body P {
 .content {
   min-width: 250px;
   width: 1600px;
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .btns_container,
@@ -2082,15 +2082,11 @@ body P {
 
 .section_divider {
   width: 100%;
-  min-height: 25rem;
   background: var(--bgC_T);
   padding: 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.section_divider .content {
-  width: 90%;
 }
 .section_divider .quote_container {
   display: flex;
@@ -2350,8 +2346,10 @@ body P {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
   margin: 0;
+}
+.legals_section .content {
+  padding: 2rem;
 }
 .legals_section .made_container {
   display: flex;
@@ -2394,6 +2392,12 @@ body P {
 }
 .legals_section .made_content .btns_container :not(:first-child) {
   margin-left: 2rem;
+}
+.legals_section .footer_animation {
+  width: 100%;
+  height: 30rem;
+  background: var(--FC);
+  padding-top: 4rem;
 }
 
 .portfolio_section .portfolio_btn {

@@ -1716,7 +1716,7 @@ body {
 .content {
     min-width: 250px;
     width: 1600px;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 .btns_container,
@@ -2142,17 +2142,12 @@ body {
 }
 .section_divider {
     width: 100%;
-    min-height: 25rem;
     background: var(--bgC_T);
     padding: 4rem 0;
     @include flexCenter();
-    .content {
-        width: 90%;
-    }
     .quote_container {
         @include flexDirection(row, center, center);
         height: 100%;
-
         .quote {
             font-size: var(--FS_X);
             color: var(--TC);
@@ -2389,9 +2384,10 @@ body {
 .legals_section {
     background: var(--NVC);
     @include flex(center, center);
-    padding: 2rem;
     margin: 0;
-
+    .content {
+        padding: 2rem;
+    }
     .made_container {
         @include flexDirection(column, flex-start, flex-end);
         .icons_container {
@@ -2399,7 +2395,6 @@ body {
             gap: 0;
         }
     }
-
     .lebels_container {
         margin-top: 1rem;
         @include flexDirection(row, space-between, flex-end);
@@ -2425,6 +2420,12 @@ body {
         .btns_container :not(:first-child) {
             margin-left: 2rem;
         }
+    }
+    .footer_animation {
+        width: 100%;
+        height: 30rem;
+        background: var(--FC);
+        padding-top: 4rem;
     }
 }
 .portfolio_section {
