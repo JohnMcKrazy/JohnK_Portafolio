@@ -134,12 +134,10 @@
   --FC_H: rgb(27, 6, 71);
   --SC: rgb(66, 196, 240);
   --SC_H: rgb(45, 161, 200);
-  --quote: rgb(148, 148, 245);
   --TC: rgb(26, 26, 26);
   --TC_C: rgb(230, 230, 230);
   --NVC: rgb(242, 242, 242);
   --NVC_T: rgba(242, 242, 242, 0.75);
-  --tooltipColor: rgb(13, 13, 13);
   --bgC: rgb(230, 230, 230);
   --bgC_T: rgba(242, 242, 242, 0.75);
   --bgC_UT: rgba(242, 242, 242, 0.25);
@@ -167,17 +165,14 @@
 }
 
 .dark_theme {
+  --FC: rgb(0, 170, 204);
   --FC_H: rgb(102, 230, 255);
-  --FC: rgb(0, 170, 204);
-  --FC: rgb(0, 170, 204);
-  --quote: rgb(148, 214, 245);
   --SC: rgb(97, 97, 209);
   --SC_H: rgb(46, 46, 158);
   --TC: rgb(230, 230, 230);
   --TC_C: rgb(26, 26, 26);
   --NVC: rgb(13, 13, 13);
   --NVC_T: rgba(13, 13, 13, 0.75);
-  --tooltipColor: rgb(242, 242, 242);
   --bgC: rgb(26, 26, 26);
   --bgC_T: rgba(13, 13, 13, 0.75);
   --bgC_UT: rgba(13, 13, 13, 0.25);
@@ -298,8 +293,8 @@ body P {
 }
 
 .animation_key {
-  font-weight: 800;
   color: var(--FC);
+  font-weight: 800;
   cursor: pointer;
 }
 
@@ -995,8 +990,9 @@ body P {
   border-radius: 50%;
 }
 
-.accent_text {
-  color: var(--FC);
+.accent_color {
+  color: var(--SC);
+  fill: var(--SC);
 }
 
 .accessibility_btn {
@@ -1179,11 +1175,10 @@ body P {
   margin-top: 1rem;
   width: 2rem;
   animation: bounceDown 1s ease infinite;
-  fill: var(--FC);
   transition: fill 500ms ease;
 }
 .btn_down:hover .arrow_down_svg {
-  fill: var(--SC);
+  fill: var(--FC);
 }
 
 .more_btn {
@@ -1335,7 +1330,8 @@ body P {
 }
 
 .subtitle_section {
-  margin-bottom: 1rem;
+  margin: 2rem 0 1rem;
+  font-size: var(--FS_L);
 }
 
 .title_section {
@@ -1344,7 +1340,7 @@ body P {
   align-items: center;
   width: 100%;
   height: auto;
-  margin: 2rem 0 2rem;
+  margin-top: 2rem;
   -webkit-text-stroke: 1px var(--FC);
   color: transparent;
   font-size: var(--FS_X);
@@ -1494,7 +1490,7 @@ body P {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 1rem;
+  gap: 0.5rem;
 }
 .project_card .info_card .title {
   width: 100%;
@@ -1521,10 +1517,11 @@ body P {
 .project_card .info_card .icons_project_container .icon_container {
   width: auto;
   height: auto;
+  padding: 0;
 }
 .project_card .info_card .icons_project_container .tech_icon_card {
   width: auto;
-  height: 4rem;
+  height: 2.5rem;
 }
 .project_card .info_card .btn_container {
   width: 100%;
@@ -1541,8 +1538,11 @@ body P {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 50rem;
+  height: 46rem;
   padding: 1rem;
+}
+.hot_project_card .info_card {
+  margin-top: 1rem;
 }
 
 .mini_project_card {
@@ -1567,7 +1567,7 @@ body P {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .mini_project_card .info_card {
   display: flex;
@@ -2083,11 +2083,14 @@ body P {
 .section_divider {
   width: 100%;
   min-height: 25rem;
-  background: var(--FC);
+  background: var(--bgC_T);
   padding: 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.section_divider .content {
+  width: 90%;
 }
 .section_divider .quote_container {
   display: flex;
@@ -2097,8 +2100,8 @@ body P {
   height: 100%;
 }
 .section_divider .quote_container .quote {
-  color: var(--TC_C);
-  font-size: var(--fontSizeXClamp);
+  font-size: var(--FS_X);
+  color: var(--TC);
 }
 .section_divider .quote_container .quote_icon {
   height: 100%;
@@ -2115,7 +2118,7 @@ body P {
 .section_divider .quote_container .icon_container {
   width: 6rem;
   height: 6rem;
-  fill: var(--TC_C);
+  fill: var(--FC);
 }
 .section_divider .author_container {
   transform: translateX(-7rem);
@@ -2132,11 +2135,11 @@ body P {
 }
 .section_divider .author_container .author {
   font-size: var(--fontSizeMClamp);
-  color: var(--quote);
+  color: var(--SC);
   font-weight: 600;
 }
 .section_divider .author_container .author_info {
-  color: var(--TC_C);
+  color: var(--TC);
   font-size: var(--fontSizeSClamp);
 }
 .section_divider .author_container .author,
@@ -2237,15 +2240,15 @@ body P {
 }
 .about_section .about_salute .title_salute {
   font-size: var(--FS_XL);
-  color: var(--SC);
+  color: var(--FC);
 }
 .about_section .about_salute .title_name {
   font-size: var(--FS_XL);
-  color: var(--FC);
+  color: var(--SC);
 }
 .about_section .about_salute .title_effect {
   animation: blink 500ms 0s infinite alternate;
-  color: var(--SC);
+  color: var(--FC);
 }
 .about_section .about_salute .swipe_animation_container_half {
   padding: 0 2rem;
@@ -2254,10 +2257,6 @@ body P {
   font-size: var(--fontSizeMClamp);
   font-weight: 800;
   padding: 2rem;
-}
-
-.services_container {
-  position: relative;
 }
 
 .badge {
@@ -2295,19 +2294,13 @@ body P {
   margin-top: 0.5rem;
 }
 
-.skills_section .skills_icon_container {
-  margin-top: 2rem;
-}
 .skills_section .icon_container {
   height: 8rem;
   width: 8rem;
 }
 
-.certification_badge .medal_icon .cls-1 {
-  fill: var(--TC);
-}
-.certification_badge .medal_icon .cls-2 {
-  fill: rgb(140, 137, 42);
+.services_container {
+  position: relative;
 }
 
 .clients_section {
@@ -2339,9 +2332,14 @@ body P {
   animation: zoom 1000ms ease-out;
 }
 
+.contact_section .form_container {
+  padding: 0 2rem;
+  width: 100%;
+}
 .contact_section .form {
   max-width: 800px;
   width: 100%;
+  margin: 0 auto;
 }
 .contact_section .bg_section {
   background: var(--bgHeaderSectionContact);
@@ -2392,7 +2390,7 @@ body P {
   line-height: 1.5;
 }
 .legals_section .made_content {
-  margin-left: 3rem;
+  margin-left: 5rem;
 }
 .legals_section .made_content .btns_container :not(:first-child) {
   margin-left: 2rem;

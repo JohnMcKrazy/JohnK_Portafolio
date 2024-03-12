@@ -394,14 +394,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const projectCard = cloneProjectCard.querySelector(".project_card");
         const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
         const cardTitle = cloneProjectCard.querySelector(".title");
-        const cardInfo = cloneProjectCard.querySelector(".info");
         const moreBtn = cloneProjectCard.querySelector(".more_btn");
         //* ******************************************************************************** *//
         const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         projectCard.style.backgroundImage = `url(${cardImg})`;
-        cardInfo.textContent = item["projects"]["info"];
         const clientTechnologiesInProjects = item["projects"]["technologies"];
         clientTechnologiesInProjects.forEach((tech) => {
             /* console.log(tech); */
@@ -426,15 +424,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const cloneProjectCard = cardProjectTemplate.cloneNode(true);
         const projectCard = cloneProjectCard.querySelector(".project_card");
         const imgCard = cloneProjectCard.querySelector(".img_card");
-        const infoCard = cloneProjectCard.querySelector(".info");
         const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
         const cardTitle = cloneProjectCard.querySelector(".title");
         const moreBtn = cloneProjectCard.querySelector(".more_btn");
         //* ******************************************************************************** *//
         const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
-        const cardInfo = item["projects"]["info"];
-        infoCard.textContent = cardInfo;
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         imgCard.setAttribute("src", cardImg);
         const clientTechnologiesInProjects = item["projects"]["technologies"];
@@ -579,7 +574,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuContainer.style.display = flx;
             menuSocialContainer.style.display = flx;
         } else if (widConf > secondBreak || (widConf < firstBreak && widConf > secondBreak)) {
-            copyrightText.style.marginLeft = "3rem";
+            copyrightText.style.marginLeft = "5rem";
             lebelBtnMain.innerHTML = setIconContainer(
                 '<svg class="icon_svg nav_menu_icon_svg" id="home_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><title>Inicio</title><path class="cls-1" d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"></path></svg>'
             );
@@ -1098,10 +1093,9 @@ document.addEventListener("DOMContentLoaded", () => {
             bubbleInfo.querySelector(".title").textContent = newData[0].tech_complete_name;
             bubbleInfo.querySelector(".description").textContent = newData[0].tech_info;
             bubbleInfo.style.display = flx;
-            bubbleInfo.style.opacity = 1;
-
             const containerWidth = bubbleInfo.getClientRects()[0].width;
             bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
+            bubbleInfo.style.opacity = 1;
         });
         badge.addEventListener("mouseleave", () => {
             bubbleInfo.style.opacity = 0;

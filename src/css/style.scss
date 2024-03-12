@@ -160,12 +160,10 @@
     --FC_H: rgb(27, 6, 71);
     --SC: rgb(66, 196, 240);
     --SC_H: rgb(45, 161, 200);
-    --quote: rgb(148, 148, 245);
     --TC: rgb(26, 26, 26);
     --TC_C: rgb(230, 230, 230);
     --NVC: rgb(242, 242, 242);
     --NVC_T: rgba(242, 242, 242, 0.75);
-    --tooltipColor: rgb(13, 13, 13);
     --bgC: rgb(230, 230, 230);
     --bgC_T: rgba(242, 242, 242, 0.75);
     --bgC_UT: rgba(242, 242, 242, 0.25);
@@ -200,18 +198,14 @@
     }
 }
 .dark_theme {
+    --FC: rgb(0, 170, 204);
     --FC_H: rgb(102, 230, 255);
-    --FC: rgb(0, 170, 204);
-    --FC: rgb(0, 170, 204);
-    --quote: rgb(148, 214, 245);
     --SC: rgb(97, 97, 209);
     --SC_H: rgb(46, 46, 158);
     --TC: rgb(230, 230, 230);
     --TC_C: rgb(26, 26, 26);
     --NVC: rgb(13, 13, 13);
     --NVC_T: rgba(13, 13, 13, 0.75);
-
-    --tooltipColor: rgb(242, 242, 242);
     --bgC: rgb(26, 26, 26);
     --bgC_T: rgba(13, 13, 13, 0.75);
     --bgC_UT: rgba(13, 13, 13, 0.25);
@@ -340,8 +334,8 @@ body {
 }
 //^ CLIENTS LOGO COLORS
 .animation_key {
-    font-weight: 800;
     color: var(--FC);
+    font-weight: 800;
     cursor: pointer;
 }
 .deskwork_icon {
@@ -1127,8 +1121,9 @@ body {
     height: 6px;
     border-radius: 50%;
 }
-.accent_text {
-    color: var(--FC);
+.accent_color {
+    color: var(--SC);
+    fill: var(--SC);
 }
 .accessibility_btn {
     position: fixed;
@@ -1293,11 +1288,10 @@ body {
         margin-top: 1rem;
         width: 2rem;
         animation: bounceDown 1s ease infinite;
-        fill: var(--FC);
         transition: fill 500ms ease;
     }
     &:hover .arrow_down_svg {
-        fill: var(--SC);
+        fill: var(--FC);
     }
 }
 .more_btn {
@@ -1441,14 +1435,15 @@ body {
     gap: 2rem;
 }
 .subtitle_section {
-    margin-bottom: 1rem;
+    margin: 2rem 0 1rem;
+    font-size: var(--FS_L);
 }
 .title_section {
     @include flex(center, center);
 
     width: 100%;
     height: auto;
-    margin: 2rem 0 2rem;
+    margin-top: 2rem;
     -webkit-text-stroke: 1px var(--FC);
     color: transparent;
     font-size: var(--FS_X);
@@ -1600,10 +1595,9 @@ body {
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-top: 1rem;
+        gap: 0.5rem;
         .title {
             width: 100%;
-
             font-size: var(--FS_L);
             color: var(--FC);
             line-height: 1;
@@ -1622,10 +1616,11 @@ body {
             .icon_container {
                 width: auto;
                 height: auto;
+                padding: 0;
             }
             .tech_icon_card {
                 width: auto;
-                height: 4rem;
+                height: 2.5rem;
             }
         }
         .btn_container {
@@ -1641,8 +1636,11 @@ body {
 }
 .hot_project_card {
     @include flexDirection(column, space-between, center);
-    height: 50rem;
+    height: 46rem;
     padding: 1rem;
+    .info_card {
+        margin-top: 1rem;
+    }
 }
 .mini_project_card {
     @include flex(center, center);
@@ -1659,7 +1657,7 @@ body {
         transition: var(--T_M);
         border-radius: 0.5rem;
         @include flexDirection(column, space-between, center);
-        padding: 0.5rem;
+        padding: 1rem;
     }
     .info_card {
         @include flexDirection(column, center, center);
@@ -2145,16 +2143,19 @@ body {
 .section_divider {
     width: 100%;
     min-height: 25rem;
-    background: var(--FC);
+    background: var(--bgC_T);
     padding: 4rem 0;
     @include flexCenter();
-
+    .content {
+        width: 90%;
+    }
     .quote_container {
         @include flexDirection(row, center, center);
         height: 100%;
+
         .quote {
-            color: var(--TC_C);
-            font-size: var(--fontSizeXClamp);
+            font-size: var(--FS_X);
+            color: var(--TC);
         }
         .quote_icon {
             height: 100%;
@@ -2172,7 +2173,7 @@ body {
         .icon_container {
             width: 6rem;
             height: 6rem;
-            fill: var(--TC_C);
+            fill: var(--FC);
         }
     }
     .author_container {
@@ -2186,11 +2187,11 @@ body {
         }
         .author {
             font-size: var(--fontSizeMClamp);
-            color: var(--quote);
+            color: var(--SC);
             font-weight: 600;
         }
         .author_info {
-            color: var(--TC_C);
+            color: var(--TC);
             font-size: var(--fontSizeSClamp);
         }
         .author,
@@ -2282,16 +2283,16 @@ body {
         }
         .title_salute {
             font-size: var(--FS_XL);
-            color: var(--SC);
+            color: var(--FC);
         }
         .title_name {
             font-size: var(--FS_XL);
 
-            color: var(--FC);
+            color: var(--SC);
         }
         .title_effect {
             animation: blink 500ms 0s infinite alternate;
-            color: var(--SC);
+            color: var(--FC);
         }
         .swipe_animation_container_half {
             padding: 0 2rem;
@@ -2302,9 +2303,6 @@ body {
             padding: 2rem;
         }
     }
-}
-.services_container {
-    position: relative;
 }
 .badge {
     display: flex;
@@ -2339,23 +2337,13 @@ body {
     }
 }
 .skills_section {
-    .skills_icon_container {
-        margin-top: 2rem;
-    }
     .icon_container {
         height: 8rem;
         width: 8rem;
     }
 }
-.certification_badge {
-    .medal_icon {
-        .cls-1 {
-            fill: var(--TC);
-        }
-        .cls-2 {
-            fill: rgb(140, 137, 42);
-        }
-    }
+.services_container {
+    position: relative;
 }
 .clients_section {
     @include flex(center, center);
@@ -2385,9 +2373,14 @@ body {
     }
 }
 .contact_section {
+    .form_container {
+        padding: 0 2rem;
+        width: 100%;
+    }
     .form {
         max-width: 800px;
         width: 100%;
+        margin: 0 auto;
     }
     .bg_section {
         background: var(--bgHeaderSectionContact);
@@ -2428,7 +2421,7 @@ body {
         line-height: 1.5;
     }
     .made_content {
-        margin-left: 3rem;
+        margin-left: 5rem;
         .btns_container :not(:first-child) {
             margin-left: 2rem;
         }
