@@ -573,7 +573,7 @@ body P {
   transition: all 1000ms ease-in-out;
 }
 .deskwork_icon .icon_show {
-  opacity: 1;
+  opacity: 0.7;
   transform: translateY(0);
 }
 .deskwork_icon .screen_hide {
@@ -1626,7 +1626,7 @@ body P {
 .content {
   min-width: 250px;
   width: 1600px;
-  max-width: 95%;
+  max-width: 100%;
 }
 
 .btns_container,
@@ -1683,6 +1683,7 @@ body P {
 .cards_service_container {
   grid-template-columns: 1fr;
   min-height: auto;
+  gap: 1rem;
 }
 
 .cards_hot_container {
@@ -2246,10 +2247,13 @@ body P {
   animation: blink 500ms 0s infinite alternate;
   color: var(--SC);
 }
+.about_section .about_salute .swipe_animation_container_half {
+  padding: 0 2rem;
+}
 .about_section .about_salute .about_text {
-  margin-top: 1rem;
   font-size: var(--fontSizeMClamp);
   font-weight: 800;
+  padding: 2rem;
 }
 
 .services_container {

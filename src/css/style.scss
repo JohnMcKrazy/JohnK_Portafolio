@@ -683,7 +683,7 @@ body {
         transition: all 1000ms ease-in-out;
     }
     .icon_show {
-        opacity: 1;
+        opacity: 0.7;
         transform: translateY(0);
     }
     .screen_hide {
@@ -741,7 +741,6 @@ body {
         fill: #00cde2;
     }
 }
-
 .impulso_icon_svg {
     .cls-1 {
         fill: #c01918;
@@ -1719,7 +1718,7 @@ body {
 .content {
     min-width: 250px;
     width: 1600px;
-    max-width: 95%;
+    max-width: 100%;
 }
 
 .btns_container,
@@ -1770,6 +1769,7 @@ body {
 .cards_service_container {
     grid-template-columns: 1fr;
     min-height: auto;
+    gap: 1rem;
 }
 .cards_hot_container {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -2293,10 +2293,13 @@ body {
             animation: blink 500ms 0s infinite alternate;
             color: var(--SC);
         }
+        .swipe_animation_container_half {
+            padding: 0 2rem;
+        }
         .about_text {
-            margin-top: 1rem;
             font-size: var(--fontSizeMClamp);
             font-weight: 800;
+            padding: 2rem;
         }
     }
 }
