@@ -29,6 +29,11 @@
     transform: translateY(-10rem);
   }
 }
+@keyframes scaling {
+  50% {
+    opacity: 0.2;
+  }
+}
 @keyframes zoom {
   50% {
     transform: scale(1.2);
@@ -304,13 +309,13 @@ body P {
   } */
 }
 .deskwork_icon .cls-1 {
-  fill: #999;
+  fill: #7c7c7c;
 }
 .deskwork_icon .cls-2 {
-  fill: #280a54;
+  fill: #999;
 }
 .deskwork_icon .cls-3 {
-  fill: url(#Degradado_sin_nombre_36);
+  fill: #280a54;
 }
 .deskwork_icon .cls-4 {
   fill: #c99;
@@ -328,194 +333,205 @@ body P {
   fill: #d4643e;
 }
 .deskwork_icon .cls-9 {
-  fill: #2eef49;
+  fill: #7dd189;
 }
 .deskwork_icon .cls-10,
-.deskwork_icon .cls-19,
-.deskwork_icon .cls-56 {
+.deskwork_icon .cls-23,
+.deskwork_icon .cls-59 {
   fill: #0ac;
 }
 .deskwork_icon .cls-10,
-.deskwork_icon .cls-29,
-.deskwork_icon .cls-41,
-.deskwork_icon .cls-47,
+.deskwork_icon .cls-31,
+.deskwork_icon .cls-42,
 .deskwork_icon .cls-49,
+.deskwork_icon .cls-51,
 .deskwork_icon .cls-52,
-.deskwork_icon .cls-61,
-.deskwork_icon .cls-62 {
+.deskwork_icon .cls-55,
+.deskwork_icon .cls-66,
+.deskwork_icon .cls-68 {
   opacity: 0.5;
 }
 .deskwork_icon .cls-11,
-.deskwork_icon .cls-33,
-.deskwork_icon .cls-56 {
+.deskwork_icon .cls-14,
+.deskwork_icon .cls-35,
+.deskwork_icon .cls-59 {
   opacity: 0.4;
 }
 .deskwork_icon .cls-11,
-.deskwork_icon .cls-41 {
+.deskwork_icon .cls-42 {
   fill: #ea82f9;
 }
 .deskwork_icon .cls-12 {
-  fill: #339;
+  fill: #6ec6d8;
 }
 .deskwork_icon .cls-13 {
+  fill: #339;
+}
+.deskwork_icon .cls-15 {
   fill: #633;
 }
-.deskwork_icon .cls-14 {
+.deskwork_icon .cls-16,
+.deskwork_icon .cls-49 {
+  fill: #f79b16;
+}
+.deskwork_icon .cls-17 {
+  fill: #e6e6e6;
+}
+.deskwork_icon .cls-18 {
   fill: #c60;
 }
-.deskwork_icon .cls-63 {
+.deskwork_icon .cls-69 {
   stroke: #e42320;
   stroke-width: 4.28px;
 }
-.deskwork_icon .cls-63,
-.deskwork_icon .cls-64,
-.deskwork_icon .cls-65 {
+.deskwork_icon .cls-69,
+.deskwork_icon .cls-70,
+.deskwork_icon .cls-71 {
   stroke-miterlimit: 10;
 }
-.deskwork_icon .cls-63,
-.deskwork_icon .cls-65 {
+.deskwork_icon .cls-69,
+.deskwork_icon .cls-71 {
   fill: none;
 }
-.deskwork_icon .cls-16 {
+.deskwork_icon .cls-20 {
   fill: #909799;
 }
-.deskwork_icon .cls-17 {
+.deskwork_icon .cls-21 {
   fill: #e42320;
 }
-.deskwork_icon .cls-18 {
+.deskwork_icon .cls-22 {
   fill: #930;
 }
-.deskwork_icon .cls-21 {
+.deskwork_icon .cls-24 {
   fill: #2b2827;
 }
-.deskwork_icon .cls-22 {
-  fill: url(#Degradado_sin_nombre_30);
-}
-.deskwork_icon .cls-23 {
+.deskwork_icon .cls-25 {
   fill: #600e0e;
 }
-.deskwork_icon .cls-24 {
+.deskwork_icon .cls-26 {
   fill: #9b4ee5;
 }
-.deskwork_icon .cls-25 {
+.deskwork_icon .cls-27 {
   fill: #1f3c90;
 }
-.deskwork_icon .cls-26 {
+.deskwork_icon .cls-28 {
   opacity: 0.2;
 }
-.deskwork_icon .cls-27,
-.deskwork_icon .cls-33,
-.deskwork_icon .cls-61 {
+.deskwork_icon .cls-29,
+.deskwork_icon .cls-35,
+.deskwork_icon .cls-66 {
   fill: #38166d;
 }
-.deskwork_icon .cls-28 {
+.deskwork_icon .cls-30 {
   fill: gray;
 }
-.deskwork_icon .cls-29,
-.deskwork_icon .cls-40 {
+.deskwork_icon .cls-31,
+.deskwork_icon .cls-41 {
   fill: #6161d1;
 }
-.deskwork_icon .cls-30 {
+.deskwork_icon .cls-32 {
   fill: #333;
 }
-.deskwork_icon .cls-31 {
+.deskwork_icon .cls-33 {
   fill: #732a14;
 }
-.deskwork_icon .cls-32 {
+.deskwork_icon .cls-34 {
   fill: #ccc;
 }
-.deskwork_icon .cls-34,
-.deskwork_icon .cls-64 {
+.deskwork_icon .cls-36,
+.deskwork_icon .cls-70 {
   fill: #494949;
 }
-.deskwork_icon .cls-35 {
+.deskwork_icon .cls-37 {
   fill: #85edb9;
 }
-.deskwork_icon .cls-36 {
+.deskwork_icon .cls-38 {
   fill: #fff;
 }
-.deskwork_icon .cls-66 {
+.deskwork_icon .cls-72 {
   opacity: 0.75;
 }
-.deskwork_icon .cls-37,
-.deskwork_icon .cls-43 {
-  opacity: 0.6;
-}
-.deskwork_icon .cls-38 {
+.deskwork_icon .cls-39 {
   fill: #963;
 }
-.deskwork_icon .cls-39 {
+.deskwork_icon .cls-40 {
   fill: #c49d65;
 }
-.deskwork_icon .cls-42 {
-  fill: #dbb579;
-}
 .deskwork_icon .cls-43 {
-  fill: #0b1138;
+  fill: #cccbcb;
 }
 .deskwork_icon .cls-44 {
-  fill: #336;
+  fill: #dbb579;
 }
 .deskwork_icon .cls-45 {
-  fill: #5a5b5a;
+  fill: #0b1138;
+  opacity: 0.6;
 }
 .deskwork_icon .cls-46 {
-  fill: orange;
+  fill: #336;
 }
-.deskwork_icon .cls-20,
 .deskwork_icon .cls-47 {
-  fill: #f79b16;
+  fill: #5a5b5a;
 }
 .deskwork_icon .cls-48 {
-  fill: #a6a6a6;
-}
-.deskwork_icon .cls-49 {
-  fill: #aae8f9;
+  fill: #d3cd31;
 }
 .deskwork_icon .cls-50 {
-  fill: #93d6e5;
-}
-.deskwork_icon .cls-51 {
-  fill: #222223;
+  fill: #a6a6a6;
 }
 .deskwork_icon .cls-52 {
-  fill: #e5c528;
+  fill: #aae8f9;
 }
 .deskwork_icon .cls-53 {
-  fill: #d2dbda;
+  fill: #93d6e5;
 }
 .deskwork_icon .cls-54 {
-  fill: #b3d4e5;
+  fill: #222223;
 }
 .deskwork_icon .cls-55 {
+  fill: #e5c528;
+}
+.deskwork_icon .cls-56 {
+  fill: #d2dbda;
+}
+.deskwork_icon .cls-57 {
+  fill: #b3d4e5;
+}
+.deskwork_icon .cls-58 {
   fill: #b74e29;
   opacity: 0.85;
 }
-.deskwork_icon .cls-64 {
+.deskwork_icon .cls-70 {
   stroke: #fff;
   stroke-width: 0.25px;
 }
-.deskwork_icon .cls-65 {
+.deskwork_icon .cls-71 {
   stroke: #280a54;
   stroke-linecap: round;
 }
-.deskwork_icon .cls-57 {
+.deskwork_icon .cls-60 {
   fill: #838483;
 }
-.deskwork_icon .cls-58 {
-  fill: #eaeaea;
-}
-.deskwork_icon .cls-59 {
-  fill: #9cf;
-}
-.deskwork_icon .cls-60 {
-  fill: #cecece;
+.deskwork_icon .cls-61 {
+  fill: #7c5e48;
 }
 .deskwork_icon .cls-62 {
-  fill: #94edad;
+  fill: #eaeaea;
+}
+.deskwork_icon .cls-63 {
+  fill: #9cf;
+}
+.deskwork_icon .cls-64 {
+  fill: #cecece;
+}
+.deskwork_icon .cls-65 {
+  fill: #f2f2f2;
 }
 .deskwork_icon .cls-67 {
-  fill: #f2f2f2;
+  fill: #322a84;
+}
+.deskwork_icon .cls-68 {
+  fill: #94edad;
 }
 .deskwork_icon .desk_tablet_screen {
   transition: fill 250ms ease-in-out;
@@ -524,6 +540,10 @@ body P {
 .deskwork_icon .desk_tablet:active .desk_tablet_screen,
 .deskwork_icon .desk_tablet:hover .desk_tablet_screen {
   fill: #9cf;
+}
+.deskwork_icon .desk_tablet:active .illustration_tablet_screen,
+.deskwork_icon .desk_tablet:hover .illustration_tablet_screen {
+  opacity: 1;
 }
 .deskwork_icon .tablet_screen_on {
   fill: #9cf;
@@ -573,8 +593,11 @@ body P {
 .deskwork_icon .desk_ball {
   margin-top: 10rem;
 }
-.deskwork_icon .desk_ball:hover {
+.deskwork_icon .desk_ball:hover .ball {
   animation: bounceUp 1000ms 250ms infinite ease-in-out;
+}
+.deskwork_icon .desk_ball:hover .ball_shadow {
+  animation: scaling 1000ms 250ms infinite ease-in-out;
 }
 .deskwork_icon .svg_btn {
   cursor: crosshair;

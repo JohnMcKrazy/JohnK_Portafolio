@@ -242,7 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const watchMerAM = selector(".watch_am");
     const watchMerPM = selector(".watch_pm");
     const designScreen = selector(".design_screen");
+    const designTabletScreen = selector(".design_tablet_screen");
     const devScreen = selector(".dev_screen");
+    const devTabletScreen = selector(".dev_tablet_screen");
     const shieldScreen = selector(".shield_screen");
     const illustrationScreen = selector(".illustration_screen");
     const illustrationTabletScreen = selector(".illustration_tablet_screen");
@@ -1039,6 +1041,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         icon.classList.add("icon_show");
                     });
                     shieldScreen.classList.remove("screen_hide");
+                    devTabletScreen.classList.remove("screen_hide");
                     setTimeout(() => devScreen.classList.remove("screen_hide"), 500);
                     break;
                 case "illustration":
@@ -1053,11 +1056,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         icon.classList.add("icon_show");
                     });
                     designScreen.classList.remove("screen_hide");
-
+                    designTabletScreen.classList.remove("screen_hide");
                     break;
             }
 
-            tabletScreen.classList.remove("tablet_screen_on");
+            tabletScreen.classList.add("tablet_screen_on");
         });
 
         key.addEventListener("mouseleave", () => {
@@ -1067,6 +1070,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         icon.classList.remove("icon_show");
                     });
                     devScreen.classList.add("screen_hide");
+
+                    devTabletScreen.classList.add("screen_hide");
                     setTimeout(() => shieldScreen.classList.add("screen_hide"), 500);
                     break;
                 case "illustration":
@@ -1081,7 +1086,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         icon.classList.remove("icon_show");
                     });
                     designScreen.classList.add("screen_hide");
-
+                    designTabletScreen.classList.add("screen_hide");
                     break;
             }
             tabletScreen.classList.remove("tablet_screen_on");
