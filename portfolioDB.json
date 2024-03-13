@@ -522,7 +522,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/guason.webp",
+            "img": "./src/img/portfolio/joker.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
@@ -538,13 +538,13 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/captainPlanet.webp",
+            "img": "./src/img/portfolio/captainPlanet.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
     },
     {
-        "project_name": "We Are Venom",
+        "project_name": "We Are Disney",
         "db_name": "we_are_disney",
         "client_logo": "",
         "projects": {
@@ -554,7 +554,7 @@
             "info": "",
             "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/weAreDisney.webp",
+            "img": "./src/img/portfolio/we_are_disney.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         },
         "votes": 2
