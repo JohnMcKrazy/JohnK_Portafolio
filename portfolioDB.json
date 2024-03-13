@@ -2,561 +2,462 @@
     {
         "project_name": "Pokedex",
         "db_name": "pokedex",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web", "Programación"],
+            "info": "Pokedex , proyecto de programación utilizando 'PokeAPI', realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
             "img": "./src/img/portfolio/pokedex.png",
             "project_link": "https://johnmckrazy.github.io/Pokedex-V2/"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Rick And Morty Character Search",
         "db_name": "rick_and_morty",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web", "Programación"],
+            "info": "Buscador de personajes de `Rick And Morty`, proyecto de programación usando `RickAndMorty API`, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
             "img": "./src/img/portfolio/rickAndMorty.png",
             "project_link": "https://johnmckrazy.github.io/rick_and_morty_character_search/"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Tribute To Kobe",
         "db_name": "tribute",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web"],
-            "info": "Proyecto para certificación en FreeCodeCamp",
-            "reach": ["Web"],
+            "info": "Página estatica en tributo a Kobe Bryant, Proyecto para certificación en 'Diseño Web Responsivo' para FreeCodeCamp, realizado con HTML y CSS",
             "technologies": ["HTML", "CSS"],
             "img": "./src/img/portfolio/tributo.png",
             "project_link": "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Black Jack Game",
         "db_name": "black_jack",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Juego de Black Jack, proyecto de programación, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/blackJack.png",
             "project_link": "https://johnmckrazy.github.io/BlackJack_Game/"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "JS Documentation",
         "db_name": "js_documentation",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Página estatica sobre documentación de Javascript, proyecto para certificación en 'Algoritmos Javascript y Estructura' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/jsDocumentation.png",
             "project_link": "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Choropleth Map Data Visualization",
         "db_name": "choropleth_map",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Página demostrativa de datos estilo 'gráfica mapa coroplético' sobre logros educativos en USA, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/choroplethMap.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Heat Map Data Visualization",
         "db_name": "heat_map",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Página demostrativa de datos estilo 'gráfica mapa de calor' sobre temperatura mensual de la superficie terrestre, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/heatMap.png",
-            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
-        },
-        "votes": 5
+            "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Heat_Map_Project/"
+        }
     },
     {
         "project_name": "Tree Map Diagram Data Visualization",
         "db_name": "tree_map",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Página demostrativa de datos estilo 'gráfica mapa de arbol' sobre temperatura mensual de la superficie terrestre, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/treeMap.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Scatterplo Chart Data Visualization",
         "db_name": "scatterplo_chart",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Página demostrativa de datos estilo 'gráfica de dispersión' sobre dopaje en ciclismo profesional, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/scatterploMap.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Bar Chart Data Visualization",
         "db_name": "bar_chart",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web"],
+            "info": "Página demostrativa de datos estilo 'gráfica de barras' sobre dopaje en ciclismo profesional, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/barChart.png",
             "project_link": "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Tic-Tac-Toe",
         "db_name": "tic_tac_toe",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Programación"],
-            "info": "",
-            "reach": ["Web", "Programación"],
+            "info": "Juego de 'Tic-tac-toe', proyecto de aprendizaje en React, realizado con HTML, CSS y React",
             "technologies": ["HTML", "CSS", "React"],
             "img": "./src/img/portfolio/tic-tac-toe.png",
             "project_link": "https://johnmckrazy.github.io/React_Tic-Tac-Toe/"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Random Quote Machine",
         "db_name": "quote_machine",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "Programación"],
-            "info": "",
-            "reach": ["Web", "Programación"],
+            "info": "Página que muestra Frases famosas al Azar, proyecto para certificación en 'Desarrollo con Librerias Front-End (React)' para FreeCodeCamp, realizado con HTML ,CSS y React",
             "technologies": ["HTML", "CSS", "React"],
             "img": "./src/img/portfolio/quoteMachine.png",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Random_Quote_Machine_Project/"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Weather App",
         "db_name": "weather",
-        "client_logo": "",
         "projects": {
             "type": "dev",
             "type_name": "Desarrollo",
             "skills": ["Web", "API Rest", "Programación"],
-            "info": "",
-            "reach": ["Web", "Programación"],
+            "info": "Página de busqueda de clima regional, proyecto para aprendizaje en Python, realizado con HTML ,CSS y Python",
             "technologies": ["HTML", "CSS", "Python"],
             "img": "./src/img/portfolio/weather.png",
             "project_link": "https://python-weather-app-tvey.onrender.com/"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Deseos de Navidad",
         "db_name": "navidad_2024",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Ilustración Digital", "Edición de Video", "Animación 2D"],
-            "info": "",
-            "reach": ["Poster"],
+            "info": "Video Navideño estilo animación 2D, realizado con Adobe Illustrator y Adobe AfterEffects",
             "technologies": ["Illustrator", "AfterEffects"],
             "img": "./src/img/portfolio/navidad2024.png",
             "project_link": "https://www.behance.net/gallery/189873453/Deseos-de-Navidad"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Think Different",
         "db_name": "think_different",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Ilustración Digital", "Poster"],
-            "info": "",
-            "reach": ["Poster"],
+            "info": "Poster con la frase 'Think Different (Piensa Diferente)', realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/think_different.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Handball Panteras Negras",
         "db_name": "handball_panteras",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Poster"],
-            "info": "",
-            "reach": ["Poster"],
+            "info": "Poster promocional de equipo femenil de Handball para la Universidad Autónoma Metropolitana, realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/handball_panteras.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Aplasta",
         "db_name": "handball_panteras",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Poster"],
-            "info": "",
-            "reach": ["Poster"],
+            "info": "Poster para campaña de difusion de reciclaje, realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/aplasta_blanco.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Afluentes",
         "db_name": "afluentes",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
-            "skills": ["Poster"],
-            "info": "",
-            "reach": ["Poster", "Infograf{ia"],
+            "skills": ["Poster", "Infografía"],
+            "info": "Poster Infografíco sobre aprovechamiento energético a partir de residuos en tratamiento de afluentes, realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/afluentes.webp",
             "project_link": "https://www.behance.net/gallery/101963205/Posters"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Mitos Y Leyendas",
         "db_name": "mitos_y_leyendas",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Diseño Editorial", "Poster", "Portada"],
-            "info": "",
-            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
-            "technologies": ["Illustrator"],
+            "info": "Desarrollo de Libros de bolsillo sobre mitos y leyendas, realizado con Adobe Photoshop, Adobe Illustrator y Adobe InDesign",
+            "technologies": ["Illustrator", "Photoshop", "Indesign"],
             "img": "./src/img/portfolio/mitos_y_leyendas.webp",
             "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "IMPULSO",
         "db_name": "impulso",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo", "Packaging", "Poster"],
-            "info": "",
-            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "info": "Desarrollo de imagen y packaging para disco de musica rock llamado 'Impulso', proyecto para concurso de diseño de empaque, realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/impulso.webp",
             "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Smuffs",
         "db_name": "smuffs",
-        "client_logo": "",
+
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Logotipo", "Packaging"],
-            "info": "",
-            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "info": "Desarrollo de imagen y packaging para dulces de galleta con chocolate llamdao `Smuffs`, proyecto universitario, realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/smuffs.webp",
             "project_link": "https://www.behance.net/gallery/193494415/https://www.behance.net/gallery/193496187/Smuffs"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Leiru",
         "db_name": "leiru",
-        "client_logo": "",
+
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
-            "info": "",
-            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
+            "info": "Desarrollo de imagen corporativa, incluyendo logoitipo, tarjetas de presentación y posters promocionales, realizado con Adobe Photoshop y Adobe Illustrator",
             "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/leiru.webp",
             "project_link": "https://www.behance.net/gallery/181117109/Leiru"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Afroduck",
         "db_name": "afroduck",
-        "client_logo": "",
+
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Logotipo"],
             "info": "",
-            "reach": ["Logotipo", "Firma Electronica", "Tarjeta de presentacion", "Promocionales"],
             "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/afroduck.webp",
             "project_link": "https://www.behance.net/gallery/181117581/Afroduck"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Verona",
         "db_name": "verona",
-        "client_logo": "",
+
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
             "info": "",
-            "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/verona.webp",
             "project_link": "https://www.behance.net/gallery/181175109/Verona"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Pasión por México",
         "db_name": "pasion_por_mexico",
-        "client_logo": "",
+
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
             "info": "",
-            "reach": ["Logotipo", "Portavasos", "Tarjeta de presentacion", "Packaging", "Papeleria de Marca"],
             "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/pasion_por_mexico.webp",
             "project_link": "https://www.behance.net/gallery/181175109/Pasion"
-        },
-        "votes": 5
+        }
     },
     {
         "project_name": "Creaciones Hermed",
         "db_name": "creaciones_hermed",
-        "client_logo": "",
+
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Edición de imagen", "Papeleria", "Promocionales"],
             "info": "",
-            "reach": ["Tarjeta de presentacion", "Promocionales", "Edición de imagen", "Redes Sociales"],
             "technologies": ["Photoshop"],
             "img": "./src/img/portfolio/hermed.png",
             "project_link": "https://www.behance.net/gallery/107080483/Creaciones-Hermed"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Bucefalos",
-        "db_name": "bucefalos_1",
-        "client_logo": "",
+        "db_name": "bucefalos",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/bucefalos.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Berserkers",
         "db_name": "berserkers",
-        "client_logo": "",
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/berserkers.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "System Smasher",
         "db_name": "system_smasher",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/system_smasher.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Chop-Chop Buggy (Tematica One Piece)",
         "db_name": "chop_chop_buggy",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Photoshop"],
             "img": "./src/img/portfolio/chopBuggy.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Jolly Roger",
         "db_name": "jolly_roger",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/jolly_roger.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "BoJack Horseman",
         "db_name": "boJack",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/boJack.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Joker",
         "db_name": "joker_tradicional",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
             "img": "./src/img/portfolio/joker.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "Capitan Planeta",
         "db_name": "captain_planet",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
             "img": "./src/img/portfolio/captainPlanet.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     },
     {
         "project_name": "We Are Disney",
         "db_name": "we_are_disney",
-        "client_logo": "",
         "projects": {
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Tradicional"],
             "info": "",
-            "reach": ["Logotipo", "Imagen Deportiva"],
             "technologies": ["Ilustracion Tradicional"],
             "img": "./src/img/portfolio/we_are_disney.png",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        },
-        "votes": 2
+        }
     }
 ]

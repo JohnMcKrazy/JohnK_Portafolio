@@ -430,8 +430,10 @@ document.addEventListener("DOMContentLoaded", () => {
         //* ******************************************************************************** *//
         const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
+        const cardDescription = item["projects"]["info"];
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         imgCard.setAttribute("src", cardImg);
+        imgCard.setAttribute("alt", cardDescription);
         const clientTechnologiesInProjects = item["projects"]["technologies"];
         clientTechnologiesInProjects.forEach((tech) => {
             /* console.log(tech); */
