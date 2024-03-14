@@ -241,7 +241,7 @@
             "type_name": "Diseño",
             "skills": ["Diseño Editorial", "Poster", "Portada"],
             "info": "Desarrollo de Libros de bolsillo sobre mitos y leyendas, realizado con Adobe Photoshop, Adobe Illustrator y Adobe InDesign",
-            "technologies": ["Illustrator", "Photoshop", "Indesign"],
+            "technologies": ["Illustrator", "Photoshop", "InDesign"],
             "img": "./src/img/portfolio/mitos_y_leyendas.webp",
             "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
         }
@@ -262,7 +262,6 @@
     {
         "project_name": "Smuffs",
         "db_name": "smuffs",
-
         "projects": {
             "type": "design",
             "type_name": "Diseño",
@@ -276,12 +275,11 @@
     {
         "project_name": "Leiru",
         "db_name": "leiru",
-
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
-            "info": "Desarrollo de imagen corporativa, incluyendo logoitipo, tarjetas de presentación y posters promocionales, realizado con Adobe Photoshop y Adobe Illustrator",
+            "info": "Desarrollo de imagen de marca, creación de logoitipo, tarjetas de presentación y posters promocionales, realizado con Adobe Photoshop y Adobe Illustrator",
             "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/leiru.webp",
             "project_link": "https://www.behance.net/gallery/181117109/Leiru"
@@ -290,12 +288,11 @@
     {
         "project_name": "Afroduck",
         "db_name": "afroduck",
-
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Logotipo"],
-            "info": "",
+            "info": "Desarrollo de imagen de marca, creación de logotipo menus y manta promocional, realizado con Adobe Illustrator",
             "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/afroduck.webp",
             "project_link": "https://www.behance.net/gallery/181117581/Afroduck"
@@ -304,12 +301,11 @@
     {
         "project_name": "Verona",
         "db_name": "verona",
-
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
-            "info": "",
+            "info": "Desarrollo de imagen de marca, creación de logotipo, packaging, menus y portavasos, realizado con Adobe Illustrator",
             "technologies": ["Illustrator"],
             "img": "./src/img/portfolio/verona.webp",
             "project_link": "https://www.behance.net/gallery/181175109/Verona"
@@ -318,12 +314,11 @@
     {
         "project_name": "Pasión por México",
         "db_name": "pasion_por_mexico",
-
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Packaging", "Logotipo"],
-            "info": "",
+            "info": "Desarrollo de imagen de marca, creación de logotipo y etiqueta, proyecto universitario sobre procesos impresión, realizado con Adobe Illustrator, procesos de impresion realizados con Adobe Photoshop",
             "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/pasion_por_mexico.webp",
             "project_link": "https://www.behance.net/gallery/181175109/Pasion"
@@ -332,12 +327,11 @@
     {
         "project_name": "Creaciones Hermed",
         "db_name": "creaciones_hermed",
-
         "projects": {
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Edición de imagen", "Papeleria", "Promocionales"],
-            "info": "",
+            "info": "Desarrollo imagenes promocionales, realizado con Adobe Photoshop",
             "technologies": ["Photoshop"],
             "img": "./src/img/portfolio/hermed.png",
             "project_link": "https://www.behance.net/gallery/107080483/Creaciones-Hermed"
@@ -350,7 +344,7 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
+            "info": "Desarrollo de imagen deportiva, creación de logotipo, estampado de uniformes, realizado con Adobe Illustrator",
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/bucefalos.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
@@ -363,7 +357,7 @@
             "type": "design",
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
-            "info": "",
+            "info": "Desarrollo de imagen deportiva, creación de logotipo, estampado de uniformes, realizado con Adobe Illustrator, mockup en Photoshop",
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/berserkers.png",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
@@ -376,7 +370,7 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
-            "info": "",
+            "info": "Proyecto personal de Ilustración, super heroe con convicciones anarquistas, realizado con Adobe Photoshop, mockup realizado con Adobe Illustrator",
             "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/system_smasher.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
@@ -389,22 +383,9 @@
             "type": "illustration",
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
-            "info": "",
+            "info": "Ilustración",
             "technologies": ["Photoshop"],
             "img": "./src/img/portfolio/chopBuggy.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        }
-    },
-    {
-        "project_name": "Jolly Roger",
-        "db_name": "jolly_roger",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Digital"],
-            "info": "",
-            "technologies": ["Illustrator"],
-            "img": "./src/img/portfolio/jolly_roger.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
     },
