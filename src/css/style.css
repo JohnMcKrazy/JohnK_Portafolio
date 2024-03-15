@@ -1488,6 +1488,8 @@ body P {
   height: 30rem;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   border-radius: 0.5rem;
 }
 .project_card .info_card {
