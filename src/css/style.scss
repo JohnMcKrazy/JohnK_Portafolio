@@ -716,6 +716,7 @@ body {
     height: auto;
 }
 .pallet_icon {
+    scale: 0.75;
     .cls-1 {
         fill: var(--bgC_C);
     }
@@ -1033,7 +1034,7 @@ body {
     }
 }
 .js_icon_svg {
-    transform: scale(0.8);
+    transform: scale(0.75);
     .cls-1 {
         fill: #f7df1e;
     }
@@ -1444,7 +1445,7 @@ body {
     width: 100%;
     height: auto;
     margin-top: 2rem;
-    -webkit-text-stroke: 1px var(--FC);
+    -webkit-text-stroke: 2px var(--FC);
     color: transparent;
     font-size: var(--FS_X);
 }
@@ -2196,7 +2197,6 @@ body {
     }
 }
 .section {
-    margin-bottom: 2rem;
     height: auto;
     @include flexDirection(column, flex-start, center);
 }
@@ -2431,6 +2431,8 @@ body {
 .portfolio_section {
     .portfolio_btn {
         border-radius: 0 0 0.5rem 0.5rem;
+        background: transparent;
+        border: solid 2px var(--SC);
     }
 }
 .nav_menu {

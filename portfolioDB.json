@@ -241,7 +241,7 @@
             "type_name": "Diseño",
             "skills": ["Diseño Editorial", "Poster", "Portada"],
             "info": "Desarrollo de Libros de bolsillo sobre mitos y leyendas, realizado con Adobe Photoshop, Adobe Illustrator y Adobe InDesign",
-            "technologies": ["Illustrator", "Photoshop", "InDesign"],
+            "technologies": ["Photoshop", "Illustrator", "InDesign"],
             "img": "./src/img/portfolio/mitos_y_leyendas.webp",
             "project_link": "https://www.behance.net/gallery/193494415/IMPULSO"
         }
@@ -280,7 +280,7 @@
             "type_name": "Diseño",
             "skills": ["Identidad Corporativa", "Papeleria", "Promocionales", "Logotipo"],
             "info": "Desarrollo de imagen de marca, creación de logoitipo, tarjetas de presentación y posters promocionales, realizado con Adobe Photoshop y Adobe Illustrator",
-            "technologies": ["Illustrator", "Photoshop"],
+            "technologies": ["Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/leiru.webp",
             "project_link": "https://www.behance.net/gallery/181117109/Leiru"
         }
@@ -345,7 +345,7 @@
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
             "info": "Desarrollo de imagen deportiva, creación de logotipo, estampado de uniformes, realizado con Adobe Illustrator",
-            "technologies": ["Photoshop", "Illustrator"],
+            "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/bucefalos.webp",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         }
@@ -358,7 +358,7 @@
             "type_name": "Diseño",
             "skills": ["Imagen Deportiva", "Logotipo"],
             "info": "Desarrollo de imagen deportiva, creación de logotipo, estampado de uniformes, realizado con Adobe Illustrator, mockup en Photoshop",
-            "technologies": ["Photoshop", "Illustrator"],
+            "technologies": ["Illustrator", "Photoshop"],
             "img": "./src/img/portfolio/berserkers.webp",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         }
@@ -371,7 +371,7 @@
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "Proyecto personal de Ilustración, super heroe con convicciones anarquistas, realizado con Adobe Photoshop, mockup realizado con Adobe Illustrator",
-            "technologies": ["Photoshop", "Illustrator"],
+            "technologies": ["Ilustracion Tradicional", "Photoshop", "Illustrator"],
             "img": "./src/img/portfolio/system_smasher.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
@@ -384,7 +384,7 @@
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "Ilustración",
-            "technologies": ["Photoshop"],
+            "technologies": ["Ilustracion Tradicional", "Photoshop"],
             "img": "./src/img/portfolio/buggy_chop.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
@@ -397,7 +397,7 @@
             "type_name": "Ilustración",
             "skills": ["Ilustración Digital"],
             "info": "",
-            "technologies": ["Illustrator"],
+            "technologies": ["Ilustracion Tradicional", "Illustrator"],
             "img": "./src/img/portfolio/boJack.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
