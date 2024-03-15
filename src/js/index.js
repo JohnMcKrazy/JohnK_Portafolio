@@ -1039,7 +1039,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     shieldScreen.classList.remove("screen_hide");
                     devTabletScreen.classList.remove("screen_hide");
-                    setTimeout(() => devScreen.classList.remove("screen_hide"), 500);
+                    setTimeout(() => devScreen.classList.remove("screen_hide"), 250);
                     break;
                 case "illustration":
                     selectorAll(".illustration_icon").forEach((icon) => {
@@ -1069,7 +1069,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     devScreen.classList.add("screen_hide");
 
                     devTabletScreen.classList.add("screen_hide");
-                    setTimeout(() => shieldScreen.classList.add("screen_hide"), 500);
+                    setTimeout(() => shieldScreen.classList.add("screen_hide"), 250);
                     break;
                 case "illustration":
                     selectorAll(".illustration_icon").forEach((icon) => {

@@ -943,6 +943,9 @@ body P {
   stroke-width: 0px;
 }
 
+.python_icon_svg {
+  scale: 0.75;
+}
 .python_icon_svg .cls-1 {
   fill: #366a96;
 }
@@ -2405,7 +2408,10 @@ body P {
 .portfolio_section .portfolio_btn {
   border-radius: 0 0 0.5rem 0.5rem;
   background: transparent;
-  border: solid 2px var(--SC);
+  border: solid 2px var(--FC);
+}
+.portfolio_section .portfolio_btn .label_btn {
+  color: var(--TC);
 }
 
 .nav_menu {
