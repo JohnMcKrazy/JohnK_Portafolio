@@ -521,6 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!storageContent) {
             localStorage.setItem(storageName, JSON.stringify(johnK_storage));
             console.log("local storage item is created");
+            storageContent = johnK_storage;
             setTimeout(() => {
                 modalWindowActions(alertModal, open);
             }, 200);

@@ -1942,7 +1942,7 @@ body P {
 
 .inner_link_btn {
   text-decoration: underline;
-  color: var(--SC);
+  color: var(--FC);
 }
 .inner_link_btn:visited {
   color: inherit;
