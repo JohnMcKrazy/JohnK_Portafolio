@@ -178,7 +178,7 @@
 
     //~ SECTION BACKGROUNDS--START
     --backgroundHero: linear-gradient(transparent, var(--bgC) 75%), url("../img/backgrounds/day.webp") center no-repeat fixed;
-    --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasket.png") center no-repeat fixed;
+    --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
     --bgHeaderSectionAbout2: linear-gradient(var(--bgColorUT), var(--bgColor) 75%), url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
@@ -2149,25 +2149,25 @@ body {
         @include flexDirection(row, center, center);
         height: 100%;
         .quote {
-            font-size: var(--FS_X);
+            font-size: var(--fontSizeXClamp);
             color: var(--TC);
         }
         .quote_icon {
             height: 100%;
-            width: 6rem;
+            width: 4rem;
         }
         .quote_start {
             align-self: flex-start;
-            transform: translateY(-3rem);
+            transform: translateY(-2rem);
         }
 
         .quote_end {
-            transform: translateY(3rem);
+            transform: translateY(2rem);
             align-self: flex-end;
         }
         .icon_container {
-            width: 6rem;
-            height: 6rem;
+            width: 4rem;
+            height: 4rem;
             fill: var(--FC);
         }
     }
