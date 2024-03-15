@@ -177,13 +177,13 @@
     color: var(--TC);
 
     //~ SECTION BACKGROUNDS--START
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 75%), url("../img/backgrounds/day.jpg") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--bgC) 75%), url("../img/backgrounds/day.webp") center no-repeat fixed;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasket.png") center no-repeat fixed;
     --bgHeaderSectionAbout2: linear-gradient(var(--bgColorUT), var(--bgColor) 75%), url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
-    --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-alex-andrews-821754.jpg") center no-repeat fixed;
+    --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
 
     .leiru_icon_svg {
         .brand,
@@ -218,12 +218,12 @@
     //¿GENERALS
 
     //~SECTION BACKGROUNDS
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night.jpg") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night.webp") center no-repeat fixed;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/post-letter-2828146_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
 
     color: var(--TC);
 
@@ -1232,12 +1232,12 @@ body {
 }
 .rex_bubble {
     .header_bubble {
-        background: url(../img/backgrounds/parkSmall.png);
+        background: url(../img/backgrounds/parkSmall.webp);
     }
 }
 .bio_bubble {
     .header_bubble {
-        background: url(../img/backgrounds/graffitiSmall.png);
+        background: url(../img/backgrounds/graffitiSmall.webp);
     }
 
     .icons_container {
@@ -1644,7 +1644,7 @@ body {
 }
 .mini_project_card {
     @include flex(center, center);
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;

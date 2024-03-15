@@ -8,7 +8,7 @@
             "skills": ["Web", "API Rest", "Programación"],
             "info": "Pokedex , proyecto de programación utilizando 'PokeAPI', realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
-            "img": "./src/img/portfolio/pokedex.png",
+            "img": "./src/img/portfolio/pokedex.webp",
             "project_link": "https://johnmckrazy.github.io/Pokedex-V2/"
         }
     },
@@ -21,7 +21,7 @@
             "skills": ["Web", "API Rest", "Programación"],
             "info": "Buscador de personajes de `Rick And Morty`, proyecto de programación usando `RickAndMorty API`, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript", "API Rest"],
-            "img": "./src/img/portfolio/rickAndMorty.png",
+            "img": "./src/img/portfolio/rick_and_morty.webp",
             "project_link": "https://johnmckrazy.github.io/rick_and_morty_character_search/"
         }
     },
@@ -34,7 +34,7 @@
             "skills": ["Web"],
             "info": "Página estatica en tributo a Kobe Bryant, Proyecto para certificación en 'Diseño Web Responsivo' para FreeCodeCamp, realizado con HTML y CSS",
             "technologies": ["HTML", "CSS"],
-            "img": "./src/img/portfolio/tributo.png",
+            "img": "./src/img/portfolio/tributo.webp",
             "project_link": "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/"
         }
     },
@@ -47,7 +47,7 @@
             "skills": ["Web"],
             "info": "Juego de Black Jack, proyecto de programación, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/blackJack.png",
+            "img": "./src/img/portfolio/black_jack.webp",
             "project_link": "https://johnmckrazy.github.io/BlackJack_Game/"
         }
     },
@@ -60,7 +60,7 @@
             "skills": ["Web"],
             "info": "Página estatica sobre documentación de Javascript, proyecto para certificación en 'Algoritmos Javascript y Estructura' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/jsDocumentation.png",
+            "img": "./src/img/portfolio/js_documentation.webp",
             "project_link": "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/"
         }
     },
@@ -73,7 +73,7 @@
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
             "info": "Página demostrativa de datos estilo 'gráfica mapa coroplético' sobre logros educativos en USA, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/choroplethMap.png",
+            "img": "./src/img/portfolio/choropleth_map.webp",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/"
         }
     },
@@ -86,7 +86,7 @@
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
             "info": "Página demostrativa de datos estilo 'gráfica mapa de calor' sobre temperatura mensual de la superficie terrestre, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/heatMap.png",
+            "img": "./src/img/portfolio/heat_map.webp",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Heat_Map_Project/"
         }
     },
@@ -99,7 +99,7 @@
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
             "info": "Página demostrativa de datos estilo 'gráfica mapa de arbol' sobre temperatura mensual de la superficie terrestre, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/treeMap.png",
+            "img": "./src/img/portfolio/tree_map.webp",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/"
         }
     },
@@ -112,7 +112,7 @@
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
             "info": "Página demostrativa de datos estilo 'gráfica de dispersión' sobre dopaje en ciclismo profesional, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/scatterploMap.png",
+            "img": "./src/img/portfolio/scatterplo_map.webp",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/"
         }
     },
@@ -125,7 +125,7 @@
             "skills": ["Web", "Visualización de Datos", "API Rest", "Programación"],
             "info": "Página demostrativa de datos estilo 'gráfica de barras' sobre dopaje en ciclismo profesional, proyecto para certificación en 'Visualización de datos' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "img": "./src/img/portfolio/barChart.png",
+            "img": "./src/img/portfolio/bar_chart.webp",
             "project_link": "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/"
         }
     },
@@ -138,7 +138,7 @@
             "skills": ["Web", "Programación"],
             "info": "Juego de 'Tic-tac-toe', proyecto de aprendizaje en React, realizado con HTML, CSS y React",
             "technologies": ["HTML", "CSS", "React"],
-            "img": "./src/img/portfolio/tic-tac-toe.png",
+            "img": "./src/img/portfolio/tic_tac_toe.webp",
             "project_link": "https://johnmckrazy.github.io/React_Tic-Tac-Toe/"
         }
     },
@@ -151,7 +151,7 @@
             "skills": ["Web", "Programación"],
             "info": "Página que muestra Frases famosas al Azar, proyecto para certificación en 'Desarrollo con Librerias Front-End (React)' para FreeCodeCamp, realizado con HTML ,CSS y React",
             "technologies": ["HTML", "CSS", "React"],
-            "img": "./src/img/portfolio/quoteMachine.png",
+            "img": "./src/img/portfolio/quote_machine.webp",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Random_Quote_Machine_Project/"
         }
     },
@@ -164,7 +164,7 @@
             "skills": ["Web", "API Rest", "Programación"],
             "info": "Página de busqueda de clima regional, proyecto para aprendizaje en Python, realizado con HTML ,CSS y Python",
             "technologies": ["HTML", "CSS", "Python"],
-            "img": "./src/img/portfolio/weather.png",
+            "img": "./src/img/portfolio/weather.webp",
             "project_link": "https://python-weather-app-tvey.onrender.com/"
         }
     },
@@ -177,7 +177,7 @@
             "skills": ["Ilustración Digital", "Edición de Video", "Animación 2D"],
             "info": "Video Navideño estilo animación 2D, realizado con Adobe Illustrator y Adobe AfterEffects",
             "technologies": ["Illustrator", "AfterEffects"],
-            "img": "./src/img/portfolio/navidad2024.png",
+            "img": "./src/img/portfolio/navidad2024.webp",
             "project_link": "https://www.behance.net/gallery/189873453/Deseos-de-Navidad"
         }
     },
@@ -333,7 +333,7 @@
             "skills": ["Edición de imagen", "Papeleria", "Promocionales"],
             "info": "Desarrollo imagenes promocionales, realizado con Adobe Photoshop",
             "technologies": ["Photoshop"],
-            "img": "./src/img/portfolio/hermed.png",
+            "img": "./src/img/portfolio/hermed.webp",
             "project_link": "https://www.behance.net/gallery/107080483/Creaciones-Hermed"
         }
     },
@@ -346,7 +346,7 @@
             "skills": ["Imagen Deportiva", "Logotipo"],
             "info": "Desarrollo de imagen deportiva, creación de logotipo, estampado de uniformes, realizado con Adobe Illustrator",
             "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/bucefalos.png",
+            "img": "./src/img/portfolio/bucefalos.webp",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         }
     },
@@ -359,7 +359,7 @@
             "skills": ["Imagen Deportiva", "Logotipo"],
             "info": "Desarrollo de imagen deportiva, creación de logotipo, estampado de uniformes, realizado con Adobe Illustrator, mockup en Photoshop",
             "technologies": ["Photoshop", "Illustrator"],
-            "img": "./src/img/portfolio/berserkers.png",
+            "img": "./src/img/portfolio/berserkers.webp",
             "project_link": "https://www.behance.net/gallery/181289397/Krazy-Sports"
         }
     },
@@ -385,7 +385,7 @@
             "skills": ["Ilustración Digital"],
             "info": "Ilustración",
             "technologies": ["Photoshop"],
-            "img": "./src/img/portfolio/chopBuggy.png",
+            "img": "./src/img/portfolio/buggy_chop.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
     },
@@ -411,20 +411,7 @@
             "skills": ["Ilustración Tradicional"],
             "info": "",
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/joker.png",
-            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
-        }
-    },
-    {
-        "project_name": "Capitan Planeta",
-        "db_name": "captain_planet",
-        "projects": {
-            "type": "illustration",
-            "type_name": "Ilustración",
-            "skills": ["Ilustración Tradicional"],
-            "info": "",
-            "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/captainPlanet.png",
+            "img": "./src/img/portfolio/joker.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
     },
@@ -437,7 +424,7 @@
             "skills": ["Ilustración Tradicional"],
             "info": "",
             "technologies": ["Ilustracion Tradicional"],
-            "img": "./src/img/portfolio/we_are_disney.png",
+            "img": "./src/img/portfolio/we_are_disney.webp",
             "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
         }
     }
