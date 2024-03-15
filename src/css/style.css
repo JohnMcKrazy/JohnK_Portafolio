@@ -104,14 +104,13 @@
   --T_F: all 500ms ease-in-out;
   --T_M: all 750ms ease-in-out;
   --T_S: all 1000ms ease-in-out;
-  --FS: 12px;
   --NVH_F: 6rem;
   --NVH: 8rem;
   --FS_NVH: calc(100svh - var(--NVH));
   --FS-FNVH: calc(100svh - var(--NVH_F));
   --titanimFont: "Titillium Web", sans-serif;
   font-family: var(--titanimFont);
-  font-size: var(--FS);
+  font-size: 12px;
   line-break: loose;
   line-height: 1.2;
   letter-spacing: 0.15rem;
@@ -1698,6 +1697,9 @@ body P {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 1rem;
 }
+.cards_hot_container .project_card:nth-of-type(2n) {
+  display: none;
+}
 
 .cards_portfolio_container {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -2632,6 +2634,12 @@ body P {
   .cards_hot_container {
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   }
+  .cards_hot_container .project_card:nth-of-type(2n) {
+    display: flex;
+  }
+  .cards_hot_container .project_card:nth-of-type(3n) {
+    display: none;
+  }
   .flex_responsive {
     display: flex;
     flex-direction: row;
@@ -2651,6 +2659,9 @@ body P {
   }
   .cards_hot_container {
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
+  .cards_hot_container .project_card:nth-of-type(3n) {
+    display: flex;
   }
   .flex_responsive {
     flex-direction: row;
