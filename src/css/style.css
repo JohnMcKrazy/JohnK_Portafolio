@@ -417,7 +417,7 @@ body P {
   fill: #38166d;
 }
 .deskwork_icon .cls-30 {
-  fill: gray;
+  fill: var(--TC);
 }
 .deskwork_icon .cls-31,
 .deskwork_icon .cls-41 {
