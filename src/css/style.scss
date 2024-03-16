@@ -1769,6 +1769,9 @@ body {
     .project_card:nth-of-type(2n) {
         display: none;
     }
+    .project_card:nth-of-type(3n) {
+        display: none;
+    }
 }
 .cards_portfolio_container {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -2634,8 +2637,6 @@ body {
     }
     .cards_hot_container {
         grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    }
-    .cards_hot_container {
         .project_card:nth-of-type(2n) {
             display: flex;
         }
@@ -2643,6 +2644,7 @@ body {
             display: none;
         }
     }
+
     .flex_responsive {
         @include flexDirection(row, center, denter);
     }
