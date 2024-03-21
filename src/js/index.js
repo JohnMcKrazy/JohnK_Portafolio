@@ -523,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("local storage item is created");
             storageContent = johnK_storage;
             setTimeout(() => {
-                modalWindowActions(alertModal, open);
+                modalWindowActions(legalModal, open);
             }, 200);
         } else {
             if (storageContent["page_alert_status"] === open) {
@@ -531,7 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem(storageName, JSON.stringify(storageContent));
                 console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
                 setTimeout(() => {
-                    modalWindowActions(alertModal, open);
+                    modalWindowActions(legalModal, open);
                 }, 200);
             } else if (storageContent["page_alert_status"] === close) {
                 storageContent["page_alert_status"] = close;

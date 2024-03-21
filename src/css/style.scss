@@ -1992,6 +1992,8 @@ body {
             overflow: auto;
             scroll-behavior: smooth;
             padding-right: 1rem;
+            border-top: solid var(--FC) 4px;
+            padding: 1rem 1rem 0 0;
             .more_btn {
                 width: 100%;
             }
@@ -2413,6 +2415,10 @@ body {
     }
     .link_text {
         line-height: 1.5;
+    }
+    .copy_rights {
+        font-weight: 400;
+        color: var(--FC);
     }
     .made_content {
         margin-left: 5rem;
