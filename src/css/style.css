@@ -1145,7 +1145,10 @@ body P {
 .info_bubble {
   padding: 1rem;
   gap: 0.5rem;
+}
+.info_bubble .description {
   text-align: center;
+  line-height: 1.2rem;
 }
 
 .btn {
@@ -1395,14 +1398,12 @@ body P {
 .service_card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 35rem;
 }
 .service_card .info_card {
   width: 100%;
   max-width: 400px;
-  height: 15rem;
   padding: 1rem;
 }
 .service_card .info_card .title {
@@ -1693,6 +1694,7 @@ body P {
   grid-template-columns: 1fr;
   min-height: auto;
   gap: 1rem;
+  padding: 2rem 0;
 }
 
 .cards_hot_container {
@@ -2653,7 +2655,7 @@ body P {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: denter;
+    align-items: center;
   }
   .flex_img {
     flex-basis: 30%;
