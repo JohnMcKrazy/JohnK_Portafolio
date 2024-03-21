@@ -173,7 +173,7 @@
     color: var(--TC);
 
     //~ SECTION BACKGROUNDS--START
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 75%), url("../img/backgrounds/day.webp") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--bgC) 75%) /* , url("../img/backgrounds/day.webp") center no-repeat fixed */;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
     --bgHeaderSectionAbout2: linear-gradient(var(--bgColorUT), var(--bgColor) 75%), url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
@@ -214,7 +214,7 @@
     //¿GENERALS
 
     //~SECTION BACKGROUNDS
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night.webp") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%) /* , url("../img/backgrounds/night.webp") center no-repeat fixed */;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
@@ -1578,14 +1578,15 @@ body {
     border-radius: 0.5rem;
     transition: var(--T_F);
     background: var(--bgC_T);
+    width: 100%;
     .card_content {
         width: 100%;
     }
     .img_card {
         width: 100%;
-        height: 30rem;
+        height: 15rem;
         object-fit: cover;
-        object-position: top;
+        object-position: center;
         border-radius: 0.5rem;
     }
     .info_card {
@@ -1635,7 +1636,7 @@ body {
 }
 .hot_project_card {
     @include flexDirection(column, space-between, center);
-    height: 46rem;
+    height: 30rem;
     padding: 1rem;
     .info_card {
         margin-top: 1rem;
@@ -1764,7 +1765,7 @@ body {
     gap: 1rem;
 }
 .cards_hot_container {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 6fr));
     gap: 1rem;
     .project_card:nth-of-type(2n) {
         display: none;
@@ -1774,7 +1775,8 @@ body {
     }
 }
 .cards_portfolio_container {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 8fr));
+    justify-content: center;
     gap: 0.5rem;
     overflow-y: auto;
     padding-top: 0.5rem;
@@ -2226,6 +2228,21 @@ body {
     z-index: -1;
 }
 .hero_section {
+    .section {
+        position: relative;
+    }
+    img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
     .bg_section {
         background: var(--backgroundHero);
     }
@@ -2257,6 +2274,20 @@ body {
             min-width: 15rem;
             width: 20rem;
             max-width: 90%;
+        }
+    }
+}
+.light_theme {
+    .hero_section {
+        .dark_img {
+            display: none;
+        }
+    }
+}
+.dark_theme {
+    .hero_section {
+        .light_img {
+            display: none;
         }
     }
 }
@@ -2642,15 +2673,13 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     .cards_hot_container {
-        grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-        .project_card:nth-of-type(2n) {
+        .project_card:nth-of-type(3n) {
             display: flex;
         }
-        .project_card:nth-of-type(3n) {
+        .project_card:nth-of-type(2n) {
             display: none;
         }
     }
-
     .flex_responsive {
         @include flexDirection(row, center, denter);
     }
@@ -2667,17 +2696,56 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
     .cards_hot_container {
-        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        .project_card:nth-of-type(2n) {
+            display: flex;
+        }
         .project_card:nth-of-type(3n) {
             display: flex;
+        }
+        .project_card:nth-of-type(4n) {
+            display: none;
         }
     }
     .flex_responsive {
         flex-direction: row;
     }
 }
+@media screen and (min-width: 1124px) {
+    .cards_hot_container {
+        .project_card:nth-of-type(4n) {
+            display: flex;
+        }
+        .project_card:nth-of-type(2n) {
+            display: flex;
+        }
+        .project_card:nth-of-type(3n) {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 1404px) {
+    .cards_hot_container {
+        .project_card:nth-of-type(3n) {
+            display: flex;
+        }
+        .project_card:nth-of-type(6n) {
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 1684px) {
+    .cards_hot_container {
+        .project_card:nth-of-type(2n) {
+            display: flex;
+        }
+        .project_card:nth-of-type(2n) {
+            display: flex;
+        }
+        .project_card:nth-of-type(6n) {
+            display: flex;
+        }
+    }
+}
 
 @media (prefers-reduced-motion) {
-}
-@media screen {
 }
