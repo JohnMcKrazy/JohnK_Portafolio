@@ -1416,6 +1416,8 @@ body P {
 .service_card .info_card .info {
   transition: var(--T_M);
   font-size: var(--FS_N);
+  line-height: 1.6rem;
+  text-align: center;
 }
 .service_card .icon_container {
   width: -moz-fit-content;

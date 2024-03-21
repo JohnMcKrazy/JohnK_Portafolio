@@ -1487,7 +1487,6 @@ body {
 } */
 .service_card {
     @include flexDirection(column, flex-start, center);
-
     .info_card {
         width: 100%;
         max-width: 400px;
@@ -1502,6 +1501,8 @@ body {
         .info {
             transition: var(--T_M);
             font-size: var(--FS_N);
+            line-height: 1.6rem;
+            text-align: center;
         }
     }
     .icon_container {
