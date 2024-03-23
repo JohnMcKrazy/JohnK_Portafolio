@@ -2143,6 +2143,8 @@ body P {
 }
 
 .section_content {
+  min-height: calc(100vh - var(--NVH));
+  min-height: var(--FS_NVH);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2394,13 +2396,6 @@ body P {
 .portfolio_section .portfolio_btn {
   border-radius: 0 0 0.5rem 0.5rem;
   border-color: var(--SC);
-}
-
-.hero_section .section_content,
-.contact_section .section_content,
-.services_section .section_content {
-  min-height: calc(100vh - var(--NVH));
-  min-height: var(--FS_NVH);
 }
 
 .nav_menu {
