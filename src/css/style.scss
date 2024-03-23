@@ -1257,22 +1257,29 @@ body {
     }
 }
 .btn {
-    padding: 1rem 0.5rem;
-    background: linear-gradient(45deg, var(--FC), var(--SC));
-    color: var(--TC_C);
-    text-align: center;
-    transition: var(--T_F);
-
-    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 4rem;
+    width: 100%;
+    color: var(--TC_C);
+    border: solid 2px var(--FC);
+    border-radius: 2rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
     cursor: pointer;
+    transition: var(--T_F);
     .label_btn {
-        color: var(--whiteOff);
+        color: var(--TC);
+        font-weight: var(--FW_B);
     }
     &:hover,
     &:active,
     &:focus {
-        filter: hue-rotate(45deg);
+        background: linear-gradient(45deg, var(--SC), var(--FC));
+        .label_btn {
+            color: var(--whiteOff);
+        }
     }
 }
 .btn_down {
@@ -1295,14 +1302,6 @@ body {
     &:hover .arrow_down_svg {
         fill: var(--FC);
     }
-}
-.more_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-weight: var(--FW_B);
-    font-size: var(--FS_N);
 }
 .close_btn {
     position: absolute;
@@ -1633,10 +1632,6 @@ body {
             margin-top: 0.5rem;
         }
     }
-    .btn {
-        width: 100%;
-        color: var(--TC_C);
-    }
 }
 .hot_project_card {
     @include flexDirection(column, space-between, center);
@@ -1689,7 +1684,6 @@ body {
     color: var(--TC_C) !important;
     .label_btn {
         color: var(--TC_C) !important;
-
         animation: bounce 2s ease-in-out infinite;
     }
     .icon_svg {
@@ -1927,9 +1921,6 @@ body {
     background: var(--NVC);
     padding: 2rem 3rem;
     border-radius: 1rem;
-    .btn {
-        width: 100%;
-    }
 }
 .modal {
     position: fixed;
@@ -1959,9 +1950,6 @@ body {
         border-radius: 1rem;
         max-height: calc(100svh - 4rem);
         overflow: hidden;
-    }
-    .btn {
-        width: 100%;
     }
     .modal_info {
         width: 100%;
@@ -2020,7 +2008,7 @@ body {
         color: inherit;
     }
 }
-.sliders_container {
+/* .sliders_container {
     position: relative;
     width: 100%;
     height: calc(60rem - var(--NVH_F) - 8rem);
@@ -2054,13 +2042,6 @@ body {
                 width: 100%;
                 height: auto;
             }
-            /* .illustration_mine {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 100%;
-                } */
             .info_container {
                 @include flexDirection(column, flex-start, center);
                 height: auto;
@@ -2086,15 +2067,9 @@ body {
         .slider_content > * {
             flex-basis: 100%;
         }
-        //^^ILLUSTRATION ANIMATIONS
-        //&&PLANET SPIN--START
         .web_planet_img {
             animation: spin 300s linear infinite;
         }
-        //&&PLANET SPIN--OVER
-        //&& **************************************************************************** *//
-        //^^ILLUSTRATION ANIMATIONS
-        //^^ **************************************************************************** *//
     }
     .markers_container {
         position: absolute;
@@ -2143,7 +2118,7 @@ body {
     .btn_swipe_container_right {
         right: 0;
     }
-}
+} */
 .icons_container {
     flex-wrap: wrap;
     @include flexDirection(row, center, flex-start);
@@ -2156,10 +2131,17 @@ body {
     @include flexCenter();
     .quote_container {
         @include flexDirection(row, center, center);
+
         height: 100%;
+
         .quote {
             font-size: var(--fontSizeXClamp);
             color: var(--TC);
+            text-align: center;
+        }
+        .quote:after,
+        .quote:before {
+            content: "";
         }
         .quote_icon {
             height: 100%;
@@ -2184,8 +2166,7 @@ body {
         transform: translateX(-7rem);
         margin-top: 2rem;
         @include flexDirection(column, flex-end, flex-end);
-        SPAN,
-        Q {
+        SPAN {
             display: block;
             text-align: right;
         }
@@ -2209,8 +2190,6 @@ body {
     @include flexDirection(column, flex-start, center);
 }
 .section_content {
-    min-height: calc(100vh - var(--NVH));
-    min-height: var(--FS_NVH);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2261,7 +2240,7 @@ body {
         width: 100%;
         height: auto;
         .btn {
-            min-width: 15rem;
+            min-width: 10rem;
             width: 20rem;
             max-width: 90%;
         }
@@ -2428,7 +2407,7 @@ body {
         color: var(--FC);
     }
     .made_content {
-        margin-left: 5rem;
+        margin-left: 3rem;
         .btns_container :not(:first-child) {
             margin-left: 2rem;
         }
@@ -2443,11 +2422,14 @@ body {
 .portfolio_section {
     .portfolio_btn {
         border-radius: 0 0 0.5rem 0.5rem;
-        background: transparent;
-        border: solid 2px var(--FC);
-        .label_btn {
-            color: var(--TC);
-        }
+        border-color: var(--SC);
+    }
+}
+.hero_section,
+.contact_section {
+    .section_content {
+        min-height: calc(100vh - var(--NVH));
+        min-height: var(--FS_NVH);
     }
 }
 .nav_menu {
