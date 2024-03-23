@@ -2397,7 +2397,8 @@ body P {
 }
 
 .hero_section .section_content,
-.contact_section .section_content {
+.contact_section .section_content,
+.services_section .section_content {
   min-height: calc(100vh - var(--NVH));
   min-height: var(--FS_NVH);
 }
