@@ -2368,6 +2368,12 @@ body P {
   justify-content: center;
   align-items: center;
   margin: 0;
+  /*  .footer_animation {
+      width: 100%;
+      height: 30rem;
+      background: var(--FC);
+      padding-top: 4rem;
+  } */
 }
 .legals_section .content {
   padding: 2rem;
@@ -2417,12 +2423,6 @@ body P {
 }
 .legals_section .made_content .btns_container :not(:first-child) {
   margin-left: 2rem;
-}
-.legals_section .footer_animation {
-  width: 100%;
-  height: 30rem;
-  background: var(--FC);
-  padding-top: 4rem;
 }
 
 .portfolio_section .portfolio_btn {
