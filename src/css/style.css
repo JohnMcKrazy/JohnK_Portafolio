@@ -1769,13 +1769,14 @@ body P {
   max-width: 100%;
 }
 .list_btns_container .list_btn {
-  background: var(--bgM);
   display: block;
-  text-transform: uppercase;
-  width: 100%;
-  padding: 0.5rem 3rem;
-  border-radius: 0.25rem;
   min-width: auto;
+  width: 100%;
+  background: var(--bgM);
+  border: none;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  padding: 0.5rem 3rem;
 }
 .list_btns_container .list_btn .label_btn {
   color: var(--TC);
@@ -1805,6 +1806,7 @@ body P {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   background: var(--bgM);
   border-radius: 0;
   border-bottom: solid 2px var(--FC);
@@ -1818,7 +1820,9 @@ body P {
   line-height: 1;
 }
 .list_btns_container .search_list_btn .icon_container {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2rem;
   width: 2rem;
   padding: 0;
@@ -2129,11 +2133,13 @@ body P {
 .section_divider .author_container .author {
   font-size: var(--fontSizeMClamp);
   color: var(--SC);
-  font-weight: 600;
+  font-weight: var(--FW_B);
+  margin-bottom: 0.5rem;
 }
 .section_divider .author_container .author_info {
   color: var(--TC);
   font-size: var(--fontSizeSClamp);
+  text-transform: capitalize;
 }
 .section_divider .author_container .author,
 .section_divider .author_container .author_info {
