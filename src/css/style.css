@@ -2344,9 +2344,6 @@ body P {
       padding-top: 4rem;
   } */
 }
-.legals_section .content {
-  padding: 2rem;
-}
 .legals_section .made_container {
   display: flex;
   flex-direction: column;
@@ -2417,6 +2414,9 @@ body P {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.nav_menu .content {
+  padding: 0;
 }
 .nav_menu .menu_container {
   display: flex;

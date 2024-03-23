@@ -2367,9 +2367,6 @@ body {
     background: var(--NVC);
     @include flex(center, center);
     margin: 0;
-    .content {
-        padding: 2rem;
-    }
     .made_container {
         @include flexDirection(column, flex-start, flex-end);
         .icons_container {
@@ -2437,6 +2434,9 @@ body {
     background: var(--NVC_T);
     z-index: 5;
     @include flex(center, center);
+    .content {
+        padding: 0;
+    }
     .menu_container {
         @include flexDirection(row, space-between, center);
         height: 100%;
