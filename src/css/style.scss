@@ -2151,7 +2151,6 @@ body {
         }
     }
     .author_container {
-        transform: translateX(-7rem);
         margin-top: 2rem;
         @include flexDirection(column, flex-end, flex-end);
         SPAN {

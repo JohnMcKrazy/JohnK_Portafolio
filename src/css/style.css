@@ -2104,7 +2104,6 @@ body P {
   fill: var(--FC);
 }
 .section_divider .author_container {
-  transform: translateX(-7rem);
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
