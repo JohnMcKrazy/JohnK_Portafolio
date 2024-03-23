@@ -1615,25 +1615,11 @@ body P {
   fill: var(--TC_C);
 }
 
-/*
-//^ SWIPER LEFT CONTAINER
-.animation_left {
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: var(--T-S);
-}
-
-//^ SWIPER RIGHT CONTAINER
-.animation_right {
-    opacity: 0;
-    transform: translateX(50%);
-    transition: var(--T-S);
-}
-*/
 .content {
   min-width: 250px;
   width: 1600px;
   max-width: 90%;
+  padding: 2rem 0;
 }
 
 .btns_container,
@@ -2080,7 +2066,6 @@ body P {
 .section_divider {
   width: 100%;
   background: var(--bgC_T);
-  padding: 4rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2145,6 +2130,9 @@ body P {
 .section_divider .author_container .author_info {
   line-height: 1;
 }
+.section_divider .content {
+  padding: 4rem 0;
+}
 
 .section {
   height: auto;
@@ -2208,6 +2196,9 @@ body P {
   width: 20rem;
   max-width: 90%;
 }
+.hero_section .content {
+  padding: 0;
+}
 
 .about_section {
   position: relative;
@@ -2225,7 +2216,6 @@ body P {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 2rem;
   width: 100%;
 }
 .about_section .about_salute .title_salute,

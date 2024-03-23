@@ -1693,26 +1693,11 @@ body {
         }
     }
 }
-/*
-//^ SWIPER LEFT CONTAINER
-.animation_left {
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: var(--T-S);
-}
-
-//^ SWIPER RIGHT CONTAINER
-.animation_right {
-    opacity: 0;
-    transform: translateX(50%);
-    transition: var(--T-S);
-}
-*/
-
 .content {
     min-width: 250px;
     width: 1600px;
     max-width: 90%;
+    padding: 2rem 0;
 }
 .btns_container,
 .btn_container {
@@ -2131,7 +2116,6 @@ body {
 .section_divider {
     width: 100%;
     background: var(--bgC_T);
-    padding: 4rem 0;
     @include flexCenter();
     .quote_container {
         @include flexDirection(row, center, center);
@@ -2189,6 +2173,9 @@ body {
         .author_info {
             line-height: 1;
         }
+    }
+    .content {
+        padding: 4rem 0;
     }
 }
 .section {
@@ -2251,6 +2238,9 @@ body {
             max-width: 90%;
         }
     }
+    .content {
+        padding: 0;
+    }
 }
 .about_section {
     position: relative;
@@ -2261,7 +2251,6 @@ body {
     }
     .about_salute {
         @include flexDirection(column, flex-start, flex-start);
-        margin-top: 2rem;
         width: 100%;
         .title_salute,
         .title_name {
