@@ -1,3 +1,45 @@
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-ExtraLight.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-ExtraLightItalic.ttf");
+    font-weight: 200;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Titillium Web";
+    src: url("../font/TitilliumWeb-SemiBoldItalic.ttf");
+    font-weight: 600;
+    font-style: italic;
+}
 *,
 *:after,
 *:before {
@@ -96,7 +138,7 @@
     justify-content: center;
     align-items: center;
 }
-:root {
+html {
     //¿GENERAL COLORS START
     --logoGray: rgb(166, 166, 166);
     --lightray: rgb(191, 191, 191);
@@ -131,7 +173,7 @@
     --FS_NVH: calc(100svh - var(--NVH));
     --FS-FNVH: calc(100svh - var(--NVH_F));
 
-    --titanimFont: "Titillium Web", sans-serif;
+    --titanimFont: "Titillium Web";
 
     font-family: var(--titanimFont);
     font-size: 12px;
@@ -141,7 +183,12 @@
     scroll-behavior: smooth;
     width: 100%;
     height: 100%;
+    -webkit-text-size-adjust: 100%;
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
 }
+
 .svg_gradients {
     position: absolute;
     top: 0;
@@ -214,7 +261,7 @@
     //¿GENERALS
 
     //~SECTION BACKGROUNDS
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night.webp") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
@@ -246,9 +293,12 @@ body {
     overflow-x: hidden;
     color: var(--TC);
     background: var(--bgC);
+    text-rendering: optimizeSpeed;
     img {
         display: block;
         width: 100%;
+        max-width: 100%;
+        border-style: none;
     }
     a {
         background: none;
@@ -331,7 +381,7 @@ body {
 //^ CLIENTS LOGO COLORS
 .animation_key {
     color: var(--FC);
-    font-weight: 800;
+    font-weight: var(--FW_B);
     cursor: pointer;
 }
 .deskwork_icon {
@@ -1108,6 +1158,7 @@ body {
     transform: scale(0.75);
 }
 .label_btn {
+    font-family: var(--titanimFont);
     font-size: var(--FS_N);
     font-weight: var(--FW_N);
     display: block;
@@ -1204,7 +1255,7 @@ body {
     .name {
         color: var(--FC);
         font-size: var(--FS_L);
-        font-weight: 800;
+        font-weight: var(--FW_B);
         text-align: center;
     }
     .skill,
@@ -1293,6 +1344,10 @@ body {
     color: var(--TC);
     transition: var(--T-M);
     margin-top: 4rem;
+    h3 {
+        font-family: var(--titanimFont);
+        font-weight: var(--FW-N);
+    }
     .arrow_down_svg {
         margin-top: 1rem;
         width: 2rem;
@@ -1606,7 +1661,7 @@ body {
             line-height: 1;
         }
         .subtitle {
-            font-weight: 600;
+            font-weight: var(--FW_B);
             color: var(--TC);
         }
         .icons_project_container {
@@ -2161,6 +2216,7 @@ body {
             font-size: var(--fontSizeMClamp);
             color: var(--SC);
             font-weight: var(--FW_B);
+            font-style: italic;
             margin-bottom: 0.5rem;
         }
         .author_info {
@@ -2188,6 +2244,7 @@ body {
     align-items: center;
     min-height: calc(100vh - var(--NVH));
     min-height: var(--FS_NVH);
+    width: 100%;
 }
 .with_bg {
     position: relative;
@@ -2201,7 +2258,8 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    background-size: cover !important;
+    max-width: 100%;
+    background-size: 100% auto !important;
     background-position: center !important;
     z-index: -1;
 }
@@ -2277,7 +2335,7 @@ body {
         }
         .about_text {
             font-size: var(--fontSizeMClamp);
-            font-weight: 800;
+            font-weight: var(--FW_B);
             padding: 2rem;
         }
     }
@@ -2694,6 +2752,17 @@ body {
         }
     }
 }
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 
-@media (prefers-reduced-motion) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

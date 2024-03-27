@@ -252,8 +252,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioListContainer = selector(".portfolio_list_btns_container");
     const searchExtraListBtn = selector(".search_extra_list_btn");
     const extraListContainer = selector(".extra_list_btns_container");
-    // ! FETCH DATA //
 
+    const sanitizeInput = (inputValue) => {
+        const div = document.createElement("div");
+        div.textContent = inputValue;
+        return div.innerHTML;
+    };
+
+    // ! FETCH DATA //
     let fetchData = [];
 
     const fetchProjectsData = async () => {
@@ -1099,7 +1105,8 @@ document.addEventListener("DOMContentLoaded", () => {
     sendBtnFormModal.addEventListener("click", (e) => {
         e.preventDefault();
     });*/
-
+    selectorAll("INPUT").forEach((inp) => sanitizeInput(inp));
+    selectorAll("TEXTAREA").forEach((txtarea) => sanitizeInput(txtarea));
     const changeTheme = (tm) => {
         const BODY = selector("body");
         const lightT = "light_theme";
@@ -1127,4 +1134,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     btnLogo.addEventListener("click", toTheTop);
     window.addEventListener("scroll", () => checkWindowHeight());
+
+    const observer = new PerformanceObserver((list) => {
+        let perfEntries = list.getEntries();
+        let lastEntry = perfEntries[perfEntries.length - 1];
+        // Process the latest candidate for largest contentful paint
+        console.log(lastEntry);
+    });
+    observer.observe({ entryTypes: ["largest-contentful-paint"] });
 });

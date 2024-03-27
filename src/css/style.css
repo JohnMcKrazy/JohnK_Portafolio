@@ -1,3 +1,45 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-ExtraLight.ttf");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-ExtraLightItalic.ttf");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../font/TitilliumWeb-SemiBoldItalic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
 *,
 *:after,
 *:before {
@@ -78,7 +120,7 @@
     opacity: 0;
   }
 }
-:root {
+html {
   --logoGray: rgb(166, 166, 166);
   --lightray: rgb(191, 191, 191);
   --midGray: rgb(128, 128, 128);
@@ -108,7 +150,7 @@
   --NVH: 8rem;
   --FS_NVH: calc(100svh - var(--NVH));
   --FS-FNVH: calc(100svh - var(--NVH_F));
-  --titanimFont: "Titillium Web", sans-serif;
+  --titanimFont: "Titillium Web";
   font-family: var(--titanimFont);
   font-size: 12px;
   line-break: loose;
@@ -117,6 +159,10 @@
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html html:focus-within {
+  scroll-behavior: smooth;
 }
 
 .svg_gradients {
@@ -181,7 +227,7 @@
   --bgOff: rgb(51, 51, 51);
   --bgM: rgba(26, 26, 26, 0.75);
   --vueIconText: rgb(204, 204, 204);
-  --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night.webp") center no-repeat fixed;
+  --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
   --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
   --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
   --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
@@ -208,12 +254,15 @@ body {
   overflow-x: hidden;
   color: var(--TC);
   background: var(--bgC);
+  text-rendering: optimizeSpeed;
   scrollbar-color: var(--FC) var(--SC);
   scrollbar-width: thin;
 }
 body img {
   display: block;
   width: 100%;
+  max-width: 100%;
+  border-style: none;
 }
 body a {
   background: none;
@@ -293,7 +342,7 @@ body P {
 
 .animation_key {
   color: var(--FC);
-  font-weight: 800;
+  font-weight: var(--FW_B);
   cursor: pointer;
 }
 
@@ -982,6 +1031,7 @@ body P {
 }
 
 .label_btn {
+  font-family: var(--titanimFont);
   font-size: var(--FS_N);
   font-weight: var(--FW_N);
   display: block;
@@ -1098,7 +1148,7 @@ body P {
 .bubble .name {
   color: var(--FC);
   font-size: var(--FS_L);
-  font-weight: 800;
+  font-weight: var(--FW_B);
   text-align: center;
 }
 .bubble .skill,
@@ -1187,6 +1237,10 @@ body P {
   color: var(--TC);
   transition: var(--T-M);
   margin-top: 4rem;
+}
+.btn_down h3 {
+  font-family: var(--titanimFont);
+  font-weight: var(--FW-N);
 }
 .btn_down .arrow_down_svg {
   margin-top: 1rem;
@@ -1510,7 +1564,7 @@ body P {
   line-height: 1;
 }
 .project_card .info_card .subtitle {
-  font-weight: 600;
+  font-weight: var(--FW_B);
   color: var(--TC);
 }
 .project_card .info_card .icons_project_container {
@@ -2118,6 +2172,7 @@ body P {
   font-size: var(--fontSizeMClamp);
   color: var(--SC);
   font-weight: var(--FW_B);
+  font-style: italic;
   margin-bottom: 0.5rem;
 }
 .section_divider .author_container .author_info {
@@ -2148,6 +2203,7 @@ body P {
   align-items: center;
   min-height: calc(100vh - var(--NVH));
   min-height: var(--FS_NVH);
+  width: 100%;
 }
 
 .with_bg {
@@ -2162,7 +2218,8 @@ body P {
   left: 0;
   height: 100%;
   width: 100%;
-  background-size: cover !important;
+  max-width: 100%;
+  background-size: 100% auto !important;
   background-position: center !important;
   z-index: -1;
 }
@@ -2242,7 +2299,7 @@ body P {
 }
 .about_section .about_salute .about_text {
   font-size: var(--fontSizeMClamp);
-  font-weight: 800;
+  font-weight: var(--FW_B);
   padding: 2rem;
 }
 
@@ -2677,5 +2734,18 @@ body P {
   }
   .cards_hot_container .project_card:nth-of-type(6n) {
     display: flex;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

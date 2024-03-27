@@ -8,7 +8,10 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>John Krazy - Haciendo Ideas Realidad</title>
-        <meta name="description" content="" />
+        <meta
+            name="description"
+            content="¡Bienvenido a mi mundo creativo! Soy diseñador, ilustrador y desarrollador web. Explora mi portafolio donde convergen colores vibrantes, líneas cautivadoras y código que cobra vida. Descubre cómo fusiono arte y tecnología para dar vida a proyectos únicos y sorprendentes. ¡Prepárate para un viaje visual que despierta la imaginación y desafía los límites!"
+        />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
@@ -16,15 +19,7 @@
         <link rel="icon" type="image/svg" href="./src/img/personal_logos/johnK_tab_icon.svg" />
         <link rel="image_src" href="./src/img/desk.png" />
         <link rel="canonical" href="https://johnmckrazy.github.io/JohnK_Portafolio/" />
-        <!--!GOOGLE FONTS-->
-        <!--^TITANIM FONT-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet" />
-        <!--!GOOGLE FONTS-->
-        <link rel="stylesheet" href="./src/css/normalize.css" />
-        <link rel="stylesheet" href="./src/css/moderCss.css" />
-        <link rel="stylesheet" href="./src/css/style.css" />
+        <link rel="stylesheet" href="./src/css/style.min.css" />
     </head>
     <body class="dark_theme">
         <!--[if lt IE 7]>
@@ -469,7 +464,7 @@
                     <button type="button" class="section_btn nav_btn portfolio_nav_btn" name="portfolio_section" data-lebel="Portafolio">Portafolio</button>
                     <button type="button" class="section_btn nav_btn contact_nav_btn" name="contact_section" data-lebel="Contacto">Contacto</button>
                     <button type="button" class="section_btn nav_btn legals_nav_btn" name="legals_section" data-lebel="Legales">Legales</button>
-                    <button type="button" class="nav_btn theme_btn" name="theme_btn">
+                    <button type="button" class="nav_btn theme_btn" name="theme_btn" aria-label="Button to change color scheame in page">
                         <div class="icon_container">
                             <svg class="icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -502,7 +497,7 @@
                     </span>
                 </div>
                 <figcaption class="author_container">
-                    <span class="author"><i>Albert Einstein</i></span>
+                    <span class="author">Albert Einstein</span>
                     <span class="author_info">Premio novel de física</span>
                 </figcaption>
             </figure>
@@ -5917,7 +5912,7 @@
                 </div>
                 <div class="lebels_container">
                     <div class="made_content">
-                        <h4 class="copy_rights">@JohnKrazy - 2024 - Derechos reservados</h4>
+                        <span class="copy_rights">@JohnKrazy - 2024 - Derechos reservados</span>
                         <div class="btns_container">
                             <button type="button" class="link_btn" data-name="legal_modal">
                                 <span class="label_btn">Legales</span>
@@ -5968,7 +5963,7 @@
         </footer>
     </body>
     <!--^^TEAMPLATES-->
-    
+
     <template id="card_project_template">
         <article class="project_card hot_project_card" id="">
             <div class="card_content">
