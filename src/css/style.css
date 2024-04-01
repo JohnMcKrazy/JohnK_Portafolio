@@ -18,12 +18,6 @@
 }
 @font-face {
   font-family: "Titillium Web";
-  src: url("../font/TitilliumWeb-Bold.ttf");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Titillium Web";
   src: url("../font/TitilliumWeb-ExtraLightItalic.ttf");
   font-weight: 200;
   font-style: italic;
@@ -137,7 +131,6 @@ html {
   --FW_L: 200;
   --FW_N: 400;
   --FW_B: 600;
-  --FW_BB: 700;
   --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
   --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
   --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
@@ -951,7 +944,7 @@ body P {
 }
 
 .js_icon_svg {
-  transform: scale(0.75);
+  scale: 0.75;
 }
 .js_icon_svg .cls-1 {
   fill: #f7df1e;
@@ -991,8 +984,18 @@ body P {
   stroke-width: 0px;
 }
 
+.vue_icon_svg {
+  scale: 0.8;
+}
+.vue_icon_svg .cls-1 {
+  fill: #35495e;
+}
+.vue_icon_svg .cls-2 {
+  fill: #41b883;
+}
+
 .python_icon_svg {
-  scale: 0.75;
+  scale: 0.8;
 }
 .python_icon_svg .cls-1 {
   fill: #366a96;
@@ -2413,6 +2416,7 @@ body P {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 0.5rem;
   gap: 0;
 }
 .legals_section .lebels_container {
