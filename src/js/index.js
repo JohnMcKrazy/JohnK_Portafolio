@@ -238,9 +238,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalInfoLegal = selector(".modal_info_legal");
     const alertModal = selector(".alert_modal");
     const contactModal = selector(".contact_modal");
-    const arrowPortfolioList = selector(".arrow_portfolio_list_icon");
-    const arrowExtraList = selector(".arrow_extra_list_icon");
     const menuSocialBtnsContainer = selector(".menu_social_btns_container");
+    //MY ILLUSTRATION CONTENT
     const watchMerAM = selector(".watch_am");
     const watchMerPM = selector(".watch_pm");
     const designScreen = selector(".design_screen");
@@ -250,25 +249,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const shieldScreen = selector(".shield_screen");
     const illustrationScreen = selector(".illustration_screen");
     const illustrationTabletScreen = selector(".illustration_tablet_screen");
-
+    // BUBBLES
     const bubbleBio = selector(".bio_bubble");
     const bubbleInfo = selector(".info_bubble");
     const bubbleRex = selector(".rex_bubble");
-
+    // MODAL PORTFOLIO
     const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
     const portfolioListContainer = selector(".portfolio_list_btns_container");
     const searchExtraListBtn = selector(".search_extra_list_btn");
     const extraListContainer = selector(".extra_list_btns_container");
-
     const sanitizeInput = (inputValue) => {
         const div = document.createElement("div");
         div.textContent = inputValue;
         return div.innerHTML;
     };
-
     // ! FETCH DATA //
     let fetchData = [];
-
     const fetchProjectsData = async () => {
         try {
             const raw = await fetch(portfolioData);
@@ -298,10 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuActions = (status) => {
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
-
-        /* console.log(navTop, windowHeight); */
         if (status === close) {
-            /* console.log("abriendo menu"); */
             menuStatus = open;
             phoneMenu.style.display = flx;
             setTimeout(() => {
@@ -500,20 +493,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 500);
             }, 200);
         }
-    };
-    const animationIn = (item, display, delay = 1000) => {
-        item.style.display = display;
-        const timer = delay + 200;
-        setTimeout(() => {
-            item.animate([{ opacity: `0` }, { opacity: `1` }], { duration: delay, fill: `forwards` });
-        }, timer);
-    };
-    const animationOut = (item, delay = 1000) => {
-        const timer = delay + 200;
-        item.animate([{ opacity: `1` }, { opacity: `0` }], { duration: delay, fill: `forwards` });
-        setTimeout(() => {
-            item.style.display = `none`;
-        }, timer);
     };
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
@@ -868,8 +847,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             const btnName = btn.getAttribute("data-name");
             const currentBtn = selector(`.${btnName}`);
-            const modalInfoLegal = selector(".modal_info_legal");
-
             const currentPosition = modalInfoLegal.getBoundingClientRect().top;
             if (btnName === "legal_section") {
             } else {
@@ -889,12 +866,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const infoModal = selector(".modal_info_legal");
 
             if (btnName === "legal_modal") {
-                infoModal.scrollTo(infoModal.getBoundingClientRect().top, 0);
+                infoModal.scrollTo({ top: 0, behavior: `smooth` });
                 setTimeout(() => {
                     modalWindowActions(currentBtn, close);
                 }, 500);
             } else if (btnName === "portfolio_modal") {
-                portfolioCardsContainer.scrollTo(portfolioCardsContainer.getBoundingClientRect().top, 0);
+                portfolioCardsContainer.scrollTo({ top: 0, behavior: `smooth` });
 
                 setTimeout(() => {
                     modalWindowActions(currentBtn, close);
