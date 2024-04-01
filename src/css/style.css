@@ -2222,7 +2222,7 @@ body P {
   height: 100%;
   width: 100%;
   max-width: 100%;
-  background-size: 100% auto !important;
+  background-size: cover !important;
   background-position: center !important;
   z-index: -1;
 }
