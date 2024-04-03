@@ -39,6 +39,19 @@
         }
     },
     {
+        "project_name": "Tribute Page",
+        "db_name": "first_tribute",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web"],
+            "info": "Página estatica en tributo a Kobe Bryant, Proyecto para certificación en 'Diseño Web Responsivo' para FreeCodeCamp, realizado con HTML y CSS",
+            "technologies": ["HTML", "CSS"],
+            "img": "./src/img/portfolio/tribute_borlaug.webp",
+            "project_link": "https://johnmckrazy.github.io/First_Tribute_Page_FreeCodeCamp/"
+        }
+    },
+    {
         "project_name": "Black Jack Game",
         "db_name": "black_jack",
         "projects": {
@@ -62,6 +75,19 @@
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/js_documentation.webp",
             "project_link": "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/"
+        }
+    },
+    {
+        "project_name": "Background Random Color",
+        "db_name": "random_bg_color",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web"],
+            "info": "Página estatica sobre documentación de Javascript, proyecto para certificación en 'Algoritmos Javascript y Estructura' para FreeCodeCamp, realizado con HTML, CSS y Javascript",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "img": "./src/img/portfolio/random_bg_color.webp",
+            "project_link": "https://johnmckrazy.github.io/Random_Background_Color/"
         }
     },
     {
@@ -153,6 +179,19 @@
             "technologies": ["HTML", "CSS", "React"],
             "img": "./src/img/portfolio/quote_machine.webp",
             "project_link": "https://johnmckrazy.github.io/FreeCodeCamp_Random_Quote_Machine_Project/"
+        }
+    },
+    {
+        "project_name": "Simple Web To-Do-List",
+        "db_name": "to-do",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web", "Programación"],
+            "info": "Página que muestra Frases famosas al Azar, proyecto para certificación en 'Desarrollo con Librerias Front-End (React)' para FreeCodeCamp, realizado con HTML ,CSS y React",
+            "technologies": ["HTML", "CSS", "Vue"],
+            "img": "./src/img/portfolio/to-do.webp",
+            "project_link": "https://johnmckrazy.github.io/to-do-list_vue-practice/"
         }
     },
     {
