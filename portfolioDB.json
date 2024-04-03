@@ -52,7 +52,7 @@
         }
     },
     {
-        "project_name": "Black Jack Game",
+        "project_name": "Juego de Black Jack",
         "db_name": "black_jack",
         "projects": {
             "type": "dev",
@@ -62,6 +62,19 @@
             "technologies": ["HTML", "CSS", "JavaScript"],
             "img": "./src/img/portfolio/black_jack.webp",
             "project_link": "https://johnmckrazy.github.io/BlackJack_Game/"
+        }
+    },
+    {
+        "project_name": "Juego de Pac-Man",
+        "db_name": "pac-man",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web"],
+            "info": "Juego de Black Jack, proyecto de programación, realizado con HTML, CSS y Javascript",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "img": "./src/img/portfolio/pac-man.webp",
+            "project_link": "https://johnmckrazy.github.io/Pac-Man_Game/"
         }
     },
     {
@@ -189,7 +202,7 @@
             "type_name": "Desarrollo",
             "skills": ["Web", "Programación"],
             "info": "Página que muestra Frases famosas al Azar, proyecto para certificación en 'Desarrollo con Librerias Front-End (React)' para FreeCodeCamp, realizado con HTML ,CSS y React",
-            "technologies": ["HTML", "CSS", "Vue"],
+            "technologies": ["HTML", "CSS", "Vue.js"],
             "img": "./src/img/portfolio/to-do.webp",
             "project_link": "https://johnmckrazy.github.io/to-do-list_vue-practice/"
         }
