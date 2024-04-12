@@ -172,29 +172,33 @@
                 <div class="modal_info" id="modal_info_contact_form">
                     <p class="description_modal">Estoy ancioso de hacer proyectos interesantes con tus ideas</p>
                 </div>
-                <form class="modal_form" id="modal_contact_form">
+                <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit">
                     <div class="input_container">
                         <label for="modal_input_name">Nombre/s</label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" />
+                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" />
                     </div>
 
                     <div class="input_container">
-                        <label for="input_last_name">Apellidos</label>
-                        <input type="text" placeholder="Escribe tu Apellido" id="input_last_name" name="last_name" />
+                        <label for="modal_input_last_name">Apellidos</label>
+                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" />
                     </div>
 
                     <div class="input_container">
-                        <label for="input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="input_email" name="email" />
+                        <label for="modal_input_email">Email</label>
+                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" />
                     </div>
 
                     <div class="input_container last">
-                        <label for="input_textarea">Descripción</label>
-                        <textarea id="input_textarea" name="description" placeholder="Comparte me un resumen de tu idea"></textarea>
+                        <label for="modal_input_textarea">Descripción</label>
+                        <textarea placeholder="Comparte me un resumen de tu idea" id="modal_input_textarea" name="description" class="input_description"></textarea>
                     </div>
-                    <button type="submit" class="btn send_btn" id="modal_contact_form_send_btn">
+                    <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
+                    <button type="submit" class="btn send_btn" id="modal_contact_form_send_btn" data-form="modal_form">
                         <span class="label_btn">Enviar</span>
                     </button>
+                    <div class="form_response_container">
+                        <p class="form_response">Respuesta promedio solo para probar</p>
+                    </div>
                 </form>
                 <button type="button" class="close_btn close_modal" id="modal_form_close_btn" data-name="contact_modal">
                     <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
@@ -518,7 +522,7 @@
                         <span class="animation_key" data-key="dev">computadoras</span>
                         fueron mi primer amor, el
                         <span class="animation_key" data-key="design">diseño</span>
-                        me hace seguir adelante, aunque si hablamos de mi pasion, estaremos hablando de
+                        me hace seguir adelante, aunque si hablamos de mi pasión, estaremos hablando de
                         <span class="animation_key" data-key="illustration">dibujar</span>
                     </p>
                 </div>
@@ -5864,27 +5868,31 @@
                 <div class="form_container">
                     <form class="form contact_form" id="contact_form">
                         <div class="input_container">
-                            <label for="input_name">Nombre/s</label>
-                            <input type="text" placeholder="Escribe tu/s Nombre/s" id="input_name" name="name" />
+                            <label for="body_input_name">Nombre/s</label>
+                            <input type="text" placeholder="Escribe tu/s Nombre/s" id="body_input_name" name="name" class="input_name" />
                         </div>
 
                         <div class="input_container">
-                            <label for="input_last_name">Apellidos</label>
-                            <input type="text" placeholder="Escribe tu Apellido" id="input_last_name" name="last_name" />
+                            <label for="body_input_last_name">Apellidos</label>
+                            <input type="text" placeholder="Escribe tus Apellidos" id="body_input_last_name" name="last_name" class="input_last_name" />
                         </div>
 
                         <div class="input_container">
-                            <label for="input_email">Email</label>
-                            <input type="email" placeholder="Escribe tu Email" id="input_email" name="email" />
+                            <label for="body_input_email">Email</label>
+                            <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" />
                         </div>
 
                         <div class="input_container last">
-                            <label for="input_textarea">Descripción</label>
-                            <textarea id="input_textarea" name="description" placeholder="Comparte me un resumen de tu idea"></textarea>
+                            <label for="body_input_textarea">Descripción</label>
+                            <textarea placeholder="Comparte me un resumen de tu idea" id="body_input_textarea" name="description" class="input_description"></textarea>
                         </div>
-                        <button type="submit" class="btn send_btn" id="contact_form_send_btn">
+                        <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
+                        <button type="submit" id="contact_form_send_btn" data-form="body_form" class="btn send_btn">
                             <span class="label_btn">Enviar</span>
                         </button>
+                        <div class="form_response_container">
+                            <p class="form_response">Respuesta promedio solo para probar</p>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -152,7 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: '<div class="icon_container"><svg class="vue_icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path class="cls-2" d="m20,1.72h5l-12.5,21.56L0,1.72h9.56l2.94,5,2.88-5h4.63Z"/><path class="cls-2" d="m0,1.72l12.5,21.56L25,1.72h-5l-7.5,12.94L4.94,1.72H0Z"/><path class="cls-1" d="m4.94,1.72l7.56,13L20,1.72h-4.63l-2.88,5-2.94-5h-4.62Z"/></svg></div>',
         },
     ];
-
     const btnLabels = [
         {
             welcome_section: {
@@ -194,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         page_view_count: 1,
         page_alert_status: open,
         page_legal_content: accepted,
-        page_theme: none,
+        page_theme: "dark_theme",
     };
 
     const $d = document;
@@ -258,10 +257,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioListContainer = selector(".portfolio_list_btns_container");
     const searchExtraListBtn = selector(".search_extra_list_btn");
     const extraListContainer = selector(".extra_list_btns_container");
+    // UTILS FUNCTIONS
     const sanitizeInput = (inputValue) => {
         const div = document.createElement("div");
         div.textContent = inputValue;
         return div.innerHTML;
+    };
+    const changeTheme = (tm) => {
+        const BODY = selector("body");
+        const lightT = "light_theme";
+        const darkT = "dark_theme";
+        switch (tm) {
+            case lightT:
+                currentTheme = darkT;
+                watchMerPM.style.opacity = 0;
+                watchMerAM.style.opacity = 1;
+
+                break;
+            case darkT:
+                currentTheme = lightT;
+                watchMerAM.style.opacity = 0;
+                watchMerPM.style.opacity = 1;
+
+                break;
+        }
+        storageContent["page_theme"] = currentTheme;
+        localStorage.setItem(storageName, JSON.stringify(storageContent));
+        BODY.className = currentTheme;
+    };
+    const deleteChildElements = (parentElement) => {
+        let child = parentElement.lastElementChild;
+        while (child) {
+            parentElement.removeChild(child);
+            child = parentElement.lastElementChild;
+        }
+    };
+    const deleteArrElements = (parentElement) => {
+        while (parentElement.length > 0) {
+            parentElement.forEach((item) => {
+                parentElement.pop(item);
+            });
+        }
+    };
+    const animateItem = (container, opacity, transform) => {
+        container.style.opacity = opacity;
+        container.style.transform = transform;
     };
     // ! FETCH DATA //
     let fetchData = [];
@@ -277,20 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     fetchProjectsData();
-    const deleteChildElements = (parentElement) => {
-        let child = parentElement.lastElementChild;
-        while (child) {
-            parentElement.removeChild(child);
-            child = parentElement.lastElementChild;
-        }
-    };
-    const deleteArrElements = (parentElement) => {
-        while (parentElement.length > 0) {
-            parentElement.forEach((item) => {
-                parentElement.pop(item);
-            });
-        }
-    };
+    // ACTIONS FUNTION FOR NAV MENU
     const menuActions = (status) => {
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
@@ -318,9 +345,80 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1200);
         }
     };
-    const animateItem = (container, opacity, transform) => {
-        container.style.opacity = opacity;
-        container.style.transform = transform;
+    // ACTIONS FUNCTION FOR SOCIAL MENU
+    const menuSocialActions = (action) => {
+        if (action === open) {
+            /* console.log("cerrando menu social"); */
+            menuSocialStatus = close;
+            menuSocialBtnsContainer.style.opacity = 0;
+            setTimeout(() => {
+                menuSocialBtnsContainer.style.display = none;
+            }, 1000);
+        } else if (action === close) {
+            /* console.log("abriendo menu social"); */
+
+            menuSocialStatus = open;
+            menuSocialBtnsContainer.style.display = flx;
+            setTimeout(() => {
+                menuSocialBtnsContainer.style.opacity = 1;
+            }, 200);
+        }
+    };
+    // ACTIONS FUNCTION FOR MODAL BACKDROP
+    const modalActions = (action) => {
+        if (action === close) {
+            modal.style.opacity = 0;
+            setTimeout(() => (modal.style.display = none), 500);
+        } else if (action === open) {
+            modal.style.display = blk;
+            setTimeout(() => (modal.style.opacity = 1), 500);
+        }
+    };
+    // ACTION FUNCTION FOR MODAL WINDOWS
+    const modalWindowActions = (window, action) => {
+        if (action === close) {
+            animateItem(window, 0, "translate(-50%,-50%)");
+            setTimeout(() => {
+                window.style.display = none;
+                setTimeout(() => {
+                    modalActions(close);
+                }, 200);
+            }, 1000);
+        } else if (action === open) {
+            modal.style.display = blk;
+            setTimeout(() => {
+                modal.style.opacity = 1;
+                setTimeout(() => {
+                    window.style.display = flx;
+                    setTimeout(() => {
+                        animateItem(window, 1, "translate(-50%,0)");
+                    }, 200);
+                }, 500);
+            }, 200);
+        }
+    };
+    // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
+    const checkAlertStorageAnswer = () => {
+        storageContent = JSON.parse(localStorage.getItem(storageName));
+        if (!storageContent) {
+            localStorage.setItem(storageName, JSON.stringify(johnK_storage));
+            console.log("local storage item is created");
+        } else {
+            if (storageContent["page_theme"] !== "dark_theme") {
+                currentTheme = storageContent["page_theme"];
+            }
+            storageContent["page_view_count"] += 1;
+            localStorage.setItem(storageName, JSON.stringify(storageContent));
+            console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
+        }
+
+        if (currentTheme === "dark_theme") {
+            watchMerAM.style.opacity = 1;
+        } else if (currentTheme === "light_theme") {
+            watchMerPM.style.opacity = 1;
+        }
+        BODY.className = currentTheme;
+        console.log(storageContent);
     };
     //^ANIMATION ITEM SWIPE
     const swipingAnimation = () => {
@@ -445,91 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
         innerBtn.setAttribute("href", `${item["projects"]["project_link"]}`);
         frac.appendChild(projectCard);
     };
-    const menuSocialActions = (action) => {
-        if (action === open) {
-            /* console.log("cerrando menu social"); */
-            menuSocialStatus = close;
-            menuSocialBtnsContainer.style.opacity = 0;
-            setTimeout(() => {
-                menuSocialBtnsContainer.style.display = none;
-            }, 1000);
-        } else if (action === close) {
-            /* console.log("abriendo menu social"); */
 
-            menuSocialStatus = open;
-            menuSocialBtnsContainer.style.display = flx;
-            setTimeout(() => {
-                menuSocialBtnsContainer.style.opacity = 1;
-            }, 200);
-        }
-    };
-    const modalActions = (action) => {
-        if (action === close) {
-            modal.style.opacity = 0;
-            setTimeout(() => (modal.style.display = none), 500);
-        } else if (action === open) {
-            modal.style.display = blk;
-            setTimeout(() => (modal.style.opacity = 1), 500);
-        }
-    };
-    const modalWindowActions = (window, action) => {
-        if (action === close) {
-            animateItem(window, 0, "translate(-50%,-50%)");
-            setTimeout(() => {
-                window.style.display = none;
-                setTimeout(() => {
-                    modalActions(close);
-                }, 200);
-            }, 1000);
-        } else if (action === open) {
-            modal.style.display = blk;
-            setTimeout(() => {
-                modal.style.opacity = 1;
-                setTimeout(() => {
-                    window.style.display = flx;
-                    setTimeout(() => {
-                        animateItem(window, 1, "translate(-50%,0)");
-                    }, 200);
-                }, 500);
-            }, 200);
-        }
-    };
-    const checkAlertStorageAnswer = () => {
-        storageContent = JSON.parse(localStorage.getItem(storageName));
-        if (!storageContent) {
-            localStorage.setItem(storageName, JSON.stringify(johnK_storage));
-            console.log("local storage item is created");
-            storageContent = johnK_storage;
-            setTimeout(() => {
-                modalWindowActions(alertModal, open);
-            }, 200);
-        } else {
-            if (storageContent["page_alert_status"] === open) {
-                storageContent["page_view_count"] += 1;
-                localStorage.setItem(storageName, JSON.stringify(storageContent));
-                console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
-                setTimeout(() => {
-                    modalWindowActions(alertModal, open);
-                }, 200);
-            } else if (storageContent["page_alert_status"] === close) {
-                storageContent["page_alert_status"] = close;
-                storageContent["page_view_count"] += 1;
-                localStorage.setItem(storageName, JSON.stringify(storageContent));
-                console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
-            }
-            if (storageContent["page_theme"] !== none) {
-                currentTheme = storageContent["page_theme"];
-            }
-        }
-
-        if (currentTheme === "dark_theme") {
-            watchMerAM.style.opacity = 1;
-        } else if (currentTheme === "light_theme") {
-            watchMerPM.style.opacity = 1;
-        }
-        console.log(storageContent);
-        BODY.className = currentTheme;
-    };
     checkAlertStorageAnswer();
     const configSize = (widConf) => {
         const copyrightText = selector(".made_content");
@@ -1081,38 +1095,76 @@ document.addEventListener("DOMContentLoaded", () => {
             bubbleInfo.style.display = none;
         });
     });
-    /* selector("#contact_form_send_btn").addEventListener("click", (e) => {
-        e.preventDefault();
+
+    selectorAll("FORM").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            sanitizeInput(form.querySelector(".input_name"));
+            sanitizeInput(form.querySelector(".input_last_name"));
+            sanitizeInput(form.querySelector(".input_email"));
+            sanitizeInput(form.querySelector(".input_description"));
+            let formName = form.querySelector(".send_btn").getAttribute("data-form");
+            let formResponse = form.querySelector(".form_response");
+            let formResponseContainer = form.querySelector(".form_response_container");
+            const formResponseActions = (action, status = "", msg = "") => {
+                if (action === open) {
+                    formResponseContainer.style.background = `var(--${status})`;
+                    if (status === "warning") {
+                        formResponse.style.color = "var(--blackOff)";
+                    } else {
+                        formResponse.style.color = "var(--whiteOff)";
+                    }
+                    formResponse.textContent = msg;
+                    formResponseContainer.style.display = "block";
+                    setTimeout(() => {
+                        formResponseContainer.style.opacity = "1";
+                    }, 500);
+                } else if (action === close) {
+                    formResponseContainer.style.opacity = "0";
+                    setTimeout(() => {
+                        formResponseContainer.style.display = "none";
+                    }, 500);
+                }
+            };
+            console.log(formName);
+
+            const formData = new FormData(form);
+            let newData = {};
+
+            formData.forEach((value, key) => {
+                newData[key] = value;
+            });
+            const jsonData = JSON.stringify(newData);
+            console.log(jsonData);
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: jsonData,
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        formResponseActions(open, "good", "!Enviado satisfactoriamente, gracias por contactarme¡");
+                    } else {
+                        console.log(response);
+                        formResponseActions(open, "danger", "Algo ah salido mal, por favor intentalo de nuevo");
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                    formResponseActions(open, "danger", "Algo ah salido mal, por favor intentalo de nuevo");
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        formResponseActions(close);
+                    }, 5000);
+                });
+        });
     });
-    
-    
-    sendBtnFormModal.addEventListener("click", (e) => {
-        e.preventDefault();
-    });*/
-    selectorAll("INPUT").forEach((inp) => sanitizeInput(inp));
-    selectorAll("TEXTAREA").forEach((txtarea) => sanitizeInput(txtarea));
-    const changeTheme = (tm) => {
-        const BODY = selector("body");
-        const lightT = "light_theme";
-        const darkT = "dark_theme";
-        switch (tm) {
-            case lightT:
-                currentTheme = darkT;
-                watchMerPM.style.opacity = 0;
-                watchMerAM.style.opacity = 1;
-
-                break;
-            case darkT:
-                currentTheme = lightT;
-                watchMerAM.style.opacity = 0;
-                watchMerPM.style.opacity = 1;
-
-                break;
-        }
-        storageContent["page_theme"] = currentTheme;
-        localStorage.setItem(storageName, JSON.stringify(storageContent));
-        BODY.className = currentTheme;
-    };
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });
