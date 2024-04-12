@@ -1464,7 +1464,7 @@ html body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 .service_card .info_card {
   width: 100%;
@@ -1477,12 +1477,12 @@ html body {
   font-size: var(--FS_L);
   transition: var(--T_M);
   margin-bottom: 1rem;
+  text-align: left;
 }
 .service_card .info_card .info {
   transition: var(--T_M);
   font-size: var(--FS_N);
   line-height: 1.6rem;
-  text-align: center;
   text-wrap: balance;
 }
 .service_card .icon_container {

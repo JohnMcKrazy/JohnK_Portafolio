@@ -1542,7 +1542,7 @@ html {
     
 } */
 .service_card {
-    @include flexDirection(column, flex-start, center);
+    @include flexDirection(column, flex-start, flex-start);
     .info_card {
         width: 100%;
         max-width: 400px;
@@ -1553,12 +1553,12 @@ html {
             font-size: var(--FS_L);
             transition: var(--T_M);
             margin-bottom: 1rem;
+            text-align: left;
         }
         .info {
             transition: var(--T_M);
             font-size: var(--FS_N);
             line-height: 1.6rem;
-            text-align: center;
             text-wrap: balance;
         }
     }
