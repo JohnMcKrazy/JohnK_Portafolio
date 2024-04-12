@@ -1169,7 +1169,12 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });
     btnLogo.addEventListener("click", toTheTop);
-    window.addEventListener("scroll", () => checkWindowHeight());
+    window.addEventListener("scroll", () => {
+        if (menuSocialStatus == open) {
+            menuSocialActions(menuSocialStatus);
+        }
+        checkWindowHeight();
+    });
 
     const observer = new PerformanceObserver((list) => {
         let perfEntries = list.getEntries();
