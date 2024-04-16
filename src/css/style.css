@@ -1137,6 +1137,7 @@ html body {
 }
 .bubble .description {
   font-size: var(--T_M);
+  text-wrap: balance;
 }
 .bubble .title {
   color: var(--TC);
@@ -1210,8 +1211,8 @@ html body {
   gap: 0.5rem;
 }
 .info_bubble .description {
-  text-align: center;
   line-height: 1.2rem;
+  text-align: center;
 }
 
 .btn {

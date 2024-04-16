@@ -1234,9 +1234,9 @@ html {
             text-align: left;
         }
     }
-
     .description {
         font-size: var(--T_M);
+        text-wrap: balance;
     }
     .title {
         color: var(--TC);
@@ -1277,7 +1277,6 @@ html {
 .bio_bubble {
     top: 0;
     left: 0;
-
     overflow: hidden;
     .info {
         margin-top: 1rem;
@@ -1307,8 +1306,8 @@ html {
     padding: 1rem;
     gap: 0.5rem;
     .description {
-        text-align: center;
         line-height: 1.2rem;
+        text-align: center;
     }
 }
 .btn {
