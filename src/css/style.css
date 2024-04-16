@@ -233,7 +233,7 @@ html H1 {
 }
 html H2 {
   font-size: var(--FS_N);
-  color: var(--midGray);
+  color: var(--TC);
 }
 html H3 {
   font-size: var(--FS_N);
@@ -1362,10 +1362,10 @@ html body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 7rem;
   padding: 0 0.5rem;
   transition: var(--T_M);
   width: 7rem;
+  height: 7rem;
 }
 .logo_btn .johnK_icon_svg {
   width: auto;

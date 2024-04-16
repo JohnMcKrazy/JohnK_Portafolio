@@ -240,17 +240,15 @@ html {
     H1,
     H2 {
         text-align: center;
-
         font-weight: var(--FW_B);
     }
     H1 {
         color: var(--FC);
         font-size: var(--FS_L);
     }
-
     H2 {
         font-size: var(--FS_N);
-        color: var(--midGray);
+        color: var(--TC);
     }
     H3 {
         font-size: var(--FS_N);
@@ -1451,10 +1449,10 @@ html {
 }
 .logo_btn {
     @include flex(center, center);
-    height: 7rem;
     padding: 0 0.5rem;
     transition: var(--T_M);
     width: 7rem;
+    height: 7rem;
     //*LOGO COLORS START
     .johnK_icon_svg {
         width: auto;
@@ -2096,9 +2094,7 @@ html {
     @include flexCenter();
     .quote_container {
         @include flexDirection(row, center, center);
-
         height: 100%;
-
         .quote {
             font-size: var(--fontSizeXClamp);
             color: var(--TC);

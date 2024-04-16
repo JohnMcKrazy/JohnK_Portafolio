@@ -639,6 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuSocialContainer.style.flexDirection = "column";
 
             btnLogo.style.width = "7rem";
+            btnLogo.style.height = "7rem";
             menuBtnBars.forEach((bar) => (bar.style.height = "4px"));
 
             setTimeout(() => {
@@ -660,6 +661,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuSocialContainer.style.bottom = "2rem";
             menuSocialContainer.style.flexDirection = "column-reverse";
 
+            btnLogo.style.width = "5rem";
             btnLogo.style.width = "5rem";
 
             setTimeout(() => {
