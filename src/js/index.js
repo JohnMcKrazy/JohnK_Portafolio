@@ -662,7 +662,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menuSocialContainer.style.flexDirection = "column-reverse";
 
             btnLogo.style.width = "5rem";
-            btnLogo.style.width = "5rem";
+            btnLogo.style.height = "5rem";
 
             setTimeout(() => {
                 phoneMenu.style.top = "inherit";
