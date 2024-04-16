@@ -26,19 +26,6 @@
         }
     },
     {
-        "project_name": "Tribute To Kobe",
-        "db_name": "tribute",
-        "projects": {
-            "type": "dev",
-            "type_name": "Desarrollo",
-            "skills": ["Web"],
-            "info": "Página estatica en tributo a Kobe Bryant, Proyecto para certificación en 'Diseño Web Responsivo' para FreeCodeCamp, realizado con HTML y CSS",
-            "technologies": ["HTML", "CSS"],
-            "img": "./src/img/portfolio/tributo.webp",
-            "project_link": "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/"
-        }
-    },
-    {
         "project_name": "Tribute Page",
         "db_name": "first_tribute",
         "projects": {
@@ -49,6 +36,19 @@
             "technologies": ["HTML", "CSS"],
             "img": "./src/img/portfolio/tribute_borlaug.webp",
             "project_link": "https://johnmckrazy.github.io/First_Tribute_Page_FreeCodeCamp/"
+        }
+    },
+    {
+        "project_name": "Tribute To Kobe",
+        "db_name": "tribute",
+        "projects": {
+            "type": "dev",
+            "type_name": "Desarrollo",
+            "skills": ["Web"],
+            "info": "Página estatica en tributo a Kobe Bryant, Proyecto para certificación en 'Diseño Web Responsivo' para FreeCodeCamp, realizado con HTML y CSS",
+            "technologies": ["HTML", "CSS"],
+            "img": "./src/img/portfolio/tributo.webp",
+            "project_link": "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/"
         }
     },
     {

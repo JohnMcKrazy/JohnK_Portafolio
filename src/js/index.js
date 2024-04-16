@@ -1109,6 +1109,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const formResponseActions = (action, status = "", msg = "") => {
                 if (action === open) {
                     formResponseContainer.style.background = `var(--${status})`;
+                    if (status === "good") {
+                        form.reset();
+                    }
                     if (status === "warning") {
                         formResponse.style.color = "var(--blackOff)";
                     } else {
@@ -1158,7 +1161,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     formResponseActions(open, "danger", "Algo ah salido mal, por favor intentalo de nuevo");
                 })
                 .then(function () {
-                    form.reset();
                     setTimeout(() => {
                         formResponseActions(close);
                     }, 5000);

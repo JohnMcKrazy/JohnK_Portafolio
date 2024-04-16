@@ -225,6 +225,7 @@ html H4 {
 html H1,
 html H2 {
   text-align: center;
+  font-weight: var(--FW_B);
 }
 html H1 {
   color: var(--FC);
