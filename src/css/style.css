@@ -1254,7 +1254,7 @@ html body {
 }
 .btn_down h3 {
   /*  font-family: var(--titanimFont); */
-  font-weight: var(--FW-N);
+  font-weight: var(--FW_N);
 }
 .btn_down .arrow_down_svg {
   margin-top: 1rem;
@@ -1675,6 +1675,7 @@ html body {
 }
 .btn_active .label_btn {
   color: var(--TC_C) !important;
+  font-weight: var(--FW_B);
   animation: bounce 2s ease-in-out infinite;
 }
 .btn_active .icon_svg {
@@ -1724,7 +1725,7 @@ html body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-weight: var(--FW-N);
+  font-weight: var(--FW_N);
   font-size: 1.5rem;
 }
 
