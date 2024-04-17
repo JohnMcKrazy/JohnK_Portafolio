@@ -1541,7 +1541,7 @@ html {
     
 } */
 .service_card {
-    @include flexDirection(column, flex-start, flex-start);
+    @include flexDirection(column, center, center);
     .info_card {
         width: 100%;
         max-width: 400px;
