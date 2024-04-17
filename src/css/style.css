@@ -1465,7 +1465,7 @@ html body {
 .service_card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 .service_card .info_card {
