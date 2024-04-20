@@ -366,8 +366,9 @@ html {
         }
     }
 }
-.icon_svg {
-    transition: transform 1000ms ease-in-out;
+.light_theme,
+.dark_theme {
+    --btnGradient: linear-gradient(45deg, var(--FC), var(--SC));
 }
 .title_subsection {
     margin-bottom: 1rem;
@@ -670,7 +671,7 @@ html {
         fill: #94edad;
     }
     .desk_tablet_screen {
-        transition: fill 250ms ease-in-out;
+        transition: var(--T_UF);
         fill: rgb(3, 28, 53);
     }
     .desk_tablet:active,
@@ -714,7 +715,7 @@ html {
     }
     .icon_hide {
         transform: translateY(4rem);
-        transition: all 1000ms ease-in-out;
+        transition: var(--T_S);
     }
     .icon_show {
         opacity: 0.7;
@@ -722,14 +723,14 @@ html {
     }
     .screen_hide {
         opacity: 0;
-        transition: all 500ms ease;
+        transition: var(--T_M);
     }
     .screen_show {
         opacity: 1;
     }
     .desk_portfolio,
     .desk_ball {
-        transition: all 500ms ease;
+        transition: var(--T_M);
     }
 
     .desk_portfolio:hover {
@@ -1187,7 +1188,7 @@ html {
     color: var(--TC_C);
     font-size: var(--FS_L);
     padding: 1rem;
-    transition: var(--T_M);
+    transition: var(--T_F);
     translate: 0 -100%;
     z-index: 999;
 }
@@ -1200,9 +1201,7 @@ html {
     width: 100%;
     height: auto;
     user-select: none;
-    .icon_svg {
-        fill: var(--FC);
-    }
+    fill: var(--FC);
 }
 .bubble {
     @include flexDirection(column, center, center);
@@ -1212,7 +1211,7 @@ html {
     border-radius: 0.5rem;
     z-index: 2;
     display: none;
-    transition: all 250ms ease;
+    transition: var(--T_UF);
     user-select: none;
     max-width: 250px;
     width: 100%;
@@ -1315,12 +1314,12 @@ html {
     min-height: 4rem;
     width: 100%;
     color: var(--TC_C);
-    border: solid 2px var(--FC);
+    outline: solid 2px var(--FC);
     border-radius: 2rem;
     text-align: center;
     padding: 1rem 0.5rem;
     cursor: pointer;
-    transition: var(--T_F);
+    transition: var(--T_UF);
     .label_btn {
         color: var(--TC);
         font-weight: var(--FW_B);
@@ -1328,7 +1327,8 @@ html {
     &:hover,
     &:active,
     &:focus {
-        background: linear-gradient(45deg, var(--SC), var(--FC));
+        background: var(--btnGradient);
+        outline-color: transparent;
         .label_btn {
             color: var(--whiteOff);
         }
@@ -1343,7 +1343,6 @@ html {
     height: 6rem;
     opacity: var(--opacityBtn);
     color: var(--TC);
-    transition: var(--T-M);
     margin-top: 4rem;
     h3 {
         /*  font-family: var(--titanimFont); */
@@ -1353,7 +1352,7 @@ html {
         margin-top: 1rem;
         width: 2rem;
         animation: bounceDown 1s ease infinite;
-        transition: fill 500ms ease;
+        transition: var(--T_F);
     }
     &:hover .arrow_down_svg {
         fill: var(--FC);
@@ -1386,9 +1385,7 @@ html {
         background: var(--FC_H);
         color: var(--TC_C);
         .icon_container {
-            .icon_svg {
-                fill: var(--TC_C) !important;
-            }
+            fill: var(--TC_C) !important;
         }
     }
 }
@@ -1407,9 +1404,7 @@ html {
         background: var(--FC);
         fill: var(--TC_C);
         .icon_container {
-            .icon_svg {
-                fill: var(--TC_C);
-            }
+            fill: var(--TC_C);
         }
     }
 }
@@ -1428,22 +1423,20 @@ html {
         height: 100%;
         width: auto;
         padding: 0.5rem;
+        .cls-1 {
+            fill: var(--FC);
+        }
         .icon_svg {
             width: auto;
             height: 100%;
-            .cls-1 {
-                fill: var(--FC);
-            }
         }
     }
     &:hover {
         background: var(--FC_H);
         color: var(--TC_C);
-        .icon_svg {
-            .cls-2,
-            .cls-1 {
-                fill: var(--TC_C);
-            }
+        .cls-2,
+        .cls-1 {
+            fill: var(--TC_C);
         }
     }
 }
@@ -1505,41 +1498,12 @@ html {
     color: transparent;
     font-size: var(--FS_X);
 }
-.footer_social_btn:hover {
+.animated_social_btn:hover {
     animation: zoom 1s ease-in-out 2 forwards;
 }
 .social_btns_container {
     @include flexDirection(row, space-between, center);
 }
-/* .card {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    .bg_card {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: var(--T_S);
-        z-index: -1;
-        IMG {
-            display: block;
-            object-position: center;
-            width: auto;
-            height: 100%;
-        }
-    }
-    .info_card {
-        color: var(--TC);
-        padding: 1rem 1.5rem 2rem;
-        transition: var(--T_F);
-    }
-    btn{
-        color: var(--TC_C);
-    }
-    
-} */
 .service_card {
     @include flexDirection(column, flex-start, center);
     .info_card {
@@ -1550,12 +1514,10 @@ html {
             width: 100%;
             color: var(--TC);
             font-size: var(--FS_L);
-            transition: var(--T_M);
             margin-bottom: 1rem;
             text-align: left;
         }
         .info {
-            transition: var(--T_M);
             font-size: var(--FS_N);
             line-height: 1.6rem;
             text-wrap: balance;
@@ -1569,7 +1531,6 @@ html {
             height: 100%;
         }
     }
-
     .design_table {
         .cls-1 {
             fill: #0ac;
@@ -1636,7 +1597,6 @@ html {
 }
 .project_card {
     border-radius: 0.5rem;
-    transition: var(--T_F);
     background: var(--bgC_T);
     width: 100%;
     .card_content {
@@ -1683,11 +1643,6 @@ html {
                 height: 2.5rem;
             }
         }
-        .btn_container {
-            width: 100%;
-            padding: 0;
-            margin-top: 0.5rem;
-        }
     }
 }
 .hot_project_card {
@@ -1710,7 +1665,7 @@ html {
         transform: scale(0);
         background: var(--bgM);
         opacity: 0;
-        transition: var(--T_M);
+        transition: var(--T_F);
         border-radius: 0.5rem;
         @include flexDirection(column, space-between, center);
         padding: 1rem;
@@ -1736,6 +1691,7 @@ html {
     transform: translateY(4rem);
     transition: var(--T_M);
 }
+
 .btn_active {
     background: var(--FC) !important;
     color: var(--TC_C) !important;
@@ -1744,11 +1700,9 @@ html {
         font-weight: var(--FW_B);
         animation: bounce 2s ease-in-out infinite;
     }
-    .icon_svg {
-        fill: var(--TC_C) !important;
-        .cls-1 {
-            fill: var(--TC_C);
-        }
+    fill: var(--TC_C) !important;
+    .cls-1 {
+        fill: var(--TC_C);
     }
 }
 .content {
@@ -1757,37 +1711,8 @@ html {
     max-width: 90%;
     padding: 2rem 0;
 }
-.btns_container,
-.btn_container {
+.btns_container {
     padding-top: 1rem;
-}
-.loader_container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    @include flexDirection(column, center, center);
-    height: 100%;
-    width: 100%;
-    display: none;
-    .spinner_container {
-        transition: var(--T_S);
-        .loading_spinner {
-            display: inline-block;
-            border-radius: 50%;
-            border-bottom: dotted 0.5rem var(--FC);
-            width: 5rem;
-            height: 5rem;
-            animation: spin 2s ease infinite forwards;
-        }
-        .loading_text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-weight: var(--FW_N);
-            font-size: 1.5rem;
-        }
-    }
 }
 .input_container {
     width: 100%;
@@ -1831,12 +1756,6 @@ html {
             }
             .subtitle {
                 font-size: var(--FS_S);
-            }
-            .btn_container {
-                .btn {
-                    padding: 0.5rem;
-                    min-height: fit-content;
-                }
             }
         }
         .icons_project_container {
@@ -1901,10 +1820,8 @@ html {
     .list_btn:active,
     .list_btn:focus {
         color: var(--TC_C);
-        background: linear-gradient(45deg, var(--FC), var(--SC));
-        .icon_svg {
-            fill: var(--TC_C);
-        }
+        background: var(--btnGradient);
+        fill: var(--TC_C);
     }
     .search_list_btn {
         text-transform: uppercase;
@@ -1933,7 +1850,7 @@ html {
     .list_container {
         position: absolute;
         @include flexDirection(column, flex-start, center);
-        transition: all 100ms ease;
+        transition: var(--T_UF);
         display: none;
         bottom: 0;
         left: 0;
@@ -1955,7 +1872,7 @@ html {
     }
 
     .list_btn_active {
-        background: linear-gradient(45deg, var(--FC), var(--SC)) !important;
+        background: var(--btnGradient) !important;
         .label_btn {
             color: var(--whiteOff) !important;
         }
@@ -1972,7 +1889,7 @@ html {
         left: 50%;
         transform: translate(-50%, -50%);
         height: auto;
-        transition: all 500ms ease;
+        transition: var(--T_F);
         padding: 1rem;
         border-style: solid;
         border-width: 2px;
@@ -2041,18 +1958,13 @@ html {
 
     .alert_modal,
     .legal_modal {
-        .btn_container {
-            @include flex(center, center);
-            width: 100%;
-            height: auto;
+        .btn {
+            margin-top: 1rem;
         }
     }
     .alert_modal {
         .modal_info {
             text-align: center;
-            .btn_container {
-                padding: 0;
-            }
         }
     }
     .legal_modal {
@@ -2328,17 +2240,39 @@ html {
     }
 }
 .contact_section {
-    .form_container {
-        padding: 0 2rem;
-        width: 100%;
+    .bg_section {
+        background: var(--bgHeaderSectionContact);
     }
     .form {
         max-width: 800px;
         width: 100%;
-        margin: 0 auto;
+        H3 {
+            font-size: var(--FS_L);
+            text-align: center;
+        }
     }
-    .bg_section {
-        background: var(--bgHeaderSectionContact);
+    .whatsapp_btn {
+        @include flexDirection(row, center, center);
+        gap: 4rem;
+        padding: 1rem 2rem;
+        background: var(--NVC);
+        border-radius: 3rem;
+        margin-top: 2rem;
+        color: var(--TC);
+        .icon_container {
+            width: 3rem;
+            height: 3rem;
+            padding: 0.25rem;
+        }
+        &:hover {
+            color: var(--whiteOff);
+            background: var(--btnGradient);
+            .wa_icon_svg {
+                .cls-1 {
+                    fill: var(--whiteOff);
+                }
+            }
+        }
     }
 }
 .legals_section {
@@ -2346,7 +2280,7 @@ html {
     @include flex(center, center);
     margin: 0;
     .made_container {
-        @include flexDirection(column, flex-start, flex-end);
+        @include flexDirection(column, center, flex-end);
         .icons_container {
             @include flexDirection(row, flex-end, center);
             margin-top: 0.5rem;
@@ -2359,7 +2293,7 @@ html {
     }
     .social_btns_container {
         width: auto;
-        justify-content: center;
+        justify-content: flex-end;
     }
     .icon_container {
         width: 3rem;
@@ -2392,6 +2326,7 @@ html {
 }
 .portfolio_section {
     .portfolio_btn {
+        margin-top: 0.5rem;
         border-radius: 0 0 0.5rem 0.5rem;
         border-color: var(--SC);
     }
@@ -2461,9 +2396,7 @@ html {
 
     .icon_container:not(.logo_btn) {
         width: 3.5rem;
-        .icon_svg {
-            fill: var(--TC);
-        }
+        fill: var(--TC);
     }
     .nav_menu_controler {
         @include flexDirection(row, center, center);
@@ -2485,10 +2418,8 @@ html {
         }
 
         .theme_btn {
-            .icon_svg {
-                fill: var(--FC);
-            }
-            &:hover .icon_svg {
+            fill: var(--FC);
+            &:hover {
                 fill: var(--TC_C);
             }
         }
@@ -2509,7 +2440,6 @@ html {
     z-index: 6;
     transition: var(--T_M);
     overflow: hidden;
-    .btn_container,
     .extra_btns_container,
     .social_btns_container {
         width: 100%;
@@ -2532,10 +2462,8 @@ html {
         .phone_menu_btn {
             height: 100%;
             padding: 0.75rem;
-        }
-        .phone_menu_btn:hover {
-            .icon_social_container {
-                .icon_svg {
+            &:hover {
+                .icon_social_container {
                     fill: var(--TC);
                 }
             }
@@ -2555,6 +2483,7 @@ html {
     left: 2rem;
     min-height: 4rem;
     z-index: 4;
+    fill: var(--FC);
     /* overflow: hidden; */
     .menu_social_btns_container {
         @include flexDirection(column, center, center);
@@ -2568,9 +2497,6 @@ html {
         border-radius: 1rem;
     }
 
-    .icon_svg {
-        fill: var(--FC);
-    }
     .social_menu_btn {
         background: var(--NVC_T);
         overflow: hidden;
@@ -2584,11 +2510,9 @@ html {
         }
         &:hover .icon_container {
             background: var(--FC);
-            .icon_svg {
-                .cls-2,
-                .cls-1 {
-                    fill: var(--TC_C);
-                }
+            .cls-2,
+            .cls-1 {
+                fill: var(--TC_C);
             }
         }
     }
