@@ -1633,7 +1633,6 @@ html body {
 }
 .btn_active .label_btn {
   color: var(--TC_C) !important;
-  font-weight: var(--FW_B);
   animation: bounce 2s ease-in-out infinite;
 }
 .btn_active .cls-1 {
