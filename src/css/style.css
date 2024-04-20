@@ -2139,7 +2139,6 @@ html body {
 }
 .about_section .about_salute .about_text {
   font-size: var(--fontSizeMClamp);
-  /*  font-weight: var(--FW_B); */
   padding: 2rem;
 }
 
