@@ -350,11 +350,6 @@ html body {
   cursor: pointer;
 }
 
-.deskwork_icon {
-  /* .watch_num {
-      animation: blink 1s 0s infinite alternate;
-  } */
-}
 .deskwork_icon .cls-1 {
   fill: #7c7c7c;
 }
@@ -1920,7 +1915,8 @@ html body {
 }
 .modal .alert_modal .btn,
 .modal .legal_modal .btn {
-  margin-top: 1rem;
+  width: calc(100% - 1rem);
+  margin: 1rem 0.5rem;
 }
 .modal .alert_modal .modal_info {
   text-align: center;
@@ -1932,7 +1928,7 @@ html body {
   border-top: solid var(--FC) 4px;
   padding: 1rem 1rem 0 0;
 }
-.modal .legal_modal .modal_info .more_btn {
+.modal .legal_modal .modal_info .inner_link_btn {
   width: 100%;
 }
 .modal .contact_modal {

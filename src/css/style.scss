@@ -706,9 +706,6 @@ html {
     .cls-mid {
         fill: var(--midLight);
     }
-    /* .watch_num {
-        animation: blink 1s 0s infinite alternate;
-    } */
     .watch_mer,
     .icon_hide {
         opacity: 0;
@@ -1959,7 +1956,8 @@ html {
     .alert_modal,
     .legal_modal {
         .btn {
-            margin-top: 1rem;
+            width: calc(100% - 1rem);
+            margin: 1rem 0.5rem;
         }
     }
     .alert_modal {
@@ -1974,7 +1972,7 @@ html {
             padding-right: 1rem;
             border-top: solid var(--FC) 4px;
             padding: 1rem 1rem 0 0;
-            .more_btn {
+            .inner_link_btn {
                 width: 100%;
             }
         }
