@@ -244,19 +244,25 @@ html {
     }
     H1 {
         color: var(--FC);
+        font-weight: var(--FW_B);
         font-size: var(--FS_L);
     }
     H2 {
         font-size: var(--FS_N);
+        font-weight: var(--FW_B);
         color: var(--TC);
     }
     H3 {
         font-size: var(--FS_N);
+        font-weight: var(--FW_B);
     }
     P {
         font-size: var(--FS_N);
         color: var(--TC);
         text-wrap: pretty;
+    }
+    i {
+        font-style: italic;
     }
     scrollbar-color: var(--FC) var(--SC);
     scrollbar-width: thin;
@@ -1253,14 +1259,12 @@ html {
     .name {
         color: var(--FC);
         font-size: var(--FS_L);
-        font-weight: var(--FW_B);
         text-align: center;
     }
     .skill,
     .place {
         font-size: var(--FS_N);
         line-height: 1;
-        font-weight: 400;
         text-align: center;
         @include flexCenter();
         color: var(--TC);
@@ -1341,10 +1345,6 @@ html {
     opacity: var(--opacityBtn);
     color: var(--TC);
     margin-top: 4rem;
-    h3 {
-        /*  font-family: var(--titanimFont); */
-        font-weight: var(--FW_N);
-    }
     .arrow_down_svg {
         margin-top: 1rem;
         width: 2rem;
@@ -1620,7 +1620,6 @@ html {
             line-height: 1;
         }
         .subtitle {
-            font-weight: var(--FW_B);
             color: var(--TC);
         }
         .icons_project_container {
@@ -2041,11 +2040,12 @@ html {
             text-align: right;
         }
         .author {
-            font-size: var(--fontSizeMClamp);
-            color: var(--SC);
-            font-weight: var(--FW_B);
-            font-style: italic;
             margin-bottom: 0.5rem;
+            i {
+                font-size: var(--fontSizeMClamp);
+                color: var(--SC);
+                font-weight: var(--FW_B);
+            }
         }
         .author_info {
             color: var(--TC);
@@ -2163,7 +2163,7 @@ html {
         }
         .about_text {
             font-size: var(--fontSizeMClamp);
-            font-weight: var(--FW_B);
+            /*  font-weight: var(--FW_B); */
             padding: 2rem;
         }
     }

@@ -229,19 +229,25 @@ html H2 {
 }
 html H1 {
   color: var(--FC);
+  font-weight: var(--FW_B);
   font-size: var(--FS_L);
 }
 html H2 {
   font-size: var(--FS_N);
+  font-weight: var(--FW_B);
   color: var(--TC);
 }
 html H3 {
   font-size: var(--FS_N);
+  font-weight: var(--FW_B);
 }
 html P {
   font-size: var(--FS_N);
   color: var(--TC);
   text-wrap: pretty;
+}
+html i {
+  font-style: italic;
 }
 html body {
   margin: 0;
@@ -1156,14 +1162,12 @@ html body {
 .bubble .name {
   color: var(--FC);
   font-size: var(--FS_L);
-  font-weight: var(--FW_B);
   text-align: center;
 }
 .bubble .skill,
 .bubble .place {
   font-size: var(--FS_N);
   line-height: 1;
-  font-weight: 400;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -1245,10 +1249,6 @@ html body {
   opacity: var(--opacityBtn);
   color: var(--TC);
   margin-top: 4rem;
-}
-.btn_down h3 {
-  /*  font-family: var(--titanimFont); */
-  font-weight: var(--FW_N);
 }
 .btn_down .arrow_down_svg {
   margin-top: 1rem;
@@ -1541,7 +1541,6 @@ html body {
   line-height: 1;
 }
 .project_card .info_card .subtitle {
-  font-weight: var(--FW_B);
   color: var(--TC);
 }
 .project_card .info_card .icons_project_container {
@@ -2009,11 +2008,12 @@ html body {
   text-align: right;
 }
 .section_divider .author_container .author {
+  margin-bottom: 0.5rem;
+}
+.section_divider .author_container .author i {
   font-size: var(--fontSizeMClamp);
   color: var(--SC);
   font-weight: var(--FW_B);
-  font-style: italic;
-  margin-bottom: 0.5rem;
 }
 .section_divider .author_container .author_info {
   color: var(--TC);
@@ -2139,7 +2139,7 @@ html body {
 }
 .about_section .about_salute .about_text {
   font-size: var(--fontSizeMClamp);
-  font-weight: var(--FW_B);
+  /*  font-weight: var(--FW_B); */
   padding: 2rem;
 }
 
