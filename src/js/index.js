@@ -205,10 +205,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fragmentHotProjects = $d.createDocumentFragment();
     const fragmentPortfolioProjects = $d.createDocumentFragment();
-    const markersFragment = $d.createDocumentFragment();
-    const listBtnsFragment = $d.createDocumentFragment();
-    const cardProjectTemplate = selector("#card_project_template").content;
-    const miniCardProjectTemplate = selector("#mini_card_project_template").content;
+    const certificationsFragment = $d.createDocumentFragment();
+    const cardProjectTemplate = selector(".card_project_template").content;
+    const miniCardProjectTemplate = selector(".mini_card_project_template").content;
+    const certificationTemplate = selector(".certification_template").content;
 
     const loadersContainers = selectorAll(".loader_container");
     const loaderSearchCardsContainer = selector("#loader_cards_hot_container");
@@ -263,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
         div.textContent = inputValue;
         return div.innerHTML;
     };
+
     const changeTheme = (tm) => {
         const BODY = selector("body");
         const lightT = "light_theme";
@@ -305,6 +306,25 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // ! FETCH DATA //
     let fetchData = [];
+    let certificationsData = [
+        { name: "Responsive Web Design", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },
+        { name: "Legacy - JavaScript Algoritms and Data Structures", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
+        { name: "Front-End Development Libraries", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
+        { name: "Data Visualization", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
+        { name: "Scientific Computing With Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
+    ];
+    certificationsData.forEach((certification) => {
+        const certificationClone = certificationTemplate.cloneNode(true);
+        const certificationBadge = certificationClone.querySelector(".certification_badge");
+        const certificationImg = certificationClone.querySelector(".badge_image");
+        const certificationBtn = certificationClone.querySelector(".btn");
+        console.log(certification.image);
+        certificationImg.setAttribute("src", certification.image);
+        certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification.name}' emitido por FreeCodeCamp`);
+        certificationClone.querySelector(".badge_name").textContent = certification.name;
+        certificationBtn.setAttribute("href", certification.link);
+        selector(".certification_container").appendChild(certificationBadge);
+    });
     const fetchProjectsData = async () => {
         try {
             const raw = await fetch(portfolioData);

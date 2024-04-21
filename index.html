@@ -4703,53 +4703,7 @@
                     </div>
                 </div>
                 <h2 class="subtitle_section">Certificaciones</h2>
-                <div class="icons_container certifications_icons_container">
-                    <div class="badge certification_badge">
-                        <div>
-                            <img class="image" src="./src/img/certifications/responsive_web_design.webp" alt="Imagen de Certificado en `Diseño Web Responsivo` emitido por FreeCodeCamp" loading="lazy" />
-                            <h3 class="badge_name">Responsive Web Design</h3>
-                        </div>
-                        <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" aria-label="">
-                            <span class="label_btn">Ir A Enlace</span>
-                        </a>
-                    </div>
-                    <div class="badge certification_badge">
-                        <div>
-                            <img class="image" src="./src/img/certifications/legacy_js.webp" alt="Imagen de Certificado en `Algoritmos Javascript y Estructura` de Datos emitido por FreeCodeCamp" loading="lazy" />
-                            <h3 class="badge_name">Legacy - JavaScript Algoritms and Data Structures</h3>
-                        </div>
-                        <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" aria-label="">
-                            <span class="label_btn">Ir A Enlace</span>
-                        </a>
-                    </div>
-                    <div class="badge certification_badge">
-                        <div>
-                            <img class="image" src="./src/img/certifications/frontend_development_libraries.webp" alt="Imagen de Certificado en `Front-End Development Libraries` emitido por FreeCodeCamp" loading="lazy" />
-                            <h3 class="badge_name">Front-End Development Libraries</h3>
-                        </div>
-                        <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" aria-label="">
-                            <span class="label_btn">Ir A Enlace</span>
-                        </a>
-                    </div>
-                    <div class="badge certification_badge">
-                        <div>
-                            <img class="image" src="./src/img/certifications/data_visualization.webp" alt="Imagen de Certificado en `Visualización De Datos` emitido por FreeCodeCamp" loading="lazy" />
-                            <h3 class="badge_name">Data Visualization</h3>
-                        </div>
-                        <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/data-visualization" aria-label="">
-                            <span class="label_btn">Ir A Enlace</span>
-                        </a>
-                    </div>
-                    <div class="badge certification_badge">
-                        <div>
-                            <img class="image" src="./src/img/certifications/scientific_computing_python.webp" alt="Imagen de Certificado en `Computación Cientifica Con Python` emitido por FreeCodeCamp" loading="lazy" />
-                            <h3 class="badge_name">Scientific Computing With Python</h3>
-                        </div>
-                        <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" aria-label="">
-                            <span class="label_btn">Ir A Enlace</span>
-                        </a>
-                    </div>
-                </div>
+                <div class="icons_container certification_container"></div>
             </div>
         </section>
         <div class="section_divider">
@@ -5970,7 +5924,7 @@
         </footer>
     </body>
     <!--^^TEAMPLATES-->
-    <template id="card_project_template">
+    <template class="card_project_template">
         <article class="project_card hot_project_card" id="">
             <div class="card_content">
                 <img class="img_card" src="" aria-label="" loading="lazy" height="360" />
@@ -5985,7 +5939,7 @@
             </a>
         </article>
     </template>
-    <template id="mini_card_project_template">
+    <template class="mini_card_project_template">
         <article class="project_card mini_project_card" id="" tabindex="0">
             <div class="card_content">
                 <h1 class="title"></h1>
@@ -6003,5 +5957,16 @@
         <button type="button" class="list_btn extra_list_btn" tabindex="0">
             <span class="label_btn"></span>
         </button>
+    </template>
+    <template class="certification_template">
+        <div class="badge certification_badge">
+            <div>
+                <img class="badge_image" src="" alt="" loading="lazy" />
+                <h3 class="badge_name">Responsive Web Design</h3>
+            </div>
+            <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" aria-label="">
+                <span class="label_btn">Ir A Enlace</span>
+            </a>
+        </div>
     </template>
 </html>
