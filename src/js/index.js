@@ -289,13 +289,10 @@ document.addEventListener("DOMContentLoaded", () => {
         certificationBtn.setAttribute("href", certification.link);
         selector(".certification_container").appendChild(certificationBadge);
     });
-    console.log(infoSoftware.length);
     infoSoftware.forEach((software) => {
-        console.log(software);
         const clone = skillTemplate.cloneNode(true);
         const badge = clone.querySelector(".skill_badge");
         badge.setAttribute("data-name", software.db_name);
-        console.log(badge);
         badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
         if (software.type === "design") {
             selector(".design_skills_container").querySelector(".icons_container").appendChild(badge);
@@ -456,7 +453,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             storageContent["page_view_count"] += 1;
             localStorage.setItem(storageName, JSON.stringify(storageContent));
-            console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`);
+            /* console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`); */
         }
 
         if (currentTheme === "dark_theme") {
@@ -465,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
             watchMerPM.style.opacity = 1;
         }
         BODY.className = currentTheme;
-        console.log(storageContent);
+        /* console.log(storageContent); */
     };
     //^ANIMATION ITEM SWIPE
     const swipingAnimation = () => {
@@ -1217,7 +1214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let perfEntries = list.getEntries();
         let lastEntry = perfEntries[perfEntries.length - 1];
         // Process the latest candidate for largest contentful paint
-        console.log(lastEntry);
+        /*  console.log(lastEntry); */
     });
     observer.observe({ entryTypes: ["largest-contentful-paint"] });
 });
