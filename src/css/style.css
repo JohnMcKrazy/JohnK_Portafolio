@@ -1682,14 +1682,14 @@ html body {
 }
 
 .cards_portfolio_container {
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 8fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 8fr));
   justify-content: center;
   gap: 0.5rem;
   overflow-y: auto;
   padding-top: 0.5rem;
 }
 .cards_portfolio_container .project_card {
-  height: 10rem;
+  height: 20rem;
 }
 .cards_portfolio_container .project_card .info_card .title {
   font-size: var(--FS_N);
