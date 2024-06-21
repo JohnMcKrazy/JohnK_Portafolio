@@ -152,10 +152,6 @@
     opacity: 0;
   }
 }
-:root {
-  --white: rgb(215, 215, 215);
-}
-
 html {
   font-size: 12px;
   line-break: loose;
@@ -1336,10 +1332,11 @@ body {
   border-radius: 0.5rem;
   color: var(--TC);
   font-weight: var(--FW_B);
+  font-size: var(--FS_N);
   transition: var(--T_UF);
 }
 .more_btn:hover {
-  color: var(--white);
+  color: var(--whiteOff);
 }
 
 .link_btn {
@@ -2171,9 +2168,12 @@ body {
   margin-top: 0.5rem;
 }
 
+.skills_section {
+  --iconD: 6rem;
+}
 .skills_section .icon_container {
-  height: 6rem;
-  width: 6rem;
+  height: var(--iconD);
+  width: var(--iconD);
 }
 
 .services_container {
@@ -2250,14 +2250,8 @@ body {
 .legals_section {
   background: var(--NVC);
 }
-.legals_section .footer_content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-}
+.legals_section .footer_content,
 .legals_section .lebels_container {
-  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -2289,6 +2283,9 @@ body {
 }
 .legals_section .made_content .btns_container :not(:first-child) {
   margin-left: 2rem;
+}
+.legals_section .made_content .label_btn {
+  font-size: var(--FS_S);
 }
 
 .portfolio_section .portfolio_btn {
