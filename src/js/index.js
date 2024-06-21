@@ -226,7 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const fragmentHotProjects = $d.createDocumentFragment();
     const fragmentPortfolioProjects = $d.createDocumentFragment();
     const cardProjectTemplate = selector(".card_project_template").content;
-    const miniCardProjectTemplate = selector(".mini_card_project_template").content;
     const certificationTemplate = selector(".certification_template").content;
     const skillTemplate = selector(".skill_badge_template").content;
 
@@ -516,34 +515,8 @@ document.addEventListener("DOMContentLoaded", () => {
             cardsObserver.observe(card);
         });
     };
-    const createMiniCard = (item, frac) => {
-        let iconsRow = "";
-        const cloneProjectCard = miniCardProjectTemplate.cloneNode(true);
-        const projectCard = cloneProjectCard.querySelector(".project_card");
-        const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
-        const cardTitle = cloneProjectCard.querySelector(".title");
-        const innerBtn = cloneProjectCard.querySelector(".btn");
-        //* ******************************************************************************** *//
-        const clientName = item["project_name"];
-        const cardImg = item["projects"]["img"];
-        projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
-        projectCard.style.backgroundImage = `url(${cardImg})`;
-        const clientTechnologiesInProjects = item["projects"]["technologies"];
-        clientTechnologiesInProjects.forEach((tech) => {
-            /* console.log(tech); */
-            infoSoftware.forEach((technology) => {
-                if (technology.tech_name === tech) {
-                    iconsRow += technology.icon;
-                }
-            });
-        });
-        projectCardIconsContainer.innerHTML = iconsRow;
-        cardTitle.textContent = clientName;
 
-        innerBtn.setAttribute("href", `${item["projects"]["project_link"]}`);
-        frac.appendChild(projectCard);
-    };
-    const createCard = (item, frac) => {
+    const createCard = (item, frac, extraClass = "") => {
         let iconsRow = "";
         const cloneProjectCard = cardProjectTemplate.cloneNode(true);
         const projectCard = cloneProjectCard.querySelector(".project_card");
@@ -555,9 +528,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
         const cardDescription = item["projects"]["info"];
+        if (extraClass === "") {
+            projectCard.className += ` ${extraClass}`;
+        }
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         imgCard.setAttribute("src", cardImg);
         imgCard.setAttribute("alt", cardDescription);
+
         const clientTechnologiesInProjects = item["projects"]["technologies"];
         clientTechnologiesInProjects.forEach((tech) => {
             /* console.log(tech); */
@@ -736,7 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
         filterHotData.forEach((item) => {
-            createCard(item, fragmentHotProjects);
+            createCard(item, fragmentHotProjects, "card_up");
         });
         selector(".cards_hot_container").appendChild(fragmentHotProjects);
         setTimeout(() => {
@@ -766,7 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         currentProjectDetails.push(skill);
                     }
                 });
-                createMiniCard(data, fragmentPortfolioProjects);
+                createCard(data, fragmentPortfolioProjects);
             });
             currentProjectDetails.forEach((detail) => {
                 createExtraListbtn(detail);
@@ -800,7 +777,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             extraDataToCheck.forEach((extraData) => {
-                createMiniCard(extraData, fragmentPortfolioProjects);
+                createCard(extraData, fragmentPortfolioProjects);
             });
             portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
         };
@@ -833,7 +810,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 extraListContainer.appendChild(fragmentBtns);
                 dataToCheck.forEach((data) => {
-                    createMiniCard(data, fragmentPortfolioProjects);
+                    createCard(data, fragmentPortfolioProjects);
                 });
                 portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
                 selectorAll(".extra_list_btn").forEach((btn) => {
