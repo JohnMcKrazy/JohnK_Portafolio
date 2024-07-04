@@ -291,6 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
     infoSoftware.forEach((software) => {
         const clone = skillTemplate.cloneNode(true);
         const badge = clone.querySelector(".skill_badge");
+        badge.id = `skill_badge_${software.db_name}`;
         badge.setAttribute("data-name", software.db_name);
         badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
         if (software.type === "design") {
@@ -1178,6 +1179,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 bubbleInfo.style.display = none;
             });
         });
+        swipingAnimation;
     }, 250);
     btnLogo.addEventListener("click", toTheTop);
     window.addEventListener("scroll", () => {

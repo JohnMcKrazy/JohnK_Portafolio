@@ -1632,6 +1632,16 @@ body {
   transition: var(--T_M);
 }
 
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.open_modal {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
 .btn_active {
   background: var(--FC) !important;
   color: var(--TC_C) !important;
