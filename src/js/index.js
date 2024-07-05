@@ -1179,7 +1179,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 bubbleInfo.style.display = none;
             });
         });
-        swipingAnimation;
     }, 250);
     btnLogo.addEventListener("click", toTheTop);
     window.addEventListener("scroll", () => {

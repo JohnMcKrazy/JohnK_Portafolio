@@ -455,6 +455,19 @@
         }
     },
     {
+        "project_name": "Wolverine Criogenia",
+        "db_name": "wolverine",
+        "projects": {
+            "type": "illustration",
+            "type_name": "Ilustración",
+            "skills": ["Ilustración Digital"],
+            "info": "",
+            "technologies": ["Ilustracion Tradicional", "Illustrator"],
+            "img": "./src/img/portfolio/wolverine.webp",
+            "project_link": "https://www.behance.net/gallery/101899841/Ilustracion"
+        }
+    },
+    {
         "project_name": "Joker",
         "db_name": "joker_tradicional",
         "projects": {
