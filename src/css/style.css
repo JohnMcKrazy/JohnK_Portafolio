@@ -2362,6 +2362,9 @@ body {
 .legals_section .made_content .label_btn {
   font-size: var(--FS_S);
 }
+.legals_section .btns_container {
+  justify-content: flex-start;
+}
 
 .portfolio_section .portfolio_btn {
   margin-top: 0.5rem;

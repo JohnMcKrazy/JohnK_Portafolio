@@ -2348,6 +2348,9 @@ body {
             font-size: var(--FS_S);
         }
     }
+    .btns_container {
+        justify-content: flex-start;
+    }
 }
 .portfolio_section {
     .portfolio_btn {

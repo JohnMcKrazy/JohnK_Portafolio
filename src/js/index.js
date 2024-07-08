@@ -24,11 +24,11 @@ const portfolioData = "./portfolioDB.json";
 const storageName = "JohnK_Maker";
 let fetchData = [];
 let certificationsData = [
-    { name: "Responsive Web Design", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },
-    { name: "Legacy - JavaScript Algoritms and Data Structures", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
-    { name: "Front-End Development Libraries", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
-    { name: "Data Visualization", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
-    { name: "Scientific Computing With Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
+    { name_en: "Responsive Web Design", name_es: "Diseño Web Responsivo", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },
+    { name_en: "Legacy - JavaScript Algoritms and Data Structures", name_es: "JavaScript Algoritmos y Estructura de Datos - Legado", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
+    { name_en: "Front-End Development Libraries", name_es: "Librerias de Desarrollo Front-End", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
+    { name_en: "Data Visualization", name_es: "Visualización de Datos", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
+    { name_en: "Scientific Computing With Python", name_es: "Computacion Cientifica con Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
 ];
 const hotCardsSelection = ["js_documentation", "tribute", "pokedex", "black_jack", "verona", "afroduck", "smuffs", "mitos_y_leyendas", "berserkers", "creaciones_hermed", "we_are_disney", "navidad_2024"];
 const infoSoftware = [
@@ -229,29 +229,6 @@ const portfolioListContainer = selector(".portfolio_list_btns_container");
 const searchExtraListBtn = selector(".search_extra_list_btn");
 const extraListContainer = selector(".extra_list_btns_container");
 // UTILS FUNCTIONS
-certificationsData.forEach((certification) => {
-    const certificationClone = certificationTemplate.cloneNode(true);
-    const certificationBadge = certificationClone.querySelector(".certification_badge");
-    const certificationImg = certificationClone.querySelector(".badge_image");
-    const certificationBtn = certificationClone.querySelector(".btn");
-    certificationImg.setAttribute("src", certification.image);
-    certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification.name}' emitido por FreeCodeCamp`);
-    certificationClone.querySelector(".badge_name").textContent = certification.name;
-    certificationBtn.setAttribute("href", certification.link);
-    selector(".certification_container").appendChild(certificationBadge);
-});
-infoSoftware.forEach((software) => {
-    const clone = skillTemplate.cloneNode(true);
-    const badge = clone.querySelector(".skill_badge");
-    badge.id = `skill_badge_${software.db_name}`;
-    badge.setAttribute("data-name", software.db_name);
-    badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
-    if (software.type === "design") {
-        selector(".design_skills_container").querySelector(".icons_container").appendChild(badge);
-    } else if (software.type === "dev") {
-        selector(".dev_skills_container").querySelector(".icons_container").appendChild(badge);
-    }
-});
 
 const sanitizeInput = (inputValue) => {
     const div = document.createElement("div");
@@ -314,6 +291,30 @@ const deleteArrElements = (parentElement) => {
         });
     }
 };
+
+certificationsData.forEach((certification) => {
+    const certificationClone = certificationTemplate.cloneNode(true);
+    const certificationBadge = certificationClone.querySelector(".certification_badge");
+    const certificationImg = certificationClone.querySelector(".badge_image");
+    const certificationBtn = certificationClone.querySelector(".btn");
+    certificationImg.setAttribute("src", certification.image);
+    certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[`name_${currentLang}`]}' emitido por FreeCodeCamp`);
+    certificationClone.querySelector(".badge_name").textContent = certification[`name_${currentLang}`];
+    certificationBtn.setAttribute("href", certification.link);
+    selector(".certification_container").appendChild(certificationBadge);
+});
+infoSoftware.forEach((software) => {
+    const clone = skillTemplate.cloneNode(true);
+    const badge = clone.querySelector(".skill_badge");
+    badge.id = `skill_badge_${software.db_name}`;
+    badge.setAttribute("data-name", software.db_name);
+    badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
+    if (software.type === "design") {
+        selector(".design_skills_container").querySelector(".icons_container").appendChild(badge);
+    } else if (software.type === "dev") {
+        selector(".dev_skills_container").querySelector(".icons_container").appendChild(badge);
+    }
+});
 
 // ! FETCH DATA //
 
@@ -495,6 +496,7 @@ const createCard = (item, frac, extraClass = "") => {
     const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
     const cardTitle = cloneProjectCard.querySelector(".title");
     const innerBtn = cloneProjectCard.querySelector(".btn");
+    const makeText = cloneProjectCard.querySelector("H3");
     //* ******************************************************************************** *//
 
     const clientName = item["project_name"];
@@ -520,6 +522,7 @@ const createCard = (item, frac, extraClass = "") => {
     cardTitle.textContent = clientName;
     innerBtn.setAttribute("href", `${item["projects"]["project_link"]}`);
     innerBtn.textContent = innerBtn.getAttribute(`data-${currentLang}`);
+    makeText.textContent = makeText.getAttribute(`data-${currentLang}`);
     frac.appendChild(projectCard);
 };
 
