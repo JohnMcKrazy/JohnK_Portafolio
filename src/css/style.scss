@@ -40,12 +40,38 @@
     --lightray: rgb(191, 191, 191);
     --midGray: rgb(128, 128, 128);
     --darkGray: rgb(64, 64, 64);
+    --black: rgb(26, 26, 26);
     --blackOff: rgb(38, 38, 38);
-    --whiteOff: rgb(217, 217, 217);
+    --white: rgb(245, 245, 245);
+    --whiteT: rgb(245, 245, 245, 0.7);
+    --whiteOff: rgb(230, 230, 230);
     --midLight: rgb(128, 128, 128);
     --warning: rgb(218, 165, 32);
     --danger: rgb(178, 34, 34);
     --good: rgb(34, 139, 34);
+
+    --logoPurple1: rgb(46, 10, 117);
+    --logoPurple2: rgb(142, 89, 250);
+    --logoMint1: #18e3c1;
+    --logoMint2: #1a8288;
+    /*  */
+
+    --TC: var(--black);
+    --TC_C: var(--whiteOff);
+    --NVC: var(--white);
+    --NVC_T: rgba(242, 242, 242, 0.75);
+    --bgC: var(--whiteOff);
+    --bgC_T: var(--whiteT);
+    --bgC_UT: rgba(242, 242, 242, 0.25);
+    --bgC_C: var(--black);
+    --bgC_C_T: rgba(26, 26, 26, 0.15);
+    --BS_SB: rgba(0, 0, 0, 0.1);
+    --bgOff: rgb(204, 204, 204);
+    --bgM: rgba(230, 230, 230, 0.75);
+    --vueIconText: rgb(51, 51, 51);
+
+    /*  */
+
     --FS_XS: 0.8rem;
     --FS_S: 1rem;
     --FS_N: 1.4rem;
@@ -283,9 +309,9 @@ body {
 }
 //!THEMES START
 .light_theme {
-    --FC: rgb(46, 10, 117);
-    --FC_H: rgb(27, 6, 71);
-    --SC: rgb(66, 196, 240);
+    --FC: var(--logoPurple1);
+    --SC: var(--logoMint1);
+    --FC_H: var(--SC);
     --SC_H: rgb(45, 161, 200);
     --TC: rgb(26, 26, 26);
     --TC_C: rgb(230, 230, 230);
@@ -326,8 +352,10 @@ body {
 }
 .dark_theme {
     --FC: rgb(0, 170, 204);
-    --FC_H: rgb(102, 230, 255);
     --SC: rgb(97, 97, 209);
+    --FC: #18e3c1;
+    --SC: #1a8288;
+    --FC_H: var(--SC);
     --SC_H: rgb(46, 46, 158);
     --TC: rgb(230, 230, 230);
     --TC_C: rgb(26, 26, 26);
@@ -363,6 +391,7 @@ body {
         }
     }
 }
+
 .light_theme,
 .dark_theme {
     --btnGradient: linear-gradient(45deg, var(--FC), var(--SC));
@@ -703,11 +732,13 @@ body {
     .cls-mid {
         fill: var(--midLight);
     }
-    .watch_mer,
+    .watch_mer {
+        opacity: 0;
+        transition: all 500ms ease;
+    }
+
     .icon_hide {
         opacity: 0;
-    }
-    .icon_hide {
         transform: translateY(4rem);
         transition: var(--T_S);
     }
@@ -743,6 +774,26 @@ body {
     }
     .svg_btn {
         cursor: crosshair;
+    }
+}
+.dark_theme {
+    .watch_am {
+        display: none;
+        opacity: 0;
+    }
+    .watch_pm {
+        display: block;
+        opacity: 1;
+    }
+}
+.light_theme {
+    .watch_pm {
+        display: none;
+        opacity: 0;
+    }
+    .watch_am {
+        display: block;
+        opacity: 1;
     }
 }
 .desk_icon_container {
@@ -1200,7 +1251,6 @@ body {
 .bubble {
     @include flex(column, center, center);
     position: absolute;
-    opacity: 0;
     background: var(--NVC);
     border-radius: 0.5rem;
     z-index: 2;
@@ -1364,6 +1414,10 @@ body {
 .nav_btn {
     height: 100%;
     color: var(--TC);
+    .label_btn {
+        font-weight: 600;
+        width: fit-content;
+    }
     @include flex(row, center, center);
     .icon_svg {
         height: 100%;
@@ -1439,27 +1493,73 @@ body {
         }
     }
 }
+.menu_btn {
+    @include flex(row, center, center);
+    width: auto;
+    height: 100%;
+    color: var(--TC);
+    margin-right: 3rem;
+    .btn_construction {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        .bar {
+            position: absolute;
+            height: 4px;
+            background: var(--FC);
+            left: 50%;
+            transform: translateX(-50%);
+            transition: var(--T_M);
+            border-radius: 0.25rem;
+        }
+        .top_bar {
+            top: 0.5rem;
+        }
+        .bottom_bar {
+            bottom: 0.5rem;
+        }
+        .center_bar {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bottom_bar,
+        .top_bar {
+            width: 4rem;
+        }
+        .center_bar {
+            width: 6rem;
+        }
+    }
+    &:hover {
+        .bottom_bar,
+        .top_bar,
+        .center_bar {
+            width: 3rem;
+        }
+    }
+}
 .logo_btn {
     @include flex(row, center, center);
     padding: 0 0.5rem;
     transition: var(--T_M);
-    width: 7rem;
-    height: 7rem;
+    width: fit-content;
+    height: 6rem;
     //*LOGO COLORS START
-    .johnK_icon_svg {
+    .johnK_full,
+    .johnK_icon {
         width: auto;
         height: 100%;
-
-        .cls-1 {
-            fill: var(--SC);
+        .braket {
+            fill: #cdcccc;
         }
-        .cls-2 {
+        .letter {
             fill: var(--FC);
         }
-        .cls-3 {
-            fill: var(--logoGray);
+        .dot {
+            fill: var(--SC);
         }
     }
+
     //*LOGO LOGO OVER
 
     &:hover,
@@ -1662,37 +1762,6 @@ body {
     }
 }
 
-.animation_up {
-    position: relative;
-    z-index: -1;
-}
-.animation_up,
-.card_up {
-    opacity: 0;
-    transform: translateY(4rem);
-    transition: var(--T_M);
-}
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-.open_modal {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-}
-
-.btn_active {
-    background: var(--FC) !important;
-    color: var(--TC_C) !important;
-    .label_btn {
-        color: var(--TC_C) !important;
-        animation: bounce 2s ease-in-out infinite;
-    }
-    fill: var(--TC_C) !important;
-    .cls-1 {
-        fill: var(--TC_C);
-    }
-}
 .content {
     min-width: 250px;
     width: 1600px;
@@ -1700,6 +1769,7 @@ body {
     padding: 2rem 0;
 }
 .btns_container {
+    @include flex(row, center, center);
     padding-top: 1rem;
 }
 .input_container {
@@ -1881,6 +1951,24 @@ body {
         width: calc(100% - 6rem);
     }
 }
+.modal_window {
+    position: absolute;
+    @include flex(column, flex-start, flex-start);
+    top: 2rem;
+    left: 50%;
+    width: 90%;
+    max-width: 720px;
+    height: fit-content;
+    background: var(--NVC);
+    padding: 4rem 2rem 2rem;
+    transition: var(--T_M);
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    max-height: calc(100svh - 4rem);
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+}
 .modal {
     position: fixed;
     width: 100%;
@@ -1892,24 +1980,7 @@ body {
     transition: var(--T_F);
     display: none;
     opacity: 0;
-    .modal_window {
-        position: absolute;
-        @include flex(column, flex-start, flex-start);
-        top: 2rem;
-        left: 50%;
-        width: 90%;
-        max-width: 720px;
-        height: fit-content;
-        background: var(--NVC);
-        padding: 4rem 2rem 2rem;
-        transition: var(--T_M);
-        transform: translate(-50%, -50%);
-        border-radius: 1rem;
-        max-height: calc(100svh - 4rem);
-        overflow: hidden;
-        display: none;
-        opacity: 0;
-    }
+
     .modal_info {
         width: 100%;
         height: fit-content;
@@ -2085,10 +2156,6 @@ body {
         }
     }
     .btns_container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         gap: 2.5rem;
         margin-top: 2rem;
         width: 100%;
@@ -2306,98 +2373,63 @@ body {
         @include flex(row, space-between, center);
         height: 100%;
     }
-    .menu_btn {
-        @include flex(row, center, center);
-        width: auto;
-        height: 100%;
-        color: var(--TC);
-        margin-right: 3rem;
-        .btn_construction {
-            position: relative;
-            width: 3rem;
-            height: 3rem;
-            .bar {
-                position: absolute;
-                height: 4px;
-                background: var(--FC);
-                left: 50%;
-                transform: translateX(-50%);
-                transition: var(--T_M);
-                border-radius: 0.25rem;
-            }
-            .top_bar {
-                top: 0.5rem;
-            }
-            .bottom_bar {
-                bottom: 0.5rem;
-            }
-            .center_bar {
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-            .bottom_bar,
-            .top_bar {
-                width: 4rem;
-            }
-            .center_bar {
-                width: 6rem;
-            }
-        }
-    }
-    .menu_btn:hover {
-        .bottom_bar,
-        .top_bar,
-        .center_bar {
-            width: 3rem;
-        }
-    }
 
     .icon_container:not(.logo_btn) {
         width: 3.5rem;
         fill: var(--TC);
     }
-    .nav_menu_controler {
-        @include flex(row, center, center);
-        .btn_container,
-        .nav_menu_link_btns,
-        .nav_menu_icon_svg {
-            width: auto;
-            height: 100%;
-        }
-        height: 100%;
-
-        .nav_menu_link_btns {
-            @include flex(row, center, center);
-        }
-
-        .nav_btn {
-            height: 100%;
-            padding: 0 1rem;
-        }
-
-        .theme_btn {
-            fill: var(--FC);
-            &:hover {
-                fill: var(--TC_C);
-            }
+    .btn_active {
+        .icon_btn {
+            fill: var(--TC_C);
         }
     }
 }
+.nav_menu_controler {
+    @include flex(row, center, center);
+    .btn_container,
+    .nav_menu_link_btns,
+    .nav_menu_icon_svg {
+        width: auto;
+        height: 100%;
+    }
+
+    height: 100%;
+
+    .nav_menu_link_btns {
+        @include flex(row, center, center);
+    }
+
+    .nav_btn {
+        padding: 0 1rem;
+    }
+
+    .theme_btn {
+        fill: var(--FC);
+        &:hover {
+            fill: var(--TC_C);
+        }
+    }
+    display: none;
+}
 .phone_menu_controler {
+    --menuPosition: 0;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
-    opacity: 0;
     border-radius: 0.5rem 0.5rem 0 0;
     @include flex(column, center, center);
-    display: none;
+
     height: auto;
     width: 100%;
     background: var(--NVC);
     z-index: 6;
     transition: var(--T_M);
+    transform: var(--menuPosition);
     overflow: hidden;
+
+    opacity: 0;
+    display: none;
     .extra_btns_container,
     .social_btns_container {
         width: 100%;
@@ -2436,6 +2468,7 @@ body {
     }
 }
 .menu_social_container {
+    @include flex(column, center, center);
     position: fixed;
     bottom: 4rem;
     left: 2rem;
@@ -2444,10 +2477,7 @@ body {
     fill: var(--FC);
     /* overflow: hidden; */
     .menu_social_btns_container {
-        @include flex(column, center, center);
-        display: none;
         height: auto;
-        opacity: 0;
         transition: var(--T_F);
         margin: 1.5rem 0;
         gap: 1rem;
@@ -2473,6 +2503,85 @@ body {
                 fill: var(--TC_C);
             }
         }
+    }
+}
+
+/* ! */
+
+.menu_social_btns_container {
+    @include flex(column, center, center);
+
+    display: none;
+    opacity: 0;
+}
+.animation_up {
+    position: relative;
+    z-index: -1;
+}
+.animation_up:nth-of-type(2) {
+    transition-delay: 100ms;
+}
+.animation_up:nth-of-type(3) {
+    transition-delay: 200ms;
+}
+.animation_up:nth-of-type(4) {
+    transition-delay: 300ms;
+}
+.animation_up:nth-of-type(5) {
+    transition-delay: 400ms;
+}
+.animation_up:nth-of-type(6) {
+    transition-delay: 500ms;
+}
+.animation_up:nth-of-type(7) {
+    transition-delay: 600ms;
+}
+.animation_up:nth-of-type(8) {
+    transition-delay: 700ms;
+}
+.animation_up:nth-of-type(9) {
+    transition-delay: 800ms;
+}
+.animation_up,
+.card_up {
+    opacity: 0;
+    transform: translateY(4rem);
+    transition: var(--T_M);
+}
+.show_flex {
+    display: flex;
+}
+.show_opacity {
+    opacity: 1;
+}
+.show_card {
+    transform: translateY(0);
+    opacity: 1;
+}
+.show_menu {
+    transform: translateY(0);
+}
+.modal_open {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+.open_modal {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.btn_active {
+    background: var(--FC);
+    color: var(--TC_C);
+    .label_btn {
+        color: var(--TC_C);
+    }
+    .label_btn,
+    .icon_btn {
+        animation: bounce 2s ease-in-out infinite;
+    }
+    .cls-1 {
+        fill: var(--TC_C);
     }
 }
 @media screen and (min-width: 767px) {
@@ -2510,6 +2619,23 @@ body {
     .flex_responsive {
         flex-direction: row;
     }
+    .menu_btn {
+        display: none;
+    }
+    .phone_menu_controler {
+        display: none;
+    }
+    .nav_menu_controler {
+        display: flex;
+    }
+    .nav_btn {
+        .icon_btn {
+            display: flex;
+        }
+        .label_btn:not(.label_lang) {
+            display: none;
+        }
+    }
 }
 @media screen and (min-width: 1185px) {
     .cards_hot_container {
@@ -2521,6 +2647,14 @@ body {
         }
         .project_card:nth-of-type(3n) {
             display: none;
+        }
+    }
+    .nav_btn {
+        .icon_btn {
+            display: none;
+        }
+        .label_btn:not(.label_lang) {
+            display: flex;
         }
     }
 }
