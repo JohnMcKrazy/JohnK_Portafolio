@@ -2484,6 +2484,9 @@ body {
 .nav_menu_controler .theme_btn:hover {
   fill: var(--TC_C);
 }
+.nav_menu_controler .label_btn {
+  display: none;
+}
 
 .phone_menu_controler {
   --menuPosition: 0;
@@ -2745,11 +2748,17 @@ body {
   .nav_menu_controler {
     display: flex;
   }
-  .nav_btn .label_btn:not(.label_lang) {
+  .nav_btn .icon_btn {
     display: flex;
   }
 }
 @media screen and (min-width: 1185px) {
+  .nav_btn .label_btn:not(.label_lang) {
+    display: flex;
+  }
+  .nav_btn .icon_btn {
+    display: none;
+  }
   .cards_hot_container .project_card:nth-of-type(4n) {
     display: flex;
   }

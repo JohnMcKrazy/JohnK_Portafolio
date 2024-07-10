@@ -2458,6 +2458,9 @@ body {
             fill: var(--TC_C);
         }
     }
+    .label_btn {
+        display: none;
+    }
     display: none;
 }
 .phone_menu_controler {
@@ -2698,12 +2701,20 @@ body {
         display: flex;
     }
     .nav_btn {
-        .label_btn:not(.label_lang) {
+        .icon_btn {
             display: flex;
         }
     }
 }
 @media screen and (min-width: 1185px) {
+    .nav_btn {
+        .label_btn:not(.label_lang) {
+            display: flex;
+        }
+        .icon_btn {
+            display: none;
+        }
+    }
     .cards_hot_container {
         .project_card:nth-of-type(4n) {
             display: flex;

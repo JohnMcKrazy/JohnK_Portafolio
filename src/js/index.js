@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             currentLang = en;
         }
     };
+    const bubbleInfo = selector(".info_bubble");
     const setAssets = () => {
         utils.infoSoftware.forEach((software) => {
             const clone = skillTemplate.cloneNode(true);
@@ -76,6 +77,23 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (software.type === "dev") {
                 selectors.devSkillsContainer.querySelector(".icons_container").appendChild(badge);
             }
+            setTimeout(() => {
+                badge.addEventListener("mouseover", (e) => {
+                    const newData = utils.infoSoftware.find((item) => item.db_name === badge.getAttribute("data-name"));
+                    bubbleInfo.querySelector(".title").textContent = newData.tech_complete_name;
+                    bubbleInfo.querySelector(".description").textContent = newData[`tech_info_${currentLang}`];
+                    bubbleInfo.classList.add("show_flex");
+                    const containerWidth = selectors.bubbleInfo.getClientRects()[0].width;
+                    bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
+                });
+                badge.addEventListener(
+                    "mouseleave",
+                    () => {
+                        bubbleInfo.classList.remove("show_flex");
+                    },
+                    250
+                );
+            });
         });
         utils.certificationsData.forEach((certification) => {
             const certificationClone = certificationTemplate.cloneNode(true);
@@ -99,26 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             setLang();
-            selectors.skillBadges.forEach((badge) => {
-                badge.addEventListener("mouseover", (e) => {
-                    const newData = utils.infoSoftware.filter((item) => item.db_name === badge.getAttribute("data-name"));
-                    selectors.bubbleInfo.querySelector(".title").textContent = newData[0].tech_complete_name;
-                    selectors.bubbleInfo.querySelector(".description").textContent = newData[0].tech_info;
-                    selectors.bubbleInfo.classList.add("show_flex");
-                    const containerWidth = selectors.bubbleInfo.getClientRects()[0].width;
-                    selectors.bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
-                });
-                badge.addEventListener("mouseleave", () => {
-                    selectors.bubbleInfo.classList.remove("show_flex");
-                });
-            });
+
             selectors.cardsHotContainer.querySelectorAll(".project_card").forEach((card) => {
                 card.classList.add("card_up");
-                setTimeout(swipingAnimation, 250);
             });
             setTimeout(() => {
+                swipingAnimation();
                 selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
                 selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
+
                 selectors.langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
             }, 250);
         }, 250);
@@ -673,30 +680,67 @@ document.addEventListener("DOMContentLoaded", () => {
     selectors.illustrationRex.addEventListener("mouseleave", () => {
         selectors.bubbleRex.classList.remove("show_flex");
     });
+
+    const devIconsActions = (action) => {
+        if (action === open) {
+            selectors.devIcons.forEach((icon) => {
+                icon.classList.add("icon_show");
+            });
+            selectors.shieldScreen.classList.remove("screen_hide");
+            selectors.devTabletScreen.classList.remove("screen_hide");
+            setTimeout(() => selectors.devScreen.classList.remove("screen_hide"), 250);
+        } else {
+            selectors.devIcons.forEach((icon) => {
+                icon.classList.remove("icon_show");
+            });
+            selectors.devScreen.classList.add("screen_hide");
+
+            selectors.devTabletScreen.classList.add("screen_hide");
+            setTimeout(() => selectors.shieldScreen.classList.add("screen_hide"), 250);
+        }
+    };
+    const illustrationIconsActions = (action) => {
+        if (action === open) {
+            selectors.illustrationIcons.forEach((icon) => {
+                icon.classList.add("icon_show");
+            });
+            selectors.illustrationScreen.classList.remove("screen_hide");
+            selectors.illustrationTabletScreen.classList.remove("screen_hide");
+        } else {
+            selectors.illustrationIcons.forEach((icon) => {
+                icon.classList.remove("icon_show");
+            });
+            selectors.illustrationScreen.classList.add("screen_hide");
+            selectors.illustrationTabletScreen.classList.add("screen_hide");
+        }
+    };
+    const designIconsActions = (action) => {
+        if (action === open) {
+            selectors.designIcons.forEach((icon) => {
+                icon.classList.add("icon_show");
+            });
+            selectors.designScreen.classList.remove("screen_hide");
+            selectors.designTabletScreen.classList.remove("screen_hide");
+        } else {
+            selectors.designIcons.forEach((icon) => {
+                icon.classList.remove("icon_show");
+            });
+            selectors.designScreen.classList.add("screen_hide");
+            selectors.designTabletScreen.classList.add("screen_hide");
+        }
+    };
+
     selectors.animationKeys.forEach((key) => {
         key.addEventListener("mouseover", () => {
             switch (key.getAttribute("data-key")) {
                 case "dev":
-                    selectors.devIcons.forEach((icon) => {
-                        icon.classList.add("icon_show");
-                    });
-                    selectors.shieldScreen.classList.remove("screen_hide");
-                    selectors.devTabletScreen.classList.remove("screen_hide");
-                    setTimeout(() => selectors.devScreen.classList.remove("screen_hide"), 250);
+                    devIconsActions(open);
                     break;
                 case "illustration":
-                    selectors.illustrationIcons.forEach((icon) => {
-                        icon.classList.add("icon_show");
-                    });
-                    selectors.illustrationScreen.classList.remove("screen_hide");
-                    selectors.illustrationTabletScreen.classList.remove("screen_hide");
+                    illustrationIconsActions(open);
                     break;
                 case "design":
-                    selectors.designIcons.forEach((icon) => {
-                        icon.classList.add("icon_show");
-                    });
-                    selectors.designScreen.classList.remove("screen_hide");
-                    selectors.designTabletScreen.classList.remove("screen_hide");
+                    designIconsActions(open);
                     break;
             }
 
@@ -706,27 +750,13 @@ document.addEventListener("DOMContentLoaded", () => {
         key.addEventListener("mouseleave", () => {
             switch (key.getAttribute("data-key")) {
                 case "dev":
-                    selectors.devIcons.forEach((icon) => {
-                        icon.classList.remove("icon_show");
-                    });
-                    selectors.devScreen.classList.add("screen_hide");
-
-                    selectors.devTabletScreen.classList.add("screen_hide");
-                    setTimeout(() => selectors.shieldScreen.classList.add("screen_hide"), 250);
+                    devIconsActions(close);
                     break;
                 case "illustration":
-                    selectors.illustrationIcons.forEach((icon) => {
-                        icon.classList.remove("icon_show");
-                    });
-                    selectors.illustrationScreen.classList.add("screen_hide");
-                    selectors.illustrationTabletScreen.classList.add("screen_hide");
+                    illustrationIconsActions(close);
                     break;
                 case "design":
-                    selectors.designIcons.forEach((icon) => {
-                        icon.classList.remove("icon_show");
-                    });
-                    selectors.designScreen.classList.add("screen_hide");
-                    selectors.designTabletScreen.classList.add("screen_hide");
+                    designIconsActions(close);
                     break;
             }
             selectors.tabletScreen.classList.remove("tablet_screen_on");
