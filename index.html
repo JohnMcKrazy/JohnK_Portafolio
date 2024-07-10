@@ -12,6 +12,8 @@
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
+        <script type="module" charset="utf-8" src="./src/js/utils.js" defer></script>
+        <script type="module" charset="utf-8" src="./src/js/selectors.js" defer></script>
         <script type="module" charset="utf-8" src="./src/js/index.js" defer></script>
         <link rel="icon" type="image/svg" href="./src/img/personal_logos/johnK_tab_icon.svg" />
         <link rel="image_src" href="./src/img/desk.png" />
@@ -23,15 +25,15 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="bubble info_bubble">
-            <h3 class="title">Tecnologia</h3>
-            <p class="description">descripcion de la tecnologia, mejor detallada para que parezca un texto bien redactado.</p>
+            <h3 class="title" data-change></h3>
+            <p class="description" data-change></p>
         </div>
         <div class="bubble bio_bubble">
             <div class="header_bubble"></div>
             <img class="photo" src="./src/img/photos/johnKPhoto.webp" alt="Foto de Jonathan Grajeda" loading="lazy" />
             <div class="info">
                 <h3 class="name">Jonathan Grajeda</h3>
-                <p class="place">México CDMX</p>
+                <p class="place" data-change data-es="México CDMX" data-en="Mexico City">México CDMX</p>
                 <div class="icons_container">
                     <a href="https://www.behance.net/jg_john_design" class="icon_container animated_social_btn">
                         <svg class="icon_svg social_icon_svg behance_icon_svg" data-name="behance_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
@@ -75,25 +77,25 @@
             <img class="photo" src="./src/img/photos/rex.webp" alt="Foto de Maximo Decimo Reximiliano" loading="lazy" />
             <div class="info">
                 <h3 class="name">Maximo Décimo Reximiliano</h3>
-                <p class="place">México CDMX</p>
+                <p class="place" data-change data-es="México CDMX" data-en="Mexico City">México CDMX</p>
             </div>
         </div>
         <!-- ! ACCESIBILITE BUTTONS - START -->
-        <button type="button" class="accessibility_btn" aria-label="Skip to main content - Salta a contenido principal" name="services_section"><span class="label_btn">Saltar A Contenido Principal</span></button>
-        <button type="button" class="accessibility_btn" aria-label="Skip to footer - Salta al pie de pagina" name="legals_section"><span class="label_btn">Saltar al pie de pagina</span></button>
+        <button type="button" class="accessibility_btn" aria-label="Skip to main content - Salta a contenido principal" name="services_section"><span class="label_btn" data-change data-es="Saltar A Contenido Principal" data-en="Go To Main">Saltar A Contenido Principal</span></button>
+        <button type="button" class="accessibility_btn" aria-label="Skip to footer - Salta al pie de pagina" name="legals_section"><span class="label_btn" data-change data-es="Saltar al pie de pagina" data-en="Go To Footer">Saltar al pie de pagina</span></button>
 
         <!-- !MODAL -->
         <div class="modal">
             <div class="modal_window alert_modal" id="alert_modal">
-                <div class="modal_header"><h1 class="title_modal">Aviso de uso de datos</h1></div>
+                <div class="modal_header"><h1 class="title_modal" data-change data-es="Politica de uso de datos" data-en="Data use policy">Politica de uso de datos</h1></div>
                 <div class="modal_info">
-                    <p class="description_modal">Esta pagina no utiliza cookies ni ninguno de sus datos</p>
+                    <p class="description_modal" data-change data-es="Esta pagina no utiliza cookies ni ninguno de sus datos" data-en="This page not make use of cookies and neither other of your data">Esta pagina no utiliza cookies ni ninguno de sus datos</p>
                     <button type="button" class="inner_link_btn" data-current="alert_modal" data-next="legal_modal">
-                        <span class="label_btn">Avisos legales</span>
+                        <span class="label_btn" data-change data-es="Avisos legales" data-en="Legal notices ">Avisos legales</span>
                     </button>
                 </div>
                 <button type="button" class="btn more_btn alert_modal_accept_btn storage_accept">
-                    <span class="label_btn">Aceptar</span>
+                    <span class="label_btn" data-change data-es="Aceptar" data-en="Accept">Aceptar</span>
                 </button>
                 <button type="button" class="close_btn close_modal" id="alert_modal_storage_close_btn" data-name="alert_modal">
                     <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
@@ -105,44 +107,80 @@
             </div>
             <div class="modal_window legal_modal" id="legal_modal">
                 <div class="modal_header">
-                    <h1 class="title_modal">Aviso Legal</h1>
-                    <h2>Términos y Condiciones de Uso:</h2>
+                    <h1 class="title_modal" data-change data-es="Avisos legales" data-en="Legal notices ">Aviso Legal</h1>
+                    <h2 data-change data-es="Términos y Condiciones:" data-en="Terms and conditions:">Términos y Condiciones:</h2>
                 </div>
                 <div class="modal_info modal_info_legal">
-                    <h3>Uso del Sitio Web:</h3>
-                    <p>Al acceder y utilizar este sitio web, usted acepta cumplir con estos términos y condiciones de uso. Si no está de acuerdo con alguno de estos términos, por favor absténgase de utilizar este sitio.</p>
-                    <br />
-                    <h3>Propiedad Intelectual:</h3>
-                    <p>
-                        Todos los derechos de propiedad intelectual sobre los diseños, ilustraciones, desarrollos web y demás contenido presentado en este sitio web son propiedad exclusiva del titular del sitio, a menos que se indique lo contrario. Queda estrictamente prohibida la reproducción,
-                        distribución o modificación de dicho contenido sin el consentimiento expreso del titular.
+                    <h3 data-change data-es="Uso del Sitio Web:" data-en="Use of the Website:">Uso del Sitio Web:</h3>
+                    <p
+                        data-change
+                        data-es="Al acceder y utilizar este sitio web, usted acepta cumplir con estos términos y condiciones de uso. Si no está de acuerdo con alguno de estos términos, por favor absténgase de utilizar este sitio."
+                        data-en="By accessing and using this website, you agree to comply with these terms and conditions of use. If you do not agree with any of these terms, please refrain from using this site."
+                    >
+                        Al acceder y utilizar este sitio web, usted acepta cumplir con estos términos y condiciones de uso. Si no está de acuerdo con alguno de estos términos, por favor absténgase de utilizar este sitio.
                     </p>
                     <br />
-                    <h3>Contacto y Servicios:</h3>
-                    <p>
+                    <h3 data-change data-es="Propiedad Intelectual:" data-en="Intellectual Property:">Propiedad Intelectual:</h3>
+                    <p
+                        data-change
+                        data-es="Todos los derechos de propiedad intelectual sobre los diseños, ilustraciones, desarrollos web y demás contenido presentado en este sitio web son propiedad exclusiva del titular del sitio, a menos que se indique lo contrario. Queda estrictamente prohibida la reproducción,distribución o modificación de dicho contenido sin el consentimiento expreso del titular."
+                        data-en="All intellectual property rights in the designs, illustrations, web developments and other content presented on this website are the exclusive property of the site owner, unless otherwise indicated. The reproduction, distribution or modification of said content is strictly prohibited without the express consent of the owner."
+                    >
+                        Todos los derechos de propiedad intelectual sobre los diseños, ilustraciones, desarrollos web y demás contenido presentado en este sitio web son propiedad exclusiva del titular del sitio, a menos que se indique lo contrario. Queda estrictamente prohibida la
+                        reproducción,distribución o modificación de dicho contenido sin el consentimiento expreso del titular.
+                    </p>
+                    <br />
+                    <h3 data-change data-es="Contacto y Servicios:" data-en="Contact and Services:">Contacto y Servicios:</h3>
+                    <p
+                        data-change
+                        data-es="Este sitio web proporciona información sobre los trabajos realizados por el titular y ofrece la posibilidad de contactarlo para solicitar sus servicios como diseñador, ilustrador y desarrollador web. Cualquier acuerdo o contratación de servicios se regirá por acuerdos separados entre el titular y el cliente."
+                        data-en="This website provides information about the work carried out by the owner and offers the possibility of contacting him to request his services as a designer, illustrator and web developer. Any agreement or contracting of services will be governed by agreements separated between the owner and the client."
+                    >
                         Este sitio web proporciona información sobre los trabajos realizados por el titular y ofrece la posibilidad de contactarlo para solicitar sus servicios como diseñador, ilustrador y desarrollador web. Cualquier acuerdo o contratación de servicios se regirá por acuerdos
                         separados entre el titular y el cliente.
                     </p>
                     <br />
-                    <h3>Enlaces a Terceros:</h3>
-                    <p>
+                    <h3 data-change data-es="Enlaces a Terceros:" data-en="Third Party Links:">Enlaces a Terceros:</h3>
+                    <p
+                        data-change
+                        data-es="Este sitio web puede contener enlaces a otros sitios web de terceros que son proporcionados únicamente como referencia. El titular del sitio no tiene control sobre el contenido o las políticas de privacidad de estos sitios y no se hace responsable por su contenido o prácticas."
+                        data-en="This website may contain links to other third party websites which are provided for your reference only. The site owner has no control over the content or privacy policies of these sites and is not responsible for their content or practices."
+                    >
                         Este sitio web puede contener enlaces a otros sitios web de terceros que son proporcionados únicamente como referencia. El titular del sitio no tiene control sobre el contenido o las políticas de privacidad de estos sitios y no se hace responsable por su contenido o
                         prácticas.
                     </p>
                     <br />
-                    <h3>Limitación de Responsabilidad:</h3>
-                    <p>El titular del sitio no será responsable de ningún daño directo, indirecto, incidental, especial, emergente o punitivo que surja del uso o la incapacidad de utilizar este sitio web.</p>
+                    <h3 data-change data-es="Limitación de Responsabilidades:" data-en="Liability Limitations:">Limitación de Responsabilidades:</h3>
+                    <p
+                        data-change
+                        data-es="El titular del sitio no será responsable de ningún daño directo, indirecto, incidental, especial, emergente o punitivo que surja del uso o la incapacidad de utilizar este sitio web."
+                        data-en="The owner of the site will not be liable for any direct, indirect, incidental, special, consequential or punitive damages arising from the use or inability to use this website."
+                    >
+                        El titular del sitio no será responsable de ningún daño directo, indirecto, incidental, especial, emergente o punitivo que surja del uso o la incapacidad de utilizar este sitio web.
+                    </p>
                     <br />
-                    <h3>Modificaciones:</h3>
-                    <p>El titular del sitio se reserva el derecho de modificar, suspender o discontinuar cualquier aspecto de este sitio web en cualquier momento y sin previo aviso.</p>
+                    <h3 data-change data-es="Modificaciones:" data-en="Modifications:">Modificaciones:</h3>
+                    <p
+                        data-change
+                        data-es="El titular del sitio se reserva el derecho de modificar, suspender o discontinuar cualquier aspecto de este sitio web en cualquier momento y sin previo aviso."
+                        data-en="The owner of the site reserves the right to modify, suspend or discontinue any aspect of this website at any time and without prior notice."
+                    >
+                        El titular del sitio se reserva el derecho de modificar, suspender o discontinuar cualquier aspecto de este sitio web en cualquier momento y sin previo aviso.
+                    </p>
                     <br />
-                    <h3>Jurisdicción y Ley Aplicable:</h3>
-                    <p>Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de la Ciudad de México y cualquier disputa que surja en relación con estos términos y condiciones estará sujeta a la jurisdicción exclusiva de los tribunales de México.</p>
+                    <h3 data-change data-es="Jurisdicción y Ley Aplicable:" data-en="Jurisdiction and Applicable Law:">Jurisdicción y Ley Aplicable:</h3>
+                    <p
+                        data-change
+                        data-es="Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de la Ciudad de México y cualquier disputa que surja en relación con estos términos y condiciones estará sujeta a la jurisdicción exclusiva de los tribunales de México."
+                        data-en="These terms and conditions will be governed by and construed in accordance with the laws of Mexico City and any dispute arising in connection with these terms and conditions will be subject to the exclusive jurisdiction of the courts of Mexico."
+                    >
+                        Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de la Ciudad de México y cualquier disputa que surja en relación con estos términos y condiciones estará sujeta a la jurisdicción exclusiva de los tribunales de México.
+                    </p>
                     <button type="button" class="inner_link_btn" data-current="legal_modal" data-next="alert_modal">
-                        <span class="label_btn">Avisos De Datos</span>
+                        <span class="label_btn" data-change data-es="Avisos De Datos" data-en="Data Use Policy">Avisos De Datos</span>
                     </button>
                     <button type="button" class="btn more_btn legal_modal_accept_btn">
-                        <span class="label_btn">Aceptar</span>
+                        <span class="label_btn" data-change data-es="Aceptar" data-en="Accept">Aceptar</span>
                     </button>
                 </div>
 
@@ -156,37 +194,39 @@
             </div>
             <div class="modal_window contact_modal" id="contact_modal">
                 <div class="modal_header">
-                    <h1 class="title_modal" data-change data-es="Como Puedo Ayudarte?" data-en="How Can I Help You?"></h1>
+                    <h1 class="title_modal" data-change data-es="¿Como Puedo Ayudarte?" data-en="How Can I Help You?">¿Como Puedo Ayudarte?</h1>
                 </div>
                 <div class="modal_info" id="modal_info_contact_form">
-                    <p class="description_modal">Estoy ansioso de hacer proyectos interesantes con tus ideas</p>
+                    <p class="description_modal" data-change data-es="Estoy ansioso de hacer proyectos interesantes con tus ideas" data-en="I'm looking forward to doing interesting projects with your ideas.">Estoy ansioso de hacer proyectos interesantes con tus ideas</p>
                 </div>
                 <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit">
                     <div class="input_container">
-                        <label for="modal_input_name">Nombre/s</label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" />
+                        <label for="modal_input_name" data-change data-es="Nombre" data-en="Name">Nombre</label>
+                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" data-change-input data-es="Escribe tu Nombre" data-en="Write your name" />
                     </div>
 
                     <div class="input_container">
-                        <label for="modal_input_last_name">Apellidos</label>
-                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" />
+                        <label for="modal_input_last_name" data-change data-es="Apellidos" data-en="Lastname">Apellido</label>
+                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" data-change-input data-es="Escribe tu Apellido" data-en="Write your Last Name" />
                     </div>
 
                     <div class="input_container">
                         <label for="modal_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" />
+                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Email" />
                     </div>
 
                     <div class="input_container last">
-                        <label for="modal_input_textarea">Descripción</label>
-                        <textarea placeholder="Comparte me un resumen de tu idea" id="modal_input_textarea" name="description" class="input_description"></textarea>
+                        <label for="modal_input_textarea" data-change data-es="Descripción" data-en="Description">Descripción</label>
+                        <textarea placeholder="Comparte me un resumen de tu idea" id="modal_input_textarea" name="description" class="input_description" data-change-input data-es="Comparteme tu idea" data-en="Share me your idea"></textarea>
                     </div>
                     <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
-                    <button type="submit" class="btn send_btn" id="modal_contact_form_send_btn" data-form="modal_form">
-                        <span class="label_btn">Enviar</span>
-                    </button>
+                    <div class="submit_container">
+                        <button type="submit" class="btn send_btn" id="modal_contact_form_send_btn" data-form="modal_form">
+                            <span class="label_btn" data-change data-es="Enviar" data-en="Send">Enviar</span>
+                        </button>
+                    </div>
                     <div class="form_response_container">
-                        <p class="form_response">Respuesta promedio solo para probar</p>
+                        <p class="form_response" data-change></p>
                     </div>
                 </form>
                 <button type="button" class="close_btn close_modal" id="modal_form_close_btn" data-name="contact_modal">
@@ -208,29 +248,29 @@
                 <div class="lists_container">
                     <div class="list_btns_container">
                         <button class="search_list_btn search_portfolio_list_btn list_btn_active" data-name="Todo" tabindex="0">
-                            <span class="label_btn">Todo</span>
+                            <span class="label_btn" data-change data-es="Todo" data-en="Todo">Todo</span>
                             <span class="icon_container">
                                 <svg class="icon_svg arrow_list_icon arrow_portfolio_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                             </span>
                         </button>
                         <div class="list_container portfolio_list_btns_container">
                             <button class="list_btn list_portfolio_btn first_list_btn" data-name="Todo" tabindex="0">
-                                <span class="label_btn">Todo</span>
+                                <span class="label_btn" data-change data-es="Todo" data-en="Todo">Todo</span>
                             </button>
                             <button class="list_btn list_portfolio_btn" data-name="Diseño" tabindex="0">
-                                <span class="label_btn">Diseño</span>
+                                <span class="label_btn" data-change data-es="Diseño" data-en="Design">Diseño</span>
                             </button>
                             <button class="list_btn list_portfolio_btn" data-name="Desarrollo" tabindex="0">
-                                <span class="label_btn">Desarrollo</span>
+                                <span class="label_btn" data-change data-es="Programación" data-en="Programming">Desarrollo</span>
                             </button>
                             <button class="list_btn list_portfolio_btn" data-name="Ilustración" tabindex="0">
-                                <span class="label_btn">Ilustración</span>
+                                <span class="label_btn" data-change data-es="Ilustración" data-en="Illustration">Ilustración</span>
                             </button>
                         </div>
                     </div>
                     <div class="list_btns_container">
-                        <button class="search_list_btn search_extra_list_btn list_btn_active" data-name="Todo" tabindex="0">
-                            <span class="label_btn">Todo</span>
+                        <button class="search_list_btn search_extra_list_btn" data-name="Todo" tabindex="0">
+                            <span class="label_btn" data-change data-es="Todo" data-en="Todo">Todo</span>
                             <span class="icon_container">
                                 <svg class="icon_svg arrow_list_icon arrow_extra_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                             </span>
@@ -619,11 +659,11 @@
             <div class="bg_section"></div>
             <div class="section_content content flex flex_responsive">
                 <div class="about_salute">
-                    <div class="swipe_animation_container_half">
+                    <div class="swipe_animation_container_full">
                         <h1 class="title_salute animation_up" id="title_salute" data-change data-es="Hola, soy" data-en="Hi, I'm"></h1>
                     </div>
 
-                    <div class="swipe_animation_container_half">
+                    <div class="swipe_animation_container_full">
                         <h2 class="title_name animation_up" id="title_name">Jonathan Grajeda<span class="title_effect">_</span></h2>
                     </div>
                     <p class="about_text">
@@ -636,7 +676,7 @@
                     </p>
                 </div>
 
-                <div class="desk_icon_container">
+                <div class="swipe_animation_illustration desk_icon_container">
                     <!-- ! DESK ICON START -->
                     <svg class="deskwork_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
                         <g class="desk_floor">
@@ -4634,7 +4674,7 @@
                     <div class="icons_container swipe_animation_container_half" data-ref="dev"></div>
                 </div>
                 <h2 class="subtitle_section" data-change data-es="Certificaciones" data-en="Certifications"></h2>
-                <div class="icons_container certification_container"></div>
+                <div class="icons_container certification_container swipe_animation_container_half"></div>
             </div>
         </section>
         <div class="section_divider">
@@ -4647,7 +4687,9 @@
                             </svg>
                         </span>
                     </span>
-                    <q class="quote" data-change data-es="No es acerca de cuantas horas entrenas, es acerca de cuantas horas tu mente está presente en el entrenamiento" data-en="It's not about how many hours you train, it's about how many hours your mind is present in training."></q>
+                    <q class="quote" data-change data-es="No es acerca de cuantas horas entrenas, es acerca de cuantas horas tu mente está presente en el entrenamiento" data-en="It's not about how many hours you train, it's about how many hours your mind is present in training.">
+                        No es acerca de cuantas horas entrenas, es acerca de cuantas horas tu mente está presente en el entrenamiento
+                    </q>
                     <span class="quote_icon quote_end">
                         <span class="icon_container">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -4658,7 +4700,7 @@
                 </div>
                 <figcaption class="author_container">
                     <span class="author"><i>Kobe Bryant</i></span>
-                    <span class="author_info" data-change data-es="Ex Campeon De La NBA" data-en="NBA Former Champeion"></span>
+                    <span class="author_info" data-change data-es="Ex Campeon De La NBA" data-en="NBA Former Champeion">Ex Campeon De La NBA</span>
                 </figcaption>
             </figure>
         </div>
@@ -4666,46 +4708,71 @@
             <div class="section_content content">
                 <!--~~TITLE SECTION-->
                 <div class="swipe_animation_container_full">
-                    <h1 class="title_section animation_up" id="title_services" data-change data-es="Servicios" data-en="Services"></h1>
+                    <h1 class="title_section animation_up" id="title_services" data-change data-es="Servicios" data-en="Services">Servicios</h1>
                 </div>
 
-                <div class="cards_service_container">
-                    <article class="card service_card graphic_design_service_card">
-                        <div class="bg_card graphic_design_service_bg">
-                            <img src="https://images.pexels.com/photos/1601773/pexels-photo-1601773.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
-                        </div>
-                        <div class="info_card">
-                            <h2 class="project-tile" data-change data-es="Diseño Gráfico" data-en="Graphic Design"></h2>
-                            <p class="info">Mi enfoque en el diseño gráfico se basa en la funcionalidad y la estética para transformar conceptos en imágenes efectivas. Mi trabajo se centra en transmitir el mensaje de manera clara y visualmente atractiva.</p>
-                        </div>
-                    </article>
-                    <article class="card service_card web_service_card">
-                        <div class="bg_card web_service_bg">
-                            <img src="https://images.pexels.com/photos/285814/pexels-photo-285814.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
-                        </div>
-                        <div class="info_card">
-                            <h2 class="project-tile" data-change data-es="Desarrollo Front-End" data-en="Front-End Devlopment"></h2>
-                            <p class="info">Dentro del desarrollo de programación, darle estilo y formato a las ideas es algo que me apaciona.</p>
-                        </div>
-                    </article>
-                    <article class="card service_card e_commers_service_card">
-                        <div class="bg_card e-commers_service_bg">
-                            <img src="https://images.pexels.com/photos/7620629/pexels-photo-7620629.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" class="not" loading="lazy" />
-                        </div>
-                        <div class="info_card">
-                            <h2 class="project-tile">E-Commers</h2>
-                            <p class="info">Si tu negocio tiene venta de productos, una gran herramienta seria una tienda en linea, puedo realizarte una tienda diseñada a tu gusto usando las mejores tecnologias.</p>
-                        </div>
-                    </article>
-                    <article class="card service_card UX_UI_service_card">
-                        <div class="bg_card UX-UI_service_bg">
-                            <img src="https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
-                        </div>
-                        <div class="info_card info_service_card">
-                            <h2 class="project-tile">UX/UI</h2>
-                            <p class="info">La creación de pagina web es importante, asi como es importante darle al usuario una buena experiencia, facilidad de uso, y que tu contenido sea mejor visto por tus clientes.</p>
-                        </div>
-                    </article>
+                <div class="grid_container">
+                    <div class="cards_service_container">
+                        <article class="card service_card graphic_design_service_card card_up">
+                            <div class="bg_card graphic_design_service_bg">
+                                <img src="https://images.pexels.com/photos/1601773/pexels-photo-1601773.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
+                            </div>
+                            <div class="info_card">
+                                <h2 class="project-tile" data-change data-es="Diseño Gráfico" data-en="Graphic Design">Diseño Gráfico</h2>
+                                <p
+                                    class="info"
+                                    data-change
+                                    data-es="Mi enfoque en el diseño gráfico se basa en la funcionalidad y la estética para transformar conceptos en imágenes efectivas. Mi trabajo se centra en transmitir el mensaje de manera clara y visualmente atractiva."
+                                    data-en="My approach to graphic design is based on functionality and aesthetics to transform concepts into effective images. My work focuses on conveying the message in a clear and visually attractive way."
+                                >
+                                    Mi enfoque en el diseño gráfico se basa en la funcionalidad y la estética para transformar conceptos en imágenes efectivas. Mi trabajo se centra en transmitir el mensaje de manera clara y visualmente atractiva.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="card service_card web_service_card card_up">
+                            <div class="bg_card web_service_bg">
+                                <img src="https://images.pexels.com/photos/285814/pexels-photo-285814.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
+                            </div>
+                            <div class="info_card">
+                                <h2 class="project-tile" data-change data-es="Desarrollo Front-End" data-en="Front-End Devlopment">Desarrollo Front-End</h2>
+                                <p class="info" data-change data-es="Dentro del desarrollo de programación, darle estilo y formato a las ideas es algo que me apaciona." data-en="Within programming development, giving style and format to ideas is something that excites me.">
+                                    Dentro del desarrollo de programación, darle estilo y formato a las ideas es algo que me apaciona.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="card service_card e_commers_service_card card_up">
+                            <div class="bg_card e-commerce_service_bg">
+                                <img src="https://images.pexels.com/photos/7620629/pexels-photo-7620629.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" class="not" loading="lazy" />
+                            </div>
+                            <div class="info_card">
+                                <h2 class="project-tile">E-Commerce</h2>
+                                <p
+                                    class="info"
+                                    data-change
+                                    data-es="Si tu negocio tiene venta de productos, una gran herramienta seria una tienda en linea, puedo realizarte una tienda diseñada a tu gusto usando las mejores tecnologias."
+                                    data-en="If your business sells products, a great tool would be an online store. I can create a store designed to your liking using the best technologies."
+                                >
+                                    Si tu negocio tiene venta de productos, una gran herramienta seria una tienda en linea, puedo realizarte una tienda diseñada a tu gusto usando las mejores tecnologias.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="card service_card UX_UI_service_card card_up">
+                            <div class="bg_card UX-UI_service_bg">
+                                <img src="https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
+                            </div>
+                            <div class="info_card">
+                                <h2 class="project-tile">UX/UI</h2>
+                                <p
+                                    class="info"
+                                    data-change
+                                    data-es="La creación de pagina web es importante, asi como es importante darle al usuario una buena experiencia, facilidad de uso, y que tu contenido sea mejor visto por tus clientes."
+                                    data-en="Creating a website is important, just as it is important to give the user a good experience, ease of use, and for your content to be better seen by your clients."
+                                >
+                                    La creación de pagina web es importante, asi como es importante darle al usuario una buena experiencia, facilidad de uso, y que tu contenido sea mejor visto por tus clientes.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -4719,7 +4786,7 @@
                             </svg>
                         </span>
                     </span>
-                    <q class="quote" data-change data-es="El diseño no es solo cómo se ve y se siente. El diseño es cómo funciona." data-en="The design it's not just seeing and feeling. It's about how it works."></q>
+                    <q class="quote" data-change data-es="El diseño no es solo cómo se ve y se siente. El diseño es cómo funciona." data-en="The design it's not just seeing and feeling. It's about how it works."> El diseño no es solo cómo se ve y se siente. El diseño es cómo funciona. </q>
                     <span class="quote_icon quote_end">
                         <span class="icon_container">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -4730,20 +4797,20 @@
                 </div>
                 <figcaption class="author_container">
                     <span class="author"><i>Saul Bass</i></span>
-                    <span class="author_info" data-change data-es="Diseñador gráfico / Director de cine" data-en="Graphic designer / Movie Director"></span>
+                    <span class="author_info" data-change data-es="Diseñador gráfico / Director de cine" data-en="Graphic designer / Movie Director"> Diseñador gráfico / Director de cine</span>
                 </figcaption>
             </figure>
         </div>
         <section class="section portfolio_section" id="portfolio_section">
             <div class="section_content content">
                 <div class="swipe_animation_container_full">
-                    <h1 class="title_section animation_up" id="title_portfolio" data-change data-es="Portafolio" data-en="Portfolio"></h1>
+                    <h1 class="title_section animation_up" id="title_portfolio" data-change data-es="Portafolio" data-en="Portfolio">Portafolio</h1>
                 </div>
                 <h2 class="subtitle_section" data-change data-es="Proyectos Destacados" data-en="Top Projects"></h2>
                 <div class="cards_container swipe_animation_container_half cards_hot_container"></div>
 
                 <button type="button" class="btn more_btn portfolio_btn" data-name="portfolio_modal">
-                    <span class="label_btn" data-change data-es="Ver Todo" data-en="See All"></span>
+                    <span class="label_btn" data-change data-es="Ver Todo" data-en="See All"> Ver Todo </span>
                 </button>
             </div>
         </section>
@@ -4757,7 +4824,9 @@
                             </svg>
                         </span>
                     </span>
-                    <q class="quote" data-change data-es="Sin requerimientos o diseño, programar sólo es el arte de agregar errores a un archivo vacío." data-en="Without requirements or design, programming is just the art of adding errors to an empty file."></q>
+                    <q class="quote" data-change data-es="Sin requerimientos o diseño, programar sólo es el arte de agregar errores a un archivo vacío." data-en="Without requirements or design, programming is just the art of adding errors to an empty file.">
+                        Sin requerimientos o diseño, programar sólo es el arte de agregar errores a un archivo vacío.
+                    </q>
                     <span class="quote_icon quote_end">
                         <span class="icon_container">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -4768,7 +4837,7 @@
                 </div>
                 <figcaption class="author_container">
                     <span class="author"><i>Louis Srygley</i></span>
-                    <span class="author_info" data-change data-es="Arquitecto de Software" data-en="Software Architect"></span>
+                    <span class="author_info" data-change data-es="Arquitecto de Software" data-en="Software Architect"> Arquitecto de Software </span>
                 </figcaption>
             </figure>
         </div>
@@ -4776,35 +4845,37 @@
             <div class="bg_section"></div>
             <div class="section_content content">
                 <div class="swipe_animation_container_full">
-                    <h1 class="title_section animation_up" id="title_contact" data-change data-es="Contacto" data-en="Contact"></h1>
+                    <h1 class="title_section animation_up" id="title_contact" data-change data-es="Contacto" data-en="Contact">Contacto</h1>
                 </div>
-                <h2 class="subtitle_section" data-change data-es="Estoy ansioso de hacer proyectos interesantes con tus ideas" data-en="I'm looking forward to doing interesting projects with your ideas."></h2>
+                <h2 class="subtitle_section" data-change data-es="Estoy ansioso de hacer proyectos interesantes con tus ideas" data-en="I'm looking forward to doing interesting projects with your ideas.">Estoy ansioso de hacer proyectos interesantes con tus ideas</h2>
 
                 <form class="form contact_form" id="contact_form">
-                    <h3 data-change data-es="Envia correo" data-en="Send Email"></h3>
+                    <h3 data-change data-es="Envia correo" data-en="Send Email">Envia correo</h3>
                     <div class="input_container">
-                        <label for="body_input_name" data-change data-es="Nombre/s" data-en="Name/s"></label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="body_input_name" name="name" class="input_name" />
+                        <label for="body_input_name" data-change data-es="Nombre" data-en="Name">Nombre</label>
+                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" data-change-input data-es="Escribe Tu Nombre" data-en="Write Your Name" />
                     </div>
 
                     <div class="input_container">
-                        <label for="body_input_last_name" data-change data-es="Apellido" data-en="Last Name"></label>
-                        <input type="text" placeholder="Escribe tus Apellidos" id="body_input_last_name" name="last_name" class="input_last_name" />
+                        <label for="body_input_last_name" data-change data-es="Apellido" data-en="Last Name">Apellido</label>
+                        <input type="text" placeholder="Escribe tu Apellido" id="body_input_last_name" name="last_name" class="input_last_name" data-change-input data-es="Escribe tu Apellido" data-en="Write Your Last name" />
                     </div>
 
                     <div class="input_container">
                         <label for="body_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" />
+                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Name" />
                     </div>
 
                     <div class="input_container last">
-                        <label for="body_input_textarea" data-change data-es="Descripción" data-en="Description"></label>
-                        <textarea placeholder="Comparte me un resumen de tu idea" id="body_input_textarea" name="description" class="input_description"></textarea>
+                        <label for="body_input_textarea" data-change data-es="Descripción" data-en="Description">Descripción</label>
+                        <textarea placeholder="Comparteme tu idea" id="body_input_textarea" name="description" class="input_description" data-change-input data-es="Comparteme de tu idea" data-en="Share me your idea"></textarea>
                     </div>
                     <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
-                    <button type="submit" id="contact_form_send_btn" data-form="body_form" class="btn send_btn">
-                        <span class="label_btn" data-change data-es="Enviar" data-en="Send"></span>
-                    </button>
+                    <div class="submit_container">
+                        <button type="submit" id="contact_form_send_btn" data-form="body_form" class="btn send_btn">
+                            <span class="label_btn" data-change data-es="Enviar" data-en="Send">Enviar</span>
+                        </button>
+                    </div>
                     <div class="form_response_container">
                         <p class="form_response"></p>
                     </div>
@@ -4824,6 +4895,9 @@
             </div>
         </section>
         <footer class="section legals_section" id="legals_section">
+            <div class="section_divider">
+                <div class="content"></div>
+            </div>
             <div class="footer_content content">
                 <div class="lebels_container">
                     <div class="made_content">
@@ -4876,7 +4950,7 @@
                 <h2 class="title"></h2>
                 <h3 class="subtitle" data-change data-es="Realizado Con:" data-en="Made With:"></h3>
                 <div class="icons_project_container margin_bottom"></div>
-                <a href="" class="more_btn btn" tabindex="-1" data-link="" target="_blank" data-change data-es="Ir a" data-en="Go To"> </a>
+                <a href="" class="more_btn btn" tabindex="-1" data-link="" target="_blank" data-change data-es="Ir a" data-en="Go To">Ir A</a>
             </div>
         </div>
     </template>
@@ -4887,13 +4961,13 @@
         </button>
     </template>
     <template class="certification_template">
-        <div class="badge certification_badge">
+        <div class="badge card_up certification_badge">
             <div>
                 <img class="badge_image" src="" alt="" loading="lazy" />
-                <h3 class="badge_name">Responsive Web Design</h3>
+                <h3 class="badge_name" data-change data-es="" data-en=""></h3>
             </div>
             <a class="btn" href="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" aria-label="">
-                <span class="label_btn">Ir A Enlace</span>
+                <span class="label_btn" data-change data-es="Ir a" data-en="Go To">Ir A</span>
             </a>
         </div>
     </template>
