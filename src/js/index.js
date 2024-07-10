@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
     const bubbleInfo = selector(".info_bubble");
+    const nav = selector(".nav_menu");
+    const phoneMenu = selector(".phone_menu_controler");
+
     const setAssets = () => {
         utils.infoSoftware.forEach((software) => {
             const clone = skillTemplate.cloneNode(true);
@@ -125,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 swipingAnimation();
                 selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
                 selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
-
                 selectors.langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
             }, 250);
         }, 250);
@@ -200,27 +202,26 @@ document.addEventListener("DOMContentLoaded", () => {
         selectors.BODY.className = currentTheme;
     };
     const menuActions = (status) => {
-        const navTop = selectors.nav.getBoundingClientRect().top;
+        const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
         if (status === close) {
             menuStatus = open;
-            selectors.phoneMenu.classList.add("show_flex");
+            phoneMenu.classList.add("show_flex");
             setTimeout(() => {
-                selectors.phoneMenu.classList.add("show_opacity");
-                setTimeout(() => selectors.phoneMenu.classList.add("show_menu"), 500);
+                phoneMenu.classList.add("show_opacity");
+                setTimeout(() => phoneMenu.classList.add("show_menu"), 500);
                 selectors.mainNavBtn.focus();
             }, 200);
         } else if (status === open) {
             /* console.log("cerrando menu"); */
             menuStatus = close;
-            selectors.phoneMenu.classList.remove("show_menu");
-            setTimeout(() => selectors.phoneMenu.classList.remove("show_opacity"), 500);
+            phoneMenu.classList.remove("show_menu");
+            setTimeout(() => phoneMenu.classList.remove("show_opacity"), 500);
             setTimeout(() => {
-                selectors.phoneMenu.classList.remove("show_flex");
+                phoneMenu.classList.remove("show_flex");
             }, 1200);
         }
     };
-
     // ACTIONS FUNCTION FOR SOCIAL MENU
     const menuSocialActions = (action) => {
         if (action === open) {
@@ -365,58 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
             containersObserver.observe(container);
         });
     };
-
-    //! */
-
-    //!
-
-    const checkWindowHeight = () => {
-        const rem = 20;
-        const navTop = selector(".nav_menu").getBoundingClientRect().top;
-        const windowHeight = window.innerHeight / 2;
-        let borderRadius = "1rem";
-
-        if (navTop >= windowHeight) {
-            selectors.nav.style.height = "8rem";
-
-            selectors.menuSocialContainer.style.bottom = "inherit";
-            selectors.menuSocialContainer.style.top = "2rem";
-            selectors.menuSocialContainer.style.flexDirection = "column";
-
-            /* btnLogo.style.width = "7rem"; */
-            selectors.btnLogo.style.height = "4rem";
-            selectors.menuBtnBars.forEach((bar) => (bar.style.height = "4px"));
-
-            setTimeout(() => {
-                selectors.phoneMenu.style.top = 0;
-                selectors.phoneMenu.style.bottom = "inherit";
-                selectors.phoneMenu.style.flexDirection = "column";
-                selectors.phoneMenu.style.borderRadius = `0 0 ${borderRadius} ${borderRadius}`;
-
-                selectors.phoneMenu.style.setProperty("--menuPosition", "translateY(-100%)");
-            }, 250);
-        } else if (navTop < windowHeight) {
-            selectors.nav.style.height = "6rem";
-
-            selectors.menuBtnBars.forEach((bar) => (bar.style.height = "2px"));
-
-            selectors.menuSocialContainer.style.top = "inherit";
-            selectors.menuSocialContainer.style.bottom = "2rem";
-            selectors.menuSocialContainer.style.flexDirection = "column-reverse";
-            /* btnLogo.style.width = "5rem"; */
-            selectors.btnLogo.style.height = "3rem";
-
-            setTimeout(() => {
-                selectors.phoneMenu.style.top = "inherit";
-                selectors.phoneMenu.style.bottom = 0;
-                selectors.phoneMenu.style.flexDirection = "column-reverse";
-                selectors.phoneMenu.style.borderRadius = `${borderRadius} ${borderRadius} 0 0`;
-                selectors.phoneMenu.style.setProperty("--menuPosition", "translateY(100%)");
-            }, 250);
-        }
-    };
-    setTimeout(() => checkWindowHeight(), 500);
-
     const openPortfolioModal = (target) => {
         utils.deleteArrElements(fragmentPortfolioProjects);
         utils.deleteChildElements(selectors.portfolioCardsContainer);
@@ -629,7 +578,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectors.btnDown.addEventListener("click", () => {
         const windowHeight = window.innerHeight;
-        const navHeight = selectors.nav.getBoundingClientRect().height;
+        const navHeight = nav.getBoundingClientRect().height;
         const fixHeight = windowHeight - navHeight;
         window.scrollTo(0, fixHeight);
     });
@@ -846,5 +795,5 @@ document.addEventListener("DOMContentLoaded", () => {
             menuSocialActions(menuSocialStatus);
         }
     });
-    setStart();
+    setTimeout(setStart, 250);
 });

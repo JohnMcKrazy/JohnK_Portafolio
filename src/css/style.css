@@ -2489,11 +2489,11 @@ body {
 }
 
 .phone_menu_controler {
-  --menuPosition: 0;
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  bottom: 0;
+  transform: translateY(100%);
   border-radius: 0.5rem 0.5rem 0 0;
   display: flex;
   flex-direction: column;
@@ -2504,7 +2504,6 @@ body {
   background: var(--NVC);
   z-index: 6;
   transition: var(--T_M);
-  transform: var(--menuPosition);
   overflow: hidden;
   opacity: 0;
   display: none;
