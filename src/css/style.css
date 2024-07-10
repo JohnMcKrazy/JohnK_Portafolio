@@ -2484,7 +2484,7 @@ body {
 .nav_menu_controler .theme_btn:hover {
   fill: var(--TC_C);
 }
-.nav_menu_controler .label_btn {
+.nav_menu_controler .label_btn:not(.label_lang) {
   display: none;
 }
 

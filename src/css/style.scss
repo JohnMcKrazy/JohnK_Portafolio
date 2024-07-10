@@ -2458,7 +2458,7 @@ body {
             fill: var(--TC_C);
         }
     }
-    .label_btn {
+    .label_btn:not(.label_lang) {
         display: none;
     }
     display: none;
