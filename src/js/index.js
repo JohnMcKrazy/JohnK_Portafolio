@@ -372,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const checkWindowHeight = () => {
         const rem = 20;
-        const navTop = selectors.nav.getBoundingClientRect().top;
+        const navTop = selector(".nav_menu").getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
         let borderRadius = "1rem";
 
