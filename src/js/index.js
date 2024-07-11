@@ -8,6 +8,7 @@ const selector = (tag) => $d.querySelector(`${tag}`);
 const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
 const fragmentHotProjects = $d.createDocumentFragment();
 const fragmentPortfolioProjects = $d.createDocumentFragment();
+const bubbleInfo = selector(".info_bubble");
 const cardProjectTemplate = selector(".card_project_template").content;
 const extraListBtnTemplate = selector(".extra_list_btn_template").content;
 const certificationTemplate = selector(".certification_template").content;
@@ -57,17 +58,56 @@ document.addEventListener("DOMContentLoaded", () => {
     const setLang = () => {
         const navLang = window.navigator.language;
         if (navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-")) {
-            console.log("navegador en idioma español");
+            console.log("selectors.navegador en idioma español");
             currentLang = es;
         } else {
-            console.log("navegador en otro idioma no español");
+            console.log("selectors.navegador en otro idioma no español");
             currentLang = en;
         }
     };
-    const bubbleInfo = selector(".info_bubble");
-    const nav = selector(".nav_menu");
-    const phoneMenu = selector(".phone_menu_controler");
 
+    const checkWindowHeight = () => {
+        const rem = 20;
+        const navTop = selectors.nav.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight / 2;
+        let borderRadius = "1rem";
+
+        if (navTop >= windowHeight) {
+            selectors.nav.style.height = "8rem";
+
+            selectors.menuSocialContainer.style.bottom = "inherit";
+            selectors.menuSocialContainer.style.top = "2rem";
+            selectors.menuSocialContainer.style.flexDirection = "column";
+
+            selectors.btnLogo.style.height = "4rem";
+            selectors.menuBtnBars.forEach((bar) => (bar.style.height = "4px"));
+
+            setTimeout(() => {
+                selectors.phoneMenu.style.top = 0;
+                selectors.phoneMenu.style.bottom = "inherit";
+                selectors.phoneMenu.style.flexDirection = "column";
+                selectors.phoneMenu.style.borderRadius = `0 0 ${borderRadius} ${borderRadius}`;
+                selectors.phoneMenu.style.setProperty("--menuPosition", "translateY(-100%)");
+            }, 250);
+        } else if (navTop < windowHeight) {
+            selectors.nav.style.height = "6rem";
+
+            selectors.menuBtnBars.forEach((bar) => (bar.style.height = "2px"));
+
+            selectors.menuSocialContainer.style.top = "inherit";
+            selectors.menuSocialContainer.style.bottom = "2rem";
+            selectors.menuSocialContainer.style.flexDirection = "column-reverse";
+            selectors.btnLogo.style.height = "3rem";
+
+            setTimeout(() => {
+                selectors.phoneMenu.style.top = "inherit";
+                selectors.phoneMenu.style.bottom = 0;
+                selectors.phoneMenu.style.flexDirection = "column-reverse";
+                selectors.phoneMenu.style.borderRadius = `${borderRadius} ${borderRadius} 0 0`;
+                selectors.phoneMenu.style.setProperty("--menuPosition", "translateY(100%)");
+            }, 250);
+        }
+    };
     const setAssets = () => {
         utils.infoSoftware.forEach((software) => {
             const clone = skillTemplate.cloneNode(true);
@@ -125,9 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.classList.add("card_up");
             });
             setTimeout(() => {
-                swipingAnimation();
+                setObservers();
                 selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
                 selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
+
                 selectors.langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
             }, 250);
         }, 250);
@@ -202,23 +243,23 @@ document.addEventListener("DOMContentLoaded", () => {
         selectors.BODY.className = currentTheme;
     };
     const menuActions = (status) => {
-        const navTop = nav.getBoundingClientRect().top;
+        const navTop = selectors.nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
         if (status === close) {
             menuStatus = open;
-            phoneMenu.classList.add("show_flex");
+            selectors.phoneMenu.classList.add("show_flex");
             setTimeout(() => {
-                phoneMenu.classList.add("show_opacity");
-                setTimeout(() => phoneMenu.classList.add("show_menu"), 500);
+                selectors.phoneMenu.classList.add("show_opacity");
+                setTimeout(() => selectors.phoneMenu.classList.add("show_menu"), 500);
                 selectors.mainNavBtn.focus();
             }, 200);
         } else if (status === open) {
             /* console.log("cerrando menu"); */
             menuStatus = close;
-            phoneMenu.classList.remove("show_menu");
-            setTimeout(() => phoneMenu.classList.remove("show_opacity"), 500);
+            selectors.phoneMenu.classList.remove("show_menu");
+            setTimeout(() => selectors.phoneMenu.classList.remove("show_opacity"), 500);
             setTimeout(() => {
-                phoneMenu.classList.remove("show_flex");
+                selectors.phoneMenu.classList.remove("show_flex");
             }, 1200);
         }
     };
@@ -275,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //^ANIMATION ITEM SWIPE
 
-    const swipingAnimation = () => {
+    const setObservers = () => {
         const show = (currentEntry) => currentEntry.classList.add(`show_card`);
         const hide = (currentEntry) => currentEntry.classList.remove(`show_card`);
 
@@ -578,7 +619,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectors.btnDown.addEventListener("click", () => {
         const windowHeight = window.innerHeight;
-        const navHeight = nav.getBoundingClientRect().height;
+        const navHeight = selectors.nav.getBoundingClientRect().height;
         const fixHeight = windowHeight - navHeight;
         window.scrollTo(0, fixHeight);
     });
@@ -788,6 +829,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectors.btnLogo.addEventListener("click", toTheTop);
     window.addEventListener("scroll", () => {
+        checkWindowHeight();
         if (menuStatus === open) {
             menuActions(menuStatus);
         }
