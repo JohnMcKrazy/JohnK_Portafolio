@@ -20,7 +20,7 @@ export const watchMerAM = selector(".watch_am");
 export const watchMerPM = selector(".watch_pm");
 export const designScreen = selector(".design_screen");
 export const designTabletScreen = selector(".design_tablet_screen");
-export const devScreen = selector(".dev_screen");
+export const devScreen = selector(".dev_listPortfolioBtnsscreen");
 export const devTabletScreen = selector(".dev_tablet_screen");
 export const shieldScreen = selector(".shield_screen");
 export const illustrationScreen = selector(".illustration_screen");
@@ -31,9 +31,11 @@ export const bubbleInfo = selector(".info_bubble");
 export const bubbleRex = selector(".rex_bubble");
 // MODAL PORTFOLIO
 export const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
+export const searchPortfolioListBtnLabel = searchPortfolioListBtn.querySelector(".label_btn");
 export const portfolioListContainer = selector(".portfolio_list_btns_container");
 export const extraListBtns = selectorAll(".extra_list_btn");
 export const searchExtraListBtn = selector(".search_extra_list_btn");
+export const searchExtraListBtnLabel = selector(".search_extra_list_btn").querySelector(".label_btn");
 export const extraListContainer = selector(".extra_list_btns_container");
 // UTILS FUNCTIONS
 export const cardsHotContainer = selector(".cards_hot_container");
@@ -46,11 +48,10 @@ export const illustrationRex = selector(".dog");
 export const legalModal = selector(".legal_modal");
 export const acceptStorageBtn = selector(".storage_accept");
 export const innerBtns = selectorAll(".inner_link_btn");
-export const likBtns = selectorAll(".link_btn");
+export const linkBtns = selectorAll(".link_btn");
 export const legalAcceptBtn = selector(".legal_modal_accept_btn");
 export const closeModalBtns = selectorAll(".close_modal");
 export const sections = selectorAll(".section");
-export const infoModal = selector(".modal_info_legal");
 export const menuBtnBars = selectorAll(".bar");
 
 export const btnDown = selector(".btn_down");

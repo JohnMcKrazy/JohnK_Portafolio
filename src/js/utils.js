@@ -12,11 +12,11 @@ const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
 export const hotCardsSelection = ["js_documentation", "tribute", "pokedex", "black_jack", "verona", "afroduck", "smuffs", "mitos_y_leyendas", "berserkers", "creaciones_hermed", "we_are_disney", "navidad_2024"];
 
 export const certificationsData = [
-    { name_en: "Responsive Web Design", name_es: "Diseño Web Responsivo", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },
-    { name_en: "Legacy - JavaScript Algoritms and Data Structures", name_es: "JavaScript Algoritmos y Estructura de Datos - Legado", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
-    { name_en: "Front-End Development Libraries", name_es: "Librerias de Desarrollo Front-End", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
-    { name_en: "Data Visualization", name_es: "Visualización de Datos", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
-    { name_en: "Scientific Computing With Python", name_es: "Computacion Cientifica con Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
+    { en: "Responsive Web Design", es: "Diseño Web Responsivo", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },
+    { en: "Legacy - JavaScript Algoritms and Data Structures", es: "JavaScript Algoritmos y Estructura de Datos - Legado", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
+    { en: "Front-End Development Libraries", es: "Librerias de Desarrollo Front-End", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
+    { en: "Data Visualization", es: "Visualización de Datos", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
+    { en: "Scientific Computing With Python", es: "Computacion Cientifica con Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
 ];
 
 export const infoSoftware = [
@@ -177,7 +177,117 @@ export const johnKStorage = {
     page_legal_content: "accepted",
     page_theme: "dark_theme",
 };
+export const skillTypes = {
+    all: {
+        es: "todo",
+        en: "all",
+    },
+    develop: {
+        es: "desarrollo",
+        en: "develop",
+        types: {
+            web: {
+                en: "web",
+                ref: "web",
+            },
+            api: {
+                en: "API Rest",
+                ref: "api",
+            },
+            programming: {
+                es: "programación",
+                en: "programming",
+                ref: "programming",
+            },
+            data_visualization: {
+                es: "Visualización de Datos",
+                en: "Data Visualization",
+                ref: "data_visualization",
+            },
+        },
+    },
+    illustration: {
+        en: "illustration",
+        es: "ilustración",
 
+        types: {
+            illustration_digital: {
+                es: "illustración digital",
+                en: "digital Illustration",
+                ref: "illustration_digital",
+            },
+            illustration_traditional: {
+                es: "illustración tradicional",
+                en: "traditional Illustration",
+                ref: "illustration_traditional",
+            },
+        },
+    },
+    design: {
+        es: "diseño",
+        en: "design",
+        types: {
+            image: {
+                es: "Edición de Imagen",
+                en: "Image Edition",
+                ref: "image",
+            },
+            video: {
+                es: "Edición de Video",
+                en: "Video Edition",
+                ref: "video",
+            },
+            animation_2d: {
+                es: "Animacion 2D",
+                en: "2D Animation",
+                ref: "animation_2d",
+            },
+            poster: {
+                en: "Poster",
+                ref: "poster",
+            },
+            infographic: {
+                es: "Infografía",
+                en: "Infographic",
+                ref: "infographic",
+            },
+            editorial: {
+                en: "Editorial",
+                ref: "editorial",
+            },
+            cover: {
+                es: "Portada",
+                en: "Cover",
+                ref: "cover",
+            },
+            identity: {
+                es: "Identidad de Marca",
+                en: "Brand Identity",
+                ref: "identity",
+            },
+            stationery: {
+                es: "Papelería",
+                en: "Stationery",
+                ref: "stationery",
+            },
+            ad: {
+                es: "Promocionales",
+                en: "Ad",
+                ref: "ad",
+            },
+            logo: {
+                es: "Logotipo",
+                en: "Logo",
+                ref: "logo",
+            },
+            packaging: {
+                es: "Empaque",
+                en: "Packaging",
+                ref: "packaging",
+            },
+        },
+    },
+};
 export const deleteChildElements = (parentElement) => {
     let child = parentElement.lastElementChild;
     while (child) {
@@ -214,3 +324,4 @@ export const scrollToSection = (btn) => {
         window.scrollBy(windowTop, fixTop);
     }
 };
+export const returnTop = (selector) => selector.scrollTo({ top: 0, behavior: `smooth` });

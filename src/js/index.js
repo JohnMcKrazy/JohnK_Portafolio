@@ -26,13 +26,28 @@ let storageContent;
 let currentTheme = "dark_theme";
 let currentLang;
 document.addEventListener("DOMContentLoaded", () => {
+    const skillsData = utils.skillTypes;
+    const sanitazer = utils.sanitizeInput;
+    const deleteArr = utils.deleteArrElements;
+    const deleteChild = utils.deleteChildElements;
+    const retTop = utils.returnTop;
+    const storage = utils.johnKStorage;
+    const scrollSection = utils.scrollToSection;
+    const searchPortfolioListBtnLabel = selectors.searchPortfolioListBtnLabel;
+    const searchExtraListBtnLabel = selectors.searchExtraListBtnLabel;
+    const searchExtraListBtn = selectors.searchExtraListBtn;
+    const portfolioListContainer = selectors.portfolioListContainer;
+    const searchPortfolioListBtn = selectors.searchPortfolioListBtn;
+    const extraListContainer = selectors.extraListContainer;
+    const portfolioCardsContainer = selectors.portfolioCardsContainer;
+    // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
         console.log(storageContent);
         if (!storageContent) {
-            localStorage.setItem(storageName, JSON.stringify(utils.johnKStorage));
+            localStorage.setItem(storageName, JSON.stringify(storage));
             console.log("local storage item is created");
-            storageContent = utils.johnKStorage;
+            storageContent = storage;
         } else {
             if (storageContent["page_theme"] !== "dark_theme") {
                 currentTheme = storageContent["page_theme"];
@@ -45,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectors.BODY.className = currentTheme;
         /* console.log(storageContent); */
     };
+    // FUNCTION FOR CHANGE LANGUAGE
     const changeLang = (lang) => {
         if (lang === es) {
             currentLang = en;
@@ -54,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
         selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
     };
-
+    // SET SYSTEM LANGUAGE FOR CHANGE LANGUAGE REFERENCE
     const setLang = () => {
         const navLang = window.navigator.language;
         if (navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-")) {
@@ -65,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             currentLang = en;
         }
     };
-
+    // SET HEIGHT PAGE CONFIGURATION
     const checkWindowHeight = () => {
         const rem = 20;
         const navTop = selectors.nav.getBoundingClientRect().top;
@@ -108,8 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 250);
         }
     };
+    // SET DINAMIC CONTENT FOR PAGE
+
+    const infSoftware = utils.infoSoftware;
     const setAssets = () => {
-        utils.infoSoftware.forEach((software) => {
+        infSoftware.forEach((software) => {
             const clone = skillTemplate.cloneNode(true);
             const badge = clone.querySelector(".skill_badge");
             badge.id = `skill_badge_${software.db_name}`;
@@ -122,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             setTimeout(() => {
                 badge.addEventListener("mouseover", (e) => {
-                    const newData = utils.infoSoftware.find((item) => item.db_name === badge.getAttribute("data-name"));
+                    const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("data-name"));
                     bubbleInfo.querySelector(".title").textContent = newData.tech_complete_name;
                     bubbleInfo.querySelector(".description").textContent = newData[`tech_info_${currentLang}`];
                     bubbleInfo.classList.add("show_flex");
@@ -145,12 +164,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const certificationBtn = certificationClone.querySelector(".btn");
             const certificationName = certificationClone.querySelector(".badge_name");
             certificationImg.setAttribute("src", certification.image);
-            certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[`name_${currentLang}`]}' emitido por FreeCodeCamp`);
-            certificationName.textContent = certification[`name_${currentLang}`];
+            certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[currentLang]}' emitido por FreeCodeCamp`);
+            certificationName.textContent = certification[currentLang];
             certificationBtn.setAttribute("href", certification.link);
 
-            certificationName.setAttribute("data-es", certification[`name_${es}`]);
-            certificationName.setAttribute("data-en", certification[`name_${en}`]);
+            certificationName.setAttribute("data-es", certification.es);
+            certificationName.setAttribute("data-en", certification.en);
             selectors.certificationsContainer.appendChild(certificationBadge);
         });
 
@@ -173,15 +192,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 250);
         }, 250);
     };
+    // SET ALL START CONFIGURATIONS
     const setStart = () => {
+        checkWindowHeight();
         checkAlertStorageAnswer();
 
         setAssets();
     };
+    // FUNCTION FOR TRANSLATE PAGE POSITION TO TOP
     const toTheTop = () => {
         const currentPosition = selectors.BODY.getBoundingClientRect().top;
         window.scrollTo(currentPosition, 0);
     };
+    // FUNCTION FOR CREATE DINAMIC PROJECT CARDS
     const createCard = (item, frac, extraClass = "") => {
         let iconsRow = "";
         const cloneProjectCard = cardProjectTemplate.cloneNode(true);
@@ -193,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const makeText = cloneProjectCard.querySelector("H3");
         //* ******************************************************************************** *//
 
-        const clientName = item["project_name"];
         const cardImg = item["projects"]["img"];
         const cardDescription = item["projects"]["info"];
         if (extraClass === "") {
@@ -206,27 +228,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const clientTechnologiesInProjects = item["projects"]["technologies"];
         clientTechnologiesInProjects.forEach((tech) => {
             /* console.log(tech); */
-            utils.infoSoftware.forEach((technology) => {
+            infSoftware.forEach((technology) => {
                 if (technology.tech_name === tech) {
                     iconsRow += technology.icon;
                 }
             });
         });
         projectCardIconsContainer.innerHTML = iconsRow;
-        cardTitle.textContent = clientName;
+
+        if (item.project_name.es && item.project_name.en) {
+            cardTitle.setAttribute("data-es", item["project_name"].es);
+            cardTitle.setAttribute("data-en", item["project_name"].en);
+        } else if (item.project_name.es && !item.project_name.en) {
+            cardTitle.setAttribute("data-es", item["project_name"].es);
+            cardTitle.setAttribute("data-en", item["project_name"].es);
+        } else if (!item.project_name.es && item.project_name.en) {
+            cardTitle.setAttribute("data-en", item["project_name"].en);
+            cardTitle.setAttribute("data-es", item["project_name"].en);
+        }
+
+        if (currentLang) {
+            cardTitle.textContent = item.project_name[currentLang];
+        }
         innerBtn.setAttribute("href", `${item["projects"]["project_link"]}`);
         innerBtn.textContent = innerBtn.getAttribute(`data-${currentLang}`);
         makeText.textContent = makeText.getAttribute(`data-${currentLang}`);
         frac.appendChild(projectCard);
     };
-    const createExtraListbtn = (type) => {
-        const newTemplate = extraListBtnTemplate.cloneNode(true);
-        const newBtn = newTemplate.querySelector(".extra_list_btn");
-        const btnLabel = newTemplate.querySelector(".label_btn");
-        btnLabel.textContent = type;
-        newBtn.setAttribute("data-name", type);
-        fragmentBtns.appendChild(newBtn);
-    };
+
+    // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
     const changeTheme = (tm) => {
         const lightT = "light_theme";
         const darkT = "dark_theme";
@@ -242,6 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem(storageName, JSON.stringify(storageContent));
         selectors.BODY.className = currentTheme;
     };
+    // FUNCTION FOR PHONE MENU ACTIONS
     const menuActions = (status) => {
         const navTop = selectors.nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
@@ -263,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1200);
         }
     };
-    // ACTIONS FUNCTION FOR SOCIAL MENU
+    // FUNCTION FOR SOCIAL MENU ACTIONS
     const menuSocialActions = (action) => {
         if (action === open) {
             /* console.log("cerrando menu social"); */
@@ -282,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 200);
         }
     };
-    // ACTIONS FUNCTION FOR MODAL BACKDROP
+    //  FUNCTION FOR MODAL BACKDROP ACTIONS
     const modalActions = (action) => {
         if (action === close) {
             selectors.modal.classList.remove("show_opacity");
@@ -292,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => selectors.modal.classList.add("show_opacity"), 500);
         }
     };
-    // ACTION FUNCTION FOR MODAL WINDOWS
+    // FUNCTION FOR MODAL WINDOWS ACTIONS
     const modalWindowActions = (window, action) => {
         if (action === close) {
             window.classList.remove("modal_open");
@@ -312,9 +343,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 700);
         }
     };
-    // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
-
-    //^ANIMATION ITEM SWIPE
 
     const setObservers = () => {
         const show = (currentEntry) => currentEntry.classList.add(`show_card`);
@@ -407,269 +435,286 @@ document.addEventListener("DOMContentLoaded", () => {
             containersObserver.observe(container);
         });
     };
-    const openPortfolioModal = (target) => {
-        utils.deleteArrElements(fragmentPortfolioProjects);
-        utils.deleteChildElements(selectors.portfolioCardsContainer);
-        utils.deleteArrElements(fragmentBtns);
-        utils.deleteChildElements(selectors.extraListContainer);
-        const modalToOpen = target.getAttribute("data-name");
-        const currentProjectDetails = [];
-        const createPortfolioProjects = () => {
-            DB.forEach((data) => {
-                data.projects.skills.forEach((skill) => {
-                    if (!currentProjectDetails.includes(skill)) {
-                        currentProjectDetails.push(skill);
-                    }
-                });
-                createCard(data, fragmentPortfolioProjects);
-            });
-            currentProjectDetails.forEach((detail) => {
-                createExtraListbtn(detail);
-            });
-            selectors.extraListContainer.appendChild(fragmentBtns);
-            selectors.portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-        };
 
-        createPortfolioProjects();
-        modalWindowActions(selector(`.${modalToOpen}`), open);
-        let dataToCheck = [];
-        const activateExtraBtns = (btn) => {
-            listExtrasActions();
-            selectors.portfolioCardsContainer.scrollTo({ top: 0, behavior: `smooth` });
-            console.log(btn);
-            const newName = btn.getAttribute("data-name");
-            selectors.searchExtraListBtn.setAttribute("data-name", newName);
-            selectors.searchExtraListBtn.querySelector(".label_btn").textContent = newName;
-            if (dataToCheck.length === 0) {
-                dataToCheck = DB;
-            }
-            let extraDataToCheck = [];
-            utils.deleteArrElements(fragmentPortfolioProjects);
-            utils.deleteChildElements(selectors.portfolioCardsContainer);
-            if (btn.getAttribute("data-name") !== "Todo") {
-                dataToCheck.forEach((data) => {
-                    if (data.projects.skills.includes(btn.getAttribute("data-name"))) {
-                        extraDataToCheck.push(data);
-                    }
-                });
-            } else {
-                extraDataToCheck = dataToCheck;
-            }
+    /* ! *********************************************** */
 
-            extraDataToCheck.forEach((extraData) => {
-                createCard(extraData, fragmentPortfolioProjects);
-            });
-            selectors.portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-        };
-        const serachExtraListBtn = selectors.searchExtraListBtn.querySelector(".label_btn");
-        selectors.listPortfolioBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                selectors.searchExtraListBtn.setAttribute("data-name", "Todo");
-                serachExtraListBtn.textContent = serachExtraListBtn.getAttribute(`data_${utils.currentLang}`);
-                selectors.portfolioCardsContainer.scrollTo({ top: 0, behavior: `smooth` });
+    // FUNCTION FOR CREATE DINAMIC PORTFOLIO LIST BTNS
+    /* 
+    const createExtraListbtn = (skill, key) => {
+        let typeData = "";
+        if (skill !== "all") {
+            typeData = skillsData[skill].types[key];
+        } else {
+            typeData = skillsData.all;
+        }
 
-                utils.deleteArrElements(fragmentBtns);
-                utils.deleteChildElements(selectors.extraListContainer);
-                const newName = btn.getAttribute("data-name");
-                selectors.searchPortfolioListBtn.setAttribute("data-name", newName);
-                selectors.searchPortfolioListBtn.querySelector(".label_btn").textContent = newName;
-                listPortfolioActions();
-                utils.deleteArrElements(fragmentPortfolioProjects);
-                utils.deleteChildElements(selectors.portfolioCardsContainer);
-                dataToCheck = [];
-                newName !== "Todo" ? (dataToCheck = DB.filter((item) => item.projects.type_name === newName)) : (dataToCheck = DB);
+        const newTemplate = extraListBtnTemplate.cloneNode(true);
+        const newBtn = newTemplate.querySelector(".extra_list_btn");
+        const btnLabel = newTemplate.querySelector(".label_btn");
+        let reference = "";
+        if (typeData.en && typeData.es) {
+            btnLabel.textContent = typeData[currentLang];
+            btnLabel.setAttribute("data-en", typeData.en);
+            btnLabel.setAttribute("data-es", typeData.es);
+        } else if (typeData.es && !typeData.en) {
+            btnLabel.textContent = typeData.es;
+            btnLabel.setAttribute("data-en", typeData.es);
+            btnLabel.setAttribute("data-es", typeData.es);
+        } else if (!typeData.es && typeData.en) {
+            btnLabel.textContent = typeData.en;
+            btnLabel.setAttribute("data-en", typeData.en);
+            btnLabel.setAttribute("data-es", typeData.en);
+        }
 
-                const currentProjectDetails = [];
-                dataToCheck.forEach((project) => {
-                    project.projects.skills.forEach((skill) => {
-                        if (!currentProjectDetails.includes(skill)) {
-                            currentProjectDetails.push(skill);
-                        }
-                    });
-                });
-                currentProjectDetails.unshift("Todo");
-                currentProjectDetails.forEach((detail) => {
-                    createExtraListbtn(detail);
-                });
+        if (typeData.en === "all") {
+            btnLabel.setAttribute("data-ref", "all");
+        } else {
+            btnLabel.setAttribute("data-ref", typeData.ref);
+        }
+        btnLabel.setAttribute("data-skill", skill);
 
-                selectors.extraListContainer.appendChild(fragmentBtns);
-                dataToCheck.forEach((data) => {
-                    createCard(data, fragmentPortfolioProjects);
-                });
-                selectors.portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-                selectors.extraListBtns.forEach((btn) => {
-                    btn.addEventListener("click", () => activateExtraBtns(btn));
-                });
-            });
-        });
-        selectors.extraListBtns.forEach((btn) => {
-            btn.addEventListener("click", () => activateExtraBtns(btn));
-        });
+        fragmentBtns.appendChild(newBtn);
     };
-    //^CREATE PROJECT RANDOM CARDS
+   
+  
 
-    selectors.acceptStorageBtn.addEventListener("click", () => {
-        johnKStorage["page_alert_status"] = close;
-        modalWindowActions(alertModal, close);
+    
 
-        localStorage.setItem(storageName, JSON.stringify(johnKStorage));
-        console.log(localStorage.getItem(storageName));
-    });
+     */
+    /* ! *********************************************** */
 
-    selectors.innerBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const current = btn.getAttribute("data-current");
-            const next = btn.getAttribute("data-next");
-            const currentModal = selector(`.${current}`);
-            const nextModal = selector(`.${next}`);
-            currentModal.classList.remove("modal_open");
-            setTimeout(() => {
-                currentModal.classList.remove("show_flex");
-                nextModal.classList.add("show_flex");
-                setTimeout(() => {
-                    nextModal.classList.add("modal_open");
-                }, 200);
-            }, 600);
-        });
-    });
-    selectors.likBtns.forEach((btn) =>
-        btn.addEventListener("click", () => {
-            const btnName = btn.getAttribute("data-name");
-            const currentBtn = selector(`.${btnName}`);
-            const currentPosition = selectors.modalInfoLegal.getBoundingClientRect().top;
-            if (btnName === "legal_section") {
-            } else {
-                modalWindowActions(currentBtn, open);
-            }
-        })
-    );
-    selectors.legalAcceptBtn.addEventListener("click", () => {
-        selectors.modalInfoLegal.scrollTo({ top: 0, behavior: `smooth` });
-        setTimeout(() => modalWindowActions(legalModal, close), 250);
-    });
-    selectors.closeModalBtns.forEach((btn) =>
-        btn.addEventListener("click", () => {
-            const btnName = btn.getAttribute("data-name");
-            const currentBtn = selector(`.${btnName}`);
-
-            if (btnName === "legal_modal") {
-                selectors.infoModal.scrollTo({ top: 0, behavior: `smooth` });
-                setTimeout(() => {
-                    modalWindowActions(currentBtn, close);
-                }, 500);
-            } else if (btnName === "portfolio_modal") {
-                selectors.portfolioCardsContainer.scrollTo({ top: 0, behavior: `smooth` });
-
-                setTimeout(() => {
-                    modalWindowActions(currentBtn, close);
-                    setTimeout(() => {
-                        selectors.searchExtraListBtn.setAttribute("data-name", "Todo");
-                        selectors.searchExtraListBtn.querySelector(".label_btn").textContent = "Todo";
-                        selectors.searchPortfolioListBtn.setAttribute("data-name", "Todo");
-                        selectors.searchPortfolioListBtn.querySelector(".label_btn").textContent = "Todo";
-                    }, 250);
-                }, 500);
-            } else {
-                modalWindowActions(currentBtn, close);
-            }
-        })
-    );
-    selectors.sections.forEach((section) => {
-        const watchPage = ([entry]) => {
-            if (entry.isIntersecting) {
-                const entryName = entry.target.attributes.id.value;
-                selectors.sectionBtns.forEach((btn) => {
-                    const btnName = btn.name;
-                    if (btnName === entryName) {
-                        btn.classList.add("btn_active");
-                    } else {
-                        btn.classList.remove("btn_active");
-                    }
-                });
-            }
-        };
-        const optionsIO_sections = {
-            rootMargin: "5%",
-            threshold: 0.3,
-        };
-        const pageObserver = new IntersectionObserver(watchPage, optionsIO_sections);
-        pageObserver.observe(section);
-    });
-
-    //! NO BORRAR --EDITAR SOLO MIENTRAS ES DEBIDO
-
+    const clearPortfolio = () => {
+        deleteArr(fragmentPortfolioProjects);
+        deleteChild(portfolioCardsContainer);
+    };
+    const clearExtraListBtns = () => {
+        deleteArr(fragmentBtns);
+        deleteChild(extraListContainer);
+    };
     const listPortfolioActions = () => {
-        selectors.portfolioListContainer.classList.toggle("list_down");
-        selectors.searchPortfolioListBtn.classList.toggle("list_btn_active");
-        selectors.searchPortfolioListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
-        selectors.portfolioListContainer.children[0].focus();
+        portfolioListContainer.classList.toggle("list_down");
+        searchPortfolioListBtn.classList.toggle("list_btn_active");
+        searchPortfolioListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
     };
     const listExtrasActions = () => {
-        selectors.extraListContainer.classList.toggle("list_down");
-        selectors.searchExtraListBtn.classList.toggle("list_btn_active");
-        selectors.searchExtraListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
-        selectors.extraListContainer.children[0].focus();
+        extraListContainer.classList.toggle("list_down");
+        searchExtraListBtn.classList.toggle("list_btn_active");
+        searchExtraListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
+        extraListContainer.children[0].focus();
     };
-    selectors.searchPortfolioListBtn.addEventListener("click", () => {
-        listPortfolioActions();
-    });
-    selectors.searchExtraListBtn.addEventListener("click", () => {
+    const activateExtraBtns = (btn) => {
         listExtrasActions();
-    });
+        clearPortfolio();
+        retTop(portfolioCardsContainer);
+        const label = btn.querySelector(".label_btn");
+        const tag = label.getAttribute("data-ref");
+        const skillType = label.getAttribute("data-skill");
+        let currentData;
+        if (tag === "all") {
+            searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
+            searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
+            searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
+        } else {
+            if (Object.hasOwn(skillsData[skillType].types[tag], currentLang)) {
+                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData[skillType].types[tag].es);
+                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData[skillType].types[tag].en);
+                searchExtraListBtnLabel.textContent = skillsData[skillType].types[tag][currentLang];
+            } else {
+                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData[skillType].types[tag][0]);
+                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData[skillType].types[tag][0]);
+                searchExtraListBtnLabel.textContent = skillsData[skillType].types[tag][0];
+            }
+        }
+        if (tag === "all" && skillType === "all") {
+            currentData = DB;
+        } else if (tag === "all" && skillType !== "all") {
+            currentData = DB.filter((item) => item.projects.type === skillType);
+        } else if (tag !== "all") {
+            currentData = DB.filter((item) => item.projects.skills.includes(tag));
+        }
 
-    selectors.btnDown.addEventListener("click", () => {
-        const windowHeight = window.innerHeight;
-        const navHeight = selectors.nav.getBoundingClientRect().height;
-        const fixHeight = windowHeight - navHeight;
-        window.scrollTo(0, fixHeight);
+        currentData.forEach((item) => createCard(item, fragmentPortfolioProjects));
+        portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
+        /*  */
+    };
+    searchPortfolioListBtn.addEventListener("click", () => {
+        listPortfolioActions();
+        portfolioListContainer.children[0].focus();
     });
-    selectors.accesibilityBtns.forEach((btn) => {
-        btn.addEventListener("click", () => utils.scrollToSection(btn));
-    });
-    selectors.actionBtns.forEach((btn) => {
-        btn.addEventListener("click", () => menuActions(menuStatus));
-    });
-    selectors.sectionBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            utils.scrollToSection(btn);
+    searchExtraListBtn.addEventListener("click", listExtrasActions);
+    const openPortfolioModal = (target) => {
+        clearPortfolio();
+        clearExtraListBtns();
+
+        const modalToOpen = target.getAttribute("data-name");
+        DB.forEach((data) => createCard(data, fragmentPortfolioProjects));
+
+        Object.keys(skillsData).forEach((skill) => {
+            if (skill === "all") {
+                const typeData = skillsData.all;
+                const newTemplate = extraListBtnTemplate.cloneNode(true);
+                const newBtn = newTemplate.querySelector(".extra_list_btn");
+                const btnLabel = newBtn.querySelector(".label_btn");
+
+                btnLabel.textContent = typeData[currentLang];
+                btnLabel.setAttribute("data-en", typeData.en);
+                btnLabel.setAttribute("data-es", typeData.es);
+                btnLabel.setAttribute("data-ref", "all");
+                btnLabel.setAttribute("data-skill", skill);
+                newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
+                fragmentBtns.appendChild(newBtn);
+            } else {
+                Object.keys(skillsData[skill].types).forEach((key) => {
+                    const typeData = skillsData[skill].types[key];
+                    const newTemplate = extraListBtnTemplate.cloneNode(true);
+                    const newBtn = newTemplate.querySelector(".extra_list_btn");
+                    const btnLabel = newTemplate.querySelector(".label_btn");
+                    if (typeData.en && typeData.es) {
+                        btnLabel.textContent = typeData[currentLang];
+                        btnLabel.setAttribute("data-en", typeData.en);
+                        btnLabel.setAttribute("data-es", typeData.es);
+                    } else if (typeData.es && !typeData.en) {
+                        btnLabel.textContent = typeData.es;
+                        btnLabel.setAttribute("data-en", typeData.es);
+                        btnLabel.setAttribute("data-es", typeData.es);
+                    } else if (!typeData.es && typeData.en) {
+                        btnLabel.textContent = typeData.en;
+                        btnLabel.setAttribute("data-en", typeData.en);
+                        btnLabel.setAttribute("data-es", typeData.en);
+                    }
+                    btnLabel.setAttribute("data-ref", typeData.ref);
+                    btnLabel.setAttribute("data-skill", skill);
+                    newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
+                    fragmentBtns.appendChild(newBtn);
+                });
+            }
         });
-    });
-    selectors.socialMenuBtns.forEach((btn) => {
-        btn.addEventListener("enter", () => menuSocialActions(menuSocialStatus));
-        btn.addEventListener("click", () => menuSocialActions(menuSocialStatus));
-    });
-    selectors.contactBtns.forEach((btn) => {
-        btn.addEventListener("enter", () => modalWindowActions(selectors.contactModal, open));
-        btn.addEventListener("click", () => modalWindowActions(selectors.contactModal, open));
-    });
-    selectors.heroBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            utils.scrollToSection(btn);
+        extraListContainer.appendChild(fragmentBtns);
+        portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
+
+        modalWindowActions(selector(`.${modalToOpen}`), open);
+
+        selectors.listPortfolioBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
+                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
+                searchExtraListBtnLabel.textContent = skillsData.all[`data_${currentLang}`];
+
+                retTop(portfolioCardsContainer);
+                clearExtraListBtns();
+
+                const btnLabel = btn.querySelector(".label_btn");
+                const btnData = btnLabel.getAttribute("data-en");
+                let newName = "";
+                if (Object.hasOwn(skillsData[btnData], currentLang)) {
+                    newName = skillsData[btnData][currentLang];
+                    console.log(newName);
+                } else {
+                    newName = skillsData[btnData][0];
+                }
+                searchPortfolioListBtnLabel.setAttribute("data-en", skillsData[btnData].en);
+                searchPortfolioListBtnLabel.setAttribute("data-es", skillsData[btnData].es);
+                searchPortfolioListBtnLabel.textContent = newName;
+
+                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
+                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
+                searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
+                listPortfolioActions();
+                searchExtraListBtn.focus();
+                deleteArr(fragmentPortfolioProjects);
+                deleteChild(portfolioCardsContainer);
+                let dataToCheck = [];
+                btnData !== "all" ? (dataToCheck = DB.filter((item) => item.projects.type === btnData)) : (dataToCheck = DB);
+                dataToCheck.forEach((data) => createCard(data, fragmentPortfolioProjects));
+                /*  */
+
+                if (btnData === "all") {
+                    /*  */
+                    Object.keys(skillsData).forEach((skill) => {
+                        if (skill === "all") {
+                            const typeData = skillsData.all;
+                            const newTemplate = extraListBtnTemplate.cloneNode(true);
+                            const newBtn = newTemplate.querySelector(".extra_list_btn");
+                            const btnLabel = newBtn.querySelector(".label_btn");
+
+                            btnLabel.textContent = typeData[currentLang];
+                            btnLabel.setAttribute("data-en", typeData.en);
+                            btnLabel.setAttribute("data-es", typeData.es);
+                            btnLabel.setAttribute("data-ref", "all");
+                            btnLabel.setAttribute("data-skill", skill);
+                            newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
+                            fragmentBtns.appendChild(newBtn);
+                        } else {
+                            Object.keys(skillsData[skill].types).forEach((key) => {
+                                const typeData = skillsData[skill].types[key];
+                                const newTemplate = extraListBtnTemplate.cloneNode(true);
+                                const newBtn = newTemplate.querySelector(".extra_list_btn");
+                                const btnLabel = newTemplate.querySelector(".label_btn");
+                                if (typeData.en && typeData.es) {
+                                    btnLabel.textContent = typeData[currentLang];
+                                    btnLabel.setAttribute("data-en", typeData.en);
+                                    btnLabel.setAttribute("data-es", typeData.es);
+                                } else if (typeData.es && !typeData.en) {
+                                    btnLabel.textContent = typeData.es;
+                                    btnLabel.setAttribute("data-en", typeData.es);
+                                    btnLabel.setAttribute("data-es", typeData.es);
+                                } else if (!typeData.es && typeData.en) {
+                                    btnLabel.textContent = typeData.en;
+                                    btnLabel.setAttribute("data-en", typeData.en);
+                                    btnLabel.setAttribute("data-es", typeData.en);
+                                }
+                                btnLabel.setAttribute("data-ref", typeData.ref);
+                                btnLabel.setAttribute("data-skill", skill);
+                                newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
+                                fragmentBtns.appendChild(newBtn);
+                            });
+                        }
+                    });
+
+                    /*  */
+                } else {
+                    const newTemplate = extraListBtnTemplate.cloneNode(true);
+                    const allBtn = newTemplate.querySelector(".extra_list_btn");
+                    const labelAllBtn = allBtn.querySelector(".label_btn");
+
+                    labelAllBtn.textContent = skillsData.all[currentLang];
+                    labelAllBtn.setAttribute("data-en", skillsData.all.en);
+                    labelAllBtn.setAttribute("data-es", skillsData.all.es);
+                    labelAllBtn.setAttribute("data-ref", "all");
+                    labelAllBtn.setAttribute("data-skill", btnData);
+                    allBtn.addEventListener("click", () => activateExtraBtns(allBtn));
+                    fragmentBtns.appendChild(allBtn);
+                    Object.keys(skillsData[btnData].types).forEach((key) => {
+                        const typeExtraData = skillsData[btnData].types[key];
+                        const newTemplate = extraListBtnTemplate.cloneNode(true);
+                        const newExtraBtn = newTemplate.querySelector(".extra_list_btn");
+                        const extraBtnLabel = newExtraBtn.querySelector(".label_btn");
+                        if (typeExtraData.en && typeExtraData.es) {
+                            extraBtnLabel.textContent = typeExtraData[currentLang];
+                            extraBtnLabel.setAttribute("data-en", typeExtraData.en);
+                            extraBtnLabel.setAttribute("data-es", typeExtraData.es);
+                        } else if (typeExtraData.es && !typeExtraData.en) {
+                            extraBtnLabel.textContent = typeExtraData.es;
+                            extraBtnLabel.setAttribute("data-en", typeExtraData.es);
+                            extraBtnLabel.setAttribute("data-es", typeExtraData.es);
+                        } else if (!typeExtraData.es && typeExtraData.en) {
+                            extraBtnLabel.textContent = typeExtraData.en;
+                            extraBtnLabel.setAttribute("data-en", typeExtraData.en);
+                            extraBtnLabel.setAttribute("data-es", typeExtraData.en);
+                        }
+                        extraBtnLabel.setAttribute("data-ref", typeExtraData.ref);
+                        extraBtnLabel.setAttribute("data-skill", btnData);
+                        newExtraBtn.addEventListener("click", () => activateExtraBtns(newExtraBtn));
+                        fragmentBtns.appendChild(newExtraBtn);
+                    });
+                }
+
+                extraListContainer.appendChild(fragmentBtns);
+                /*  */
+                portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
+            });
         });
-    });
-    selectors.portfolioBtns.forEach((btn) => {
-        btn.addEventListener("click", () => openPortfolioModal(btn));
-    });
-
-    selectors.illustrationMe.addEventListener("mouseover", (e) => {
-        selectors.bubbleBio.classList.add("show_flex");
-        const containerWidth = selectors.bubbleBio.getClientRects()[0].width;
-        const containerHeight = selectors.bubbleBio.getClientRects()[0].height;
-        selectors.bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
-    });
-    selectors.bubbleBio.addEventListener("mouseleave", () => {
-        selectors.bubbleBio.classList.remove("show_flex");
-    });
-
-    const tooltipMargin = 12;
-    selectors.illustrationRex.addEventListener("mouseover", (e) => {
-        selectors.bubbleRex.classList.add("show_flex");
-        const containerWidth = selectors.bubbleRex.getClientRects()[0].width;
-        selectors.bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
-    });
-    selectors.illustrationRex.addEventListener("mouseleave", () => {
-        selectors.bubbleRex.classList.remove("show_flex");
-    });
+    };
 
     const devIconsActions = (action) => {
         if (action === open) {
@@ -719,6 +764,161 @@ document.addEventListener("DOMContentLoaded", () => {
             selectors.designTabletScreen.classList.add("screen_hide");
         }
     };
+    const oneSectionStep = () => {
+        const windowHeight = window.innerHeight;
+        const navHeight = selectors.nav.getBoundingClientRect().height;
+        const fixHeight = windowHeight - navHeight;
+        window.scrollTo(0, fixHeight);
+    };
+    const acceptStorage = () => {
+        storage["page_alert_status"] = close;
+        modalWindowActions(selectors.alertModal, close);
+        localStorage.setItem(storageName, JSON.stringify(storage));
+        console.log(localStorage.getItem(storageName));
+    };
+    const closeLegalModal = () => {
+        retTop(selectors.modalInfoLegal);
+        setTimeout(() => modalWindowActions(selectors.legalModal, close), 250);
+    };
+    const changeModalWindow = (currentBtn) => {
+        const current = currentBtn.getAttribute("data-current");
+        const next = currentBtn.getAttribute("data-next");
+        const currentModal = selector(`.${current}`);
+        const nextModal = selector(`.${next}`);
+        currentModal.classList.remove("modal_open");
+        setTimeout(() => {
+            currentModal.classList.remove("show_flex");
+            nextModal.classList.add("show_flex");
+            setTimeout(() => {
+                nextModal.classList.add("modal_open");
+            }, 200);
+        }, 600);
+    };
+    selectors.acceptStorageBtn.addEventListener("click", acceptStorage);
+
+    selectors.innerBtns.forEach((btn) => btn.addEventListener("click", () => changeModalWindow(btn)));
+
+    selectors.linkBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+            const btnName = btn.getAttribute("data-name");
+            const currentBtn = selector(`.${btnName}`);
+            const currentPosition = selectors.modalInfoLegal.getBoundingClientRect().top;
+            if (btnName === "legal_section") {
+            } else {
+                modalWindowActions(currentBtn, open);
+            }
+        })
+    );
+
+    selectors.legalAcceptBtn.addEventListener("click", closeLegalModal);
+
+    selectors.closeModalBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+            const btnName = btn.getAttribute("data-name");
+            const currentBtn = selector(`.${btnName}`);
+
+            if (btnName === "legal_modal") {
+                closeLegalModal();
+            } else if (btnName === "portfolio_modal") {
+                retTop(portfolioCardsContainer);
+
+                setTimeout(() => {
+                    modalWindowActions(currentBtn, close);
+                    setTimeout(() => {
+                        searchExtraListBtnLabel.setAttribute("data-es", skillsData.all.es);
+                        searchExtraListBtnLabel.setAttribute("data-en", skillsData.all.en);
+                        searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
+                        searchPortfolioListBtnLabel.setAttribute("data-es", skillsData.all.es);
+                        searchPortfolioListBtnLabel.setAttribute("data-en", skillsData.all.en);
+                        searchPortfolioListBtnLabel.textContent = skillsData.all[currentLang];
+                    }, 250);
+                }, 500);
+            } else {
+                modalWindowActions(currentBtn, close);
+            }
+        })
+    );
+
+    selectors.sections.forEach((section) => {
+        const watchPage = ([entry]) => {
+            if (entry.isIntersecting) {
+                const entryName = entry.target.attributes.id.value;
+                selectors.sectionBtns.forEach((btn) => {
+                    const btnName = btn.name;
+                    if (btnName === entryName) {
+                        btn.classList.add("btn_active");
+                    } else {
+                        btn.classList.remove("btn_active");
+                    }
+                });
+            }
+        };
+        const optionsIO_sections = {
+            rootMargin: "5%",
+            threshold: 0.3,
+        };
+        const pageObserver = new IntersectionObserver(watchPage, optionsIO_sections);
+        pageObserver.observe(section);
+    });
+
+    selectors.btnDown.addEventListener("click", oneSectionStep);
+
+    selectors.accesibilityBtns.forEach((btn) => {
+        btn.addEventListener("click", () => scrollSection(btn));
+    });
+
+    selectors.actionBtns.forEach((btn) => {
+        btn.addEventListener("click", () => menuActions(menuStatus));
+    });
+
+    selectors.sectionBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            scrollSection(btn);
+        });
+    });
+
+    selectors.socialMenuBtns.forEach((btn) => {
+        btn.addEventListener("enter", () => menuSocialActions(menuSocialStatus));
+        btn.addEventListener("click", () => menuSocialActions(menuSocialStatus));
+    });
+
+    selectors.contactBtns.forEach((btn) => {
+        btn.addEventListener("enter", () => modalWindowActions(selectors.contactModal, open));
+        btn.addEventListener("click", () => modalWindowActions(selectors.contactModal, open));
+    });
+
+    selectors.heroBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            scrollSection(btn);
+        });
+    });
+
+    selectors.portfolioBtns.forEach((btn) => {
+        btn.addEventListener("click", () => openPortfolioModal(btn));
+    });
+    const bubbleBio = selectors.bubbleBio;
+    const bubbleRex = selectors.bubbleRex;
+    selectors.illustrationMe.addEventListener("mouseover", (e) => {
+        bubbleBio.classList.add("show_flex");
+        const containerWidth = bubbleBio.getClientRects()[0].width;
+        const containerHeight = bubbleBio.getClientRects()[0].height;
+        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
+    });
+
+    bubbleBio.addEventListener("mouseleave", () => {
+        bubbleBio.classList.remove("show_flex");
+    });
+
+    const tooltipMargin = 12;
+    selectors.illustrationRex.addEventListener("mouseover", (e) => {
+        bubbleRex.classList.add("show_flex");
+        const containerWidth = bubbleRex.getClientRects()[0].width;
+        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
+    });
+
+    selectors.illustrationRex.addEventListener("mouseleave", () => {
+        bubbleRex.classList.remove("show_flex");
+    });
 
     selectors.animationKeys.forEach((key) => {
         key.addEventListener("mouseover", () => {
@@ -752,13 +952,14 @@ document.addEventListener("DOMContentLoaded", () => {
             selectors.tabletScreen.classList.remove("tablet_screen_on");
         });
     });
+
     selectors.forms.forEach((form) => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-            utils.sanitizeInput(form.querySelector(".input_name"));
-            utils.sanitizeInput(form.querySelector(".input_last_name"));
-            utils.sanitizeInput(form.querySelector(".input_email"));
-            utils.sanitizeInput(form.querySelector(".input_description"));
+            sanitazer(form.querySelector(".input_name"));
+            sanitazer(form.querySelector(".input_last_name"));
+            sanitazer(form.querySelector(".input_email"));
+            sanitazer(form.querySelector(".input_description"));
             let formName = form.querySelector(".send_btn").getAttribute("data-form");
             let formResponse = form.querySelector(".form_response");
             let formResponseContainer = form.querySelector(".form_response_container");
@@ -823,11 +1024,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
         });
     });
+
     selectors.themeBtns.forEach((btn) => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });
 
     selectors.btnLogo.addEventListener("click", toTheTop);
+
     window.addEventListener("scroll", () => {
         checkWindowHeight();
         if (menuStatus === open) {
@@ -837,5 +1040,6 @@ document.addEventListener("DOMContentLoaded", () => {
             menuSocialActions(menuSocialStatus);
         }
     });
+
     setTimeout(setStart, 250);
 });

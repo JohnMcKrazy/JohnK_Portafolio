@@ -246,30 +246,30 @@
                 </button>
                 <div class="lists_container">
                     <div class="list_btns_container">
-                        <button class="search_list_btn search_portfolio_list_btn list_btn_active" data-name="Todo" tabindex="0">
-                            <span class="label_btn" data-change data-es="Todo" data-en="Todo">Todo</span>
+                        <button class="search_list_btn search_portfolio_list_btn" tabindex="0">
+                            <span class="label_btn" data-change data-es="todo" data-en="all" data-ref="all" data-skill="all">todo</span>
                             <span class="icon_container">
                                 <svg class="icon_svg arrow_list_icon arrow_portfolio_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                             </span>
                         </button>
                         <div class="list_container portfolio_list_btns_container">
-                            <button class="list_btn list_portfolio_btn first_list_btn" data-name="Todo" tabindex="0">
-                                <span class="label_btn" data-change data-es="Todo" data-en="Todo">Todo</span>
+                            <button class="list_btn list_portfolio_btn first_list_btn" tabindex="0">
+                                <span class="label_btn" data-change data-es="todo" data-en="all">todo</span>
                             </button>
-                            <button class="list_btn list_portfolio_btn" data-name="Diseño" tabindex="0">
-                                <span class="label_btn" data-change data-es="Diseño" data-en="Design">Diseño</span>
+                            <button class="list_btn list_portfolio_btn" tabindex="0">
+                                <span class="label_btn" data-change data-es="diseño" data-en="design">Diseño</span>
                             </button>
-                            <button class="list_btn list_portfolio_btn" data-name="Desarrollo" tabindex="0">
-                                <span class="label_btn" data-change data-es="Programación" data-en="Programming">Desarrollo</span>
+                            <button class="list_btn list_portfolio_btn" tabindex="0">
+                                <span class="label_btn" data-change data-es="desarrollo" data-en="develop">Desarrollo</span>
                             </button>
-                            <button class="list_btn list_portfolio_btn" data-name="Ilustración" tabindex="0">
-                                <span class="label_btn" data-change data-es="Ilustración" data-en="Illustration">Ilustración</span>
+                            <button class="list_btn list_portfolio_btn" tabindex="0">
+                                <span class="label_btn" data-change data-es="ilustración" data-en="illustration">Ilustración</span>
                             </button>
                         </div>
                     </div>
                     <div class="list_btns_container">
-                        <button class="search_list_btn search_extra_list_btn" data-name="Todo" tabindex="0">
-                            <span class="label_btn" data-change data-es="Todo" data-en="Todo">Todo</span>
+                        <button class="search_list_btn search_extra_list_btn" tabindex="0">
+                            <span class="label_btn" data-change data-es="todo" data-en="all" data-ref="all" data-skill="all">todo</span>
                             <span class="icon_container">
                                 <svg class="icon_svg arrow_list_icon arrow_extra_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                             </span>
@@ -469,7 +469,7 @@
                         <span class="accent_color">/</span>
                         <span>Web</span>
                         <span class="accent_color">/</span>
-                        <span data-change data-es="Programación" data-en="Programming"></span>
+                        <span data-change data-es="Desarrollo" data-en="Develop"></span>
                     </h2>
                 </div>
                 <div class="btns_container">
@@ -4809,7 +4809,7 @@
                 <div class="cards_container swipe_animation_container_half cards_hot_container"></div>
 
                 <button type="button" class="btn more_btn portfolio_btn" data-name="portfolio_modal">
-                    <span class="label_btn" data-change data-es="Ver Todo" data-en="See All"> Ver Todo </span>
+                    <span class="label_btn" data-change data-es="Ver todo" data-en="See All"> Ver todo </span>
                 </button>
             </div>
         </section>
@@ -4946,7 +4946,7 @@
         <div class="card project_card" id="" tabindex="0">
             <img class="img_card" />
             <div class="info_project_container">
-                <h2 class="title"></h2>
+                <h2 class="title" data-change></h2>
                 <h3 class="subtitle" data-change data-es="Realizado Con:" data-en="Made With:"></h3>
                 <div class="icons_project_container margin_bottom"></div>
                 <a href="" class="more_btn btn" tabindex="-1" data-link="" target="_blank" data-change data-es="Ir a" data-en="Go To">Ir A</a>
@@ -4954,9 +4954,9 @@
         </div>
     </template>
 
-    <template class="list_btn extra_list_btn_template">
+    <template class="extra_list_btn_template">
         <button type="button" class="list_btn extra_list_btn" tabindex="0">
-            <span class="label_btn"></span>
+            <span class="label_btn" data-change></span>
         </button>
     </template>
     <template class="certification_template">
