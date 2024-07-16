@@ -1,5 +1,4 @@
 import { DB } from "./DB.js";
-import * as selectors from "./selectors.js";
 import * as utils from "./utils.js";
 
 //^ UTILS FRAGMENTS
@@ -8,7 +7,6 @@ const selector = (tag) => $d.querySelector(`${tag}`);
 const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
 const fragmentHotProjects = $d.createDocumentFragment();
 const fragmentPortfolioProjects = $d.createDocumentFragment();
-const bubbleInfo = selector(".info_bubble");
 const cardProjectTemplate = selector(".card_project_template").content;
 const extraListBtnTemplate = selector(".extra_list_btn_template").content;
 const certificationTemplate = selector(".certification_template").content;
@@ -25,21 +23,97 @@ let menuSocialStatus = close;
 let storageContent;
 let currentTheme = "dark_theme";
 let currentLang;
+
+//^ SELECTORES
+const BODY = selector("body");
+const modal = selector(".modal");
+const nav = selector(".nav_menu");
+const btnLogo = selector(".logo_btn");
+const menuBtn = selector(".menu_btn");
+const phoneMenu = selector(".phone_menu_controler");
+const menuContainer = selector(".nav_menu_controler");
+const menuSocialContainer = selector(".menu_social_container");
+const modalInfoLegal = selector(".modal_info_legal");
+const alertModal = selector(".alert_modal");
+const contactModal = selector(".contact_modal");
+const menuSocialBtnsContainer = selector(".menu_social_btns_container");
+//MY ILLUSTRATION CONTENT
+const designScreen = selector(".design_screen");
+const designTabletScreen = selector(".design_tablet_screen");
+const devScreen = selector(".dev_listPortfolioBtnsscreen");
+const devTabletScreen = selector(".dev_tablet_screen");
+const shieldScreen = selector(".shield_screen");
+const illustrationScreen = selector(".illustration_screen");
+const illustrationTabletScreen = selector(".illustration_tablet_screen");
+// BUBBLES
+const bubbleBio = selector(".bio_bubble");
+const bubbleInfo = selector(".info_bubble");
+const bubbleRex = selector(".rex_bubble");
+// MODAL PORTFOLIO
+const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
+const searchPortfolioListBtnLabel = searchPortfolioListBtn.querySelector(".label_btn");
+const portfolioListContainer = selector(".portfolio_list_btns_container");
+const extraListBtns = selectorAll(".extra_list_btn");
+const searchExtraListBtn = selector(".search_extra_list_btn");
+const searchExtraListBtnLabel = selector(".search_extra_list_btn").querySelector(".label_btn");
+const extraListContainer = selector(".extra_list_btns_container");
+// UTILS FUNCTIONS
+const cardsHotContainer = selector(".cards_hot_container");
+const portfolioCardsContainer = selector(".cards_portfolio_container");
+
+const illustrationMe = selector(".desk_me");
+const illustrationRex = selector(".dog");
+
+/*  */
+const legalModal = selector(".legal_modal");
+const acceptStorageBtn = selector(".storage_accept");
+const innerBtns = selectorAll(".inner_link_btn");
+const linkBtns = selectorAll(".link_btn");
+const legalAcceptBtn = selector(".legal_modal_accept_btn");
+const closeModalBtns = selectorAll(".close_modal");
+const sections = selectorAll(".section");
+const menuBtnBars = selectorAll(".bar");
+
+const btnDown = selector(".btn_down");
+const accesibilityBtns = selectorAll(".accessibility_btn");
+const actionBtns = selectorAll(".action_menu");
+const sectionBtns = selectorAll(".section_btn");
+const socialMenuBtns = selectorAll(".social_menu_btn");
+const contactBtns = selectorAll(".contact_btn");
+const heroBtns = selectorAll(".btn_hero");
+const portfolioBtns = selectorAll(".portfolio_btn");
+const animationKeys = selectorAll(".animation_key");
+const forms = selectorAll("FORM");
+const themeBtns = selectorAll(".theme_btn");
+const langBtns = selectorAll(".lang_btn");
+
+const tabletScreen = selector(".desk_tablet_screen");
+
+const certificationsContainer = selector(".certification_container");
+const designSkillsContainer = selector(".design_skills_container");
+
+const devSkillsContainer = selector(".dev_skills_container");
+const mainNavBtn = selector(".main_nav_btn ");
+
+const swipeAnimationContainerFull = selectorAll(".swipe_animation_container_full");
+const swipeAnimationContainerHalf = selectorAll(".swipe_animation_container_half");
+const devIcons = selectorAll(".dev_icon");
+const illustrationIcons = selectorAll(".illustration_icon");
+const designIcons = selectorAll(".design_icon");
+
+const listPortfolioBtns = selectorAll(".list_portfolio_btn");
+
+const sectionDividers = selectorAll(".section_divider");
+
 document.addEventListener("DOMContentLoaded", () => {
     const skillsData = utils.skillTypes;
-    const sanitazer = utils.sanitizeInput;
-    const deleteArr = utils.deleteArrElements;
-    const deleteChild = utils.deleteChildElements;
-    const retTop = utils.returnTop;
+    const sanitazer = (item) => utils.sanitizeInput(item);
+    const deleteArr = (item) => utils.deleteArrElements(item);
+    const deleteChild = (item) => utils.deleteChildElements(item);
+    const retTop = (sec) => utils.returnTop(sec);
     const storage = utils.johnKStorage;
-    const scrollSection = utils.scrollToSection;
-    const searchPortfolioListBtnLabel = selectors.searchPortfolioListBtnLabel;
-    const searchExtraListBtnLabel = selectors.searchExtraListBtnLabel;
-    const searchExtraListBtn = selectors.searchExtraListBtn;
-    const portfolioListContainer = selectors.portfolioListContainer;
-    const searchPortfolioListBtn = selectors.searchPortfolioListBtn;
-    const extraListContainer = selectors.extraListContainer;
-    const portfolioCardsContainer = selectors.portfolioCardsContainer;
+    const scrollSection = (sec) => utils.scrollToSection(sec);
+
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
@@ -57,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
             /* console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`); */
         }
 
-        selectors.BODY.className = currentTheme;
+        BODY.className = currentTheme;
         /* console.log(storageContent); */
     };
     // FUNCTION FOR CHANGE LANGUAGE
@@ -74,53 +148,53 @@ document.addEventListener("DOMContentLoaded", () => {
     const setLang = () => {
         const navLang = window.navigator.language;
         if (navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-")) {
-            console.log("selectors.navegador en idioma español");
+            console.log("navegador en idioma español");
             currentLang = es;
         } else {
-            console.log("selectors.navegador en otro idioma no español");
+            console.log("navegador en otro idioma no español");
             currentLang = en;
         }
     };
     // SET HEIGHT PAGE CONFIGURATION
     const checkWindowHeight = () => {
         const rem = 20;
-        const navTop = selectors.nav.getBoundingClientRect().top;
+        const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
         let borderRadius = "1rem";
 
         if (navTop >= windowHeight) {
-            selectors.nav.style.height = "8rem";
+            nav.style.height = "8rem";
 
-            selectors.menuSocialContainer.style.bottom = "inherit";
-            selectors.menuSocialContainer.style.top = "2rem";
-            selectors.menuSocialContainer.style.flexDirection = "column";
+            menuSocialContainer.style.bottom = "inherit";
+            menuSocialContainer.style.top = "2rem";
+            menuSocialContainer.style.flexDirection = "column";
 
-            selectors.btnLogo.style.height = "4rem";
-            selectors.menuBtnBars.forEach((bar) => (bar.style.height = "4px"));
+            btnLogo.style.height = "4rem";
+            menuBtnBars.forEach((bar) => (bar.style.height = "4px"));
 
             setTimeout(() => {
-                selectors.phoneMenu.style.top = 0;
-                selectors.phoneMenu.style.bottom = "inherit";
-                selectors.phoneMenu.style.flexDirection = "column";
-                selectors.phoneMenu.style.borderRadius = `0 0 ${borderRadius} ${borderRadius}`;
-                selectors.phoneMenu.style.setProperty("--menuPosition", "translateY(-100%)");
+                phoneMenu.style.top = 0;
+                phoneMenu.style.bottom = "inherit";
+                phoneMenu.style.flexDirection = "column";
+                phoneMenu.style.borderRadius = `0 0 ${borderRadius} ${borderRadius}`;
+                phoneMenu.style.setProperty("--menuPosition", "translateY(-100%)");
             }, 250);
         } else if (navTop < windowHeight) {
-            selectors.nav.style.height = "6rem";
+            nav.style.height = "6rem";
 
-            selectors.menuBtnBars.forEach((bar) => (bar.style.height = "2px"));
+            menuBtnBars.forEach((bar) => (bar.style.height = "2px"));
 
-            selectors.menuSocialContainer.style.top = "inherit";
-            selectors.menuSocialContainer.style.bottom = "2rem";
-            selectors.menuSocialContainer.style.flexDirection = "column-reverse";
-            selectors.btnLogo.style.height = "3rem";
+            menuSocialContainer.style.top = "inherit";
+            menuSocialContainer.style.bottom = "2rem";
+            menuSocialContainer.style.flexDirection = "column-reverse";
+            btnLogo.style.height = "3rem";
 
             setTimeout(() => {
-                selectors.phoneMenu.style.top = "inherit";
-                selectors.phoneMenu.style.bottom = 0;
-                selectors.phoneMenu.style.flexDirection = "column-reverse";
-                selectors.phoneMenu.style.borderRadius = `${borderRadius} ${borderRadius} 0 0`;
-                selectors.phoneMenu.style.setProperty("--menuPosition", "translateY(100%)");
+                phoneMenu.style.top = "inherit";
+                phoneMenu.style.bottom = 0;
+                phoneMenu.style.flexDirection = "column-reverse";
+                phoneMenu.style.borderRadius = `${borderRadius} ${borderRadius} 0 0`;
+                phoneMenu.style.setProperty("--menuPosition", "translateY(100%)");
             }, 250);
         }
     };
@@ -135,9 +209,9 @@ document.addEventListener("DOMContentLoaded", () => {
             badge.setAttribute("data-name", software.db_name);
             badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
             if (software.type === "design") {
-                selectors.designSkillsContainer.querySelector(".icons_container").appendChild(badge);
+                designSkillsContainer.querySelector(".icons_container").appendChild(badge);
             } else if (software.type === "dev") {
-                selectors.devSkillsContainer.querySelector(".icons_container").appendChild(badge);
+                devSkillsContainer.querySelector(".icons_container").appendChild(badge);
             }
             setTimeout(() => {
                 badge.addEventListener("mouseover", (e) => {
@@ -145,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     bubbleInfo.querySelector(".title").textContent = newData.tech_complete_name;
                     bubbleInfo.querySelector(".description").textContent = newData[`tech_info_${currentLang}`];
                     bubbleInfo.classList.add("show_flex");
-                    const containerWidth = selectors.bubbleInfo.getClientRects()[0].width;
+                    const containerWidth = bubbleInfo.getClientRects()[0].width;
                     bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
                 });
                 badge.addEventListener(
@@ -170,17 +244,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             certificationName.setAttribute("data-es", certification.es);
             certificationName.setAttribute("data-en", certification.en);
-            selectors.certificationsContainer.appendChild(certificationBadge);
+            certificationsContainer.appendChild(certificationBadge);
         });
 
         let filterHotData = utils.hotCardsSelection.map((itemHotCard) => DB.find((itemDB) => itemDB.db_name === itemHotCard));
         filterHotData.forEach((item) => createCard(item, fragmentHotProjects, "card_up"));
-        selectors.cardsHotContainer.appendChild(fragmentHotProjects);
+        cardsHotContainer.appendChild(fragmentHotProjects);
 
         setTimeout(() => {
             setLang();
 
-            selectors.cardsHotContainer.querySelectorAll(".project_card").forEach((card) => {
+            cardsHotContainer.querySelectorAll(".project_card").forEach((card) => {
                 card.classList.add("card_up");
             });
             setTimeout(() => {
@@ -188,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
                 selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
 
-                selectors.langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
+                langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
             }, 250);
         }, 250);
     };
@@ -201,7 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR TRANSLATE PAGE POSITION TO TOP
     const toTheTop = () => {
-        const currentPosition = selectors.BODY.getBoundingClientRect().top;
+        const currentPosition = BODY.getBoundingClientRect().top;
         window.scrollTo(currentPosition, 0);
     };
     // FUNCTION FOR CREATE DINAMIC PROJECT CARDS
@@ -270,27 +344,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         storageContent["page_theme"] = currentTheme;
         localStorage.setItem(storageName, JSON.stringify(storageContent));
-        selectors.BODY.className = currentTheme;
+        BODY.className = currentTheme;
     };
     // FUNCTION FOR PHONE MENU ACTIONS
     const menuActions = (status) => {
-        const navTop = selectors.nav.getBoundingClientRect().top;
+        const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
         if (status === close) {
             menuStatus = open;
-            selectors.phoneMenu.classList.add("show_flex");
+            phoneMenu.classList.add("show_flex");
             setTimeout(() => {
-                selectors.phoneMenu.classList.add("show_opacity");
-                setTimeout(() => selectors.phoneMenu.classList.add("show_menu"), 500);
-                selectors.mainNavBtn.focus();
+                phoneMenu.classList.add("show_opacity");
+                setTimeout(() => phoneMenu.classList.add("show_menu"), 500);
+                mainNavBtn.focus();
             }, 200);
         } else if (status === open) {
             /* console.log("cerrando menu"); */
             menuStatus = close;
-            selectors.phoneMenu.classList.remove("show_menu");
-            setTimeout(() => selectors.phoneMenu.classList.remove("show_opacity"), 500);
+            phoneMenu.classList.remove("show_menu");
+            setTimeout(() => phoneMenu.classList.remove("show_opacity"), 500);
             setTimeout(() => {
-                selectors.phoneMenu.classList.remove("show_flex");
+                phoneMenu.classList.remove("show_flex");
             }, 1200);
         }
     };
@@ -299,28 +373,28 @@ document.addEventListener("DOMContentLoaded", () => {
         if (action === open) {
             /* console.log("cerrando menu social"); */
             menuSocialStatus = close;
-            selectors.menuSocialBtnsContainer.classList.remove("show_opacity");
+            menuSocialBtnsContainer.classList.remove("show_opacity");
             setTimeout(() => {
-                selectors.menuSocialBtnsContainer.classList.remove("show_flex");
+                menuSocialBtnsContainer.classList.remove("show_flex");
             }, 1000);
         } else if (action === close) {
             /* console.log("abriendo menu social"); */
 
             menuSocialStatus = open;
-            selectors.menuSocialBtnsContainer.classList.add("show_flex");
+            menuSocialBtnsContainer.classList.add("show_flex");
             setTimeout(() => {
-                selectors.menuSocialBtnsContainer.classList.add("show_opacity");
+                menuSocialBtnsContainer.classList.add("show_opacity");
             }, 200);
         }
     };
     //  FUNCTION FOR MODAL BACKDROP ACTIONS
     const modalActions = (action) => {
         if (action === close) {
-            selectors.modal.classList.remove("show_opacity");
-            setTimeout(() => selectors.modal.classList.remove("show_flex"), 500);
+            modal.classList.remove("show_opacity");
+            setTimeout(() => modal.classList.remove("show_flex"), 500);
         } else if (action === open) {
-            selectors.modal.classList.add("show_flex");
-            setTimeout(() => selectors.modal.classList.add("show_opacity"), 500);
+            modal.classList.add("show_flex");
+            setTimeout(() => modal.classList.add("show_opacity"), 500);
         }
     };
     // FUNCTION FOR MODAL WINDOWS ACTIONS
@@ -348,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const show = (currentEntry) => currentEntry.classList.add(`show_card`);
         const hide = (currentEntry) => currentEntry.classList.remove(`show_card`);
 
-        selectors.swipeAnimationContainerFull.forEach((container) => {
+        swipeAnimationContainerFull.forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
                 const animationUpContainers = entry.target.querySelectorAll(".animation_up");
                 animationUpContainers.forEach((container) => {
@@ -366,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
             skillsContainersObserver.observe(container);
         });
 
-        selectors.swipeAnimationContainerHalf.forEach((container) => {
+        swipeAnimationContainerHalf.forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
                 const animationUpContainers = entry.target.querySelectorAll(".animation_up");
 
@@ -415,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const illustrationObserver = new IntersectionObserver(watchIllustration, options_illustration);
         illustrationObserver.observe(selector(".deskwork_icon"));
-        selectors.sectionDividers.forEach((container) => {
+        sectionDividers.forEach((container) => {
             const watchAnimationContainer = ([entry]) => {
                 const contentContainer = entry.target.querySelectorAll(".content");
 
@@ -594,14 +668,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         modalWindowActions(selector(`.${modalToOpen}`), open);
 
-        selectors.listPortfolioBtns.forEach((btn) => {
+        listPortfolioBtns.forEach((btn) => {
             btn.addEventListener("click", () => {
+                listPortfolioActions();
+                clearExtraListBtns();
                 searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
                 searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
                 searchExtraListBtnLabel.textContent = skillsData.all[`data_${currentLang}`];
 
                 retTop(portfolioCardsContainer);
-                clearExtraListBtns();
 
                 const btnLabel = btn.querySelector(".label_btn");
                 const btnData = btnLabel.getAttribute("data-en");
@@ -619,7 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
                 searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
                 searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
-                listPortfolioActions();
+
                 searchExtraListBtn.focus();
                 deleteArr(fragmentPortfolioProjects);
                 deleteChild(portfolioCardsContainer);
@@ -718,67 +793,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const devIconsActions = (action) => {
         if (action === open) {
-            selectors.devIcons.forEach((icon) => {
+            devIcons.forEach((icon) => {
                 icon.classList.add("icon_show");
             });
-            selectors.shieldScreen.classList.remove("screen_hide");
-            selectors.devTabletScreen.classList.remove("screen_hide");
-            setTimeout(() => selectors.devScreen.classList.remove("screen_hide"), 250);
+            shieldScreen.classList.remove("screen_hide");
+            devTabletScreen.classList.remove("screen_hide");
+            setTimeout(() => devScreen.classList.remove("screen_hide"), 250);
         } else {
-            selectors.devIcons.forEach((icon) => {
+            devIcons.forEach((icon) => {
                 icon.classList.remove("icon_show");
             });
-            selectors.devScreen.classList.add("screen_hide");
+            devScreen.classList.add("screen_hide");
 
-            selectors.devTabletScreen.classList.add("screen_hide");
-            setTimeout(() => selectors.shieldScreen.classList.add("screen_hide"), 250);
+            devTabletScreen.classList.add("screen_hide");
+            setTimeout(() => shieldScreen.classList.add("screen_hide"), 250);
         }
     };
     const illustrationIconsActions = (action) => {
         if (action === open) {
-            selectors.illustrationIcons.forEach((icon) => {
+            illustrationIcons.forEach((icon) => {
                 icon.classList.add("icon_show");
             });
-            selectors.illustrationScreen.classList.remove("screen_hide");
-            selectors.illustrationTabletScreen.classList.remove("screen_hide");
+            illustrationScreen.classList.remove("screen_hide");
+            illustrationTabletScreen.classList.remove("screen_hide");
         } else {
-            selectors.illustrationIcons.forEach((icon) => {
+            illustrationIcons.forEach((icon) => {
                 icon.classList.remove("icon_show");
             });
-            selectors.illustrationScreen.classList.add("screen_hide");
-            selectors.illustrationTabletScreen.classList.add("screen_hide");
+            illustrationScreen.classList.add("screen_hide");
+            illustrationTabletScreen.classList.add("screen_hide");
         }
     };
     const designIconsActions = (action) => {
         if (action === open) {
-            selectors.designIcons.forEach((icon) => {
+            designIcons.forEach((icon) => {
                 icon.classList.add("icon_show");
             });
-            selectors.designScreen.classList.remove("screen_hide");
-            selectors.designTabletScreen.classList.remove("screen_hide");
+            designScreen.classList.remove("screen_hide");
+            designTabletScreen.classList.remove("screen_hide");
         } else {
-            selectors.designIcons.forEach((icon) => {
+            designIcons.forEach((icon) => {
                 icon.classList.remove("icon_show");
             });
-            selectors.designScreen.classList.add("screen_hide");
-            selectors.designTabletScreen.classList.add("screen_hide");
+            designScreen.classList.add("screen_hide");
+            designTabletScreen.classList.add("screen_hide");
         }
     };
     const oneSectionStep = () => {
         const windowHeight = window.innerHeight;
-        const navHeight = selectors.nav.getBoundingClientRect().height;
+        const navHeight = nav.getBoundingClientRect().height;
         const fixHeight = windowHeight - navHeight;
         window.scrollTo(0, fixHeight);
     };
     const acceptStorage = () => {
         storage["page_alert_status"] = close;
-        modalWindowActions(selectors.alertModal, close);
+        modalWindowActions(alertModal, close);
         localStorage.setItem(storageName, JSON.stringify(storage));
         console.log(localStorage.getItem(storageName));
     };
     const closeLegalModal = () => {
-        retTop(selectors.modalInfoLegal);
-        setTimeout(() => modalWindowActions(selectors.legalModal, close), 250);
+        retTop(modalInfoLegal);
+        setTimeout(() => modalWindowActions(legalModal, close), 250);
     };
     const changeModalWindow = (currentBtn) => {
         const current = currentBtn.getAttribute("data-current");
@@ -794,15 +869,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 200);
         }, 600);
     };
-    selectors.acceptStorageBtn.addEventListener("click", acceptStorage);
+    acceptStorageBtn.addEventListener("click", acceptStorage);
 
-    selectors.innerBtns.forEach((btn) => btn.addEventListener("click", () => changeModalWindow(btn)));
+    innerBtns.forEach((btn) => btn.addEventListener("click", () => changeModalWindow(btn)));
 
-    selectors.linkBtns.forEach((btn) =>
+    linkBtns.forEach((btn) =>
         btn.addEventListener("click", () => {
             const btnName = btn.getAttribute("data-name");
             const currentBtn = selector(`.${btnName}`);
-            const currentPosition = selectors.modalInfoLegal.getBoundingClientRect().top;
+            const currentPosition = modalInfoLegal.getBoundingClientRect().top;
             if (btnName === "legal_section") {
             } else {
                 modalWindowActions(currentBtn, open);
@@ -810,9 +885,9 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     );
 
-    selectors.legalAcceptBtn.addEventListener("click", closeLegalModal);
+    legalAcceptBtn.addEventListener("click", closeLegalModal);
 
-    selectors.closeModalBtns.forEach((btn) =>
+    closeModalBtns.forEach((btn) =>
         btn.addEventListener("click", () => {
             const btnName = btn.getAttribute("data-name");
             const currentBtn = selector(`.${btnName}`);
@@ -839,11 +914,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     );
 
-    selectors.sections.forEach((section) => {
+    sections.forEach((section) => {
         const watchPage = ([entry]) => {
             if (entry.isIntersecting) {
                 const entryName = entry.target.attributes.id.value;
-                selectors.sectionBtns.forEach((btn) => {
+                sectionBtns.forEach((btn) => {
                     const btnName = btn.name;
                     if (btnName === entryName) {
                         btn.classList.add("btn_active");
@@ -861,44 +936,42 @@ document.addEventListener("DOMContentLoaded", () => {
         pageObserver.observe(section);
     });
 
-    selectors.btnDown.addEventListener("click", oneSectionStep);
+    btnDown.addEventListener("click", oneSectionStep);
 
-    selectors.accesibilityBtns.forEach((btn) => {
+    accesibilityBtns.forEach((btn) => {
         btn.addEventListener("click", () => scrollSection(btn));
     });
 
-    selectors.actionBtns.forEach((btn) => {
+    actionBtns.forEach((btn) => {
         btn.addEventListener("click", () => menuActions(menuStatus));
     });
 
-    selectors.sectionBtns.forEach((btn) => {
+    sectionBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             scrollSection(btn);
         });
     });
 
-    selectors.socialMenuBtns.forEach((btn) => {
+    socialMenuBtns.forEach((btn) => {
         btn.addEventListener("enter", () => menuSocialActions(menuSocialStatus));
         btn.addEventListener("click", () => menuSocialActions(menuSocialStatus));
     });
 
-    selectors.contactBtns.forEach((btn) => {
-        btn.addEventListener("enter", () => modalWindowActions(selectors.contactModal, open));
-        btn.addEventListener("click", () => modalWindowActions(selectors.contactModal, open));
+    contactBtns.forEach((btn) => {
+        btn.addEventListener("enter", () => modalWindowActions(contactModal, open));
+        btn.addEventListener("click", () => modalWindowActions(contactModal, open));
     });
 
-    selectors.heroBtns.forEach((btn) => {
+    heroBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             scrollSection(btn);
         });
     });
 
-    selectors.portfolioBtns.forEach((btn) => {
+    portfolioBtns.forEach((btn) => {
         btn.addEventListener("click", () => openPortfolioModal(btn));
     });
-    const bubbleBio = selectors.bubbleBio;
-    const bubbleRex = selectors.bubbleRex;
-    selectors.illustrationMe.addEventListener("mouseover", (e) => {
+    illustrationMe.addEventListener("mouseover", (e) => {
         bubbleBio.classList.add("show_flex");
         const containerWidth = bubbleBio.getClientRects()[0].width;
         const containerHeight = bubbleBio.getClientRects()[0].height;
@@ -910,17 +983,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const tooltipMargin = 12;
-    selectors.illustrationRex.addEventListener("mouseover", (e) => {
+    illustrationRex.addEventListener("mouseover", (e) => {
         bubbleRex.classList.add("show_flex");
         const containerWidth = bubbleRex.getClientRects()[0].width;
         bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
     });
 
-    selectors.illustrationRex.addEventListener("mouseleave", () => {
+    illustrationRex.addEventListener("mouseleave", () => {
         bubbleRex.classList.remove("show_flex");
     });
 
-    selectors.animationKeys.forEach((key) => {
+    animationKeys.forEach((key) => {
         key.addEventListener("mouseover", () => {
             switch (key.getAttribute("data-key")) {
                 case "dev":
@@ -934,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
 
-            selectors.tabletScreen.classList.add("tablet_screen_on");
+            tabletScreen.classList.add("tablet_screen_on");
         });
 
         key.addEventListener("mouseleave", () => {
@@ -949,11 +1022,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     designIconsActions(close);
                     break;
             }
-            selectors.tabletScreen.classList.remove("tablet_screen_on");
+            tabletScreen.classList.remove("tablet_screen_on");
         });
     });
 
-    selectors.forms.forEach((form) => {
+    forms.forEach((form) => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
             sanitazer(form.querySelector(".input_name"));
@@ -1025,11 +1098,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    selectors.themeBtns.forEach((btn) => {
+    themeBtns.forEach((btn) => {
         btn.addEventListener("click", () => changeTheme(currentTheme));
     });
 
-    selectors.btnLogo.addEventListener("click", toTheTop);
+    btnLogo.addEventListener("click", toTheTop);
 
     window.addEventListener("scroll", () => {
         checkWindowHeight();

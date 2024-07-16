@@ -1,4 +1,3 @@
-import * as selectors from "./selectors.js";
 import * as index from "./index.js";
 /* "UTILITY VARIABLES" */
 //^ UTILS VARIABLES
@@ -313,8 +312,8 @@ export const scrollToSection = (btn) => {
     const windowTop = window.top;
     const windowHeight = window.innerHeight / 2;
     const sectionTop = section.getBoundingClientRect().top;
-    const navHeight = selectors.nav.getBoundingClientRect().height;
-    const navTop = selectors.nav.getBoundingClientRect().top;
+    const navHeight = index.nav.getBoundingClientRect().height;
+    const navTop = index.nav.getBoundingClientRect().top;
     let fixTop;
     if (navTop >= windowHeight) {
         fixTop = sectionTop - navHeight;
