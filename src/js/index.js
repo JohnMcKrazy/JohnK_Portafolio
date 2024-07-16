@@ -27,7 +27,7 @@ let currentLang;
 //^ SELECTORES
 const BODY = selector("body");
 const modal = selector(".modal");
-const nav = selector(".nav_menu");
+export const nav = selector(".nav_menu");
 const btnLogo = selector(".logo_btn");
 const menuBtn = selector(".menu_btn");
 const phoneMenu = selector(".phone_menu_controler");
