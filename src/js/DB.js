@@ -180,6 +180,18 @@ export const DB = [
         },
     },
     {
+        project_name: { en: "Markdown", es: "Markdown" },
+        db_name: "markdown",
+        projects: {
+            type: "develop",
+            skills: ["web", "programming"],
+            info: "Procesador de lenguaje Markdown, proyecto para certificación en 'Desarrollo de Librerias Front-End (React)' para FreeCodeCamp, realizado con HTML ,CSS y React",
+            technologies: ["HTML", "CSS", "React"],
+            img: "./src/img/portfolio/markdown.webp",
+            project_link: "https://johnmckrazy.github.io/FreeCodeCamp_Markdown-Preview_Project/",
+        },
+    },
+    {
         project_name: { en: "To-Do-List Web App", es: "Aplicación Lista de quehaceres" },
         db_name: "to-do",
         projects: {
