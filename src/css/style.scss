@@ -314,9 +314,8 @@ body {
     color: var(--TC);
 
     //~ SECTION BACKGROUNDS--START
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 75%), url("../img/backgrounds/day.webp") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--NVC) 75%), url("../img/backgrounds/day.webp") center no-repeat fixed;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
-    --bgHeaderSectionAbout2: linear-gradient(var(--bgColorUT), var(--bgColor) 75%), url("https://images.pexels.com/photos/7130470/pexels-photo-7130470.jpeg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
     --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
@@ -357,7 +356,7 @@ body {
     //¿GENERALS
 
     //~SECTION BACKGROUNDS
-    --backgroundHero: linear-gradient(transparent, var(--bgC) 90%), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
+    --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
     --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
     --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
     --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
