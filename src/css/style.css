@@ -308,7 +308,7 @@ body {
   --bgM: rgba(230, 230, 230, 0.75);
   --vueIconText: rgb(51, 51, 51);
   color: var(--TC);
-  --backgroundHero: linear-gradient(transparent, var(--NVC) 75%), url("../img/backgrounds/day.webp") center no-repeat fixed;
+  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/day.webp") center no-repeat fixed;
   --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
   --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
   --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
