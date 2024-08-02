@@ -17,6 +17,7 @@ const es = "es";
 const en = "en";
 const close = "close";
 const open = "open";
+const start = "start";
 const storageName = "JohnK_Maker";
 let menuStatus = close;
 let menuSocialStatus = close;
@@ -40,7 +41,7 @@ const menuSocialBtnsContainer = selector(".menu_social_btns_container");
 //MY ILLUSTRATION CONTENT
 const designScreen = selector(".design_screen");
 const designTabletScreen = selector(".design_tablet_screen");
-const devScreen = selector(".dev_listPortfolioBtnsscreen");
+const devScreen = selector(".dev_screen");
 const devTabletScreen = selector(".dev_tablet_screen");
 const shieldScreen = selector(".shield_screen");
 const illustrationScreen = selector(".illustration_screen");
@@ -839,6 +840,41 @@ document.addEventListener("DOMContentLoaded", () => {
             designTabletScreen.classList.add("screen_hide");
         }
     };
+    devIconsActions(open);
+    setTimeout(() => {
+        devIconsActions(close);
+        setTimeout(() => {
+            illustrationIconsActions(open);
+            setTimeout(() => {
+                illustrationIconsActions(close);
+
+                setTimeout(() => {
+                    designIconsActions(open);
+                    setTimeout(() => designIconsActions(close), 5000);
+                }, 2000);
+            }, 5000);
+        }, 2000);
+    }, 5000);
+
+    setInterval(() => {
+        setTimeout(() => {
+            devIconsActions(open);
+            setTimeout(() => {
+                devIconsActions(close);
+                setTimeout(() => {
+                    illustrationIconsActions(open);
+                    setTimeout(() => {
+                        illustrationIconsActions(close);
+
+                        setTimeout(() => {
+                            designIconsActions(open);
+                            setTimeout(() => designIconsActions(close), 5000);
+                        }, 2000);
+                    }, 5000);
+                }, 2000);
+            }, 5000);
+        }, 2000);
+    }, 21000);
     const oneSectionStep = () => {
         const windowHeight = window.innerHeight;
         const navHeight = nav.getBoundingClientRect().height;
@@ -993,7 +1029,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bubbleRex.classList.remove("show_flex");
     });
 
-    animationKeys.forEach((key) => {
+    /*  animationKeys.forEach((key) => {
         key.addEventListener("mouseover", () => {
             switch (key.getAttribute("data-key")) {
                 case "dev":
@@ -1024,7 +1060,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             tabletScreen.classList.remove("tablet_screen_on");
         });
-    });
+    }); */
 
     forms.forEach((form) => {
         form.addEventListener("submit", (e) => {
