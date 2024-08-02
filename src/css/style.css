@@ -1471,7 +1471,7 @@ body {
 .logo_btn {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 0.5rem;
   transition: var(--T_M);
@@ -1483,6 +1483,9 @@ body {
 .logo_btn .johnK_icon {
   width: auto;
   height: 100%;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 500ms linear;
 }
 .logo_btn .johnK_full .braket,
 .logo_btn .johnK_icon .braket {
@@ -1496,8 +1499,21 @@ body {
 .logo_btn .johnK_icon .dot {
   fill: var(--SC);
 }
+.logo_btn .johnK_icon {
+  display: none;
+}
 .logo_btn:hover, .logo_btn:focus, .logo_btn:active {
   animation: zoom 1s ease;
+}
+.logo_btn .remove {
+  display: none;
+}
+.logo_btn .add {
+  display: block;
+}
+.logo_btn .show_logo {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .bullet {

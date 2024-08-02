@@ -1524,7 +1524,7 @@ body {
     }
 }
 .logo_btn {
-    @include flex(row, center, center);
+    @include flex(row, flex-start, center);
     padding: 0 0.5rem;
     transition: var(--T_M);
     width: fit-content;
@@ -1534,6 +1534,10 @@ body {
     .johnK_icon {
         width: auto;
         height: 100%;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 500ms linear;
+
         .braket {
             fill: #cdcccc;
         }
@@ -1544,6 +1548,9 @@ body {
             fill: var(--SC);
         }
     }
+    .johnK_icon {
+        display: none;
+    }
 
     //*LOGO LOGO OVER
 
@@ -1551,6 +1558,17 @@ body {
     &:focus,
     &:active {
         animation: zoom 1s ease;
+    }
+
+    .remove {
+        display: none;
+    }
+    .add {
+        display: block;
+    }
+    .show_logo {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 .bullet {

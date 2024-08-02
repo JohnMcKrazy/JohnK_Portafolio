@@ -268,10 +268,67 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 250);
     };
     // SET ALL START CONFIGURATIONS
+    const johnIconFull = selector(".johnK_full");
+    const johnIconSmall = selector(".johnK_icon");
+    const setAnimations = () => {
+        devIconsActions(open);
+        setTimeout(() => {
+            johnIconFull.classList.add("show_logo");
+
+            setTimeout(() => {
+                johnIconFull.classList.remove("show_logo");
+                setTimeout(() => {
+                    johnIconFull.classList.add("remove");
+                    setTimeout(() => {
+                        johnIconSmall.classList.add("add");
+                        setTimeout(() => {
+                            johnIconSmall.classList.add("show_logo");
+                        }, 100);
+                    }, 250);
+                }, 1000);
+            }, 4000);
+        }, 1000);
+        setTimeout(() => {
+            devIconsActions(close);
+
+            setTimeout(() => {
+                illustrationIconsActions(open);
+
+                setTimeout(() => {
+                    illustrationIconsActions(close);
+
+                    setTimeout(() => {
+                        designIconsActions(open);
+                        setTimeout(() => designIconsActions(close), 5000);
+                    }, 2000);
+                }, 5000);
+            }, 2000);
+        }, 5000);
+
+        setInterval(() => {
+            setTimeout(() => {
+                devIconsActions(open);
+                setTimeout(() => {
+                    devIconsActions(close);
+                    setTimeout(() => {
+                        illustrationIconsActions(open);
+                        setTimeout(() => {
+                            illustrationIconsActions(close);
+
+                            setTimeout(() => {
+                                designIconsActions(open);
+                                setTimeout(() => designIconsActions(close), 5000);
+                            }, 2000);
+                        }, 5000);
+                    }, 2000);
+                }, 5000);
+            }, 2000);
+        }, 21000);
+    };
     const setStart = () => {
         checkWindowHeight();
         checkAlertStorageAnswer();
-
+        setAnimations();
         setAssets();
     };
     // FUNCTION FOR TRANSLATE PAGE POSITION TO TOP
@@ -791,7 +848,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     };
-
     const devIconsActions = (action) => {
         if (action === open) {
             devIcons.forEach((icon) => {
@@ -840,41 +896,7 @@ document.addEventListener("DOMContentLoaded", () => {
             designTabletScreen.classList.add("screen_hide");
         }
     };
-    devIconsActions(open);
-    setTimeout(() => {
-        devIconsActions(close);
-        setTimeout(() => {
-            illustrationIconsActions(open);
-            setTimeout(() => {
-                illustrationIconsActions(close);
 
-                setTimeout(() => {
-                    designIconsActions(open);
-                    setTimeout(() => designIconsActions(close), 5000);
-                }, 2000);
-            }, 5000);
-        }, 2000);
-    }, 5000);
-
-    setInterval(() => {
-        setTimeout(() => {
-            devIconsActions(open);
-            setTimeout(() => {
-                devIconsActions(close);
-                setTimeout(() => {
-                    illustrationIconsActions(open);
-                    setTimeout(() => {
-                        illustrationIconsActions(close);
-
-                        setTimeout(() => {
-                            designIconsActions(open);
-                            setTimeout(() => designIconsActions(close), 5000);
-                        }, 2000);
-                    }, 5000);
-                }, 2000);
-            }, 5000);
-        }, 2000);
-    }, 21000);
     const oneSectionStep = () => {
         const windowHeight = window.innerHeight;
         const navHeight = nav.getBoundingClientRect().height;
