@@ -677,9 +677,10 @@ body {
     }
     .desk_tablet_screen {
         transition: var(--T_UF);
-        fill: rgb(3, 28, 53);
+        /*  fill: rgb(3, 28, 53); */
+        fill: #9cf;
     }
-    .desk_tablet:active,
+    /* .desk_tablet:active,
     .desk_tablet:hover {
         .desk_tablet_screen {
             fill: #9cf;
@@ -687,11 +688,11 @@ body {
         .illustration_tablet_screen {
             opacity: 1;
         }
-    }
-    .tablet_screen_on {
+    } */
+    /* .tablet_screen_on {
         fill: #9cf;
-    }
-    .computer_monitor {
+    } */
+    /* .computer_monitor {
         &:hover {
             .design_screen,
             .dev_screen {
@@ -701,7 +702,7 @@ body {
                 opacity: 0;
             }
         }
-    }
+    } */
     .watch_time {
         fill: rgb(0, 170, 204);
     }

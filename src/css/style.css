@@ -368,6 +368,31 @@ body {
   transform: translateX(100%);
 }
 
+.deskwork_icon {
+  /* .desk_tablet:active,
+  .desk_tablet:hover {
+      .desk_tablet_screen {
+          fill: #9cf;
+      }
+      .illustration_tablet_screen {
+          opacity: 1;
+      }
+  } */
+  /* .tablet_screen_on {
+      fill: #9cf;
+  } */
+  /* .computer_monitor {
+      &:hover {
+          .design_screen,
+          .dev_screen {
+              opacity: 1;
+          }
+          .windows_screen {
+              opacity: 0;
+          }
+      }
+  } */
+}
 .deskwork_icon .cls-1 {
   fill: #7c7c7c;
 }
@@ -595,25 +620,8 @@ body {
 }
 .deskwork_icon .desk_tablet_screen {
   transition: var(--T_UF);
-  fill: rgb(3, 28, 53);
-}
-.deskwork_icon .desk_tablet:active .desk_tablet_screen,
-.deskwork_icon .desk_tablet:hover .desk_tablet_screen {
+  /*  fill: rgb(3, 28, 53); */
   fill: #9cf;
-}
-.deskwork_icon .desk_tablet:active .illustration_tablet_screen,
-.deskwork_icon .desk_tablet:hover .illustration_tablet_screen {
-  opacity: 1;
-}
-.deskwork_icon .tablet_screen_on {
-  fill: #9cf;
-}
-.deskwork_icon .computer_monitor:hover .design_screen,
-.deskwork_icon .computer_monitor:hover .dev_screen {
-  opacity: 1;
-}
-.deskwork_icon .computer_monitor:hover .windows_screen {
-  opacity: 0;
 }
 .deskwork_icon .watch_time {
   fill: rgb(0, 170, 204);
