@@ -68,7 +68,7 @@
     --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
     --fontSizeXLClamp: clamp(6rem, calc(1.5rem + 3vw), 8rem);
     --T_UF: all 250ms ease-in-out;
-    --T_F: all 500ms ease-in-out;
+    --T_F: all 350ms ease-in-out;
     --T_M: all 750ms ease-in-out;
     --T_S: all 1000ms ease-in-out;
     --NVH_F: 6rem;
@@ -2468,7 +2468,7 @@ body {
     height: auto;
     width: 100%;
     background: var(--NVC);
-    transition: var(--T_M);
+    transition: var(--T_F);
     transform: var(--menuPosition);
     z-index: 6;
     overflow: hidden;

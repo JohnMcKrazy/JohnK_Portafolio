@@ -408,19 +408,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuActions = (status) => {
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
+        const delay = 250;
         if (status === close) {
             menuStatus = open;
             phoneMenu.classList.add("show_flex");
             setTimeout(() => {
                 phoneMenu.classList.add("show_opacity");
-                setTimeout(() => phoneMenu.classList.add("show_menu"), 500);
+                setTimeout(() => phoneMenu.classList.add("show_menu"), delay);
                 mainNavBtn.focus();
             }, 200);
         } else if (status === open) {
             /* console.log("cerrando menu"); */
             menuStatus = close;
             phoneMenu.classList.remove("show_menu");
-            setTimeout(() => phoneMenu.classList.remove("show_opacity"), 500);
+            setTimeout(() => phoneMenu.classList.remove("show_opacity"), delay);
             setTimeout(() => {
                 phoneMenu.classList.remove("show_flex");
             }, 1200);
