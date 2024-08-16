@@ -363,8 +363,7 @@ body {
 }
 
 .desk_me {
-  transition: all 1000ms;
-  transition-timing-function: ease-in-out;
+  transition: all 1000ms ease-in-out;
   transform: translateX(100%);
 }
 
@@ -2124,7 +2123,7 @@ body {
 .section_divider .author_container .author_info {
   line-height: 1;
 }
-.section_divider .content {
+.section_divider .divider_content {
   padding: 20rem 0;
   opacity: 0;
   transform: translateX(-100%);
@@ -2135,7 +2134,7 @@ body {
   transform: translateX(0);
 }
 
-.section_divider:nth-of-type(2n) .content {
+.section_divider:nth-of-type(2n) .divider_content {
   transform: translateX(100%);
 }
 .section_divider:nth-of-type(2n) .show_quote {

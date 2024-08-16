@@ -550,7 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
         illustrationObserver.observe(selector(".deskwork_icon"));
         sectionDividers.forEach((container) => {
             const watchAnimationContainer = ([entry]) => {
-                const contentContainer = entry.target.querySelectorAll(".content");
+                const contentContainer = entry.target.querySelectorAll(".divider_content");
 
                 contentContainer.forEach((container) => {
                     if (entry.isIntersecting) {
