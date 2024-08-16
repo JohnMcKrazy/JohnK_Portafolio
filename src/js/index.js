@@ -136,14 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
         /* console.log(storageContent); */
     };
     // FUNCTION FOR CHANGE LANGUAGE
+    const setTextByLang = (newLang) => {
+        selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${newLang}`)));
+        selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
+    };
     const changeLang = (lang) => {
         if (lang === es) {
             currentLang = en;
         } else {
             currentLang = es;
         }
-        selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
-        selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
+        setTextByLang(currentLang);
     };
     // SET SYSTEM LANGUAGE FOR CHANGE LANGUAGE REFERENCE
     const setLang = () => {
@@ -260,70 +263,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             setTimeout(() => {
                 setObservers();
-                selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${currentLang}`)));
-                selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${currentLang}`)));
+                setTextByLang(currentLang);
 
                 langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
             }, 250);
         }, 250);
     };
     // SET ALL START CONFIGURATIONS
-    const johnIconFull = selector(".johnK_full");
-    const johnIconSmall = selector(".johnK_icon");
+
     const setAnimations = () => {
-        devIconsActions(open);
-        setTimeout(() => {
-            johnIconFull.classList.add("show_logo");
-
-            setTimeout(() => {
-                johnIconFull.classList.remove("show_logo");
-                setTimeout(() => {
-                    johnIconFull.classList.add("remove");
-                    setTimeout(() => {
-                        johnIconSmall.classList.add("add");
-                        setTimeout(() => {
-                            johnIconSmall.classList.add("show_logo");
-                        }, 100);
-                    }, 250);
-                }, 1000);
-            }, 4000);
-        }, 1000);
-        setTimeout(() => {
-            devIconsActions(close);
-
-            setTimeout(() => {
-                illustrationIconsActions(open);
-
-                setTimeout(() => {
-                    illustrationIconsActions(close);
-
-                    setTimeout(() => {
-                        designIconsActions(open);
-                        setTimeout(() => designIconsActions(close), 5000);
-                    }, 2000);
-                }, 5000);
-            }, 2000);
-        }, 5000);
-
+        logoAnimation();
+        iconsAnimation();
         setInterval(() => {
-            setTimeout(() => {
-                devIconsActions(open);
-                setTimeout(() => {
-                    devIconsActions(close);
-                    setTimeout(() => {
-                        illustrationIconsActions(open);
-                        setTimeout(() => {
-                            illustrationIconsActions(close);
-
-                            setTimeout(() => {
-                                designIconsActions(open);
-                                setTimeout(() => designIconsActions(close), 5000);
-                            }, 2000);
-                        }, 5000);
-                    }, 2000);
-                }, 5000);
-            }, 2000);
-        }, 21000);
+            iconsAnimation();
+        }, 16000);
     };
     const setStart = () => {
         checkWindowHeight();
@@ -387,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
         makeText.textContent = makeText.getAttribute(`data-${currentLang}`);
         frac.appendChild(projectCard);
     };
-
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
     const changeTheme = (tm) => {
         const lightT = "light_theme";
@@ -897,7 +849,41 @@ document.addEventListener("DOMContentLoaded", () => {
             designTabletScreen.classList.add("screen_hide");
         }
     };
-
+    const iconsAnimation = () => {
+        devIconsActions(open);
+        setTimeout(() => {
+            devIconsActions(close);
+            setTimeout(() => {
+                illustrationIconsActions(open);
+                setTimeout(() => {
+                    illustrationIconsActions(close);
+                    setTimeout(() => {
+                        designIconsActions(open);
+                        setTimeout(() => designIconsActions(close), 4000);
+                    }, 1000);
+                }, 4000);
+            }, 1000);
+        }, 4000);
+    };
+    const logoAnimation = () => {
+        const johnIconFull = selector(".johnK_full");
+        const johnIconSmall = selector(".johnK_icon");
+        setTimeout(() => {
+            johnIconFull.classList.add("show_logo");
+            setTimeout(() => {
+                johnIconFull.classList.remove("show_logo");
+                setTimeout(() => {
+                    johnIconFull.classList.add("remove");
+                    setTimeout(() => {
+                        johnIconSmall.classList.add("add");
+                        setTimeout(() => {
+                            johnIconSmall.classList.add("show_logo");
+                        }, 100);
+                    }, 250);
+                }, 1000);
+            }, 4000);
+        }, 1000);
+    };
     const oneSectionStep = () => {
         const windowHeight = window.innerHeight;
         const navHeight = nav.getBoundingClientRect().height;

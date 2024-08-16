@@ -638,7 +638,7 @@ body {
 .deskwork_icon .icon_hide {
   opacity: 0;
   transform: translateY(4rem);
-  transition: var(--T_S);
+  transition: var(--T_M);
 }
 .deskwork_icon .icon_show {
   opacity: 0.7;
