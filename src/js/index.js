@@ -142,23 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
         selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
     };
     const changeLang = (lang) => {
-        if (lang === es) {
-            currentLang = en;
-        } else {
-            currentLang = es;
-        }
+        lang === es ? (currentLang = en) : (currentLang = es);
         setTextByLang(currentLang);
     };
     // SET SYSTEM LANGUAGE FOR CHANGE LANGUAGE REFERENCE
     const setLang = () => {
         const navLang = window.navigator.language;
-        if (navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-")) {
-            /* console.log("navegador en idioma español"); */
-            currentLang = es;
-        } else {
-            /* console.log("navegador en otro idioma no español"); */
-            currentLang = en;
-        }
+        navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
     };
     // SET HEIGHT PAGE CONFIGURATION
     const checkWindowHeight = () => {
