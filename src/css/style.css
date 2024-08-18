@@ -633,7 +633,7 @@ body {
 }
 .deskwork_icon .watch_mer {
   opacity: 0;
-  transition: all 500ms ease;
+  transition: var(--T_M);
 }
 .deskwork_icon .icon_hide {
   opacity: 0;
@@ -1601,7 +1601,7 @@ body {
 }
 
 .service_card {
-  transition: all 500ms;
+  transition: all 500ms ease-in-out;
 }
 .service_card .info_card {
   display: flex;
@@ -2251,8 +2251,7 @@ body {
   padding: 0 2rem;
 }
 .about_section .about_salute .about_text {
-  font-size: var(--fontSizeMClamp);
-  padding: 2rem;
+  font-size: var(--fontSizeXClamp);
 }
 
 .badge {

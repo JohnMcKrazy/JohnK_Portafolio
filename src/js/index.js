@@ -107,18 +107,18 @@ const listPortfolioBtns = selectorAll(".list_portfolio_btn");
 const sectionDividers = selectorAll(".section_divider");
 
 document.addEventListener("DOMContentLoaded", () => {
-    const skillsData = utils.skillTypes;
     const sanitazer = (item) => utils.sanitizeInput(item);
     const deleteArr = (item) => utils.deleteArrElements(item);
     const deleteChild = (item) => utils.deleteChildElements(item);
     const retTop = (sec) => utils.returnTop(sec);
-    const storage = utils.johnKStorage;
     const scrollSection = (sec) => utils.scrollToSection(sec);
+    const skillsData = utils.skillTypes;
+    const storage = utils.johnKStorage;
 
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
-        console.log(storageContent);
+        /* console.log(storageContent); */
         if (!storageContent) {
             localStorage.setItem(storageName, JSON.stringify(storage));
             console.log("local storage item is created");
@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR CHANGE LANGUAGE
     const setTextByLang = (newLang) => {
+        const about = selector(".about_text");
         selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${newLang}`)));
         selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
     };
@@ -152,10 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const setLang = () => {
         const navLang = window.navigator.language;
         if (navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-")) {
-            console.log("navegador en idioma español");
+            /* console.log("navegador en idioma español"); */
             currentLang = es;
         } else {
-            console.log("navegador en otro idioma no español");
+            /* console.log("navegador en otro idioma no español"); */
             currentLang = en;
         }
     };
@@ -520,54 +521,6 @@ document.addEventListener("DOMContentLoaded", () => {
             containersObserver.observe(container);
         });
     };
-
-    /* ! *********************************************** */
-
-    // FUNCTION FOR CREATE DINAMIC PORTFOLIO LIST BTNS
-    /* 
-    const createExtraListbtn = (skill, key) => {
-        let typeData = "";
-        if (skill !== "all") {
-            typeData = skillsData[skill].types[key];
-        } else {
-            typeData = skillsData.all;
-        }
-
-        const newTemplate = extraListBtnTemplate.cloneNode(true);
-        const newBtn = newTemplate.querySelector(".extra_list_btn");
-        const btnLabel = newTemplate.querySelector(".label_btn");
-        let reference = "";
-        if (typeData.en && typeData.es) {
-            btnLabel.textContent = typeData[currentLang];
-            btnLabel.setAttribute("data-en", typeData.en);
-            btnLabel.setAttribute("data-es", typeData.es);
-        } else if (typeData.es && !typeData.en) {
-            btnLabel.textContent = typeData.es;
-            btnLabel.setAttribute("data-en", typeData.es);
-            btnLabel.setAttribute("data-es", typeData.es);
-        } else if (!typeData.es && typeData.en) {
-            btnLabel.textContent = typeData.en;
-            btnLabel.setAttribute("data-en", typeData.en);
-            btnLabel.setAttribute("data-es", typeData.en);
-        }
-
-        if (typeData.en === "all") {
-            btnLabel.setAttribute("data-ref", "all");
-        } else {
-            btnLabel.setAttribute("data-ref", typeData.ref);
-        }
-        btnLabel.setAttribute("data-skill", skill);
-
-        fragmentBtns.appendChild(newBtn);
-    };
-   
-  
-
-    
-
-     */
-    /* ! *********************************************** */
-
     const clearPortfolio = () => {
         deleteArr(fragmentPortfolioProjects);
         deleteChild(portfolioCardsContainer);
@@ -600,15 +553,9 @@ document.addEventListener("DOMContentLoaded", () => {
             searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
             searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
         } else {
-            if (Object.hasOwn(skillsData[skillType].types[tag], currentLang)) {
-                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData[skillType].types[tag].es);
-                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData[skillType].types[tag].en);
-                searchExtraListBtnLabel.textContent = skillsData[skillType].types[tag][currentLang];
-            } else {
-                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData[skillType].types[tag][0]);
-                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData[skillType].types[tag][0]);
-                searchExtraListBtnLabel.textContent = skillsData[skillType].types[tag][0];
-            }
+            searchExtraListBtnLabel.setAttribute(`data-es`, skillsData[skillType].types[tag].es);
+            searchExtraListBtnLabel.setAttribute(`data-en`, skillsData[skillType].types[tag].en);
+            searchExtraListBtnLabel.textContent = skillsData[skillType].types[tag][currentLang];
         }
         if (tag === "all" && skillType === "all") {
             currentData = DB;
@@ -694,7 +641,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 let newName = "";
                 if (Object.hasOwn(skillsData[btnData], currentLang)) {
                     newName = skillsData[btnData][currentLang];
-                    console.log(newName);
                 } else {
                     newName = skillsData[btnData][0];
                 }

@@ -186,10 +186,12 @@ export const skillTypes = {
         en: "develop",
         types: {
             web: {
+                es: "web",
                 en: "web",
                 ref: "web",
             },
             api: {
+                es: "API Rest",
                 en: "API Rest",
                 ref: "api",
             },
@@ -243,6 +245,7 @@ export const skillTypes = {
             },
             poster: {
                 en: "Poster",
+                es: "Poster",
                 ref: "poster",
             },
             infographic: {
@@ -251,6 +254,7 @@ export const skillTypes = {
                 ref: "infographic",
             },
             editorial: {
+                es: "Editorial",
                 en: "Editorial",
                 ref: "editorial",
             },
@@ -269,10 +273,10 @@ export const skillTypes = {
                 en: "Stationery",
                 ref: "stationery",
             },
-            ad: {
+            ads: {
                 es: "Promocionales",
-                en: "Ad",
-                ref: "ad",
+                en: "Ads",
+                ref: "ads",
             },
             logo: {
                 es: "Logotipo",
@@ -324,3 +328,5 @@ export const scrollToSection = (btn) => {
     }
 };
 export const returnTop = (selector) => selector.scrollTo({ top: 0, behavior: `smooth` });
+export const about_es = `Disfruto de crear, el medio es indiferente,<span class="animation_key" data-key="illustration">ilustrar</span> una de mis mayores pasiones, el <span class="animation_key" data-key="design">diseño</span> mi profesión, aunque ahora estoy muy interesado en <span class="animation_key" data-key="dev">desarrollo / web</span>, ya que me gustan los proyectos interactivos y diferentes.`;
+export const about_en = `I enjoy creating, in all kind of media,<span class="animation_key" data-key="illustration">ilustrar</span> una de mis mayores pasiones, el <span class="animation_key" data-key="design">diseño</span> mi profesión, aunque ahora estoy muy interesado en <span class="animation_key" data-key="dev">desarrollo / web</span>, ya que me gustan los proyectos interactivos y diferentes.`;

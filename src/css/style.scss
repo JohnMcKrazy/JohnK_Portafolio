@@ -713,7 +713,7 @@ body {
     }
     .watch_mer {
         opacity: 0;
-        transition: all 500ms ease;
+        transition: var(--T_M);
     }
 
     .icon_hide {
@@ -1637,7 +1637,7 @@ body {
 }
 
 .service_card {
-    transition: all 500ms;
+    transition: all 500ms ease-in-out;
 
     .info_card {
         @include flex(column, center, center);
@@ -2241,8 +2241,7 @@ body {
             padding: 0 2rem;
         }
         .about_text {
-            font-size: var(--fontSizeMClamp);
-            padding: 2rem;
+            font-size: var(--fontSizeXClamp);
         }
     }
 }
