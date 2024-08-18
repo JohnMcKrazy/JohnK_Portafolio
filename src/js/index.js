@@ -639,11 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const btnLabel = btn.querySelector(".label_btn");
                 const btnData = btnLabel.getAttribute("data-en");
                 let newName = "";
-                if (Object.hasOwn(skillsData[btnData], currentLang)) {
-                    newName = skillsData[btnData][currentLang];
-                } else {
-                    newName = skillsData[btnData][0];
-                }
+                newName = skillsData[btnData][currentLang];
                 searchPortfolioListBtnLabel.setAttribute("data-en", skillsData[btnData].en);
                 searchPortfolioListBtnLabel.setAttribute("data-es", skillsData[btnData].es);
                 searchPortfolioListBtnLabel.textContent = newName;

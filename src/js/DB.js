@@ -292,7 +292,7 @@ export const DB = [
         db_name: "impulso",
         projects: {
             type: "design",
-            skills: ["identity", "stationery", "ad", "logo", "packaging", "poster"],
+            skills: ["identity", "stationery", "ads", "logo", "packaging", "poster"],
             info: "Desarrollo de imagen y packaging para disco de musica rock llamado 'Impulso', proyecto para concurso de diseño de empaque, realizado con Adobe Illustrator",
             technologies: ["Illustrator"],
             img: "./src/img/portfolio/impulso.webp",
@@ -316,7 +316,7 @@ export const DB = [
         db_name: "leiru",
         projects: {
             type: "design",
-            skills: ["identity", "stationery", "ad", "logo"],
+            skills: ["identity", "stationery", "ads", "logo"],
             info: "Desarrollo de imagen de marca, creación de logoitipo, tarjetas de presentación y posters promocionales, realizado con Adobe Photoshop y Adobe Illustrator",
             technologies: ["Photoshop", "Illustrator"],
             img: "./src/img/portfolio/leiru.webp",
@@ -364,7 +364,7 @@ export const DB = [
         db_name: "creaciones_hermed",
         projects: {
             type: "design",
-            skills: ["image", "stationery", "ad"],
+            skills: ["image", "stationery", "ads"],
             info: "Desarrollo imagenes promocionales, realizado con Adobe Photoshop",
             technologies: ["Photoshop"],
             img: "./src/img/portfolio/hermed.webp",
