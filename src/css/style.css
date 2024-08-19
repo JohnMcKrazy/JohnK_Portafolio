@@ -1294,6 +1294,7 @@ I {
   padding: 1rem;
   border-radius: 1rem;
   overflow: hidden;
+  fill: var(--FC);
 }
 .close_btn:hover {
   background: var(--FC);

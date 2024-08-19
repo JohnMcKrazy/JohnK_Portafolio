@@ -1381,7 +1381,7 @@ I {
     padding: 1rem;
     border-radius: 1rem;
     overflow: hidden;
-
+    fill: var(--FC);
     &:hover {
         background: var(--FC);
         fill: var(--TC_C);
