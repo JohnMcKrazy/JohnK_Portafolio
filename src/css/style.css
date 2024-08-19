@@ -172,7 +172,7 @@
   --NVC_T: rgba(242, 242, 242, 0.75);
   --bgC: rgb(230, 230, 230);
   --bgC_T: rgba(242, 242, 242, 0.75);
-  --bgC_UT: rgba(242, 242, 242, 0.25);
+  --bgC_UT: rgba(242, 242, 242, 0.5);
   --bgC_C: rgb(26, 26, 26);
   --bgC_C_T: rgba(26, 26, 26, 0.15);
   --BS_SB: rgba(0, 0, 0, 0.1);
@@ -205,7 +205,7 @@
   --NVC_T: rgba(13, 13, 13, 0.75);
   --bgC: rgb(26, 26, 26);
   --bgC_T: rgba(13, 13, 13, 0.75);
-  --bgC_UT: rgba(13, 13, 13, 0.25);
+  --bgC_UT: rgba(13, 13, 13, 0.5);
   --bgC_C: rgb(230, 230, 230);
   --bgC_C_T: rgba(230, 230, 230, 0.15);
   --BS_SB: rgba(255, 255, 255, 0.1);
@@ -1564,10 +1564,8 @@ I {
   margin: 0.5rem 0;
 }
 
-.service_card {
-  transition: all 500ms ease-in-out;
-}
 .service_card .info_card {
+  transition: all 500ms ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1597,9 +1595,6 @@ I {
 }
 .service_card:hover .bg_card {
   transform: scale(1.2);
-}
-.service_card:hover {
-  background: var(--bgC_T);
 }
 .service_card:hover .info_card {
   background: var(--bgC_T);
@@ -1729,7 +1724,7 @@ I {
 
 .grid_container {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 8fr));
 }
 
 .cards_service_container {

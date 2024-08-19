@@ -1,6 +1,6 @@
 export const DB = [
     {
-        project_name: { en: "Pokedex" },
+        project_name: { en: "Pokedex", es: "Pokedex" },
         db_name: "pokedex",
         projects: {
             type: "develop",
@@ -240,7 +240,7 @@ export const DB = [
         },
     },
     {
-        project_name: { es: "Handball Panteras Negras" },
+        project_name: { en: "Handball Panteras Negras", es: "Handball Panteras Negras" },
         db_name: "handball_panteras",
         projects: {
             type: "design",
@@ -288,7 +288,7 @@ export const DB = [
         },
     },
     {
-        project_name: { es: "IMPULSO" },
+        project_name: { en: "IMPULSO", es: "IMPULSO" },
         db_name: "impulso",
         projects: {
             type: "design",
@@ -300,7 +300,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Smuffs" },
+        project_name: { en: "Smuffs", es: "Smuffs" },
         db_name: "smuffs",
         projects: {
             type: "design",
@@ -312,7 +312,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Leiru" },
+        project_name: { en: "Leiru", es: "Leiru" },
         db_name: "leiru",
         projects: {
             type: "design",
@@ -324,7 +324,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Afroduck" },
+        project_name: { en: "Afroduck", es: "Afroduck" },
         db_name: "afroduck",
         projects: {
             type: "design",
@@ -336,7 +336,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Verona" },
+        project_name: { en: "Verona", es: "Verona" },
         db_name: "verona",
         projects: {
             type: "design",
@@ -348,7 +348,7 @@ export const DB = [
         },
     },
     {
-        project_name: { es: "Pasión por México" },
+        project_name: { en: "Pasión por México", es: "Pasión por México" },
         db_name: "pasion_por_mexico",
         projects: {
             type: "design",
@@ -360,7 +360,7 @@ export const DB = [
         },
     },
     {
-        project_name: { es: "Creaciones Hermed" },
+        project_name: { en: "Creaciones Hermed", es: "Creaciones Hermed" },
         db_name: "creaciones_hermed",
         projects: {
             type: "design",
@@ -372,7 +372,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Bucefalos" },
+        project_name: { en: "Bucefalos", es: "Bucefalos" },
         db_name: "bucefalos",
         projects: {
             type: "design",
@@ -384,7 +384,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Berserkers" },
+        project_name: { en: "Berserkers", es: "Berserkers" },
         db_name: "berserkers",
         projects: {
             type: "design",
@@ -396,7 +396,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "System Smasher" },
+        project_name: { en: "System Smasher", es: "System Smasher" },
         db_name: "system_smasher",
         projects: {
             type: "illustration",
@@ -408,7 +408,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Chop-Chop Buggy" },
+        project_name: { en: "Chop-Chop Buggy", es: "Chop-Chop Buggy" },
         db_name: "chop_chop_buggy",
         projects: {
             type: "illustration",
@@ -420,7 +420,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "BoJack Horseman" },
+        project_name: { en: "BoJack Horseman", es: "BoJack Horseman" },
         db_name: "boJack",
         projects: {
             type: "illustration",
@@ -432,7 +432,7 @@ export const DB = [
         },
     },
     {
-        project_name: { en: "Joker" },
+        project_name: { en: "Joker", es: "Joker" },
         db_name: "joker_tradicional",
         projects: {
             type: "illustration",

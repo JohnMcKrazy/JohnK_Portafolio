@@ -738,7 +738,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const animationTabletScreensList = ["illustration_tablet_screen", "dev_tablet_screen", "design_tablet_screen"];
         selectorAll(`.${animationIconsList[0]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
         selectorAll(`.${animationScreensList[0]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
-        selectorAll(`.${animationTabletScreensList[0]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
+        selectorAll(`.${animationTabletScreensList[0]}`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
         animationScreensList.forEach((item) => console.log(typeof item));
         setInterval(() => {
             selectorAll(".icon_animation").forEach((item) => item.classList.remove("icon_show"));
@@ -747,11 +747,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             setTimeout(() => {
                 selectorAll(`.${animationIconsList[count]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
-                selectorAll(`.${animationTabletScreensList[count]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
+                selectorAll(`.${animationTabletScreensList[count]}`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
                 switch (typeof animationScreensList[count]) {
                     case "object":
-                        animationScreensList[count].forEach((itemToShow) => {
-                            selector(`.${itemToShow}`).classList.add("screen_show");
+                        animationScreensList[count].forEach((screenToShow) => {
+                            selector(`.${screenToShow}`).classList.add("screen_show");
                         });
                         break;
                     case "string":
