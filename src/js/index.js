@@ -750,14 +750,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 selectorAll(`.${animationTabletScreensList[count]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
                 switch (typeof animationScreensList[count]) {
                     case "object":
-                        console.log(typeof animationScreensList[count], animationScreensList[count]);
                         animationScreensList[count].forEach((itemToShow) => {
-                            console.log(selector(`.${itemToShow}`));
                             selector(`.${itemToShow}`).classList.add("screen_show");
                         });
                         break;
                     case "string":
-                        console.log(typeof animationScreensList[count], animationScreensList[count]);
                         selector(`.${animationScreensList[count]}`).classList.add("screen_show");
                         break;
                 }
@@ -780,9 +777,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             johnIconSmall.classList.add("show_logo");
                         }, 100);
                     }, 250);
-                }, 1000);
+                }, 500);
             }, 4000);
-        }, 1000);
+        }, 500);
     };
     const oneSectionStep = () => {
         const windowHeight = window.innerHeight;
