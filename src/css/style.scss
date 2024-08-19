@@ -2275,10 +2275,10 @@ I {
     }
 }
 .skills_section {
-    --iconD: 6rem;
+    --skillIconD: 6rem;
     .icon_container {
-        height: var(--iconD);
-        width: var(--iconD);
+        height: var(--skillIconD);
+        width: var(--skillIconD);
     }
 }
 .services_container {
