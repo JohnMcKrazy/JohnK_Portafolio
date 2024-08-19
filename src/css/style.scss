@@ -1802,7 +1802,7 @@ I {
     min-height: auto;
     padding: 2rem 0;
     .service_card {
-        grid-column: span 4;
+        grid-column: span 2;
     }
 }
 .cards_hot_container {
@@ -2664,6 +2664,9 @@ I {
         flex-basis: 70%;
     }
     .cards_service_container {
+        .service_card {
+            grid-column: span 4;
+        }
         .service_card:nth-child(2),
         .service_card:nth-child(3),
         .service_card:nth-child(6) {

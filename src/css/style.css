@@ -1764,7 +1764,7 @@ I {
   padding: 2rem 0;
 }
 .cards_service_container .service_card {
-  grid-column: span 4;
+  grid-column: span 2;
 }
 
 .cards_hot_container {
@@ -2705,6 +2705,9 @@ I {
   }
   .flex_info {
     flex-basis: 70%;
+  }
+  .cards_service_container .service_card {
+    grid-column: span 4;
   }
   .cards_service_container .service_card:nth-child(2),
   .cards_service_container .service_card:nth-child(3),
