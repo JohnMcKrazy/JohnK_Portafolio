@@ -1723,7 +1723,7 @@ I {
 
 .content {
   min-width: 250px;
-  width: 1600px;
+  width: 1400px;
   max-width: 90%;
   padding: 2rem 0;
 }
@@ -2147,7 +2147,6 @@ I {
   align-items: center;
   min-height: calc(100vh - var(--NVH));
   min-height: var(--FS_NVH);
-  width: 100%;
 }
 
 .with_bg {
@@ -2760,7 +2759,7 @@ I {
   .cards_service_container .service_card:nth-child(2),
   .cards_service_container .service_card:nth-child(3),
   .cards_service_container .service_card:nth-child(6) {
-    grid-column: span 4;
+    grid-column: span 3;
   }
 }
 @media screen and (min-width: 1478px) {
