@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
         iconsAnimation();
         setInterval(() => {
             iconsAnimation();
-        }, 16000);
+        }, 15000);
     };
     const setStart = () => {
         checkWindowHeight();

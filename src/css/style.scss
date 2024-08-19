@@ -18,8 +18,7 @@
 }
 
 :root {
-    --logoGray: rgb(166, 166, 166);
-    --lightray: rgb(191, 191, 191);
+    --lightGray: rgb(191, 191, 191);
     --midGray: rgb(128, 128, 128);
     --darkGray: rgb(64, 64, 64);
     --black: rgb(26, 26, 26);
@@ -27,15 +26,20 @@
     --white: rgb(245, 245, 245);
     --whiteT: rgb(245, 245, 245, 0.7);
     --whiteOff: rgb(230, 230, 230);
-    --midLight: rgb(128, 128, 128);
+
     --warning: rgb(218, 165, 32);
     --danger: rgb(178, 34, 34);
     --good: rgb(34, 139, 34);
 
-    --logoPurple1: rgb(46, 10, 117);
-    --logoPurple2: rgb(142, 89, 250);
-    --logoMint1: #18e3c1;
-    --logoMint2: #1a8288;
+    --logoGray: rgb(203, 203, 203);
+    --logoPurpleL: hsl(260, 84%, 25%);
+    --logoPurpleD: hsl(240, 55%, 60%);
+    --logoMintL: hsl(170, 81%, 49%);
+    --logoMintD: hsl(190, 100%, 40%);
+
+    --purpleDark: hsl(260, 84%, 10%);
+    --mintLigth: hsl(190, 100%, 50%);
+
     /*  */
 
     --TC: var(--black);
@@ -63,6 +67,8 @@
     --FW_L: 200;
     --FW_N: 400;
     --FW_B: 600;
+
+    --iconD: 4rem;
     --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
     --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
     --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
@@ -174,7 +180,99 @@
     align-items: center;
 }
 
-html {
+//!THEMES START
+.light_theme {
+    --FC: var(--logoPurpleL);
+    --SC: var(--logoMintL);
+    --H: var(--purpleDark);
+    --TC: rgb(26, 26, 26);
+    --TC_C: rgb(230, 230, 230);
+    --NVC: rgb(242, 242, 242);
+    --NVC_T: rgba(242, 242, 242, 0.75);
+    --bgC: rgb(230, 230, 230);
+    --bgC_T: rgba(242, 242, 242, 0.75);
+    --bgC_UT: rgba(242, 242, 242, 0.25);
+    --bgC_C: rgb(26, 26, 26);
+    --bgC_C_T: rgba(26, 26, 26, 0.15);
+    --BS_SB: rgba(0, 0, 0, 0.1);
+    --bgOff: rgb(204, 204, 204);
+    --bgM: rgba(230, 230, 230, 0.75);
+    --vueIconText: rgb(51, 51, 51);
+    //~ GENERALS
+    color: var(--TC);
+
+    //~ SECTION BACKGROUNDS--START
+    --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/day.webp") center no-repeat fixed;
+    --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
+    --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
+    --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
+
+    .leiru_icon_svg {
+        .brand,
+        .brand-append {
+            .cls-1 {
+                fill: rgb(24, 160, 56);
+            }
+        }
+        .text {
+            fill: var(--TC);
+        }
+    }
+}
+.dark_theme {
+    --FC: var(--logoMintD);
+    --SC: var(--logoPurpleD);
+    --H: var(--mintLigth);
+    --TC: rgb(230, 230, 230);
+    --TC_C: rgb(26, 26, 26);
+    --NVC: rgb(13, 13, 13);
+    --NVC_T: rgba(13, 13, 13, 0.75);
+    --bgC: rgb(26, 26, 26);
+    --bgC_T: rgba(13, 13, 13, 0.75);
+    --bgC_UT: rgba(13, 13, 13, 0.25);
+    --bgC_C: rgb(230, 230, 230);
+    --bgC_C_T: rgba(230, 230, 230, 0.15);
+    --BS_SB: rgba(255, 255, 255, 0.1);
+    --bgOff: rgb(51, 51, 51);
+    --bgM: rgba(26, 26, 26, 0.75);
+    --vueIconText: rgb(204, 204, 204);
+    //¿GENERALS
+
+    //~SECTION BACKGROUNDS
+    --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
+    --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
+    --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
+    --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
+    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
+
+    color: var(--TC);
+
+    .leiru_icon_svg {
+        .brand,
+        .brand-append {
+            .cls-1 {
+                fill: var(--TC);
+            }
+        }
+    }
+}
+
+BODY {
+    --btnGradient: linear-gradient(45deg, var(--FC), var(--SC));
+
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow-x: hidden;
+    color: var(--TC);
+    background: var(--bgC);
+    text-rendering: optimizeSpeed;
+}
+
+:root {
     font-size: 12px;
     line-break: loose;
     line-height: 1.2;
@@ -192,18 +290,18 @@ html {
 :focus {
     outline: 2px solid var(--FC);
 }
-img {
+IMG {
     display: block;
     width: 100%;
     border-style: none;
     object-fit: cover;
 }
-a {
+A {
     background: none;
     text-decoration: none;
 }
 
-ul {
+UL {
     list-style: none;
 }
 
@@ -268,116 +366,17 @@ P {
     color: var(--TC);
     text-wrap: pretty;
 }
-i {
+I {
     font-style: italic;
     font-weight: 400;
-}
-body {
-    width: 100%;
-    height: auto;
-    position: relative;
-    overflow-x: hidden;
-    color: var(--TC);
-    background: var(--bgC);
-    text-rendering: optimizeSpeed;
-}
-
-//!THEMES START
-.light_theme {
-    --FC: var(--logoPurple1);
-    --SC: var(--logoMint1);
-    --FC_H: var(--SC);
-    --SC_H: rgb(45, 161, 200);
-    --TC: rgb(26, 26, 26);
-    --TC_C: rgb(230, 230, 230);
-    --NVC: rgb(242, 242, 242);
-    --NVC_T: rgba(242, 242, 242, 0.75);
-    --bgC: rgb(230, 230, 230);
-    --bgC_T: rgba(242, 242, 242, 0.75);
-    --bgC_UT: rgba(242, 242, 242, 0.25);
-    --bgC_C: rgb(26, 26, 26);
-    --bgC_C_T: rgba(26, 26, 26, 0.15);
-    --BS_SB: rgba(0, 0, 0, 0.1);
-    --bgOff: rgb(204, 204, 204);
-    --bgM: rgba(230, 230, 230, 0.75);
-    --vueIconText: rgb(51, 51, 51);
-    //~ GENERALS
-    color: var(--TC);
-
-    //~ SECTION BACKGROUNDS--START
-    --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/day.webp") center no-repeat fixed;
-    --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
-    --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
-    --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
-
-    .leiru_icon_svg {
-        .brand,
-        .brand-append {
-            .cls-1 {
-                fill: rgb(24, 160, 56);
-            }
-        }
-        .text {
-            fill: var(--TC);
-        }
-    }
-}
-.dark_theme {
-    --FC: rgb(0, 170, 204);
-    --SC: rgb(97, 97, 209);
-    --FC: #18e3c1;
-    --SC: #1a8288;
-    --FC_H: var(--SC);
-    --SC_H: rgb(46, 46, 158);
-    --TC: rgb(230, 230, 230);
-    --TC_C: rgb(26, 26, 26);
-    --NVC: rgb(13, 13, 13);
-    --NVC_T: rgba(13, 13, 13, 0.75);
-    --bgC: rgb(26, 26, 26);
-    --bgC_T: rgba(13, 13, 13, 0.75);
-    --bgC_UT: rgba(13, 13, 13, 0.25);
-    --bgC_C: rgb(230, 230, 230);
-    --bgC_C_T: rgba(230, 230, 230, 0.15);
-    --BS_SB: rgba(255, 255, 255, 0.1);
-    --bgOff: rgb(51, 51, 51);
-    --bgM: rgba(26, 26, 26, 0.75);
-    --vueIconText: rgb(204, 204, 204);
-    //¿GENERALS
-
-    //~SECTION BACKGROUNDS
-    --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
-    --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
-    --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
-    --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
-    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
-
-    color: var(--TC);
-
-    .leiru_icon_svg {
-        .brand,
-        .brand-append {
-            .cls-1 {
-                fill: var(--TC);
-            }
-        }
-    }
-}
-
-.light_theme,
-.dark_theme {
-    --btnGradient: linear-gradient(45deg, var(--FC), var(--SC));
 }
 .title_subsection {
     margin-bottom: 1rem;
 }
 //^ CLIENTS LOGO COLORS
-.animation_key {
+.accent_text {
     color: var(--FC);
     font-weight: var(--FW_B);
-    cursor: pointer;
 }
 .desk_me {
     transition: all 1000ms ease-in-out;
@@ -423,7 +422,7 @@ body {
     .cls-10,
     .cls-23,
     .cls-59 {
-        fill: #0ac;
+        fill: var(--SC);
     }
 
     .cls-10,
@@ -535,7 +534,7 @@ body {
 
     .cls-31,
     .cls-41 {
-        fill: #6161d1;
+        fill: var(--FC);
     }
 
     .cls-32 {
@@ -601,7 +600,7 @@ body {
     }
 
     .cls-50 {
-        fill: #a6a6a6;
+        fill: var(--logoGray);
     }
 
     .cls-52 {
@@ -703,13 +702,13 @@ body {
         }
     } */
     .watch_time {
-        fill: rgb(0, 170, 204);
+        fill: var(--logoPurpleD);
     }
     .cls-txt {
         fill: var(--TC);
     }
     .cls-mid {
-        fill: var(--midLight);
+        fill: var(--midGray);
     }
     .watch_mer {
         opacity: 0;
@@ -1165,16 +1164,13 @@ body {
 }
 //^^TECH ICONS COLORS--OVER
 //^^SOCIAL ICONS COLORS-- START
-.wa_icon_svg,
+/* .wa_icon_svg,
 .fb_icon_svg,
 .behance_icon_svg,
 .contact_icon_svg {
     height: auto;
     width: 100%;
-    .cls-1 {
-        fill: var(--FC);
-    }
-}
+} */
 .gitHub_icon_svg {
     transform: scale(0.85);
 }
@@ -1189,6 +1185,8 @@ body {
     font-size: var(--FS_N);
     font-weight: var(--FW_N);
     display: block;
+    line-height: 1;
+    font-weight: 600;
 }
 .separator {
     display: block;
@@ -1332,7 +1330,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 4rem;
+    min-height: var(--iconD);
     width: 100%;
     color: var(--TC_C);
     outline: solid 2px var(--FC);
@@ -1362,7 +1360,6 @@ body {
     align-items: center;
     width: 8rem;
     height: 6rem;
-    opacity: var(--opacityBtn);
     color: var(--TC);
     margin-top: 4rem;
     .arrow_down_svg {
@@ -1379,12 +1376,12 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 4rem;
-    height: 4rem;
+    width: var(--iconD);
+    height: var(--iconD);
     padding: 1rem;
     border-radius: 1rem;
     overflow: hidden;
-    fill: var(--FC);
+
     &:hover {
         background: var(--FC);
         fill: var(--TC_C);
@@ -1394,7 +1391,6 @@ body {
     height: 100%;
     color: var(--TC);
     .label_btn {
-        font-weight: 600;
         width: fit-content;
     }
     .icon_btn {
@@ -1406,7 +1402,7 @@ body {
         width: auto;
     }
     &:hover {
-        background: var(--FC_H);
+        background: var(--H);
         color: var(--TC_C);
         .icon_container {
             fill: var(--TC_C) !important;
@@ -1416,12 +1412,12 @@ body {
 .extra_btn {
     @include flex(row, center, center);
     fill: var(--TC);
-    height: 100%;
+    height: var(--iconD);
     border-radius: 1rem;
     overflow: hidden;
     .icon_container {
         padding: 1rem;
-        width: 4rem;
+        width: var(--iconD);
     }
 
     &:hover {
@@ -1454,25 +1450,26 @@ body {
     font-size: var(--FS_N);
     color: var(--TC);
     @include flex(row, center, center);
-    .icon_social_container {
+    .icon_container {
         height: 100%;
         width: auto;
         padding: 0.5rem;
-        .cls-1 {
-            fill: var(--FC);
-        }
+
+        fill: var(--FC);
+
         .icon_svg {
             width: auto;
             height: 100%;
         }
     }
     &:hover {
-        background: var(--FC_H);
-        color: var(--TC_C);
-        .cls-2,
-        .cls-1 {
+        .icon_container {
             fill: var(--TC_C);
         }
+    }
+    &:hover:not(.extra_btn) {
+        background: var(--H);
+        color: var(--TC_C);
     }
 }
 .bar {
@@ -1496,7 +1493,7 @@ body {
 }
 .bottom_bar,
 .top_bar {
-    width: 4rem;
+    width: var(--iconD);
 }
 .center_bar {
     width: 6rem;
@@ -1538,7 +1535,7 @@ body {
         transition: all 500ms linear;
 
         .braket {
-            fill: #cdcccc;
+            fill: var(--logoGray);
         }
         .letter {
             fill: var(--FC);
@@ -1572,7 +1569,7 @@ body {
 }
 .bullet {
     background: var(--bgC_T);
-    width: calc(100% - 4rem);
+    width: calc(100% - var(--iconD));
     padding: 2rem;
     H1 {
         margin-bottom: 1rem;
@@ -2078,7 +2075,7 @@ body {
         }
         .quote_icon {
             height: 100%;
-            width: 4rem;
+            width: var(--iconD);
         }
         .quote_start {
             align-self: flex-start;
@@ -2090,8 +2087,8 @@ body {
             align-self: flex-end;
         }
         .icon_container {
-            width: 4rem;
-            height: 4rem;
+            width: var(--iconD);
+            height: var(--iconD);
             fill: var(--FC);
         }
     }
@@ -2210,7 +2207,7 @@ body {
 }
 .about_section {
     position: relative;
-    @include flex(column, center, center);
+    @include flex(column, flex-start, center);
     width: 100%;
     .section_content {
         position: relative;
@@ -2292,7 +2289,6 @@ body {
     .clients_container {
         width: 100%;
         height: fit-content;
-        //*padding-bottom: 4rem;
     }
     .client_logo_container {
         @include flex(row, center, center);
@@ -2482,12 +2478,20 @@ body {
         @include flex(column, flex-start, center);
         padding: 0;
         .phone_menu_btn {
-            height: 4rem;
+            height: var(--iconD);
         }
     }
 
     .extra_btns_container {
         @include flex(row, space-between, center);
+        .btns_container {
+            padding-top: 0;
+        }
+        .label_btn {
+            @include flex(row, center, center);
+            height: var(--iconD);
+            min-width: var(--iconD);
+        }
     }
     .social_btns_container {
         @include flex(row, space-evenly, center);
@@ -2495,19 +2499,11 @@ body {
         .phone_menu_btn {
             height: 100%;
             padding: 0.75rem;
-            &:hover {
-                .icon_social_container {
-                    fill: var(--TC);
-                }
-            }
         }
     }
     .close_btn {
         position: relative;
         padding: 0.25rem;
-    }
-    .extra_btn:hover {
-        background: var(--FC_H);
     }
 }
 .menu_social_container {
@@ -2515,7 +2511,7 @@ body {
     position: fixed;
     bottom: 4rem;
     left: 2rem;
-    min-height: 4rem;
+    min-height: var(--iconD);
     z-index: 4;
     fill: var(--FC);
     /* overflow: hidden; */
@@ -2531,8 +2527,8 @@ body {
     .social_menu_btn {
         background: var(--NVC_T);
         overflow: hidden;
-        width: 4rem;
-        height: 4rem;
+        width: var(--iconD);
+        height: var(--iconD);
         border-radius: 1rem;
         .icon_container {
             width: 100%;

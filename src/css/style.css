@@ -17,8 +17,7 @@
   font-style: italic;
 }
 :root {
-  --logoGray: rgb(166, 166, 166);
-  --lightray: rgb(191, 191, 191);
+  --lightGray: rgb(191, 191, 191);
   --midGray: rgb(128, 128, 128);
   --darkGray: rgb(64, 64, 64);
   --black: rgb(26, 26, 26);
@@ -26,14 +25,16 @@
   --white: rgb(245, 245, 245);
   --whiteT: rgb(245, 245, 245, 0.7);
   --whiteOff: rgb(230, 230, 230);
-  --midLight: rgb(128, 128, 128);
   --warning: rgb(218, 165, 32);
   --danger: rgb(178, 34, 34);
   --good: rgb(34, 139, 34);
-  --logoPurple1: rgb(46, 10, 117);
-  --logoPurple2: rgb(142, 89, 250);
-  --logoMint1: #18e3c1;
-  --logoMint2: #1a8288;
+  --logoGray: rgb(203, 203, 203);
+  --logoPurpleL: hsl(260, 84%, 25%);
+  --logoPurpleD: hsl(240, 55%, 60%);
+  --logoMintL: hsl(170, 81%, 49%);
+  --logoMintD: hsl(190, 100%, 40%);
+  --purpleDark: hsl(260, 84%, 10%);
+  --mintLigth: hsl(190, 100%, 50%);
   /*  */
   --TC: var(--black);
   --TC_C: var(--whiteOff);
@@ -58,6 +59,7 @@
   --FW_L: 200;
   --FW_N: 400;
   --FW_B: 600;
+  --iconD: 4rem;
   --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
   --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
   --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
@@ -156,7 +158,81 @@
     opacity: 0;
   }
 }
-html {
+.light_theme {
+  --FC: var(--logoPurpleL);
+  --SC: var(--logoMintL);
+  --H: var(--purpleDark);
+  --TC: rgb(26, 26, 26);
+  --TC_C: rgb(230, 230, 230);
+  --NVC: rgb(242, 242, 242);
+  --NVC_T: rgba(242, 242, 242, 0.75);
+  --bgC: rgb(230, 230, 230);
+  --bgC_T: rgba(242, 242, 242, 0.75);
+  --bgC_UT: rgba(242, 242, 242, 0.25);
+  --bgC_C: rgb(26, 26, 26);
+  --bgC_C_T: rgba(26, 26, 26, 0.15);
+  --BS_SB: rgba(0, 0, 0, 0.1);
+  --bgOff: rgb(204, 204, 204);
+  --bgM: rgba(230, 230, 230, 0.75);
+  --vueIconText: rgb(51, 51, 51);
+  color: var(--TC);
+  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/day.webp") center no-repeat fixed;
+  --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
+  --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
+  --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
+  --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
+  --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
+}
+.light_theme .leiru_icon_svg .brand .cls-1,
+.light_theme .leiru_icon_svg .brand-append .cls-1 {
+  fill: rgb(24, 160, 56);
+}
+.light_theme .leiru_icon_svg .text {
+  fill: var(--TC);
+}
+
+.dark_theme {
+  --FC: var(--logoMintD);
+  --SC: var(--logoPurpleD);
+  --H: var(--mintLigth);
+  --TC: rgb(230, 230, 230);
+  --TC_C: rgb(26, 26, 26);
+  --NVC: rgb(13, 13, 13);
+  --NVC_T: rgba(13, 13, 13, 0.75);
+  --bgC: rgb(26, 26, 26);
+  --bgC_T: rgba(13, 13, 13, 0.75);
+  --bgC_UT: rgba(13, 13, 13, 0.25);
+  --bgC_C: rgb(230, 230, 230);
+  --bgC_C_T: rgba(230, 230, 230, 0.15);
+  --BS_SB: rgba(255, 255, 255, 0.1);
+  --bgOff: rgb(51, 51, 51);
+  --bgM: rgba(26, 26, 26, 0.75);
+  --vueIconText: rgb(204, 204, 204);
+  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
+  --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
+  --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
+  --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
+  --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
+  --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
+  color: var(--TC);
+}
+.dark_theme .leiru_icon_svg .brand .cls-1,
+.dark_theme .leiru_icon_svg .brand-append .cls-1 {
+  fill: var(--TC);
+}
+
+BODY {
+  --btnGradient: linear-gradient(45deg, var(--FC), var(--SC));
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow-x: hidden;
+  color: var(--TC);
+  background: var(--bgC);
+  text-rendering: optimizeSpeed;
+}
+
+:root {
   font-size: 12px;
   line-break: loose;
   line-height: 1.2;
@@ -168,7 +244,7 @@ html {
   scrollbar-color: var(--FC) var(--SC);
   scrollbar-width: thin;
 }
-html:focus-within {
+:root:focus-within {
   scroll-behavior: smooth;
 }
 
@@ -176,7 +252,7 @@ html:focus-within {
   outline: 2px solid var(--FC);
 }
 
-img {
+IMG {
   display: block;
   width: 100%;
   border-style: none;
@@ -184,12 +260,12 @@ img {
      object-fit: cover;
 }
 
-a {
+A {
   background: none;
   text-decoration: none;
 }
 
-ul {
+UL {
   list-style: none;
 }
 
@@ -265,101 +341,18 @@ P {
   text-wrap: pretty;
 }
 
-i {
+I {
   font-style: italic;
   font-weight: 400;
-}
-
-body {
-  width: 100%;
-  height: auto;
-  position: relative;
-  overflow-x: hidden;
-  color: var(--TC);
-  background: var(--bgC);
-  text-rendering: optimizeSpeed;
-}
-
-.light_theme {
-  --FC: var(--logoPurple1);
-  --SC: var(--logoMint1);
-  --FC_H: var(--SC);
-  --SC_H: rgb(45, 161, 200);
-  --TC: rgb(26, 26, 26);
-  --TC_C: rgb(230, 230, 230);
-  --NVC: rgb(242, 242, 242);
-  --NVC_T: rgba(242, 242, 242, 0.75);
-  --bgC: rgb(230, 230, 230);
-  --bgC_T: rgba(242, 242, 242, 0.75);
-  --bgC_UT: rgba(242, 242, 242, 0.25);
-  --bgC_C: rgb(26, 26, 26);
-  --bgC_C_T: rgba(26, 26, 26, 0.15);
-  --BS_SB: rgba(0, 0, 0, 0.1);
-  --bgOff: rgb(204, 204, 204);
-  --bgM: rgba(230, 230, 230, 0.75);
-  --vueIconText: rgb(51, 51, 51);
-  color: var(--TC);
-  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/day.webp") center no-repeat fixed;
-  --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
-  --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
-  --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
-}
-.light_theme .leiru_icon_svg .brand .cls-1,
-.light_theme .leiru_icon_svg .brand-append .cls-1 {
-  fill: rgb(24, 160, 56);
-}
-.light_theme .leiru_icon_svg .text {
-  fill: var(--TC);
-}
-
-.dark_theme {
-  --FC: rgb(0, 170, 204);
-  --SC: rgb(97, 97, 209);
-  --FC: #18e3c1;
-  --SC: #1a8288;
-  --FC_H: var(--SC);
-  --SC_H: rgb(46, 46, 158);
-  --TC: rgb(230, 230, 230);
-  --TC_C: rgb(26, 26, 26);
-  --NVC: rgb(13, 13, 13);
-  --NVC_T: rgba(13, 13, 13, 0.75);
-  --bgC: rgb(26, 26, 26);
-  --bgC_T: rgba(13, 13, 13, 0.75);
-  --bgC_UT: rgba(13, 13, 13, 0.25);
-  --bgC_C: rgb(230, 230, 230);
-  --bgC_C_T: rgba(230, 230, 230, 0.15);
-  --BS_SB: rgba(255, 255, 255, 0.1);
-  --bgOff: rgb(51, 51, 51);
-  --bgM: rgba(26, 26, 26, 0.75);
-  --vueIconText: rgb(204, 204, 204);
-  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
-  --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
-  --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
-  --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
-  color: var(--TC);
-}
-.dark_theme .leiru_icon_svg .brand .cls-1,
-.dark_theme .leiru_icon_svg .brand-append .cls-1 {
-  fill: var(--TC);
-}
-
-.light_theme,
-.dark_theme {
-  --btnGradient: linear-gradient(45deg, var(--FC), var(--SC));
 }
 
 .title_subsection {
   margin-bottom: 1rem;
 }
 
-.animation_key {
+.accent_text {
   color: var(--FC);
   font-weight: var(--FW_B);
-  cursor: pointer;
 }
 
 .desk_me {
@@ -422,7 +415,7 @@ body {
 .deskwork_icon .cls-10,
 .deskwork_icon .cls-23,
 .deskwork_icon .cls-59 {
-  fill: #0ac;
+  fill: var(--SC);
 }
 .deskwork_icon .cls-10,
 .deskwork_icon .cls-31,
@@ -511,7 +504,7 @@ body {
 }
 .deskwork_icon .cls-31,
 .deskwork_icon .cls-41 {
-  fill: #6161d1;
+  fill: var(--FC);
 }
 .deskwork_icon .cls-32 {
   fill: #333;
@@ -561,7 +554,7 @@ body {
   fill: #d3cd31;
 }
 .deskwork_icon .cls-50 {
-  fill: #a6a6a6;
+  fill: var(--logoGray);
 }
 .deskwork_icon .cls-52 {
   fill: #aae8f9;
@@ -623,13 +616,13 @@ body {
   fill: #9cf;
 }
 .deskwork_icon .watch_time {
-  fill: rgb(0, 170, 204);
+  fill: var(--logoPurpleD);
 }
 .deskwork_icon .cls-txt {
   fill: var(--TC);
 }
 .deskwork_icon .cls-mid {
-  fill: var(--midLight);
+  fill: var(--midGray);
 }
 .deskwork_icon .watch_mer {
   opacity: 0;
@@ -1057,20 +1050,13 @@ body {
   fill: #fff;
 }
 
-.wa_icon_svg,
+/* .wa_icon_svg,
 .fb_icon_svg,
 .behance_icon_svg,
 .contact_icon_svg {
-  height: auto;
-  width: 100%;
-}
-.wa_icon_svg .cls-1,
-.fb_icon_svg .cls-1,
-.behance_icon_svg .cls-1,
-.contact_icon_svg .cls-1 {
-  fill: var(--FC);
-}
-
+    height: auto;
+    width: 100%;
+} */
 .gitHub_icon_svg {
   transform: scale(0.85);
 }
@@ -1088,6 +1074,8 @@ body {
   font-size: var(--FS_N);
   font-weight: var(--FW_N);
   display: block;
+  line-height: 1;
+  font-weight: 600;
 }
 
 .separator {
@@ -1255,7 +1243,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 4rem;
+  min-height: var(--iconD);
   width: 100%;
   color: var(--TC_C);
   outline: solid 2px var(--FC);
@@ -1284,7 +1272,6 @@ body {
   align-items: center;
   width: 8rem;
   height: 6rem;
-  opacity: var(--opacityBtn);
   color: var(--TC);
   margin-top: 4rem;
 }
@@ -1302,12 +1289,11 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 4rem;
-  height: 4rem;
+  width: var(--iconD);
+  height: var(--iconD);
   padding: 1rem;
   border-radius: 1rem;
   overflow: hidden;
-  fill: var(--FC);
 }
 .close_btn:hover {
   background: var(--FC);
@@ -1323,7 +1309,6 @@ body {
   align-items: center;
 }
 .nav_btn .label_btn {
-  font-weight: 600;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -1335,7 +1320,7 @@ body {
   width: auto;
 }
 .nav_btn:hover {
-  background: var(--FC_H);
+  background: var(--H);
   color: var(--TC_C);
 }
 .nav_btn:hover .icon_container {
@@ -1348,13 +1333,13 @@ body {
   justify-content: center;
   align-items: center;
   fill: var(--TC);
-  height: 100%;
+  height: var(--iconD);
   border-radius: 1rem;
   overflow: hidden;
 }
 .extra_btn .icon_container {
   padding: 1rem;
-  width: 4rem;
+  width: var(--iconD);
 }
 .extra_btn:hover {
   background: var(--FC);
@@ -1392,25 +1377,22 @@ body {
   justify-content: center;
   align-items: center;
 }
-.phone_menu_btn .icon_social_container {
+.phone_menu_btn .icon_container {
   height: 100%;
   width: auto;
   padding: 0.5rem;
-}
-.phone_menu_btn .icon_social_container .cls-1 {
   fill: var(--FC);
 }
-.phone_menu_btn .icon_social_container .icon_svg {
+.phone_menu_btn .icon_container .icon_svg {
   width: auto;
   height: 100%;
 }
-.phone_menu_btn:hover {
-  background: var(--FC_H);
-  color: var(--TC_C);
-}
-.phone_menu_btn:hover .cls-2,
-.phone_menu_btn:hover .cls-1 {
+.phone_menu_btn:hover .icon_container {
   fill: var(--TC_C);
+}
+.phone_menu_btn:hover:not(.extra_btn) {
+  background: var(--H);
+  color: var(--TC_C);
 }
 
 .bar {
@@ -1438,7 +1420,7 @@ body {
 
 .bottom_bar,
 .top_bar {
-  width: 4rem;
+  width: var(--iconD);
 }
 
 .center_bar {
@@ -1488,7 +1470,7 @@ body {
 }
 .logo_btn .johnK_full .braket,
 .logo_btn .johnK_icon .braket {
-  fill: #cdcccc;
+  fill: var(--logoGray);
 }
 .logo_btn .johnK_full .letter,
 .logo_btn .johnK_icon .letter {
@@ -1517,7 +1499,7 @@ body {
 
 .bullet {
   background: var(--bgC_T);
-  width: calc(100% - 4rem);
+  width: calc(100% - var(--iconD));
   padding: 2rem;
 }
 .bullet H1 {
@@ -2080,7 +2062,7 @@ body {
 }
 .section_divider .quote_container .quote_icon {
   height: 100%;
-  width: 4rem;
+  width: var(--iconD);
 }
 .section_divider .quote_container .quote_start {
   align-self: flex-start;
@@ -2091,8 +2073,8 @@ body {
   align-self: flex-end;
 }
 .section_divider .quote_container .icon_container {
-  width: 4rem;
-  height: 4rem;
+  width: var(--iconD);
+  height: var(--iconD);
   fill: var(--FC);
 }
 .section_divider .author_container {
@@ -2215,7 +2197,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
@@ -2517,13 +2499,24 @@ body {
   padding: 0;
 }
 .phone_menu_controler .nav_menu_link_btns .phone_menu_btn {
-  height: 4rem;
+  height: var(--iconD);
 }
 .phone_menu_controler .extra_btns_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.phone_menu_controler .extra_btns_container .btns_container {
+  padding-top: 0;
+}
+.phone_menu_controler .extra_btns_container .label_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: var(--iconD);
+  min-width: var(--iconD);
 }
 .phone_menu_controler .social_btns_container {
   display: flex;
@@ -2536,15 +2529,9 @@ body {
   height: 100%;
   padding: 0.75rem;
 }
-.phone_menu_controler .social_btns_container .phone_menu_btn:hover .icon_social_container {
-  fill: var(--TC);
-}
 .phone_menu_controler .close_btn {
   position: relative;
   padding: 0.25rem;
-}
-.phone_menu_controler .extra_btn:hover {
-  background: var(--FC_H);
 }
 
 .menu_social_container {
@@ -2555,7 +2542,7 @@ body {
   position: fixed;
   bottom: 4rem;
   left: 2rem;
-  min-height: 4rem;
+  min-height: var(--iconD);
   z-index: 4;
   fill: var(--FC);
   /* overflow: hidden; */
@@ -2571,8 +2558,8 @@ body {
 .menu_social_container .social_menu_btn {
   background: var(--NVC_T);
   overflow: hidden;
-  width: 4rem;
-  height: 4rem;
+  width: var(--iconD);
+  height: var(--iconD);
   border-radius: 1rem;
 }
 .menu_social_container .social_menu_btn .icon_container {
