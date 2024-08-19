@@ -755,21 +755,21 @@ I {
     }
 }
 .dark_theme {
-    .watch_am {
+    .watch_pm {
         display: none;
         opacity: 0;
     }
-    .watch_pm {
+    .watch_am {
         display: block;
         opacity: 1;
     }
 }
 .light_theme {
-    .watch_pm {
+    .watch_am {
         display: none;
         opacity: 0;
     }
-    .watch_am {
+    .watch_pm {
         display: block;
         opacity: 1;
     }

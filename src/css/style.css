@@ -664,20 +664,20 @@ I {
   cursor: crosshair;
 }
 
-.dark_theme .watch_am {
+.dark_theme .watch_pm {
   display: none;
   opacity: 0;
 }
-.dark_theme .watch_pm {
+.dark_theme .watch_am {
   display: block;
   opacity: 1;
 }
 
-.light_theme .watch_pm {
+.light_theme .watch_am {
   display: none;
   opacity: 0;
 }
-.light_theme .watch_am {
+.light_theme .watch_pm {
   display: block;
   opacity: 1;
 }
