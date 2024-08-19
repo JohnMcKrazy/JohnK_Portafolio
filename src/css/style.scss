@@ -679,33 +679,8 @@ I {
         fill: #94edad;
     }
     .desk_tablet_screen {
-        transition: var(--T_UF);
-        /*  fill: rgb(3, 28, 53); */
         fill: #9cf;
     }
-    /* .desk_tablet:active,
-    .desk_tablet:hover {
-        .desk_tablet_screen {
-            fill: #9cf;
-        }
-        .illustration_tablet_screen {
-            opacity: 1;
-        }
-    } */
-    /* .tablet_screen_on {
-        fill: #9cf;
-    } */
-    /* .computer_monitor {
-        &:hover {
-            .design_screen,
-            .dev_screen {
-                opacity: 1;
-            }
-            .windows_screen {
-                opacity: 0;
-            }
-        }
-    } */
     .watch_time {
         fill: var(--logoPurpleD);
     }
@@ -719,20 +694,24 @@ I {
         opacity: 0;
         transition: var(--T_M);
     }
-
-    .icon_hide {
+    .icon_animation {
         opacity: 0;
         transform: translateY(4rem);
         transition: var(--T_M);
+    }
+    .screen_animation,
+    .screen_tablet_animation {
+        opacity: 0;
+        transition: var(--T_M);
+    }
+    .shield_screen {
+        transition-delay: 250ms;
     }
     .icon_show {
         opacity: 0.7;
         transform: translateY(0);
     }
-    .screen_hide {
-        opacity: 0;
-        transition: var(--T_M);
-    }
+
     .screen_show {
         opacity: 1;
     }

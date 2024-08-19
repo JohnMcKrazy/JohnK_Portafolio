@@ -265,9 +265,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const setAnimations = () => {
         logoAnimation();
         iconsAnimation();
-        setInterval(() => {
-            iconsAnimation();
-        }, 15000);
     };
     const setStart = () => {
         checkWindowHeight();
@@ -733,69 +730,40 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     };
-    const devIconsActions = (action) => {
-        if (action === open) {
-            devIcons.forEach((icon) => {
-                icon.classList.add("icon_show");
-            });
-            shieldScreen.classList.remove("screen_hide");
-            devTabletScreen.classList.remove("screen_hide");
-            setTimeout(() => devScreen.classList.remove("screen_hide"), 250);
-        } else {
-            devIcons.forEach((icon) => {
-                icon.classList.remove("icon_show");
-            });
-            devScreen.classList.add("screen_hide");
 
-            devTabletScreen.classList.add("screen_hide");
-            setTimeout(() => shieldScreen.classList.add("screen_hide"), 250);
-        }
-    };
-    const illustrationIconsActions = (action) => {
-        if (action === open) {
-            illustrationIcons.forEach((icon) => {
-                icon.classList.add("icon_show");
-            });
-            illustrationScreen.classList.remove("screen_hide");
-            illustrationTabletScreen.classList.remove("screen_hide");
-        } else {
-            illustrationIcons.forEach((icon) => {
-                icon.classList.remove("icon_show");
-            });
-            illustrationScreen.classList.add("screen_hide");
-            illustrationTabletScreen.classList.add("screen_hide");
-        }
-    };
-    const designIconsActions = (action) => {
-        if (action === open) {
-            designIcons.forEach((icon) => {
-                icon.classList.add("icon_show");
-            });
-            designScreen.classList.remove("screen_hide");
-            designTabletScreen.classList.remove("screen_hide");
-        } else {
-            designIcons.forEach((icon) => {
-                icon.classList.remove("icon_show");
-            });
-            designScreen.classList.add("screen_hide");
-            designTabletScreen.classList.add("screen_hide");
-        }
-    };
     const iconsAnimation = () => {
-        devIconsActions(open);
-        setTimeout(() => {
-            devIconsActions(close);
+        let count = 1;
+        const animationIconsList = ["illustration_icon", "dev_icon", "design_icon"];
+        const animationScreensList = ["illustration_screen", ["dev_screen", "shield_screen"], "design_screen"];
+        const animationTabletScreensList = ["illustration_tablet_screen", "dev_tablet_screen", "design_tablet_screen"];
+        selectorAll(`.${animationIconsList[0]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
+        selectorAll(`.${animationScreensList[0]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
+        selectorAll(`.${animationTabletScreensList[0]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
+        animationScreensList.forEach((item) => console.log(typeof item));
+        setInterval(() => {
+            selectorAll(".icon_animation").forEach((item) => item.classList.remove("icon_show"));
+            selectorAll(".screen_animation").forEach((item) => item.classList.remove("screen_show"));
+            selectorAll(".screen_tablet_animation").forEach((item) => item.classList.remove("screen_show"));
+
             setTimeout(() => {
-                illustrationIconsActions(open);
-                setTimeout(() => {
-                    illustrationIconsActions(close);
-                    setTimeout(() => {
-                        designIconsActions(open);
-                        setTimeout(() => designIconsActions(close), 4000);
-                    }, 1000);
-                }, 4000);
+                selectorAll(`.${animationIconsList[count]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
+                selectorAll(`.${animationTabletScreensList[count]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
+                switch (typeof animationScreensList[count]) {
+                    case "object":
+                        console.log(typeof animationScreensList[count], animationScreensList[count]);
+                        animationScreensList[count].forEach((itemToShow) => {
+                            console.log(selector(`.${itemToShow}`));
+                            selector(`.${itemToShow}`).classList.add("screen_show");
+                        });
+                        break;
+                    case "string":
+                        console.log(typeof animationScreensList[count], animationScreensList[count]);
+                        selector(`.${animationScreensList[count]}`).classList.add("screen_show");
+                        break;
+                }
+                count < 2 ? count++ : (count = 0);
             }, 1000);
-        }, 4000);
+        }, 5000);
     };
     const logoAnimation = () => {
         const johnIconFull = selector(".johnK_full");

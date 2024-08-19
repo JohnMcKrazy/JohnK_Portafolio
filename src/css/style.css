@@ -364,31 +364,6 @@ I {
   transform: translateX(100%);
 }
 
-.deskwork_icon {
-  /* .desk_tablet:active,
-  .desk_tablet:hover {
-      .desk_tablet_screen {
-          fill: #9cf;
-      }
-      .illustration_tablet_screen {
-          opacity: 1;
-      }
-  } */
-  /* .tablet_screen_on {
-      fill: #9cf;
-  } */
-  /* .computer_monitor {
-      &:hover {
-          .design_screen,
-          .dev_screen {
-              opacity: 1;
-          }
-          .windows_screen {
-              opacity: 0;
-          }
-      }
-  } */
-}
 .deskwork_icon .cls-1 {
   fill: #7c7c7c;
 }
@@ -615,8 +590,6 @@ I {
   fill: #94edad;
 }
 .deskwork_icon .desk_tablet_screen {
-  transition: var(--T_UF);
-  /*  fill: rgb(3, 28, 53); */
   fill: #9cf;
 }
 .deskwork_icon .watch_time {
@@ -632,18 +605,22 @@ I {
   opacity: 0;
   transition: var(--T_M);
 }
-.deskwork_icon .icon_hide {
+.deskwork_icon .icon_animation {
   opacity: 0;
   transform: translateY(4rem);
   transition: var(--T_M);
 }
+.deskwork_icon .screen_animation,
+.deskwork_icon .screen_tablet_animation {
+  opacity: 0;
+  transition: var(--T_M);
+}
+.deskwork_icon .shield_screen {
+  transition-delay: 250ms;
+}
 .deskwork_icon .icon_show {
   opacity: 0.7;
   transform: translateY(0);
-}
-.deskwork_icon .screen_hide {
-  opacity: 0;
-  transition: var(--T_M);
 }
 .deskwork_icon .screen_show {
   opacity: 1;
