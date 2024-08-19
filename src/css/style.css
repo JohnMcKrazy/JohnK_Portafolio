@@ -50,6 +50,10 @@
   --bgM: rgba(230, 230, 230, 0.75);
   --vueIconText: rgb(51, 51, 51);
   /*  */
+  --SM: 0.25rem;
+  --MD: 0.5rem;
+  --LG: 1rem;
+  --XL: 2rem;
   --FS_XS: 0.8rem;
   --FS_S: 1rem;
   --FS_N: 1.4rem;
@@ -2204,13 +2208,12 @@ I {
 }
 .about_section .section_content {
   position: relative;
+  justify-content: center;
+  align-items: flex-start;
 }
 .about_section .about_salute {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100%;
+  height: 100%;
 }
 .about_section .about_salute .title_salute,
 .about_section .about_salute .title_name {
@@ -2234,7 +2237,8 @@ I {
   padding: 0 2rem;
 }
 .about_section .about_salute .about_text {
-  font-size: var(--fontSizeXClamp);
+  font-size: var(--fontSizeMClamp);
+  margin-top: var(--XL);
 }
 
 .badge {
