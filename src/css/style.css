@@ -615,8 +615,8 @@ I {
   opacity: 0;
   transition: var(--T_M);
 }
-.deskwork_icon .shield_screen {
-  transition-delay: 250ms;
+.deskwork_icon .dev_screen {
+  transition-delay: 500ms;
 }
 .deskwork_icon .icon_show {
   opacity: 0.7;
