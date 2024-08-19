@@ -8,7 +8,7 @@ const $d = document;
 const selector = (tag) => $d.querySelector(`${tag}`);
 const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
 
-export const hotCardsSelection = ["js_documentation", "tribute", "pokedex", "black_jack", "verona", "afroduck", "smuffs", "mitos_y_leyendas", "berserkers", "creaciones_hermed", "we_are_disney", "navidad_2024"];
+export const hotCardsSelection = ["js_documentation", "tribute", "pokedex", "black_jack", "verona", "afroduck", "smuffs", "mitos_y_leyendas", "berserkers", "creaciones_hermed"];
 
 export const certificationsData = [
     { en: "Responsive Web Design", es: "Diseño Web Responsivo", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },

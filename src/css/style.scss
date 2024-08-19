@@ -1805,19 +1805,10 @@ I {
         grid-column: span 2;
     }
 }
-.cards_hot_container {
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 6fr));
-
-    .project_card:nth-of-type(2n) {
-        display: none;
-    }
-    .project_card:nth-of-type(3n) {
-        display: none;
-    }
+.cards_container {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 .cards_portfolio_container {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 8fr));
-    justify-content: center;
     overflow-y: auto;
     padding-top: 0.5rem;
 }
@@ -2645,14 +2636,6 @@ I {
     }
 }
 @media screen and (min-width: 767px) {
-    .cards_hot_container {
-        .project_card:nth-of-type(3n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(2n) {
-            display: none;
-        }
-    }
     .flex_responsive {
         @include flex(row, center, center);
     }
@@ -2675,17 +2658,6 @@ I {
     }
 }
 @media screen and (min-width: 917px) {
-    .cards_hot_container {
-        .project_card:nth-of-type(2n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(3n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(4n) {
-            display: none;
-        }
-    }
     .flex_responsive {
         flex-direction: row;
     }
@@ -2704,7 +2676,10 @@ I {
         }
     }
 }
-@media screen and (min-width: 1185px) {
+/* @media screen and (min-width: 1185px) {
+    
+} */
+@media screen and (min-width: 1342px) {
     .nav_btn {
         .label_btn:not(.label_lang) {
             display: flex;
@@ -2713,19 +2688,6 @@ I {
             display: none;
         }
     }
-    .cards_hot_container {
-        .project_card:nth-of-type(4n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(2n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(3n) {
-            display: none;
-        }
-    }
-}
-@media screen and (min-width: 1342px) {
     .cards_service_container {
         .service_card:nth-child(2),
         .service_card:nth-child(3),
@@ -2734,29 +2696,7 @@ I {
         }
     }
 }
-@media screen and (min-width: 1478px) {
-    .cards_hot_container {
-        .project_card:nth-of-type(3n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(6n) {
-            display: none;
-        }
-    }
-}
-@media screen and (min-width: 1684px) {
-    .cards_hot_container {
-        .project_card:nth-of-type(2n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(2n) {
-            display: flex;
-        }
-        .project_card:nth-of-type(6n) {
-            display: flex;
-        }
-    }
-}
+
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
         scroll-behavior: auto;
