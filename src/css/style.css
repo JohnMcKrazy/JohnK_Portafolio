@@ -1644,7 +1644,7 @@ I {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: var(--XL);
   transition: var(--T_F);
   background: var(--bgM);
   transform: translateY(100%);
@@ -1653,14 +1653,15 @@ I {
 .project_card .info_project_container .title {
   width: 100%;
   text-align: center;
-  margin-bottom: 1rem;
   font-size: var(--FS_L);
   color: var(--FC);
-  padding: 1rem;
+  margin-bottom: var(--MD);
+  line-height: 1;
 }
 .project_card .info_project_container .subtitle {
+  width: 100%;
+  text-align: center;
   font-size: var(--FS_N);
-  margin-bottom: 0.5rem;
 }
 .project_card .info_project_container .icons_project_container {
   display: flex;
