@@ -963,8 +963,6 @@ document.addEventListener("DOMContentLoaded", () => {
             tabletScreen.classList.remove("tablet_screen_on");
         });
     }); */
-    const goodMsg = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
-    const dangerMsg = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
 
     forms.forEach((form) => {
         form.addEventListener("submit", (e) => {
@@ -978,19 +976,17 @@ document.addEventListener("DOMContentLoaded", () => {
             let formResponseContainer = form.querySelector(".form_response_container");
             console.log(formResponse);
             console.log(formResponseContainer);
-            const formResponseActions = (action, status = "", msg = "") => {
+            const formResponseActions = (action, status = "") => {
                 console.log(currentLang);
-                console.log(action, status, msg);
+                console.log(action, status);
                 if (action === open) {
                     if (status === "good") {
                         formResponseContainer.classList.add(status);
-                    }
-                    if (status === "danger") {
+                        formResponse.textContent = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
+                    } else if (status === "danger") {
                         formResponseContainer.classList.add(status);
-                    } else {
-                        formResponse.style.color = "var(--whiteOff)";
+                        formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
                     }
-                    formResponse.textContent = msg;
                     formResponseContainer.classList.add("show_flex");
                     setTimeout(() => {
                         formResponseContainer.classList.add("show_opacity");
@@ -1012,7 +1008,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             const jsonData = JSON.stringify(newData);
             console.log(jsonData);
-            fetch("https://api.web3forms.com/submit", {
+            fetch("https://api.web3forms.com/subm", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -1024,14 +1020,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     let json = await response.json();
 
                     if (response.status == 200) {
-                        formResponseActions(open, "good", goodMsg);
+                        formResponseActions(open, "good");
                     } else {
                         throw error;
                     }
                 })
                 .catch((error) => {
                     console.log(error);
-                    formResponseActions(open, "danger", dangerMsg);
+                    formResponseActions(open, "danger");
                 })
                 .then(function () {
                     setTimeout(() => {
