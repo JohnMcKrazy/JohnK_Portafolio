@@ -199,18 +199,18 @@
                 </div>
                 <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit">
                     <div class="input_container">
-                        <label for="modal_input_name" data-change data-es="Nombre" data-en="Name">Nombre</label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" data-change-input data-es="Escribe tu Nombre" data-en="Write your name" />
+                        <label for="modal_input_name" data-change data-es="Nombre" data-en="Name" autocomplete>Nombre</label>
+                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" data-change-input data-es="Escribe tu Nombre" data-en="Write your name" autocomplete="off" />
                     </div>
 
                     <div class="input_container">
                         <label for="modal_input_last_name" data-change data-es="Apellidos" data-en="Lastname">Apellido</label>
-                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" data-change-input data-es="Escribe tu Apellido" data-en="Write your Last Name" />
+                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" data-change-input data-es="Escribe tu Apellido" data-en="Write your Last Name" autocomplete="off" />
                     </div>
 
                     <div class="input_container">
                         <label for="modal_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Email" />
+                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Email" autocomplete="off" />
                     </div>
 
                     <div class="input_container last">
@@ -4803,12 +4803,13 @@
                 <div class="swipe_animation_container_full">
                     <h1 class="title_section animation_up" id="title_portfolio" data-change data-es="Portafolio" data-en="Portfolio">Portafolio</h1>
                 </div>
-                <h2 class="subtitle_section" data-change data-es="Proyectos Destacados" data-en="Top Projects"></h2>
+                <div class="cards_presentation">
+                    <h2 class="subtitle_section" data-change data-es="Proyectos Destacados" data-en="Top Projects"></h2>
+                    <button type="button" class="portfolio_btn" data-name="portfolio_modal">
+                        <span class="label_btn" data-change data-es="Ver todo" data-en="See All"> Ver todo </span>
+                    </button>
+                </div>
                 <div class="cards_container swipe_animation_container_half cards_hot_container"></div>
-
-                <button type="button" class="btn more_btn portfolio_btn" data-name="portfolio_modal">
-                    <span class="label_btn" data-change data-es="Ver todo" data-en="See All"> Ver todo </span>
-                </button>
             </div>
         </section>
         <div class="section_divider">
@@ -4844,23 +4845,23 @@
                 <div class="swipe_animation_container_full">
                     <h1 class="title_section animation_up" id="title_contact" data-change data-es="Contacto" data-en="Contact">Contacto</h1>
                 </div>
-                <h2 class="subtitle_section" data-change data-es="Estoy ansioso de hacer proyectos interesantes con tus ideas" data-en="I'm looking forward to doing interesting projects with your ideas.">Estoy ansioso de hacer proyectos interesantes con tus ideas</h2>
+                <h2 class="subtitle_section" data-change data-es="Espero me permitas crear proyectos interesantes con tus ideas." data-en="I hope you allow me to create interesting projects with your ideas">Estoy ansioso de hacer proyectos interesantes con tus ideas</h2>
 
                 <form class="form contact_form" id="contact_form">
                     <h3 data-change data-es="Envia correo" data-en="Send Email">Envia correo</h3>
                     <div class="input_container">
                         <label for="body_input_name" data-change data-es="Nombre" data-en="Name">Nombre</label>
-                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" data-change-input data-es="Escribe Tu Nombre" data-en="Write Your Name" />
+                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" data-change-input data-es="Escribe Tu Nombre" data-en="Write Your Name" autocomplete="off" />
                     </div>
 
                     <div class="input_container">
                         <label for="body_input_last_name" data-change data-es="Apellido" data-en="Last Name">Apellido</label>
-                        <input type="text" placeholder="Escribe tu Apellido" id="body_input_last_name" name="last_name" class="input_last_name" data-change-input data-es="Escribe tu Apellido" data-en="Write Your Last name" />
+                        <input type="text" placeholder="Escribe tu Apellido" id="body_input_last_name" name="last_name" class="input_last_name" data-change-input data-es="Escribe tu Apellido" data-en="Write Your Last name" autocomplete="off" />
                     </div>
 
                     <div class="input_container">
                         <label for="body_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Name" />
+                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Name" autocomplete="off" />
                     </div>
 
                     <div class="input_container last">
@@ -4891,6 +4892,7 @@
                 </a>
             </div>
         </section>
+
         <footer class="section legals_section" id="legals_section">
             <div class="footer_content content">
                 <div class="lebels_container">

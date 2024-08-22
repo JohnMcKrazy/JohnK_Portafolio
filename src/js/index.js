@@ -262,14 +262,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // SET ALL START CONFIGURATIONS
 
-    const setAnimations = () => {
-        logoAnimation();
-        iconsAnimation();
-    };
     const setStart = () => {
         checkWindowHeight();
         checkAlertStorageAnswer();
-        setAnimations();
+        logoAnimation();
+        iconsAnimation();
         setAssets();
     };
     // FUNCTION FOR TRANSLATE PAGE POSITION TO TOP
@@ -739,7 +736,6 @@ document.addEventListener("DOMContentLoaded", () => {
         selectorAll(`.${animationIconsList[0]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
         selectorAll(`.${animationScreensList[0]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
         selectorAll(`.${animationTabletScreensList[0]}`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
-        animationScreensList.forEach((item) => console.log(typeof item));
         setInterval(() => {
             selectorAll(".icon_animation").forEach((item) => item.classList.remove("icon_show"));
             selectorAll(".screen_animation").forEach((item) => item.classList.remove("screen_show"));
