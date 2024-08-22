@@ -974,11 +974,8 @@ document.addEventListener("DOMContentLoaded", () => {
             let formName = form.querySelector(".send_btn").getAttribute("data-form");
             let formResponse = form.querySelector(".form_response");
             let formResponseContainer = form.querySelector(".form_response_container");
-            console.log(formResponse);
-            console.log(formResponseContainer);
+
             const formResponseActions = (action, status = "") => {
-                console.log(currentLang);
-                console.log(action, status);
                 if (action === open) {
                     if (status === "good") {
                         formResponseContainer.classList.add(status);
@@ -998,8 +995,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 500);
                 }
             };
-            console.log(formName);
-
             const formData = new FormData(form);
             let newData = {};
 
@@ -1007,8 +1002,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 newData[key] = value;
             });
             const jsonData = JSON.stringify(newData);
-            console.log(jsonData);
-            fetch("https://api.web3forms.com/subm", {
+
+            fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
