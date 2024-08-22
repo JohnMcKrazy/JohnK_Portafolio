@@ -200,7 +200,7 @@
                 <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit">
                     <div class="input_container">
                         <label for="modal_input_name" data-change data-es="Nombre" data-en="Name" autocomplete>Nombre</label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" data-change-input data-es="Escribe tu Nombre" data-en="Write your name" autocomplete="off" />
+                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" data-change-input data-es="Escribe tu Nombre" data-en="Write your name" autocomplete="off" required />
                     </div>
 
                     <div class="input_container">
@@ -210,12 +210,12 @@
 
                     <div class="input_container">
                         <label for="modal_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Email" autocomplete="off" />
+                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Email" autocomplete="off" required />
                     </div>
 
                     <div class="input_container last">
                         <label for="modal_input_textarea" data-change data-es="Descripción" data-en="Description">Descripción</label>
-                        <textarea placeholder="Comparte me un resumen de tu idea" id="modal_input_textarea" name="description" class="input_description" data-change-input data-es="Comparteme tu idea" data-en="Share me your idea"></textarea>
+                        <textarea placeholder="Comparte me un resumen de tu idea" id="modal_input_textarea" name="description" class="input_description" data-change-input data-es="Comparteme tu idea" data-en="Share me your idea" required></textarea>
                     </div>
                     <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
                     <div class="submit_container">
@@ -4851,7 +4851,7 @@
                     <h3 data-change data-es="Envia correo" data-en="Send Email">Envia correo</h3>
                     <div class="input_container">
                         <label for="body_input_name" data-change data-es="Nombre" data-en="Name">Nombre</label>
-                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" data-change-input data-es="Escribe Tu Nombre" data-en="Write Your Name" autocomplete="off" />
+                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" data-change-input data-es="Escribe Tu Nombre" data-en="Write Your Name" autocomplete="off" required />
                     </div>
 
                     <div class="input_container">
@@ -4861,12 +4861,12 @@
 
                     <div class="input_container">
                         <label for="body_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Name" autocomplete="off" />
+                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" data-change-input data-es="Escribe tu Email" data-en="Write your Name" autocomplete="off" required />
                     </div>
 
                     <div class="input_container last">
                         <label for="body_input_textarea" data-change data-es="Descripción" data-en="Description">Descripción</label>
-                        <textarea placeholder="Comparteme tu idea" id="body_input_textarea" name="description" class="input_description" data-change-input data-es="Comparteme de tu idea" data-en="Share me your idea"></textarea>
+                        <textarea placeholder="Comparteme tu idea" id="body_input_textarea" name="description" class="input_description" data-change-input data-es="Comparteme de tu idea" data-en="Share me your idea" required></textarea>
                     </div>
                     <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
                     <div class="submit_container">
@@ -4874,7 +4874,7 @@
                             <span class="label_btn" data-change data-es="Enviar" data-en="Send">Enviar</span>
                         </button>
                     </div>
-                    <div class="form_response_container">
+                    <div class="form_response_container form_response_container">
                         <p class="form_response"></p>
                     </div>
                 </form>

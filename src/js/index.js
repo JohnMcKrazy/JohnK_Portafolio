@@ -974,14 +974,16 @@ document.addEventListener("DOMContentLoaded", () => {
             let formName = form.querySelector(".send_btn").getAttribute("data-form");
             let formResponse = form.querySelector(".form_response");
             let formResponseContainer = form.querySelector(".form_response_container");
+            console.log(formResponse);
+            console.log(formResponseContainer);
             const formResponseActions = (action, status = "", msg = "") => {
+                console.log(action, status, msg);
                 if (action === open) {
-                    formResponseContainer.style.background = `var(--${status})`;
                     if (status === "good") {
-                        form.reset();
+                        formResponseContainer.classList.add(status);
                     }
-                    if (status === "warning") {
-                        formResponse.style.color = "var(--blackOff)";
+                    if (status === "danger") {
+                        formResponseContainer.classList.add(status);
                     } else {
                         formResponse.style.color = "var(--whiteOff)";
                     }
@@ -1018,10 +1020,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(async (response) => {
                     let json = await response.json();
                     if (response.status == 200) {
-                        formResponseActions(open, "good", "!Enviado satisfactoriamente, gracias por contactarme¡");
+                        formResponseActions(open, "good", `${currentLang === "es" ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡"}`);
                     } else {
                         console.log(response);
-                        formResponseActions(open, "danger", "Algo ah salido mal, por favor intentalo de nuevo");
+                        formResponseActions(open, "danger", `${currentLang === "es" ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again"}`);
                     }
                 })
                 .catch((error) => {
