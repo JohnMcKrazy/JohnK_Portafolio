@@ -23,7 +23,6 @@ let menuStatus = close;
 let menuSocialStatus = close;
 let storageContent;
 let currentTheme = "dark_theme";
-let currentLang;
 
 //^ SELECTORES
 const BODY = selector("body");
@@ -107,6 +106,7 @@ const listPortfolioBtns = selectorAll(".list_portfolio_btn");
 const sectionDividers = selectorAll(".section_divider");
 
 document.addEventListener("DOMContentLoaded", () => {
+    let currentLang;
     const sanitazer = (item) => utils.sanitizeInput(item);
     const deleteArr = (item) => utils.deleteArrElements(item);
     const deleteChild = (item) => utils.deleteChildElements(item);
@@ -963,6 +963,8 @@ document.addEventListener("DOMContentLoaded", () => {
             tabletScreen.classList.remove("tablet_screen_on");
         });
     }); */
+    const goodMsg = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
+    const dangerMsg = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
 
     forms.forEach((form) => {
         form.addEventListener("submit", (e) => {
@@ -977,6 +979,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(formResponse);
             console.log(formResponseContainer);
             const formResponseActions = (action, status = "", msg = "") => {
+                console.log(currentLang);
                 console.log(action, status, msg);
                 if (action === open) {
                     if (status === "good") {
@@ -1019,16 +1022,16 @@ document.addEventListener("DOMContentLoaded", () => {
             })
                 .then(async (response) => {
                     let json = await response.json();
+
                     if (response.status == 200) {
-                        formResponseActions(open, "good", `${currentLang === "es" ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡"}`);
+                        formResponseActions(open, "good", goodMsg);
                     } else {
-                        console.log(response);
-                        formResponseActions(open, "danger", `${currentLang === "es" ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again"}`);
+                        throw error;
                     }
                 })
                 .catch((error) => {
                     console.log(error);
-                    formResponseActions(open, "danger", "Algo ah salido mal, por favor intentalo de nuevo");
+                    formResponseActions(open, "danger", dangerMsg);
                 })
                 .then(function () {
                     setTimeout(() => {

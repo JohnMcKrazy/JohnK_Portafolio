@@ -1765,6 +1765,8 @@ I {
   border-radius: 0.5rem;
   display: none;
   opacity: 0;
+  justify-content: center;
+  align-items: center;
 }
 .form_response_container .form_response {
   text-align: center;
