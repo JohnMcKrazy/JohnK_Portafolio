@@ -1551,6 +1551,8 @@ I {
   overflow: hidden;
   display: grid;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 
 .grid_container {
@@ -1590,22 +1592,9 @@ I {
   color: var(--midGray);
 }
 
-.cards_hot_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.cards_hot_container .project_card {
-  min-width: 20rem;
-  max-width: 20%;
-}
-
 .cards_portfolio_container {
   overflow-y: auto;
   padding-top: 0.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
