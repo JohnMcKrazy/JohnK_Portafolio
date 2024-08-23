@@ -1630,11 +1630,6 @@ I {
 .cards_portfolio_container {
     overflow-y: auto;
     padding-top: 0.5rem;
-
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
 }
 .lists_container {
     @include flex(row, flex-start, flex-start);
