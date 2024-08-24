@@ -153,19 +153,7 @@
         transform: translate(-50%, -50%) scale(1);
     }
 }
-@keyframes scrollHero {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    40% {
-        opacity: 0;
-        transform: translateY(30svh);
-    }
-    100% {
-        opacity: 0;
-    }
-}
+
 //^ MIXINS
 
 @mixin flex($dir, $jc, $ai) {
@@ -1990,9 +1978,7 @@ I {
     .hero_content {
         @include flexCenter();
         flex-direction: column;
-        animation: scrollHero linear both;
-        animation-timeline: --scroll;
-        animation-range: exit;
+
         z-index: -1;
     }
 }
