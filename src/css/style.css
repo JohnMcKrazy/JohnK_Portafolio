@@ -935,12 +935,14 @@ I {
 }
 
 .icon_container {
+  overflow: hidden;
+  width: var(--iconD);
+  height: var(--iconD);
+  padding: var(--LG);
+  border-radius: var(--LG);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
-  width: 100%;
-  height: auto;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -1039,17 +1041,19 @@ I {
   background: url(../img/backgrounds/parkSmall.webp);
 }
 
+.bio_bubble {
+  /*   .icons_container {
+      gap: 0;
+      width: 100%;
+      .icon_container {
+          height: 3rem;
+          width: 3rem;
+          padding: 0.5rem;
+      }
+  } */
+}
 .bio_bubble .header_bubble {
   background: url(../img/backgrounds/graffitiSmall.webp);
-}
-.bio_bubble .icons_container {
-  gap: 0;
-  width: 100%;
-}
-.bio_bubble .icons_container .icon_container {
-  height: 3rem;
-  width: 3rem;
-  padding: 0.5rem;
 }
 
 .info_bubble {
@@ -1108,14 +1112,6 @@ I {
 }
 
 .close_btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: var(--iconD);
-  height: var(--iconD);
-  padding: 1rem;
-  border-radius: 1rem;
-  overflow: hidden;
   fill: var(--FC);
 }
 .close_btn:hover {
@@ -1137,6 +1133,9 @@ I {
 .nav_btn .icon_btn {
   display: none;
 }
+.nav_btn .icon_container {
+  padding: var(--MD);
+}
 .nav_btn .icon_svg {
   height: 100%;
   width: auto;
@@ -1154,13 +1153,6 @@ I {
   justify-content: center;
   align-items: center;
   fill: var(--TC);
-  height: var(--iconD);
-  border-radius: 1rem;
-  overflow: hidden;
-}
-.extra_btn .icon_container {
-  padding: 1rem;
-  width: var(--iconD);
 }
 .extra_btn:hover {
   background: var(--FC);
@@ -1188,6 +1180,12 @@ I {
   font-weight: var(--FW_L);
 }
 
+.close_control {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .phone_menu_btn {
   width: 100%;
   font-size: var(--FS_N);
@@ -1197,14 +1195,7 @@ I {
   align-items: center;
 }
 .phone_menu_btn .icon_container {
-  height: 100%;
-  width: auto;
-  padding: 0.5rem;
   fill: var(--FC);
-}
-.phone_menu_btn .icon_container .icon_svg {
-  width: auto;
-  height: 100%;
 }
 .phone_menu_btn:hover .icon_container {
   fill: var(--TC_C);
@@ -1505,10 +1496,10 @@ I {
   gap: var(--SM);
   width: 100%;
   text-align: center;
-}
-.project_card .info_project_container .icons_project_container .icon_container {
-  width: 3rem;
-  height: 3rem;
+  /*  .icon_container {
+      width: 3rem;
+      height: 3rem;
+  } */
 }
 .project_card .info_project_container .icons_project_container .tech_icon_card {
   width: auto;
@@ -1892,8 +1883,6 @@ I {
   align-self: flex-end;
 }
 .section_divider .quote_container .icon_container {
-  width: var(--iconD);
-  height: var(--iconD);
   fill: var(--FC);
 }
 .section_divider .author_container {
@@ -2352,10 +2341,6 @@ I {
 .phone_menu_controler .social_btns_container .phone_menu_btn {
   height: 100%;
   padding: 0.75rem;
-}
-.phone_menu_controler .close_btn {
-  position: relative;
-  padding: 0.25rem;
 }
 
 .menu_social_container {

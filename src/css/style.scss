@@ -1040,10 +1040,12 @@ I {
     translate: 0;
 }
 .icon_container {
+    overflow: hidden;
+    width: var(--iconD);
+    height: var(--iconD);
+    padding: var(--LG);
+    border-radius: var(--LG);
     @include flexCenter();
-    padding: 0.5rem;
-    width: 100%;
-    height: auto;
     user-select: none;
     fill: var(--FC);
 }
@@ -1131,7 +1133,7 @@ I {
         background: url(../img/backgrounds/graffitiSmall.webp);
     }
 
-    .icons_container {
+    /*   .icons_container {
         gap: 0;
         width: 100%;
         .icon_container {
@@ -1139,7 +1141,7 @@ I {
             width: 3rem;
             padding: 0.5rem;
         }
-    }
+    } */
 }
 .info_bubble {
     padding: 1rem;
@@ -1174,6 +1176,7 @@ I {
         }
     }
 }
+
 .btn_down {
     @include flexCenter();
     flex-direction: column;
@@ -1192,20 +1195,13 @@ I {
     }
 }
 .close_btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: var(--iconD);
-    height: var(--iconD);
-    padding: 1rem;
-    border-radius: 1rem;
-    overflow: hidden;
     fill: var(--FC);
     &:hover {
         background: var(--FC);
         fill: var(--TC_C);
     }
 }
+
 .nav_btn {
     height: 100%;
     color: var(--TC);
@@ -1214,6 +1210,9 @@ I {
     }
     .icon_btn {
         display: none;
+    }
+    .icon_container {
+        padding: var(--MD);
     }
     @include flexCenter();
     .icon_svg {
@@ -1231,14 +1230,6 @@ I {
 .extra_btn {
     @include flexCenter();
     fill: var(--TC);
-    height: var(--iconD);
-    border-radius: 1rem;
-    overflow: hidden;
-    .icon_container {
-        padding: 1rem;
-        width: var(--iconD);
-    }
-
     &:hover {
         background: var(--FC);
         fill: var(--TC_C);
@@ -1263,22 +1254,18 @@ I {
         font-weight: var(--FW_L);
     }
 }
+.close_control {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
 .phone_menu_btn {
     width: 100%;
     font-size: var(--FS_N);
     color: var(--TC);
     @include flexCenter();
     .icon_container {
-        height: 100%;
-        width: auto;
-        padding: 0.5rem;
-
         fill: var(--FC);
-
-        .icon_svg {
-            width: auto;
-            height: 100%;
-        }
     }
     &:hover {
         .icon_container {
@@ -1549,10 +1536,10 @@ I {
             gap: var(--SM);
             width: 100%;
             text-align: center;
-            .icon_container {
+            /*  .icon_container {
                 width: 3rem;
                 height: 3rem;
-            }
+            } */
             .tech_icon_card {
                 width: auto;
                 height: 100%;
@@ -1902,8 +1889,6 @@ I {
             align-self: flex-end;
         }
         .icon_container {
-            width: var(--iconD);
-            height: var(--iconD);
             fill: var(--FC);
         }
     }
@@ -2322,10 +2307,6 @@ I {
             height: 100%;
             padding: 0.75rem;
         }
-    }
-    .close_btn {
-        position: relative;
-        padding: 0.25rem;
     }
 }
 .menu_social_container {
