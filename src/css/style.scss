@@ -1253,7 +1253,7 @@ I {
 }
 .bar {
     position: absolute;
-    height: 4px;
+    height: 2px;
     background: var(--FC);
     left: 50%;
     transform: translateX(-50%);
@@ -1300,11 +1300,9 @@ I {
 .logo_btn {
     @include flex(row, flex-start, center);
     padding: 0 0.5rem;
-    transition: var(--T_M);
     width: fit-content;
-    height: 6rem;
     scale: 1;
-    transition: var(--T_SCALE);
+    transition: var(--T_SCALE), height 500ms ease;
     //*LOGO COLORS START
     .johnK_full,
     .johnK_icon {
@@ -2144,7 +2142,6 @@ I {
         }
     }
 }
-
 .nav_menu {
     position: sticky;
     top: 0;
@@ -2154,6 +2151,7 @@ I {
     height: var(--NVH);
     background: var(--NVC_T);
     z-index: 5;
+    transition: height 500ms ease;
     @include flexCenter();
     .content {
         padding: 0;
@@ -2295,7 +2293,6 @@ I {
         }
     }
 }
-
 .menu_social_btns_container {
     @include flexCenter();
     flex-direction: column;
@@ -2383,6 +2380,18 @@ I {
     .cls-1 {
         fill: var(--TC_C);
     }
+}
+.logo_big {
+    height: 4rem;
+}
+.logo_small {
+    height: 3rem;
+}
+.nav_big {
+    height: 8rem;
+}
+.nav_small {
+    height: 6rem;
 }
 .good {
     background: var(--bgGood);

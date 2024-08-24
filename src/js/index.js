@@ -72,7 +72,6 @@ const linkBtns = selectorAll(".link_btn");
 const legalAcceptBtn = selector(".legal_modal_accept_btn");
 const closeModalBtns = selectorAll(".close_modal");
 const sections = selectorAll(".section");
-const menuBtnBars = selectorAll(".bar");
 
 const btnDown = selector(".btn_down");
 const accesibilityBtns = selectorAll(".accessibility_btn");
@@ -158,15 +157,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let borderRadius = "1rem";
 
         if (navTop >= windowHeight) {
-            nav.style.height = "8rem";
-
             menuSocialContainer.style.bottom = "inherit";
             menuSocialContainer.style.top = "2rem";
             menuSocialContainer.style.flexDirection = "column";
 
-            btnLogo.style.height = "4rem";
-            menuBtnBars.forEach((bar) => (bar.style.height = "4px"));
-
+            btnLogo.classList.remove("logo_small");
+            btnLogo.classList.add("logo_big");
+            nav.classList.remove("nav_small");
+            nav.classList.add("nav_big");
             setTimeout(() => {
                 phoneMenu.style.top = 0;
                 phoneMenu.style.bottom = "inherit";
@@ -175,14 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 phoneMenu.style.setProperty("--menuPosition", "translateY(-100%)");
             }, 250);
         } else if (navTop < windowHeight) {
-            nav.style.height = "6rem";
-
-            menuBtnBars.forEach((bar) => (bar.style.height = "2px"));
-
+            btnLogo.classList.remove("logo_big");
+            btnLogo.classList.add("logo_small");
+            nav.classList.remove("nav_big");
+            nav.classList.add("nav_small");
             menuSocialContainer.style.top = "inherit";
             menuSocialContainer.style.bottom = "2rem";
             menuSocialContainer.style.flexDirection = "column-reverse";
-            btnLogo.style.height = "3rem";
 
             setTimeout(() => {
                 phoneMenu.style.top = "inherit";

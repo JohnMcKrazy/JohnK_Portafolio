@@ -1180,7 +1180,7 @@ I {
 
 .bar {
   position: absolute;
-  height: 4px;
+  height: 2px;
   background: var(--FC);
   left: 50%;
   transform: translateX(-50%);
@@ -1237,12 +1237,10 @@ I {
   justify-content: flex-start;
   align-items: center;
   padding: 0 0.5rem;
-  transition: var(--T_M);
   width: -moz-fit-content;
   width: fit-content;
-  height: 6rem;
   scale: 1;
-  transition: var(--T_SCALE);
+  transition: var(--T_SCALE), height 500ms ease;
 }
 .logo_btn .johnK_full,
 .logo_btn .johnK_icon {
@@ -2168,6 +2166,7 @@ I {
   height: var(--NVH);
   background: var(--NVC_T);
   z-index: 5;
+  transition: height 500ms ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2430,6 +2429,22 @@ I {
 }
 .btn_active .cls-1 {
   fill: var(--TC_C);
+}
+
+.logo_big {
+  height: 4rem;
+}
+
+.logo_small {
+  height: 3rem;
+}
+
+.nav_big {
+  height: 8rem;
+}
+
+.nav_small {
+  height: 6rem;
 }
 
 .good {
