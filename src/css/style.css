@@ -2300,6 +2300,9 @@ I {
   background: var(--NVC_T);
   border-radius: var(--LG);
 }
+.menu_social_container .menu_btn_social_menu {
+  background: var(--NVC_T);
+}
 .menu_social_container .social_menu_btn {
   border-radius: var(--LG);
 }
