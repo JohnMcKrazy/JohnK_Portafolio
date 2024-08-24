@@ -132,7 +132,7 @@
         transform: translateY(-10rem);
     }
 }
-@keyframes scaling {
+@keyframes ballShadowOpacity {
     50% {
         opacity: 0.2;
     }
@@ -160,10 +160,10 @@
     }
 }
 @keyframes spin {
-    50% {
-        transform: rotate(180deg);
+    from {
+        transform: rotate(0deg);
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
@@ -178,6 +178,19 @@
         opacity: 1;
     }
     100% {
+        opacity: 0;
+    }
+}
+@keyframes scrollHero {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(50rem);
         opacity: 0;
     }
 }
@@ -743,7 +756,7 @@ I {
             animation: bounceUp 1000ms 250ms infinite ease-in-out;
         }
         .ball_shadow {
-            animation: scaling 1000ms 250ms infinite ease-in-out;
+            animation: ballShadowOpacity 1000ms 250ms infinite ease-in-out;
         }
     }
     .svg_btn {
@@ -1186,9 +1199,16 @@ I {
 }
 .close_btn {
     fill: var(--FC);
+    transition: var(--T_S);
+    SVG {
+        transition: var(--T_S);
+    }
     &:hover {
         background: var(--FC);
-        fill: var(--TC_C);
+        SVG {
+            fill: var(--TC_C);
+            rotate: 720deg;
+        }
     }
 }
 .phone_social_btn {
@@ -1420,7 +1440,7 @@ I {
     .info_container {
         color: var(--TC);
         padding: 1rem 1.5rem 2rem;
-        transition: var(--T-S);
+        transition: var(--T_S);
         P,
         H3,
         H4 {
@@ -1479,7 +1499,7 @@ I {
 }
 .project_card {
     position: relative;
-    transition: var(--T-F);
+    transition: var(--T_F);
     z-index: var(--zIndexStart);
     width: 100%;
     height: 20rem;
@@ -1702,7 +1722,7 @@ I {
         display: flex;
     }
     .arrow_list_icon {
-        /*   fill: var(--whiteOff); */
+        transition: var(--T_M);
         transform: rotate(-180deg);
     }
     .arrow_list_icon_active {
@@ -1956,6 +1976,7 @@ I {
     z-index: -1;
 }
 .hero_section {
+    view-timeline: --scroll;
     .bg_section {
         background: var(--backgroundHero);
     }
@@ -1975,18 +1996,25 @@ I {
         }
     }
     .btns_container {
-        gap: 2.5rem;
-        margin-top: 2rem;
+        justify-content: space-between;
         width: 100%;
         height: auto;
+        gap: var(--MD);
         .btn {
+            max-width: 15rem;
             min-width: 10rem;
-            width: 20rem;
-            max-width: 90%;
+            padding: var(--LG) var(--XL);
         }
     }
     .content {
         padding: 0;
+    }
+    .hero_content {
+        @include flexCenter();
+        flex-direction: column;
+        animation: scrollHero linear both;
+        animation-timeline: --scroll;
+        animation-range: exit;
     }
 }
 .about_section {

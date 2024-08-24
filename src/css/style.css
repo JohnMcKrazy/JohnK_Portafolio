@@ -121,7 +121,7 @@
     transform: translateY(-10rem);
   }
 }
-@keyframes scaling {
+@keyframes ballShadowOpacity {
   50% {
     opacity: 0.2;
   }
@@ -149,10 +149,10 @@
   }
 }
 @keyframes spin {
-  50% {
-    transform: rotate(180deg);
+  from {
+    transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -167,6 +167,19 @@
     opacity: 1;
   }
   100% {
+    opacity: 0;
+  }
+}
+@keyframes scrollHero {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(50rem);
     opacity: 0;
   }
 }
@@ -648,7 +661,7 @@ I {
   animation: bounceUp 1000ms 250ms infinite ease-in-out;
 }
 .deskwork_icon .desk_ball:hover .ball_shadow {
-  animation: scaling 1000ms 250ms infinite ease-in-out;
+  animation: ballShadowOpacity 1000ms 250ms infinite ease-in-out;
 }
 .deskwork_icon .svg_btn {
   cursor: crosshair;
@@ -1102,10 +1115,17 @@ I {
 
 .close_btn {
   fill: var(--FC);
+  transition: var(--T_S);
+}
+.close_btn SVG {
+  transition: var(--T_S);
 }
 .close_btn:hover {
   background: var(--FC);
+}
+.close_btn:hover SVG {
   fill: var(--TC_C);
+  rotate: 720deg;
 }
 
 .phone_social_btn {
@@ -1377,7 +1397,7 @@ I {
 .card .info_container {
   color: var(--TC);
   padding: 1rem 1.5rem 2rem;
-  transition: var(--T-S);
+  transition: var(--T_S);
 }
 .card .info_container P,
 .card .info_container H3,
@@ -1433,7 +1453,7 @@ I {
 
 .project_card {
   position: relative;
-  transition: var(--T-F);
+  transition: var(--T_F);
   z-index: var(--zIndexStart);
   width: 100%;
   height: 20rem;
@@ -1688,7 +1708,7 @@ I {
   display: flex;
 }
 .list_btns_container .arrow_list_icon {
-  /*   fill: var(--whiteOff); */
+  transition: var(--T_M);
   transform: rotate(-180deg);
 }
 .list_btns_container .arrow_list_icon_active {
@@ -1959,6 +1979,9 @@ I {
   z-index: -1;
 }
 
+.hero_section {
+  view-timeline: --scroll;
+}
 .hero_section .bg_section {
   background: var(--backgroundHero);
 }
@@ -1975,18 +1998,27 @@ I {
   text-align: right;
 }
 .hero_section .btns_container {
-  gap: 2.5rem;
-  margin-top: 2rem;
+  justify-content: space-between;
   width: 100%;
   height: auto;
+  gap: var(--MD);
 }
 .hero_section .btns_container .btn {
+  max-width: 15rem;
   min-width: 10rem;
-  width: 20rem;
-  max-width: 90%;
+  padding: var(--LG) var(--XL);
 }
 .hero_section .content {
   padding: 0;
+}
+.hero_section .hero_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: scrollHero linear both;
+  animation-timeline: --scroll;
+  animation-range: exit;
 }
 
 .about_section {
