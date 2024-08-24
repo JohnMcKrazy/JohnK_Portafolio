@@ -2262,12 +2262,10 @@ I {
     min-height: var(--iconD);
     z-index: 4;
     fill: var(--FC);
-    /* overflow: hidden; */
     .menu_social_btns_container {
         height: auto;
         transition: var(--T_F);
-        margin: 1.5rem 0;
-        gap: var(--LG);
+        margin: var(--XL) 0;
         background: var(--NVC_T);
         border-radius: var(--LG);
     }
