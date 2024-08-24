@@ -1041,17 +1041,6 @@ I {
   background: url(../img/backgrounds/parkSmall.webp);
 }
 
-.bio_bubble {
-  /*   .icons_container {
-      gap: 0;
-      width: 100%;
-      .icon_container {
-          height: 3rem;
-          width: 3rem;
-          padding: 0.5rem;
-      }
-  } */
-}
 .bio_bubble .header_bubble {
   background: url(../img/backgrounds/graffitiSmall.webp);
 }
@@ -1119,8 +1108,15 @@ I {
   fill: var(--TC_C);
 }
 
-.nav_btn {
+.phone_social_btn {
+  border-radius: var(--MD);
+}
+
+.nav_btn:not(.phone_lang_btn) {
   height: 100%;
+}
+
+.nav_btn {
   color: var(--TC);
   display: flex;
   justify-content: center;
@@ -1496,10 +1492,6 @@ I {
   gap: var(--SM);
   width: 100%;
   text-align: center;
-  /*  .icon_container {
-      width: 3rem;
-      height: 3rem;
-  } */
 }
 .project_card .info_project_container .icons_project_container .tech_icon_card {
   width: auto;
@@ -2126,20 +2118,14 @@ I {
   text-align: center;
 }
 .contact_section .whatsapp_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  padding: 1rem 2rem;
+  padding: 0 var(--XL);
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: var(--SM);
   background: var(--NVC);
   border-radius: 3rem;
-  margin-top: 2rem;
+  margin-top: var(--XL);
   color: var(--TC);
-}
-.contact_section .whatsapp_btn .icon_container {
-  width: 3rem;
-  height: 3rem;
-  padding: 0.25rem;
 }
 .contact_section .whatsapp_btn:hover {
   color: var(--whiteOff);
