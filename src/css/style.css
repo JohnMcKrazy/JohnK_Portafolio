@@ -148,9 +148,9 @@
   }
   40% {
     opacity: 0;
+    transform: translateY(30svh);
   }
   100% {
-    transform: translateY(50rem);
     opacity: 0;
   }
 }
@@ -1994,6 +1994,7 @@ I {
   animation: scrollHero linear both;
   animation-timeline: --scroll;
   animation-range: exit;
+  z-index: -1;
 }
 
 .about_section {
