@@ -80,6 +80,7 @@
   --T_F: all 350ms ease-in-out;
   --T_M: all 750ms ease-in-out;
   --T_S: all 1000ms ease-in-out;
+  --T_SCALE: scale 500ms cubic-bezier(0.51, -0.42, 0.06, 1.45);
   --NVH_F: 6rem;
   --NVH: 8rem;
   --FS_NVH: calc(100svh - var(--NVH));
@@ -126,14 +127,6 @@
     opacity: 0.2;
   }
 }
-@keyframes zoom {
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes beat {
   10% {
     transform: translate(-50%, -50%) scale(1.3);
@@ -146,28 +139,6 @@
   }
   100% {
     transform: translate(-50%, -50%) scale(1);
-  }
-}
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes textAnimation {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes scrollHero {
@@ -1283,6 +1254,8 @@ I {
   width: -moz-fit-content;
   width: fit-content;
   height: 6rem;
+  scale: 1;
+  transition: var(--T_SCALE);
 }
 .logo_btn .johnK_full,
 .logo_btn .johnK_icon {
@@ -1308,7 +1281,7 @@ I {
   display: none;
 }
 .logo_btn:hover, .logo_btn:focus, .logo_btn:active {
-  animation: zoom 1s ease;
+  scale: 1.2;
 }
 .logo_btn .remove {
   display: none;
@@ -1358,8 +1331,11 @@ I {
   font-size: var(--FS_X);
 }
 
+.animated_social_btn {
+  transition: var(--T_SCALE);
+}
 .animated_social_btn:hover {
-  animation: zoom 1s ease-in-out 2 forwards;
+  scale: 1.2;
 }
 
 .social_btns_container {
@@ -2106,35 +2082,6 @@ I {
 
 .services_container {
   position: relative;
-}
-
-.clients_section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.clients_section .clients_container {
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.clients_section .client_logo_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  height: 8rem;
-  width: 12.5rem;
-  filter: grayscale(1);
-  transition: all 0.5s ease;
-}
-.clients_section .client_logo_container .client_icon_svg {
-  width: 100%;
-  height: auto;
-}
-.clients_section .client_logo_container:hover, .clients_section .client_logo_container:focus, .clients_section .client_logo_container:active {
-  filter: grayscale(0);
-  animation: zoom 1000ms ease-out;
 }
 
 .contact_section .bg_section {
