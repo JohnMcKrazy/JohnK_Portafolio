@@ -1975,12 +1975,6 @@ I {
     .content {
         padding: 0;
     }
-    .hero_content {
-        @include flexCenter();
-        flex-direction: column;
-
-        z-index: -1;
-    }
 }
 .about_section {
     position: relative;
