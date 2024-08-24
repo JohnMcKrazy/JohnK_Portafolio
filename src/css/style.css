@@ -2307,15 +2307,7 @@ I {
 }
 .menu_social_container .social_menu_btn {
   background: var(--NVC_T);
-  overflow: hidden;
-  width: var(--iconD);
-  height: var(--iconD);
   border-radius: 1rem;
-}
-.menu_social_container .social_menu_btn .icon_container {
-  width: 100%;
-  height: 100%;
-  padding: 1rem;
 }
 .menu_social_container .social_menu_btn:hover .icon_container {
   background: var(--FC);
@@ -2440,11 +2432,11 @@ I {
 }
 
 .nav_big {
-  height: 8rem;
+  height: var(--NVH);
 }
 
 .nav_small {
-  height: 6rem;
+  height: var(--NVH_F);
 }
 
 .good {
