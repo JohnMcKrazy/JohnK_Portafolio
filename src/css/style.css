@@ -1115,17 +1115,16 @@ I {
 
 .close_btn {
   fill: var(--FC);
-  transition: var(--T_S);
 }
 .close_btn SVG {
-  transition: var(--T_S);
+  transition: rotate 500ms ease-in-out;
 }
 .close_btn:hover {
   background: var(--FC);
+  fill: var(--TC_C);
 }
 .close_btn:hover SVG {
-  fill: var(--TC_C);
-  rotate: 720deg;
+  rotate: 360deg;
 }
 
 .phone_social_btn {
@@ -1708,12 +1707,12 @@ I {
   display: flex;
 }
 .list_btns_container .arrow_list_icon {
-  transition: var(--T_M);
-  transform: rotate(-180deg);
+  transition: rotate 500ms ease;
+  rotate: -180deg;
 }
 .list_btns_container .arrow_list_icon_active {
   fill: var(--TC);
-  transform: rotate(0);
+  rotate: 0deg;
 }
 .list_btns_container .list_btn_active {
   background: var(--btnGradient) !important;

@@ -1199,15 +1199,15 @@ I {
 }
 .close_btn {
     fill: var(--FC);
-    transition: var(--T_S);
     SVG {
-        transition: var(--T_S);
+        transition: rotate 500ms ease-in-out;
     }
+
     &:hover {
         background: var(--FC);
+        fill: var(--TC_C);
         SVG {
-            fill: var(--TC_C);
-            rotate: 720deg;
+            rotate: 360deg;
         }
     }
 }
@@ -1722,12 +1722,12 @@ I {
         display: flex;
     }
     .arrow_list_icon {
-        transition: var(--T_M);
-        transform: rotate(-180deg);
+        transition: rotate 500ms ease;
+        rotate: -180deg;
     }
     .arrow_list_icon_active {
         fill: var(--TC);
-        transform: rotate(0);
+        rotate: 0deg;
     }
 
     .list_btn_active {
