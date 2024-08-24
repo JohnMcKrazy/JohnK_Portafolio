@@ -1963,8 +1963,7 @@ I {
   justify-content: space-between;
   width: 100%;
   max-width: 35rem;
-  height: auto;
-  gap: var(--MD);
+  gap: var(--XL);
 }
 .hero_section .btns_container .btn {
   max-width: 15rem;
