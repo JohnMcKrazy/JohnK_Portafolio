@@ -1962,6 +1962,7 @@ I {
 .hero_section .btns_container {
   justify-content: space-between;
   width: 100%;
+  max-width: 35rem;
   height: auto;
   gap: var(--MD);
 }
