@@ -2303,7 +2303,6 @@ I {
   border-radius: var(--LG);
 }
 .menu_social_container .social_menu_btn {
-  background: var(--NVC_T);
   border-radius: var(--LG);
 }
 .menu_social_container .social_menu_btn:hover .icon_container {
