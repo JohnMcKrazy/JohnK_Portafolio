@@ -1071,17 +1071,14 @@ I {
   fill: var(--FC);
 }
 
-.close_btn {
-  fill: var(--FC);
-}
-.close_btn SVG {
+.close_btn .close_icon_svg {
   transition: rotate 500ms ease-in-out;
 }
 .close_btn:hover {
   background: var(--FC);
   fill: var(--TC_C);
 }
-.close_btn:hover SVG {
+.close_btn:hover .close_icon_svg {
   rotate: 360deg;
 }
 

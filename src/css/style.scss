@@ -1158,15 +1158,14 @@ I {
     }
 }
 .close_btn {
-    fill: var(--FC);
-    SVG {
+    .close_icon_svg {
         transition: rotate 500ms ease-in-out;
     }
 
     &:hover {
         background: var(--FC);
         fill: var(--TC_C);
-        SVG {
+        .close_icon_svg {
             rotate: 360deg;
         }
     }
