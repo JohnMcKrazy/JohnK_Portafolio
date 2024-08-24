@@ -63,7 +63,7 @@
   --LG: 1rem;
   --XL: 2rem;
   --FS_XS: 0.8rem;
-  --FS_S: 1rem;
+  --FS_S: var(--LG);
   --FS_N: 1.4rem;
   --FS_L: 1.8rem;
   --FS_X: 4rem;
@@ -114,7 +114,7 @@
 }
 @keyframes bounceDown {
   50% {
-    transform: translateY(1rem);
+    transform: translateY(var(--LG));
   }
 }
 @keyframes bounceUp {
@@ -269,7 +269,7 @@ TEXTAREA {
   background: var(--bgC);
   color: var(--TC);
   font-size: var(--FS_S);
-  padding: 1rem 0.5rem;
+  padding: var(--LG) var(--MD);
 }
 
 TEXTAREA {
@@ -331,7 +331,7 @@ I {
 }
 
 .title_subsection {
-  margin-bottom: 1rem;
+  margin-bottom: var(--LG);
 }
 
 .accent_text {
@@ -895,7 +895,7 @@ I {
   background: var(--FC);
   color: var(--TC_C);
   font-size: var(--FS_L);
-  padding: 1rem;
+  padding: var(--LG);
   transition: var(--T_F);
   translate: 0 -100%;
   z-index: 999;
@@ -927,7 +927,7 @@ I {
   flex-direction: column;
   position: absolute;
   background: var(--NVC);
-  border-radius: 0.5rem;
+  border-radius: var(--MD);
   z-index: 2;
   display: none;
   transition: var(--T_UF);
@@ -949,8 +949,8 @@ I {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 0.25rem;
-  padding: 1rem;
+  gap: var(--SM);
+  padding: var(--LG);
 }
 .bubble .info SPAN {
   display: block;
@@ -968,7 +968,7 @@ I {
 }
 .bubble .photo {
   position: absolute;
-  top: 2rem;
+  top: var(--XL);
   left: 50%;
   transform: translateX(-50%);
   width: 6rem;
@@ -1005,7 +1005,7 @@ I {
 }
 .rex_bubble .info,
 .bio_bubble .info {
-  margin-top: 1rem;
+  margin-top: var(--LG);
 }
 
 .rex_bubble .header_bubble {
@@ -1017,11 +1017,11 @@ I {
 }
 
 .info_bubble {
-  padding: 1rem;
-  gap: 0.5rem;
+  padding: var(--LG);
+  gap: var(--MD);
 }
 .info_bubble .description {
-  line-height: 1.2rem;
+  line-height: 1var --XL;
   text-align: center;
 }
 
@@ -1035,11 +1035,12 @@ I {
   outline: solid 2px var(--FC);
   border-radius: var(--XL);
   text-align: center;
-  padding: 1rem 0.5rem;
+  padding: var(--LG) var(--MD);
   cursor: pointer;
-  transition: var(--T_UF);
+  transition: var(--T_F);
 }
 .btn .label_btn {
+  transition: var(--T_F);
   color: var(--TC);
   font-weight: var(--FW_B);
 }
@@ -1062,8 +1063,8 @@ I {
   margin-top: 4rem;
 }
 .btn_down .arrow_down_svg {
-  margin-top: 1rem;
-  width: 2rem;
+  margin-top: var(--LG);
+  width: var(--XL);
   animation: bounceDown 1s ease infinite;
   transition: var(--T_F);
 }
@@ -1136,7 +1137,6 @@ I {
   color: var(--TC);
   font-weight: var(--FW_B);
   font-size: var(--FS_N);
-  transition: var(--T_UF);
 }
 .more_btn:hover {
   color: var(--whiteOff);
@@ -1182,15 +1182,15 @@ I {
   left: 50%;
   transform: translateX(-50%);
   transition: var(--T_M);
-  border-radius: 0.25rem;
+  border-radius: var(--SM);
 }
 
 .top_bar {
-  top: 0.5rem;
+  top: var(--MD);
 }
 
 .bottom_bar {
-  bottom: 0.5rem;
+  bottom: var(--MD);
 }
 
 .center_bar {
@@ -1233,7 +1233,7 @@ I {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0 var(--MD);
   width: -moz-fit-content;
   width: fit-content;
   scale: 1;
@@ -1279,10 +1279,10 @@ I {
 .bullet {
   background: var(--bgC_T);
   width: calc(100% - var(--iconD));
-  padding: 2rem;
+  padding: var(--XL);
 }
 .bullet H1 {
-  margin-bottom: 1rem;
+  margin-bottom: var(--LG);
 }
 
 .flex {
@@ -1294,11 +1294,11 @@ I {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
+  gap: var(--XL);
 }
 
 .subtitle_section {
-  margin: 2rem 0 1rem;
+  margin: var(--XL) 0 var(--LG);
   font-size: var(--FS_L);
 }
 
@@ -1353,13 +1353,13 @@ I {
 }
 .card .info_container {
   color: var(--TC);
-  padding: 1rem 1.5rem 2rem;
+  padding: var(--LG) 1.5rem var(--XL);
   transition: var(--T_S);
 }
 .card .info_container P,
 .card .info_container H3,
 .card .info_container H4 {
-  margin: 0.5rem 0;
+  margin: var(--MD) 0;
 }
 
 .service_card .info_card {
@@ -1379,10 +1379,10 @@ I {
   font-size: var(--fontSizeMClamp);
   transition: var(--T_M);
   opacity: 0.9;
-  padding: 2rem 0;
+  padding: var(--XL) 0;
 }
 .service_card .info_card P {
-  padding: 1rem 1.5rem;
+  padding: var(--LG) 1.5rem;
   transition: var(--T_M);
   opacity: 0;
   transform: translateY(100%);
@@ -1415,7 +1415,7 @@ I {
   width: 100%;
   height: 20rem;
   overflow: hidden;
-  border-radius: 0.25rem;
+  border-radius: var(--SM);
 }
 .project_card .img_card {
   position: absolute;
@@ -1478,7 +1478,7 @@ I {
   fill: var(--TC);
 }
 .project_card .info_project_container .margin_bottom {
-  margin-bottom: 1rem;
+  margin-bottom: var(--LG);
 }
 .project_card:hover .info_project_container, .project_card:active .info_project_container, .project_card:focus .info_project_container {
   transform: translateY(0);
@@ -1496,14 +1496,14 @@ I {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: var(--LG);
 }
 
 .input_container {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  margin-bottom: 1rem;
+  margin-bottom: var(--LG);
 }
 
 .cards_container {
@@ -1526,7 +1526,7 @@ I {
   grid-template-columns: repeat(auto-fit, minmax(150px, 8fr));
   gap: 0;
   min-height: auto;
-  padding: 2rem 0;
+  padding: var(--XL) 0;
 }
 .cards_service_container .service_card {
   grid-column: span 2;
@@ -1539,8 +1539,8 @@ I {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 2px var(--FC);
-  padding: 2rem 0 1rem;
-  margin-bottom: 1rem;
+  padding: var(--XL) 0 var(--LG);
+  margin-bottom: var(--LG);
 }
 .cards_presentation .subtitle_section {
   margin: 0;
@@ -1554,7 +1554,7 @@ I {
 
 .cards_portfolio_container {
   overflow-y: auto;
-  padding-top: 0.5rem;
+  padding-top: var(--MD);
 }
 
 .lists_container {
@@ -1576,11 +1576,11 @@ I {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--LG);
   height: 5rem;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 1rem;
+  padding: var(--LG);
 }
 .description_portfolio SPAN {
   display: block;
@@ -1598,9 +1598,9 @@ I {
   width: 100%;
   background: var(--bgM);
   border: none;
-  border-radius: 0.25rem;
+  border-radius: var(--SM);
   text-transform: uppercase;
-  padding: 0.5rem 3rem;
+  padding: var(--MD) 3rem;
 }
 .list_btns_container .list_btn .label_btn {
   color: var(--TC);
@@ -1625,13 +1625,13 @@ I {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--MD);
   background: var(--bgM);
   border-radius: 0;
   border-bottom: solid 2px var(--FC);
   min-height: -moz-fit-content;
   min-height: fit-content;
-  padding: 0.5rem 1rem;
+  padding: var(--MD) var(--LG);
 }
 .list_btns_container .search_list_btn .label_btn {
   color: var(--TC);
@@ -1642,8 +1642,8 @@ I {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
-  width: 2rem;
+  height: var(--XL);
+  width: var(--XL);
   padding: 0;
 }
 .list_btns_container .list_container {
@@ -1693,11 +1693,11 @@ I {
   transform: translate(-50%, -50%);
   height: auto;
   transition: var(--T_F);
-  padding: 1rem;
+  padding: var(--LG);
   border-style: solid;
   border-width: 2px;
   border-color: transparent;
-  border-radius: 0.5rem;
+  border-radius: var(--MD);
   display: none;
   opacity: 0;
   justify-content: center;
@@ -1710,8 +1710,8 @@ I {
 
 .contact_form {
   background: var(--NVC);
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: var(--XL);
+  border-radius: var(--LG);
 }
 .contact_form .form_response_container {
   width: calc(100% - 6rem);
@@ -1723,7 +1723,7 @@ I {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  top: 2rem;
+  top: var(--XL);
   left: 50%;
   width: 90%;
   max-width: 720px;
@@ -1731,8 +1731,8 @@ I {
   height: fit-content;
   transition: var(--T_M);
   transform: translate(-50%, -50%);
-  border-radius: 1rem;
-  padding: 2rem 0 0;
+  border-radius: var(--LG);
+  padding: var(--XL) 0 0;
   max-height: calc(100svh - 4rem);
   overflow: hidden;
   display: none;
@@ -1757,10 +1757,10 @@ I {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  margin-bottom: 1rem;
+  margin-bottom: var(--LG);
 }
 .modal .modal_header {
-  padding: 1rem 0;
+  padding: var(--LG) 0;
   width: 100%;
 }
 .modal .portfolio_modal {
@@ -1770,8 +1770,8 @@ I {
 }
 .modal .alert_modal .btn,
 .modal .legal_modal .btn {
-  width: calc(100% - 1rem);
-  margin: 1rem 0.5rem;
+  width: calc(100% - var(--LG));
+  margin: var(--LG) VAR(--MD);
 }
 .modal .alert_modal .modal_info {
   text-align: center;
@@ -1779,9 +1779,9 @@ I {
 .modal .legal_modal .modal_info {
   overflow: auto;
   scroll-behavior: smooth;
-  padding-right: 1rem;
+  padding-right: var(--LG);
   border-top: solid var(--FC) 4px;
-  padding: 1rem 1rem 0 0;
+  padding: var(--LG) var(--LG) 0 0;
 }
 .modal .legal_modal .modal_info .inner_link_btn {
   width: 100%;
@@ -1796,7 +1796,7 @@ I {
   width: calc(100% - 4rem);
 }
 .modal .submit_container {
-  padding: 0.5rem;
+  padding: var(--MD);
 }
 
 .inner_link_btn {
@@ -1813,7 +1813,7 @@ I {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
+  gap: var(--LG);
 }
 
 .section_divider {
@@ -1845,17 +1845,17 @@ I {
 }
 .section_divider .quote_container .quote_start {
   align-self: flex-start;
-  transform: translateY(-2rem);
+  transform: translateY(-var(--XL));
 }
 .section_divider .quote_container .quote_end {
-  transform: translateY(2rem);
+  transform: translateY(var(--XL));
   align-self: flex-end;
 }
 .section_divider .quote_container .icon_container {
   fill: var(--FC);
 }
 .section_divider .author_container {
-  margin-top: 2rem;
+  margin-top: var(--XL);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1866,7 +1866,7 @@ I {
   text-align: right;
 }
 .section_divider .author_container .author {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--MD);
 }
 .section_divider .author_container .author i {
   font-size: var(--fontSizeMClamp);
@@ -1946,7 +1946,7 @@ I {
   color: var(--TC);
   font-size: var(--fontSizeMClamp);
   text-align: right;
-  margin-top: 1rem;
+  margin-top: var(--LG);
 }
 .hero_section .title_container H1 {
   color: var(--TC);
@@ -2003,7 +2003,7 @@ I {
   color: var(--FC);
 }
 .about_section .about_salute .swipe_animation_container_half {
-  padding: 0 2rem;
+  padding: 0 var(--XL);
 }
 .about_section .about_salute .about_text {
   font-size: var(--fontSizeMClamp);
@@ -2015,9 +2015,9 @@ I {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--MD);
   color: var(--TC_C);
-  padding: 1rem;
+  padding: var(--LG);
 }
 .badge .badge_name {
   color: var(--TC);
@@ -2039,10 +2039,10 @@ I {
   height: 350px;
   justify-content: space-between;
   background: var(--bgC_T);
-  border-radius: 0.5rem;
+  border-radius: var(--MD);
 }
 .certification_badge .badge_name {
-  margin-top: 0.5rem;
+  margin-top: var(--MD);
 }
 
 .skills_section {
@@ -2104,7 +2104,7 @@ I {
 .legals_section .icon_container {
   width: 3rem;
   height: 3rem;
-  padding: 0.25rem;
+  padding: var(--SM);
 }
 .legals_section .link_text {
   font-size: var(--FS_XS);
@@ -2121,7 +2121,7 @@ I {
   margin-left: 3rem;
 }
 .legals_section .made_content .btns_container :not(:first-child) {
-  margin-left: 2rem;
+  margin-left: var(--XL);
 }
 .legals_section .made_content .label_btn {
   font-size: var(--FS_S);
@@ -2205,7 +2205,7 @@ I {
   align-items: center;
 }
 .nav_menu_controler .nav_btn {
-  padding: 0 1rem;
+  padding: 0 var(--LG);
 }
 .nav_menu_controler .theme_btn {
   fill: var(--FC);
@@ -2223,7 +2223,7 @@ I {
   left: 0;
   right: 0;
   top: 0;
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: var(--MD) var(--MD) 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2288,7 +2288,7 @@ I {
   flex-direction: column;
   position: fixed;
   bottom: 4rem;
-  left: 2rem;
+  left: var(--XL);
   min-height: var(--iconD);
   z-index: 4;
   fill: var(--FC);
@@ -2298,13 +2298,13 @@ I {
   height: auto;
   transition: var(--T_F);
   margin: 1.5rem 0;
-  gap: 1rem;
+  gap: var(--LG);
   background: var(--NVC_T);
-  border-radius: 1rem;
+  border-radius: var(--LG);
 }
 .menu_social_container .social_menu_btn {
   background: var(--NVC_T);
-  border-radius: 1rem;
+  border-radius: var(--LG);
 }
 .menu_social_container .social_menu_btn:hover .icon_container {
   background: var(--FC);
