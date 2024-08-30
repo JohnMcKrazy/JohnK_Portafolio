@@ -1297,6 +1297,7 @@ I {
     }
 }
 .logo_btn {
+    overflow: visible;
     @include flex(row, flex-start, center);
     padding: 0 var(--MD);
     width: fit-content;

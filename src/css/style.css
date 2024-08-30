@@ -1229,6 +1229,7 @@ I {
 }
 
 .logo_btn {
+  overflow: visible;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
