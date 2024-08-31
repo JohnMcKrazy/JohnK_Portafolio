@@ -281,6 +281,7 @@ BODY {
 IMG {
     display: block;
     width: 100%;
+    height: 100%;
     border-style: none;
     object-fit: cover;
 }
@@ -1438,10 +1439,6 @@ I {
         }
     }
 
-    IMG:not(.not) {
-        width: 100%;
-        height: 100%;
-    }
     &:hover .bg_card {
         transform: scale(1.2);
     }
