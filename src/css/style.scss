@@ -1018,10 +1018,13 @@ I {
     width: var(--iconD);
     height: var(--iconD);
     padding: var(--LG);
-    border-radius: var(--LG);
+
     @include flexCenter();
     user-select: none;
     fill: var(--FC);
+}
+.icon_container:not(.logo_btn) {
+    border-radius: var(--LG);
 }
 .bubble {
     @include flexCenter();
