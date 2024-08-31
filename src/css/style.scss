@@ -1739,7 +1739,7 @@ I {
 .modal_window {
     position: absolute;
     @include flex(column, flex-start, flex-start);
-    top: var(--XL);
+    top: var(--SM);
     left: 50%;
     width: 90%;
     max-width: 720px;
@@ -1748,7 +1748,7 @@ I {
     transform: translate(-50%, -50%);
     border-radius: var(--LG);
     padding: var(--XL) 0 0;
-    max-height: calc(100svh - 4rem);
+    max-height: calc(100vh - var(--XL));
     overflow: hidden;
     display: none;
     opacity: 0;
