@@ -1023,7 +1023,8 @@ I {
     user-select: none;
     fill: var(--FC);
 }
-.icon_container:not(.logo_btn) {
+.icon_container:not(.logo_btn),
+.phone_social_btn {
     border-radius: var(--LG);
 }
 .bubble {
@@ -1175,9 +1176,7 @@ I {
         }
     }
 }
-.phone_social_btn {
-    border-radius: var(--MD);
-}
+
 .nav_btn:not(.phone_lang_btn) {
     height: 100%;
 }
