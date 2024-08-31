@@ -2037,6 +2037,9 @@ I {
     .badge_name {
         margin-top: var(--MD);
     }
+    .badge_image {
+        height: auto;
+    }
 }
 .skills_section {
     --skillIconD: 6rem;
