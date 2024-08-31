@@ -1388,6 +1388,8 @@ I {
   transition: var(--T_M);
   opacity: 0;
   transform: translateY(100%);
+  text-align: center;
+  inline-size: 90%;
 }
 .service_card:hover .bg_card {
   transform: scale(1.2);
