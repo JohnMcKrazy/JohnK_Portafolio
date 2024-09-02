@@ -306,11 +306,11 @@ H2 {
 H1 {
   color: var(--FC);
   font-weight: var(--FW_B);
-  font-size: var(--FS_L);
+  font-size: var(--fontSizeXClamp);
 }
 
 H2 {
-  font-size: var(--FS_N);
+  font-size: var(--fontSizeMClamp);
   font-weight: var(--FW_B);
   color: var(--TC);
 }
@@ -1301,7 +1301,6 @@ I {
 
 .subtitle_section {
   margin: var(--XL) 0 var(--LG);
-  font-size: var(--FS_L);
 }
 
 .title_section {
@@ -1367,10 +1366,11 @@ I {
 .service_card .info_card {
   transition: all 500ms ease-in-out;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background: var(--bgC_UT);
+  padding: var(--XL) 0;
   width: 100%;
   height: 100%;
 }
@@ -1378,10 +1378,10 @@ I {
   width: 100%;
   text-align: center;
   color: var(--TC);
-  font-size: var(--fontSizeMClamp);
+  font-size: var(--fontSizeXClamp);
   transition: var(--T_M);
   opacity: 0.9;
-  padding: var(--XL) 0;
+  transform: translateY(100%);
 }
 .service_card .info_card P {
   padding: var(--LG) 1.5rem;
@@ -1390,6 +1390,7 @@ I {
   transform: translateY(100%);
   text-align: center;
   inline-size: 90%;
+  font-size: var(--fontSizeMClamp);
 }
 .service_card:hover .bg_card {
   transform: scale(1.2);
@@ -1399,13 +1400,13 @@ I {
 }
 .service_card:hover .info_card P,
 .service_card:hover .info_card H2 {
-  opacity: 1;
   transform: translateY(0);
 }
+.service_card:hover .info_card P {
+  opacity: 1;
+}
 .service_card:hover .info_card H2 {
-  padding: 0;
-  background: transparent;
-  color: var(--TC);
+  color: var(--FC);
 }
 
 .project_card {
@@ -1944,15 +1945,14 @@ I {
 }
 .hero_section .title_container H2 {
   color: var(--TC);
-  font-size: var(--fontSizeMClamp);
-  text-align: right;
+  /* text-align: left; */
   margin-top: var(--LG);
 }
 .hero_section .title_container H1 {
   color: var(--TC);
   font-size: var(--fontSizeXLClamp);
   line-height: 6rem;
-  text-align: right;
+  /* text-align: left; */
 }
 .hero_section .btns_container {
   justify-content: space-between;
@@ -1995,7 +1995,7 @@ I {
   color: var(--FC);
 }
 .about_section .about_salute .title_name {
-  font-size: var(--FS_XL);
+  font-size: var(--fontSizeXLClamp);
   color: var(--SC);
 }
 .about_section .about_salute .title_effect {

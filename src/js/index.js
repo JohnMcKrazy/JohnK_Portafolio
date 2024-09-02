@@ -265,6 +265,33 @@ document.addEventListener("DOMContentLoaded", () => {
         logoAnimation();
         iconsAnimation();
         setAssets();
+        setTimeout(() => {
+            let audioIsPlaying = false;
+            const audioEnterBtn = selector("[data-audio=enter]");
+            const audioTeleportBtn = selector("[data-audio=teleport]");
+            selectorAll("BUTTON").forEach((btn) => {
+                btn.addEventListener("mouseenter", () => {
+                    if (audioIsPlaying === false) {
+                        audioIsPlaying = true;
+                        audioEnterBtn.play();
+                    } else {
+                        audioEnterBtn.stop();
+                        audioEnterBtn.play();
+                    }
+                });
+                btn.addEventListener("click", () => {
+                    audioTeleportBtn.play();
+                });
+                btn.addEventListener("mouseleave", () => (audioIsPlaying = false));
+            });
+            selectorAll(".href_btn").forEach((btn) => {
+                btn.addEventListener("click", () =>
+                    setTimeout(() => {
+                        window.location.href = btn.getAttribute("data-href");
+                    }, 1500)
+                );
+            });
+        }, 250);
     };
     // FUNCTION FOR TRANSLATE PAGE POSITION TO TOP
     const toTheTop = () => {
@@ -317,9 +344,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentLang) {
             cardTitle.textContent = item.project_name[currentLang];
         }
-        innerBtn.setAttribute("href", `${item["projects"]["project_link"]}`);
-        innerBtn.textContent = innerBtn.getAttribute(`data-${currentLang}`);
-        makeText.textContent = makeText.getAttribute(`data-${currentLang}`);
+        innerBtn.setAttribute("data-href", `${item["projects"]["project_link"]}`);
+
         frac.appendChild(projectCard);
     };
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
@@ -1044,6 +1070,5 @@ document.addEventListener("DOMContentLoaded", () => {
             menuSocialActions(menuSocialStatus);
         }
     });
-
     setTimeout(setStart, 250);
 });
