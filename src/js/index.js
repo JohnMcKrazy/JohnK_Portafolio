@@ -23,7 +23,12 @@ let menuStatus = close;
 let menuSocialStatus = close;
 let storageContent;
 let currentTheme = "dark_theme";
+let audioIsPlaying = false;
 
+const audioEnterBtn = selector("[data-audio=enter]");
+const audioTeleportBtn = selector("[data-audio=teleport]");
+audioEnterBtn.volume = 0.4;
+audioTeleportBtn.volume = 0.4;
 //^ SELECTORES
 const BODY = selector("body");
 const modal = selector(".modal");
@@ -266,9 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
         iconsAnimation();
         setAssets();
         setTimeout(() => {
-            let audioIsPlaying = false;
-            const audioEnterBtn = selector("[data-audio=enter]");
-            const audioTeleportBtn = selector("[data-audio=teleport]");
             selectorAll("BUTTON").forEach((btn) => {
                 btn.addEventListener("mouseenter", () => {
                     if (audioIsPlaying === false) {
