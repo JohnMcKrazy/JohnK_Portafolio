@@ -13,6 +13,9 @@ const certificationTemplate = selector(".certification_template").content;
 const skillTemplate = selector(".skill_badge_template").content;
 const fragmentBtns = $d.createDocumentFragment();
 
+const lightT = "light";
+const darkT = "dark";
+
 const es = "es";
 const en = "en";
 const close = "close";
@@ -22,9 +25,9 @@ const storageName = "JohnK_Maker";
 let menuStatus = close;
 let menuSocialStatus = close;
 let storageContent;
-let currentTheme = "dark_theme";
+let currentTheme = darkT;
 let audioIsPlaying = false;
-
+let audioItsActive = true;
 const audioEnterBtn = selector("[data-audio=enter]");
 const audioTeleportBtn = selector("[data-audio=teleport]");
 audioEnterBtn.volume = 0.4;
@@ -88,7 +91,7 @@ const heroBtns = selectorAll(".btn_hero");
 const portfolioBtns = selectorAll(".portfolio_btn");
 const animationKeys = selectorAll(".animation_key");
 const forms = selectorAll("FORM");
-const themeBtns = selectorAll(".theme_btn");
+
 const langBtns = selectorAll(".lang_btn");
 
 const tabletScreen = selector(".desk_tablet_screen");
@@ -128,8 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("local storage item is created");
             storageContent = storage;
         } else {
-            if (storageContent["page_theme"] !== "dark_theme") {
+            if (storageContent["page_theme"] !== darkT) {
                 currentTheme = storageContent["page_theme"];
+                selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
             }
             storageContent["page_view_count"] += 1;
             localStorage.setItem(storageName, JSON.stringify(storageContent));
@@ -137,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         BODY.className = currentTheme;
-        /* console.log(storageContent); */
+        console.log(storageContent);
     };
     // FUNCTION FOR CHANGE LANGUAGE
     const setTextByLang = (newLang) => {
@@ -271,21 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
         iconsAnimation();
         setAssets();
         setTimeout(() => {
-            selectorAll("BUTTON").forEach((btn) => {
-                btn.addEventListener("mouseenter", () => {
-                    if (audioIsPlaying === false) {
-                        audioIsPlaying = true;
-                        audioEnterBtn.play();
-                    } else {
-                        audioEnterBtn.stop();
-                        audioEnterBtn.play();
-                    }
-                });
-                btn.addEventListener("click", () => {
-                    audioTeleportBtn.play();
-                });
-                btn.addEventListener("mouseleave", () => (audioIsPlaying = false));
-            });
             selectorAll(".href_btn").forEach((btn) => {
                 btn.addEventListener("click", () =>
                     setTimeout(() => {
@@ -352,8 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
     const changeTheme = (tm) => {
-        const lightT = "light_theme";
-        const darkT = "dark_theme";
         switch (tm) {
             case lightT:
                 currentTheme = darkT;
@@ -1056,9 +1043,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
         });
     });
+    const playHover = () => audioEnterBtn.play();
+    const playClick = () => audioTeleportBtn.play();
+    selectorAll(".sound_btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            audioItsActive = !audioItsActive;
+            selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
+        });
 
-    themeBtns.forEach((btn) => {
-        btn.addEventListener("click", () => changeTheme(currentTheme));
+        selectorAll("BUTTON").forEach((btn) => {
+            if (audioItsActive) {
+                btn.addEventListener("mouseenter", playHover, true);
+                btn.addEventListener("click", playClick);
+                btn.addEventListener("mouseleave", () => (audioIsPlaying = false));
+            } else {
+                btn.removeEventListener("mouseenter", playHover, true);
+                btn.removeEventListener("mouseclickenter", playClick);
+            }
+        });
+    });
+    selectorAll(".theme_btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
+            changeTheme(currentTheme);
+        });
     });
 
     btnLogo.addEventListener("click", toTheTop);

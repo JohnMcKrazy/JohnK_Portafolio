@@ -169,7 +169,7 @@
 }
 
 //!THEMES START
-.light_theme {
+.light {
     --FC: var(--logoPurpleL);
     --SC: var(--logoMintL);
     --H: var(--purpleDark);
@@ -209,7 +209,7 @@
         }
     }
 }
-.dark_theme {
+.dark {
     --FC: var(--logoMintD);
     --SC: var(--logoPurpleD);
     --H: var(--mintLigth);
@@ -2194,7 +2194,6 @@ I {
     }
 
     .theme_btn {
-        fill: var(--FC);
         &:hover {
             fill: var(--TC_C);
         }
@@ -2398,6 +2397,9 @@ I {
     background: var(--bgDanger);
     color: var(--blackOff);
     border-color: var(--danger);
+}
+[data-active="false"] {
+    display: none;
 }
 @media screen and (min-width: 767px) {
     .flex_responsive {

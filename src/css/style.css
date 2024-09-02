@@ -141,7 +141,7 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
-.light_theme {
+.light {
   --FC: var(--logoPurpleL);
   --SC: var(--logoMintL);
   --H: var(--purpleDark);
@@ -166,15 +166,15 @@
   --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
   --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
 }
-.light_theme .leiru_icon_svg .brand .cls-1,
-.light_theme .leiru_icon_svg .brand-append .cls-1 {
+.light .leiru_icon_svg .brand .cls-1,
+.light .leiru_icon_svg .brand-append .cls-1 {
   fill: rgb(24, 160, 56);
 }
-.light_theme .leiru_icon_svg .text {
+.light .leiru_icon_svg .text {
   fill: var(--TC);
 }
 
-.dark_theme {
+.dark {
   --FC: var(--logoMintD);
   --SC: var(--logoPurpleD);
   --H: var(--mintLigth);
@@ -199,8 +199,8 @@
   --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
   color: var(--TC);
 }
-.dark_theme .leiru_icon_svg .brand .cls-1,
-.dark_theme .leiru_icon_svg .brand-append .cls-1 {
+.dark .leiru_icon_svg .brand .cls-1,
+.dark .leiru_icon_svg .brand-append .cls-1 {
   fill: var(--TC);
 }
 
@@ -2210,9 +2210,6 @@ I {
 .nav_menu_controler .nav_btn {
   padding: 0 var(--LG);
 }
-.nav_menu_controler .theme_btn {
-  fill: var(--FC);
-}
 .nav_menu_controler .theme_btn:hover {
   fill: var(--TC_C);
 }
@@ -2449,6 +2446,10 @@ I {
   background: var(--bgDanger);
   color: var(--blackOff);
   border-color: var(--danger);
+}
+
+[data-active=false] {
+  display: none;
 }
 
 @media screen and (min-width: 767px) {

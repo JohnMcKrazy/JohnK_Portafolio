@@ -174,7 +174,7 @@ export const johnKStorage = {
     page_view_count: 1,
     page_alert_status: open,
     page_legal_content: "accepted",
-    page_theme: "dark_theme",
+    page_theme: "dark",
 };
 export const skillTypes = {
     all: {
