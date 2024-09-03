@@ -21,7 +21,7 @@ const en = "en";
 const close = "close";
 const open = "open";
 const start = "start";
-const storageName = "JohnK_Maker";
+const storageName = "JK_Dev_storage";
 let menuStatus = close;
 let menuSocialStatus = close;
 let storageContent;
@@ -124,7 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("data-href")), 1500);
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
-    const checkAlertStorageAnswer = () => {
+    const checkStorage = () => {
+        const oldName = "JohnK_Maker";
+        const oldStorage = JSON.parse(localStorage.getItem(oldName));
+        if (oldStorage) {
+            localStorage.removeItem(oldName);
+        }
         storageContent = JSON.parse(localStorage.getItem(storageName));
         /* console.log(storageContent); */
         if (!storageContent) {
@@ -246,8 +251,8 @@ document.addEventListener("DOMContentLoaded", () => {
             certificationName.setAttribute("data-es", certification.es);
             certificationName.setAttribute("data-en", certification.en);
             certificationsContainer.appendChild(certificationBadge);
-            certificationBtn.addEventListener("mouseenter",  playHover);
-            certificationBtn.addEventListener("click",playClick);
+            certificationBtn.addEventListener("mouseenter", playHover);
+            certificationBtn.addEventListener("click", playClick);
         });
 
         let filterHotData = utils.hotCardsSelection.map((itemHotCard) => DB.find((itemDB) => itemDB.db_name === itemHotCard));
@@ -271,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // SET ALL START CONFIGURATIONS
     const setStart = () => {
         checkWindowHeight();
-        checkAlertStorageAnswer();
+        checkStorage();
         logoAnimation();
         iconsAnimation();
         setAssets();
