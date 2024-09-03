@@ -2032,17 +2032,19 @@ I {
     max-width: 200px;
 }
 .certification_badge {
-    max-width: 350px;
-    height: 350px;
     justify-content: space-between;
     background: var(--bgC_T);
     border-radius: var(--MD);
+    gap: var(--XL);
     .badge_name {
         margin-top: var(--MD);
     }
     .badge_image {
         height: auto;
     }
+}
+.certification_container {
+    gap: var(--LG);
 }
 .skills_section {
     --skillIconD: 6rem;
@@ -2401,7 +2403,7 @@ I {
 [data-active="false"] {
     display: none;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 800px) {
     .flex_responsive {
         @include flexCenter();
     }
@@ -2422,11 +2424,7 @@ I {
             grid-column: span 2;
         }
     }
-}
-@media screen and (min-width: 917px) {
-    .flex_responsive {
-        flex-direction: row;
-    }
+
     .menu_btn {
         display: none;
     }
@@ -2442,10 +2440,11 @@ I {
         }
     }
 }
-/* @media screen and (min-width: 1185px) {
-    
-} */
-@media screen and (min-width: 1342px) {
+@media screen and (min-width: 1000px) {
+    .flex_responsive {
+        flex-direction: row;
+    }
+
     .nav_btn {
         .label_btn:not(.label_lang) {
             display: flex;
@@ -2454,6 +2453,11 @@ I {
             display: none;
         }
     }
+}
+/* @media screen and (min-width: 1185px) {
+    
+} */
+@media screen and (min-width: 1342px) {
     .cards_service_container {
         .service_card:nth-child(2),
         .service_card:nth-child(3),

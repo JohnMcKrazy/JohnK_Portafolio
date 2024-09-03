@@ -241,11 +241,13 @@ document.addEventListener("DOMContentLoaded", () => {
             certificationImg.setAttribute("src", certification.image);
             certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[currentLang]}' emitido por FreeCodeCamp`);
             certificationName.textContent = certification[currentLang];
-            certificationBtn.setAttribute("href", certification.link);
+            certificationBtn.setAttribute("data-href", certification.link);
 
             certificationName.setAttribute("data-es", certification.es);
             certificationName.setAttribute("data-en", certification.en);
             certificationsContainer.appendChild(certificationBadge);
+            certificationBtn.addEventListener("mouseenter",  playHover);
+            certificationBtn.addEventListener("click",playClick);
         });
 
         let filterHotData = utils.hotCardsSelection.map((itemHotCard) => DB.find((itemDB) => itemDB.db_name === itemHotCard));
