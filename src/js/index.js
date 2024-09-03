@@ -119,6 +119,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const deleteChild = (item) => utils.deleteChildElements(item);
     const retTop = (sec) => utils.returnTop(sec);
     const scrollSection = (sec) => utils.scrollToSection(sec);
+    /* SOUND FUNCTIONS */
+    const playHover = () => audioEnterBtn.play();
+    const playClick = () => audioTeleportBtn.play();
+    const mutePage = (elem) => (elem.muted = true);
+    const backSoundPage = (elem) => (elem.muted = false);
+
     const skillsData = utils.skillTypes;
     const storage = utils.johnKStorage;
 
@@ -1043,24 +1049,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
         });
     });
-    const playHover = () => audioEnterBtn.play();
-    const playClick = () => audioTeleportBtn.play();
+
     selectorAll(".sound_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
             audioItsActive = !audioItsActive;
             selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
-        });
-
-        selectorAll("BUTTON").forEach((btn) => {
-            if (audioItsActive) {
-                btn.addEventListener("mouseenter", playHover, true);
-                btn.addEventListener("click", playClick);
-                btn.addEventListener("mouseleave", () => (audioIsPlaying = false));
+            if (!audioItsActive) {
+                selectorAll("AUDIO").forEach((audioElem) => mutePage(audioElem));
             } else {
-                btn.removeEventListener("mouseenter", playHover, true);
-                btn.removeEventListener("mouseclickenter", playClick);
+                selectorAll("AUDIO").forEach((audioElem) => backSoundPage(audioElem));
             }
         });
+    });
+    selectorAll("BUTTON").forEach((btn) => {
+        btn.addEventListener("mouseenter", playHover, true);
+        btn.addEventListener("click", playClick);
+        btn.addEventListener("mouseleave", () => (audioIsPlaying = false));
     });
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
