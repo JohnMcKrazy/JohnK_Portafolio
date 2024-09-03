@@ -583,7 +583,6 @@ I {
   fill: var(--midGray);
 }
 .deskwork_icon .watch_mer {
-  opacity: 0;
   transition: var(--T_M);
 }
 .deskwork_icon .icon_animation {

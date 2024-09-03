@@ -1,10 +1,11 @@
 import { DB } from "./DB.js";
 import * as utils from "./utils.js";
 
-//^ UTILS FRAGMENTS
+/* FUNCTION SELECTORS */
 const $d = document;
-const selector = (tag) => $d.querySelector(`${tag}`);
-const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
+const selector = (tag, queryContainer = $d) => queryContainer.querySelector(`${tag}`);
+const selectorAll = (tag, queryContainer = $d) => queryContainer.querySelectorAll(`${tag}`);
+/* FRAGMENTS */
 const fragmentHotProjects = $d.createDocumentFragment();
 const fragmentPortfolioProjects = $d.createDocumentFragment();
 const cardProjectTemplate = selector(".card_project_template").content;
@@ -15,7 +16,6 @@ const fragmentBtns = $d.createDocumentFragment();
 
 const lightT = "light";
 const darkT = "dark";
-
 const es = "es";
 const en = "en";
 const close = "close";
@@ -26,18 +26,18 @@ let menuStatus = close;
 let menuSocialStatus = close;
 let storageContent;
 let currentTheme = darkT;
-let audioIsPlaying = false;
 let audioItsActive = true;
+/* AUDIO CONTENT */
 const audioEnterBtn = selector("[data-audio=enter]");
 const audioTeleportBtn = selector("[data-audio=teleport]");
+/* AUDIO CONFIGURATION */
 audioEnterBtn.volume = 0.4;
 audioTeleportBtn.volume = 0.4;
 //^ SELECTORES
+/* BASIC CONTAINER */
 const BODY = selector("body");
 const modal = selector(".modal");
 export const nav = selector(".nav_menu");
-const btnLogo = selector(".logo_btn");
-const menuBtn = selector(".menu_btn");
 const phoneMenu = selector(".phone_menu_controler");
 const menuContainer = selector(".nav_menu_controler");
 const menuSocialContainer = selector(".menu_social_container");
@@ -45,6 +45,14 @@ const modalInfoLegal = selector(".modal_info_legal");
 const alertModal = selector(".alert_modal");
 const contactModal = selector(".contact_modal");
 const menuSocialBtnsContainer = selector(".menu_social_btns_container");
+const sections = selectorAll(".section");
+const forms = selectorAll("FORM");
+const certificationsContainer = selector(".certification_container");
+const designSkillsContainer = selector(".design_skills_container");
+const devSkillsContainer = selector(".dev_skills_container");
+const swipeAnimationContainerFull = selectorAll(".swipe_animation_container_full");
+const swipeAnimationContainerHalf = selectorAll(".swipe_animation_container_half");
+const sectionDividers = selectorAll(".section_divider");
 //MY ILLUSTRATION CONTENT
 const designScreen = selector(".design_screen");
 const designTabletScreen = selector(".design_tablet_screen");
@@ -59,28 +67,31 @@ const bubbleInfo = selector(".info_bubble");
 const bubbleRex = selector(".rex_bubble");
 // MODAL PORTFOLIO
 const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
-const searchPortfolioListBtnLabel = searchPortfolioListBtn.querySelector(".label_btn");
+const searchPortfolioListBtnLabel = selector(".label_btn", searchPortfolioListBtn);
 const portfolioListContainer = selector(".portfolio_list_btns_container");
 const extraListBtns = selectorAll(".extra_list_btn");
 const searchExtraListBtn = selector(".search_extra_list_btn");
-const searchExtraListBtnLabel = selector(".search_extra_list_btn").querySelector(".label_btn");
+const searchExtraListBtnLabel = selector(".label_btn", searchExtraListBtn);
 const extraListContainer = selector(".extra_list_btns_container");
-// UTILS FUNCTIONS
 const cardsHotContainer = selector(".cards_hot_container");
 const portfolioCardsContainer = selector(".cards_portfolio_container");
-
+/* MY ILLUSTRATION */
 const illustrationMe = selector(".desk_me");
 const illustrationRex = selector(".dog");
-
-/*  */
+const tabletScreen = selector(".desk_tablet_screen");
+const devIcons = selectorAll(".dev_icon");
+const illustrationIcons = selectorAll(".illustration_icon");
+const designIcons = selectorAll(".design_icon");
+/* MODAL */
 const legalModal = selector(".legal_modal");
 const acceptStorageBtn = selector(".storage_accept");
+/* BTNS */
+const btnLogo = selector(".logo_btn");
+const menuBtn = selector(".menu_btn");
 const innerBtns = selectorAll(".inner_link_btn");
 const linkBtns = selectorAll(".link_btn");
 const legalAcceptBtn = selector(".legal_modal_accept_btn");
 const closeModalBtns = selectorAll(".close_modal");
-const sections = selectorAll(".section");
-
 const btnDown = selector(".btn_down");
 const accesibilityBtns = selectorAll(".accessibility_btn");
 const actionBtns = selectorAll(".action_menu");
@@ -89,28 +100,10 @@ const socialMenuBtns = selectorAll(".social_menu_btn");
 const contactBtns = selectorAll(".contact_btn");
 const heroBtns = selectorAll(".btn_hero");
 const portfolioBtns = selectorAll(".portfolio_btn");
-const animationKeys = selectorAll(".animation_key");
-const forms = selectorAll("FORM");
-
 const langBtns = selectorAll(".lang_btn");
-
-const tabletScreen = selector(".desk_tablet_screen");
-
-const certificationsContainer = selector(".certification_container");
-const designSkillsContainer = selector(".design_skills_container");
-
-const devSkillsContainer = selector(".dev_skills_container");
 const mainNavBtn = selector(".main_nav_btn ");
-
-const swipeAnimationContainerFull = selectorAll(".swipe_animation_container_full");
-const swipeAnimationContainerHalf = selectorAll(".swipe_animation_container_half");
-const devIcons = selectorAll(".dev_icon");
-const illustrationIcons = selectorAll(".illustration_icon");
-const designIcons = selectorAll(".design_icon");
-
 const listPortfolioBtns = selectorAll(".list_portfolio_btn");
-
-const sectionDividers = selectorAll(".section_divider");
+const animationKeys = selectorAll(".animation_key");
 
 document.addEventListener("DOMContentLoaded", () => {
     let currentLang;
@@ -211,20 +204,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const setAssets = () => {
         infSoftware.forEach((software) => {
             const clone = skillTemplate.cloneNode(true);
-            const badge = clone.querySelector(".skill_badge");
+            const badge = selector(".skill_badge", clone);
             badge.id = `skill_badge_${software.db_name}`;
             badge.setAttribute("data-name", software.db_name);
             badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
             if (software.type === "design") {
-                designSkillsContainer.querySelector(".icons_container").appendChild(badge);
+                selector(".icons_container", designSkillsContainer).appendChild(badge);
             } else if (software.type === "dev") {
-                devSkillsContainer.querySelector(".icons_container").appendChild(badge);
+                selector(".icons_container", devSkillsContainer).appendChild(badge);
             }
             setTimeout(() => {
                 badge.addEventListener("mouseover", (e) => {
                     const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("data-name"));
-                    bubbleInfo.querySelector(".title").textContent = newData.tech_complete_name;
-                    bubbleInfo.querySelector(".description").textContent = newData[`tech_info_${currentLang}`];
+                    selector(".title", bubbleInfo).textContent = newData.tech_complete_name;
+                    selector(".description", bubbleInfo).textContent = newData[`tech_info_${currentLang}`];
                     bubbleInfo.classList.add("show_flex");
                     const containerWidth = bubbleInfo.getClientRects()[0].width;
                     bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
@@ -240,10 +233,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         utils.certificationsData.forEach((certification) => {
             const certificationClone = certificationTemplate.cloneNode(true);
-            const certificationBadge = certificationClone.querySelector(".certification_badge");
-            const certificationImg = certificationClone.querySelector(".badge_image");
-            const certificationBtn = certificationClone.querySelector(".btn");
-            const certificationName = certificationClone.querySelector(".badge_name");
+            const certificationBadge = selector(".certification_badge", certificationClone);
+            const certificationImg = selector(".badge_image", certificationClone);
+            const certificationBtn = selector(".btn", certificationClone);
+            const certificationName = selector(".badge_name", certificationClone);
             certificationImg.setAttribute("src", certification.image);
             certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[currentLang]}' emitido por FreeCodeCamp`);
             certificationName.textContent = certification[currentLang];
@@ -261,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             setLang();
 
-            cardsHotContainer.querySelectorAll(".project_card").forEach((card) => {
+            selectorAll(".project_card", cardsHotContainer).forEach((card) => {
                 card.classList.add("card_up");
             });
             setTimeout(() => {
@@ -290,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }, 250);
     };
-    // FUNCTION FOR TRANSLATE PAGE POSITION TO TOP
+    // FUNCTION FOR RETUN PAGE TO THE TOP
     const toTheTop = () => {
         const currentPosition = BODY.getBoundingClientRect().top;
         window.scrollTo(currentPosition, 0);
@@ -299,12 +292,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const createCard = (item, frac, extraClass = "") => {
         let iconsRow = "";
         const cloneProjectCard = cardProjectTemplate.cloneNode(true);
-        const projectCard = cloneProjectCard.querySelector(".project_card");
-        const imgCard = cloneProjectCard.querySelector(".img_card");
-        const projectCardIconsContainer = cloneProjectCard.querySelector(".icons_project_container");
-        const cardTitle = cloneProjectCard.querySelector(".title");
-        const innerBtn = cloneProjectCard.querySelector(".btn");
-        const makeText = cloneProjectCard.querySelector("H3");
+        const projectCard = selector(".project_card", cloneProjectCard);
+        const imgCard = selector(".img_card", cloneProjectCard);
+        const projectCardIconsContainer = selector(".icons_project_container", cloneProjectCard);
+        const cardTitle = selector(".title", cloneProjectCard);
+        const innerBtn = selector(".btn", cloneProjectCard);
+        const makeText = selector("H3", cloneProjectCard);
         //* ******************************************************************************** *//
 
         const cardImg = item["projects"]["img"];
@@ -438,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         swipeAnimationContainerFull.forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationUpContainers = entry.target.querySelectorAll(".animation_up");
+                const animationUpContainers = selectorAll(".animation_up", entry.target);
                 animationUpContainers.forEach((container) => {
                     if (entry.isIntersecting) {
                         show(container);
@@ -456,7 +449,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         swipeAnimationContainerHalf.forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationUpContainers = entry.target.querySelectorAll(".animation_up");
+                const animationUpContainers = selectorAll(".animation_up", entry.target);
 
                 animationUpContainers.forEach((container) => {
                     if (entry.isIntersecting) {
@@ -505,7 +498,7 @@ document.addEventListener("DOMContentLoaded", () => {
         illustrationObserver.observe(selector(".deskwork_icon"));
         sectionDividers.forEach((container) => {
             const watchAnimationContainer = ([entry]) => {
-                const contentContainer = entry.target.querySelectorAll(".divider_content");
+                const contentContainer = selectorAll(".divider_content", entry.target);
 
                 contentContainer.forEach((container) => {
                     if (entry.isIntersecting) {
@@ -534,19 +527,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const listPortfolioActions = () => {
         portfolioListContainer.classList.toggle("list_down");
         searchPortfolioListBtn.classList.toggle("list_btn_active");
-        searchPortfolioListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
+        selector(".arrow_list_icon", searchPortfolioListBtn).classList.toggle("arrow_list_icon_active");
     };
     const listExtrasActions = () => {
         extraListContainer.classList.toggle("list_down");
         searchExtraListBtn.classList.toggle("list_btn_active");
-        searchExtraListBtn.querySelector(".arrow_list_icon").classList.toggle("arrow_list_icon_active");
+        selector(".arrow_list_icon", searchExtraListBtn).classList.toggle("arrow_list_icon_active");
         extraListContainer.children[0].focus();
     };
     const activateExtraBtns = (btn) => {
         listExtrasActions();
         clearPortfolio();
         retTop(portfolioCardsContainer);
-        const label = btn.querySelector(".label_btn");
+        const label = selector(".label_btn", btn);
         const tag = label.getAttribute("data-ref");
         const skillType = label.getAttribute("data-skill");
         let currentData;
@@ -587,8 +580,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (skill === "all") {
                 const typeData = skillsData.all;
                 const newTemplate = extraListBtnTemplate.cloneNode(true);
-                const newBtn = newTemplate.querySelector(".extra_list_btn");
-                const btnLabel = newBtn.querySelector(".label_btn");
+                const newBtn = selector(".extra_list_btn", newTemplate);
+                const btnLabel = selector(".label_btn", newBtn);
 
                 btnLabel.textContent = typeData[currentLang];
                 btnLabel.setAttribute("data-en", typeData.en);
@@ -601,8 +594,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 Object.keys(skillsData[skill].types).forEach((key) => {
                     const typeData = skillsData[skill].types[key];
                     const newTemplate = extraListBtnTemplate.cloneNode(true);
-                    const newBtn = newTemplate.querySelector(".extra_list_btn");
-                    const btnLabel = newTemplate.querySelector(".label_btn");
+                    const newBtn = selector(".extra_list_btn", newTemplate);
+                    const btnLabel = selector(".label_btn", newTemplate);
                     if (typeData.en && typeData.es) {
                         btnLabel.textContent = typeData[currentLang];
                         btnLabel.setAttribute("data-en", typeData.en);
@@ -638,7 +631,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 retTop(portfolioCardsContainer);
 
-                const btnLabel = btn.querySelector(".label_btn");
+                const btnLabel = selector(".label_btn", btn);
                 const btnData = btnLabel.getAttribute("data-en");
                 let newName = "";
                 newName = skillsData[btnData][currentLang];
@@ -664,8 +657,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (skill === "all") {
                             const typeData = skillsData.all;
                             const newTemplate = extraListBtnTemplate.cloneNode(true);
-                            const newBtn = newTemplate.querySelector(".extra_list_btn");
-                            const btnLabel = newBtn.querySelector(".label_btn");
+                            const newBtn = selector(".extra_list_btn", newTemplate);
+                            const btnLabel = selector(".label_btn", newBtn);
 
                             btnLabel.textContent = typeData[currentLang];
                             btnLabel.setAttribute("data-en", typeData.en);
@@ -678,8 +671,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             Object.keys(skillsData[skill].types).forEach((key) => {
                                 const typeData = skillsData[skill].types[key];
                                 const newTemplate = extraListBtnTemplate.cloneNode(true);
-                                const newBtn = newTemplate.querySelector(".extra_list_btn");
-                                const btnLabel = newTemplate.querySelector(".label_btn");
+                                const newBtn = selector(".extra_list_btn", newTemplate);
+                                const btnLabel = selector(".label_btn", newTemplate);
                                 if (typeData.en && typeData.es) {
                                     btnLabel.textContent = typeData[currentLang];
                                     btnLabel.setAttribute("data-en", typeData.en);
@@ -704,21 +697,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     /*  */
                 } else {
                     const newTemplate = extraListBtnTemplate.cloneNode(true);
-                    const allBtn = newTemplate.querySelector(".extra_list_btn");
-                    const labelAllBtn = allBtn.querySelector(".label_btn");
+                    const newBtn = selector(".extra_list_btn", newTemplate);
+                    const labelAllBtn = selector(".label_btn", newBtn);
 
                     labelAllBtn.textContent = skillsData.all[currentLang];
                     labelAllBtn.setAttribute("data-en", skillsData.all.en);
                     labelAllBtn.setAttribute("data-es", skillsData.all.es);
                     labelAllBtn.setAttribute("data-ref", "all");
                     labelAllBtn.setAttribute("data-skill", btnData);
-                    allBtn.addEventListener("click", () => activateExtraBtns(allBtn));
-                    fragmentBtns.appendChild(allBtn);
+                    newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
+                    fragmentBtns.appendChild(newBtn);
                     Object.keys(skillsData[btnData].types).forEach((key) => {
                         const typeExtraData = skillsData[btnData].types[key];
                         const newTemplate = extraListBtnTemplate.cloneNode(true);
-                        const newExtraBtn = newTemplate.querySelector(".extra_list_btn");
-                        const extraBtnLabel = newExtraBtn.querySelector(".label_btn");
+                        const newExtraBtn = selector(".extra_list_btn", newTemplate);
+                        const extraBtnLabel = selector(".label_btn", newExtraBtn);
                         if (typeExtraData.en && typeExtraData.es) {
                             extraBtnLabel.textContent = typeExtraData[currentLang];
                             extraBtnLabel.setAttribute("data-en", typeExtraData.en);
@@ -982,16 +975,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }); */
 
-    forms.forEach((form) => {
-        form.addEventListener("submit", (e) => {
+    forms.forEach((thisForm) => {
+        thisForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            sanitazer(form.querySelector(".input_name"));
-            sanitazer(form.querySelector(".input_last_name"));
-            sanitazer(form.querySelector(".input_email"));
-            sanitazer(form.querySelector(".input_description"));
-            let formName = form.querySelector(".send_btn").getAttribute("data-form");
-            let formResponse = form.querySelector(".form_response");
-            let formResponseContainer = form.querySelector(".form_response_container");
+            sanitazer(selector(".input_name", thisForm));
+            sanitazer(selector(".input_last_name", thisForm));
+            sanitazer(selector(".input_email", thisForm));
+            sanitazer(selector(".input_description", thisForm));
+            let formName = selector(".send_btn", thisForm).getAttribute("data-form");
+            let formResponse = selector(".form_response", thisForm);
+            let formResponseContainer = selector(".form_response_container", thisForm);
 
             const formResponseActions = (action, status = "") => {
                 if (action === open) {
@@ -1013,7 +1006,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 500);
                 }
             };
-            const formData = new FormData(form);
+            const formData = new FormData(thisForm);
             let newData = {};
 
             formData.forEach((value, key) => {
@@ -1064,7 +1057,6 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll("BUTTON").forEach((btn) => {
         btn.addEventListener("mouseenter", playHover, true);
         btn.addEventListener("click", playClick);
-        btn.addEventListener("mouseleave", () => (audioIsPlaying = false));
     });
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
