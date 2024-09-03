@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         BODY.className = currentTheme;
-        console.log(storageContent);
     };
     // FUNCTION FOR CHANGE LANGUAGE
     const setTextByLang = (newLang) => {
