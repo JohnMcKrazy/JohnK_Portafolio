@@ -120,7 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const skillsData = utils.skillTypes;
     const storage = utils.johnKStorage;
+    // FUNCTION FOR GO TO SPECIFIC PAGE
 
+    const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("data-href")), 1500);
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
     const checkAlertStorageAnswer = () => {
         storageContent = JSON.parse(localStorage.getItem(storageName));
@@ -265,22 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 250);
     };
     // SET ALL START CONFIGURATIONS
-
     const setStart = () => {
         checkWindowHeight();
         checkAlertStorageAnswer();
         logoAnimation();
         iconsAnimation();
         setAssets();
-        setTimeout(() => {
-            selectorAll(".href_btn").forEach((btn) => {
-                btn.addEventListener("click", () =>
-                    setTimeout(() => {
-                        window.location.href = btn.getAttribute("data-href");
-                    }, 1500)
-                );
-            });
-        }, 250);
+        selectorAll(".href_btn").forEach((btn) => btn.addEventListener("click", () => teleportToPage(btn)));
     };
     // FUNCTION FOR RETUN PAGE TO THE TOP
     const toTheTop = () => {
@@ -334,7 +327,9 @@ document.addEventListener("DOMContentLoaded", () => {
             cardTitle.textContent = item.project_name[currentLang];
         }
         innerBtn.setAttribute("data-href", `${item["projects"]["project_link"]}`);
-
+        innerBtn.addEventListener("click", () => teleportToPage(innerBtn));
+        innerBtn.addEventListener("mouseenter", playHover);
+        innerBtn.addEventListener("click", playClick);
         frac.appendChild(projectCard);
     };
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
@@ -1054,7 +1049,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     selectorAll("BUTTON").forEach((btn) => {
-        btn.addEventListener("mouseenter", playHover, true);
+        btn.addEventListener("mouseenter", playHover);
         btn.addEventListener("click", playClick);
     });
     selectorAll(".theme_btn").forEach((btn) => {
