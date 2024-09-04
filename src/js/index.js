@@ -115,8 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     /* SOUND FUNCTIONS */
     const playHover = () => audioEnterBtn.play();
     const playClick = () => audioTeleportBtn.play();
-    const mutePage = (elem) => (elem.muted = true);
-    const backSoundPage = (elem) => (elem.muted = false);
+    const mutePage = (itemAudio) => (itemAudio.muted = true);
+    const backSoundPage = (itemAudio) => (itemAudio.muted = false);
+
+    const updateStorage = () => localStorage.setItem(storageName, JSON.stringify(storageContent));
+    const getStorage = () => JSON.parse(localStorage.getItem(storageName));
 
     const skillsData = utils.skillTypes;
     const storage = utils.johnKStorage;
@@ -127,25 +130,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkStorage = () => {
         const oldName = "JohnK_Maker";
         const oldStorage = JSON.parse(localStorage.getItem(oldName));
+
         if (oldStorage) {
             localStorage.removeItem(oldName);
         }
-        storageContent = JSON.parse(localStorage.getItem(storageName));
+        storageContent = getStorage();
         /* console.log(storageContent); */
         if (!storageContent) {
-            localStorage.setItem(storageName, JSON.stringify(storage));
             console.log("local storage item is created");
             storageContent = storage;
         } else {
+            if (!storageContent["data_stamp"]) {
+                storageContent["data_stamp"] = new Date().toLocaleString();
+            }
             if (storageContent["page_theme"] !== darkT) {
                 currentTheme = storageContent["page_theme"];
                 selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
             }
+            if (!storageContent["page_sound"]) {
+                selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
+                audioItsActive = false;
+                selectorAll("AUDIO").forEach((itemAudio) => {
+                    mutePage(itemAudio);
+                });
+            }
+            if (storageContent["page_lang"] === en) {
+                currentLang = en;
+            } else if (storageContent["page_lang"] === es) {
+                currentLang = es;
+            } else {
+                // SET SYSTEM LANGUAGE FOR CHANGE LANGUAGE REFERENCE
+                const navLang = window.navigator.language;
+                navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
+            }
             storageContent["page_view_count"] += 1;
-            localStorage.setItem(storageName, JSON.stringify(storageContent));
-            /* console.log(`local storage item answer= ${storageContent["page_alert_status"]}, page views= ${storageContent["page_view_count"]}`); */
-        }
 
+            /*    console.log(`local storage item answer`);
+            console.table(storageContent);
+            console.log(`page views= ${storageContent["page_view_count"]}`); */
+        }
+        updateStorage();
         BODY.className = currentTheme;
     };
     // FUNCTION FOR CHANGE LANGUAGE
@@ -156,13 +180,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     const changeLang = (lang) => {
         lang === es ? (currentLang = en) : (currentLang = es);
+        storageContent["page_lang"] = currentLang;
+        updateStorage();
         setTextByLang(currentLang);
     };
-    // SET SYSTEM LANGUAGE FOR CHANGE LANGUAGE REFERENCE
-    const setLang = () => {
-        const navLang = window.navigator.language;
-        navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
-    };
+
     // SET HEIGHT PAGE CONFIGURATION
     const checkWindowHeight = () => {
         const rem = 20;
@@ -260,8 +282,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cardsHotContainer.appendChild(fragmentHotProjects);
 
         setTimeout(() => {
-            setLang();
-
             selectorAll(".project_card", cardsHotContainer).forEach((card) => {
                 card.classList.add("card_up");
             });
@@ -350,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
         }
         storageContent["page_theme"] = currentTheme;
-        localStorage.setItem(storageName, JSON.stringify(storageContent));
+        updateStorage();
         BODY.className = currentTheme;
     };
     // FUNCTION FOR PHONE MENU ACTIONS
@@ -795,11 +815,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const fixHeight = windowHeight - navHeight;
         window.scrollTo(0, fixHeight);
     };
+
     const acceptStorage = () => {
-        storage["page_alert_status"] = close;
+        storageContent["page_alert_status"] = close;
         modalWindowActions(alertModal, close);
-        localStorage.setItem(storageName, JSON.stringify(storage));
-        console.log(localStorage.getItem(storageName));
+        updateStorage();
+        console.table(getStorage());
     };
     const closeLegalModal = () => {
         retTop(modalInfoLegal);
@@ -1048,6 +1069,8 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             audioItsActive = !audioItsActive;
             selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
+            storageContent["page_sound"] = !storageContent["page_sound"];
+            updateStorage();
             if (!audioItsActive) {
                 selectorAll("AUDIO").forEach((audioElem) => mutePage(audioElem));
             } else {
