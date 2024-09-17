@@ -13,11 +13,10 @@ export const hotCardsSelection = ["pokedex", "black_jack", "tribute", "js_docume
 export const certificationsData = [
     { en: "Responsive Web Design", es: "Diseño Web Responsivo", image: "./src/img/certifications/responsive_web_design.webp", link: "https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" },
     { en: "Legacy - JavaScript Algoritms and Data Structures", es: "JavaScript Algoritmos y Estructura de Datos - Legado", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
-    { en: "Front-End Development Libraries", es: "Librerias de Desarrollo Front-End", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
+    { en: "Front-End Development Libraries", es: "Librerías de Desarrollo Front-End", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
     { en: "Data Visualization", es: "Visualización de Datos", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
     { en: "Scientific Computing With Python", es: "Computacion Cientifica con Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
 ];
-
 export const infoSoftware = [
     {
         type: "nule",
@@ -313,7 +312,6 @@ export const sanitizeInput = (inputValue) => {
     div.textContent = inputValue;
     return div.innerHTML;
 };
-
 export const scrollToSection = (btn) => {
     const section = selector(`#${btn.name}`);
     const windowTop = window.top;
