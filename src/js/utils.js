@@ -15,7 +15,7 @@ export const certificationsData = [
     { en: "Legacy - JavaScript Algoritms and Data Structures", es: "JavaScript Algoritmos y Estructura de Datos - Legado", image: "./src/img/certifications/legacy_js.webp", link: "https://www.freecodecamp.org/certification/JohnGC/javascript-algorithms-and-data-structures" },
     { en: "Front-End Development Libraries", es: "Librerías de Desarrollo Front-End", image: "./src/img/certifications/frontend_development_libraries.webp", link: "https://www.freecodecamp.org/certification/JohnGC/front-end-development-libraries" },
     { en: "Data Visualization", es: "Visualización de Datos", image: "./src/img/certifications/data_visualization.webp", link: "https://www.freecodecamp.org/certification/JohnGC/data-visualization" },
-    { en: "Scientific Computing With Python", es: "Computacion Cientifica con Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
+    { en: "Scientific Computing With Python", es: "Computación Científica con Python", image: "./src/img/certifications/scientific_computing_python.webp", link: "https://www.freecodecamp.org/certification/JohnGC/scientific-computing-with-python-v7" },
 ];
 export const infoSoftware = [
     {
