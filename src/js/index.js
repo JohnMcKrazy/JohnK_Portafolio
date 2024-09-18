@@ -132,16 +132,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const oldStorage = JSON.parse(localStorage.getItem(oldName));
         const navLang = window.navigator.language;
         console.log(navLang);
-        if (oldStorage) {
-            localStorage.removeItem(oldName);
-        }
+        if (oldStorage) localStorage.removeItem(oldName);
+
         storageContent = getStorage();
         /* console.log(storageContent); */
         if (!storageContent) {
             console.log("local storage item is created");
             storageContent = storage;
-            navLang === "es" || (navLang[0] === "e" && navLang[1] === "s") ? (currentLang = es) : (currentLang = en);
+            navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
             storageContent["page_lang"] = currentLang;
+            console.log(storageContent);
         }
         if (!storageContent["data_stamp"]) storageContent["data_stamp"] = new Date().toLocaleString();
         if (!storageContent["page_sound"]) {
@@ -176,7 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // SET HEIGHT PAGE CONFIGURATION
     const checkWindowHeight = () => {
-        const rem = 20;
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
         let borderRadius = "1rem";
