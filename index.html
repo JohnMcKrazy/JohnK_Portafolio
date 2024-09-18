@@ -30,7 +30,7 @@
         <link rel="canonical" href="https://johnmckrazy.github.io/JohnK_Portafolio/" />
         <link rel="stylesheet" href="./src/css/style.min.css" />
     </head>
-    <body>
+    <body class="dark">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -380,22 +380,22 @@
             <div class="extra_btns_container nav_menu_extra_btns">
                 <div class="btns_container">
                     <button type="button" class="icon_container extra_btn theme_btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="dark" data-active="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="dark" hidden="true">
                             <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="light" data-active="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="light" hidden="false">
                             <path
                                 d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
                             ></path>
                         </svg>
                     </button>
                     <button type="button" class="icon_container extra_btn sound_btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-active="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-icon-sound="on" hidden="true">
                             <path
                                 d="M8.88889 16H5C4.44772 16 4 15.5523 4 15V9.00001C4 8.44772 4.44772 8.00001 5 8.00001H8.88889L14.1834 3.66815C14.3971 3.49329 14.7121 3.52479 14.887 3.73851C14.9601 3.82784 15 3.93971 15 4.05513V19.9449C15 20.221 14.7761 20.4449 14.5 20.4449C14.3846 20.4449 14.2727 20.405 14.1834 20.3319L8.88889 16ZM18.8631 16.5911L17.4411 15.169C18.3892 14.4376 19 13.2901 19 12C19 10.5697 18.2493 9.31469 17.1203 8.6076L18.5589 7.169C20.0396 8.2616 21 10.0187 21 12C21 13.8422 20.1698 15.4904 18.8631 16.5911Z"
                             ></path>
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-active="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-icon-sound="off" hidden="false">
                             <path
                                 d="M5.88889 16H2C1.44772 16 1 15.5523 1 15V9.00001C1 8.44772 1.44772 8.00001 2 8.00001H5.88889L11.1834 3.66815C11.3971 3.49329 11.7121 3.52479 11.887 3.73851C11.9601 3.82784 12 3.93971 12 4.05513V19.9449C12 20.221 11.7761 20.4449 11.5 20.4449C11.3846 20.4449 11.2727 20.405 11.1834 20.3319L5.88889 16ZM20.4142 12L23.9497 15.5355L22.5355 16.9498L19 13.4142L15.4645 16.9498L14.0503 15.5355L17.5858 12L14.0503 8.46447L15.4645 7.05026L19 10.5858L22.5355 7.05026L23.9497 8.46447L20.4142 12Z"
                             ></path>
@@ -484,7 +484,11 @@
         <!-- !PAGE START -->
         <header class="section with_bg hero_section" id="hero_section">
             <div class="section_content content">
-                <div class="bg_section hero_bg"></div>
+                <picture class="bg_section">
+                    <img src="./src/img/backgrounds/day.webp" alt="background in light theme" bg-img="light" hidden />
+                    <img src="./src/img/backgrounds/night_EXIF.webp" alt="background in dark theme" bg-img="dark" />
+                    <span class="overlay"></span>
+                </picture>
                 <div class="title_container">
                     <h1>
                         <span data-change data-es="Haciendo" data-en="Making">Haciendo</span>
@@ -642,10 +646,10 @@
                     </button>
                     <button type="button" class="nav_btn theme_btn" name="theme_btn" aria-label="Button to change color scheame in page">
                         <div class="icon_container">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="dark" data-active="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="dark" hidden="true">
                                 <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="light" data-active="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="theme" data-icon-theme="light" hidden="false">
                                 <path
                                     d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
                                 ></path>
@@ -654,12 +658,12 @@
                     </button>
                     <button type="button" class="nav_btn sound_btn" name="sound_btn" aria-label="Button to change color scheame in page">
                         <div class="icon_container">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-active="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-icon-sound="on" hidden="true">
                                 <path
                                     d="M8.88889 16H5C4.44772 16 4 15.5523 4 15V9.00001C4 8.44772 4.44772 8.00001 5 8.00001H8.88889L14.1834 3.66815C14.3971 3.49329 14.7121 3.52479 14.887 3.73851C14.9601 3.82784 15 3.93971 15 4.05513V19.9449C15 20.221 14.7761 20.4449 14.5 20.4449C14.3846 20.4449 14.2727 20.405 14.1834 20.3319L8.88889 16ZM18.8631 16.5911L17.4411 15.169C18.3892 14.4376 19 13.2901 19 12C19 10.5697 18.2493 9.31469 17.1203 8.6076L18.5589 7.169C20.0396 8.2616 21 10.0187 21 12C21 13.8422 20.1698 15.4904 18.8631 16.5911Z"
                                 ></path>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-active="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="sound" data-icon-sound="off" hidden="false">
                                 <path
                                     d="M5.88889 16H2C1.44772 16 1 15.5523 1 15V9.00001C1 8.44772 1.44772 8.00001 2 8.00001H5.88889L11.1834 3.66815C11.3971 3.49329 11.7121 3.52479 11.887 3.73851C11.9601 3.82784 12 3.93971 12 4.05513V19.9449C12 20.221 11.7761 20.4449 11.5 20.4449C11.3846 20.4449 11.2727 20.405 11.1834 20.3319L5.88889 16ZM20.4142 12L23.9497 15.5355L22.5355 16.9498L19 13.4142L15.4645 16.9498L14.0503 15.5355L17.5858 12L14.0503 8.46447L15.4645 7.05026L19 10.5858L22.5355 7.05026L23.9497 8.46447L20.4142 12Z"
                                 ></path>
@@ -698,7 +702,6 @@
             </figure>
         </div>
         <section class="section about_section" id="about_section">
-            <div class="bg_section"></div>
             <div class="section_content content flex flex_responsive">
                 <div class="about_salute">
                     <div class="about_animation">
@@ -4434,13 +4437,13 @@
                                     <path class="cls-38" d="m776.62,102.99h11.72l3.39,3.51v8.96l-2.89,2.99h-9.19l-.89.9v4.3h12.72l.25.25v3.89l-.25.27h-17.89l-.25-.27v-10.78l2.89-2.98h9.19l.89-.92v-4.93l-1-1.04h-5.55l-1,1.04v2.07l-.25.27h-4.91l-.25-.27v-3.76l3.28-3.51Z" />
                                     <path class="cls-38" d="m797.65,102.99h11.57l3.41,3.73v17.47l-3.56,3.88h-11.27l-3.56-3.73v-17.62l3.41-3.73Zm1.77,5.67v13.74l1.19,1.3h5.5l1.34-1.45v-13.59l-1.49-1.45h-5.2l-1.34,1.45Z" />
                                 </g>
-                                <g class="watch_pm watch_mer" data-icon="theme" data-active="false">
+                                <g class="watch_pm watch_mer" data-icon="theme" hidden="false">
                                     <path d="m826.06,110.51h10.99l2.61,2.61v6.23l-2.61,2.6h-7.24v5.9l-.23.22h-3.51l-.22-.22v-17.11l.22-.22Zm3.74,2.83v5.77h4.98l.9-.9v-3.97l-.9-.9h-4.98Z" />
                                     <path
                                         d="m841.83,110.51h5.66c.23.19,1.59,4.79,4.08,13.82.16,0,1.11-3.17,2.83-9.51.84-2.87,1.33-4.31,1.47-4.31h5.66l.1.12h.12l.05,17.21-.39.22h-3.29l-.22-.22v-14.04h-.12c-2.64,9.51-4.08,14.26-4.31,14.26h-4.07c-.23,0-1.66-4.79-4.31-14.38h-.12v14.16l-.22.22h-2.95l-.22-.22v-17.11l.22-.22Z"
                                     />
                                 </g>
-                                <g class="watch_am watch_mer" data-icon="theme" data-active="true">
+                                <g class="watch_am watch_mer" data-icon="theme" hidden="true">
                                     <path d="m834.72,110.51c.24,0,1.9,5.81,4.98,17.44l-.12.12h-3.67c-.21-.12-.61-1.43-1.19-3.91h-5.69c-.52,2.61-.88,3.91-1.07,3.91h-3.32l-.23-.23,4.74-17.2.12-.12h5.45Zm-2.84,2.49l-2.01,8.06h4.15l-2.02-8.06h-.12Z" />
                                     <path
                                         d="m841.83,110.51h5.66c.23.19,1.59,4.79,4.08,13.82.16,0,1.11-3.17,2.83-9.51.84-2.87,1.33-4.31,1.47-4.31h5.66l.1.12h.12l.05,17.21-.39.22h-3.29l-.22-.22v-14.04h-.12c-2.64,9.51-4.08,14.26-4.31,14.26h-4.07c-.23,0-1.66-4.79-4.31-14.38h-.12v14.16l-.22.22h-2.95l-.22-.22v-17.11l.22-.22Z"
@@ -4885,7 +4888,11 @@
             </figure>
         </div>
         <section class="section with_bg contact_section" id="contact_section">
-            <div class="bg_section"></div>
+            <picture class="bg_section">
+                <img src="./src/img/backgrounds/contact_day.webp" alt="background in light theme" bg-img="light" hidden />
+                <img src="./src/img/backgrounds/contact_night.webp" alt="background in dark theme" bg-img="dark" />
+                <span class="overlay"></span>
+            </picture>
             <div class="section_content content">
                 <div class="swipe_animation_container_full">
                     <h1 class="title_section animation_up" id="title_contact" data-change data-es="Contacto" data-en="Contact">Contacto</h1>

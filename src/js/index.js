@@ -130,7 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkStorage = () => {
         const oldName = "JohnK_Maker";
         const oldStorage = JSON.parse(localStorage.getItem(oldName));
-
+        const navLang = window.navigator.language;
+        console.log(navLang);
         if (oldStorage) {
             localStorage.removeItem(oldName);
         }
@@ -139,36 +140,24 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!storageContent) {
             console.log("local storage item is created");
             storageContent = storage;
-        } else {
-            if (!storageContent["data_stamp"]) {
-                storageContent["data_stamp"] = new Date().toLocaleString();
-            }
-            if (storageContent["page_theme"] !== darkT) {
-                currentTheme = storageContent["page_theme"];
-                selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
-            }
-            if (!storageContent["page_sound"]) {
-                selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
-                audioItsActive = false;
-                selectorAll("AUDIO").forEach((itemAudio) => {
-                    mutePage(itemAudio);
-                });
-            }
-            if (storageContent["page_lang"] === en) {
-                currentLang = en;
-            } else if (storageContent["page_lang"] === es) {
-                currentLang = es;
-            } else {
-                // SET SYSTEM LANGUAGE FOR CHANGE LANGUAGE REFERENCE
-                const navLang = window.navigator.language;
-                navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
-            }
-            storageContent["page_view_count"] += 1;
-
-            /*    console.log(`local storage item answer`);
-            console.table(storageContent);
-            console.log(`page views= ${storageContent["page_view_count"]}`); */
+            navLang === "es" || (navLang[0] === "e" && navLang[1] === "s") ? (currentLang = es) : (currentLang = en);
+            storageContent["page_lang"] = currentLang;
         }
+        if (!storageContent["data_stamp"]) storageContent["data_stamp"] = new Date().toLocaleString();
+        if (!storageContent["page_sound"]) {
+            audioItsActive = false;
+            selectorAll("AUDIO").forEach((itemAudio) => {
+                mutePage(itemAudio);
+            });
+        }
+        currentLang = storageContent["page_lang"];
+        storageContent["page_view_count"] += 1;
+        currentTheme = storageContent["page_theme"];
+        console.log(storageContent["page_lang"]);
+        selectorAll("[data-icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", !storageContent["page_sound"]));
+        selectorAll("[data-icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"]));
+        selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("data-icon-theme") === currentTheme ? "false" : "true"));
+        selectorAll(`[bg-img]`).forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
         updateStorage();
         BODY.className = currentTheme;
     };
@@ -361,15 +350,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
     const changeTheme = (tm) => {
-        switch (tm) {
-            case lightT:
-                currentTheme = darkT;
-                break;
-            case darkT:
-                currentTheme = lightT;
-                break;
-        }
+        tm === lightT ? (currentTheme = darkT) : (currentTheme = lightT);
         storageContent["page_theme"] = currentTheme;
+        selectorAll("[bg-img]").forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
         updateStorage();
         BODY.className = currentTheme;
     };
@@ -1068,7 +1051,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".sound_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
             audioItsActive = !audioItsActive;
-            selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
+            selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
             storageContent["page_sound"] = !storageContent["page_sound"];
             updateStorage();
             if (!audioItsActive) {
@@ -1084,7 +1067,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-            selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("data-active", icon.getAttribute("data-active") === "true" ? "false" : "true"));
+            selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
             changeTheme(currentTheme);
         });
     });

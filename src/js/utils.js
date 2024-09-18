@@ -175,7 +175,7 @@ export const johnKStorage = {
     page_legal_content: "accepted",
     page_theme: "dark",
     page_sound: true,
-    page_lang: "es",
+    page_lang: null,
     data_stamp: `${new Date().toLocaleString()}`,
 };
 export const skillTypes = {

@@ -159,12 +159,8 @@
   --bgM: rgba(230, 230, 230, 0.75);
   --vueIconText: rgb(51, 51, 51);
   color: var(--TC);
-  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/day.webp") center no-repeat fixed;
-  --bgHeaderSectionAbout: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/fondoBasketquot") center no-repeat fixed;
-  --bgHeaderSectionServices: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/office-932926_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionPortfolio: linear-gradient(var(--bgC), transparent, var(--bgC) 85%), url("../img/backgrounds/sunglasses-1284392_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionSkills: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/pexels-julia-m-cameron-4144097.jpg") center no-repeat fixed;
-  --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC)), url("../img/backgrounds/contact_day.webp") center no-repeat fixed;
+  --backgroundHero: linear-gradient(transparent, var(--NVC));
+  --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC));
 }
 .light .leiru_icon_svg .brand .cls-1,
 .light .leiru_icon_svg .brand-append .cls-1 {
@@ -191,12 +187,8 @@
   --bgOff: rgb(51, 51, 51);
   --bgM: rgba(26, 26, 26, 0.75);
   --vueIconText: rgb(204, 204, 204);
-  --backgroundHero: linear-gradient(transparent, var(--NVC)), url("../img/backgrounds/night_EXIF.webp") center no-repeat fixed;
-  --bgHeaderSectionAbout: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/graffiti-background-1554703550MY5.jpg") center no-repeat fixed;
-  --bgHeaderSectionServices: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/pexels-ovan-57690.jpg") center no-repeat fixed;
-  --bgHeaderSectionPortfolio: linear-gradient(var(--bgC) 10%, transparent, var(--bgC) 90%), url("../img/backgrounds/workspace-1280538_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionSkills: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/tools-1083796_1920.jpg") center no-repeat fixed;
-  --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%), url("../img/backgrounds/contact_night.webp") center no-repeat fixed;
+  --backgroundHero: linear-gradient(transparent, var(--NVC));
+  --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%);
   color: var(--TC);
 }
 .dark .leiru_icon_svg .brand .cls-1,
@@ -1924,6 +1916,16 @@ I {
   margin-bottom: 0;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+}
+
 .bg_section {
   position: absolute;
   top: 0;
@@ -1931,15 +1933,12 @@ I {
   height: 100%;
   width: 100%;
   max-width: 100%;
-  background-size: cover !important;
-  background-position: center !important;
+  -o-object-position: center;
+     object-position: center;
   z-index: -1;
 }
 
-.hero_section {
-  view-timeline: --scroll;
-}
-.hero_section .bg_section {
+.hero_section .overlay {
   background: var(--backgroundHero);
 }
 .hero_section .title_container H2 {
@@ -2062,7 +2061,7 @@ I {
   position: relative;
 }
 
-.contact_section .bg_section {
+.contact_section .overlay {
   background: var(--bgHeaderSectionContact);
 }
 .contact_section .form {
@@ -2450,8 +2449,12 @@ I {
   border-color: var(--danger);
 }
 
-[data-active=false] {
+[hidden] {
   display: none;
+}
+
+[hidden=false] {
+  display: flex;
 }
 
 @media screen and (min-width: 800px) {
