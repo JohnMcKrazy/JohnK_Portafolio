@@ -139,21 +139,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!storageContent) {
             console.log("local storage item is created");
             storageContent = storage;
+        }
+        if (!storageContent["data_stamp"]) storageContent["data_stamp"] = new Date().toLocaleString();
+        if (!storageContent["page-lang"]) {
             navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
             storageContent["page_lang"] = currentLang;
             console.log(storageContent);
         }
-        if (!storageContent["data_stamp"]) storageContent["data_stamp"] = new Date().toLocaleString();
         if (!storageContent["page_sound"]) {
             audioItsActive = false;
             selectorAll("AUDIO").forEach((itemAudio) => {
                 mutePage(itemAudio);
             });
         }
-        currentLang = storageContent["page_lang"];
+
         storageContent["page_view_count"] += 1;
         currentTheme = storageContent["page_theme"];
-        console.log(storageContent["page_lang"]);
         selectorAll("[data-icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", !storageContent["page_sound"]));
         selectorAll("[data-icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"]));
         selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("data-icon-theme") === currentTheme ? "false" : "true"));
