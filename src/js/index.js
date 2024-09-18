@@ -155,8 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         storageContent["page_view_count"] += 1;
         currentTheme = storageContent["page_theme"];
-        selectorAll("[data-icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", !storageContent["page_sound"]));
-        selectorAll("[data-icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"]));
+        selectorAll("[data-icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", storageContent["page_sound"] === true ? false : true));
+        selectorAll("[data-icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"] === true ? true : false));
         selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("data-icon-theme") === currentTheme ? "false" : "true"));
         selectorAll(`[bg-img]`).forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
         updateStorage();
