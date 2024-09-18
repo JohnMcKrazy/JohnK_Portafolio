@@ -135,15 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
         selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
     };
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
+    const oldName = "JohnK_Maker";
+    const oldStorage = JSON.parse(localStorage.getItem(oldName));
+    const navLang = window.navigator.language;
     const checkStorage = () => {
-        const oldName = "JohnK_Maker";
-        const oldStorage = JSON.parse(localStorage.getItem(oldName));
-        const navLang = window.navigator.language;
-        console.log(navLang);
         if (oldStorage) localStorage.removeItem(oldName);
-
         storageContent = getStorage();
-        /* console.log(storageContent); */
         if (!storageContent) {
             console.log("local storage item is created");
             storageContent = storage;
