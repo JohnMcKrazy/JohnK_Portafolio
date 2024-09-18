@@ -118,7 +118,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const mutePage = (itemAudio) => (itemAudio.muted = true);
     const backSoundPage = (itemAudio) => (itemAudio.muted = false);
 
-    const updateStorage = () => localStorage.setItem(storageName, JSON.stringify(storageContent));
+    const updateStorage = () => {
+        console.log(storageContent);
+        localStorage.setItem(storageName, JSON.stringify(storageContent));
+    };
     const getStorage = () => JSON.parse(localStorage.getItem(storageName));
 
     const skillsData = utils.skillTypes;
@@ -126,6 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // FUNCTION FOR GO TO SPECIFIC PAGE
 
     const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("data-href")), 1500);
+    // FUNCTION FOR CHANGE LANGUAGE
+    const setTextByLang = (newLang) => {
+        selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${newLang}`)));
+        selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
+    };
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
     const checkStorage = () => {
         const oldName = "JohnK_Maker";
@@ -141,10 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
             storageContent = storage;
         }
         if (!storageContent["data_stamp"]) storageContent["data_stamp"] = new Date().toLocaleString();
-        if (!storageContent["page-lang"]) {
+        if (!storageContent["page_lang"]) {
             navLang === "es" || (navLang[0] === "e" && navLang[1] === "s" && navLang[2] === "-") ? (currentLang = es) : (currentLang = en);
             storageContent["page_lang"] = currentLang;
-            console.log(storageContent);
+        } else {
+            currentLang = storageContent["page_lang"];
         }
         if (!storageContent["page_sound"]) {
             audioItsActive = false;
@@ -155,24 +164,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         storageContent["page_view_count"] += 1;
         currentTheme = storageContent["page_theme"];
+        setTextByLang(currentLang);
         selectorAll("[data-icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", storageContent["page_sound"] === true ? false : true));
         selectorAll("[data-icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"] === true ? true : false));
         selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("data-icon-theme") === currentTheme ? "false" : "true"));
         selectorAll(`[bg-img]`).forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
+
         updateStorage();
         BODY.className = currentTheme;
     };
-    // FUNCTION FOR CHANGE LANGUAGE
-    const setTextByLang = (newLang) => {
-        const about = selector(".about_text");
-        selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${newLang}`)));
-        selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
-    };
+
     const changeLang = (lang) => {
-        lang === es ? (currentLang = en) : (currentLang = es);
+        currentLang = lang === es ? en : es;
         storageContent["page_lang"] = currentLang;
-        updateStorage();
         setTextByLang(currentLang);
+        updateStorage();
     };
 
     // SET HEIGHT PAGE CONFIGURATION
@@ -350,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
     const changeTheme = (tm) => {
-        tm === lightT ? (currentTheme = darkT) : (currentTheme = lightT);
+        currentTheme = tm === lightT ? darkT : lightT;
         storageContent["page_theme"] = currentTheme;
         selectorAll("[bg-img]").forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
         updateStorage();
