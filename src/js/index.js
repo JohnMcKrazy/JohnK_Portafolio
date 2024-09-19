@@ -118,10 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mutePage = (itemAudio) => (itemAudio.muted = true);
     const backSoundPage = (itemAudio) => (itemAudio.muted = false);
 
-    const updateStorage = () => {
-        console.log(storageContent);
-        localStorage.setItem(storageName, JSON.stringify(storageContent));
-    };
+    const updateStorage = () => localStorage.setItem(storageName, JSON.stringify(storageContent));
     const getStorage = () => JSON.parse(localStorage.getItem(storageName));
 
     const skillsData = utils.skillTypes;
@@ -938,7 +935,6 @@ document.addEventListener("DOMContentLoaded", () => {
     bubbleBio.addEventListener("mouseleave", () => {
         bubbleBio.classList.remove("show_flex");
     });
-
     const tooltipMargin = 12;
     illustrationRex.addEventListener("mouseover", (e) => {
         bubbleRex.classList.add("show_flex");
