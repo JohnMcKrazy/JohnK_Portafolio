@@ -939,7 +939,8 @@ document.addEventListener("DOMContentLoaded", () => {
     illustrationRex.addEventListener("mouseover", (e) => {
         bubbleRex.classList.add("show_flex");
         const containerWidth = bubbleRex.getClientRects()[0].width;
-        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
+        const containerHeight = bubbleRex.getClientRects()[0].height;
+        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - parseInt(containerHeight) - tooltipMargin}px)`;
     });
 
     illustrationRex.addEventListener("mouseleave", () => {

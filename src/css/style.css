@@ -228,6 +228,7 @@ BODY {
 }
 
 IMG {
+  display: block;
   width: 100%;
   height: 100%;
   border-style: none;
@@ -244,7 +245,6 @@ UL {
   list-style: none;
 }
 
-IMG,
 PICTURE,
 INPUT[type=text],
 INPUT[type=email],
@@ -1291,8 +1291,11 @@ I {
   align-items: center;
   gap: var(--XL);
 }
-.flex_responsive DIV {
+.flex_responsive .responsive_content {
   width: 100%;
+}
+.flex_responsive .social_btns_container {
+  --iconD: 6rem;
 }
 
 .subtitle_section {
@@ -2014,7 +2017,8 @@ I {
 .about_section .about_img {
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 .about_section .about_img PICTURE {
@@ -2093,6 +2097,9 @@ I {
 .skills_section {
   --iconD: 6rem;
 }
+.skills_section .btn {
+  --iconD: 3rem;
+}
 
 .services_container {
   position: relative;
@@ -2132,6 +2139,7 @@ I {
 }
 .legals_section .footer_content {
   width: 100%;
+  padding: 2rem 0;
 }
 .legals_section .lebels_container {
   height: 100%;
