@@ -2092,6 +2092,9 @@ I {
 .skills_section {
   --iconD: 8rem;
 }
+.skills_section .btn {
+  --iconD: 4rem;
+}
 
 .services_container {
   position: relative;
