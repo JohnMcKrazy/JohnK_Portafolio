@@ -2038,7 +2038,7 @@ I {
   border-radius: 30%;
 }
 .about_section .about_img PICTURE IMG {
-  transform: translateY(4rem);
+  transform: translateY(3rem);
 }
 .about_section .about_img PICTURE *, .about_section .about_img PICTURE::after {
   transition: var(--T_M);
