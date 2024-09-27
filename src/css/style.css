@@ -1294,9 +1294,6 @@ I {
 .flex_responsive .responsive_content {
   width: 100%;
 }
-.flex_responsive .social_btns_container {
-  --iconD: 6rem;
-}
 
 .subtitle_section {
   margin: var(--XL) 0 var(--LG);
@@ -2052,6 +2049,9 @@ I {
 .about_section .about_img PICTURE:hover IMG {
   transform: translateY(0);
 }
+.about_section .about_img .icon_container {
+  --iconPd: var(--MD);
+}
 
 .badge {
   display: flex;
@@ -2136,6 +2136,11 @@ I {
 
 .legals_section {
   background: var(--NVC);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 .legals_section .footer_content {
   width: 100%;
