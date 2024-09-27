@@ -1098,9 +1098,6 @@ I {
 .nav_btn .icon_btn {
   display: none;
 }
-.nav_btn .icon_container {
-  --iconPd: var(--MD);
-}
 .nav_btn .icon_svg {
   height: 100%;
   width: auto;
@@ -1636,8 +1633,6 @@ I {
   line-height: 1;
 }
 .list_btns_container .search_list_btn .icon_container {
-  --iconD: var(--XL);
-  --iconPd: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2095,10 +2090,7 @@ I {
 }
 
 .skills_section {
-  --iconD: 6rem;
-}
-.skills_section .btn {
-  --iconD: 3rem;
+  --iconD: 8rem;
 }
 
 .services_container {
@@ -2154,10 +2146,6 @@ I {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-}
-.legals_section .icon_container {
-  --iconD: 3rem;
-  --iconPd: var(--SM);
 }
 .legals_section .social_btns_container,
 .legals_section .btns_container {

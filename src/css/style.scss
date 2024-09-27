@@ -1183,9 +1183,7 @@ I {
     .icon_btn {
         display: none;
     }
-    .icon_container {
-        --iconPd: var(--MD);
-    }
+
     @include flexCenter();
     .icon_svg {
         height: 100%;
@@ -1662,8 +1660,6 @@ I {
             line-height: 1;
         }
         .icon_container {
-            --iconD: var(--XL);
-            --iconPd: 0;
             @include flexCenter();
         }
     }
@@ -2092,10 +2088,7 @@ I {
     gap: var(--LG);
 }
 .skills_section {
-    --iconD: 6rem;
-    .btn {
-        --iconD: 3rem;
-    }
+    --iconD: 8rem;
 }
 .services_container {
     position: relative;
@@ -2146,11 +2139,6 @@ I {
     .made_content {
         @include flex(column, space-between, flex-end);
     }
-    .icon_container {
-        --iconD: 3rem;
-        --iconPd: var(--SM);
-    }
-
     .social_btns_container,
     .btns_container {
         width: fit-content;
