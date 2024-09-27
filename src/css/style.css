@@ -228,7 +228,6 @@ BODY {
 }
 
 IMG {
-  display: block;
   width: 100%;
   height: 100%;
   border-style: none;
@@ -245,6 +244,8 @@ UL {
   list-style: none;
 }
 
+IMG,
+PICTURE,
 INPUT[type=text],
 INPUT[type=email],
 TEXTAREA,
@@ -898,10 +899,11 @@ I {
 }
 
 .icon_container {
+  --iconPd: var(--LG);
   overflow: hidden;
   width: var(--iconD);
   height: var(--iconD);
-  padding: var(--LG);
+  padding: var(--iconPd);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1097,7 +1099,7 @@ I {
   display: none;
 }
 .nav_btn .icon_container {
-  padding: var(--MD);
+  --iconPd: var(--MD);
 }
 .nav_btn .icon_svg {
   height: 100%;
@@ -1288,6 +1290,9 @@ I {
   justify-content: flex-start;
   align-items: center;
   gap: var(--XL);
+}
+.flex_responsive DIV {
+  width: 100%;
 }
 
 .subtitle_section {
@@ -1631,12 +1636,11 @@ I {
   line-height: 1;
 }
 .list_btns_container .search_list_btn .icon_container {
+  --iconD: var(--XL);
+  --iconPd: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: var(--XL);
-  width: var(--XL);
-  padding: 0;
 }
 .list_btns_container .list_container {
   position: absolute;
@@ -2007,6 +2011,43 @@ I {
   font-size: var(--fontSizeMClamp);
   margin-top: var(--XL);
 }
+.about_section .about_img {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about_section .about_img PICTURE {
+  width: 90%;
+  max-width: 30rem;
+  border-radius: 0 0 30% 30%;
+  overflow: hidden;
+  position: relative;
+}
+.about_section .about_img PICTURE::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100% - 2rem);
+  background: var(--btnGradient);
+  z-index: -1;
+  border-radius: 30%;
+}
+.about_section .about_img PICTURE IMG {
+  transform: translateY(4rem);
+}
+.about_section .about_img PICTURE *, .about_section .about_img PICTURE::after {
+  transition: var(--T_M);
+}
+.about_section .about_img PICTURE:hover::after {
+  height: 60%;
+}
+.about_section .about_img PICTURE:hover IMG {
+  transform: translateY(0);
+}
 
 .badge {
   display: flex;
@@ -2050,11 +2091,7 @@ I {
 }
 
 .skills_section {
-  --skillIconD: 6rem;
-}
-.skills_section .icon_container {
-  height: var(--skillIconD);
-  width: var(--skillIconD);
+  --iconD: 6rem;
 }
 
 .services_container {
@@ -2093,69 +2130,44 @@ I {
 .legals_section {
   background: var(--NVC);
 }
-.legals_section .footer_content,
+.legals_section .footer_content {
+  width: 100%;
+}
 .legals_section .lebels_container {
+  height: 100%;
+}
+.legals_section .made_content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
 }
-.legals_section .social_btns_container {
+.legals_section .icon_container {
+  --iconD: 3rem;
+  --iconPd: var(--SM);
+}
+.legals_section .social_btns_container,
+.legals_section .btns_container {
   width: -moz-fit-content;
   width: fit-content;
+}
+.legals_section .btns_container {
   justify-content: flex-end;
+  gap: 1rem;
 }
-.legals_section .icon_container {
-  width: 3rem;
-  height: 3rem;
-  padding: var(--SM);
-}
-.legals_section .link_text {
+
+.link_text {
   font-size: var(--FS_XS);
   color: var(--TC);
 }
-.legals_section .link_text {
+
+.link_text {
   line-height: 1.5;
 }
-.legals_section .copy_rights {
+
+.copy_rights {
   font-weight: 400;
   color: var(--FC);
-}
-.legals_section .made_content {
-  margin-left: 3rem;
-}
-.legals_section .made_content .btns_container :not(:first-child) {
-  margin-left: var(--XL);
-}
-.legals_section .made_content .label_btn {
-  font-size: var(--FS_S);
-}
-.legals_section .btns_container {
-  justify-content: flex-start;
-}
-
-.clients_list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--XL);
-}
-.clients_list .icon_container {
-  --logoSize: 10rem;
-  height: var(--logoSize);
-  width: auto;
-  max-width: calc(var(--logoSize) * 2);
-}
-.clients_list .icon_container SVG {
-  height: 100%;
-  width: auto;
-}
-.clients_list .icon_container IMG {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .nav_menu {
@@ -2183,7 +2195,7 @@ I {
   height: 100%;
 }
 .nav_menu .icon_container:not(.logo_btn) {
-  width: 3.5rem;
+  --cionSize: 3.5rem;
   fill: var(--TC);
 }
 .nav_menu .btn_active .icon_btn {
@@ -2460,8 +2472,13 @@ I {
 @media screen and (min-width: 800px) {
   .flex_responsive {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+  }
+  .legals_section .flex_responsive {
+    flex-direction: row-reverse;
+    align-items: flex-end;
   }
   .flex_img {
     flex-basis: 30%;
