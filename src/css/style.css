@@ -2018,7 +2018,7 @@ I {
   align-items: center;
 }
 .about_section PICTURE {
-  width: 90%;
+  width: 100%;
   max-width: 30rem;
   border-radius: 0 0 30% 30%;
   overflow: hidden;
@@ -2037,7 +2037,8 @@ I {
   border-radius: 30%;
 }
 .about_section PICTURE IMG {
-  transform: translateY(3rem);
+  transform: translateY(0);
+  scale: 1;
 }
 .about_section PICTURE *, .about_section PICTURE::after {
   transition: var(--t_M);
@@ -2046,7 +2047,8 @@ I {
   height: 60%;
 }
 .about_section PICTURE:hover IMG {
-  transform: translateY(0);
+  transform: translateY(3rem);
+  scale: 1.2;
 }
 
 .badge {
