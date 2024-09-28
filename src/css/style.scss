@@ -2018,10 +2018,9 @@ I {
         height: 100%;
         @include flex(column, space-between, center);
     }
-   
+
     PICTURE {
-        width: 100%;
-        max-width: 30rem;
+        width: clamp(10rem, 60%, 40rem);
         border-radius: 0 0 30% 30%;
         overflow: hidden;
         position: relative;
@@ -2039,8 +2038,7 @@ I {
             border-radius: 30%;
         }
         IMG {
-            transform: translateY(0);
-            scale: 1;
+            transform: translateY(2rem);
         }
         & *,
         &::after {
@@ -2051,8 +2049,7 @@ I {
                 height: 60%;
             }
             IMG {
-                transform: translateY(3rem);
-                scale: 1.2;
+                transform: translateY(0);
             }
         }
     }
