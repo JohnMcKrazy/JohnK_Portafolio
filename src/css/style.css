@@ -1977,6 +1977,13 @@ I {
 .about_section .section_content {
   position: relative;
 }
+.about_section .social_btns_container {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.about_section .social_btns_container .icon_container {
+  --iconPd: var(--MD);
+}
 .about_section .about_salute {
   width: 100%;
   height: 100%;
@@ -2013,39 +2020,36 @@ I {
   justify-content: space-between;
   align-items: center;
 }
-.about_section .about_img PICTURE {
+.about_section PICTURE {
   width: 90%;
   max-width: 30rem;
   border-radius: 0 0 30% 30%;
   overflow: hidden;
   position: relative;
 }
-.about_section .about_img PICTURE::after {
+.about_section PICTURE::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: calc(100% - 2rem);
+  height: 80%;
   background: var(--btnGradient);
   z-index: -1;
   border-radius: 30%;
 }
-.about_section .about_img PICTURE IMG {
+.about_section PICTURE IMG {
   transform: translateY(3rem);
 }
-.about_section .about_img PICTURE *, .about_section .about_img PICTURE::after {
+.about_section PICTURE *, .about_section PICTURE::after {
   transition: var(--T_M);
 }
-.about_section .about_img PICTURE:hover::after {
+.about_section PICTURE:hover::after {
   height: 60%;
 }
-.about_section .about_img PICTURE:hover IMG {
+.about_section PICTURE:hover IMG {
   transform: translateY(0);
-}
-.about_section .about_img .icon_container {
-  --iconPd: var(--MD);
 }
 
 .badge {
