@@ -86,7 +86,7 @@
     --iconD: 4rem;
     --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
     --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
-    --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 4rem);
+    --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 3rem);
     --fontSizeXLClamp: clamp(6rem, calc(1.5rem + 3vw), 8rem);
     --t_uf: all 250ms ease-in-out;
     --t_f: all 350ms ease-in-out;
@@ -1435,7 +1435,7 @@ I {
             transform: translateY(100%);
             text-align: center;
             inline-size: 90%;
-            font-size: var(--fontSizeMClamp);
+            font-size: var(--fontSizeSClamp);
         }
     }
 
@@ -2420,7 +2420,7 @@ I {
 [hidden="false"] {
     display: flex;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 880px) {
     .flex_responsive {
         @include flex(row, center, flex-start);
     }
