@@ -203,6 +203,18 @@ export const DB = [
             project_link: "https://johnmckrazy.github.io/to-do-list_vue-practice/",
         },
     },
+    /*  {
+        project_name: { en: "Weather App", es: "Aplicación de Clima" },
+        db_name: "weather",
+        projects: {
+            type: "develop",
+            skills: ["web", "api", "programming"],
+            info: "Página de busqueda de clima regional, proyecto para aprendizaje en Python, realizado con HTML ,CSS y Python",
+            technologies: ["HTML", "CSS", "Python"],
+            img: "./src/img/portfolio/weather.webp",
+            project_link: "https://python-weather-app-tvey.onrender.com/",
+        },
+    }, */
     {
         project_name: { en: "Christmas Wishes", es: "Deseos de Navidad" },
         db_name: "navidad_2024",
