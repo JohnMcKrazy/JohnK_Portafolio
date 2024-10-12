@@ -177,6 +177,7 @@
 }
 
 BODY {
+    --border: solid var(--tc) 1px;
     --backgroundHero: linear-gradient(transparent, var(--bgC_off));
     --t_scale: scale 500ms cubic-bezier(0.51, -0.42, 0.06, 1.45);
 
@@ -949,7 +950,7 @@ I {
     flex-direction: column;
     position: absolute;
     background: var(--bgC_off);
-    border-radius: var(--md);
+    border-radius: var(--lg);
     z-index: 2;
     display: none;
     transition: var(--t_uf);
@@ -1032,6 +1033,7 @@ I {
 .info_bubble {
     padding: var(--lg);
     gap: var(--md);
+    border: var(--border);
     .description {
         line-height: 1var (--XL);
         text-align: center;
