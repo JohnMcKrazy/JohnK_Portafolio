@@ -47,7 +47,7 @@
   --tc: var(--black);
   --tc_c: var(--whiteOff);
   --nvc: var(--white);
-  --nvc_t: rgba(242, 242, 242, 0.75);
+  --bgC_t: rgba(242, 242, 242, 0.75);
   --bgC: var(--whiteOff);
   --bgC_t: var(--whiteT);
   --bgC_ut: rgba(242, 242, 242, 0.25);
@@ -148,7 +148,6 @@
   --tc: rgb(26, 26, 26);
   --tc_c: rgb(230, 230, 230);
   --nvc: rgb(242, 242, 242);
-  --nvc_t: rgba(242, 242, 242, 0.75);
   --bgC: rgb(230, 230, 230);
   --bgC_t: rgba(242, 242, 242, 0.75);
   --bgC_ut: rgba(242, 242, 242, 0.5);
@@ -177,7 +176,6 @@
   --tc: rgb(230, 230, 230);
   --tc_c: rgb(26, 26, 26);
   --nvc: rgb(13, 13, 13);
-  --nvc_t: rgba(13, 13, 13, 0.75);
   --bgC: rgb(26, 26, 26);
   --bgC_t: rgba(13, 13, 13, 0.75);
   --bgC_ut: rgba(13, 13, 13, 0.5);
@@ -934,6 +932,7 @@ I {
           user-select: none;
   max-width: 250px;
   width: 100%;
+  box-shadow: 1px 1px 1rem var(--bgC_t), -1px -1px 1rem var(--bgC_t);
 }
 .bubble .header_bubble {
   height: 6rem;
@@ -1648,7 +1647,7 @@ I {
   bottom: 0;
   left: 0;
   width: auto;
-  background: var(--nvc_t);
+  background: var(--bgC_t);
   transform: translateY(100%);
   z-index: 2;
 }
@@ -2180,7 +2179,7 @@ I {
   right: 0;
   width: 100%;
   height: var(--nvh);
-  background: var(--nvc_t);
+  background: var(--bgC_t);
   z-index: 5;
   transition: height 500ms ease;
   display: flex;
@@ -2314,11 +2313,11 @@ I {
   height: auto;
   transition: var(--t_f);
   margin: var(--lg) 0;
-  background: var(--nvc_t);
+  background: var(--bgC_t);
   border-radius: var(--lg);
 }
 .menu_social_container .menu_btn_social_menu {
-  background: var(--nvc_t);
+  background: var(--bgC_t);
 }
 .menu_social_container .social_menu_btn {
   border-radius: var(--lg);
