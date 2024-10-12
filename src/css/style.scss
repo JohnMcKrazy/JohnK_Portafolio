@@ -81,13 +81,11 @@
     --black: rgb(26, 26, 26);
     --blackT: rgb(5, 5, 5, 0.75);
     --blackST: rgb(5, 5, 5, 0.5);
-    --blackUT: rgb(5, 5, 5, 0.25);
     --blackOff: rgb(5, 5, 5);
 
     --white: rgb(245, 245, 245);
     --whiteT: rgb(250, 250, 250, 0.75);
     --whiteST: rgb(250, 250, 250, 0.5);
-    --whiteUT: rgb(250, 250, 250, 0.25);
     --whiteOff: rgb(250, 250, 250);
 
     --lightRed: hsl(0, 100%, 67%);
@@ -147,8 +145,6 @@
     --bgC_t: var(--whiteT);
     --bgC_st: var(--whiteST);
     --vueIconText: rgb(51, 51, 51);
-
-    --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC));
 }
 .dark {
     --fc: var(--logoMintD);
@@ -161,8 +157,6 @@
     --bgC_st: var(--blackST);
 
     --vueIconText: rgb(204, 204, 204);
-
-    --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%);
 }
 
 *,
@@ -185,6 +179,7 @@ BODY {
 
     --backgroundHero: linear-gradient(transparent, var(--bgC_off));
 
+    --bgHeaderSectionContact: linear-gradient(var(--bgC_off) 10%, var(--bgC_st), var(--bgC_off) 90%);
     --danger: var(--lightRed);
     --bgDanger: var(--bgLightRed);
     --good: var(--greenTeal);
@@ -1977,6 +1972,9 @@ I {
                 transform: translateY(0);
             }
         }
+    }
+    .flex_responsive {
+        align-items: center;
     }
 }
 .badge {
