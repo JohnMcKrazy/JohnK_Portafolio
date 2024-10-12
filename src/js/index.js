@@ -994,10 +994,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const formResponseActions = (action, status = "") => {
                 if (action === open) {
                     if (status === "good") {
-                        formResponseContainer.classList.add(status);
+                        formResponseContainer.setAttribute(status, "");
                         formResponse.textContent = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
                     } else if (status === "danger") {
-                        formResponseContainer.classList.add(status);
+                        formResponseContainer.setAttribute(status, "");
                         formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
                     }
                     formResponseContainer.classList.add("show_flex");

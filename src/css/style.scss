@@ -16,100 +16,6 @@
     font-weight: 400;
     font-style: italic;
 }
-
-:root {
-    --lightGray: rgb(191, 191, 191);
-    --midGray: rgb(128, 128, 128);
-    --darkGray: rgb(64, 64, 64);
-    --black: rgb(26, 26, 26);
-    --blackOff: rgb(38, 38, 38);
-    --white: rgb(245, 245, 245);
-    --whiteT: rgb(245, 245, 245, 0.7);
-    --whiteOff: rgb(230, 230, 230);
-
-    --warning: rgb(218, 165, 32);
-    --danger: rgb(178, 34, 34);
-    --good: rgb(34, 139, 34);
-
-    --lightRed: hsl(0, 100%, 67%);
-    --bgLightRed: hsl(0, 100%, 67%, 0.075);
-    --greenTeal: hsl(166, 100%, 37%);
-    --bgGreenTeal: hsl(166, 100%, 37%, 0.075);
-
-    --danger: var(--lightRed);
-    --bgDanger: var(--bgLightRed);
-    --good: var(--greenTeal);
-    --bgGood: var(--bgGreenTeal);
-
-    --logoGray: rgb(203, 203, 203);
-    --logoPurpleL: hsl(260, 84%, 25%);
-    --logoPurpleD: hsl(240, 55%, 60%);
-    --logoMintL: hsl(170, 81%, 49%);
-    --logoMintD: hsl(190, 100%, 40%);
-
-    --purpleDark: hsl(260, 84%, 10%);
-    --mintLigth: hsl(190, 100%, 50%);
-
-    /*  */
-
-    --tc: var(--black);
-    --tc_c: var(--whiteOff);
-    --nvc: var(--white);
-    --bgC_t: rgba(242, 242, 242, 0.75);
-    --bgC: var(--whiteOff);
-    --bgC_t: var(--whiteT);
-    --bgC_ut: rgba(242, 242, 242, 0.25);
-    --bgC_c: var(--black);
-    --bgC_ct: rgba(26, 26, 26, 0.15);
-    --bs_sb: rgba(0, 0, 0, 0.1);
-    --bgOff: rgb(204, 204, 204);
-    --bgM: rgba(230, 230, 230, 0.75);
-    --vueIconText: rgb(51, 51, 51);
-
-    /*  */
-
-    --sm: 0.25rem;
-    --md: 0.5rem;
-    --lg: 1rem;
-    --XL: 2rem;
-
-    --fs_xs: 0.8rem;
-    --fs_s: 1rem;
-    --fs_N: 1.4rem;
-    --fs_L: 1.8rem;
-    --fs_X: 4rem;
-    --fs_XL: 6rem;
-    --FW_L: 200;
-    --FW_N: 400;
-    --FW_B: 600;
-
-    --iconD: 4rem;
-    --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
-    --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
-    --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 3rem);
-    --fontSizeXLClamp: clamp(6rem, calc(1.5rem + 3vw), 8rem);
-    --t_uf: all 250ms ease-in-out;
-    --t_f: all 350ms ease-in-out;
-    --t_M: all 750ms ease-in-out;
-    --t_s: all 1000ms ease-in-out;
-
-    --t_sCALE: scale 500ms cubic-bezier(0.51, -0.42, 0.06, 1.45);
-    --nvh_f: 6rem;
-    --nvh: 8rem;
-    --fs_nvh: calc(100svh - var(--nvh));
-    --FS-Fnvh: calc(100svh - var(--nvh_f));
-    --titanimFont: "Titillium Web", sans-serif;
-}
-*,
-*:after,
-*:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--titanimFont);
-    font-weight: 400;
-    font-style: normal;
-}
 //^ ANIMATIONS
 @keyframes blink {
     0% {
@@ -167,85 +73,138 @@
     justify-content: center;
     align-items: center;
 }
+:root {
+    --lightGray: rgb(191, 191, 191);
+    --midGray: rgb(128, 128, 128);
+    --darkGray: rgb(64, 64, 64);
+
+    --black: rgb(26, 26, 26);
+    --blackT: rgb(5, 5, 5, 0.75);
+    --blackST: rgb(5, 5, 5, 0.5);
+    --blackUT: rgb(5, 5, 5, 0.25);
+    --blackOff: rgb(5, 5, 5);
+
+    --white: rgb(245, 245, 245);
+    --whiteT: rgb(250, 250, 250, 0.75);
+    --whiteST: rgb(250, 250, 250, 0.5);
+    --whiteUT: rgb(250, 250, 250, 0.25);
+    --whiteOff: rgb(250, 250, 250);
+
+    --lightRed: hsl(0, 100%, 67%);
+    --bgLightRed: hsl(0, 100%, 67%, 0.075);
+    --greenTeal: hsl(166, 100%, 37%);
+    --bgGreenTeal: hsl(166, 100%, 37%, 0.075);
+
+    --logoGray: rgb(203, 203, 203);
+    --logoPurpleL: hsl(260, 84%, 25%);
+    --logoPurpleD: hsl(240, 55%, 60%);
+    --logoMintL: hsl(170, 81%, 49%);
+    --logoMintD: hsl(190, 100%, 40%);
+
+    --purpleDark: hsl(260, 84%, 10%);
+    --mintLigth: hsl(190, 100%, 50%);
+
+    --sm: 0.25rem;
+    --md: 0.5rem;
+    --lg: 1rem;
+    --XL: 2rem;
+
+    --fs_xs: 0.8rem;
+    --fs_s: 1rem;
+    --fs_N: 1.4rem;
+    --fs_L: 1.8rem;
+    --fs_X: 4rem;
+    --fs_XL: 6rem;
+    --FW_L: 200;
+    --FW_N: 400;
+    --FW_B: 600;
+
+    --nvh_f: 6rem;
+    --nvh: 8rem;
+    --iconD: 4rem;
+
+    --fontSizeSClamp: clamp(1.2rem, calc(1.2rem + 0.5vw), 1.8rem);
+    --fontSizeMClamp: clamp(2rem, calc(1.5rem + 0.5vw), 2.2rem);
+    --fontSizeXClamp: clamp(2.5rem, calc(1.5rem + 1.5vw), 3rem);
+    --fontSizeXLClamp: clamp(6rem, calc(1.5rem + 3vw), 8rem);
+
+    --t_uf: all 250ms ease-in-out;
+    --t_f: all 350ms ease-in-out;
+    --t_M: all 750ms ease-in-out;
+    --t_s: all 1000ms ease-in-out;
+
+    --titanimFont: "Titillium Web", sans-serif;
+}
 
 //!THEMES START
 .light {
     --fc: var(--logoPurpleL);
     --SC: var(--logoMintL);
     --H: var(--purpleDark);
-    --tc: rgb(26, 26, 26);
-    --tc_c: rgb(230, 230, 230);
-    --nvc: rgb(242, 242, 242);
-    --bgC: rgb(230, 230, 230);
-    --bgC_t: rgba(242, 242, 242, 0.75);
-    --bgC_ut: rgba(242, 242, 242, 0.5);
-    --bgC_c: rgb(26, 26, 26);
-    --bgC_ct: rgba(26, 26, 26, 0.15);
-    --bs_sb: rgba(0, 0, 0, 0.1);
-    --bgOff: rgb(204, 204, 204);
-    --bgM: rgba(230, 230, 230, 0.75);
+    --tc: var(--black);
+    --tc_c: var(--white);
+    --bgC: var(--white);
+    --bgC_off: var(--whiteOff);
+    --bgC_t: var(--whiteT);
+    --bgC_st: var(--whiteST);
+    --bgC_ut: var(--whiteUT);
+    --bgC_c: var(--black);
+    --bgM: var(--whiteT);
+    --shadow: var(--blackUT);
+
     --vueIconText: rgb(51, 51, 51);
-    //~ GENERALS
-    color: var(--tc);
 
-    //~ SECTION BACKGROUNDS--START
-    --backgroundHero: linear-gradient(transparent, var(--nvc));
     --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC));
-
-    .leiru_icon_svg {
-        .brand,
-        .brand-append {
-            .cls-1 {
-                fill: rgb(24, 160, 56);
-            }
-        }
-        .text {
-            fill: var(--tc);
-        }
-    }
 }
 .dark {
     --fc: var(--logoMintD);
     --SC: var(--logoPurpleD);
     --H: var(--mintLigth);
-    --tc: rgb(230, 230, 230);
-    --tc_c: rgb(26, 26, 26);
-    --nvc: rgb(13, 13, 13);
-    --bgC: rgb(26, 26, 26);
-    --bgC_t: rgba(13, 13, 13, 0.75);
-    --bgC_ut: rgba(13, 13, 13, 0.5);
-    --bgC_c: rgb(230, 230, 230);
-    --bgC_ct: rgba(230, 230, 230, 0.15);
-    --bs_sb: rgba(255, 255, 255, 0.1);
-    --bgOff: rgb(51, 51, 51);
-    --bgM: rgba(26, 26, 26, 0.75);
+    --tc: var(--white);
+    --tc_c: var(--black);
+    --bgC: var(--black);
+    --bgC_off: var(--blackOff);
+    --bgC_t: var(--blackT);
+    --bgC_st: var(--blackST);
+    --bgC_ut: var(--blackUT);
+    --bgC_c: var(--white);
+    --bgM: var(--blackT);
+    --shadow: var(--blackT);
+
     --vueIconText: rgb(204, 204, 204);
-    //¿GENERALS
 
-    //~SECTION BACKGROUNDS
-    --backgroundHero: linear-gradient(transparent, var(--nvc));
     --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%);
+}
 
-    color: var(--tc);
-
-    .leiru_icon_svg {
-        .brand,
-        .brand-append {
-            .cls-1 {
-                fill: var(--tc);
-            }
-        }
-    }
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--titanimFont);
+    font-weight: 400;
+    font-style: normal;
 }
 
 BODY {
-    --btnGradient: linear-gradient(45deg, var(--fc), var(--SC));
+    --backgroundHero: linear-gradient(transparent, var(--bgC_off));
+    --t_scale: scale 500ms cubic-bezier(0.51, -0.42, 0.06, 1.45);
 
+    --fs_nvh: calc(100svh - var(--nvh));
+
+    --backgroundHero: linear-gradient(transparent, var(--bgC_off));
+
+    --danger: var(--lightRed);
+    --bgDanger: var(--bgLightRed);
+    --good: var(--greenTeal);
+    --bgGood: var(--bgGreenTeal);
+    --btnGradient: linear-gradient(45deg, var(--fc), var(--SC));
+    color: var(--tc);
     width: 100%;
     height: auto;
     position: relative;
     overflow-x: hidden;
-    color: var(--tc);
     background: var(--bgC);
     text-rendering: optimizeSpeed;
 }
@@ -716,26 +675,6 @@ I {
         cursor: crosshair;
     }
 }
-.dark_theme {
-    .watch_pm {
-        display: none;
-        opacity: 0;
-    }
-    .watch_am {
-        display: block;
-        opacity: 1;
-    }
-}
-.light_theme {
-    .watch_am {
-        display: none;
-        opacity: 0;
-    }
-    .watch_pm {
-        display: block;
-        opacity: 1;
-    }
-}
 .desk_icon_container {
     position: relative;
     width: 100%;
@@ -952,13 +891,7 @@ I {
 }
 //^^TECH ICONS COLORS--OVER
 //^^SOCIAL ICONS COLORS-- START
-/* .wa_icon_svg,
-.fb_icon_svg,
-.behance_icon_svg,
-.contact_icon_svg {
-    height: auto;
-    width: 100%;
-} */
+
 .gitHub_icon_svg {
     transform: scale(0.85);
 }
@@ -1024,7 +957,7 @@ I {
     @include flexCenter();
     flex-direction: column;
     position: absolute;
-    background: var(--nvc);
+    background: var(--bgC_off);
     border-radius: var(--md);
     z-index: 2;
     display: none;
@@ -1032,7 +965,7 @@ I {
     user-select: none;
     max-width: 250px;
     width: 100%;
-    box-shadow: 1px 1px 1rem var(--bgC_t), -1px -1px 1rem var(--bgC_t);
+    box-shadow: 2px 2px 2rem var(--shadow), -2px -2px 2rem var(--shadow);
     .header_bubble {
         height: 6rem;
         width: 100%;
@@ -1297,7 +1230,7 @@ I {
     padding: 0 var(--md);
     width: fit-content;
     scale: 1;
-    transition: var(--t_sCALE), height 500ms ease;
+    transition: var(--t_scale), height 500ms ease;
     //*LOGO COLORS START
     .johnK_full,
     .johnK_icon {
@@ -1371,7 +1304,7 @@ I {
 }
 
 .animated_social_btn {
-    transition: var(--t_sCALE);
+    transition: var(--t_scale);
     &:hover {
         scale: 1.2;
     }
@@ -1414,7 +1347,7 @@ I {
     .info_card {
         transition: all 500ms ease-in-out;
         @include flex(column, flex-start, center);
-        background: var(--bgC_ut);
+        background: var(--bgC_st);
         padding: var(--XL) 0;
         width: 100%;
         height: 100%;
@@ -1723,7 +1656,7 @@ I {
     }
 }
 .contact_form {
-    background: var(--nvc);
+    background: var(--bgC_off);
     padding: var(--XL);
     border-radius: var(--lg);
     .form_response_container {
@@ -1755,7 +1688,7 @@ I {
     right: 0;
     bottom: 0;
     left: 0;
-    background: var(--nvc);
+    background: var(--bgC_off);
     z-index: 9;
     transition: var(--t_f);
     display: none;
@@ -2072,7 +2005,7 @@ I {
 }
 .certification_badge {
     justify-content: space-between;
-    background: var(--bgC_t);
+    background: var(--bgC_off);
     border-radius: var(--md);
     gap: var(--XL);
     .badge_name {
@@ -2110,7 +2043,7 @@ I {
         padding: 0 var(--XL);
         width: fit-content;
         gap: var(--sm);
-        background: var(--nvc);
+        background: var(--bgC_off);
         border-radius: 3rem;
         margin-top: var(--XL);
         color: var(--tc);
@@ -2127,7 +2060,7 @@ I {
     }
 }
 .legals_section {
-    background: var(--nvc);
+    background: var(--bgC_off);
     @include flex(column, flex-end, center);
     .footer_content {
         width: 100%;
@@ -2229,7 +2162,7 @@ I {
 
     height: auto;
     width: 100%;
-    background: var(--nvc);
+    background: var(--bgC_off);
     transition: var(--t_f);
     transform: var(--menuPosition);
     z-index: 6;
@@ -2403,12 +2336,12 @@ I {
 .nav_small {
     height: var(--nvh_f);
 }
-.good {
+[good] {
     background: var(--bgGood);
     color: var(--whiteOff);
     border-color: var(--good);
 }
-.danger {
+[danger] {
     background: var(--bgDanger);
     color: var(--blackOff);
     border-color: var(--danger);
