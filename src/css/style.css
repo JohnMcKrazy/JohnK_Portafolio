@@ -115,15 +115,10 @@
   --SC: var(--logoMintL);
   --H: var(--purpleDark);
   --tc: var(--black);
-  --tc_c: var(--white);
   --bgC: var(--white);
   --bgC_off: var(--whiteOff);
   --bgC_t: var(--whiteT);
   --bgC_st: var(--whiteST);
-  --bgC_ut: var(--whiteUT);
-  --bgC_c: var(--black);
-  --bgM: var(--whiteT);
-  --shadow: var(--blackUT);
   --vueIconText: rgb(51, 51, 51);
   --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC));
 }
@@ -133,15 +128,10 @@
   --SC: var(--logoPurpleD);
   --H: var(--mintLigth);
   --tc: var(--white);
-  --tc_c: var(--black);
   --bgC: var(--black);
   --bgC_off: var(--blackOff);
   --bgC_t: var(--blackT);
   --bgC_st: var(--blackST);
-  --bgC_ut: var(--blackUT);
-  --bgC_c: var(--white);
-  --bgM: var(--blackT);
-  --shadow: var(--blackT);
   --vueIconText: rgb(204, 204, 204);
   --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, rgba(0, 0, 0, 0.5), var(--bgC) 90%);
 }
@@ -167,6 +157,7 @@ BODY {
   --good: var(--greenTeal);
   --bgGood: var(--bgGreenTeal);
   --btnGradient: linear-gradient(45deg, var(--fc), var(--SC));
+  --shadow: var(--blackST);
   color: var(--tc);
   width: 100%;
   height: auto;
@@ -597,7 +588,7 @@ I {
   scale: 0.75;
 }
 .pallet_icon .cls-1 {
-  fill: var(--bgC_c);
+  fill: var(--tc);
 }
 .pallet_icon .cls-2 {
   fill: var(--SC);
@@ -830,7 +821,7 @@ I {
   width: 100%;
   text-align: center;
   background: var(--fc);
-  color: var(--tc_c);
+  color: var(--bgC);
   font-size: var(--fs_L);
   padding: var(--lg);
   transition: var(--t_f);
@@ -974,7 +965,7 @@ I {
   align-items: center;
   min-height: var(--iconD);
   width: 100%;
-  color: var(--tc_c);
+  color: var(--bgC);
   outline: solid 2px var(--fc);
   border-radius: var(--XL);
   text-align: center;
@@ -1020,7 +1011,7 @@ I {
 }
 .close_btn:hover {
   background: var(--fc);
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 .close_btn:hover .close_icon_svg {
   rotate: 360deg;
@@ -1049,10 +1040,10 @@ I {
 }
 .nav_btn:hover {
   background: var(--H);
-  color: var(--tc_c);
+  color: var(--bgC);
 }
 .nav_btn:hover .icon_container {
-  fill: var(--tc_c) !important;
+  fill: var(--bgC) !important;
 }
 
 .extra_btn {
@@ -1063,10 +1054,10 @@ I {
 }
 .extra_btn:hover {
   background: var(--fc);
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 .extra_btn:hover .icon_container {
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 
 .more_btn {
@@ -1104,11 +1095,11 @@ I {
   fill: var(--fc);
 }
 .phone_menu_btn:hover .icon_container {
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 .phone_menu_btn:hover:not(.extra_btn) {
   background: var(--H);
-  color: var(--tc_c);
+  color: var(--bgC);
 }
 
 .bar {
@@ -1383,7 +1374,7 @@ I {
   height: 100%;
   padding: var(--XL);
   transition: var(--t_f);
-  background: var(--bgM);
+  background: var(--bgC_t);
   transform: translateY(100%);
   opacity: 0;
 }
@@ -1535,7 +1526,7 @@ I {
   display: block;
   min-width: auto;
   width: 100%;
-  background: var(--bgM);
+  background: var(--bgC_t);
   border: none;
   border-radius: var(--sm);
   text-transform: uppercase;
@@ -1555,9 +1546,9 @@ I {
 .list_btns_container .list_btn:hover,
 .list_btns_container .list_btn:active,
 .list_btns_container .list_btn:focus {
-  color: var(--tc_c);
+  color: var(--bgC);
   background: var(--btnGradient);
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 .list_btns_container .search_list_btn {
   text-transform: uppercase;
@@ -1565,7 +1556,7 @@ I {
   justify-content: center;
   align-items: center;
   gap: var(--md);
-  background: var(--bgM);
+  background: var(--bgC_t);
   border-radius: 0;
   border-bottom: solid 2px var(--fc);
   min-height: -moz-fit-content;
@@ -1999,7 +1990,7 @@ I {
   justify-content: flex-start;
   align-items: center;
   gap: var(--md);
-  color: var(--tc_c);
+  color: var(--bgC);
   padding: var(--lg);
 }
 .badge .badge_name {
@@ -2147,7 +2138,7 @@ I {
   fill: var(--tc);
 }
 .nav_menu .btn_active .icon_btn {
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 
 .nav_menu_controler {
@@ -2172,7 +2163,7 @@ I {
   padding: 0 var(--lg);
 }
 .nav_menu_controler .theme_btn:hover {
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 .nav_menu_controler .label_btn:not(.label_lang) {
   display: none;
@@ -2273,7 +2264,7 @@ I {
 }
 .menu_social_container .social_menu_btn:hover .icon_container .cls-2,
 .menu_social_container .social_menu_btn:hover .icon_container .cls-1 {
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 
 .menu_social_btns_container {
@@ -2369,17 +2360,17 @@ I {
 
 .btn_active {
   background: var(--fc);
-  color: var(--tc_c);
+  color: var(--bgC);
 }
 .btn_active .label_btn {
-  color: var(--tc_c);
+  color: var(--bgC);
 }
 .btn_active .label_btn,
 .btn_active .icon_btn {
   animation: bounce 2s ease-in-out infinite;
 }
 .btn_active .cls-1 {
-  fill: var(--tc_c);
+  fill: var(--bgC);
 }
 
 .logo_big {

@@ -142,16 +142,10 @@
     --SC: var(--logoMintL);
     --H: var(--purpleDark);
     --tc: var(--black);
-    --tc_c: var(--white);
     --bgC: var(--white);
     --bgC_off: var(--whiteOff);
     --bgC_t: var(--whiteT);
     --bgC_st: var(--whiteST);
-    --bgC_ut: var(--whiteUT);
-    --bgC_c: var(--black);
-    --bgM: var(--whiteT);
-    --shadow: var(--blackUT);
-
     --vueIconText: rgb(51, 51, 51);
 
     --bgHeaderSectionContact: linear-gradient(var(--bgC), rgba(255, 255, 255, 0.5), var(--bgC));
@@ -161,15 +155,10 @@
     --SC: var(--logoPurpleD);
     --H: var(--mintLigth);
     --tc: var(--white);
-    --tc_c: var(--black);
     --bgC: var(--black);
     --bgC_off: var(--blackOff);
     --bgC_t: var(--blackT);
     --bgC_st: var(--blackST);
-    --bgC_ut: var(--blackUT);
-    --bgC_c: var(--white);
-    --bgM: var(--blackT);
-    --shadow: var(--blackT);
 
     --vueIconText: rgb(204, 204, 204);
 
@@ -200,6 +189,8 @@ BODY {
     --good: var(--greenTeal);
     --bgGood: var(--bgGreenTeal);
     --btnGradient: linear-gradient(45deg, var(--fc), var(--SC));
+
+    --shadow: var(--blackST);
     color: var(--tc);
     width: 100%;
     height: auto;
@@ -683,7 +674,7 @@ I {
 .pallet_icon {
     scale: 0.75;
     .cls-1 {
-        fill: var(--bgC_c);
+        fill: var(--tc);
     }
     .cls-2 {
         fill: var(--SC);
@@ -928,7 +919,7 @@ I {
     width: 100%;
     text-align: center;
     background: var(--fc);
-    color: var(--tc_c);
+    color: var(--bgC);
     font-size: var(--fs_L);
     padding: var(--lg);
     transition: var(--t_f);
@@ -1050,7 +1041,7 @@ I {
     @include flexCenter();
     min-height: var(--iconD);
     width: 100%;
-    color: var(--tc_c);
+    color: var(--bgC);
     outline: solid 2px var(--fc);
     border-radius: var(--XL);
     text-align: center;
@@ -1097,7 +1088,7 @@ I {
 
     &:hover {
         background: var(--fc);
-        fill: var(--tc_c);
+        fill: var(--bgC);
         .close_icon_svg {
             rotate: 360deg;
         }
@@ -1123,9 +1114,9 @@ I {
     }
     &:hover {
         background: var(--H);
-        color: var(--tc_c);
+        color: var(--bgC);
         .icon_container {
-            fill: var(--tc_c) !important;
+            fill: var(--bgC) !important;
         }
     }
 }
@@ -1134,9 +1125,9 @@ I {
     fill: var(--tc);
     &:hover {
         background: var(--fc);
-        fill: var(--tc_c);
+        fill: var(--bgC);
         .icon_container {
-            fill: var(--tc_c);
+            fill: var(--bgC);
         }
     }
 }
@@ -1170,12 +1161,12 @@ I {
     }
     &:hover {
         .icon_container {
-            fill: var(--tc_c);
+            fill: var(--bgC);
         }
     }
     &:hover:not(.extra_btn) {
         background: var(--H);
-        color: var(--tc_c);
+        color: var(--bgC);
     }
 }
 .bar {
@@ -1421,7 +1412,7 @@ I {
         height: 100%;
         padding: var(--XL);
         transition: var(--t_f);
-        background: var(--bgM);
+        background: var(--bgC_t);
         transform: translateY(100%);
         opacity: 0;
         .title {
@@ -1550,7 +1541,7 @@ I {
         display: block;
         min-width: auto;
         width: 100%;
-        background: var(--bgM);
+        background: var(--bgC_t);
         border: none;
         border-radius: var(--sm);
         text-transform: uppercase;
@@ -1573,15 +1564,15 @@ I {
     .list_btn:hover,
     .list_btn:active,
     .list_btn:focus {
-        color: var(--tc_c);
+        color: var(--bgC);
         background: var(--btnGradient);
-        fill: var(--tc_c);
+        fill: var(--bgC);
     }
     .search_list_btn {
         text-transform: uppercase;
         @include flexCenter();
         gap: var(--md);
-        background: var(--bgM);
+        background: var(--bgC_t);
         border-radius: 0;
         border-bottom: solid 2px var(--fc);
         min-height: fit-content;
@@ -1989,7 +1980,7 @@ I {
 .badge {
     @include flex(column, flex-start, center);
     gap: var(--md);
-    color: var(--tc_c);
+    color: var(--bgC);
     padding: var(--lg);
     .badge_name {
         color: var(--tc);
@@ -2117,7 +2108,7 @@ I {
     }
     .btn_active {
         .icon_btn {
-            fill: var(--tc_c);
+            fill: var(--bgC);
         }
     }
 }
@@ -2142,7 +2133,7 @@ I {
 
     .theme_btn {
         &:hover {
-            fill: var(--tc_c);
+            fill: var(--bgC);
         }
     }
     .label_btn:not(.label_lang) {
@@ -2231,7 +2222,7 @@ I {
             background: var(--fc);
             .cls-2,
             .cls-1 {
-                fill: var(--tc_c);
+                fill: var(--bgC);
             }
         }
     }
@@ -2311,9 +2302,9 @@ I {
 }
 .btn_active {
     background: var(--fc);
-    color: var(--tc_c);
+    color: var(--bgC);
     .label_btn {
-        color: var(--tc_c);
+        color: var(--bgC);
     }
     .label_btn,
     .icon_btn {
@@ -2321,7 +2312,7 @@ I {
     }
 
     .cls-1 {
-        fill: var(--tc_c);
+        fill: var(--bgC);
     }
 }
 .logo_big {
