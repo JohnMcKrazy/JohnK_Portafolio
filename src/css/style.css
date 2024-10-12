@@ -86,16 +86,16 @@
   --sm: 0.25rem;
   --md: 0.5rem;
   --lg: 1rem;
-  --XL: 2rem;
+  --xl: 2rem;
   --fs_xs: 0.8rem;
   --fs_s: 1rem;
-  --fs_N: 1.4rem;
-  --fs_L: 1.8rem;
-  --fs_X: 4rem;
-  --fs_XL: 6rem;
-  --FW_L: 200;
-  --FW_N: 400;
-  --FW_B: 600;
+  --fs_n: 1.4rem;
+  --fs_l: 1.8rem;
+  --fs_x: 4rem;
+  --fs_xl: 6rem;
+  --fw_l: 200;
+  --fw_n: 400;
+  --fw_b: 600;
   --nvh_f: 6rem;
   --nvh: 8rem;
   --iconD: 4rem;
@@ -112,8 +112,8 @@
 
 .light {
   --fc: var(--logoPurpleL);
-  --SC: var(--logoMintL);
-  --H: var(--purpleDark);
+  --sc: var(--logoMintL);
+  --h: var(--purpleDark);
   --tc: var(--black);
   --bgC: var(--white);
   --bgC_off: var(--whiteOff);
@@ -125,8 +125,8 @@
 
 .dark {
   --fc: var(--logoMintD);
-  --SC: var(--logoPurpleD);
-  --H: var(--mintLigth);
+  --sc: var(--logoPurpleD);
+  --h: var(--mintLigth);
   --tc: var(--white);
   --bgC: var(--black);
   --bgC_off: var(--blackOff);
@@ -157,7 +157,7 @@ BODY {
   --bgDanger: var(--bgLightRed);
   --good: var(--greenTeal);
   --bgGood: var(--bgGreenTeal);
-  --btnGradient: linear-gradient(45deg, var(--fc), var(--SC));
+  --btnGradient: linear-gradient(45deg, var(--fc), var(--sc));
   --shadow: var(--blackST);
   color: var(--tc);
   width: 100%;
@@ -177,7 +177,7 @@ BODY {
   width: 100%;
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  scrollbar-color: var(--fc) var(--SC);
+  scrollbar-color: var(--fc) var(--sc);
   scrollbar-width: thin;
 }
 :root:focus-within {
@@ -254,28 +254,28 @@ H4 {
 H1,
 H2 {
   text-align: center;
-  font-weight: var(--FW_B);
+  font-weight: var(--fw_b);
 }
 
 H1 {
   color: var(--fc);
-  font-weight: var(--FW_B);
+  font-weight: var(--fw_b);
   font-size: var(--fontSizeXClamp);
 }
 
 H2 {
   font-size: var(--fontSizeMClamp);
-  font-weight: var(--FW_B);
+  font-weight: var(--fw_b);
   color: var(--tc);
 }
 
 H3 {
-  font-size: var(--fs_N);
-  font-weight: var(--FW_B);
+  font-size: var(--fs_n);
+  font-weight: var(--fw_b);
 }
 
 P {
-  font-size: var(--fs_N);
+  font-size: var(--fs_n);
   color: var(--tc);
   text-wrap: pretty;
 }
@@ -291,7 +291,7 @@ I {
 
 .accent_text {
   color: var(--fc);
-  font-weight: var(--FW_B);
+  font-weight: var(--fw_b);
 }
 
 .desk_me {
@@ -329,7 +329,7 @@ I {
 .deskwork_icon .cls-10,
 .deskwork_icon .cls-23,
 .deskwork_icon .cls-59 {
-  fill: var(--SC);
+  fill: var(--sc);
 }
 .deskwork_icon .cls-10,
 .deskwork_icon .cls-31,
@@ -592,7 +592,7 @@ I {
   fill: var(--tc);
 }
 .pallet_icon .cls-2 {
-  fill: var(--SC);
+  fill: var(--sc);
 }
 .pallet_icon .cls-3 {
   fill: #fafafa;
@@ -794,8 +794,8 @@ I {
 
 .label_btn {
   /* font-family: var(--titanimFont); */
-  font-size: var(--fs_N);
-  font-weight: var(--FW_N);
+  font-size: var(--fs_n);
+  font-weight: var(--fw_n);
   display: block;
   line-height: 1;
   font-weight: 600;
@@ -810,8 +810,8 @@ I {
 }
 
 .accent_color {
-  color: var(--SC);
-  fill: var(--SC);
+  color: var(--sc);
+  fill: var(--sc);
 }
 
 .accessibility_btn {
@@ -823,7 +823,7 @@ I {
   text-align: center;
   background: var(--fc);
   color: var(--bgC);
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
   padding: var(--lg);
   transition: var(--t_f);
   translate: 0 -100%;
@@ -903,7 +903,7 @@ I {
 }
 .bubble .photo {
   position: absolute;
-  top: var(--XL);
+  top: var(--xl);
   left: 50%;
   transform: translateX(-50%);
   width: 6rem;
@@ -917,12 +917,12 @@ I {
 }
 .bubble .name {
   color: var(--fc);
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
   text-align: center;
 }
 .bubble .skill,
 .bubble .place {
-  font-size: var(--fs_N);
+  font-size: var(--fs_n);
   line-height: 1;
   text-align: center;
   display: flex;
@@ -957,7 +957,7 @@ I {
   border: var(--border);
 }
 .info_bubble .description {
-  line-height: 1var --XL;
+  line-height: 1var --xl;
   text-align: center;
 }
 
@@ -969,7 +969,7 @@ I {
   width: 100%;
   color: var(--bgC);
   outline: solid 2px var(--fc);
-  border-radius: var(--XL);
+  border-radius: var(--xl);
   text-align: center;
   padding: var(--lg) var(--md);
   cursor: pointer;
@@ -978,7 +978,7 @@ I {
 .btn .label_btn {
   transition: var(--t_f);
   color: var(--tc);
-  font-weight: var(--FW_B);
+  font-weight: var(--fw_b);
 }
 .btn:hover, .btn:active, .btn:focus {
   background: var(--btnGradient);
@@ -1000,7 +1000,7 @@ I {
 }
 .btn_down .arrow_down_svg {
   margin-top: var(--lg);
-  width: var(--XL);
+  width: var(--xl);
   animation: bounceDown 1s ease infinite;
   transition: var(--t_f);
 }
@@ -1041,7 +1041,7 @@ I {
   width: auto;
 }
 .nav_btn:hover {
-  background: var(--H);
+  background: var(--h);
   color: var(--bgC);
 }
 .nav_btn:hover .icon_container {
@@ -1064,8 +1064,8 @@ I {
 
 .more_btn {
   color: var(--tc);
-  font-weight: var(--FW_B);
-  font-size: var(--fs_N);
+  font-weight: var(--fw_b);
+  font-size: var(--fs_n);
 }
 .more_btn:hover {
   color: var(--whiteOff);
@@ -1075,8 +1075,8 @@ I {
   color: var(--midGray);
 }
 .link_btn .label_btn {
-  font-size: var(--fs_N);
-  font-weight: var(--FW_L);
+  font-size: var(--fs_n);
+  font-weight: var(--fw_l);
 }
 
 .close_control {
@@ -1087,7 +1087,7 @@ I {
 
 .phone_menu_btn {
   width: 100%;
-  font-size: var(--fs_N);
+  font-size: var(--fs_n);
   color: var(--tc);
   display: flex;
   justify-content: center;
@@ -1100,7 +1100,7 @@ I {
   fill: var(--bgC);
 }
 .phone_menu_btn:hover:not(.extra_btn) {
-  background: var(--H);
+  background: var(--h);
   color: var(--bgC);
 }
 
@@ -1187,7 +1187,7 @@ I {
 }
 .logo_btn .johnK_full .dot,
 .logo_btn .johnK_icon .dot {
-  fill: var(--SC);
+  fill: var(--sc);
 }
 .logo_btn .johnK_icon {
   display: none;
@@ -1209,7 +1209,7 @@ I {
 .bullet {
   background: var(--bgC_t);
   width: calc(100% - var(--iconD));
-  padding: var(--XL);
+  padding: var(--xl);
 }
 .bullet H1 {
   margin-bottom: var(--lg);
@@ -1224,14 +1224,14 @@ I {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: var(--XL);
+  gap: var(--xl);
 }
 .flex_responsive .responsive_content {
   width: 100%;
 }
 
 .subtitle_section {
-  margin: var(--XL) 0 var(--lg);
+  margin: var(--xl) 0 var(--lg);
 }
 
 .title_section {
@@ -1242,7 +1242,7 @@ I {
   height: auto;
   -webkit-text-stroke: 1px var(--fc);
   color: transparent;
-  font-size: var(--fs_X);
+  font-size: var(--fs_x);
 }
 
 .animated_social_btn {
@@ -1285,7 +1285,7 @@ I {
 }
 .card .info_container {
   color: var(--tc);
-  padding: var(--lg) 1.5rem var(--XL);
+  padding: var(--lg) 1.5rem var(--xl);
   transition: var(--t_s);
 }
 .card .info_container P,
@@ -1301,7 +1301,7 @@ I {
   justify-content: flex-start;
   align-items: center;
   background: var(--bgC_st);
-  padding: var(--XL) 0;
+  padding: var(--xl) 0;
   width: 100%;
   height: 100%;
 }
@@ -1374,7 +1374,7 @@ I {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: var(--XL);
+  padding: var(--xl);
   transition: var(--t_f);
   background: var(--bgC_t);
   transform: translateY(100%);
@@ -1383,7 +1383,7 @@ I {
 .project_card .info_project_container .title {
   width: 100%;
   text-align: center;
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
   color: var(--fc);
   margin-bottom: var(--md);
   line-height: 1;
@@ -1391,7 +1391,7 @@ I {
 .project_card .info_project_container .subtitle {
   width: 100%;
   text-align: center;
-  font-size: var(--fs_N);
+  font-size: var(--fs_n);
 }
 .project_card .info_project_container .icons_project_container {
   display: flex;
@@ -1458,7 +1458,7 @@ I {
   grid-template-columns: repeat(auto-fit, minmax(150px, 8fr));
   gap: 0;
   min-height: auto;
-  padding: var(--XL) 0;
+  padding: var(--xl) 0;
 }
 .cards_service_container .service_card {
   grid-column: span 2;
@@ -1471,7 +1471,7 @@ I {
   justify-content: space-between;
   align-items: center;
   border-bottom: solid 2px var(--fc);
-  padding: var(--XL) 0 var(--lg);
+  padding: var(--xl) 0 var(--lg);
   margin-bottom: var(--lg);
 }
 .cards_presentation .subtitle_section {
@@ -1480,7 +1480,7 @@ I {
 .cards_presentation .portfolio_btn {
   width: -moz-fit-content;
   width: fit-content;
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
   color: var(--midGray);
 }
 
@@ -1634,12 +1634,12 @@ I {
 }
 .form_response_container .form_response {
   text-align: center;
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
 }
 
 .contact_form {
   background: var(--bgC_off);
-  padding: var(--XL);
+  padding: var(--xl);
   border-radius: var(--lg);
 }
 .contact_form .form_response_container {
@@ -1661,8 +1661,8 @@ I {
   transition: var(--t_M);
   transform: translate(-50%, -50%);
   border-radius: var(--lg);
-  padding: var(--XL) 0 0;
-  max-height: calc(100vh - var(--XL));
+  padding: var(--xl) 0 0;
+  max-height: calc(100vh - var(--xl));
   overflow: hidden;
   display: none;
   opacity: 0;
@@ -1774,17 +1774,17 @@ I {
 }
 .section_divider .quote_container .quote_start {
   align-self: flex-start;
-  transform: translateY(-var(--XL));
+  transform: translateY(-var(--xl));
 }
 .section_divider .quote_container .quote_end {
-  transform: translateY(var(--XL));
+  transform: translateY(var(--xl));
   align-self: flex-end;
 }
 .section_divider .quote_container .icon_container {
   fill: var(--fc);
 }
 .section_divider .author_container {
-  margin-top: var(--XL);
+  margin-top: var(--xl);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1799,8 +1799,8 @@ I {
 }
 .section_divider .author_container .author i {
   font-size: var(--fontSizeMClamp);
-  color: var(--SC);
-  font-weight: var(--FW_B);
+  color: var(--sc);
+  font-weight: var(--fw_b);
 }
 .section_divider .author_container .author_info {
   color: var(--tc);
@@ -1893,12 +1893,12 @@ I {
   justify-content: space-between;
   width: 100%;
   max-width: 35rem;
-  gap: var(--XL);
+  gap: var(--xl);
 }
 .hero_section .btns_container .btn {
   max-width: 15rem;
   min-width: 10rem;
-  padding: var(--lg) var(--XL);
+  padding: var(--lg) var(--xl);
 }
 .hero_section .content {
   padding: 0;
@@ -1930,23 +1930,23 @@ I {
   margin: 0;
 }
 .about_section .about_salute .title_salute {
-  font-size: var(--fs_XL);
+  font-size: var(--fs_xl);
   color: var(--fc);
 }
 .about_section .about_salute .title_name {
   font-size: var(--fontSizeXLClamp);
-  color: var(--SC);
+  color: var(--sc);
 }
 .about_section .about_salute .title_effect {
   animation: blink 500ms 0s infinite alternate;
   color: var(--fc);
 }
 .about_section .about_salute .swipe_animation_container_half {
-  padding: 0 var(--XL);
+  padding: 0 var(--xl);
 }
 .about_section .about_salute .about_text {
   font-size: var(--fontSizeMClamp);
-  margin-top: var(--XL);
+  margin-top: var(--xl);
 }
 .about_section .about_img {
   height: 100%;
@@ -1997,7 +1997,7 @@ I {
 }
 .badge .badge_name {
   color: var(--tc);
-  font-size: var(--fs_N);
+  font-size: var(--fs_n);
   line-height: 1;
   text-align: center;
   width: 100%;
@@ -2014,7 +2014,7 @@ I {
   justify-content: space-between;
   background: var(--bgC_off);
   border-radius: var(--md);
-  gap: var(--XL);
+  gap: var(--xl);
 }
 .certification_badge .badge_name {
   margin-top: var(--md);
@@ -2046,17 +2046,17 @@ I {
   width: 100%;
 }
 .contact_section .form H3 {
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
   text-align: center;
 }
 .contact_section .whatsapp_btn {
-  padding: 0 var(--XL);
+  padding: 0 var(--xl);
   width: -moz-fit-content;
   width: fit-content;
   gap: var(--sm);
   background: var(--bgC_off);
   border-radius: 3rem;
-  margin-top: var(--XL);
+  margin-top: var(--xl);
   color: var(--tc);
 }
 .contact_section .whatsapp_btn:hover {
@@ -2222,7 +2222,7 @@ I {
   align-items: center;
   height: var(--iconD);
   min-width: var(--iconD);
-  font-size: var(--fs_L);
+  font-size: var(--fs_l);
 }
 .phone_menu_controler .social_btns_container {
   display: flex;
@@ -2243,7 +2243,7 @@ I {
   flex-direction: column;
   position: fixed;
   bottom: 4rem;
-  left: var(--XL);
+  left: var(--xl);
   min-height: var(--iconD);
   z-index: 4;
   fill: var(--fc);
