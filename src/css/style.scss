@@ -2136,6 +2136,8 @@ I {
     position: fixed;
     left: 0;
     right: 0;
+    top: var(--top);
+    bottom: var(--bottom);
     border-radius: var(--menuRadius);
     @include flexCenter();
     flex-direction: var(--menuDirection);
@@ -2188,11 +2190,12 @@ I {
     @include flexCenter();
     flex-direction: column;
     position: fixed;
-    bottom: 4rem;
+    top: var(--top);
+    bottom: var(--bottom);
     left: var(--xl);
     min-height: var(--iconD);
-    z-index: 4;
     fill: var(--fc);
+    transition: all 500ms ease;
     .menu_social_btns_container {
         height: auto;
         transition: var(--t_f);
@@ -2305,26 +2308,28 @@ I {
     }
 }
 [position-social="top"] {
-    top: 2rem;
-    bottom: inherit;
+    --top: 2rem;
+    --bottom: auto;
     flex-direction: column;
 }
 [position-social="bottom"] {
-    top: inherit;
-    bottom: 2rem;
+    --top: auto;
+    --bottom: 2rem;
     flex-direction: column-reverse;
 }
 [position-menu="top"] {
     --menuPosition: translateY(-100%);
     --menuDirection: column;
     --menuRadius: 0 0 var(--lg) var(--lg);
-    top: 0;
+    --top: 0;
+    --bottom: auto;
 }
 [position-menu="bottom"] {
     --menuPosition: translateY(100%);
     --menuDirection: column-reverse;
     --menuRadius: var(--lg) var(--lg) 0 0;
-    bottom: 0;
+    --top: auto;
+    --bottom: 0;
 }
 [size="big"] {
     --logoHeight: 4rem;
