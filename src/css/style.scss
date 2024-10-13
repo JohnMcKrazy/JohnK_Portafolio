@@ -2188,7 +2188,7 @@ I {
 }
 .menu_social_container {
     @include flexCenter();
-    flex-direction: column;
+    flex-direction: var(--direction);
     position: fixed;
     top: var(--top);
     bottom: var(--bottom);
@@ -2196,6 +2196,7 @@ I {
     min-height: var(--iconD);
     fill: var(--fc);
     transition: all 500ms ease;
+    z-index: 4;
     .menu_social_btns_container {
         height: auto;
         transition: var(--t_f);
@@ -2310,12 +2311,12 @@ I {
 [position-social="top"] {
     --top: 2rem;
     --bottom: auto;
-    flex-direction: column;
+    --direction: column;
 }
 [position-social="bottom"] {
     --top: auto;
     --bottom: 2rem;
-    flex-direction: column-reverse;
+    --direction: column-reverse;
 }
 [position-menu="top"] {
     --menuPosition: translateY(-100%);
