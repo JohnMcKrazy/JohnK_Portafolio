@@ -28,8 +28,8 @@ let storageContent;
 let currentTheme = darkT;
 let audioItsActive = true;
 /* AUDIO CONTENT */
-const audioEnterBtn = selector("[data-audio=enter]");
-const audioTeleportBtn = selector("[data-audio=teleport]");
+const audioEnterBtn = selector("[audio=enter]");
+const audioTeleportBtn = selector("[audio=teleport]");
 /* AUDIO CONFIGURATION */
 audioEnterBtn.volume = 0.4;
 audioTeleportBtn.volume = 0.4;
@@ -39,7 +39,6 @@ const BODY = selector("body");
 const modal = selector(".modal");
 export const nav = selector(".nav_menu");
 const phoneMenu = selector(".phone_menu_controler");
-const menuContainer = selector(".nav_menu_controler");
 const menuSocialContainer = selector(".menu_social_container");
 const modalInfoLegal = selector(".modal_info_legal");
 const alertModal = selector(".alert_modal");
@@ -125,11 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const storage = utils.johnKStorage;
     // FUNCTION FOR GO TO SPECIFIC PAGE
 
-    const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("data-href")), 1500);
+    const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("link-ref")), 1500);
     // FUNCTION FOR CHANGE LANGUAGE
-    const setTextByLang = (newLang) => {
-        selectorAll("[data-change]").forEach((item) => (item.textContent = item.getAttribute(`data-${newLang}`)));
-        selectorAll("[data-change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`data-${newLang}`)));
+    const setTextLang = (newLang) => {
+        selectorAll("[change]").forEach((item) => (item.textContent = item.getAttribute(`${newLang}`)));
+        selectorAll("[change-input]").forEach((item) => item.setAttribute("placeholder", item.getAttribute(`${newLang}`)));
     };
     // FUNCTION FOR CHECK LOCAL STORAGE CONFIGURATION IN START
     const oldName = "JohnK_Maker";
@@ -158,10 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         storageContent["page_view_count"] += 1;
         currentTheme = storageContent["page_theme"];
-        setTextByLang(currentLang);
-        selectorAll("[data-icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", storageContent["page_sound"] === true ? false : true));
-        selectorAll("[data-icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"] === true ? true : false));
-        selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("data-icon-theme") === currentTheme ? "false" : "true"));
+        setTextLang(currentLang);
+        selectorAll("[icon-sound='on']").forEach((soundOn) => soundOn.setAttribute("hidden", storageContent["page_sound"] === true ? false : true));
+        selectorAll("[icon-sound='off']").forEach((soundOff) => soundOff.setAttribute("hidden", storageContent["page_sound"] === true ? true : false));
+        selectorAll("[icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("icon-theme") === currentTheme ? "false" : "true"));
         selectorAll(`[bg-img]`).forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
 
         updateStorage();
@@ -171,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const changeLang = (lang) => {
         currentLang = lang === es ? en : es;
         storageContent["page_lang"] = currentLang;
-        setTextByLang(currentLang);
+        setTextLang(currentLang);
         updateStorage();
     };
 
@@ -182,48 +181,35 @@ document.addEventListener("DOMContentLoaded", () => {
         let borderRadius = "1rem";
 
         if (navTop >= windowHeight) {
-            menuSocialContainer.style.bottom = "inherit";
-            menuSocialContainer.style.top = "2rem";
-            menuSocialContainer.style.flexDirection = "column";
+            menuSocialContainer.setAttribute("position-social", "top");
 
-            btnLogo.classList.remove("logo_small");
-            btnLogo.classList.add("logo_big");
-            nav.classList.remove("nav_small");
-            nav.classList.add("nav_big");
+            nav.setAttribute("size", "big");
             setTimeout(() => {
-                phoneMenu.style.top = 0;
-                phoneMenu.style.bottom = "inherit";
-                phoneMenu.style.flexDirection = "column";
-                phoneMenu.style.borderRadius = `0 0 ${borderRadius} ${borderRadius}`;
-                phoneMenu.style.setProperty("--menuPosition", "translateY(-100%)");
+                phoneMenu.setAttribute("position-menu", "top");
             }, 250);
         } else if (navTop < windowHeight) {
-            btnLogo.classList.remove("logo_big");
-            btnLogo.classList.add("logo_small");
-            nav.classList.remove("nav_big");
-            nav.classList.add("nav_small");
-            menuSocialContainer.style.top = "inherit";
-            menuSocialContainer.style.bottom = "2rem";
-            menuSocialContainer.style.flexDirection = "column-reverse";
+            nav.setAttribute("size", "small");
+            menuSocialContainer.setAttribute("position-social", "bottom");
 
             setTimeout(() => {
-                phoneMenu.style.top = "inherit";
-                phoneMenu.style.bottom = 0;
-                phoneMenu.style.flexDirection = "column-reverse";
-                phoneMenu.style.borderRadius = `${borderRadius} ${borderRadius} 0 0`;
-                phoneMenu.style.setProperty("--menuPosition", "translateY(100%)");
+                phoneMenu.setAttribute("position-menu", "bottom");
             }, 250);
         }
     };
     // SET DINAMIC CONTENT FOR PAGE
 
     const infSoftware = utils.infoSoftware;
+    const setTextData = (item, data) => {
+        item.setAttribute(en, !data.en ? data.es : data.en);
+        item.setAttribute(es, !data.es ? data.en : data.es);
+        item.textContent = item.getAttribute(currentLang);
+    };
     const setAssets = () => {
         infSoftware.forEach((software) => {
             const clone = skillTemplate.cloneNode(true);
             const badge = selector(".skill_badge", clone);
             badge.id = `skill_badge_${software.db_name}`;
-            badge.setAttribute("data-name", software.db_name);
+            badge.setAttribute("name", software.db_name);
             badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
             if (software.type === "design") {
                 selector(".icons_container", designSkillsContainer).appendChild(badge);
@@ -232,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             setTimeout(() => {
                 badge.addEventListener("mouseover", (e) => {
-                    const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("data-name"));
+                    const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("name"));
                     selector(".title", bubbleInfo).textContent = newData.tech_complete_name;
                     selector(".description", bubbleInfo).textContent = newData[`tech_info_${currentLang}`];
                     bubbleInfo.classList.add("show_flex");
@@ -256,11 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const certificationName = selector(".badge_name", certificationClone);
             certificationImg.setAttribute("src", certification.image);
             certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[currentLang]}' emitido por FreeCodeCamp`);
-            certificationName.textContent = certification[currentLang];
-            certificationBtn.setAttribute("data-href", certification.link);
+            certificationBtn.setAttribute("link-ref", certification.link);
+            setTextData(certificationName, certification);
 
-            certificationName.setAttribute("data-es", certification.es);
-            certificationName.setAttribute("data-en", certification.en);
             certificationsContainer.appendChild(certificationBadge);
             certificationBtn.addEventListener("mouseenter", playHover);
             certificationBtn.addEventListener("click", playClick);
@@ -276,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             setTimeout(() => {
                 setObservers();
-                setTextByLang(currentLang);
+                setTextLang(currentLang);
 
                 langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
             }, 250);
@@ -328,21 +312,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         projectCardIconsContainer.innerHTML = iconsRow;
 
-        if (item.project_name.es && item.project_name.en) {
-            cardTitle.setAttribute("data-es", item["project_name"].es);
-            cardTitle.setAttribute("data-en", item["project_name"].en);
-        } else if (item.project_name.es && !item.project_name.en) {
-            cardTitle.setAttribute("data-es", item["project_name"].es);
-            cardTitle.setAttribute("data-en", item["project_name"].es);
-        } else if (!item.project_name.es && item.project_name.en) {
-            cardTitle.setAttribute("data-en", item["project_name"].en);
-            cardTitle.setAttribute("data-es", item["project_name"].en);
-        }
+        setTextData(cardTitle, item["project_name"]);
 
-        if (currentLang) {
-            cardTitle.textContent = item.project_name[currentLang];
-        }
-        innerBtn.setAttribute("data-href", `${item["projects"]["project_link"]}`);
+        innerBtn.setAttribute("link-ref", `${item["projects"]["project_link"]}`);
         innerBtn.addEventListener("click", () => teleportToPage(innerBtn));
         innerBtn.addEventListener("mouseenter", playHover);
         innerBtn.addEventListener("click", playClick);
@@ -539,22 +511,29 @@ document.addEventListener("DOMContentLoaded", () => {
         selector(".arrow_list_icon", searchExtraListBtn).classList.toggle("arrow_list_icon_active");
         extraListContainer.children[0].focus();
     };
+    const createSkillBtn = (skillData) => {
+        const typeData = skillData;
+        const newTemplate = extraListBtnTemplate.cloneNode(true);
+        const newBtn = selector(".extra_list_btn", newTemplate);
+        const btnLabel = selector(".label_btn", newBtn);
+        setTextData(btnLabel, typeData);
+        btnLabel.setAttribute("ref", typeData.ref);
+        btnLabel.setAttribute("skill", typeData.ref);
+        newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
+        fragmentBtns.appendChild(newBtn);
+    };
     const activateExtraBtns = (btn) => {
         listExtrasActions();
         clearPortfolio();
         retTop(portfolioCardsContainer);
         const label = selector(".label_btn", btn);
-        const tag = label.getAttribute("data-ref");
-        const skillType = label.getAttribute("data-skill");
+        const tag = label.getAttribute("ref");
+        const skillType = label.getAttribute("skill");
         let currentData;
         if (tag === "all") {
-            searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
-            searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
-            searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
+            setTextData(searchExtraListBtnLabel, skillsData.all);
         } else {
-            searchExtraListBtnLabel.setAttribute(`data-es`, skillsData[skillType].types[tag].es);
-            searchExtraListBtnLabel.setAttribute(`data-en`, skillsData[skillType].types[tag].en);
-            searchExtraListBtnLabel.textContent = skillsData[skillType].types[tag][currentLang];
+            setTextData(searchExtraListBtnLabel, skillsData[skillType].types[tag]);
         }
         if (tag === "all" && skillType === "all") {
             currentData = DB;
@@ -577,46 +556,15 @@ document.addEventListener("DOMContentLoaded", () => {
         clearPortfolio();
         clearExtraListBtns();
 
-        const modalToOpen = target.getAttribute("data-name");
+        const modalToOpen = target.getAttribute("name");
         DB.forEach((data) => createCard(data, fragmentPortfolioProjects));
 
         Object.keys(skillsData).forEach((skill) => {
             if (skill === "all") {
-                const typeData = skillsData.all;
-                const newTemplate = extraListBtnTemplate.cloneNode(true);
-                const newBtn = selector(".extra_list_btn", newTemplate);
-                const btnLabel = selector(".label_btn", newBtn);
-
-                btnLabel.textContent = typeData[currentLang];
-                btnLabel.setAttribute("data-en", typeData.en);
-                btnLabel.setAttribute("data-es", typeData.es);
-                btnLabel.setAttribute("data-ref", "all");
-                btnLabel.setAttribute("data-skill", skill);
-                newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
-                fragmentBtns.appendChild(newBtn);
+                createSkillBtn(skillsData.all);
             } else {
                 Object.keys(skillsData[skill].types).forEach((key) => {
-                    const typeData = skillsData[skill].types[key];
-                    const newTemplate = extraListBtnTemplate.cloneNode(true);
-                    const newBtn = selector(".extra_list_btn", newTemplate);
-                    const btnLabel = selector(".label_btn", newTemplate);
-                    if (typeData.en && typeData.es) {
-                        btnLabel.textContent = typeData[currentLang];
-                        btnLabel.setAttribute("data-en", typeData.en);
-                        btnLabel.setAttribute("data-es", typeData.es);
-                    } else if (typeData.es && !typeData.en) {
-                        btnLabel.textContent = typeData.es;
-                        btnLabel.setAttribute("data-en", typeData.es);
-                        btnLabel.setAttribute("data-es", typeData.es);
-                    } else if (!typeData.es && typeData.en) {
-                        btnLabel.textContent = typeData.en;
-                        btnLabel.setAttribute("data-en", typeData.en);
-                        btnLabel.setAttribute("data-es", typeData.en);
-                    }
-                    btnLabel.setAttribute("data-ref", typeData.ref);
-                    btnLabel.setAttribute("data-skill", skill);
-                    newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
-                    fragmentBtns.appendChild(newBtn);
+                    createSkillBtn(skillsData[skill].types[key]);
                 });
             }
         });
@@ -629,23 +577,13 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", () => {
                 listPortfolioActions();
                 clearExtraListBtns();
-                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
-                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
-                searchExtraListBtnLabel.textContent = skillsData.all[`data_${currentLang}`];
-
                 retTop(portfolioCardsContainer);
 
                 const btnLabel = selector(".label_btn", btn);
-                const btnData = btnLabel.getAttribute("data-en");
-                let newName = "";
-                newName = skillsData[btnData][currentLang];
-                searchPortfolioListBtnLabel.setAttribute("data-en", skillsData[btnData].en);
-                searchPortfolioListBtnLabel.setAttribute("data-es", skillsData[btnData].es);
-                searchPortfolioListBtnLabel.textContent = newName;
+                const btnData = btnLabel.getAttribute("en");
 
-                searchExtraListBtnLabel.setAttribute(`data-es`, skillsData.all.es);
-                searchExtraListBtnLabel.setAttribute(`data-en`, skillsData.all.en);
-                searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
+                setTextData(searchExtraListBtnLabel, skillsData.all);
+                setTextData(searchPortfolioListBtnLabel, skillsData[btnData]);
 
                 searchExtraListBtn.focus();
                 deleteArr(fragmentPortfolioProjects);
@@ -663,12 +601,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             const newTemplate = extraListBtnTemplate.cloneNode(true);
                             const newBtn = selector(".extra_list_btn", newTemplate);
                             const btnLabel = selector(".label_btn", newBtn);
+                            setTextData(btnLabel, typeData);
 
-                            btnLabel.textContent = typeData[currentLang];
-                            btnLabel.setAttribute("data-en", typeData.en);
-                            btnLabel.setAttribute("data-es", typeData.es);
-                            btnLabel.setAttribute("data-ref", "all");
-                            btnLabel.setAttribute("data-skill", skill);
+                            btnLabel.setAttribute("ref", "all");
+                            btnLabel.setAttribute("skill", skill);
                             newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
                             fragmentBtns.appendChild(newBtn);
                         } else {
@@ -677,21 +613,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                 const newTemplate = extraListBtnTemplate.cloneNode(true);
                                 const newBtn = selector(".extra_list_btn", newTemplate);
                                 const btnLabel = selector(".label_btn", newTemplate);
-                                if (typeData.en && typeData.es) {
-                                    btnLabel.textContent = typeData[currentLang];
-                                    btnLabel.setAttribute("data-en", typeData.en);
-                                    btnLabel.setAttribute("data-es", typeData.es);
-                                } else if (typeData.es && !typeData.en) {
-                                    btnLabel.textContent = typeData.es;
-                                    btnLabel.setAttribute("data-en", typeData.es);
-                                    btnLabel.setAttribute("data-es", typeData.es);
-                                } else if (!typeData.es && typeData.en) {
-                                    btnLabel.textContent = typeData.en;
-                                    btnLabel.setAttribute("data-en", typeData.en);
-                                    btnLabel.setAttribute("data-es", typeData.en);
-                                }
-                                btnLabel.setAttribute("data-ref", typeData.ref);
-                                btnLabel.setAttribute("data-skill", skill);
+                                setTextData(btnLabel, typeData);
+
+                                btnLabel.setAttribute("ref", typeData.ref);
+                                btnLabel.setAttribute("skill", skill);
                                 newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
                                 fragmentBtns.appendChild(newBtn);
                             });
@@ -703,12 +628,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     const newTemplate = extraListBtnTemplate.cloneNode(true);
                     const newBtn = selector(".extra_list_btn", newTemplate);
                     const labelAllBtn = selector(".label_btn", newBtn);
+                    setTextData(labelAllBtn, skillsData.all);
 
-                    labelAllBtn.textContent = skillsData.all[currentLang];
-                    labelAllBtn.setAttribute("data-en", skillsData.all.en);
-                    labelAllBtn.setAttribute("data-es", skillsData.all.es);
-                    labelAllBtn.setAttribute("data-ref", "all");
-                    labelAllBtn.setAttribute("data-skill", btnData);
+                    labelAllBtn.setAttribute("ref", "all");
+                    labelAllBtn.setAttribute("skill", btnData);
                     newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
                     fragmentBtns.appendChild(newBtn);
                     Object.keys(skillsData[btnData].types).forEach((key) => {
@@ -716,21 +639,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         const newTemplate = extraListBtnTemplate.cloneNode(true);
                         const newExtraBtn = selector(".extra_list_btn", newTemplate);
                         const extraBtnLabel = selector(".label_btn", newExtraBtn);
-                        if (typeExtraData.en && typeExtraData.es) {
-                            extraBtnLabel.textContent = typeExtraData[currentLang];
-                            extraBtnLabel.setAttribute("data-en", typeExtraData.en);
-                            extraBtnLabel.setAttribute("data-es", typeExtraData.es);
-                        } else if (typeExtraData.es && !typeExtraData.en) {
-                            extraBtnLabel.textContent = typeExtraData.es;
-                            extraBtnLabel.setAttribute("data-en", typeExtraData.es);
-                            extraBtnLabel.setAttribute("data-es", typeExtraData.es);
-                        } else if (!typeExtraData.es && typeExtraData.en) {
-                            extraBtnLabel.textContent = typeExtraData.en;
-                            extraBtnLabel.setAttribute("data-en", typeExtraData.en);
-                            extraBtnLabel.setAttribute("data-es", typeExtraData.en);
-                        }
-                        extraBtnLabel.setAttribute("data-ref", typeExtraData.ref);
-                        extraBtnLabel.setAttribute("data-skill", btnData);
+                        setTextData(extraBtnLabel, typeExtraData);
+
+                        extraBtnLabel.setAttribute("ref", typeExtraData.ref);
+                        extraBtnLabel.setAttribute("skill", btnData);
                         newExtraBtn.addEventListener("click", () => activateExtraBtns(newExtraBtn));
                         fragmentBtns.appendChild(newExtraBtn);
                     });
@@ -810,8 +722,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => modalWindowActions(legalModal, close), 250);
     };
     const changeModalWindow = (currentBtn) => {
-        const current = currentBtn.getAttribute("data-current");
-        const next = currentBtn.getAttribute("data-next");
+        const current = currentBtn.getAttribute("current");
+        const next = currentBtn.getAttribute("next");
         const currentModal = selector(`.${current}`);
         const nextModal = selector(`.${next}`);
         currentModal.classList.remove("modal_open");
@@ -829,13 +741,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     linkBtns.forEach((btn) =>
         btn.addEventListener("click", () => {
-            const btnName = btn.getAttribute("data-name");
+            const btnName = btn.getAttribute("name");
             const currentBtn = selector(`.${btnName}`);
-            const currentPosition = modalInfoLegal.getBoundingClientRect().top;
-            if (btnName === "legal_section") {
-            } else {
-                modalWindowActions(currentBtn, open);
-            }
+            modalWindowActions(currentBtn, open);
         })
     );
 
@@ -843,7 +751,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     closeModalBtns.forEach((btn) =>
         btn.addEventListener("click", () => {
-            const btnName = btn.getAttribute("data-name");
+            const btnName = btn.getAttribute("name");
             const currentBtn = selector(`.${btnName}`);
 
             if (btnName === "legal_modal") {
@@ -854,12 +762,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     modalWindowActions(currentBtn, close);
                     setTimeout(() => {
-                        searchExtraListBtnLabel.setAttribute("data-es", skillsData.all.es);
-                        searchExtraListBtnLabel.setAttribute("data-en", skillsData.all.en);
-                        searchExtraListBtnLabel.textContent = skillsData.all[currentLang];
-                        searchPortfolioListBtnLabel.setAttribute("data-es", skillsData.all.es);
-                        searchPortfolioListBtnLabel.setAttribute("data-en", skillsData.all.en);
-                        searchPortfolioListBtnLabel.textContent = skillsData.all[currentLang];
+                        setTextData(searchExtraListBtnLabel, skillsData.all);
+                        setTextData(searchPortfolioListBtnLabel, skillsData.all);
                     }, 250);
                 }, 500);
             } else {
@@ -949,7 +853,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*  animationKeys.forEach((key) => {
         key.addEventListener("mouseover", () => {
-            switch (key.getAttribute("data-key")) {
+            switch (key.getAttribute("key")) {
                 case "dev":
                     devIconsActions(open);
                     break;
@@ -965,7 +869,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         key.addEventListener("mouseleave", () => {
-            switch (key.getAttribute("data-key")) {
+            switch (key.getAttribute("key")) {
                 case "dev":
                     devIconsActions(close);
                     break;
@@ -987,7 +891,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sanitazer(selector(".input_last_name", thisForm));
             sanitazer(selector(".input_email", thisForm));
             sanitazer(selector(".input_description", thisForm));
-            let formName = selector(".send_btn", thisForm).getAttribute("data-form");
+            let formName = selector(".send_btn", thisForm).getAttribute("form");
             let formResponse = selector(".form_response", thisForm);
             let formResponseContainer = selector(".form_response_container", thisForm);
 
@@ -1051,7 +955,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selectorAll(".sound_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
             audioItsActive = !audioItsActive;
-            selectorAll("[data-icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
+            selectorAll("[icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
             storageContent["page_sound"] = !storageContent["page_sound"];
             updateStorage();
             if (!audioItsActive) {
@@ -1067,7 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     selectorAll(".theme_btn").forEach((btn) => {
         btn.addEventListener("click", () => {
-            selectorAll("[data-icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
+            selectorAll("[icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
             changeTheme(currentTheme);
         });
     });

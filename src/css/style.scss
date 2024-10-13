@@ -1215,6 +1215,7 @@ I {
     @include flex(row, flex-start, center);
     padding: 0 var(--md);
     width: fit-content;
+    height: var(--logoHeight);
     scale: 1;
     transition: var(--t_scale), height 500ms ease;
     //*LOGO COLORS START
@@ -1528,7 +1529,7 @@ I {
         display: block;
         min-width: auto;
         width: 100%;
-        background: var(--bgC_t);
+        background: var(--bgC_st);
         border: none;
         border-radius: var(--sm);
         text-transform: uppercase;
@@ -1559,7 +1560,7 @@ I {
         text-transform: uppercase;
         @include flexCenter();
         gap: var(--md);
-        background: var(--bgC_t);
+        background: var(--bgC_st);
         border-radius: 0;
         border-bottom: solid 2px var(--fc);
         min-height: fit-content;
@@ -1582,7 +1583,7 @@ I {
         bottom: 0;
         left: 0;
         width: auto;
-        background: var(--bgC_t);
+        background: var(--bgC_st);
         transform: translateY(100%);
         z-index: 2;
     }
@@ -2079,7 +2080,7 @@ I {
     left: 0;
     right: 0;
     width: 100%;
-    height: var(--nvh);
+    background: var(--navBg);
     z-index: 5;
     transition: height 500ms ease;
     @include flexCenter();
@@ -2135,10 +2136,9 @@ I {
     position: fixed;
     left: 0;
     right: 0;
-    top: 0;
-    border-radius: var(--md) var(--md) 0 0;
+    border-radius: var(--menuRadius);
     @include flexCenter();
-    flex-direction: column;
+    flex-direction: var(--menuDirection);
 
     height: auto;
     width: 100%;
@@ -2304,18 +2304,34 @@ I {
         fill: var(--bgC);
     }
 }
-.logo_big {
-    height: 4rem;
+[position-social="top"] {
+    top: 2rem;
+    flex-direction: column;
 }
-.logo_small {
-    height: 3rem;
+[position-social="bottom"] {
+    bottom: 2rem;
+    flex-direction: column-reverse;
 }
-.nav_big {
-    background: var(--bgC_off);
+[position-menu="top"] {
+    --menuPosition: translateY(-100%);
+    --menuDirection: column;
+    --menuRadius: 0 0 var(--lg) var(--lg);
+    top: 0;
+}
+[position-menu="bottom"] {
+    --menuPosition: translateY(100%);
+    --menuDirection: column-reverse;
+    --menuRadius: var(--lg) var(--lg) 0 0;
+    bottom: 0;
+}
+[size="big"] {
+    --logoHeight: 4rem;
+    --navBg: var(--bgC_off);
     height: var(--nvh);
 }
-.nav_small {
-    background: var(--bgC_t);
+[size="small"] {
+    --logoHeight: 3rem;
+    --navBg: var(--bgC_t);
     height: var(--nvh_f);
 }
 [good] {

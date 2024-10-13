@@ -182,6 +182,7 @@ export const skillTypes = {
     all: {
         es: "todo",
         en: "all",
+        ref: "all",
     },
     develop: {
         es: "desarrollo",
