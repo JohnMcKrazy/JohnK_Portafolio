@@ -2306,9 +2306,11 @@ I {
 }
 [position-social="top"] {
     top: 2rem;
+    bottom: inherit;
     flex-direction: column;
 }
 [position-social="bottom"] {
+    top: inherit;
     bottom: 2rem;
     flex-direction: column-reverse;
 }
