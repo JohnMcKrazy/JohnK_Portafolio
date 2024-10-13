@@ -946,6 +946,9 @@ I {
 .bio_bubble .header_bubble {
   background: url(../img/backgrounds/graffitiSmall.webp);
 }
+.bio_bubble .btns_container {
+  width: 100%;
+}
 
 .info_bubble {
   padding: var(--lg);
