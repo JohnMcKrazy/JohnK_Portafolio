@@ -1259,14 +1259,6 @@ I {
         transform: translateY(0);
     }
 }
-.bullet {
-    background: var(--bgC_t);
-    width: calc(100% - var(--iconD));
-    padding: var(--xl);
-    H1 {
-        margin-bottom: var(--lg);
-    }
-}
 .flex {
     display: flex;
 }
@@ -2088,7 +2080,6 @@ I {
     right: 0;
     width: 100%;
     height: var(--nvh);
-    background: var(--bgC_t);
     z-index: 5;
     transition: height 500ms ease;
     @include flexCenter();
@@ -2320,9 +2311,11 @@ I {
     height: 3rem;
 }
 .nav_big {
+    background: var(--bgC_off);
     height: var(--nvh);
 }
 .nav_small {
+    background: var(--bgC_t);
     height: var(--nvh_f);
 }
 [good] {
