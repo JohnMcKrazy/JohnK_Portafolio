@@ -131,7 +131,7 @@
     --t_M: all 750ms ease-in-out;
     --t_s: all 1000ms ease-in-out;
 
-    --titanimFont: "Titillium Web", sans-serif;
+    --titilliumFont: "Titillium Web", sans-serif;
 }
 
 //!THEMES START
@@ -165,7 +165,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--titanimFont);
+    font-family: var(--titilliumFont);
     font-weight: 400;
     font-style: normal;
 }
@@ -888,7 +888,7 @@ I {
     transform: scale(0.75);
 }
 .label_btn {
-    /* font-family: var(--titanimFont); */
+    /* font-family: var(--titilliumFont); */
     font-size: var(--fs_n);
     font-weight: var(--fw_n);
     display: block;
@@ -1746,7 +1746,7 @@ I {
 }
 .section_divider {
     width: 100%;
-    background: var(--bgC_t);
+    background: var(--bgC_off);
     @include flexCenter();
     overflow: hidden;
     .quote_container {
