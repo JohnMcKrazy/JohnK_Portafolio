@@ -135,7 +135,7 @@
 }
 
 //!THEMES START
-.light {
+[color-scheme="light"] {
     --fc: var(--logoPurpleL);
     --sc: var(--logoMintL);
     --h: var(--purpleDark);
@@ -146,7 +146,7 @@
     --bgC_st: var(--whiteST);
     --vueIconText: rgb(51, 51, 51);
 }
-.dark {
+[color-scheme="dark"] {
     --fc: var(--logoMintD);
     --sc: var(--logoPurpleD);
     --h: var(--mintLigth);
@@ -2022,25 +2022,6 @@ I {
         H3 {
             font-size: var(--fs_l);
             text-align: center;
-        }
-    }
-    .whatsapp_btn {
-        padding: 0 var(--xl);
-        width: fit-content;
-        gap: var(--sm);
-        background: var(--bgC_off);
-        border-radius: 3rem;
-        margin-top: var(--xl);
-        color: var(--tc);
-
-        &:hover {
-            color: var(--whiteOff);
-            background: var(--btnGradient);
-            .wa_icon_svg {
-                .cls-1 {
-                    fill: var(--whiteOff);
-                }
-            }
         }
     }
 }

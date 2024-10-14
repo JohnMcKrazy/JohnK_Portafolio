@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
         storageContent["page_theme"] = currentTheme;
         selectorAll("[bg-img]").forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
         updateStorage();
-        BODY.className = currentTheme;
+        BODY.setAttribute("color-scheme", currentTheme);
     };
     // FUNCTION FOR PHONE MENU ACTIONS
     const menuActions = (status) => {
@@ -529,6 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const label = selector(".label_btn", btn);
         const tag = label.getAttribute("ref");
         const skillType = label.getAttribute("skill");
+        console.log(tag, skillType);
         let currentData;
         if (tag === "all") {
             setTextData(searchExtraListBtnLabel, skillsData.all);
@@ -538,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (tag === "all" && skillType === "all") {
             currentData = DB;
         } else if (tag === "all" && skillType !== "all") {
-            currentData = DB.filter((item) => item.projects.type === skillType);
+            currentData = DB.filter((item) => item.projects.type.includes(skillType));
         } else if (tag !== "all") {
             currentData = DB.filter((item) => item.projects.skills.includes(tag));
         }
@@ -588,8 +589,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 searchExtraListBtn.focus();
                 deleteArr(fragmentPortfolioProjects);
                 deleteChild(portfolioCardsContainer);
+                console.log(btnData);
+                console.log(DB.filter((item) => item.projects.type.includes(btnData)));
                 let dataToCheck = [];
-                btnData !== "all" ? (dataToCheck = DB.filter((item) => item.projects.type === btnData)) : (dataToCheck = DB);
+                btnData !== "all" ? (dataToCheck = DB.filter((item) => item.projects.type.includes(btnData))) : (dataToCheck = DB);
                 dataToCheck.forEach((data) => createCard(data, fragmentPortfolioProjects));
                 /*  */
 
@@ -629,13 +632,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     const newBtn = selector(".extra_list_btn", newTemplate);
                     const labelAllBtn = selector(".label_btn", newBtn);
                     setTextData(labelAllBtn, skillsData.all);
-
+                    console.log(skillsData);
+                    console.log(skillsData[btnData]);
                     labelAllBtn.setAttribute("ref", "all");
                     labelAllBtn.setAttribute("skill", btnData);
                     newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
                     fragmentBtns.appendChild(newBtn);
                     Object.keys(skillsData[btnData].types).forEach((key) => {
                         const typeExtraData = skillsData[btnData].types[key];
+
                         const newTemplate = extraListBtnTemplate.cloneNode(true);
                         const newExtraBtn = selector(".extra_list_btn", newTemplate);
                         const extraBtnLabel = selector(".label_btn", newExtraBtn);

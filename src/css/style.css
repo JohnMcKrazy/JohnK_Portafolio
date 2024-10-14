@@ -108,7 +108,7 @@
   --titilliumFont: "Titillium Web", sans-serif;
 }
 
-.light {
+[color-scheme=light] {
   --fc: var(--logoPurpleL);
   --sc: var(--logoMintL);
   --h: var(--purpleDark);
@@ -120,7 +120,7 @@
   --vueIconText: rgb(51, 51, 51);
 }
 
-.dark {
+[color-scheme=dark] {
   --fc: var(--logoMintD);
   --sc: var(--logoPurpleD);
   --h: var(--mintLigth);
@@ -2041,23 +2041,6 @@ I {
 .contact_section .form H3 {
   font-size: var(--fs_l);
   text-align: center;
-}
-.contact_section .whatsapp_btn {
-  padding: 0 var(--xl);
-  width: -moz-fit-content;
-  width: fit-content;
-  gap: var(--sm);
-  background: var(--bgC_off);
-  border-radius: 3rem;
-  margin-top: var(--xl);
-  color: var(--tc);
-}
-.contact_section .whatsapp_btn:hover {
-  color: var(--whiteOff);
-  background: var(--btnGradient);
-}
-.contact_section .whatsapp_btn:hover .wa_icon_svg .cls-1 {
-  fill: var(--whiteOff);
 }
 
 .legals_section {
