@@ -38,14 +38,14 @@
         <![endif]-->
 
         <!-- ! ACCESIBILITE BUTTONS - START -->
-        <button type="button" class="accessibility_btn" aria-label="Skip to main content - Salta a contenido principal" name="services_section"><span class="label_btn" change es="Saltar A Contenido Principal" en="Go To Main">Saltar A Contenido Principal</span></button>
-        <button type="button" class="accessibility_btn" aria-label="Skip to footer - Salta al pie de pagina" name="legals_section"><span class="label_btn" change es="Saltar al pie de pagina" en="Go To Footer">Saltar al pie de pagina</span></button>
+        <button type="button" class="accessibility_btn" accesibility-btn section-ref="services" aria-label="Skip to main content - Salta a contenido principal"><span class="label_btn" change es="Saltar A Contenido Principal" en="Go To Main">Saltar A Contenido Principal</span></button>
+        <button type="button" class="accessibility_btn" accesibility-btn section-ref="legals" aria-label="Skip to footer - Salta al pie de pagina"><span class="label_btn" change es="Saltar al pie de pagina" en="Go To Footer">Saltar al pie de pagina</span></button>
 
-        <div class="bubble info_bubble">
+        <div class="bubble info_bubble" info>
             <h3 class="title" change></h3>
             <p class="description" change></p>
         </div>
-        <div class="bubble bio_bubble">
+        <div class="bubble bio_bubble" bio>
             <div class="header_bubble"></div>
             <img class="photo" src="./src/img/photos/johnKPhoto.webp" alt="Foto de Jonathan Grajeda" loading="lazy" />
             <div class="info">
@@ -53,7 +53,7 @@
                 <p class="place" change es="México CDMX" en="Mexico City">México CDMX</p>
                 <div class="btns_container">
                     <button type="button" class="icon_container animated_social_btn href_btn" link-ref="https://www.behance.net/jg_john_design">
-                        <svg class="icon_svg social_icon_svg behance_icon_svg" name="behance_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
+                        <svg class="icon_svg social_icon_svg behance_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
                             <title>Behance</title>
                             <path
                                 class="cls-1"
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="bubble rex_bubble">
+        <div class="bubble rex_bubble" rex>
             <div class="header_bubble"></div>
             <img class="photo" src="./src/img/photos/rex.webp" alt="Foto de Maximo Decimo Reximiliano" loading="lazy" />
             <div class="info">
@@ -89,38 +89,27 @@
             </div>
         </div>
         <!-- !MODAL -->
-        <div class="modal">
-            <div class="modal_window alert_modal" id="alert_modal">
-                <div class="close_control">
-                    <button type="button" class="icon_container close_btn close_modal" id="alert_modal_storage_close_btn" name="alert_modal">
-                        <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
-                            <title>Cerrar</title>
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(12.5 -5.18) rotate(45)" />
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
-                        </svg>
-                    </button>
-                </div>
+        <dialog class="modal" modal-active="false" modal>
+            <button type="button" class="icon_container close_btn" close-btn modal-btn="portfolio">
+                <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
+                    <title>Cerrar</title>
+                    <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(12.5 -5.18) rotate(45)" />
+                    <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
+                </svg>
+            </button>
+            <div class="window alert_modal" modal-window="alert" hidden="true" active="false">
                 <div class="modal_header"><h1 class="title_modal" change es="Politica de uso de datos" en="Data use policy">Politica de uso de datos</h1></div>
                 <div class="modal_info">
                     <p class="description_modal" change es="Esta pagina no utiliza cookies ni ninguno de sus datos" en="This page not make use of cookies and neither other of your data">Esta pagina no utiliza cookies ni ninguno de sus datos</p>
-                    <button type="button" class="inner_link_btn" current="alert_modal" next="legal_modal">
+                    <button type="button" class="inner_link_btn" window-btn="legal">
                         <span class="label_btn" change es="Avisos legales" en="Legal notices ">Avisos legales</span>
                     </button>
                 </div>
-                <button type="button" class="btn more_btn alert_modal_accept_btn storage_accept">
+                <button type="button" class="btn more_btn alert_modal_accept_btn storage_accept" accept-storage modal-btn="alert">
                     <span class="label_btn" change es="Aceptar" en="Accept">Aceptar</span>
                 </button>
             </div>
-            <div class="modal_window legal_modal" id="legal_modal">
-                <div class="close_control">
-                    <button type="button" class="icon_container close_btn close_modal" id="modal_legal_close_btn" name="legal_modal">
-                        <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
-                            <title>Cerrar</title>
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(12.5 -5.18) rotate(45)" />
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="window legal_modal" modal-window="legal" hidden="true" active="false">
                 <div class="modal_header">
                     <h1 class="title_modal" change es="Avisos legales" en="Legal notices ">Aviso Legal</h1>
                     <h2 change es="Términos y Condiciones:" en="Terms and conditions:">Términos y Condiciones:</h2>
@@ -191,24 +180,15 @@
                     >
                         Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes de la Ciudad de México y cualquier disputa que surja en relación con estos términos y condiciones estará sujeta a la jurisdicción exclusiva de los tribunales de México.
                     </p>
-                    <button type="button" class="inner_link_btn" current="legal_modal" next="alert_modal">
+                    <button type="button" class="inner_link_btn" window-btn="alert">
                         <span class="label_btn" change es="Avisos De Datos" en="Data Use Policy">Avisos De Datos</span>
                     </button>
-                    <button type="button" class="btn more_btn legal_modal_accept_btn">
+                    <button type="button" class="btn more_btn legal_modal_accept_btn" modal-btn="legal">
                         <span class="label_btn" change es="Aceptar" en="Accept">Aceptar</span>
                     </button>
                 </div>
             </div>
-            <div class="modal_window contact_modal" id="contact_modal">
-                <div class="close_control">
-                    <button type="button" class="icon_container close_btn close_modal" id="modal_form_close_btn" name="contact_modal">
-                        <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
-                            <title>Cerrar</title>
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(12.5 -5.18) rotate(45)" />
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="window contact_modal" modal-window="contact" hidden="true" active="false">
                 <div class="modal_header">
                     <h1 class="title_modal" change es="¿Como Puedo Ayudarte?" en="How Can I Help You?">¿Como Puedo Ayudarte?</h1>
                 </div>
@@ -218,17 +198,17 @@
                 <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit">
                     <div class="input_container">
                         <label for="modal_input_name" change es="Nombre" en="Name" autocomplete>Nombre</label>
-                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" change-input es="Escribe tu Nombre" en="Write your name" autocomplete="off" required />
+                        <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" change-input es="Escribe tu Nombre" en="Write your name" autocomplete="off" required input-name />
                     </div>
 
                     <div class="input_container">
                         <label for="modal_input_last_name" change es="Apellidos" en="Lastname">Apellido</label>
-                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" change-input es="Escribe tu Apellido" en="Write your Last Name" autocomplete="off" />
+                        <input type="text" placeholder="Escribe tus Apellidos" id="modal_input_last_name" name="last_name" class="input_last" change-input es="Escribe tu Apellido" en="Write your Last Name" autocomplete="off" input-last-name />
                     </div>
 
                     <div class="input_container">
                         <label for="modal_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" change-input es="Escribe tu Email" en="Write your Email" autocomplete="off" required />
+                        <input type="email" placeholder="Escribe tu Email" id="modal_input_email" name="email" class="input_email" change-input es="Escribe tu Email" en="Write your Email" autocomplete="off" required input-email />
                     </div>
 
                     <div class="input_container last">
@@ -237,64 +217,69 @@
                     </div>
                     <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
                     <div class="submit_container">
-                        <button type="submit" class="btn send_btn" id="modal_contact_form_send_btn" form="modal_form">
+                        <button type="submit" class="btn send_btn" id="modal_contact_form_send_btn" form="modal_form" send-form>
                             <span class="label_btn" change es="Enviar" en="Send">Enviar</span>
                         </button>
                     </div>
-                    <div class="form_response_container">
-                        <p class="form_response" change></p>
+                    <div class="form_response_container" form-response-container>
+                        <p class="form_response" change form-response></p>
                     </div>
                 </form>
             </div>
-            <div class="modal_window portfolio_modal" id="portfolio_modal">
-                <div class="close_control">
-                    <button class="icon_container close_btn close_modal" id="portfolio_form_close_btn" name="portfolio_modal">
-                        <svg class="close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
-                            <title>Cerrar</title>
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(12.5 -5.18) rotate(45)" />
-                            <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(30.18 12.5) rotate(135)" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="window portfolio_modal" modal-window="portfolio" hidden="true" active="false">
+                <div class="modal_header"><h1 class="title_modal" change es="Portafolio" en="Portfolio">Portafolio</h1></div>
+
                 <div class="lists_container">
-                    <div class="list_btns_container">
-                        <button class="search_list_btn search_portfolio_list_btn" tabindex="0">
-                            <span class="label_btn" change es="todo" en="all" ref="all" skill="all">todo</span>
+                    <div class="options_container">
+                        <button class="option_btn option_search_btn" tabindex="0" search="type" option-btn="types">
+                            <span class="label_btn" change es="tipo" en="type">tipo</span>
                             <span class="icon_container">
                                 <svg class="icon_svg arrow_list_icon arrow_portfolio_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                             </span>
                         </button>
-                        <div class="list_container portfolio_list_btns_container">
-                            <button class="list_btn list_portfolio_btn first_list_btn" tabindex="0">
-                                <span class="label_btn" change es="todo" en="all">todo</span>
-                            </button>
-                            <button class="list_btn list_portfolio_btn" tabindex="0">
-                                <span class="label_btn" change es="diseño" en="design">Diseño</span>
-                            </button>
-                            <button class="list_btn list_portfolio_btn" tabindex="0">
-                                <span class="label_btn" change es="desarrollo" en="develop">Desarrollo</span>
-                            </button>
-                            <button class="list_btn list_portfolio_btn" tabindex="0">
-                                <span class="label_btn" change es="ilustración" en="illustration">Ilustración</span>
-                            </button>
-                        </div>
+                        <ul class="options_droper" options-droper="types" hidden="true" options-active="false">
+                            <li>
+                                <button class="option_btn" tabindex="0" option-type="all">
+                                    <span class="label_btn" change es="todo" en="all" option-btn="types">todo</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="option_btn" tabindex="0" option-type="design">
+                                    <span class="label_btn" change es="diseño" en="design" option-btn="types">Diseño</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="option_btn" tabindex="0" option-type="develop">
+                                    <span class="label_btn" change es="desarrollo" en="develop" option-btn="types">Desarrollo</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="option_btn" tabindex="0" option-type="illustration">
+                                    <span class="label_btn" change es="ilustración" en="illustration" option-btn="types">Ilustración</span>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="list_btns_container">
-                        <button class="search_list_btn search_extra_list_btn" tabindex="0">
-                            <span class="label_btn" change es="todo" en="all" ref="all" skill="all">todo</span>
+                    <div class="options_container">
+                        <button class="option_btn option_search_btn" tabindex="0" search="skill" option-btn="skills">
+                            <span class="label_btn" change es="habilidad" en="skill">habilidad</span>
                             <span class="icon_container">
-                                <svg class="icon_svg arrow_list_icon arrow_extra_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
+                                <svg class="icon_svg arrow_list_icon arrow_portfolio_list_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                             </span>
                         </button>
-                        <div class="list_container extra_list_btns_container"></div>
+                        <ul class="options_droper" options-droper="skills" hidden="true" options-active="false"></ul>
+                    </div>
+                    <div>
+                        <h2 change es="tipo" en="type">tipo: <span change es="" en="" type-label></span></h2>
+                        <h2 change es="habilidad" en="skill">habilidad: <span change es="" en="" skill-label></span></h2>
                     </div>
                 </div>
-                <div class="cards_container cards_portfolio_container"></div>
+                <div class="cards_container modal_info cards_portfolio_container" portfolio-container></div>
             </div>
-        </div>
-        <div class="menu_controler phone_menu_controler" position-menu="">
+        </dialog>
+        <div class="menu_controler phone_menu_controler" position-menu="" phone-menu>
             <div class="social_btns_container nav_menu_social_btns">
-                <button type="button" class="phone_social_btn phone_menu_btn action_menu extra_btn href_btn" link-ref="https://www.behance.net/jg_john_design">
+                <button type="button" class="phone_social_btn phone_menu_btn extra_btn href_btn" link-ref="https://www.behance.net/jg_john_design" action-menu>
                     <div class="icon_container">
                         <svg class="social_icon_svg behance_icon_svg icon_svg" name="behance_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
                             <title>Behance</title>
@@ -305,7 +290,7 @@
                         </svg>
                     </div>
                 </button>
-                <button type="button" class="phone_social_btn phone_menu_btn action_menu extra_btn href_btn" link-ref="https://github.com/JohnMcKrazy">
+                <button type="button" class="phone_social_btn phone_menu_btn extra_btn href_btn" link-ref="https://github.com/JohnMcKrazy" action-menu>
                     <div class="icon_container">
                         <svg class="social_icon_svg gitHub_icon_svg icon_svg" name="gitHub_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
                             <title>GitHub</title>
@@ -323,7 +308,7 @@
                         </svg>
                     </div>
                 </button>
-                <button class="phone_social_btn contact_btn phone_menu_btn action_menu extra_btn" tabindex="0">
+                <button class="phone_social_btn contact_btn phone_menu_btn extra_btn" tabindex="0" modal-btn="contact" action-menu>
                     <div class="icon_container">
                         <svg class="social_icon_svg contact_icon_svg icon_svg" name="contact_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 18">
                             <title>Correo</title>
@@ -336,31 +321,31 @@
                 </button>
             </div>
             <div class="nav_menu_link_btns">
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="hero_section">
+                <button type="button" class="phone_menu_btn" name="hero_section" action-menu section-action section-ref="hero">
                     <span class="label_btn" change en="Home" es="Inicio">Inicio</span>
                 </button>
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="about_section">
+                <button type="button" class="phone_menu_btn" name="about_section" action-menu section-action section-ref="about">
                     <span class="label_btn" change en="About Me" es="Quien Soy">Quien Soy</span>
                 </button>
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="skills_section">
+                <button type="button" class="phone_menu_btn" name="skills_section" action-menu section-action section-ref="skills">
                     <span class="label_btn" change en="Skills" es="Habilidades">Habilidades</span>
                 </button>
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="services_section">
+                <button type="button" class="phone_menu_btn" name="services_section" action-menu section-action section-ref="services">
                     <span class="label_btn" change en="Services" es="Servicios">Servicios</span>
                 </button>
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="portfolio_section">
+                <button type="button" class="phone_menu_btn" name="portfolio_section" action-menu section-action section-ref="portfolio">
                     <span class="label_btn" change en="Portfolio" es="Portafolio">Portafolio</span>
                 </button>
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="contact_section">
+                <button type="button" class="phone_menu_btn" name="contact_section" action-menu section-action section-ref="contact">
                     <span class="label_btn" change en="Contact" es="Contacto">Contacto</span>
                 </button>
-                <button type="button" class="phone_menu_btn section_btn action_menu" name="legals_section">
+                <button type="button" class="phone_menu_btn" name="legals_section" action-menu section-action section-ref="legals">
                     <span class="label_btn" change en="Legals" es="Legales">Legales</span>
                 </button>
             </div>
             <div class="extra_btns_container nav_menu_extra_btns">
                 <div class="btns_container">
-                    <button type="button" class="icon_container extra_btn theme_btn">
+                    <button type="button" class="icon_container extra_btn theme_btn" theme-btn>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" icon="theme" icon-theme="dark" hidden="false">
                             <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
                         </svg>
@@ -370,7 +355,7 @@
                             ></path>
                         </svg>
                     </button>
-                    <button type="button" class="icon_container extra_btn sound_btn">
+                    <button type="button" class="icon_container extra_btn sound_btn" sound-btn>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" icon="sound" icon-sound="on" hidden="true">
                             <path
                                 d="M8.88889 16H5C4.44772 16 4 15.5523 4 15V9.00001C4 8.44772 4.44772 8.00001 5 8.00001H8.88889L14.1834 3.66815C14.3971 3.49329 14.7121 3.52479 14.887 3.73851C14.9601 3.82784 15 3.93971 15 4.05513V19.9449C15 20.221 14.7761 20.4449 14.5 20.4449C14.3846 20.4449 14.2727 20.405 14.1834 20.3319L8.88889 16ZM18.8631 16.5911L17.4411 15.169C18.3892 14.4376 19 13.2901 19 12C19 10.5697 18.2493 9.31469 17.1203 8.6076L18.5589 7.169C20.0396 8.2616 21 10.0187 21 12C21 13.8422 20.1698 15.4904 18.8631 16.5911Z"
@@ -386,7 +371,7 @@
                         <span class="label_btn label_lang" change es="ES" en="EN">ES</span>
                     </button>
                 </div>
-                <button type="button" class="icon_container extra_btn close_btn action_menu" id="menu_container_close_btn">
+                <button type="button" class="icon_container extra_btn close_btn" id="menu_container_close_btn" action-menu>
                     <svg class="icon_svg close_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
                         <title>Cerrar</title>
                         <rect class="cls-1" x="-1.92" y="11.32" width="28.83" height="2.36" transform="translate(12.5 -5.18) rotate(45)" />
@@ -396,7 +381,7 @@
             </div>
         </div>
         <!-- ! MENU SOCIALS -->
-        <div class="menu_social_container" position-social="">
+        <div class="menu_social_container" position-social="" contact-menu>
             <button type="button" class="menu_btn_social_menu social_menu_btn">
                 <div class="icon_container">
                     <svg class="icon_svg social_icon_svg conection_icon_svg" name="conection_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18">
@@ -408,7 +393,7 @@
                 </div>
             </button>
 
-            <div class="menu_social_btns_container">
+            <div class="menu_social_btns_container" contact-menu-container>
                 <button type="button" class="social_menu_btn social_btn href_btn" link-ref="https://www.behance.net/jg_john_design">
                     <div class="icon_container">
                         <svg class="icon_svg social_icon_svg behance_icon_svg" name="behance_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 25">
@@ -438,7 +423,7 @@
                         </svg>
                     </div>
                 </button>
-                <button type="button" class="social_menu_btn contact_btn social_btn" tabindex="0">
+                <button type="button" class="social_menu_btn contact_btn social_btn" tabindex="0" modal-btn="contact">
                     <div class="icon_container">
                         <svg class="icon_svg social_icon_svg contact_icon_svg" name="contact_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25 18">
                             <title>Correo</title>
@@ -477,9 +462,9 @@
                 </div>
                 <div class="btns_container">
                     <button type="button" class="btn btn_hero" id="hero_btn_portfolio" name="portfolio_section" tabindex="0"><h3 class="label_btn" change es="Portafolio" en="Portfolio">Portafolio</h3></button>
-                    <button type="button" class="btn contact_btn" id="hero_btn_about" name="about_section" tabindex="0"><h3 class="label_btn" change es="Contactame" en="Contact Me">Contactame</h3></button>
+                    <button type="button" class="btn contact_btn" id="hero_btn_about" name="about_section" tabindex="0" modal-btn="contact"><h3 class="label_btn" change es="Contactame" en="Contact Me">Contactame</h3></button>
                 </div>
-                <button type="button" class="btn_down btn_menu" id="hero_btn_down" name="about_section">
+                <button type="button" class="btn_down btn_menu" id="hero_btn_down" name="about_section" btn-down>
                     <h3 change es="Ver más" en="Show More">Ver más</h3>
                     <svg class="arrow_down_svg accent_color" name="arrow_down_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 9">
                         <title>arrow down</title>
@@ -488,9 +473,9 @@
                 </button>
             </div>
         </header>
-        <nav class="nav_menu">
+        <nav class="nav_menu" nav-menu>
             <div class="menu_container content">
-                <button type="button" class="icon_container logo_btn">
+                <button type="button" class="icon_container logo_btn" logo-btn>
                     <svg viewBox="0 0 60 40" version="1.1" class="johnK_icon" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                         <path
                             d="m 50.762792,-1.42e-4 c -0.227764,0 -0.412378,0.184614 -0.412378,0.41237799 V 2.9278451 c 0,0.2277628 0.184614,0.412378 0.412378,0.412378 h 5.649784 V 36.65964 h -5.649784 c -0.227764,0 -0.412378,0.184608 -0.412378,0.412369 v 2.515611 c 0,0.227769 0.184614,0.41238 0.412378,0.41238 h 8.824784 c 0.227764,0 0.412378,-0.184611 0.412378,-0.41238 V 0.41223599 C 59.999954,0.184472 59.81534,-1.42e-4 59.587576,-1.42e-4 Z"
@@ -533,7 +518,7 @@
                         />
                     </svg>
                 </button>
-                <button type="button" class="action_menu menu_btn">
+                <button type="button" class="menu_btn" action-menu>
                     <div class="btn_construction">
                         <div class="bar top_bar"></div>
                         <div class="bar center_bar"></div>
@@ -541,7 +526,7 @@
                     </div>
                 </button>
                 <div class="menu_controler nav_menu_controler">
-                    <button type="button" class="section_btn nav_btn main_nav_btn" name="hero_section">
+                    <button type="button" class="nav_btn main_nav_btn" name="hero_section" section-action section-ref="hero">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="home_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
                                 <title>Inicio</title>
@@ -550,7 +535,7 @@
                         </span>
                         <span class="label_btn" change es="Inicio" en="Home">Inicio</span>
                     </button>
-                    <button type="button" class="section_btn nav_btn about_nav_btn" name="about_section">
+                    <button type="button" class="nav_btn about_nav_btn" name="about_section" section-action section-ref="about">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" class="about_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
                                 <title>Acerca de</title>
@@ -560,7 +545,7 @@
                         </span>
                         <span class="label_btn" change es="Quien Soy" en="About Me">Quien Soy</span>
                     </button>
-                    <button type="button" class="section_btn nav_btn skills_nav_btn" name="skills_section">
+                    <button type="button" class="nav_btn skills_nav_btn" name="skills_section" section-action section-ref="skills">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="skills_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
                                 <title>Habilidades</title>
@@ -572,7 +557,7 @@
                         </span>
                         <span class="label_btn" change en="Skills" es="Habilidades">Habilidades</span>
                     </button>
-                    <button type="button" class="section_btn nav_btn services_nav_btn" name="services_section">
+                    <button type="button" class="nav_btn services_nav_btn" name="services_section" section-action section-ref="services">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="services_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
                                 <title>Servicios</title>
@@ -584,7 +569,7 @@
                         </span>
                         <span class="label_btn" change en="Services" es="Servicios">Servicios</span>
                     </button>
-                    <button type="button" class="section_btn nav_btn portfolio_nav_btn" name="portfolio_section">
+                    <button type="button" class="nav_btn portfolio_nav_btn" name="portfolio_section" section-action section-ref="portfolio">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="portfolio_icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <title>Portafolio</title>
@@ -594,7 +579,7 @@
                         </span>
                         <span class="label_btn" change en="Portfolio" es="Portafolio">Portafolio</span>
                     </button>
-                    <button type="button" class="section_btn nav_btn contact_nav_btn" name="contact_section">
+                    <button type="button" class="nav_btn contact_nav_btn" name="contact_section" section-action section-ref="contact">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="contact_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
                                 <title>Contacto</title>
@@ -603,7 +588,7 @@
                         </span>
                         <span class="label_btn" change en="Contact" es="Contacto">Contacto</span>
                     </button>
-                    <button type="button" class="section_btn nav_btn legals_nav_btn" name="legals_section">
+                    <button type="button" class="nav_btn legals_nav_btn" name="legals_section" section-action section-ref="legals">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="legals_icon_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
@@ -614,7 +599,7 @@
                         </span>
                         <span class="label_btn" change en="Legals" es="Legales">Legales</span>
                     </button>
-                    <button type="button" class="nav_btn theme_btn" name="theme_btn" aria-label="Button to change color scheame in page">
+                    <button type="button" class="nav_btn theme_btn" name="theme_btn" aria-label="Button to change color scheame in page" theme-btn>
                         <div class="icon_container">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" icon="theme" icon-theme="dark" hidden="false">
                                 <path d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z"></path>
@@ -626,7 +611,7 @@
                             </svg>
                         </div>
                     </button>
-                    <button type="button" class="nav_btn sound_btn" name="sound_btn" aria-label="Button to change color scheame in page">
+                    <button type="button" class="nav_btn sound_btn" name="sound_btn" aria-label="Button to change color scheame in page" sound-btn>
                         <div class="icon_container">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" icon="sound" icon-sound="on" hidden="true">
                                 <path
@@ -646,7 +631,7 @@
                 </div>
             </div>
         </nav>
-        <div class="section_divider">
+        <div class="section_divider" divider>
             <figure class="content divider_content">
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
@@ -675,12 +660,12 @@
             <div class="section_content content flex flex_responsive">
                 <div class="about_salute responsive_content">
                     <div class="about_animation">
-                        <div class="swipe_animation_container_full">
-                            <h1 class="title_salute animation_up" id="title_salute" change es="Hola, soy" en="Hi, I'm">Hola, soy</h1>
+                        <div observer-full>
+                            <h1 class="title_salute" id="title_salute" change es="Hola, soy" en="Hi, I'm" animation-text>Hola, soy</h1>
                         </div>
 
-                        <div class="swipe_animation_container_full">
-                            <h2 class="title_name animation_up" id="title_name">Jonathan Grajeda<span class="title_effect">_</span></h2>
+                        <div observer-full>
+                            <h2 class="title_name" id="title_name">Jonathan Grajeda<span class="title_effect" animation-text>_</span></h2>
                         </div>
                     </div>
                     <p class="about_text">
@@ -727,7 +712,7 @@
                 </div>
             </div>
         </section>
-        <div class="section_divider">
+        <div class="section_divider" divider>
             <figure class="content divider_content">
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
@@ -754,24 +739,24 @@
         </div>
         <section class="section skills_section" id="skills_section">
             <div class="section_content content">
-                <div class="swipe_animation_container_full">
-                    <h1 class="title_section animation_up" id="title_skills" change es="Habilidades" en="Skills">Habilidades</h1>
+                <div observer-full>
+                    <h1 class="title_section" id="title_skills" change es="Habilidades" en="Skills" animation-text>Habilidades</h1>
                 </div>
                 <div class="skills_icon_container design_skills_container">
                     <!--? SKILLS ICONS-->
                     <h2 class="subtitle_section" change es="Herramientas de Diseño" en="Design Tools">Herramientas de Diseño</h2>
-                    <div class="icons_container swipe_animation_container_half" ref="design"></div>
+                    <div class="icons_container" ref="design" skills-container="design" observer-half></div>
                 </div>
                 <div class="skills_icon_container dev_skills_container">
                     <h2 class="subtitle_section" change es="Herramientas de Desarrollo" en="Developer Tools">Herramientas de Desarrollo</h2>
                     <!--? SKILLS ICONS-->
-                    <div class="icons_container swipe_animation_container_half" ref="dev"></div>
+                    <div class="icons_container swipe_animation_container_half" ref="dev" skills-container="dev"></div>
                 </div>
                 <h2 class="subtitle_section" change es="Certificaciones" en="Certifications">Certificaciones</h2>
-                <div class="cards_container certification_container swipe_animation_container_half"></div>
+                <div class="cards_container certification_container" certification-container observer-half></div>
             </div>
         </section>
-        <div class="section_divider">
+        <div class="section_divider" divider>
             <figure class="content divider_content">
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
@@ -801,13 +786,13 @@
         <section class="section services_section" id="services_section">
             <div class="section_content content">
                 <!--~~TITLE SECTION-->
-                <div class="swipe_animation_container_full">
+                <div observer-full>
                     <h1 class="title_section animation_up" id="title_services" change es="Servicios" en="Services">Servicios</h1>
                 </div>
 
                 <div class="grid_container">
                     <div class="cards_service_container">
-                        <article class="card service_card card_up">
+                        <article class="card service_card" animation-card>
                             <div class="bg_card graphic_design_service_bg">
                                 <img src="https://images.pexels.com/photos/1601773/pexels-photo-1601773.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
                             </div>
@@ -823,7 +808,7 @@
                                 </p>
                             </div>
                         </article>
-                        <article class="card service_card card_up">
+                        <article class="card service_card" animation-card>
                             <div class="bg_card">
                                 <img src="https://images.pexels.com/photos/16516/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" loading="lazy" />
                             </div>
@@ -834,7 +819,7 @@
                                 </p>
                             </div>
                         </article>
-                        <article class="card service_card card_up">
+                        <article class="card service_card" animation-card>
                             <div class="bg_card UX-UI_service_bg">
                                 <img src="https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
                             </div>
@@ -850,7 +835,7 @@
                                 </p>
                             </div>
                         </article>
-                        <article class="card service_card card_up">
+                        <article class="card service_card" animation-card>
                             <div class="bg_card">
                                 <img src="https://images.pexels.com/photos/285814/pexels-photo-285814.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" loading="lazy" />
                             </div>
@@ -865,7 +850,7 @@
                 </div>
             </div>
         </section>
-        <div class="section_divider">
+        <div class="section_divider" divider>
             <figure class="content divider_content">
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
@@ -892,19 +877,19 @@
         </div>
         <section class="section portfolio_section" id="portfolio_section">
             <div class="section_content content">
-                <div class="swipe_animation_container_full">
-                    <h1 class="title_section animation_up" id="title_portfolio" change es="Portafolio" en="Portfolio">Portafolio</h1>
+                <div observer-full>
+                    <h1 class="title_section" id="title_portfolio" change es="Portafolio" en="Portfolio" animation-text>Portafolio</h1>
                 </div>
                 <div class="cards_presentation">
                     <h2 class="subtitle_section" change es="Proyectos Destacados" en="Top Projects">Proyectos Destacados</h2>
                     <button type="button" class="portfolio_btn" name="portfolio_modal">
-                        <span class="label_btn" change es="Ver todo" en="See All">Ver todo</span>
+                        <span class="label_btn" change es="Ver todo" en="See All" modal-btn="portfolio">Ver todo</span>
                     </button>
                 </div>
-                <div class="cards_container swipe_animation_container_half cards_hot_container"></div>
+                <div class="cards_container cards_hot_container" hot-container observer-half></div>
             </div>
         </section>
-        <div class="section_divider">
+        <div class="section_divider" divider>
             <figure class="content divider_content">
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
@@ -938,8 +923,8 @@
                 <span class="overlay"></span>
             </picture>
             <div class="section_content content">
-                <div class="swipe_animation_container_full">
-                    <h1 class="title_section animation_up" id="title_contact" change es="Contacto" en="Contact">Contacto</h1>
+                <div observer-full>
+                    <h1 class="title_section" id="title_contact" change es="Contacto" en="Contact" animation-text>Contacto</h1>
                 </div>
                 <h2 class="subtitle_section" change es="Espero me permitas crear proyectos interesantes con tus ideas." en="I hope you allow me to create interesting projects with your ideas">Espero me permitas crear proyectos interesantes con tus ideas.</h2>
 
@@ -947,31 +932,31 @@
                     <h3 change es="Envia correo" en="Send Email">Envia correo</h3>
                     <div class="input_container">
                         <label for="body_input_name" change es="Nombre" en="Name">Nombre</label>
-                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" change-input es="Escribe Tu Nombre" en="Write Your Name" autocomplete="off" required />
+                        <input type="text" placeholder="Escribe tu Nombre" id="body_input_name" name="name" class="input_name" change-input es="Escribe Tu Nombre" en="Write Your Name" autocomplete="off" required input-name />
                     </div>
 
                     <div class="input_container">
                         <label for="body_input_last_name" change es="Apellido" en="Last Name">Apellido</label>
-                        <input type="text" placeholder="Escribe tu Apellido" id="body_input_last_name" name="last_name" class="input_last_name" change-input es="Escribe tu Apellido" en="Write Your Last name" autocomplete="off" />
+                        <input type="text" placeholder="Escribe tu Apellido" id="body_input_last_name" name="last_name" class="input_last_name" change-input es="Escribe tu Apellido" en="Write Your Last name" autocomplete="off" input-email />
                     </div>
 
                     <div class="input_container">
                         <label for="body_input_email">Email</label>
-                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" change-input es="Escribe tu Email" en="Write your Name" autocomplete="off" required />
+                        <input type="email" placeholder="Escribe tu Email" id="body_input_email" name="email" class="input_email" change-input es="Escribe tu Email" en="Write your Name" autocomplete="off" required input-email />
                     </div>
 
                     <div class="input_container last">
                         <label for="body_input_textarea" change es="Descripción" en="Description">Descripción</label>
-                        <textarea placeholder="Comparteme tu idea" id="body_input_textarea" name="description" class="input_description" change-input es="Comparteme de tu idea" en="Share me your idea" required></textarea>
+                        <textarea placeholder="Comparteme tu idea" id="body_input_textarea" name="description" class="input_description" change-input es="Comparteme de tu idea" en="Share me your idea" required input-description></textarea>
                     </div>
                     <input type="hidden" name="access_key" value="5dfd5c33-4542-492d-a32f-194035787e90" />
                     <div class="submit_container">
-                        <button type="submit" id="contact_form_send_btn" form="body_form" class="btn send_btn">
+                        <button type="submit" id="contact_form_send_btn" form="body_form" class="btn send_btn" send-form>
                             <span class="label_btn" change es="Enviar" en="Send">Enviar</span>
                         </button>
                     </div>
-                    <div class="form_response_container">
-                        <p class="form_response"></p>
+                    <div class="form_response_container" form-response-container>
+                        <p class="form_response" form-response></p>
                     </div>
                 </form>
             </div>
@@ -989,7 +974,7 @@
                             </g>
                             <rect class="cls-51" x="203.03" y="539.75" width="594.72" height="284.59" transform="translate(1000.77 1364.1) rotate(-180)" />
 
-                            <g class="desk_portfolio portfolio_btn svg_btn" name="portfolio_modal">
+                            <g class="desk_portfolio svg_btn" name="portfolio_modal" modal-btn="portfolio">
                                 <path
                                     class="cls-19"
                                     d="m322.75,611.31h-50.44c-4.2,0-7.63,3.44-7.63,7.63v26.18c0,4.2,3.44,7.63,7.63,7.63h50.44c4.2,0,7.63-3.44,7.63-7.63v-26.18c0-4.2-3.44-7.63-7.63-7.63Zm1.74,32.22c0,4.2-3.44,7.63-7.63,7.63h-38.65c-4.2,0-7.63-3.44-7.63-7.63v-17.61c0-4.2,3.44-7.63,7.63-7.63h38.65c4.2,0,7.63,3.44,7.63,7.63v17.61Z"
@@ -1018,10 +1003,10 @@
                                         <path class="cls-6" d="m706.01,422.34l152.34-34.39c6.4-1.49-3.85-.05-1.15-7.24,0,0-168.46-3.27-166.06,33.39.76,11.61,8.46,9.73,14.87,8.24Z" />
                                         <path class="cls-19" d="m699.06,418.93l151.92-35.28c6.4-1.49,13.86-8.58,16.56-15.77l32.23-85.54c2.71-7.19-.32-11.85-6.72-10.36l-151.92,35.28c-6.4,1.49-13.86,8.58-16.56,15.77l-32.23,85.54c-2.71,7.19.32,11.85,6.72,10.36Z" />
                                         <path class="cls-6" d="m732.13,325.87c1.88-5,7.46-9.96,10.83-10.75l148.85-34.56-31.82,84.47c-1.88,5-7.46,9.96-10.83,10.75l-148.85,34.56,31.82-84.47Z" />
-                                        <path class="desk_tablet_screen" d="m733.78,327.86c1.88-5,7.46-9.96,10.83-10.75l146.19-33.89-30.82,81.8c-1.88,5-7.46,9.96-10.83,10.75l-146.23,33.95,30.85-81.87Z" />
+                                        <path class="desk_tablet_screen" tablet-screen d="m733.78,327.86c1.88-5,7.46-9.96,10.83-10.75l146.19-33.89-30.82,81.8c-1.88,5-7.46,9.96-10.83,10.75l-146.23,33.95,30.85-81.87Z" />
                                     </g>
                                 </g>
-                                <g class="dev_tablet_screen screen_tablet_animation">
+                                <g screen-tablet-animation dev-tablet-screen>
                                     <g>
                                         <polygon class="cls-38" points="823.7 380.3 709.63 406.39 742.79 318.98 856.86 292.9 823.7 380.3" />
                                         <polygon class="cls-47" points="852.47 373.72 823.7 380.3 856.86 292.9 885.63 286.32 852.47 373.72" />
@@ -1202,7 +1187,7 @@
                                         <path class="cls-29" d="m797.67,361.51l-17.28,3.95c-.91.21-1.32-.46-.93-1.49h0c.39-1.03,1.44-2.03,2.35-2.24l17.28-3.95c.91-.21,1.32.46.93,1.49h0c-.39,1.03-1.44,2.03-2.35,2.24Z" />
                                     </g>
                                 </g>
-                                <g class="design_tablet_screen screen_tablet_animation">
+                                <g screen-tablet-animation design-tablet-screen>
                                     <path class="cls-65 tablet_base_design" d="m740.62,329.88c1.68-4.45,6.65-8.88,9.65-9.58l130.34-30.21-27.48,72.93c-1.68,4.45-6.65,8.88-9.65,9.58l-130.37,30.27,27.51-72.99Z" />
                                     <g>
                                         <g>
@@ -1226,7 +1211,7 @@
                                         </g>
                                     </g>
                                 </g>
-                                <g class="illustration_tablet_screen screen_tablet_animation">
+                                <g screen-tablet-animation illustration-tablet-screen>
                                     <path class="cls-65 tablet_base_illustrator" d="m740.62,329.88c1.68-4.45,6.65-8.88,9.65-9.58l130.34-30.21-27.48,72.93c-1.68,4.45-6.65,8.88-9.65,9.58l-130.37,30.27,27.51-72.99Z" />
                                     <g class="wolverine">
                                         <path
@@ -2963,7 +2948,7 @@
                                 </g>
                             </g>
                             <g class="desk_dev_icons">
-                                <g class="tags_icon_left dev_icon icon_animation">
+                                <g class="tags_icon_left" icon-animation dev-icon>
                                     <g>
                                         <path class="cls-50" d="m437.79,211.5h-3.26v-4.28l13.28-26.51h3.21v4.38l-13.23,26.42Z" />
                                         <g>
@@ -2976,7 +2961,7 @@
                                         <path class="cls-41" d="m410.12,175.6l-7.69-7.69v-2.19h4.04l9.1,8.76v2.19l-9,8.76h-4.14v-2.19l7.69-7.64Z" />
                                     </g>
                                 </g>
-                                <g class="tags_icon_right dev_icon icon_animation">
+                                <g class="tags_icon_right" icon-animation dev-icon>
                                     <g>
                                         <path class="cls-50" d="m564.29,76.5h-3.26v-4.28l13.28-26.51h3.21v4.38l-13.23,26.42Z" />
                                         <g>
@@ -2989,7 +2974,7 @@
                                         <path class="cls-41" d="m536.62,40.59l-7.69-7.69v-2.19h4.04l9.1,8.76v2.19l-9,8.76h-4.14v-2.19l7.69-7.64Z" />
                                     </g>
                                 </g>
-                                <g class="lines_icon_left dev_icon icon_animation">
+                                <g class="lines_icon_left" icon-animation dev-icon>
                                     <rect class="cls-23" x="417.4" y="46.89" width="58.5" height="7.38" rx="3.35" ry="3.35" />
                                     <rect class="cls-50" x="403.95" y="46.89" width="10.83" height="7.38" rx="3.35" ry="3.35" />
                                     <rect class="cls-41" x="391.19" y="46.89" width="10.83" height="7.38" rx="3.35" ry="3.35" />
@@ -3005,7 +2990,7 @@
                                     <rect class="cls-41" x="482.9" y="89.38" width="16.12" height="7.38" rx="3.35" ry="3.35" />
                                     <rect class="cls-50" x="501.25" y="89.38" width="24.6" height="7.38" rx="3.35" ry="3.35" />
                                 </g>
-                                <g class="lines_icon_right dev_icon icon_animation">
+                                <g class="lines_icon_right" icon-animation dev-icon>
                                     <rect class="cls-23" x="506.63" y="184.92" width="58.5" height="7.38" rx="3.35" ry="3.35" />
                                     <rect class="cls-50" x="493.17" y="184.92" width="10.83" height="7.38" rx="3.35" ry="3.35" />
                                     <rect class="cls-41" x="480.41" y="184.92" width="10.83" height="7.38" rx="3.35" ry="3.35" />
@@ -3021,7 +3006,7 @@
                                     <rect class="cls-41" x="572.12" y="227.41" width="16.12" height="7.38" rx="3.35" ry="3.35" />
                                     <rect class="cls-50" x="590.48" y="227.41" width="24.6" height="7.38" rx="3.35" ry="3.35" />
                                 </g>
-                                <g class="object_icon dev_icon icon_animation">
+                                <g class="object_icon" icon-animation dev-icon>
                                     <g>
                                         <path
                                             class="cls-50"
@@ -3073,7 +3058,7 @@
                                         />
                                     </g>
                                 </g>
-                                <g class="funct_icon dev_icon icon_animation">
+                                <g class="funct_icon" icon-animation dev-icon>
                                     <path
                                         class="cls-41"
                                         d="m417.12,142.46c.19.33.39.64.39,1.09,0,.92-.58,1.84-1.89,1.84-.67,0-1.25-.28-1.64-.84-2.31-3.51-3.29-7.77-3.29-11.75s.97-8.24,3.29-11.75c.39-.58.97-.86,1.64-.86,1.31,0,1.89.92,1.89,1.87,0,.42-.2.75-.39,1.06-1.78,2.92-2.56,6.29-2.56,9.69s.78,6.74,2.56,9.66Z"
@@ -3098,7 +3083,7 @@
                                 </g>
                             </g>
                             <g class="desk_desig_icons">
-                                <g class="column_right_icon design_icon icon_animation">
+                                <g class="column_right_icon" icon-animation design-icon>
                                     <g class="column_right">
                                         <rect class="cls-56" x="509.1" y="161.24" width="34.41" height="75.07" rx="7.57" ry="7.57" />
                                         <rect class="cls-56" x="509.1" y="144.83" width="73.31" height="12.53" rx="4.37" ry="4.37" />
@@ -3106,7 +3091,7 @@
                                         <rect class="cls-56" x="548" y="197.86" width="34.41" height="30.98" rx="7.57" ry="7.57" />
                                     </g>
                                 </g>
-                                <g class="column_left_icon design_icon icon_animation">
+                                <g class="column_left_icon" icon-animation design-icon>
                                     <g class="column_left-2" name="column_left">
                                         <rect class="cls-56" x="462.16" y="27.3" width="17.2" height="12.52" rx="4.37" ry="4.37" />
                                         <rect class="cls-56" x="444.96" y="43.7" width="34.41" height="42.6" rx="7.57" ry="7.57" />
@@ -3118,47 +3103,47 @@
                                         <rect class="cls-56" x="406.07" y="27.3" width="52.34" height="12.52" rx="4.37" ry="4.37" />
                                     </g>
                                 </g>
-                                <g class="logo_2_right_icon design_icon icon_animation">
+                                <g class="logo_2_right_icon" icon-animation design-icon>
                                     <g class="logo_2_right-2" name="logo_2_right">
                                         <rect class="cls-56" x="541.97" y="94.36" width="41.08" height="7.93" rx="3.96" ry="3.96" />
                                         <circle class="cls-56" cx="562.51" cy="84.09" r="15.83" />
                                     </g>
                                 </g>
-                                <g class="logo_1_right_icon design_icon icon_animation">
+                                <g class="logo_1_right_icon" icon-animation design-icon>
                                     <g class="logo_1_right">
                                         <rect class="cls-56" x="510.07" y="73.93" width="33.54" height="6.47" rx="3.24" ry="3.24" />
                                         <rect class="cls-56" x="513.03" y="57.64" width="27.62" height="20.25" rx="10.13" ry="10.13" />
                                     </g>
                                 </g>
-                                <g class="logo_1_left_icon design_icon icon_animation">
+                                <g class="logo_1_left_icon" icon-animation design-icon>
                                     <g class="logo_1_left">
                                         <rect class="cls-56" x="408.15" y="216.9" width="41.08" height="7.93" rx="3.96" ry="3.96" />
                                         <circle class="cls-56" cx="428.7" cy="206.62" r="15.83" />
                                     </g>
                                 </g>
-                                <g class="logo_2_left_icon design_icon icon_animation">
+                                <g class="logo_2_left_icon" icon-animation design-icon>
                                     <g class="logo_2_left">
                                         <rect class="cls-56" x="448.3" y="198.83" width="33.54" height="6.47" rx="3.24" ry="3.24" />
                                         <rect class="cls-56" x="451.26" y="182.54" width="27.62" height="20.25" rx="10.13" ry="10.13" />
                                     </g>
                                 </g>
-                                <g class="logo_3_left_icon design_icon icon_animation">
+                                <g class="logo_3_left_icon" icon-animation design-icon>
                                     <g class="logo_3_left">
                                         <rect class="cls-56" x="436.25" y="173.83" width="24.1" height="4.84" rx="2.42" ry="2.42" />
                                         <rect class="cls-56" x="437.88" y="154.07" width="20.84" height="15.28" rx="5.44" ry="5.44" transform="translate(286.59 610.02) rotate(-90)" />
                                     </g>
                                 </g>
-                                <circle class="cls-31 design_icon icon_animation" cx="384.46" cy="148.69" r="18.56" />
-                                <circle class="cls-49 design_icon icon_animation" cx="545.76" cy="146.88" r="21.47" />
-                                <polygon class="cls-68 design_icon icon_animation" points="610.49 194.74 567.38 224.56 614.76 246.98 610.49 194.74" />
-                                <polygon class="cls-52 design_icon icon_animation" points="507.41 47.61 473.29 71.22 510.8 88.96 507.41 47.61" />
-                                <polygon class="cls-66 design_icon icon_animation" points="559.72 14.02 534.1 22.34 534.1 49.28 559.72 57.6 575.55 35.81 559.72 14.02" />
-                                <polygon class="cls-42 design_icon icon_animation" points="445.23 204.13 435.93 225.01 452.92 240.31 472.72 228.88 467.97 206.52 445.23 204.13" />
-                                <rect class="cls-10 design_icon icon_animation" x="378.23" y="27.92" width="40.09" height="40.09" rx="4.6" ry="4.6" transform="translate(1.63 107.95) rotate(-15.47)" />
-                                <rect class="cls-55 design_icon icon_animation" x="474.7" y="137.53" width="33.34" height="33.34" rx="4.6" ry="4.6" transform="translate(252.95 -302.29) rotate(45)" />
+                                <circle class="cls-31" icon-animation design-icon cx="384.46" cy="148.69" r="18.56" />
+                                <circle class="cls-49" icon-animation design-icon cx="545.76" cy="146.88" r="21.47" />
+                                <polygon class="cls-68" icon-animation design-icon points="610.49 194.74 567.38 224.56 614.76 246.98 610.49 194.74" />
+                                <polygon class="cls-52" icon-animation design-icon points="507.41 47.61 473.29 71.22 510.8 88.96 507.41 47.61" />
+                                <polygon class="cls-66" icon-animation design-icon points="559.72 14.02 534.1 22.34 534.1 49.28 559.72 57.6 575.55 35.81 559.72 14.02" />
+                                <polygon class="cls-42" icon-animation design-icon points="445.23 204.13 435.93 225.01 452.92 240.31 472.72 228.88 467.97 206.52 445.23 204.13" />
+                                <rect class="cls-10" icon-animation design-icon x="378.23" y="27.92" width="40.09" height="40.09" rx="4.6" ry="4.6" transform="translate(1.63 107.95) rotate(-15.47)" />
+                                <rect class="cls-55" icon-animation design-icon x="474.7" y="137.53" width="33.34" height="33.34" rx="4.6" ry="4.6" transform="translate(252.95 -302.29) rotate(45)" />
                             </g>
                             <g class="illustration_icons">
-                                <g class="illustration_icon icon_animation">
+                                <g icon-animation illustration-icon>
                                     <g>
                                         <path class="cls-30" d="m535.85,83.25c-.29-.13-.53-.26-.76-.39-.24-.13-.46-.26-.69-.41-.23-.14-.45-.3-.66-.47-.22-.18-.43-.37-.62-.62.32-.02.61.03.89.12.28.09.54.21.79.37.25.16.47.35.66.58.19.23.35.5.4.82Z" />
                                         <path class="cls-30" d="m532.51,82.93l-.9-.75c-.29-.24-.58-.48-.87-.73-.29-.25-.57-.52-.83-.82-.26-.3-.5-.63-.66-1.02.38.18.71.38,1.03.59.32.21.64.45.93.71.3.26.57.56.81.89.23.34.42.72.47,1.13Z" />
@@ -3783,7 +3768,7 @@
                                         d="m551.17,172.88s.07.06.1.05c0-.01,0-.04,0-.05,0-.02-.03-.04-.05-.05-.01,0-.02,0-.03,0,0,0,0,0-.01,0-.01,0-.05,0-.04,0,0,0,0,0-.01,0-.02-.03,0-.06.02-.08.02-.02.06-.04.11-.04.05,0,.11,0,.2.04.04.09.05.15.04.2,0,.05-.02.09-.05.12-.03.03-.07.05-.15.06-.01,0-.03,0-.04,0,0,0-.05,0-.07,0h-.02s-.03-.01-.04-.02c-.03-.01-.05-.03-.06-.05-.01-.03-.02-.06-.01-.08.03-.05.06-.06.11-.06Z"
                                     />
                                 </g>
-                                <g class="illustration_icon icon_animation">
+                                <g icon-animation illustration-icon>
                                     <path
                                         class="cls-30"
                                         d="m418.49,60.87l-.62-.05c-.21-.02-.41-.03-.62-.04l-.62-.03h-.62c-.82-.01-1.64,0-2.46.07-.82.06-1.64.13-2.47.2-.83.07-1.66.1-2.49.1-.42,0-.83-.02-1.25-.03l-.63-.05-.31-.02-.31-.04-.62-.07c-.2-.03-.4-.05-.61-.07-.4-.04-.8-.07-1.19-.07-.39,0-.78.03-1.15.11-.37.08-.71.21-1.01.4-.61.38-1,1.04-1.29,1.77-.15.37-.28.75-.42,1.14-.14.39-.3.79-.48,1.17-.35.77-.76,1.51-1.23,2.21-.24.35-.49.69-.75,1.02-.27.33-.54.65-.82.96-.29.31-.57.61-.87.9-.3.29-.6.58-.91.86-.61.56-1.23,1.11-1.83,1.66-.61.55-1.21,1.11-1.77,1.71-.28.29-.55.6-.82.91-.26.31-.5.64-.74.98-.46.67-.85,1.4-1.15,2.17.11-.4.24-.79.4-1.17.17-.38.35-.75.56-1.12.42-.72.92-1.39,1.45-2.03,1.08-1.27,2.3-2.4,3.47-3.56.58-.58,1.15-1.16,1.69-1.77.27-.3.52-.62.77-.94.24-.32.48-.65.69-.99.44-.68.82-1.38,1.15-2.12.16-.37.31-.74.45-1.12.14-.38.27-.78.43-1.18.16-.4.36-.8.61-1.17.13-.19.28-.36.44-.53.17-.16.35-.31.55-.43.39-.25.83-.41,1.27-.5.44-.09.88-.12,1.31-.11.43,0,.86.05,1.27.11.21.03.42.06.62.09l.6.08.3.04.3.03.61.06c.41.03.81.07,1.22.08.41.02.82.02,1.22.02.41,0,.82-.01,1.23-.02.82-.02,1.65-.06,2.48-.07.83,0,1.66.02,2.49.09.83.06,1.65.2,2.46.34Z"
@@ -4028,7 +4013,7 @@
                                                 </g>
                                             </g>
                                         </g>
-                                        <g class="shield_screen screen_animation">
+                                        <g screen-animation shield-screen>
                                             <rect class="cls-19" x="385.11" y="305.42" width="97.72" height="97.72" />
                                             <g>
                                                 <path class="cls-9" d="m393.41,323.72v-1.01l3.85-2.5v1.33l-2.64,1.65v.04l2.64,1.65v1.33l-3.85-2.5Z" />
@@ -4037,7 +4022,7 @@
                                             <rect class="cls-50" x="385.11" y="305.42" width="97.72" height="6.65" />
                                         </g>
 
-                                        <g class="design_screen screen_animation">
+                                        <g screen-animation design-screen>
                                             <rect class="cls-60" x="369.87" y="261.49" width="260.04" height="140.56" transform="translate(999.78 663.54) rotate(-180)" />
                                             <g id="computer_screen-2" name="computer_screen">
                                                 <rect class="cls-64" x="369.87" y="261.49" width="260.04" height="6.23" transform="translate(999.78 529.21) rotate(-180)" />
@@ -4136,7 +4121,7 @@
                                                 </g>
                                             </g>
                                         </g>
-                                        <g class="dev_screen screen_animation">
+                                        <g screen-animation dev-screen>
                                             <rect class="cls-3" x="438.44" y="267.94" width="188.2" height="126.88" />
                                             <rect class="cls-29" x="439.44" y="269.79" width="185.63" height="7.01" />
                                             <rect class="cls-50" x="437.87" y="262.78" width="188.77" height="5.16" />
@@ -4281,7 +4266,7 @@
                                             <rect class="cls-50" x="445.61" y="347.8" width="12.68" height="1.83" rx=".84" ry=".84" />
                                             <rect class="cls-3" x="441.27" y="347.34" width="2.76" height="2.76" rx=".37" ry=".37" />
                                         </g>
-                                        <g class="illustration_screen screen_animation">
+                                        <g screen-animation illustration-screen>
                                             <rect class="cls-60" x="369.87" y="261.49" width="260.04" height="140.56" transform="translate(999.78 663.54) rotate(-180)" />
                                             <g class="computer_screen">
                                                 <rect class="cls-64" x="369.87" y="261.49" width="260.04" height="6.23" transform="translate(999.78 529.21) rotate(-180)" />
@@ -4750,7 +4735,7 @@
                                     />
                                 </g>
                             </g>
-                            <g class="desk_me svg_btn">
+                            <g class="desk_me svg_btn" illustration-me>
                                 <ellipse class="cls-14" cx="534.24" cy="870.09" rx="177.76" ry="17.77" />
                                 <g>
                                     <path class="cls-4" d="m462.25,518.79l-90.16,25.36c-9.39-1.67-19.67-3.71-25.38-10.44l-4.52-13.37c-2.19-10.84,13.29-22.78,17.69-23.57l57.03-10.28c4.4-.79,30.28,3.06,31.39,9.24l19.92,10.37c1.11,6.18-1.57,11.89-5.97,12.68Z" />
@@ -4925,7 +4910,7 @@
                                         d="m116.32,820.94c.99,12.45-8.12-7.99-8.9-8.42-5.87-3.23,7.37-26.9,5.48-26.26-9.49,3.2-16.2,20.99-15.05,23.65,1.9,4.4,9.58,19.25,9.58,19.25.07.03,3.13,5.5,3.19,5.53,5.99,14.48,22.42,20.08,44.47,20.87,27.45.97-32.65-7.15-31.96-26.81.7-19.67-4.81-10.85-6.81-7.8Z"
                                     />
                                 </g>
-                                <g class="dog">
+                                <g class="dog" illustration-rex>
                                     <ellipse class="cls-19" cx="206.41" cy="784.87" rx="8.25" ry="6.16" transform="translate(-540.03 466.37) rotate(-52.16)" />
                                     <ellipse class="cls-40" cx="191.42" cy="810.71" rx="37.48" ry="27.97" transform="translate(-402.81 226.95) rotate(-32.22)" />
                                     <ellipse class="cls-40" cx="174.19" cy="785.7" rx="20.12" ry="8.9" transform="translate(-21.74 5.14) rotate(-1.59)" />
@@ -4949,10 +4934,10 @@
                         <div class="made_content">
                             <span class="copy_rights">@JohnKrazy - 2024 - <span change es="Derechos reservados" en="Rights Reserved">Derechos reservados</span></span>
                             <div class="btns_container">
-                                <button type="button" class="link_btn" name="legal_modal">
+                                <button type="button" class="link_btn" name="legal_modal" modal-btn="legal">
                                     <span class="label_btn" change es="Legales" en="Legals">Legales</span>
                                 </button>
-                                <button type="button" class="link_btn" name="alert_modal">
+                                <button type="button" class="link_btn" name="alert_modal" modal-btn="alert">
                                     <span class="label_btn" change es="Uso de datos" en="Data Use">Uso de datos</span>
                                 </button>
                             </div>
@@ -4992,39 +4977,43 @@
         <audio src="./src/audio/btn_teleport.wav" audio="teleport">Your browser doesn't support the audio tag. Please update your browser.</audio>
     </body>
     <!--^^TEAMPLATES-->
-    <template class="card_project_template">
-        <div class="card project_card" id="" tabindex="0">
-            <img class="img_card" />
+    <template class="card_project_template" project-card-template>
+        <div class="card project_card" id="" tabindex="0" project-card>
+            <img class="img_card" card-img />
             <div class="info_project_container">
-                <h2 class="title" change></h2>
+                <h2 class="title" change es="" en="" card-title></h2>
                 <h3 class="subtitle" change es="Realizado Con:" en="Made With:"></h3>
-                <div class="icons_project_container"></div>
-                <button type="button" class="more_btn btn href_btn" tabindex="-1" link-ref="">
+                <p class="description" change es="" en="" card-description></p>
+                <div class="icons_project_container" card-icons-container></div>
+                <button type="button" class="more_btn btn href_btn" tabindex="-1" link-ref="" card-action-btn>
                     <span class="label_btn" change es="Ir a" en="Go To">Ir a</span>
                 </button>
             </div>
         </div>
     </template>
 
-    <template class="extra_list_btn_template">
-        <button type="button" class="list_btn extra_list_btn" tabindex="0">
-            <span class="label_btn" change></span>
-        </button>
+    <template option-btn-template>
+        <li option-item>
+            <button type="button" class="option_btn" option-btn>
+                <span class="label" label change></span>
+            </button>
+        </li>
     </template>
-    <template class="certification_template">
-        <div class="badge card_up certification_badge">
+    <template class="certification_template" certification-template>
+        <div class="badge certification_badge" certification animation-card>
             <div>
-                <img class="badge_image" src="" alt="" loading="lazy" />
-                <h3 class="badge_name" change es="" en=""></h3>
+                <img class="badge_image" src="" alt="" loading="lazy" certification-img />
+                <h3 class="badge_name" change es="" en="" certification-name></h3>
             </div>
-            <button type="button" class="btn href_btn" link-ref="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design">
+            <button type="button" class="btn href_btn" link-ref="https://www.freecodecamp.org/certification/JohnGC/responsive-web-design" certification-btn>
                 <span class="label_btn" change es="Ir a" en="Go To">Ir A</span>
             </button>
         </div>
     </template>
-    <template class="skill_badge_template">
-        <div class="badge skill_badge" name="" id="">
-            <h3 class="badge_name"></h3>
+    <template class="skill_badge_template" skill-badge-template>
+        <div class="badge skill_badge" tech-ref="" id="" skill-badge>
+            <span class="badge_icon" badge-icon></span>
+            <h3 class="badge_name" badge-label></h3>
         </div>
     </template>
 

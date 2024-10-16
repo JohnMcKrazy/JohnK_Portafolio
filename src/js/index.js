@@ -6,13 +6,6 @@ const $d = document;
 const selector = (tag, queryContainer = $d) => queryContainer.querySelector(`${tag}`);
 const selectorAll = (tag, queryContainer = $d) => queryContainer.querySelectorAll(`${tag}`);
 /* FRAGMENTS */
-const fragmentHotProjects = $d.createDocumentFragment();
-const fragmentPortfolioProjects = $d.createDocumentFragment();
-const cardProjectTemplate = selector(".card_project_template").content;
-const extraListBtnTemplate = selector(".extra_list_btn_template").content;
-const certificationTemplate = selector(".certification_template").content;
-const skillTemplate = selector(".skill_badge_template").content;
-const fragmentBtns = $d.createDocumentFragment();
 
 const lightT = "light";
 const darkT = "dark";
@@ -20,95 +13,51 @@ const es = "es";
 const en = "en";
 const close = "close";
 const open = "open";
-const start = "start";
 const storageName = "JK_Dev_storage";
-let menuStatus = close;
-let menuSocialStatus = close;
+let menuActive = false;
+let menuSocialActive = false;
 let storageContent;
 let currentTheme = darkT;
 let audioItsActive = true;
-/* AUDIO CONTENT */
-const audioEnterBtn = selector("[audio=enter]");
-const audioTeleportBtn = selector("[audio=teleport]");
-/* AUDIO CONFIGURATION */
-audioEnterBtn.volume = 0.4;
-audioTeleportBtn.volume = 0.4;
+
 //^ SELECTORES
 /* BASIC CONTAINER */
 const BODY = selector("body");
-const modal = selector(".modal");
-export const nav = selector(".nav_menu");
-const phoneMenu = selector(".phone_menu_controler");
-const menuSocialContainer = selector(".menu_social_container");
-const modalInfoLegal = selector(".modal_info_legal");
-const alertModal = selector(".alert_modal");
-const contactModal = selector(".contact_modal");
-const menuSocialBtnsContainer = selector(".menu_social_btns_container");
+export const nav = selector("[nav-menu]");
+const phoneMenu = selector("[phone-menu]");
+const menuSocialContainer = selector("[contact-menu]");
+const menuSocialBtnsContainer = selector("[contact-menu-container]");
 const sections = selectorAll(".section");
 const forms = selectorAll("FORM");
-const certificationsContainer = selector(".certification_container");
-const designSkillsContainer = selector(".design_skills_container");
-const devSkillsContainer = selector(".dev_skills_container");
-const swipeAnimationContainerFull = selectorAll(".swipe_animation_container_full");
-const swipeAnimationContainerHalf = selectorAll(".swipe_animation_container_half");
-const sectionDividers = selectorAll(".section_divider");
-//MY ILLUSTRATION CONTENT
-const designScreen = selector(".design_screen");
-const designTabletScreen = selector(".design_tablet_screen");
-const devScreen = selector(".dev_screen");
-const devTabletScreen = selector(".dev_tablet_screen");
-const shieldScreen = selector(".shield_screen");
-const illustrationScreen = selector(".illustration_screen");
-const illustrationTabletScreen = selector(".illustration_tablet_screen");
-// BUBBLES
-const bubbleBio = selector(".bio_bubble");
-const bubbleInfo = selector(".info_bubble");
-const bubbleRex = selector(".rex_bubble");
+const certificationsContainer = selector("[certification-container]");
+const sectionDividers = selectorAll("[divider]");
+
 // MODAL PORTFOLIO
-const searchPortfolioListBtn = selector(".search_portfolio_list_btn");
-const searchPortfolioListBtnLabel = selector(".label_btn", searchPortfolioListBtn);
-const portfolioListContainer = selector(".portfolio_list_btns_container");
-const extraListBtns = selectorAll(".extra_list_btn");
-const searchExtraListBtn = selector(".search_extra_list_btn");
-const searchExtraListBtnLabel = selector(".label_btn", searchExtraListBtn);
-const extraListContainer = selector(".extra_list_btns_container");
-const cardsHotContainer = selector(".cards_hot_container");
-const portfolioCardsContainer = selector(".cards_portfolio_container");
-/* MY ILLUSTRATION */
-const illustrationMe = selector(".desk_me");
-const illustrationRex = selector(".dog");
-const tabletScreen = selector(".desk_tablet_screen");
-const devIcons = selectorAll(".dev_icon");
-const illustrationIcons = selectorAll(".illustration_icon");
-const designIcons = selectorAll(".design_icon");
+const cardsHotContainer = selector("[hot-container]");
+const portfolioCardsContainer = selector("[portfolio-container]");
+
 /* MODAL */
-const legalModal = selector(".legal_modal");
-const acceptStorageBtn = selector(".storage_accept");
+const acceptStorageBtn = selector("[accept-storage]");
 /* BTNS */
-const btnLogo = selector(".logo_btn");
-const menuBtn = selector(".menu_btn");
-const innerBtns = selectorAll(".inner_link_btn");
-const linkBtns = selectorAll(".link_btn");
-const legalAcceptBtn = selector(".legal_modal_accept_btn");
-const closeModalBtns = selectorAll(".close_modal");
-const btnDown = selector(".btn_down");
-const accesibilityBtns = selectorAll(".accessibility_btn");
-const actionBtns = selectorAll(".action_menu");
-const sectionBtns = selectorAll(".section_btn");
+const btnLogo = selector("[logo-btn]");
+const accesibilityBtns = selectorAll("[accesibility-btn]");
+const actionBtns = selectorAll("[action-menu]");
+const sectionBtns = selectorAll("[section-action]");
 const socialMenuBtns = selectorAll(".social_menu_btn");
-const contactBtns = selectorAll(".contact_btn");
 const heroBtns = selectorAll(".btn_hero");
-const portfolioBtns = selectorAll(".portfolio_btn");
 const langBtns = selectorAll(".lang_btn");
-const mainNavBtn = selector(".main_nav_btn ");
-const listPortfolioBtns = selectorAll(".list_portfolio_btn");
+const mainNavBtn = selector(".main_nav_btn");
 const animationKeys = selectorAll(".animation_key");
 
 document.addEventListener("DOMContentLoaded", () => {
     let currentLang;
+    /* AUDIO CONTENT */
+    const audioEnterBtn = selector("[audio=enter]");
+    const audioTeleportBtn = selector("[audio=teleport]");
+    /* AUDIO CONFIGURATION */
+    audioEnterBtn.volume = 0.4;
+    audioTeleportBtn.volume = 0.4;
     const sanitazer = (item) => utils.sanitizeInput(item);
-    const deleteArr = (item) => utils.deleteArrElements(item);
-    const deleteChild = (item) => utils.deleteChildElements(item);
     const retTop = (sec) => utils.returnTop(sec);
     const scrollSection = (sec) => utils.scrollToSection(sec);
     /* SOUND FUNCTIONS */
@@ -122,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const skillsData = utils.skillTypes;
     const storage = utils.johnKStorage;
+    const infSoftware = utils.infoSoftware;
+
     // FUNCTION FOR GO TO SPECIFIC PAGE
 
     const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("link-ref")), 1500);
@@ -164,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectorAll(`[bg-img]`).forEach((bg) => bg.setAttribute("hidden", bg.getAttribute("bg-img") === currentTheme ? false : true));
 
         updateStorage();
-        BODY.className = currentTheme;
+        BODY.setAttribute("color-scheme", currentTheme);
     };
 
     const changeLang = (lang) => {
@@ -178,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkWindowHeight = () => {
         const navTop = nav.getBoundingClientRect().top;
         const windowHeight = window.innerHeight / 2;
-        let borderRadius = "1rem";
 
         if (navTop >= windowHeight) {
             menuSocialContainer.setAttribute("position-social", "top");
@@ -196,84 +146,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 250);
         }
     };
-    // SET DINAMIC CONTENT FOR PAGE
 
-    const infSoftware = utils.infoSoftware;
     const setTextData = (item, data) => {
         item.setAttribute(en, !data.en ? data.es : data.en);
         item.setAttribute(es, !data.es ? data.en : data.es);
         item.textContent = item.getAttribute(currentLang);
     };
-    const setAssets = () => {
-        infSoftware.forEach((software) => {
-            const clone = skillTemplate.cloneNode(true);
-            const badge = selector(".skill_badge", clone);
-            badge.id = `skill_badge_${software.db_name}`;
-            badge.setAttribute("name", software.db_name);
-            badge.innerHTML = `${software.icon}<h3 class="badge_name">${software.tech_name}</h3>`;
-            if (software.type === "design") {
-                selector(".icons_container", designSkillsContainer).appendChild(badge);
-            } else if (software.type === "dev") {
-                selector(".icons_container", devSkillsContainer).appendChild(badge);
-            }
-            setTimeout(() => {
-                badge.addEventListener("mouseover", (e) => {
-                    const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("name"));
-                    selector(".title", bubbleInfo).textContent = newData.tech_complete_name;
-                    selector(".description", bubbleInfo).textContent = newData[`tech_info_${currentLang}`];
-                    bubbleInfo.classList.add("show_flex");
-                    const containerWidth = bubbleInfo.getClientRects()[0].width;
-                    bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
-                });
-                badge.addEventListener(
-                    "mouseleave",
-                    () => {
-                        bubbleInfo.classList.remove("show_flex");
-                    },
-                    250
-                );
+    const listItemTemplate = selector("[option-btn-template]").content;
+    const setOptionActions = () => {
+        selectorAll(`[option-btn]`).forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const optionRef = btn.getAttribute("option-btn");
+                const optionsDroper = selector(`[options-droper='${optionRef}']`);
+                const isDroperHidding = optionsDroper.getAttribute(`hidden`);
+                const isMenuActive = optionsDroper.getAttribute(`options-active`);
+                if (isDroperHidding === "false") {
+                    optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true);
+
+                    setTimeout(() => optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true), 500);
+                } else {
+                    optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true);
+
+                    setTimeout(() => optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true), 500);
+                }
             });
         });
-        utils.certificationsData.forEach((certification) => {
-            const certificationClone = certificationTemplate.cloneNode(true);
-            const certificationBadge = selector(".certification_badge", certificationClone);
-            const certificationImg = selector(".badge_image", certificationClone);
-            const certificationBtn = selector(".btn", certificationClone);
-            const certificationName = selector(".badge_name", certificationClone);
-            certificationImg.setAttribute("src", certification.image);
-            certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[currentLang]}' emitido por FreeCodeCamp`);
-            certificationBtn.setAttribute("link-ref", certification.link);
-            setTextData(certificationName, certification);
-
-            certificationsContainer.appendChild(certificationBadge);
-            certificationBtn.addEventListener("mouseenter", playHover);
-            certificationBtn.addEventListener("click", playClick);
-        });
-
-        let filterHotData = utils.hotCardsSelection.map((itemHotCard) => DB.find((itemDB) => itemDB.db_name === itemHotCard));
-        filterHotData.forEach((item) => createCard(item, fragmentHotProjects, "card_up"));
-        cardsHotContainer.appendChild(fragmentHotProjects);
-
-        setTimeout(() => {
-            selectorAll(".project_card", cardsHotContainer).forEach((card) => {
-                card.classList.add("card_up");
-            });
-            setTimeout(() => {
-                setObservers();
-                setTextLang(currentLang);
-
-                langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
-            }, 250);
-        }, 250);
-    };
-    // SET ALL START CONFIGURATIONS
-    const setStart = () => {
-        checkWindowHeight();
-        checkStorage();
-        logoAnimation();
-        iconsAnimation();
-        setAssets();
-        selectorAll(".href_btn").forEach((btn) => btn.addEventListener("click", () => teleportToPage(btn)));
     };
     // FUNCTION FOR RETUN PAGE TO THE TOP
     const toTheTop = () => {
@@ -281,27 +178,26 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo(currentPosition, 0);
     };
     // FUNCTION FOR CREATE DINAMIC PROJECT CARDS
-    const createCard = (item, frac, extraClass = "") => {
+    const projectCardTemplate = selector("[project-card-template]").content;
+    const createCard = (item, container) => {
         let iconsRow = "";
-        const cloneProjectCard = cardProjectTemplate.cloneNode(true);
-        const projectCard = selector(".project_card", cloneProjectCard);
-        const imgCard = selector(".img_card", cloneProjectCard);
-        const projectCardIconsContainer = selector(".icons_project_container", cloneProjectCard);
-        const cardTitle = selector(".title", cloneProjectCard);
-        const innerBtn = selector(".btn", cloneProjectCard);
-        const makeText = selector("H3", cloneProjectCard);
+        const cloneProjectCard = projectCardTemplate.cloneNode(true);
+        const projectCard = selector("[project-card]", cloneProjectCard);
+        const imgCard = selector("[card-img]", cloneProjectCard);
+        const projectCardIconsContainer = selector("[card-icons-container]", cloneProjectCard);
+        const cardTitle = selector("[card-title]", cloneProjectCard);
+        const innerBtn = selector("[card-action-btn]", cloneProjectCard);
+        const makeText = selector("[card-description]", cloneProjectCard);
         //* ******************************************************************************** *//
 
-        const cardImg = item["projects"]["img"];
-        const cardDescription = item["projects"]["info"];
-        if (extraClass === "") {
-            projectCard.className += ` ${extraClass}`;
-        }
-        projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
+        const cardImg = item.img;
+        const cardDescription = item.info;
+
+        /* projectCard.setAttribute("id", `${item["db_name"]}_project_card`); */
         imgCard.setAttribute("src", cardImg);
         imgCard.setAttribute("alt", cardDescription);
 
-        const clientTechnologiesInProjects = item["projects"]["technologies"];
+        const clientTechnologiesInProjects = item.technologies;
         clientTechnologiesInProjects.forEach((tech) => {
             /* console.log(tech); */
             infSoftware.forEach((technology) => {
@@ -312,13 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         projectCardIconsContainer.innerHTML = iconsRow;
 
-        setTextData(cardTitle, item["project_name"]);
+        setTextData(cardTitle, item.project_name);
 
-        innerBtn.setAttribute("link-ref", `${item["projects"]["project_link"]}`);
+        innerBtn.setAttribute("link-ref", `${item.project_link}`);
         innerBtn.addEventListener("click", () => teleportToPage(innerBtn));
         innerBtn.addEventListener("mouseenter", playHover);
         innerBtn.addEventListener("click", playClick);
-        frac.appendChild(projectCard);
+        container.appendChild(projectCard);
+        return projectCard;
     };
     // FUNCTION FOR CHANGE PAGE COLOR SCHEMA THEME
     const changeTheme = (tm) => {
@@ -330,84 +227,48 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR PHONE MENU ACTIONS
     const menuActions = (status) => {
-        const navTop = nav.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight / 2;
+        console.log(status);
         const delay = 250;
-        if (status === close) {
-            menuStatus = open;
+        if (status === false) {
             phoneMenu.classList.add("show_flex");
             setTimeout(() => {
                 phoneMenu.classList.add("show_opacity");
                 setTimeout(() => phoneMenu.classList.add("show_menu"), delay);
                 mainNavBtn.focus();
             }, 200);
-        } else if (status === open) {
-            /* console.log("cerrando menu"); */
-            menuStatus = close;
+        } else if (status === true) {
             phoneMenu.classList.remove("show_menu");
             setTimeout(() => phoneMenu.classList.remove("show_opacity"), delay);
             setTimeout(() => {
                 phoneMenu.classList.remove("show_flex");
             }, 1200);
         }
+        menuActive = !status;
     };
     // FUNCTION FOR SOCIAL MENU ACTIONS
-    const menuSocialActions = (action) => {
-        if (action === open) {
-            /* console.log("cerrando menu social"); */
-            menuSocialStatus = close;
+    const menuSocialActions = (status) => {
+        console.log(status);
+        if (status === true) {
             menuSocialBtnsContainer.classList.remove("show_opacity");
             setTimeout(() => {
                 menuSocialBtnsContainer.classList.remove("show_flex");
             }, 1000);
-        } else if (action === close) {
-            /* console.log("abriendo menu social"); */
-
-            menuSocialStatus = open;
+        } else if (status === false) {
             menuSocialBtnsContainer.classList.add("show_flex");
             setTimeout(() => {
                 menuSocialBtnsContainer.classList.add("show_opacity");
             }, 200);
         }
-    };
-    //  FUNCTION FOR MODAL BACKDROP ACTIONS
-    const modalActions = (action) => {
-        if (action === close) {
-            modal.classList.remove("show_opacity");
-            setTimeout(() => modal.classList.remove("show_flex"), 500);
-        } else if (action === open) {
-            modal.classList.add("show_flex");
-            setTimeout(() => modal.classList.add("show_opacity"), 500);
-        }
-    };
-    // FUNCTION FOR MODAL WINDOWS ACTIONS
-    const modalWindowActions = (window, action) => {
-        if (action === close) {
-            window.classList.remove("modal_open");
-            setTimeout(() => {
-                window.classList.remove("show_flex");
-                setTimeout(() => {
-                    modalActions(close);
-                }, 100);
-            }, 700);
-        } else if (action === open) {
-            modalActions(open);
-            setTimeout(() => {
-                window.classList.add("show_flex");
-                setTimeout(() => {
-                    window.classList.add("modal_open");
-                }, 100);
-            }, 700);
-        }
+        menuSocialActive = !status;
     };
 
     const setObservers = () => {
         const show = (currentEntry) => currentEntry.classList.add(`show_card`);
         const hide = (currentEntry) => currentEntry.classList.remove(`show_card`);
 
-        swipeAnimationContainerFull.forEach((container) => {
+        selectorAll("[observer-full]").forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationUpContainers = selectorAll(".animation_up", entry.target);
+                const animationUpContainers = selectorAll("[animation-text]", entry.target);
                 animationUpContainers.forEach((container) => {
                     if (entry.isIntersecting) {
                         show(container);
@@ -423,9 +284,9 @@ document.addEventListener("DOMContentLoaded", () => {
             skillsContainersObserver.observe(container);
         });
 
-        swipeAnimationContainerHalf.forEach((container) => {
+        selectorAll("[observer-half]").forEach((container) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationUpContainers = selectorAll(".animation_up", entry.target);
+                const animationUpContainers = selectorAll("[animation-text]", entry.target);
 
                 animationUpContainers.forEach((container) => {
                     if (entry.isIntersecting) {
@@ -442,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_skills);
             skillsContainersObserver.observe(container);
         });
-        selectorAll(".card_up").forEach((card) => {
+        selectorAll("[animation-card]").forEach((card) => {
             const watchSwipeAnimationContainer = ([entry]) => {
                 if (entry.isIntersecting) {
                     show(card);
@@ -492,198 +353,75 @@ document.addEventListener("DOMContentLoaded", () => {
             containersObserver.observe(container);
         });
     };
-    const clearPortfolio = () => {
-        deleteArr(fragmentPortfolioProjects);
-        deleteChild(portfolioCardsContainer);
-    };
-    const clearExtraListBtns = () => {
-        deleteArr(fragmentBtns);
-        deleteChild(extraListContainer);
-    };
-    const listPortfolioActions = () => {
-        portfolioListContainer.classList.toggle("list_down");
-        searchPortfolioListBtn.classList.toggle("list_btn_active");
-        selector(".arrow_list_icon", searchPortfolioListBtn).classList.toggle("arrow_list_icon_active");
-    };
-    const listExtrasActions = () => {
-        extraListContainer.classList.toggle("list_down");
-        searchExtraListBtn.classList.toggle("list_btn_active");
-        selector(".arrow_list_icon", searchExtraListBtn).classList.toggle("arrow_list_icon_active");
-        extraListContainer.children[0].focus();
-    };
-    const createSkillBtn = (skillData) => {
-        const typeData = skillData;
-        const newTemplate = extraListBtnTemplate.cloneNode(true);
-        const newBtn = selector(".extra_list_btn", newTemplate);
-        const btnLabel = selector(".label_btn", newBtn);
-        setTextData(btnLabel, typeData);
-        btnLabel.setAttribute("ref", typeData.ref);
-        btnLabel.setAttribute("skill", typeData.ref);
-        newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
-        fragmentBtns.appendChild(newBtn);
-    };
-    const activateExtraBtns = (btn) => {
-        listExtrasActions();
-        clearPortfolio();
-        retTop(portfolioCardsContainer);
-        const label = selector(".label_btn", btn);
-        const tag = label.getAttribute("ref");
-        const skillType = label.getAttribute("skill");
-        console.log(tag, skillType);
-        let currentData;
-        if (tag === "all") {
-            setTextData(searchExtraListBtnLabel, skillsData.all);
-        } else {
-            setTextData(searchExtraListBtnLabel, skillsData[skillType].types[tag]);
-        }
-        if (tag === "all" && skillType === "all") {
-            currentData = DB;
-        } else if (tag === "all" && skillType !== "all") {
-            currentData = DB.filter((item) => item.projects.type.includes(skillType));
-        } else if (tag !== "all") {
-            currentData = DB.filter((item) => item.projects.skills.includes(tag));
-        }
 
-        currentData.forEach((item) => createCard(item, fragmentPortfolioProjects));
-        portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-        /*  */
-    };
-    searchPortfolioListBtn.addEventListener("click", () => {
-        listPortfolioActions();
-        portfolioListContainer.children[0].focus();
-    });
-    searchExtraListBtn.addEventListener("click", listExtrasActions);
-    const openPortfolioModal = (target) => {
-        clearPortfolio();
-        clearExtraListBtns();
-
-        const modalToOpen = target.getAttribute("name");
-        DB.forEach((data) => createCard(data, fragmentPortfolioProjects));
-
-        Object.keys(skillsData).forEach((skill) => {
-            if (skill === "all") {
-                createSkillBtn(skillsData.all);
-            } else {
-                Object.keys(skillsData[skill].types).forEach((key) => {
-                    createSkillBtn(skillsData[skill].types[key]);
-                });
-            }
-        });
-        extraListContainer.appendChild(fragmentBtns);
-        portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-
-        modalWindowActions(selector(`.${modalToOpen}`), open);
-
-        listPortfolioBtns.forEach((btn) => {
+    const setModalActions = () => {
+        const closeModalBtn = selector("[close-btn]");
+        const modal = selector(`[modal]`);
+        const modalWindows = selectorAll(`[modal-window]`);
+        const modalBtns = selectorAll(`[modal-btn]`);
+        modalBtns.forEach((btn) =>
             btn.addEventListener("click", () => {
-                listPortfolioActions();
-                clearExtraListBtns();
-                retTop(portfolioCardsContainer);
-
-                const btnLabel = selector(".label_btn", btn);
-                const btnData = btnLabel.getAttribute("en");
-
-                setTextData(searchExtraListBtnLabel, skillsData.all);
-                setTextData(searchPortfolioListBtnLabel, skillsData[btnData]);
-
-                searchExtraListBtn.focus();
-                deleteArr(fragmentPortfolioProjects);
-                deleteChild(portfolioCardsContainer);
-                console.log(btnData);
-                console.log(DB.filter((item) => item.projects.type.includes(btnData)));
-                let dataToCheck = [];
-                btnData !== "all" ? (dataToCheck = DB.filter((item) => item.projects.type.includes(btnData))) : (dataToCheck = DB);
-                dataToCheck.forEach((data) => createCard(data, fragmentPortfolioProjects));
-                /*  */
-
-                if (btnData === "all") {
-                    /*  */
-                    Object.keys(skillsData).forEach((skill) => {
-                        if (skill === "all") {
-                            const typeData = skillsData.all;
-                            const newTemplate = extraListBtnTemplate.cloneNode(true);
-                            const newBtn = selector(".extra_list_btn", newTemplate);
-                            const btnLabel = selector(".label_btn", newBtn);
-                            setTextData(btnLabel, typeData);
-
-                            btnLabel.setAttribute("ref", "all");
-                            btnLabel.setAttribute("skill", skill);
-                            newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
-                            fragmentBtns.appendChild(newBtn);
-                        } else {
-                            Object.keys(skillsData[skill].types).forEach((key) => {
-                                const typeData = skillsData[skill].types[key];
-                                const newTemplate = extraListBtnTemplate.cloneNode(true);
-                                const newBtn = selector(".extra_list_btn", newTemplate);
-                                const btnLabel = selector(".label_btn", newTemplate);
-                                setTextData(btnLabel, typeData);
-
-                                btnLabel.setAttribute("ref", typeData.ref);
-                                btnLabel.setAttribute("skill", skill);
-                                newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
-                                fragmentBtns.appendChild(newBtn);
-                            });
-                        }
-                    });
-
-                    /*  */
+                const modalStatus = modal.getAttribute("modal-active");
+                const currentBtn = btn.getAttribute(`modal-btn`);
+                const menuWindow = selector(`[modal-window='${currentBtn}']`);
+                closeModalBtn.setAttribute(`modal-btn`, currentBtn);
+                if (modalStatus === "false") {
+                    modal.showModal();
+                    modal.setAttribute("modal-active", true);
+                    menuWindow.setAttribute("hidden", false);
+                    setTimeout(() => menuWindow.setAttribute("modal-active", true), 100);
                 } else {
-                    const newTemplate = extraListBtnTemplate.cloneNode(true);
-                    const newBtn = selector(".extra_list_btn", newTemplate);
-                    const labelAllBtn = selector(".label_btn", newBtn);
-                    setTextData(labelAllBtn, skillsData.all);
-                    console.log(skillsData);
-                    console.log(skillsData[btnData]);
-                    labelAllBtn.setAttribute("ref", "all");
-                    labelAllBtn.setAttribute("skill", btnData);
-                    newBtn.addEventListener("click", () => activateExtraBtns(newBtn));
-                    fragmentBtns.appendChild(newBtn);
-                    Object.keys(skillsData[btnData].types).forEach((key) => {
-                        const typeExtraData = skillsData[btnData].types[key];
-
-                        const newTemplate = extraListBtnTemplate.cloneNode(true);
-                        const newExtraBtn = selector(".extra_list_btn", newTemplate);
-                        const extraBtnLabel = selector(".label_btn", newExtraBtn);
-                        setTextData(extraBtnLabel, typeExtraData);
-
-                        extraBtnLabel.setAttribute("ref", typeExtraData.ref);
-                        extraBtnLabel.setAttribute("skill", btnData);
-                        newExtraBtn.addEventListener("click", () => activateExtraBtns(newExtraBtn));
-                        fragmentBtns.appendChild(newExtraBtn);
-                    });
+                    modal.setAttribute("modal-active", false);
+                    setTimeout(() => {
+                        modal.close();
+                        modalWindows.forEach((window) => window.setAttribute("hidden", true));
+                    }, 500);
                 }
+            })
+        );
+        selectorAll(`[window-btn]`).forEach((btn) =>
+            btn.addEventListener("click", () => {
+                let nextWindowRef = btn.getAttribute(`window-btn`);
+                let nextWindow = selector(`[modal-window='${nextWindowRef}']`);
+                let currentWindow = selector(`[modal-window][modal-active='true']`);
+                let currentWindowRef = currentWindow.getAttribute(`window`);
+                if (currentWindowRef !== nextWindowRef) {
+                    modalWindows.forEach((window) => window.setAttribute("modal-active", false));
+                    closeModalBtn.setAttribute(`btn`, nextWindowRef);
 
-                extraListContainer.appendChild(fragmentBtns);
-                /*  */
-                portfolioCardsContainer.appendChild(fragmentPortfolioProjects);
-            });
-        });
+                    setTimeout(() => {
+                        currentWindow.setAttribute("hidden", true);
+                        nextWindow.setAttribute("hidden", false);
+                        setTimeout(() => nextWindow.setAttribute("modal-active", true), 500);
+                    }, 500);
+                }
+            })
+        );
     };
-
     const iconsAnimation = () => {
         let count = 1;
-        const animationIconsList = ["illustration_icon", "dev_icon", "design_icon"];
-        const animationScreensList = ["illustration_screen", ["dev_screen", "shield_screen"], "design_screen"];
-        const animationTabletScreensList = ["illustration_tablet_screen", "dev_tablet_screen", "design_tablet_screen"];
-        selectorAll(`.${animationIconsList[0]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
-        selectorAll(`.${animationScreensList[0]}`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
-        selectorAll(`.${animationTabletScreensList[0]}`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
+        const animationIconsList = ["illustration-icon", "dev-icon", "design-icon"];
+        const animationScreensList = ["illustration-screen", ["dev-screen", "shield-screen"], "design-screen"];
+        const animationTabletScreensList = ["illustration-tablet-screen", "dev-tablet-screen", "design-tablet-screen"];
+        selectorAll(`[${animationIconsList[0]}]`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
+        selectorAll(`[${animationScreensList[0]}]`).forEach((screenToShow) => screenToShow.classList.add("screen_show"));
+        selectorAll(`[${animationTabletScreensList[0]}]`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
         setInterval(() => {
-            selectorAll(".icon_animation").forEach((item) => item.classList.remove("icon_show"));
-            selectorAll(".screen_animation").forEach((item) => item.classList.remove("screen_show"));
-            selectorAll(".screen_tablet_animation").forEach((item) => item.classList.remove("screen_show"));
+            selectorAll("[icon-animation]").forEach((item) => item.classList.remove("icon_show"));
+            selectorAll("[screen-animation]").forEach((item) => item.classList.remove("screen_show"));
+            selectorAll("[screen-tablet-animation]").forEach((item) => item.classList.remove("screen_show"));
 
             setTimeout(() => {
-                selectorAll(`.${animationIconsList[count]}`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
-                selectorAll(`.${animationTabletScreensList[count]}`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
+                selectorAll(`[${animationIconsList[count]}]`).forEach((iconToShow) => iconToShow.classList.add("icon_show"));
+                selectorAll(`[${animationTabletScreensList[count]}]`).forEach((screenTabletToShow) => screenTabletToShow.classList.add("screen_show"));
                 switch (typeof animationScreensList[count]) {
                     case "object":
                         animationScreensList[count].forEach((screenToShow) => {
-                            selector(`.${screenToShow}`).classList.add("screen_show");
+                            selector(`[${screenToShow}]`).classList.add("screen_show");
                         });
                         break;
                     case "string":
-                        selector(`.${animationScreensList[count]}`).classList.add("screen_show");
+                        selector(`[${animationScreensList[count]}]`).classList.add("screen_show");
                         break;
                 }
                 count < 2 ? count++ : (count = 0);
@@ -718,64 +456,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const acceptStorage = () => {
         storageContent["page_alert_status"] = close;
-        modalWindowActions(alertModal, close);
         updateStorage();
         console.table(getStorage());
     };
-    const closeLegalModal = () => {
-        retTop(modalInfoLegal);
-        setTimeout(() => modalWindowActions(legalModal, close), 250);
-    };
-    const changeModalWindow = (currentBtn) => {
-        const current = currentBtn.getAttribute("current");
-        const next = currentBtn.getAttribute("next");
-        const currentModal = selector(`.${current}`);
-        const nextModal = selector(`.${next}`);
-        currentModal.classList.remove("modal_open");
-        setTimeout(() => {
-            currentModal.classList.remove("show_flex");
-            nextModal.classList.add("show_flex");
-            setTimeout(() => {
-                nextModal.classList.add("modal_open");
-            }, 200);
-        }, 600);
-    };
+
     acceptStorageBtn.addEventListener("click", acceptStorage);
-
-    innerBtns.forEach((btn) => btn.addEventListener("click", () => changeModalWindow(btn)));
-
-    linkBtns.forEach((btn) =>
-        btn.addEventListener("click", () => {
-            const btnName = btn.getAttribute("name");
-            const currentBtn = selector(`.${btnName}`);
-            modalWindowActions(currentBtn, open);
-        })
-    );
-
-    legalAcceptBtn.addEventListener("click", closeLegalModal);
-
-    closeModalBtns.forEach((btn) =>
-        btn.addEventListener("click", () => {
-            const btnName = btn.getAttribute("name");
-            const currentBtn = selector(`.${btnName}`);
-
-            if (btnName === "legal_modal") {
-                closeLegalModal();
-            } else if (btnName === "portfolio_modal") {
-                retTop(portfolioCardsContainer);
-
-                setTimeout(() => {
-                    modalWindowActions(currentBtn, close);
-                    setTimeout(() => {
-                        setTextData(searchExtraListBtnLabel, skillsData.all);
-                        setTextData(searchPortfolioListBtnLabel, skillsData.all);
-                    }, 250);
-                }, 500);
-            } else {
-                modalWindowActions(currentBtn, close);
-            }
-        })
-    );
 
     sections.forEach((section) => {
         const watchPage = ([entry]) => {
@@ -799,14 +484,14 @@ document.addEventListener("DOMContentLoaded", () => {
         pageObserver.observe(section);
     });
 
-    btnDown.addEventListener("click", oneSectionStep);
+    selector("[btn-down]").addEventListener("click", oneSectionStep);
 
     accesibilityBtns.forEach((btn) => {
         btn.addEventListener("click", () => scrollSection(btn));
     });
 
     actionBtns.forEach((btn) => {
-        btn.addEventListener("click", () => menuActions(menuStatus));
+        btn.addEventListener("click", () => menuActions(menuActive));
     });
 
     sectionBtns.forEach((btn) => {
@@ -816,13 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     socialMenuBtns.forEach((btn) => {
-        btn.addEventListener("enter", () => menuSocialActions(menuSocialStatus));
-        btn.addEventListener("click", () => menuSocialActions(menuSocialStatus));
-    });
-
-    contactBtns.forEach((btn) => {
-        btn.addEventListener("enter", () => modalWindowActions(contactModal, open));
-        btn.addEventListener("click", () => modalWindowActions(contactModal, open));
+        btn.addEventListener("click", () => menuSocialActions(menuSocialActive));
     });
 
     heroBtns.forEach((btn) => {
@@ -830,167 +509,231 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollSection(btn);
         });
     });
+    // SET DINAMIC CONTENT FOR PAGE
 
-    portfolioBtns.forEach((btn) => {
-        btn.addEventListener("click", () => openPortfolioModal(btn));
-    });
-    illustrationMe.addEventListener("mouseover", (e) => {
-        bubbleBio.classList.add("show_flex");
-        const containerWidth = bubbleBio.getClientRects()[0].width;
-        const containerHeight = bubbleBio.getClientRects()[0].height;
-        bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
-    });
-
-    bubbleBio.addEventListener("mouseleave", () => {
-        bubbleBio.classList.remove("show_flex");
-    });
-    const tooltipMargin = 12;
-    illustrationRex.addEventListener("mouseover", (e) => {
-        bubbleRex.classList.add("show_flex");
-        const containerWidth = bubbleRex.getClientRects()[0].width;
-        const containerHeight = bubbleRex.getClientRects()[0].height;
-        bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - parseInt(containerHeight) - tooltipMargin}px)`;
-    });
-
-    illustrationRex.addEventListener("mouseleave", () => {
-        bubbleRex.classList.remove("show_flex");
-    });
-
-    /*  animationKeys.forEach((key) => {
-        key.addEventListener("mouseover", () => {
-            switch (key.getAttribute("key")) {
-                case "dev":
-                    devIconsActions(open);
-                    break;
-                case "illustration":
-                    illustrationIconsActions(open);
-                    break;
-                case "design":
-                    designIconsActions(open);
-                    break;
-            }
-
-            tabletScreen.classList.add("tablet_screen_on");
+    const setAssets = () => {
+        const bubbleBio = selector("[bio]");
+        const bubbleInfo = selector("[info]");
+        const bubbleRex = selector("[rex]");
+        const illustrationRex = selector("[illustration-rex]");
+        selector("[illustration-me]").addEventListener("mouseover", (e) => {
+            bubbleBio.classList.add("show_flex");
+            const containerWidth = bubbleBio.getClientRects()[0].width;
+            const containerHeight = bubbleBio.getClientRects()[0].height;
+            bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
         });
 
-        key.addEventListener("mouseleave", () => {
-            switch (key.getAttribute("key")) {
-                case "dev":
-                    devIconsActions(close);
-                    break;
-                case "illustration":
-                    illustrationIconsActions(close);
-                    break;
-                case "design":
-                    designIconsActions(close);
-                    break;
-            }
-            tabletScreen.classList.remove("tablet_screen_on");
+        bubbleBio.addEventListener("mouseleave", () => {
+            bubbleBio.classList.remove("show_flex");
         });
-    }); */
+        const tooltipMargin = 12;
+        illustrationRex.addEventListener("mouseover", (e) => {
+            bubbleRex.classList.add("show_flex");
+            const containerWidth = bubbleRex.getClientRects()[0].width;
+            const containerHeight = bubbleRex.getClientRects()[0].height;
+            bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - parseInt(containerHeight) - tooltipMargin}px)`;
+        });
 
-    forms.forEach((thisForm) => {
-        thisForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            sanitazer(selector(".input_name", thisForm));
-            sanitazer(selector(".input_last_name", thisForm));
-            sanitazer(selector(".input_email", thisForm));
-            sanitazer(selector(".input_description", thisForm));
-            let formName = selector(".send_btn", thisForm).getAttribute("form");
-            let formResponse = selector(".form_response", thisForm);
-            let formResponseContainer = selector(".form_response_container", thisForm);
+        illustrationRex.addEventListener("mouseleave", () => {
+            bubbleRex.classList.remove("show_flex");
+        });
 
-            const formResponseActions = (action, status = "") => {
-                if (action === open) {
-                    if (status === "good") {
-                        formResponseContainer.setAttribute(status, "");
-                        formResponse.textContent = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
-                    } else if (status === "danger") {
-                        formResponseContainer.setAttribute(status, "");
-                        formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
+        forms.forEach((thisForm) => {
+            thisForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                sanitazer(selector("[input-name]", thisForm));
+                sanitazer(selector("[input-last-name]", thisForm));
+                sanitazer(selector("[input-email]", thisForm));
+                sanitazer(selector("[input-description]", thisForm));
+                let formName = selector("[send-form]", thisForm).getAttribute("form");
+                let formResponse = selector("[form-response]", thisForm);
+                let formResponseContainer = selector("[form-response-container]", thisForm);
+
+                const formResponseActions = (action, status = "") => {
+                    if (action === open) {
+                        if (status === "good") {
+                            formResponseContainer.setAttribute(status, "");
+                            formResponse.textContent = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
+                        } else if (status === "danger") {
+                            formResponseContainer.setAttribute(status, "");
+                            formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
+                        }
+                        formResponseContainer.classList.add("show_flex");
+                        setTimeout(() => {
+                            formResponseContainer.classList.add("show_opacity");
+                        }, 500);
+                    } else if (action === close) {
+                        formResponseContainer.classList.remove("show_opacity");
+                        setTimeout(() => {
+                            formResponseContainer.classList.remove("show_flex");
+                        }, 500);
                     }
-                    formResponseContainer.classList.add("show_flex");
-                    setTimeout(() => {
-                        formResponseContainer.classList.add("show_opacity");
-                    }, 500);
-                } else if (action === close) {
-                    formResponseContainer.classList.remove("show_opacity");
-                    setTimeout(() => {
-                        formResponseContainer.classList.remove("show_flex");
-                    }, 500);
-                }
-            };
-            const formData = new FormData(thisForm);
-            let newData = {};
+                };
+                const formData = new FormData(thisForm);
+                let newData = {};
 
-            formData.forEach((value, key) => {
-                newData[key] = value;
-            });
-            const jsonData = JSON.stringify(newData);
-
-            fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: jsonData,
-            })
-                .then(async (response) => {
-                    let json = await response.json();
-
-                    if (response.status == 200) {
-                        formResponseActions(open, "good");
-                    } else {
-                        throw error;
-                    }
-                })
-                .catch((error) => {
-                    console.log(error);
-                    formResponseActions(open, "danger");
-                })
-                .then(function () {
-                    setTimeout(() => {
-                        formResponseActions(close);
-                    }, 5000);
+                formData.forEach((value, key) => {
+                    newData[key] = value;
                 });
-        });
-    });
+                const jsonData = JSON.stringify(newData);
 
-    selectorAll(".sound_btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            audioItsActive = !audioItsActive;
-            selectorAll("[icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
-            storageContent["page_sound"] = !storageContent["page_sound"];
-            updateStorage();
-            if (!audioItsActive) {
-                selectorAll("AUDIO").forEach((audioElem) => mutePage(audioElem));
-            } else {
-                selectorAll("AUDIO").forEach((audioElem) => backSoundPage(audioElem));
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: jsonData,
+                })
+                    .then(async (response) => {
+                        let json = await response.json();
+
+                        if (response.status == 200) {
+                            formResponseActions(open, "good");
+                        } else {
+                            throw error;
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        formResponseActions(open, "danger");
+                    })
+                    .then(function () {
+                        setTimeout(() => {
+                            formResponseActions(close);
+                        }, 5000);
+                    });
+            });
+        });
+
+        selectorAll("[sound-btn]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                audioItsActive = !audioItsActive;
+                selectorAll("[icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
+                storageContent["page_sound"] = !storageContent["page_sound"];
+                updateStorage();
+                if (!audioItsActive) {
+                    selectorAll("AUDIO").forEach((audioElem) => mutePage(audioElem));
+                } else {
+                    selectorAll("AUDIO").forEach((audioElem) => backSoundPage(audioElem));
+                }
+            });
+        });
+        selectorAll("BUTTON").forEach((btn) => {
+            btn.addEventListener("mouseenter", playHover);
+            btn.addEventListener("click", playClick);
+        });
+        selectorAll("[theme-btn]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                selectorAll("[icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
+                changeTheme(currentTheme);
+            });
+        });
+
+        btnLogo.addEventListener("click", toTheTop);
+
+        window.addEventListener("scroll", () => {
+            checkWindowHeight();
+            if (menuActive === true) menuActions(menuActive);
+            if (menuSocialActive === true) menuSocialActions(menuSocialActive);
+        });
+        // SET ALL START CONFIGURATIONS
+
+        infSoftware.forEach((software) => {
+            const clone = selector("[skill-badge-template]").content.cloneNode(true);
+            const badge = selector("[skill-badge]", clone);
+            const icon = selector("[badge-icon]", clone);
+            const label = selector("[badge-label]", clone);
+            badge.setAttribute("tech-ref", software.db_name);
+            icon.innerHTML = software.icon;
+            label.textContent = software.tech_name;
+            if (software.type) {
+                selector(`[skills-container="${software.type}"]`).appendChild(badge);
             }
+            setTimeout(() => {
+                badge.addEventListener("mouseover", (e) => {
+                    const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("tech-ref"));
+                    selector(".title", bubbleInfo).textContent = newData.tech_complete_name;
+                    selector(".description", bubbleInfo).textContent = newData[`tech_info_${currentLang}`];
+                    bubbleInfo.classList.add("show_flex");
+                    const containerWidth = bubbleInfo.getClientRects()[0].width;
+                    bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
+                });
+                badge.addEventListener(
+                    "mouseleave",
+                    () => {
+                        bubbleInfo.classList.remove("show_flex");
+                    },
+                    250
+                );
+            });
         });
-    });
-    selectorAll("BUTTON").forEach((btn) => {
-        btn.addEventListener("mouseenter", playHover);
-        btn.addEventListener("click", playClick);
-    });
-    selectorAll(".theme_btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-            selectorAll("[icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
-            changeTheme(currentTheme);
+        utils.certificationsData.forEach((certification) => {
+            const certificationClone = selector("[certification-template]").content.cloneNode(true);
+            const certificationBadge = selector("[certification]", certificationClone);
+            const certificationImg = selector("[certification-img]", certificationClone);
+            const certificationBtn = selector("[certification-btn]", certificationClone);
+            const certificationName = selector("[certification-name]", certificationClone);
+            certificationImg.setAttribute("src", certification.image);
+            certificationImg.setAttribute("alt", `Imagen de Certificado en '${certification[currentLang]}' emitido por FreeCodeCamp`);
+            certificationBtn.setAttribute("link-ref", certification.link);
+            setTextData(certificationName, certification);
+
+            certificationsContainer.appendChild(certificationBadge);
+            certificationBtn.addEventListener("mouseenter", playHover);
+            certificationBtn.addEventListener("click", playClick);
         });
-    });
 
-    btnLogo.addEventListener("click", toTheTop);
+        let filterHotData = utils.hotCardsSelection.map((itemHotCard) => DB.find((itemDB) => itemDB.db_name === itemHotCard));
+        filterHotData.forEach((item) => {
+            const currentCard = createCard(item, cardsHotContainer);
+            currentCard.setAttribute("card-up", "");
+        });
 
-    window.addEventListener("scroll", () => {
+        DB.forEach((item) => {
+            const currentCard = createCard(item, portfolioCardsContainer);
+            currentCard.setAttribute("portfolio-project", "");
+            item.skills.forEach((skill) => currentCard.setAttribute(`skill-${skill}`, ""));
+            item.type.forEach((type) => currentCard.setAttribute(`type-${type}`, ""));
+        });
+
+        Object.keys(skillsData).forEach((skill) => {
+            Object.keys(skillsData[skill].types).forEach((key) => {
+                const data = skillsData[skill].types[key];
+                const newTemplate = listItemTemplate.cloneNode(true);
+                const optionItem = selector("[option-item]", newTemplate);
+                const newBtn = selector("[option-btn]", newTemplate);
+                const btnLabel = selector("[label]", newBtn);
+                setTextData(btnLabel, data);
+                btnLabel.setAttribute("skill", data.ref);
+                newBtn.setAttribute("option-btn", "skills");
+                newBtn.setAttribute("option-skill", key);
+                selector(`[options-droper="skills"]`).appendChild(optionItem);
+            });
+        });
+
+        setOptionActions();
+        setObservers();
+        setModalActions();
+        setTextLang(currentLang);
+        langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
+        selectorAll(".href_btn").forEach((btn) => btn.addEventListener("click", () => teleportToPage(btn)));
+        const options = ["type", "skill"];
+        options.forEach((option) => {
+            selectorAll(`[option-${option}]`).forEach((optionBtn) => {
+                optionBtn.addEventListener("click", () => {
+                    console.log(optionBtn);
+                });
+            });
+        });
+    };
+
+    const setStart = () => {
+        checkStorage();
         checkWindowHeight();
-        if (menuStatus === open) {
-            menuActions(menuStatus);
-        }
-        if (menuSocialStatus === open) {
-            menuSocialActions(menuSocialStatus);
-        }
-    });
-    setTimeout(setStart, 250);
+        logoAnimation();
+        iconsAnimation();
+        setAssets();
+    };
+    setStart();
 });

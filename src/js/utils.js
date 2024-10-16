@@ -19,7 +19,7 @@ export const certificationsData = [
 ];
 export const infoSoftware = [
     {
-        type: "nule",
+        type: null,
         db_name: "",
         tech_name_pre: "",
         tech_name: "traditional_illustration",
@@ -28,7 +28,7 @@ export const infoSoftware = [
         icon: '<div class="icon_container"><svg class="pallet_icon icon_svg tech_icon_card" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.98 64"><path class="cls-1" d="M48.84 41.61a11.58 11.58 0 0 1 0-19.22c8.78-6.33 5.84-19.17-5.1-21.52A39.79 39.79 0 0 0 35.51 0C15.07 0-1.34 15.57.09 34.26 1.3 50.13 15.63 62.95 33.25 63.94a39.81 39.81 0 0 0 10.19-.74c11.1-2.28 14.3-15.2 5.4-21.59ZM43 56a5 5 0 1 1 5-5 5 5 0 0 1-5 5Z"/><path class="cls-2" d="M59.32 16.67a2.25 2.25 0 0 0-3-.16L36.26 32.75a44.12 44.12 0 0 0-12.79 16.91l2.87 2.87a44.12 44.12 0 0 0 16.91-12.79l16.23-20.05a2.25 2.25 0 0 0-.16-3.02Z"/><path class="cls-3" d="M26.34 52.53S26.34 64 12 64c0-14.34 11.47-14.34 11.47-14.34Z"/><circle class="cls-4" cx="41" cy="13" r="5"/><circle class="cls-5" cx="13" cy="33" r="5"/><circle class="cls-6" cx="23" cy="17" r="5"/></svg></div>',
     },
     {
-        type: "nule",
+        type: null,
         db_name: "",
         tech_name_pre: "",
         tech_name: "digital_illustration",
@@ -191,7 +191,62 @@ export const skillTypes = {
     all: {
         es: "todo",
         en: "all",
-        ref: "all",
+        types: {
+            all: {
+                es: "todo",
+                en: "all",
+            },
+        },
+    },
+    design: {
+        es: "diseño",
+        en: "design",
+        types: {
+            logo: {
+                es: "logotipo",
+                en: "logo",
+            },
+            cover: {
+                es: "portada",
+                en: "cover",
+            },
+            identity: {
+                es: "identidad de marca",
+                en: "brand identity",
+            },
+            editorial: {
+                es: "editorial",
+                en: "editorial",
+            },
+            infographic: {
+                es: "infografía",
+                en: "infographic",
+            },
+            poster: {
+                en: "poster",
+                es: "poster",
+            },
+            packaging: {
+                es: "empaque",
+                en: "packaging",
+            },
+            stationery: {
+                es: "papelería",
+                en: "stationery",
+            },
+            image: {
+                es: "edición de imagen",
+                en: "image edition",
+            },
+            video: {
+                es: "edición de video",
+                en: "video edition",
+            },
+            animation_2d: {
+                es: "animacion 2D",
+                en: "2D animation",
+            },
+        },
     },
     develop: {
         es: "desarrollo",
@@ -200,22 +255,18 @@ export const skillTypes = {
             web: {
                 es: "web",
                 en: "web",
-                ref: "web",
             },
             api: {
-                es: "API Rest",
-                en: "API Rest",
-                ref: "api",
+                es: "API rest",
+                en: "API rest",
             },
             programming: {
                 es: "programación",
                 en: "programming",
-                ref: "programming",
             },
             data_visualization: {
-                es: "Visualización de Datos",
-                en: "Data Visualization",
-                ref: "data_visualization",
+                es: "visualización de datos",
+                en: "data visualization",
             },
         },
     },
@@ -227,78 +278,10 @@ export const skillTypes = {
             digital_illustration: {
                 es: "illustración digital",
                 en: "digital Illustration",
-                ref: "digital_illustration",
             },
             traditional_illustration: {
                 es: "illustración tradicional",
                 en: "traditional Illustration",
-                ref: "traditional_illustration",
-            },
-        },
-    },
-    design: {
-        es: "diseño",
-        en: "design",
-        types: {
-            image: {
-                es: "Edición de Imagen",
-                en: "Image Edition",
-                ref: "image",
-            },
-            video: {
-                es: "Edición de Video",
-                en: "Video Edition",
-                ref: "video",
-            },
-            animation_2d: {
-                es: "Animacion 2D",
-                en: "2D Animation",
-                ref: "animation_2d",
-            },
-            poster: {
-                en: "Poster",
-                es: "Poster",
-                ref: "poster",
-            },
-            infographic: {
-                es: "Infografía",
-                en: "Infographic",
-                ref: "infographic",
-            },
-            editorial: {
-                es: "Editorial",
-                en: "Editorial",
-                ref: "editorial",
-            },
-            cover: {
-                es: "Portada",
-                en: "Cover",
-                ref: "cover",
-            },
-            identity: {
-                es: "Identidad de Marca",
-                en: "Brand Identity",
-                ref: "identity",
-            },
-            stationery: {
-                es: "Papelería",
-                en: "Stationery",
-                ref: "stationery",
-            },
-            ads: {
-                es: "Promocionales",
-                en: "Ads",
-                ref: "ads",
-            },
-            logo: {
-                es: "Logotipo",
-                en: "Logo",
-                ref: "logo",
-            },
-            packaging: {
-                es: "Empaque",
-                en: "Packaging",
-                ref: "packaging",
             },
         },
     },
