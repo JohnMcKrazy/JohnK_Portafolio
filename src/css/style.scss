@@ -894,6 +894,7 @@ I {
     /* font-family: var(--titilliumFont); */
     font-size: var(--fs_n);
     font-weight: var(--fw_n);
+    text-transform: capitalize;
     display: block;
     line-height: 1;
     font-weight: 600;
@@ -949,7 +950,6 @@ I {
     background: var(--bgC_off);
     border-radius: var(--lg);
     z-index: 2;
-    display: none;
     transition: var(--t_uf);
     user-select: none;
     max-width: 250px;
@@ -1571,6 +1571,7 @@ I {
 
 .form {
     position: relative;
+    width: 100%;
 }
 .form_response_container {
     position: absolute;
@@ -1590,7 +1591,6 @@ I {
     align-items: center;
     .form_response {
         text-align: center;
-
         font-size: var(--fs_l);
     }
 }
@@ -1613,6 +1613,7 @@ I {
         border-top: solid var(--fc) 4px;
         padding: var(--lg) var(--lg);
         .inner_link_btn {
+            margin: var(--lg) 0;
             width: 100%;
         }
     }
@@ -1623,6 +1624,11 @@ I {
     .btn {
         width: calc(100% - var(--lg));
         margin: var(--lg) VAR(--md);
+    }
+}
+.alert_modal {
+    .modal_info {
+        text-align: center;
     }
 }
 .modal {
@@ -1726,23 +1732,23 @@ I {
             line-height: 1;
         }
     }
-    .divider_content {
+    .content {
         padding: 20rem 0;
         opacity: 0;
         transform: translateX(-100%);
         transition: var(--t_s);
     }
 
-    .show_quote {
+    [show-quote="true"] {
         opacity: 1;
         transform: translateX(0);
     }
 }
 .section_divider:nth-of-type(2n) {
-    .divider_content {
+    .content {
         transform: translateX(100%);
     }
-    .show_quote {
+    [show-quote="true"] {
         opacity: 1;
         transform: translateX(0);
     }
@@ -1945,7 +1951,6 @@ I {
     }
     .form {
         max-width: 800px;
-        width: 100%;
         H3 {
             font-size: var(--fs_l);
             text-align: center;
@@ -2180,22 +2185,10 @@ I {
     transform: translateY(4rem);
     transition: var(--t_f);
 }
-.show_flex {
-    display: flex;
-}
-.show_opacity {
-    opacity: 1;
-}
 .show_krazy {
     transform: translateX(0);
 }
-.show_card {
-    transform: translateY(0);
-    opacity: 1;
-}
-.show_menu {
-    transform: translateY(0);
-}
+
 .btn_active {
     background: var(--fc);
     color: var(--bgC);
@@ -2262,9 +2255,9 @@ I {
 [options-active],
 [modal-active] {
     transition: var(--t_f);
+    transition-delay: 100ms;
     &::backdrop {
         transition: var(--t_f);
-        transition-delay: 100ms;
     }
 }
 [options-active] {
@@ -2305,6 +2298,10 @@ I {
 }
 [btn-active="false"] {
     background: inherit;
+}
+[show-transform="true"] {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /*  */

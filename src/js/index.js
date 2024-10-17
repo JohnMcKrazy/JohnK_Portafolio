@@ -28,18 +28,19 @@ const phoneMenu = selector("[phone-menu]");
 const menuSocialContainer = selector("[contact-menu]");
 const menuSocialBtnsContainer = selector("[contact-menu-container]");
 const sections = selectorAll(".section");
-const forms = selectorAll("FORM");
-const certificationsContainer = selector("[certification-container]");
-const sectionDividers = selectorAll("[divider]");
 
 // MODAL PORTFOLIO
-const cardsHotContainer = selector("[hot-container]");
 const portfolioCardsContainer = selector("[portfolio-container]");
+// BUBBLES //
 
+const bubbleBio = selector("[bio]");
+const bubbleInfo = selector("[info]");
+const bubbleRex = selector("[rex]");
+const illustrationRex = selector("[illustration-rex]");
+const tooltipMargin = 12;
 /* MODAL */
 const acceptStorageBtn = selector("[accept-storage]");
 /* BTNS */
-const btnLogo = selector("[logo-btn]");
 const accesibilityBtns = selectorAll("[accesibility-btn]");
 const actionBtns = selectorAll("[action-menu]");
 const sectionBtns = selectorAll("[section-action]");
@@ -193,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardImg = item.img;
         const cardDescription = item.info;
 
-        /* projectCard.setAttribute("id", `${item["db_name"]}_project_card`); */
+        projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         imgCard.setAttribute("src", cardImg);
         imgCard.setAttribute("alt", cardDescription);
 
@@ -227,98 +228,71 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     // FUNCTION FOR PHONE MENU ACTIONS
     const menuActions = (status) => {
-        console.log(status);
         const delay = 250;
         if (status === false) {
-            phoneMenu.classList.add("show_flex");
+            phoneMenu.setAttribute("hidden", false);
             setTimeout(() => {
-                phoneMenu.classList.add("show_opacity");
-                setTimeout(() => phoneMenu.classList.add("show_menu"), delay);
+                /* phoneMenu.setAttribute("show", true); */
+                setTimeout(() => phoneMenu.setAttribute("show-transform", true), delay);
                 mainNavBtn.focus();
             }, 200);
         } else if (status === true) {
-            phoneMenu.classList.remove("show_menu");
-            setTimeout(() => phoneMenu.classList.remove("show_opacity"), delay);
+            /* phoneMenu.classList.remove("show_menu"); */
+            phoneMenu.setAttribute("show-transform", false);
             setTimeout(() => {
-                phoneMenu.classList.remove("show_flex");
-            }, 1200);
+                phoneMenu.setAttribute("hidden", true);
+            }, 1000);
         }
         menuActive = !status;
     };
     // FUNCTION FOR SOCIAL MENU ACTIONS
     const menuSocialActions = (status) => {
-        console.log(status);
         if (status === true) {
-            menuSocialBtnsContainer.classList.remove("show_opacity");
+            menuSocialBtnsContainer.setAttribute("show", false);
             setTimeout(() => {
-                menuSocialBtnsContainer.classList.remove("show_flex");
+                menuSocialBtnsContainer.setAttribute("hidden", true);
             }, 1000);
         } else if (status === false) {
-            menuSocialBtnsContainer.classList.add("show_flex");
+            menuSocialBtnsContainer.setAttribute("hidden", false);
             setTimeout(() => {
-                menuSocialBtnsContainer.classList.add("show_opacity");
+                menuSocialBtnsContainer.setAttribute("show", true);
             }, 200);
         }
         menuSocialActive = !status;
     };
 
     const setObservers = () => {
-        const show = (currentEntry) => currentEntry.classList.add(`show_card`);
-        const hide = (currentEntry) => currentEntry.classList.remove(`show_card`);
+        const setAttributeObserver = (item, intersecting) => {
+            if (intersecting) {
+                item.setAttribute(`show-transform`, true);
+            } else {
+                item.setAttribute(`show-transform`, false);
+            }
+        };
 
-        selectorAll("[observer-full]").forEach((container) => {
+        selectorAll("[animation-text]").forEach((observedItem) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationUpContainers = selectorAll("[animation-text]", entry.target);
-                animationUpContainers.forEach((container) => {
-                    if (entry.isIntersecting) {
-                        show(container);
-                    } else {
-                        hide(container);
-                    }
-                });
+                setAttributeObserver(observedItem, entry.isIntersecting);
             };
             const optionsIO_up = {
                 threshold: ".8",
             };
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_up);
-            skillsContainersObserver.observe(container);
+            skillsContainersObserver.observe(observedItem);
         });
 
-        selectorAll("[observer-half]").forEach((container) => {
+        selectorAll("[animation-card]").forEach((observedItem) => {
             const watchSwipeAnimationContainer = ([entry]) => {
-                const animationUpContainers = selectorAll("[animation-text]", entry.target);
-
-                animationUpContainers.forEach((container) => {
-                    if (entry.isIntersecting) {
-                        show(container);
-                    } else {
-                        hide(container);
-                    }
-                });
+                setAttributeObserver(observedItem, entry.isIntersecting);
             };
             const optionsIO_skills = {
                 threshold: ".4",
             };
 
             const skillsContainersObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_skills);
-            skillsContainersObserver.observe(container);
+            skillsContainersObserver.observe(observedItem);
         });
-        selectorAll("[animation-card]").forEach((card) => {
-            const watchSwipeAnimationContainer = ([entry]) => {
-                if (entry.isIntersecting) {
-                    show(card);
-                } else {
-                    hide(card);
-                }
-            };
 
-            const optionsIO_cards = {
-                threshold: ".4",
-            };
-
-            const cardsObserver = new IntersectionObserver(watchSwipeAnimationContainer, optionsIO_cards);
-            cardsObserver.observe(card);
-        });
         const watchIllustration = ([entry]) => {
             if (entry.isIntersecting) {
                 selector(".desk_me").classList.add("show_krazy");
@@ -333,24 +307,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const illustrationObserver = new IntersectionObserver(watchIllustration, options_illustration);
         illustrationObserver.observe(selector(".deskwork_icon"));
-        sectionDividers.forEach((container) => {
+        selectorAll("[divider]").forEach((observerdItem) => {
             const watchAnimationContainer = ([entry]) => {
-                const contentContainer = selectorAll(".divider_content", entry.target);
-
-                contentContainer.forEach((container) => {
-                    if (entry.isIntersecting) {
-                        container.classList.add(`show_quote`);
-                    } else {
-                        container.classList.remove(`show_quote`);
-                    }
-                });
+                if (entry.isIntersecting) {
+                    selector("[quote]", observerdItem).setAttribute(`show-quote`, true);
+                } else {
+                    selector("[quote]", observerdItem).setAttribute(`show-quote`, false);
+                }
             };
             const optionsIO = {
                 threshold: ".4",
             };
 
             const containersObserver = new IntersectionObserver(watchAnimationContainer, optionsIO);
-            containersObserver.observe(container);
+            containersObserver.observe(observerdItem);
         });
     };
 
@@ -462,28 +432,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     acceptStorageBtn.addEventListener("click", acceptStorage);
 
-    sections.forEach((section) => {
-        const watchPage = ([entry]) => {
-            if (entry.isIntersecting) {
-                const entryName = entry.target.attributes.id.value;
-                sectionBtns.forEach((btn) => {
-                    const btnName = btn.name;
-                    if (btnName === entryName) {
-                        btn.classList.add("btn_active");
-                    } else {
-                        btn.classList.remove("btn_active");
-                    }
-                });
-            }
-        };
-        const optionsIO_sections = {
-            rootMargin: "5%",
-            threshold: 0.3,
-        };
-        const pageObserver = new IntersectionObserver(watchPage, optionsIO_sections);
-        pageObserver.observe(section);
-    });
-
     selector("[btn-down]").addEventListener("click", oneSectionStep);
 
     accesibilityBtns.forEach((btn) => {
@@ -510,42 +458,77 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     // SET DINAMIC CONTENT FOR PAGE
-
-    const setAssets = () => {
-        const bubbleBio = selector("[bio]");
-        const bubbleInfo = selector("[info]");
-        const bubbleRex = selector("[rex]");
-        const illustrationRex = selector("[illustration-rex]");
+    const setBubbles = () => {
         selector("[illustration-me]").addEventListener("mouseover", (e) => {
-            bubbleBio.classList.add("show_flex");
+            bubbleBio.setAttribute("hidden", false);
             const containerWidth = bubbleBio.getClientRects()[0].width;
             const containerHeight = bubbleBio.getClientRects()[0].height;
             bubbleBio.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - containerHeight / 2}px)`;
         });
 
         bubbleBio.addEventListener("mouseleave", () => {
-            bubbleBio.classList.remove("show_flex");
+            bubbleBio.setAttribute("hidden", true);
         });
-        const tooltipMargin = 12;
+
         illustrationRex.addEventListener("mouseover", (e) => {
-            bubbleRex.classList.add("show_flex");
+            bubbleRex.setAttribute("hidden", false);
             const containerWidth = bubbleRex.getClientRects()[0].width;
             const containerHeight = bubbleRex.getClientRects()[0].height;
             bubbleRex.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY - parseInt(containerHeight) - tooltipMargin}px)`;
         });
 
         illustrationRex.addEventListener("mouseleave", () => {
-            bubbleRex.classList.remove("show_flex");
+            bubbleRex.setAttribute("hidden", true);
+        });
+    };
+
+    const setBtnActions = () => {
+        selectorAll("[sound-btn]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                audioItsActive = !audioItsActive;
+                selectorAll("[icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
+                storageContent["page_sound"] = !storageContent["page_sound"];
+                updateStorage();
+                if (!audioItsActive) {
+                    selectorAll("AUDIO").forEach((audioElem) => mutePage(audioElem));
+                } else {
+                    selectorAll("AUDIO").forEach((audioElem) => backSoundPage(audioElem));
+                }
+            });
+        });
+        selectorAll("BUTTON").forEach((btn) => {
+            btn.addEventListener("mouseenter", playHover);
+            btn.addEventListener("click", playClick);
+        });
+        selectorAll("[theme-btn]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                selectorAll("[icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
+                changeTheme(currentTheme);
+            });
         });
 
-        forms.forEach((thisForm) => {
+        selector("[logo-btn]").addEventListener("click", toTheTop);
+        langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
+        selectorAll(".href_btn").forEach((btn) => btn.addEventListener("click", () => teleportToPage(btn)));
+    };
+    const setScrollActions = () => {
+        window.addEventListener("scroll", () => {
+            checkWindowHeight();
+            if (menuActive === true) menuActions(menuActive);
+            if (menuSocialActive === true) menuSocialActions(menuSocialActive);
+        });
+    };
+    const setAssets = () => {
+        // SET ALL START CONFIGURATIONS
+        selectorAll(".form").forEach((thisForm) => {
+            console.log(thisForm);
             thisForm.addEventListener("submit", (e) => {
+                console.log(e);
                 e.preventDefault();
                 sanitazer(selector("[input-name]", thisForm));
                 sanitazer(selector("[input-last-name]", thisForm));
                 sanitazer(selector("[input-email]", thisForm));
                 sanitazer(selector("[input-description]", thisForm));
-                let formName = selector("[send-form]", thisForm).getAttribute("form");
                 let formResponse = selector("[form-response]", thisForm);
                 let formResponseContainer = selector("[form-response-container]", thisForm);
 
@@ -558,14 +541,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             formResponseContainer.setAttribute(status, "");
                             formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
                         }
-                        formResponseContainer.classList.add("show_flex");
+                        formResponseContainer.setAttribute("hidden", false);
                         setTimeout(() => {
-                            formResponseContainer.classList.add("show_opacity");
+                            formResponseContainer.setAttribute("show", true);
                         }, 500);
                     } else if (action === close) {
-                        formResponseContainer.classList.remove("show_opacity");
+                        formResponseContainer.setAttribute("hidden", false);
                         setTimeout(() => {
-                            formResponseContainer.classList.remove("show_flex");
+                            formResponseContainer.setAttribute("show", true);
                         }, 500);
                     }
                 };
@@ -605,40 +588,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
             });
         });
-
-        selectorAll("[sound-btn]").forEach((btn) => {
-            btn.addEventListener("click", () => {
-                audioItsActive = !audioItsActive;
-                selectorAll("[icon='sound']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
-                storageContent["page_sound"] = !storageContent["page_sound"];
-                updateStorage();
-                if (!audioItsActive) {
-                    selectorAll("AUDIO").forEach((audioElem) => mutePage(audioElem));
-                } else {
-                    selectorAll("AUDIO").forEach((audioElem) => backSoundPage(audioElem));
-                }
-            });
-        });
-        selectorAll("BUTTON").forEach((btn) => {
-            btn.addEventListener("mouseenter", playHover);
-            btn.addEventListener("click", playClick);
-        });
-        selectorAll("[theme-btn]").forEach((btn) => {
-            btn.addEventListener("click", () => {
-                selectorAll("[icon='theme']").forEach((icon) => icon.setAttribute("hidden", icon.getAttribute("hidden") === "false" ? "true" : "false"));
-                changeTheme(currentTheme);
-            });
-        });
-
-        btnLogo.addEventListener("click", toTheTop);
-
-        window.addEventListener("scroll", () => {
-            checkWindowHeight();
-            if (menuActive === true) menuActions(menuActive);
-            if (menuSocialActive === true) menuSocialActions(menuSocialActive);
-        });
-        // SET ALL START CONFIGURATIONS
-
         infSoftware.forEach((software) => {
             const clone = selector("[skill-badge-template]").content.cloneNode(true);
             const badge = selector("[skill-badge]", clone);
@@ -650,23 +599,21 @@ document.addEventListener("DOMContentLoaded", () => {
             if (software.type) {
                 selector(`[skills-container="${software.type}"]`).appendChild(badge);
             }
-            setTimeout(() => {
-                badge.addEventListener("mouseover", (e) => {
-                    const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("tech-ref"));
-                    selector(".title", bubbleInfo).textContent = newData.tech_complete_name;
-                    selector(".description", bubbleInfo).textContent = newData[`tech_info_${currentLang}`];
-                    bubbleInfo.classList.add("show_flex");
-                    const containerWidth = bubbleInfo.getClientRects()[0].width;
-                    bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
-                });
-                badge.addEventListener(
-                    "mouseleave",
-                    () => {
-                        bubbleInfo.classList.remove("show_flex");
-                    },
-                    250
-                );
+            badge.addEventListener("mouseover", (e) => {
+                const newData = infSoftware.find((item) => item.db_name === badge.getAttribute("tech-ref"));
+                selector(".title", bubbleInfo).textContent = newData.tech_complete_name;
+                selector(".description", bubbleInfo).textContent = newData[`tech_info_${currentLang}`];
+                bubbleInfo.setAttribute("hidden", false);
+                const containerWidth = bubbleInfo.getClientRects()[0].width;
+                bubbleInfo.style.transform = `translate(${e.pageX - containerWidth / 2}px, ${e.pageY + tooltipMargin}px)`;
             });
+            badge.addEventListener(
+                "mouseleave",
+                () => {
+                    bubbleInfo.setAttribute("hidden", true);
+                },
+                250
+            );
         });
         utils.certificationsData.forEach((certification) => {
             const certificationClone = selector("[certification-template]").content.cloneNode(true);
@@ -679,15 +626,16 @@ document.addEventListener("DOMContentLoaded", () => {
             certificationBtn.setAttribute("link-ref", certification.link);
             setTextData(certificationName, certification);
 
-            certificationsContainer.appendChild(certificationBadge);
+            selector("[certification-container]").appendChild(certificationBadge);
             certificationBtn.addEventListener("mouseenter", playHover);
             certificationBtn.addEventListener("click", playClick);
         });
 
         let filterHotData = utils.hotCardsSelection.map((itemHotCard) => DB.find((itemDB) => itemDB.db_name === itemHotCard));
         filterHotData.forEach((item) => {
-            const currentCard = createCard(item, cardsHotContainer);
-            currentCard.setAttribute("card-up", "");
+            const currentCard = createCard(item, selector("[hot-container]"));
+            currentCard.setAttribute("animation-card", "");
+            currentCard.setAttribute("show-transform", false);
         });
 
         DB.forEach((item) => {
@@ -716,8 +664,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setObservers();
         setModalActions();
         setTextLang(currentLang);
-        langBtns.forEach((btn) => btn.addEventListener("click", () => changeLang(currentLang)));
-        selectorAll(".href_btn").forEach((btn) => btn.addEventListener("click", () => teleportToPage(btn)));
+
         const options = ["type", "skill"];
         options.forEach((option) => {
             selectorAll(`[option-${option}]`).forEach((optionBtn) => {
@@ -733,7 +680,10 @@ document.addEventListener("DOMContentLoaded", () => {
         checkWindowHeight();
         logoAnimation();
         iconsAnimation();
+        setBubbles();
         setAssets();
+        setBtnActions();
+        setScrollActions();
     };
     setStart();
 });

@@ -41,11 +41,11 @@
         <button type="button" class="accessibility_btn" accesibility-btn section-ref="services" aria-label="Skip to main content - Salta a contenido principal"><span class="label_btn" change es="Saltar A Contenido Principal" en="Go To Main">Saltar A Contenido Principal</span></button>
         <button type="button" class="accessibility_btn" accesibility-btn section-ref="legals" aria-label="Skip to footer - Salta al pie de pagina"><span class="label_btn" change es="Saltar al pie de pagina" en="Go To Footer">Saltar al pie de pagina</span></button>
 
-        <div class="bubble info_bubble" info>
+        <div class="bubble info_bubble" info hidden="true">
             <h3 class="title" change></h3>
             <p class="description" change></p>
         </div>
-        <div class="bubble bio_bubble" bio>
+        <div class="bubble bio_bubble" bio hidden="true">
             <div class="header_bubble"></div>
             <img class="photo" src="./src/img/photos/johnKPhoto.webp" alt="Foto de Jonathan Grajeda" loading="lazy" />
             <div class="info">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="bubble rex_bubble" rex>
+        <div class="bubble rex_bubble" rex hidden="true">
             <div class="header_bubble"></div>
             <img class="photo" src="./src/img/photos/rex.webp" alt="Foto de Maximo Decimo Reximiliano" loading="lazy" />
             <div class="info">
@@ -221,7 +221,7 @@
                             <span class="label_btn" change es="Enviar" en="Send">Enviar</span>
                         </button>
                     </div>
-                    <div class="form_response_container" form-response-container>
+                    <div class="form_response_container" form-response-container hidden="true" show="false">
                         <p class="form_response" change form-response></p>
                     </div>
                 </form>
@@ -632,7 +632,7 @@
             </div>
         </nav>
         <div class="section_divider" divider>
-            <figure class="content divider_content">
+            <figure class="content" quote>
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
                         <span class="icon_container">
@@ -665,7 +665,7 @@
                         </div>
 
                         <div observer-full>
-                            <h2 class="title_name" id="title_name">Jonathan Grajeda<span class="title_effect" animation-text>_</span></h2>
+                            <h2 class="title_name" id="title_name" animation-text>Jonathan Grajeda<span class="title_effect">_</span></h2>
                         </div>
                     </div>
                     <p class="about_text">
@@ -713,7 +713,7 @@
             </div>
         </section>
         <div class="section_divider" divider>
-            <figure class="content divider_content">
+            <figure class="content" quote>
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
                         <span class="icon_container">
@@ -745,7 +745,7 @@
                 <div class="skills_icon_container design_skills_container">
                     <!--? SKILLS ICONS-->
                     <h2 class="subtitle_section" change es="Herramientas de Diseño" en="Design Tools">Herramientas de Diseño</h2>
-                    <div class="icons_container" ref="design" skills-container="design" observer-half></div>
+                    <div class="icons_container" ref="design" skills-container="design"></div>
                 </div>
                 <div class="skills_icon_container dev_skills_container">
                     <h2 class="subtitle_section" change es="Herramientas de Desarrollo" en="Developer Tools">Herramientas de Desarrollo</h2>
@@ -753,11 +753,11 @@
                     <div class="icons_container swipe_animation_container_half" ref="dev" skills-container="dev"></div>
                 </div>
                 <h2 class="subtitle_section" change es="Certificaciones" en="Certifications">Certificaciones</h2>
-                <div class="cards_container certification_container" certification-container observer-half></div>
+                <div class="cards_container certification_container" certification-container></div>
             </div>
         </section>
         <div class="section_divider" divider>
-            <figure class="content divider_content">
+            <figure class="content" quote>
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
                         <span class="icon_container">
@@ -851,7 +851,7 @@
             </div>
         </section>
         <div class="section_divider" divider>
-            <figure class="content divider_content">
+            <figure class="content" quote>
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
                         <span class="icon_container">
@@ -886,11 +886,11 @@
                         <span class="label_btn" change es="Ver todo" en="See All" modal-btn="portfolio">Ver todo</span>
                     </button>
                 </div>
-                <div class="cards_container cards_hot_container" hot-container observer-half></div>
+                <div class="cards_container cards_hot_container" hot-container></div>
             </div>
         </section>
         <div class="section_divider" divider>
-            <figure class="content divider_content">
+            <figure class="content" quote>
                 <div class="quote_container">
                     <span class="quote_icon quote_start">
                         <span class="icon_container">
@@ -955,7 +955,7 @@
                             <span class="label_btn" change es="Enviar" en="Send">Enviar</span>
                         </button>
                     </div>
-                    <div class="form_response_container" form-response-container>
+                    <div class="form_response_container" form-response-container hidden="true" show="false">
                         <p class="form_response" form-response></p>
                     </div>
                 </form>

@@ -794,6 +794,7 @@ I {
   /* font-family: var(--titilliumFont); */
   font-size: var(--fs_n);
   font-weight: var(--fw_n);
+  text-transform: capitalize;
   display: block;
   line-height: 1;
   font-weight: 600;
@@ -861,7 +862,6 @@ I {
   background: var(--bgC_off);
   border-radius: var(--lg);
   z-index: 2;
-  display: none;
   transition: var(--t_uf);
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1561,6 +1561,7 @@ I {
 
 .form {
   position: relative;
+  width: 100%;
 }
 
 .form_response_container {
@@ -1610,6 +1611,7 @@ I {
   padding: var(--lg) var(--lg);
 }
 .window .modal_info .inner_link_btn {
+  margin: var(--lg) 0;
   width: 100%;
 }
 .window .modal_header {
@@ -1619,6 +1621,10 @@ I {
 .window .btn {
   width: calc(100% - var(--lg));
   margin: var(--lg) VAR(--md);
+}
+
+.alert_modal .modal_info {
+  text-align: center;
 }
 
 .modal {
@@ -1734,21 +1740,21 @@ I {
 .section_divider .author_container .author_info {
   line-height: 1;
 }
-.section_divider .divider_content {
+.section_divider .content {
   padding: 20rem 0;
   opacity: 0;
   transform: translateX(-100%);
   transition: var(--t_s);
 }
-.section_divider .show_quote {
+.section_divider [show-quote=true] {
   opacity: 1;
   transform: translateX(0);
 }
 
-.section_divider:nth-of-type(2n) .divider_content {
+.section_divider:nth-of-type(2n) .content {
   transform: translateX(100%);
 }
-.section_divider:nth-of-type(2n) .show_quote {
+.section_divider:nth-of-type(2n) [show-quote=true] {
   opacity: 1;
   transform: translateX(0);
 }
@@ -1969,7 +1975,6 @@ I {
 }
 .contact_section .form {
   max-width: 800px;
-  width: 100%;
 }
 .contact_section .form H3 {
   font-size: var(--fs_l);
@@ -2239,25 +2244,8 @@ I {
   transition: var(--t_f);
 }
 
-.show_flex {
-  display: flex;
-}
-
-.show_opacity {
-  opacity: 1;
-}
-
 .show_krazy {
   transform: translateX(0);
-}
-
-.show_card {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.show_menu {
-  transform: translateY(0);
 }
 
 .btn_active {
@@ -2333,13 +2321,13 @@ I {
 [options-active],
 [modal-active] {
   transition: var(--t_f);
+  transition-delay: 100ms;
 }
 [hidden]::backdrop,
 [show]::backdrop,
 [options-active]::backdrop,
 [modal-active]::backdrop {
   transition: var(--t_f);
-  transition-delay: 100ms;
 }
 
 [options-active] {
@@ -2387,6 +2375,11 @@ I {
 
 [btn-active=false] {
   background: inherit;
+}
+
+[show-transform=true] {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /*  */
