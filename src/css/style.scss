@@ -35,16 +35,6 @@
         transform: translateY(var(--lg));
     }
 }
-@keyframes bounceUp {
-    50% {
-        transform: translateY(-10rem);
-    }
-}
-@keyframes ballShadowOpacity {
-    50% {
-        opacity: 0.2;
-    }
-}
 @keyframes beat {
     10% {
         transform: translate(-50%, -50%) scale(1.3);
@@ -641,8 +631,7 @@ I {
     .screen_show {
         opacity: 1;
     }
-    .desk_portfolio,
-    .desk_ball {
+    .desk_portfolio {
         transition: var(--t_m);
     }
 
@@ -651,14 +640,6 @@ I {
     }
     .desk_ball {
         margin-top: 10rem;
-    }
-    .desk_ball:hover {
-        .ball {
-            animation: bounceUp 1000ms 250ms infinite ease-in-out;
-        }
-        .ball_shadow {
-            animation: ballShadowOpacity 1000ms 250ms infinite ease-in-out;
-        }
     }
     .svg_btn {
         cursor: crosshair;
@@ -1053,6 +1034,7 @@ I {
         transition: var(--t_f);
         color: var(--tc);
         font-weight: var(--fw_b);
+        user-select: none;
     }
     &:hover,
     &:active,
@@ -1064,7 +1046,6 @@ I {
         }
     }
 }
-
 .btn_down {
     @include flexCenter();
     flex-direction: column;
@@ -1095,7 +1076,6 @@ I {
         }
     }
 }
-
 .nav_btn:not(.phone_lang_btn) {
     height: 100%;
 }
@@ -1511,6 +1491,13 @@ I {
         min-height: fit-content;
     }
 }
+.options_details {
+    text-align: start;
+    margin-left: 1rem;
+}
+[option_type="description"] {
+    display: block;
+}
 .description_portfolio {
     @include flex(row, flex-start, center);
     flex-wrap: wrap;
@@ -1543,7 +1530,7 @@ I {
         color: var(--tc);
     }
     &:not(.option_search_btn) {
-        padding: var(--lg);
+        padding: var(--lg) var(--xl);
     }
 }
 .options_droper {

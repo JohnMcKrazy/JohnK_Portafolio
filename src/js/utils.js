@@ -5,8 +5,8 @@ const $d = document;
 
 /* "UTILITY FUNCTIONS" */
 
-const selector = (tag) => $d.querySelector(`${tag}`);
-const selectorAll = (tag) => $d.querySelectorAll(`${tag}`);
+const selector = (skill) => $d.querySelector(`${skill}`);
+const selectorAll = (skill) => $d.querySelectorAll(`${skill}`);
 
 export const hotCardsSelection = ["afroduck", "verona", "mitos_y_leyendas", "smuffs", "berserkers", "creaciones_hermed", "black_jack", "tribute", "js_documentation", "pokedex"];
 
@@ -187,6 +187,7 @@ export const johnKStorage = {
     page_lang: null,
     data_stamp: `${new Date().toLocaleString()}`,
 };
+
 export const skillTypes = {
     all: {
         es: "todo",
@@ -286,6 +287,162 @@ export const skillTypes = {
         },
     },
 };
+export const skillTypeAll = {
+    name: "all",
+    lang: {
+        es: "all",
+        es: "todo",
+    },
+    types: [{ skill: "all", lang: { en: "all", es: "todo" } }],
+};
+export const skills = [
+    {
+        skill: "design",
+        lang: {
+            es: "diseño",
+            en: "design",
+        },
+        subskills: [
+            {
+                subskill: "logo",
+                lang: {
+                    es: "logotipo",
+                    en: "logo",
+                },
+            },
+            {
+                subskill: "cover",
+                lang: {
+                    es: "portada",
+                    en: "cover",
+                },
+            },
+            {
+                subskill: "identity",
+                lang: {
+                    es: "identidad de marca",
+                    en: "brand identity",
+                },
+            },
+            {
+                subskill: "editorial",
+                lang: {
+                    es: "editorial",
+                    en: "editorial",
+                },
+            },
+            {
+                subskill: "infographic",
+                lang: {
+                    es: "infografía",
+                    en: "infographic",
+                },
+            },
+            {
+                subskill: "poster",
+                lang: {
+                    es: "poster",
+                    en: "poster",
+                },
+            },
+            {
+                subskill: "packaging",
+                lang: {
+                    es: "empaque",
+                    en: "packaging",
+                },
+            },
+            {
+                subskill: "stationery",
+                lang: {
+                    es: "papelería",
+                    en: "stationery",
+                },
+            },
+            {
+                subskill: "image",
+                lang: {
+                    es: "edición de imagen",
+                    en: "image edition",
+                },
+            },
+            {
+                subskill: "video",
+                lang: {
+                    es: "edición de video",
+                    en: "video edition",
+                },
+            },
+            {
+                subskill: "animation_2d",
+                lang: {
+                    es: "animacion 2D",
+                    en: "2D animation",
+                },
+            },
+        ],
+    },
+    {
+        skill: "develop",
+        lang: {
+            en: "develop",
+            es: "desarrollo",
+        },
+        subskills: [
+            {
+                subskill: "web",
+                lang: {
+                    es: "web",
+                    en: "web",
+                },
+            },
+            {
+                subskill: "api",
+                lang: {
+                    es: "API rest",
+                    en: "API rest",
+                },
+            },
+            {
+                subskill: "programming",
+                lang: {
+                    es: "programación",
+                    en: "programming",
+                },
+            },
+            {
+                subskill: "data_visualization",
+                lang: {
+                    es: "visualización de datos",
+                    en: "data visualization",
+                },
+            },
+        ],
+    },
+    {
+        skill: "illustration",
+        lang: {
+            es: "illustration",
+            en: "illustración",
+        },
+        subskills: [
+            {
+                subskill: "digital_illustration",
+                lang: {
+                    es: "illustración digital",
+                    en: "digital Illustration",
+                },
+            },
+            {
+                subskill: "traditional_illustration",
+                lang: {
+                    es: "illustración tradicional",
+                    en: "traditional Illustration",
+                },
+            },
+        ],
+    },
+];
 export const deleteChildElements = (parentElement) => {
     let child = parentElement.lastElementChild;
     while (child) {

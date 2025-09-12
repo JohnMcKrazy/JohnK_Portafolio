@@ -66,16 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const playClick = () => audioTeleportBtn.play();
     const mutePage = (itemAudio) => (itemAudio.muted = true);
     const backSoundPage = (itemAudio) => (itemAudio.muted = false);
-
     const updateStorage = () => localStorage.setItem(storageName, JSON.stringify(storageContent));
     const getStorage = () => JSON.parse(localStorage.getItem(storageName));
 
     const skillsData = utils.skillTypes;
+    const skills = utils.skills;
     const storage = utils.johnKStorage;
     const infSoftware = utils.infoSoftware;
-
     // FUNCTION FOR GO TO SPECIFIC PAGE
-
     const teleportToPage = (item) => setTimeout(() => (window.location.href = item.getAttribute("link-ref")), 1500);
     // FUNCTION FOR CHANGE LANGUAGE
     const setTextLang = (newLang) => {
@@ -106,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 mutePage(itemAudio);
             });
         }
-
         storageContent["page_view_count"] += 1;
         currentTheme = storageContent["page_theme"];
         setTextLang(currentLang);
@@ -118,14 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
         updateStorage();
         BODY.setAttribute("color-scheme", currentTheme);
     };
-
     const changeLang = (lang) => {
         currentLang = lang === es ? en : es;
         storageContent["page_lang"] = currentLang;
         setTextLang(currentLang);
         updateStorage();
     };
-
     // SET HEIGHT PAGE CONFIGURATION
     const checkWindowHeight = () => {
         const navTop = nav.getBoundingClientRect().top;
@@ -163,11 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const isMenuActive = optionsDroper.getAttribute(`options-active`);
                 if (isDroperHidding === "false") {
                     optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true);
-
                     setTimeout(() => optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true), 500);
                 } else {
                     optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true);
-
                     setTimeout(() => optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true), 500);
                 }
             });
@@ -260,7 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         menuSocialActive = !status;
     };
-
     const setObservers = () => {
         const setAttributeObserver = (item, intersecting) => {
             if (intersecting) {
@@ -323,7 +315,6 @@ document.addEventListener("DOMContentLoaded", () => {
             containersObserver.observe(observerdItem);
         });
     };
-
     const setModalActions = () => {
         const closeModalBtn = selector("[close-btn]");
         const modal = selector(`[modal]`);
@@ -423,13 +414,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const fixHeight = windowHeight - navHeight;
         window.scrollTo(0, fixHeight);
     };
-
     const acceptStorage = () => {
         storageContent["page_alert_status"] = close;
         updateStorage();
         console.table(getStorage());
     };
-
     acceptStorageBtn.addEventListener("click", acceptStorage);
 
     selector("[btn-down]").addEventListener("click", oneSectionStep);
@@ -437,21 +426,17 @@ document.addEventListener("DOMContentLoaded", () => {
     accesibilityBtns.forEach((btn) => {
         btn.addEventListener("click", () => scrollSection(btn));
     });
-
     actionBtns.forEach((btn) => {
         btn.addEventListener("click", () => menuActions(menuActive));
     });
-
     sectionBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             scrollSection(btn);
         });
     });
-
     socialMenuBtns.forEach((btn) => {
         btn.addEventListener("click", () => menuSocialActions(menuSocialActive));
     });
-
     heroBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
             scrollSection(btn);
@@ -481,7 +466,6 @@ document.addEventListener("DOMContentLoaded", () => {
             bubbleRex.setAttribute("hidden", true);
         });
     };
-
     const setBtnActions = () => {
         selectorAll("[sound-btn]").forEach((btn) => {
             btn.addEventListener("click", () => {
@@ -520,74 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     const setAssets = () => {
         // SET ALL START CONFIGURATIONS
-        selectorAll(".form").forEach((thisForm) => {
-            console.log(thisForm);
-            thisForm.addEventListener("submit", (e) => {
-                console.log(e);
-                e.preventDefault();
-                sanitazer(selector("[input-name]", thisForm));
-                sanitazer(selector("[input-last-name]", thisForm));
-                sanitazer(selector("[input-email]", thisForm));
-                sanitazer(selector("[input-description]", thisForm));
-                let formResponse = selector("[form-response]", thisForm);
-                let formResponseContainer = selector("[form-response-container]", thisForm);
 
-                const formResponseActions = (action, status = "") => {
-                    if (action === open) {
-                        if (status === "good") {
-                            formResponseContainer.setAttribute(status, "");
-                            formResponse.textContent = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
-                        } else if (status === "danger") {
-                            formResponseContainer.setAttribute(status, "");
-                            formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
-                        }
-                        formResponseContainer.setAttribute("hidden", false);
-                        setTimeout(() => {
-                            formResponseContainer.setAttribute("show", true);
-                        }, 500);
-                    } else if (action === close) {
-                        formResponseContainer.setAttribute("hidden", false);
-                        setTimeout(() => {
-                            formResponseContainer.setAttribute("show", true);
-                        }, 500);
-                    }
-                };
-                const formData = new FormData(thisForm);
-                let newData = {};
-
-                formData.forEach((value, key) => {
-                    newData[key] = value;
-                });
-                const jsonData = JSON.stringify(newData);
-
-                fetch("https://api.web3forms.com/submit", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Accept: "application/json",
-                    },
-                    body: jsonData,
-                })
-                    .then(async (response) => {
-                        let json = await response.json();
-
-                        if (response.status == 200) {
-                            formResponseActions(open, "good");
-                        } else {
-                            throw error;
-                        }
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                        formResponseActions(open, "danger");
-                    })
-                    .then(function () {
-                        setTimeout(() => {
-                            formResponseActions(close);
-                        }, 5000);
-                    });
-            });
-        });
         infSoftware.forEach((software) => {
             const clone = selector("[skill-badge-template]").content.cloneNode(true);
             const badge = selector("[skill-badge]", clone);
@@ -641,22 +558,74 @@ document.addEventListener("DOMContentLoaded", () => {
         DB.forEach((item) => {
             const currentCard = createCard(item, portfolioCardsContainer);
             currentCard.setAttribute("portfolio-project", "");
-            item.skills.forEach((skill) => currentCard.setAttribute(`skill-${skill}`, ""));
-            item.type.forEach((type) => currentCard.setAttribute(`type-${type}`, ""));
         });
+        const skillSelectiionBtnsContainer = selector(`[options-droper="skills"]`);
 
-        Object.keys(skillsData).forEach((skill) => {
-            Object.keys(skillsData[skill].types).forEach((key) => {
-                const data = skillsData[skill].types[key];
-                const newTemplate = listItemTemplate.cloneNode(true);
-                const optionItem = selector("[option-item]", newTemplate);
-                const newBtn = selector("[option-btn]", newTemplate);
-                const btnLabel = selector("[label]", newBtn);
-                setTextData(btnLabel, data);
-                btnLabel.setAttribute("skill", data.ref);
-                newBtn.setAttribute("option-btn", "skills");
-                newBtn.setAttribute("option-skill", key);
-                selector(`[options-droper="skills"]`).appendChild(optionItem);
+        const createSkillSelectionBtn = (skillName, skillLang, subskillName) => {
+            const newTemplate = listItemTemplate.cloneNode(true);
+            const optionItem = selector("[option-item]", newTemplate);
+            const newBtn = selector("[option-btn]", newTemplate);
+            const btnLabel = selector("[label]", newBtn);
+            /*   console.log(skillLang); */
+            setTextData(btnLabel, skillLang);
+            btnLabel.setAttribute("skill", skillName);
+            newBtn.setAttribute("option-btn", "skills");
+            newBtn.setAttribute("option-skill", skillName);
+            newBtn.setAttribute("option-subskill", subskillName);
+            skillSelectiionBtnsContainer.appendChild(optionItem);
+
+            /* CREANDO ACCION PARA BOTONES DE SELECCION DE HABILIDAD */
+            setTimeout(() => {
+                selectorAll(`[option-subskill="${subskillName}"]`).forEach((subskillBtn) => {
+                    subskillBtn.addEventListener("click", () => {
+                        console.log("activando habilidad " + skillName);
+                        console.log("btn de subskill clicked " + subskillName);
+
+                        utils.deleteChildElements(portfolioCardsContainer);
+                        let currentData;
+                        console.log(DB);
+                        switch (skillName) {
+                            case "all":
+                                console.log("crear todo de " + skillName);
+                                currentData = DB.filter((dbItem) => dbItem.type.includes(subskillName));
+
+                                break;
+                            default:
+                                console.log("crear solo de " + subskillName);
+                                if (subskillName === "all") {
+                                    currentData = DB;
+                                } else {
+                                    currentData = DB.filter((dbItem) => dbItem.skills.includes(subskillName));
+                                }
+
+                                break;
+                        }
+
+                        console.log(currentData);
+                        currentData.forEach((item) => {
+                            const currentCard = createCard(item, portfolioCardsContainer);
+                            currentCard.setAttribute("portfolio-project", "");
+                        });
+                        const optionRef = subskillBtn.getAttribute("option-btn");
+                        const optionsDroper = selector(`[options-droper='${optionRef}']`);
+                        const isDroperHidding = optionsDroper.getAttribute(`hidden`);
+                        const isMenuActive = optionsDroper.getAttribute(`options-active`);
+                        if (isDroperHidding === "false") {
+                            optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true);
+                            setTimeout(() => optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true), 500);
+                        } else {
+                            optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true);
+                            setTimeout(() => optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true), 500);
+                        }
+                    });
+                });
+            }, 250);
+        };
+        createSkillSelectionBtn("all", { es: "todo", en: "all" }, "all");
+        skills.forEach((skill) => {
+            console.log(skill);
+            skill.subskills.forEach((subkill) => {
+                createSkillSelectionBtn(skill.skill, subkill.lang, subkill.subskill);
             });
         });
 
@@ -670,11 +639,118 @@ document.addEventListener("DOMContentLoaded", () => {
             selectorAll(`[option-${option}]`).forEach((optionBtn) => {
                 optionBtn.addEventListener("click", () => {
                     console.log(optionBtn);
+                    const btnSelection = optionBtn.getAttribute(`option-${option}`);
+                    console.log(btnSelection);
+
+                    utils.deleteChildElements(skillSelectiionBtnsContainer);
+                    utils.deleteChildElements(portfolioCardsContainer);
+                    createSkillSelectionBtn("all", { es: "todo", en: "all" }, btnSelection);
+                    if (btnSelection === "all") {
+                        skills.forEach((skillItem) => {
+                            console.log(skillItem);
+                            skillItem.subskills.forEach((subskill) => {
+                                createSkillSelectionBtn(skills.skill, subskill.lang, subskill.subskill);
+                            });
+                        });
+                        DB.forEach((item) => {
+                            const currentCard = createCard(item, portfolioCardsContainer);
+                            currentCard.setAttribute("portfolio-project", "");
+                        });
+                    } else {
+                        const currentSkills = skills.find((itemSkill) => itemSkill.skill === btnSelection);
+                        currentSkills.subskills.forEach((subskill) => {
+                            createSkillSelectionBtn(currentSkills.skill, subskill.lang, subskill.subskill);
+                        });
+                        const currentDB = DB.filter((dbItem) => dbItem.type.includes(btnSelection));
+
+                        console.log(currentDB);
+                        currentDB.forEach((item) => {
+                            const currentCard = createCard(item, portfolioCardsContainer);
+                            currentCard.setAttribute("portfolio-project", "");
+                        });
+                    }
+
+                    /* skills.forEach((skill) => {
+                        if (skill.skill === btnSelection) {
+                            console.log(skill);
+                            console.log(skill.subskills);
+                            utils.deleteChildElements(skillSelectiionBtnsContainer);
+                            skill.subskills.forEach((subskill) => {
+                                createSkillSelectionBtn(skill.skill, subskill.lang, subskill.subskill);
+                            });
+                        }
+                    }); */
                 });
             });
         });
-    };
 
+        selectorAll(".form").forEach((thisForm) => {
+            /* 
+            console.log(thisForm); 
+            console.log(selector(".send_btn", thisForm));
+            */
+
+            selector(".send_btn", thisForm).addEventListener("click", (e) => {
+                console.log(e);
+                e.preventDefault();
+                const newName = sanitazer(selector("[input-name]", thisForm));
+                const newLastname = sanitazer(selector("[input-last-name]", thisForm));
+                const newEmail = sanitazer(selector("[input-email]", thisForm));
+                const newDescription = sanitazer(selector("[input-description]", thisForm));
+                let formResponse = selector("[form-response]", thisForm);
+                let formResponseContainer = selector("[form-response-container]", thisForm);
+
+                const formResponseActions = (status) => {
+                    if (status === "good") {
+                        formResponseContainer.setAttribute(status, "");
+                        formResponse.textContent = currentLang === es ? "!Enviado satisfactoriamente, gracias por contactarme¡" : "Succes, thanks for contact me¡";
+                    } else if (status === "danger") {
+                        formResponseContainer.setAttribute(status, "");
+                        formResponse.textContent = currentLang === es ? "Algo ah salido mal, por favor intentalo de nuevo" : "Something go wrong, please try again";
+                    }
+                    formResponseContainer.setAttribute("hidden", false);
+                    setTimeout(() => {
+                        formResponseContainer.setAttribute("show", true);
+                    }, 500);
+                    setTimeout(() => {
+                        formResponseContainer.setAttribute("hidden", false);
+                        setTimeout(() => {
+                            formResponseContainer.setAttribute("show", true);
+                        }, 500);
+                    }, 5000);
+                };
+                const formData = new FormData(thisForm);
+                let newData = {};
+
+                formData.forEach((value, key) => {
+                    newData[key] = value;
+                });
+                const jsonData = JSON.stringify(newData);
+
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: jsonData,
+                })
+                    .then(async (response) => {
+                        let json = await response.json();
+
+                        if (response.status == 200) {
+                            formResponseActions("good");
+                        } else {
+                            throw error;
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        formResponseActions("danger");
+                    });
+            });
+        });
+    };
     const setStart = () => {
         checkStorage();
         checkWindowHeight();

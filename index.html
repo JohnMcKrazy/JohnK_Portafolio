@@ -195,7 +195,7 @@
                 <div class="modal_info" id="modal_info_contact_form">
                     <p class="description_modal" change es="Estoy ansioso de hacer proyectos interesantes con tus ideas" en="I'm looking forward to doing interesting projects with your ideas.">Estoy ansioso de hacer proyectos interesantes con tus ideas</p>
                 </div>
-                <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit">
+                <form class="form modal_form" id="modal_contact_form" action="https://api.web3forms.com/submit" method="submit" data-form="modal">
                     <div class="input_container">
                         <label for="modal_input_name" change es="Nombre" en="Name" autocomplete>Nombre</label>
                         <input type="text" placeholder="Escribe tu/s Nombre/s" id="modal_input_name" name="name" class="input_name" change-input es="Escribe tu Nombre" en="Write your name" autocomplete="off" required input-name />
@@ -269,10 +269,10 @@
                         </button>
                         <ul class="options_droper" options-droper="skills" hidden="true" options-active="false"></ul>
                     </div>
-                    <div>
-                        <h2 change es="tipo" en="type">tipo: <span change es="" en="" type-label></span></h2>
-                        <h2 change es="habilidad" en="skill">habilidad: <span change es="" en="" skill-label></span></h2>
-                    </div>
+                    <h2 class="options_details">
+                        <span class="option_detail" option_type="description" change es="Tipo:" en="Type:">Tipo: <span class="option_detail" option_type="response" change es="" en="" type-label></span></span>
+                        <span class="option_detail" option_type="description" change es="Habilidad:" en="Skill:">Habilidad: <span class="option_detail" option_type="response" change es="" en="" skill-label></span></span>
+                    </h2>
                 </div>
                 <div class="cards_container modal_info cards_portfolio_container" portfolio-container></div>
             </div>
@@ -928,7 +928,7 @@
                 </div>
                 <h2 class="subtitle_section" change es="Espero me permitas crear proyectos interesantes con tus ideas." en="I hope you allow me to create interesting projects with your ideas">Espero me permitas crear proyectos interesantes con tus ideas.</h2>
 
-                <form class="form contact_form" id="contact_form">
+                <form class="form contact_form" id="contact_form" action="https://api.web3forms.com/submit" method="submit" data-form="contact">
                     <h3 change es="Envia correo" en="Send Email">Envia correo</h3>
                     <div class="input_container">
                         <label for="body_input_name" change es="Nombre" en="Name">Nombre</label>
@@ -4995,7 +4995,7 @@
     <template option-btn-template>
         <li option-item>
             <button type="button" class="option_btn" option-btn>
-                <span class="label" label change></span>
+                <span class="label_btn" label change></span>
             </button>
         </li>
     </template>
