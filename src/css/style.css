@@ -152,7 +152,7 @@ BODY {
   height: auto;
   position: relative;
   overflow-x: hidden;
-  background: var(--bgC);
+  background: var(--bgC_off);
   text-rendering: optimizeSpeed;
 }
 
@@ -1479,6 +1479,14 @@ I {
 .options_details {
   text-align: start;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--sm);
+}
+.options_details SPAN {
+  text-transform: capitalize;
 }
 
 [option_type=description] {

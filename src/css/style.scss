@@ -184,7 +184,7 @@ BODY {
     height: auto;
     position: relative;
     overflow-x: hidden;
-    background: var(--bgC);
+    background: var(--bgC_off);
     text-rendering: optimizeSpeed;
 }
 
@@ -1494,6 +1494,11 @@ I {
 .options_details {
     text-align: start;
     margin-left: 1rem;
+    @include flex(column, flex-start, flex-start);
+    gap: var(--sm);
+    SPAN {
+        text-transform: capitalize;
+    }
 }
 [option_type="description"] {
     display: block;

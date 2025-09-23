@@ -219,7 +219,7 @@ export const DB = [
         img: "./src/img/portfolio/js_documentation.webp",
         project_link: "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/",
     },
-    {
+    /* {
         project_name: { en: "Background Random Color", es: "Fondo de color aleatorio" },
         db_name: ["random_bg_color"],
         type: ["develop"],
@@ -228,7 +228,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/random_bg_color.webp",
         project_link: "https://johnmckrazy.github.io/Random_Background_Color/",
-    },
+    }, */
     {
         project_name: { en: "Choropleth Map Data Visualization", es: "Visualización de datos tipo mapa de coropletas" },
         db_name: "choropleth_map",

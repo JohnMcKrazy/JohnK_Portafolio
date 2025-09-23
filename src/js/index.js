@@ -49,7 +49,8 @@ const heroBtns = selectorAll(".btn_hero");
 const langBtns = selectorAll(".lang_btn");
 const mainNavBtn = selector(".main_nav_btn");
 const animationKeys = selectorAll(".animation_key");
-
+const typeDisplay = selector("[display_portfolio='type']");
+const skillDisplay = selector("[display_portfolio='skill']");
 document.addEventListener("DOMContentLoaded", () => {
     let currentLang;
     /* AUDIO CONTENT */
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sanitazer = (item) => utils.sanitizeInput(item);
     const retTop = (sec) => utils.returnTop(sec);
     const scrollSection = (sec) => utils.scrollToSection(sec);
+    const skillTypeAll = utils.skillTypeAll;
     /* SOUND FUNCTIONS */
     const playHover = () => audioEnterBtn.play();
     const playClick = () => audioTeleportBtn.play();
@@ -149,23 +151,25 @@ document.addEventListener("DOMContentLoaded", () => {
         item.textContent = item.getAttribute(currentLang);
     };
     const listItemTemplate = selector("[option-btn-template]").content;
-    const setOptionActions = () => {
-        selectorAll(`[option-btn]`).forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const optionRef = btn.getAttribute("option-btn");
-                const optionsDroper = selector(`[options-droper='${optionRef}']`);
-                const isDroperHidding = optionsDroper.getAttribute(`hidden`);
-                const isMenuActive = optionsDroper.getAttribute(`options-active`);
-                if (isDroperHidding === "false") {
-                    optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true);
-                    setTimeout(() => optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true), 500);
-                } else {
-                    optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true);
-                    setTimeout(() => optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true), 500);
-                }
-            });
+    const setOptionActions = (newBtn) => {
+        newBtn.addEventListener("click", () => {
+            /* console.log(newBtn); */
+            const optionRef = newBtn.getAttribute("option-btn");
+            const optionsDroper = selector(`[options-droper='${optionRef}']`);
+            const isDroperHidding = optionsDroper.getAttribute(`hidden`);
+            const isMenuActive = optionsDroper.getAttribute(`options-active`);
+            if (isDroperHidding === "false") {
+                optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true);
+                setTimeout(() => optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true), 500);
+            } else {
+                optionsDroper.setAttribute("hidden", isDroperHidding === "true" ? false : true);
+                setTimeout(() => optionsDroper.setAttribute("options-active", isMenuActive === "true" ? false : true), 500);
+            }
         });
     };
+    selectorAll(`[option-btn]`).forEach((btn) => {
+        setOptionActions(btn);
+    });
     // FUNCTION FOR RETUN PAGE TO THE TOP
     const toTheTop = () => {
         const currentPosition = BODY.getBoundingClientRect().top;
@@ -417,7 +421,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const acceptStorage = () => {
         storageContent["page_alert_status"] = close;
         updateStorage();
-        console.table(getStorage());
     };
     acceptStorageBtn.addEventListener("click", acceptStorage);
 
@@ -502,6 +505,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (menuSocialActive === true) menuSocialActions(menuSocialActive);
         });
     };
+    const setDisplay = (display, data) => {
+        /* console.log(display, data); */
+        display.setAttribute(es, data.es);
+        display.setAttribute(en, data.en);
+        display.textContent = data[currentLang];
+    };
     const setAssets = () => {
         // SET ALL START CONFIGURATIONS
 
@@ -559,6 +568,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentCard = createCard(item, portfolioCardsContainer);
             currentCard.setAttribute("portfolio-project", "");
         });
+        setDisplay(typeDisplay, skillTypeAll.lang);
+        setDisplay(skillDisplay, skillTypeAll.lang);
+
         const skillSelectiionBtnsContainer = selector(`[options-droper="skills"]`);
 
         const createSkillSelectionBtn = (skillName, skillLang, subskillName) => {
@@ -578,30 +590,41 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 selectorAll(`[option-subskill="${subskillName}"]`).forEach((subskillBtn) => {
                     subskillBtn.addEventListener("click", () => {
-                        console.log("activando habilidad " + skillName);
-                        console.log("btn de subskill clicked " + subskillName);
+                        /* console.log("activando habilidad " + skillName); */
+                        /* console.log("btn de subskill clicked " + subskillName); */
 
                         utils.deleteChildElements(portfolioCardsContainer);
                         let currentData;
-                        console.log(DB);
+                        /* console.log(DB); */
                         switch (skillName) {
                             case "all":
-                                console.log("crear todo de " + skillName);
-                                currentData = DB.filter((dbItem) => dbItem.type.includes(subskillName));
-
-                                break;
-                            default:
-                                console.log("crear solo de " + subskillName);
-                                if (subskillName === "all") {
+                                /* console.log("crear todo de " + skillName); */
+                                if (skillName === "all") {
                                     currentData = DB;
                                 } else {
+                                    currentData = DB.filter((dbItem) => dbItem.type.includes(subskillName));
+                                    setDisplay(skillDisplay, skillTypeAll.lang);
+                                }
+                                break;
+                            default:
+                                /* console.log("crear solo de " + subskillName); */
+                                if (subskillName === "all") {
+                                    currentData = DB;
+                                    setDisplay(skillDisplay, skillTypeAll.lang);
+                                } else {
                                     currentData = DB.filter((dbItem) => dbItem.skills.includes(subskillName));
+                                    /* console.log(skills.filter((item) => item.skill === skillName)); */
+                                    /* console.log(skills.find((item) => item.skill === skillName)); */
+                                    const currentSkill = skills.find((item) => item.skill === skillName);
+                                    const currentSubskill = currentSkill.subskills.find((subskill) => subskill.subskill === subskillName);
+                                    /* console.log(currentSubskill); */
+                                    setDisplay(skillDisplay, currentSubskill.lang);
                                 }
 
                                 break;
                         }
 
-                        console.log(currentData);
+                        /* console.log(currentData); */
                         currentData.forEach((item) => {
                             const currentCard = createCard(item, portfolioCardsContainer);
                             currentCard.setAttribute("portfolio-project", "");
@@ -621,15 +644,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }, 250);
         };
-        createSkillSelectionBtn("all", { es: "todo", en: "all" }, "all");
+        createSkillSelectionBtn(skillTypeAll.name, skillTypeAll.lang, "all");
         skills.forEach((skill) => {
-            console.log(skill);
-            skill.subskills.forEach((subkill) => {
-                createSkillSelectionBtn(skill.skill, subkill.lang, subkill.subskill);
+            /* console.log(skill); */
+            skill.subskills.forEach((subskill) => {
+                createSkillSelectionBtn(skill.skill, subskill.lang, subskill.subskill);
             });
         });
 
-        setOptionActions();
         setObservers();
         setModalActions();
         setTextLang(currentLang);
@@ -638,48 +660,42 @@ document.addEventListener("DOMContentLoaded", () => {
         options.forEach((option) => {
             selectorAll(`[option-${option}]`).forEach((optionBtn) => {
                 optionBtn.addEventListener("click", () => {
-                    console.log(optionBtn);
+                    /* console.log(optionBtn); */
                     const btnSelection = optionBtn.getAttribute(`option-${option}`);
-                    console.log(btnSelection);
+                    /* console.log(btnSelection); */
 
                     utils.deleteChildElements(skillSelectiionBtnsContainer);
                     utils.deleteChildElements(portfolioCardsContainer);
-                    createSkillSelectionBtn("all", { es: "todo", en: "all" }, btnSelection);
+                    createSkillSelectionBtn(skillTypeAll.name, { es: "todo", en: "all" }, btnSelection);
                     if (btnSelection === "all") {
-                        skills.forEach((skillItem) => {
-                            console.log(skillItem);
-                            skillItem.subskills.forEach((subskill) => {
-                                createSkillSelectionBtn(skills.skill, subskill.lang, subskill.subskill);
+                        skills.forEach((skill) => {
+                            /* console.log(skill); */
+                            skill.subskills.forEach((subskill) => {
+                                createSkillSelectionBtn(skill.skill, subskill.lang, subskill.subskill);
                             });
                         });
+                        setDisplay(typeDisplay, skillTypeAll.lang);
                         DB.forEach((item) => {
                             const currentCard = createCard(item, portfolioCardsContainer);
                             currentCard.setAttribute("portfolio-project", "");
                         });
                     } else {
                         const currentSkills = skills.find((itemSkill) => itemSkill.skill === btnSelection);
+                        setDisplay(typeDisplay, currentSkills.lang);
+
                         currentSkills.subskills.forEach((subskill) => {
                             createSkillSelectionBtn(currentSkills.skill, subskill.lang, subskill.subskill);
                         });
                         const currentDB = DB.filter((dbItem) => dbItem.type.includes(btnSelection));
 
-                        console.log(currentDB);
+                        /* console.log(currentDB); */
                         currentDB.forEach((item) => {
                             const currentCard = createCard(item, portfolioCardsContainer);
                             currentCard.setAttribute("portfolio-project", "");
                         });
                     }
 
-                    /* skills.forEach((skill) => {
-                        if (skill.skill === btnSelection) {
-                            console.log(skill);
-                            console.log(skill.subskills);
-                            utils.deleteChildElements(skillSelectiionBtnsContainer);
-                            skill.subskills.forEach((subskill) => {
-                                createSkillSelectionBtn(skill.skill, subskill.lang, subskill.subskill);
-                            });
-                        }
-                    }); */
+                    setDisplay(skillDisplay, skillTypeAll.lang);
                 });
             });
         });
