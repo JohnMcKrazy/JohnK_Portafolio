@@ -53,11 +53,11 @@
   --midGray: rgb(128, 128, 128);
   --darkGray: rgb(64, 64, 64);
   --black: rgb(26, 26, 26);
-  --blackT: rgb(5, 5, 5, 0.75);
+  --blackT: rgb(5, 5, 5, 0.9);
   --blackST: rgb(5, 5, 5, 0.5);
   --blackOff: rgb(5, 5, 5);
-  --white: rgb(245, 245, 245);
-  --whiteT: rgb(250, 250, 250, 0.75);
+  --white: rgb(240, 240, 240);
+  --whiteT: rgb(250, 250, 250, 0.9);
   --whiteST: rgb(250, 250, 250, 0.5);
   --whiteOff: rgb(250, 250, 250);
   --lightRed: hsl(0, 100%, 67%);
@@ -98,10 +98,13 @@
   --titilliumFont: "Titillium Web", sans-serif;
 }
 
+[color-scheme] {
+  --h: var(--fc);
+}
+
 [color-scheme=light] {
   --fc: var(--logoPurpleL);
   --sc: var(--logoMintL);
-  --h: var(--purpleDark);
   --tc: var(--black);
   --bgC: var(--white);
   --bgC_off: var(--whiteOff);
@@ -114,7 +117,6 @@
 [color-scheme=dark] {
   --fc: var(--logoMintD);
   --sc: var(--logoPurpleD);
-  --h: var(--mintLigth);
   --tc: var(--white);
   --bgC: var(--black);
   --bgC_off: var(--blackOff);
@@ -136,11 +138,11 @@
 }
 
 BODY {
-  --backgroundHero: linear-gradient(transparent, var(--bgC_off));
+  --backgroundHero: linear-gradient(transparent, var(--bgC));
   --t_scale: scale 500ms cubic-bezier(0.51, -0.42, 0.06, 1.45);
   --fs_nvh: calc(100svh - var(--nvh));
-  --backgroundHero: linear-gradient(transparent, var(--bgC_off));
-  --bgHeaderSectionContact: linear-gradient(var(--bgC_off) 10%, var(--bgC_st), var(--bgC_off) 90%);
+  --backgroundHero: linear-gradient(transparent, var(--bgC));
+  --bgHeaderSectionContact: linear-gradient(var(--bgC) 10%, var(--bgC_st), var(--bgC) 90%);
   --danger: var(--lightRed);
   --bgDanger: var(--bgLightRed);
   --good: var(--greenTeal);
@@ -152,7 +154,7 @@ BODY {
   height: auto;
   position: relative;
   overflow-x: hidden;
-  background: var(--bgC_off);
+  background: var(--bgC);
   text-rendering: optimizeSpeed;
 }
 
@@ -842,7 +844,7 @@ I {
   align-items: center;
   flex-direction: column;
   position: absolute;
-  background: var(--bgC_off);
+  background: var(--bgC);
   border-radius: var(--lg);
   z-index: 2;
   transition: var(--t_uf);
@@ -1092,7 +1094,7 @@ I {
 
 .bar {
   position: absolute;
-  height: 2px;
+  height: 4px;
   background: var(--fc);
   left: 50%;
   transform: translateX(-50%);
@@ -2037,7 +2039,7 @@ I {
   left: 0;
   right: 0;
   width: 100%;
-  background: var(--navBg);
+  padding: 1rem;
   z-index: 5;
   transition: all 500ms ease;
   display: flex;
@@ -2045,7 +2047,9 @@ I {
   align-items: center;
 }
 .nav_menu .content {
-  padding: 0;
+  border-radius: 2rem;
+  padding: 0 2rem;
+  background: var(--navBg);
 }
 .nav_menu .menu_container {
   display: flex;
@@ -2097,18 +2101,17 @@ I {
   right: 0;
   top: var(--top);
   bottom: var(--bottom);
-  border-radius: var(--menuRadius);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: var(--menuDirection);
   height: auto;
   width: 100%;
-  background: var(--bgC_off);
   transition: var(--t_f);
   transform: var(--menuPosition);
   z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  background: var(--bgC_t);
+  flex-direction: var(--menuDirection);
   opacity: 0;
   display: none;
 }
@@ -2386,7 +2389,7 @@ I {
 }
 
 /*  */
-@media screen and (min-width: 880px) {
+@media screen and (min-width: 900px) {
   .flex_responsive {
     display: flex;
     flex-direction: row;
@@ -2424,7 +2427,7 @@ I {
     display: flex;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1070px) {
   .flex_responsive {
     flex-direction: row;
   }
