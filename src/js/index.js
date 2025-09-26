@@ -433,9 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => menuActions(menuActive));
     });
     sectionBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            scrollSection(btn);
-        });
+        btn.addEventListener("click", () => scrollSection(btn));
     });
     socialMenuBtns.forEach((btn) => {
         btn.addEventListener("click", () => menuSocialActions(menuSocialActive));

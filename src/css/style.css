@@ -1040,7 +1040,7 @@ I {
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: var(--tc);
+  color: var(--fc);
 }
 .extra_btn:hover {
   background: var(--fc);
@@ -1137,7 +1137,6 @@ I {
   width: auto;
   height: 100%;
   color: var(--tc);
-  margin-right: 3rem;
 }
 .menu_btn:hover .bottom_bar,
 .menu_btn:hover .top_bar,
@@ -1400,7 +1399,7 @@ I {
 .content {
   min-width: 250px;
   width: 1400px;
-  max-width: 90%;
+  max-width: 94%;
   padding: 4rem 0;
 }
 
@@ -1419,12 +1418,13 @@ I {
 }
 
 .cards_container {
+  --gridSize: repeat(auto-fill, minmax(10rem, 1fr));
   position: relative;
   overflow: hidden;
   display: grid;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-columns: var(--gridSize);
 }
 
 .grid_container {
@@ -2039,7 +2039,7 @@ I {
   left: 0;
   right: 0;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   z-index: 5;
   transition: all 500ms ease;
   display: flex;
@@ -2101,6 +2101,7 @@ I {
   right: 0;
   top: var(--top);
   bottom: var(--bottom);
+  padding: var(--lg);
   height: auto;
   width: 100%;
   transition: var(--t_f);
@@ -2111,6 +2112,7 @@ I {
   align-items: center;
   overflow: hidden;
   background: var(--bgC_t);
+  border-radius: var(--menuRadius);
   flex-direction: var(--menuDirection);
   opacity: 0;
   display: none;
@@ -2127,8 +2129,9 @@ I {
   align-items: center;
   padding: 0;
 }
-.phone_menu_controler .nav_menu_link_btns .phone_menu_btn {
+.phone_menu_controler .phone_menu_btn {
   height: var(--iconD);
+  border-radius: var(--lg);
 }
 .phone_menu_controler .extra_btns_container {
   display: flex;
@@ -2389,6 +2392,11 @@ I {
 }
 
 /*  */
+@media screen and (min-width: 457px) {
+  .cards_container {
+    --gridSize: repeat(auto-fill, minmax(12rem, 1fr));
+  }
+}
 @media screen and (min-width: 900px) {
   .flex_responsive {
     display: flex;
@@ -2426,6 +2434,9 @@ I {
   .nav_btn .icon_btn {
     display: flex;
   }
+  .cards_container {
+    --gridSize: repeat(auto-fill, minmax(15rem, 1fr));
+  }
 }
 @media screen and (min-width: 1070px) {
   .flex_responsive {
@@ -2437,6 +2448,9 @@ I {
   .nav_btn .icon_btn {
     display: none;
   }
+  .cards_container {
+    --gridSize: repeat(auto-fill, minmax(17rem, 1fr));
+  }
 }
 /* @media screen and (min-width: 1185px) {
 
@@ -2446,6 +2460,9 @@ I {
   .cards_service_container .service_card:nth-child(3),
   .cards_service_container .service_card:nth-child(6) {
     grid-column: span 3;
+  }
+  .cards_container {
+    --gridSize: repeat(auto-fill, minmax(20rem, 1fr));
   }
 }
 @media (prefers-reduced-motion: reduce) {
