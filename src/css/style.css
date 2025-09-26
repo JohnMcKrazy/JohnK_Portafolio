@@ -98,10 +98,6 @@
   --titilliumFont: "Titillium Web", sans-serif;
 }
 
-[color-scheme] {
-  --h: var(--fc);
-}
-
 [color-scheme=light] {
   --fc: var(--logoPurpleL);
   --sc: var(--logoMintL);
@@ -124,6 +120,11 @@
   --bgC_st: var(--blackST);
   --vueIconText: rgb(204, 204, 204);
   color-scheme: dark;
+}
+
+[color-scheme] {
+  --h: var(--fc);
+  --backdropShadow: 2px 2px 2rem var(--shadow), -2px -2px 2rem var(--shadow);
 }
 
 *,
@@ -853,7 +854,7 @@ I {
           user-select: none;
   max-width: 250px;
   width: 100%;
-  box-shadow: 2px 2px 2rem var(--shadow), -2px -2px 2rem var(--shadow);
+  box-shadow: var(--backdropShadow);
 }
 .bubble .header_bubble {
   height: 6rem;
@@ -1358,26 +1359,25 @@ I {
   background: var(--bgC_t);
   transform: translateY(100%);
   opacity: 0;
+  font-size: var(--fs_n);
 }
 .project_card .info_project_container .title {
+  font-size: var(--fs_n);
   width: 100%;
-  text-align: center;
-  font-size: var(--fs_l);
   color: var(--fc);
-  margin-bottom: var(--md);
+  margin-bottom: var(--xl);
   line-height: 1;
+  text-align: center;
 }
 .project_card .info_project_container .subtitle {
   width: 100%;
   text-align: center;
-  font-size: var(--fs_n);
 }
 .project_card .info_project_container .icons_project_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--sm);
   width: 100%;
   text-align: center;
 }
@@ -1626,6 +1626,26 @@ I {
 .window .btn {
   width: calc(100% - var(--lg));
   margin: var(--lg) VAR(--md);
+}
+
+.modal .window {
+  position: relative;
+  height: 100%;
+}
+.modal .window .options_details {
+  font-size: var(--fs_n);
+}
+.modal .window .options_details span {
+  display: block;
+}
+.modal .window .portfolio_details {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  padding: var(--lg);
+  background: var(--bgC_t);
+  border-radius: 0 2rem 2rem 0;
+  box-shadow: var(--backdropShadow);
 }
 
 .alert_modal .modal_info {

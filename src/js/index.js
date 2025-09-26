@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cloneProjectCard = projectCardTemplate.cloneNode(true);
         const projectCard = selector("[project-card]", cloneProjectCard);
         const imgCard = selector("[card-img]", cloneProjectCard);
-        const projectCardIconsContainer = selector("[card-icons-container]", cloneProjectCard);
+        /* const projectCardIconsContainer = selector("[card-icons-container]", cloneProjectCard); */
         const cardTitle = selector("[card-title]", cloneProjectCard);
         const innerBtn = selector("[card-action-btn]", cloneProjectCard);
         const makeText = selector("[card-description]", cloneProjectCard);
@@ -194,10 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
         projectCard.setAttribute("id", `${item["db_name"]}_project_card`);
         imgCard.setAttribute("src", cardImg);
         imgCard.setAttribute("alt", cardDescription);
-
+        /* 
         const clientTechnologiesInProjects = item.technologies;
         clientTechnologiesInProjects.forEach((tech) => {
-            /* console.log(tech); */
             infSoftware.forEach((technology) => {
                 if (technology.tech_name === tech) {
                     iconsRow += technology.icon;
@@ -205,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
         projectCardIconsContainer.innerHTML = iconsRow;
-
+ */
         setTextData(cardTitle, item.project_name);
 
         innerBtn.setAttribute("link-ref", `${item.project_link}`);

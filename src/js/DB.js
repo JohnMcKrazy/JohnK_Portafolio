@@ -110,7 +110,7 @@ export const DB = [
         project_link: "https://www.behance.net/gallery/101963205/Posters",
     },
     {
-        project_name: { en: "Headwater (infographic)", es: "Afluentes (infografía)" },
+        project_name: { en: "Headwater", es: "Afluentes" },
         db_name: "afluentes",
         type: ["design", "illustration"],
         skills: ["poster", "infographic", "digital_illustration"],
