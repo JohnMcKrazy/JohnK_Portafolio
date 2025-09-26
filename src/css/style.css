@@ -2079,7 +2079,7 @@ I {
   height: 100%;
 }
 .nav_menu .icon_container:not(.logo_btn) {
-  --cionSize: 3.5rem;
+  --iconSize: 3.5rem;
   fill: var(--tc);
 }
 .nav_menu .btn_active .icon_btn {
