@@ -269,20 +269,20 @@
                         </button>
                         <ul class="options_droper" options-droper="skills" hidden="true" options-active="false"></ul>
                     </div>
+                    <div class="portfolio_details">
+                        <h2 class="options_details">
+                            <span class="option_detail">
+                                <span class="accent_text" change es="Tipo de Proyecto:" en="Project Type:"></span>
+                                <span display_portfolio="type" change es="" en=""></span>
+                            </span>
+                            <span class="option_detail">
+                                <span class="accent_text" change es="Habilidad:" en="Skill:"></span>
+                                <span display_portfolio="skill" change es="" en=""></span>
+                            </span>
+                        </h2>
+                    </div>
                 </div>
                 <div class="cards_container modal_info cards_portfolio_container" portfolio-container></div>
-                <div class="portfolio_details">
-                    <h2 class="options_details">
-                        <span class="option_detail">
-                            <span class="accent_text" change es="Tipo de Proyecto:" en="Project Type:"></span>
-                            <span display_portfolio="type" change es="" en=""></span>
-                        </span>
-                        <span class="option_detail">
-                            <span class="accent_text" change es="Habilidad:" en="Skill:"></span>
-                            <span display_portfolio="skill" change es="" en=""></span>
-                        </span>
-                    </h2>
-                </div>
             </div>
         </dialog>
         <div class="menu_controler phone_menu_controler" position-menu="" phone-menu>
@@ -335,14 +335,14 @@
                 <button type="button" class="phone_menu_btn" name="about_section" action-menu section-action section-ref="about">
                     <span class="label_btn" change en="About Me" es="Quien Soy">Quien Soy</span>
                 </button>
-                <button type="button" class="phone_menu_btn" name="skills_section" action-menu section-action section-ref="skills">
-                    <span class="label_btn" change en="Skills" es="Habilidades">Habilidades</span>
-                </button>
                 <button type="button" class="phone_menu_btn" name="services_section" action-menu section-action section-ref="services">
                     <span class="label_btn" change en="Services" es="Servicios">Servicios</span>
                 </button>
                 <button type="button" class="phone_menu_btn" name="portfolio_section" action-menu section-action section-ref="portfolio">
                     <span class="label_btn" change en="Portfolio" es="Portafolio">Portafolio</span>
+                </button>
+                <button type="button" class="phone_menu_btn" name="skills_section" action-menu section-action section-ref="skills">
+                    <span class="label_btn" change en="Skills" es="Habilidades">Habilidades</span>
                 </button>
                 <button type="button" class="phone_menu_btn" name="contact_section" action-menu section-action section-ref="contact">
                     <span class="label_btn" change en="Contact" es="Contacto">Contacto</span>
@@ -553,18 +553,6 @@
                         </span>
                         <span class="label_btn" change es="Quien Soy" en="About Me">Quien Soy</span>
                     </button>
-                    <button type="button" class="nav_btn skills_nav_btn" name="skills_section" section-action section-ref="skills">
-                        <span class="icon_container icon_btn">
-                            <svg class="icon_svg nav_menu_icon_svg" id="skills_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-                                <title>Habilidades</title>
-                                <path
-                                    class="cls-1"
-                                    d="M9.973 18H11v-5h2v5h1.027c.132-1.202.745-2.194 1.74-3.277.113-.122.832-.867.917-.973a6 6 0 1 0-9.37-.002c.086.107.807.853.918.974.996 1.084 1.609 2.076 1.741 3.278zM10 20v1h4v-1h-4zm-4.246-5a8 8 0 1 1 12.49.002C17.624 15.774 16 17 16 18.5V21a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.5C8 17 6.375 15.774 5.754 15z"
-                                />
-                            </svg>
-                        </span>
-                        <span class="label_btn" change en="Skills" es="Habilidades">Habilidades</span>
-                    </button>
                     <button type="button" class="nav_btn services_nav_btn" name="services_section" section-action section-ref="services">
                         <span class="icon_container icon_btn">
                             <svg class="icon_svg nav_menu_icon_svg" id="services_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
@@ -586,6 +574,18 @@
                             </svg>
                         </span>
                         <span class="label_btn" change en="Portfolio" es="Portafolio">Portafolio</span>
+                    </button>
+                    <button type="button" class="nav_btn skills_nav_btn" name="skills_section" section-action section-ref="skills">
+                        <span class="icon_container icon_btn">
+                            <svg class="icon_svg nav_menu_icon_svg" id="skills_icon_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                                <title>Habilidades</title>
+                                <path
+                                    class="cls-1"
+                                    d="M9.973 18H11v-5h2v5h1.027c.132-1.202.745-2.194 1.74-3.277.113-.122.832-.867.917-.973a6 6 0 1 0-9.37-.002c.086.107.807.853.918.974.996 1.084 1.609 2.076 1.741 3.278zM10 20v1h4v-1h-4zm-4.246-5a8 8 0 1 1 12.49.002C17.624 15.774 16 17 16 18.5V21a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2.5C8 17 6.375 15.774 5.754 15z"
+                                />
+                            </svg>
+                        </span>
+                        <span class="label_btn" change en="Skills" es="Habilidades">Habilidades</span>
                     </button>
                     <button type="button" class="nav_btn contact_nav_btn" name="contact_section" section-action section-ref="contact">
                         <span class="icon_container icon_btn">
@@ -731,50 +731,6 @@
                             </svg>
                         </span>
                     </span>
-                    <q class="quote" change es="Nunca trato de probar nada a nadie, quiero probarme algo a mi mismo" en="I never try to prove anything to anyone, I want to prove something to myself."></q>
-                    <span class="quote_icon quote_end">
-                        <span class="icon_container">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
-                            </svg>
-                        </span>
-                    </span>
-                </div>
-                <figcaption class="author_container">
-                    <span class="author"><i>Kobe Bryant</i></span>
-                    <span class="author_info" change es="Ex campeón de la NBA" en="NBA former champion">Ex campeón de la NBA</span>
-                </figcaption>
-            </figure>
-        </div> -->
-        <section class="section skills_section" id="skills_section">
-            <div class="section_content content">
-                <div observer-full>
-                    <h1 class="title_section" id="title_skills" change es="Habilidades" en="Skills" animation-text>Habilidades</h1>
-                </div>
-                <div class="skills_icon_container design_skills_container">
-                    <!--? SKILLS ICONS-->
-                    <h2 class="subtitle_section" change es="Herramientas de Diseño" en="Design Tools">Herramientas de Diseño</h2>
-                    <div class="icons_container" ref="design" skills-container="design"></div>
-                </div>
-                <div class="skills_icon_container dev_skills_container">
-                    <h2 class="subtitle_section" change es="Herramientas de Desarrollo" en="Developer Tools">Herramientas de Desarrollo</h2>
-                    <!--? SKILLS ICONS-->
-                    <div class="icons_container swipe_animation_container_half" ref="dev" skills-container="dev"></div>
-                </div>
-                <h2 class="subtitle_section" change es="Certificaciones" en="Certifications">Certificaciones</h2>
-                <div class="cards_container certification_container" certification-container></div>
-            </div>
-        </section>
-        <!--  <div class="section_divider" divider>
-            <figure class="content" quote>
-                <div class="quote_container">
-                    <span class="quote_icon quote_start">
-                        <span class="icon_container">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                            </svg>
-                        </span>
-                    </span>
                     <q class="quote" change es="No es acerca de cuantas horas entrenas, es acerca de cuantas horas tu mente está presente en el entrenamiento" en="It's not about how many hours you train, it's about how many hours your mind is present in training.">
                         No es acerca de cuantas horas entrenas, es acerca de cuantas horas tu mente está presente en el entrenamiento
                     </q>
@@ -896,6 +852,50 @@
                     </button>
                 </div>
                 <div class="cards_container cards_hot_container" hot-container></div>
+            </div>
+        </section>
+        <!--  <div class="section_divider" divider>
+            <figure class="content" quote>
+                <div class="quote_container">
+                    <span class="quote_icon quote_start">
+                        <span class="icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                            </svg>
+                        </span>
+                    </span>
+                    <q class="quote" change es="Nunca trato de probar nada a nadie, quiero probarme algo a mi mismo" en="I never try to prove anything to anyone, I want to prove something to myself."></q>
+                    <span class="quote_icon quote_end">
+                        <span class="icon_container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </span>
+                    </span>
+                </div>
+                <figcaption class="author_container">
+                    <span class="author"><i>Kobe Bryant</i></span>
+                    <span class="author_info" change es="Ex campeón de la NBA" en="NBA former champion">Ex campeón de la NBA</span>
+                </figcaption>
+            </figure>
+        </div> -->
+        <section class="section skills_section" id="skills_section">
+            <div class="section_content content">
+                <div observer-full>
+                    <h1 class="title_section" id="title_skills" change es="Habilidades" en="Skills" animation-text>Habilidades</h1>
+                </div>
+                <div class="skills_icon_container design_skills_container">
+                    <!--? SKILLS ICONS-->
+                    <h2 class="subtitle_section" change es="Herramientas de Diseño" en="Design Tools">Herramientas de Diseño</h2>
+                    <div class="icons_container" ref="design" skills-container="design"></div>
+                </div>
+                <div class="skills_icon_container dev_skills_container">
+                    <h2 class="subtitle_section" change es="Herramientas de Desarrollo" en="Developer Tools">Herramientas de Desarrollo</h2>
+                    <!--? SKILLS ICONS-->
+                    <div class="icons_container swipe_animation_container_half" ref="dev" skills-container="dev"></div>
+                </div>
+                <h2 class="subtitle_section" change es="Certificaciones" en="Certifications">Certificaciones</h2>
+                <div class="cards_container certification_container" certification-container></div>
             </div>
         </section>
         <!-- <div class="section_divider" divider>

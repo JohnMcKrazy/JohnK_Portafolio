@@ -1393,7 +1393,6 @@ I {
         .title {
             font-size: var(--fs_n);
             width: 100%;
-            color: var(--fc);
             margin-bottom: var(--xl);
             line-height: 1;
             text-align: center;
@@ -1444,7 +1443,7 @@ I {
     margin-bottom: var(--lg);
 }
 .cards_container {
-    --gridSize: repeat(auto-fill, minmax(10rem, 1fr));
+    --gridSize: repeat(auto-fill, minmax(20rem, 1fr));
     position: relative;
     overflow: hidden;
     display: grid;
@@ -1619,25 +1618,11 @@ I {
         margin: var(--lg) VAR(--md);
     }
 }
-.modal {
-    .window {
-        position: relative;
-        height: 100%;
-        .options_details {
-            font-size: var(--fs_n);
-            span {
-                display: block;
-            }
-        }
-        .portfolio_details {
-            position: absolute;
-            bottom: 3rem;
-            left: 0;
-            padding: var(--lg);
-            background: var(--bgC_t);
-            border-radius: 0 2rem 2rem 0;
-            box-shadow: var(--backdropShadow);
-        }
+
+.portfolio_details {
+    padding: var(--lg);
+    .options_details {
+        font-size: var(--fs_n);
     }
 }
 .alert_modal {
@@ -2322,11 +2307,11 @@ I {
 }
 
 /*  */
-@media screen and (min-width: 457px) {
+/* @media screen and (min-width: 457px) {
     .cards_container {
         --gridSize: repeat(auto-fill, minmax(12rem, 1fr));
     }
-}
+} */
 @media screen and (min-width: 900px) {
     .flex_responsive {
         @include flex(row, center, flex-start);
@@ -2369,9 +2354,9 @@ I {
             display: flex;
         }
     }
-    .cards_container {
+    /*    .cards_container {
         --gridSize: repeat(auto-fill, minmax(15rem, 1fr));
-    }
+    } */
 }
 @media screen and (min-width: 1070px) {
     .flex_responsive {
@@ -2386,9 +2371,9 @@ I {
             display: none;
         }
     }
-    .cards_container {
+    /*   .cards_container {
         --gridSize: repeat(auto-fill, minmax(17rem, 1fr));
-    }
+    } */
 }
 /* @media screen and (min-width: 1185px) {
     
@@ -2401,9 +2386,9 @@ I {
             grid-column: span 3;
         }
     }
-    .cards_container {
+    /* .cards_container {
         --gridSize: repeat(auto-fill, minmax(20rem, 1fr));
-    }
+    } */
 }
 
 @media (prefers-reduced-motion: reduce) {

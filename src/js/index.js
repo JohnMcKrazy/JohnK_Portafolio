@@ -598,6 +598,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                 /* console.log("crear todo de " + skillName); */
                                 if (skillName === "all") {
                                     currentData = DB;
+                                    if (subskillName === "all") {
+                                        setDisplay(skillDisplay, skillTypeAll.lang);
+                                    }
                                 } else {
                                     currentData = DB.filter((dbItem) => dbItem.type.includes(subskillName));
                                     setDisplay(skillDisplay, skillTypeAll.lang);
