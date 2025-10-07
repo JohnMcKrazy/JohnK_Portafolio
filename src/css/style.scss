@@ -92,6 +92,9 @@
     --purpleDark: hsl(260, 84%, 10%);
     --mintLigth: hsl(190, 100%, 50%);
 
+    --logoMintD_off: hsl(190, 100%, 30%);
+    --logoPurpleL_off: hsl(260, 84%, 15%);
+
     --sm: 0.25rem;
     --md: 0.5rem;
     --lg: 1rem;
@@ -128,6 +131,7 @@
 
 [color-scheme="light"] {
     --fc: var(--logoPurpleL);
+    --fc_off: var(--logoPurpleL_off);
     --sc: var(--logoMintL);
     --tc: var(--black);
     --bgC: var(--white);
@@ -140,6 +144,7 @@
 }
 [color-scheme="dark"] {
     --fc: var(--logoMintD);
+    --fc_off: var(--logoMintD_off);
     --sc: var(--logoPurpleD);
     --tc: var(--white);
     --bgC: var(--black);
@@ -151,7 +156,7 @@
     color-scheme: dark;
 }
 [color-scheme] {
-    --h: var(--fc);
+    --h: var(--fc_off);
     --backdropShadow: 2px 2px 2rem var(--shadow), -2px -2px 2rem var(--shadow);
 }
 *,
@@ -179,6 +184,7 @@ BODY {
     --good: var(--greenTeal);
     --bgGood: var(--bgGreenTeal);
     --btnGradient: linear-gradient(45deg, var(--fc), var(--sc));
+    --btnReverseGradient: linear-gradient(45deg, var(--sc), var(--fc));
 
     --shadow: var(--blackST);
     color: var(--tc);
@@ -1026,28 +1032,28 @@ I {
     min-height: var(--iconD);
     width: 100%;
     color: var(--bgC);
-    outline: solid 2px var(--fc);
     border-radius: var(--xl);
     text-align: center;
     padding: var(--lg) var(--md);
+    background: var(--btnGradient);
+    outline-color: transparent;
     cursor: pointer;
     transition: var(--t_f);
     .label_btn {
         transition: var(--t_f);
-        color: var(--tc);
+        color: var(--whiteOff);
         font-weight: var(--fw_b);
         user-select: none;
     }
+
     &:hover,
     &:active,
     &:focus {
-        background: var(--btnGradient);
-        outline-color: transparent;
-        .label_btn {
-            color: var(--whiteOff);
-        }
+        border: solid 2px var(--fc);
+        background: linear-gradient(var(--sc), var(--sc));
     }
 }
+
 .btn_down {
     @include flexCenter();
     flex-direction: column;
@@ -1096,10 +1102,8 @@ I {
         width: auto;
     }
     &:hover {
-        background: var(--h);
-        color: var(--bgC);
         .icon_container {
-            fill: var(--bgC) !important;
+            fill: var(--whiteOff) !important;
         }
     }
 }
@@ -1137,20 +1141,14 @@ I {
 .phone_menu_btn {
     width: 100%;
     font-size: var(--fs_n);
-    color: var(--tc);
     @include flexCenter();
     .icon_container {
         fill: var(--fc);
     }
-    &:hover {
-        .icon_container {
-            fill: var(--bgC);
-        }
-    }
-    &:hover:not(.extra_btn) {
-        background: var(--h);
-        color: var(--bgC);
-    }
+}
+[section-action]:hover,
+.nav_btn:hover {
+    background: var(--h) !important;
 }
 .bar {
     position: absolute;
@@ -1479,6 +1477,11 @@ I {
         width: fit-content;
         font-size: var(--fs_l);
         color: var(--midGray);
+        transition: color 250ms ease-in-out;
+        &:active,
+        &:hover {
+            color: var(--whiteOff);
+        }
     }
 }
 
@@ -2097,6 +2100,9 @@ I {
             min-width: var(--iconD);
             font-size: var(--fs_l);
         }
+        .extra_btn:hover {
+            color: var(--bgC);
+        }
     }
     .social_btns_container {
         @include flex(row, space-evenly, center);
@@ -2257,10 +2263,16 @@ I {
 [options-active],
 [modal-active] {
     transition: var(--t_f);
-    transition-delay: 100ms;
+
     &::backdrop {
         transition: var(--t_f);
     }
+}
+[show],
+[hidden],
+[options-active],
+[modal-active] {
+    transition-delay: 100ms;
 }
 [options-active] {
     transform: translateY(calc(100% + var(--extraSpace)));
@@ -2295,11 +2307,14 @@ I {
 [show="false"] {
     opacity: 0;
 }
-[btn-active] {
-    background: var(--firstColor);
+[btn-active="true"] {
+    background: var(--fc) !important;
 }
 [btn-active="false"] {
-    background: inherit;
+    background: inherit !important;
+}
+[show-transform] {
+    transition-delay: 250ms;
 }
 [show-transform="true"] {
     transform: translateY(0);

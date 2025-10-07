@@ -158,6 +158,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript", "api"],
         img: "./src/img/portfolio/pokedex.webp",
         project_link: "https://johnmckrazy.github.io/Pokedex-V2/",
+        github_link: "https://github.com/JohnMcKrazy/Pokedex-V2",
     },
     {
         project_name: { en: "Rick And Morty Character Search", es: "Busqueda de personajes Rick And Morty" },
@@ -168,6 +169,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript", "api"],
         img: "./src/img/portfolio/rick_and_morty.webp",
         project_link: "https://johnmckrazy.github.io/rick_and_morty_character_search/",
+        github_link: "https://github.com/JohnMcKrazy/rick_and_morty_character_search/",
     },
     {
         project_name: { en: "Tribute Page", es: "Pagina Tributo" },
@@ -178,6 +180,7 @@ export const DB = [
         technologies: ["HTML", "CSS"],
         img: "./src/img/portfolio/tribute_borlaug.webp",
         project_link: "https://johnmckrazy.github.io/First_Tribute_Page_FreeCodeCamp/",
+        github_link: "https://github.com/JohnMcKrazy/First_Tribute_Page_FreeCodeCamp/",
     },
     {
         project_name: { en: "Tribute To Kobe", es: "Tributo a Kobe" },
@@ -188,6 +191,7 @@ export const DB = [
         technologies: ["HTML", "CSS"],
         img: "./src/img/portfolio/tributo.webp",
         project_link: "https://johnmckrazy.github.io/Tribute-Page-In-Memory-Of-Kobe-Bryan/",
+        github_link: "https://github.com/JohnMcKrazy/Tribute-Page-In-Memory-Of-Kobe-Bryan",
     },
     {
         project_name: { en: "Black Jack Game", es: "Juego de Black Jack" },
@@ -198,6 +202,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/black_jack.webp",
         project_link: "https://johnmckrazy.github.io/BlackJack_Game/",
+        github_link: "https://github.com/JohnMcKrazy/BlackJack_Game/",
     },
     {
         project_name: { en: "Pac-Man Game", es: "Juego de Pac-Man" },
@@ -208,6 +213,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/pac-man.webp",
         project_link: "https://johnmckrazy.github.io/Pac-Man_Game/",
+        github_link: "https://github.com/JohnMcKrazy/Pac-Man_Game",
     },
     {
         project_name: { en: "JavaScript Documentation", es: "Documentación de JavaScript" },
@@ -218,8 +224,9 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/js_documentation.webp",
         project_link: "https://johnmckrazy.github.io/Tecnical-Documentation-Basic-Javascript/",
+        github_link: "https://github.com/JohnMcKrazy/Tecnical-Documentation-Basic-Javascript",
     },
-    /* {
+    {
         project_name: { en: "Background Random Color", es: "Fondo de color aleatorio" },
         db_name: ["random_bg_color"],
         type: ["develop"],
@@ -228,7 +235,8 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/random_bg_color.webp",
         project_link: "https://johnmckrazy.github.io/Random_Background_Color/",
-    }, */
+        github_link: "https://github.com/JohnMcKrazy/Random_Background_Color/",
+    },
     {
         project_name: { en: "Choropleth Map Data Visualization", es: "Visualización de datos tipo mapa de coropletas" },
         db_name: "choropleth_map",
@@ -238,6 +246,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/choropleth_map.webp",
         project_link: "https://johnmckrazy.github.io/FreeCodeCamp_Choropleth_Map_Project/",
+        github_link: "https://github.com/JohnMcKrazy/FreeCodeCamp_Choropleth_Map_Project",
     },
     {
         project_name: { en: "Heat Map Data Visualization", es: "Visualización de datos tipo mapa de calor" },
@@ -248,6 +257,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/heat_map.webp",
         project_link: "https://johnmckrazy.github.io/FreeCodeCamp_Heat_Map_Project/",
+        github_link: "https://github.com/JohnMcKrazy/FreeCodeCamp_Heat_Map_Project/",
     },
     {
         project_name: { en: "Tree Map Diagram Data Visualization", es: "Visualización de datos tipo arból" },
@@ -258,6 +268,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/tree_map.webp",
         project_link: "https://johnmckrazy.github.io/FreeCodeCamp_TreeMap_Diagram_Project/",
+        github_link: "https://github.com/JohnMcKrazy/FreeCodeCamp_TreeMap_Diagram_Project/",
     },
     {
         project_name: { en: "Scatterplo Chart Data Visualization", es: "Visualización de datos tipo cordenadas" },
@@ -268,6 +279,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/scatterplo_map.webp",
         project_link: "https://johnmckrazy.github.io/FreeCodeCamp_D3_Scatterplo_Graph_Project/",
+        github_link: "https://github.com/JohnMcKrazy/FreeCodeCamp_D3_Scatterplo_Graph_Project/",
     },
     {
         project_name: { en: "Bar Chart Data Visualization", es: "Visualización de datos tipo barra" },
@@ -278,7 +290,19 @@ export const DB = [
         technologies: ["HTML", "CSS", "JavaScript"],
         img: "./src/img/portfolio/bar_chart.webp",
         project_link: "https://johnmckrazy.github.io/United_States_GDP_Bar_Chart_D3Library_Project/",
+        github_link: "https://github.com/JohnMcKrazy/United_States_GDP_Bar_Chart_D3Library_Project",
     },
+    /* {
+        project_name: { en: "EASYPIXART", es: "EASYPIXART" },
+        db_name: "easypixart",
+        type: ["develop"],
+        skills: ["web", "programming"],
+        info: "Página que muestra Frases famosas al Azar, proyecto para certificación en 'Desarrollo con Librerias Front-End (React)' para FreeCodeCamp, realizado con HTML ,CSS y React",
+        technologies: ["HTML", "CSS", "Javascript"],
+        img: "./src/img/portfolio/think_different.webp",
+        project_link: "https://johnmckrazy.github.io/EASYPIXART/",
+        github_link: "https://github.com/JohnMcKrazy/to-do-list_vue-practice/",
+    }, */
     {
         project_name: { en: "Tic-Tac-Toe Game", es: "Juego de Gato" },
         db_name: "tic_tac_toe",
@@ -288,6 +312,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "React"],
         img: "./src/img/portfolio/tic_tac_toe.webp",
         project_link: "https://johnmckrazy.github.io/React_Tic-Tac-Toe/",
+        github_link: "https://github.com/JohnMcKrazy/React_Tic-Tac-Toe",
     },
     {
         project_name: { en: "Random Quote Machine", es: "Maquina de Frases Aleatorias" },
@@ -298,6 +323,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "React"],
         img: "./src/img/portfolio/quote_machine.webp",
         project_link: "https://johnmckrazy.github.io/FreeCodeCamp_Random_Quote_Machine_Project/",
+        github_link: "https://github.com/JohnMcKrazy/FreeCodeCamp_Random_Quote_Machine_Project/",
     },
     {
         project_name: { en: "Markdown", es: "Markdown" },
@@ -308,6 +334,7 @@ export const DB = [
         technologies: ["HTML", "CSS", "React"],
         img: "./src/img/portfolio/markdown.webp",
         project_link: "https://johnmckrazy.github.io/FreeCodeCamp_Markdown-Preview_Project/",
+        github_link: "https://github.com/JohnMcKrazy/FreeCodeCamp_Markdown-Preview_Project/",
     },
     {
         project_name: { en: "To-Do-List Web App", es: "Aplicación Lista de quehaceres" },
@@ -318,17 +345,8 @@ export const DB = [
         technologies: ["HTML", "CSS", "Vue.js"],
         img: "./src/img/portfolio/to-do.webp",
         project_link: "https://johnmckrazy.github.io/to-do-list_vue-practice/",
+        github_link: "https://github.com/JohnMcKrazy/to-do-list_vue-practice/",
     },
-    /*  {
-        project_name: { en: "Weather App", es: "Aplicación de Clima" },
-        db_name: "weather",
-         type: "develop",
-            skills: ["web", "api", "programming"],
-            info: "Página de busqueda de clima regional, proyecto para aprendizaje en Python, realizado con HTML ,CSS y Python",
-            technologies: ["HTML", "CSS", "Python"],
-            img: "./src/img/portfolio/weather.webp",
-            project_link: "https://python-weather-app-tvey.onrender.com/",
-    }, */
     {
         project_name: { en: "System Smasher", es: "System Smasher" },
         db_name: "system_smasher",

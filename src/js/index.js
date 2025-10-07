@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentPosition = BODY.getBoundingClientRect().top;
         window.scrollTo(currentPosition, 0);
     };
+
     // FUNCTION FOR CREATE DINAMIC PROJECT CARDS
     const projectCardTemplate = selector("[project-card-template]").content;
     const createCard = (item, container) => {
@@ -431,8 +432,17 @@ document.addEventListener("DOMContentLoaded", () => {
     actionBtns.forEach((btn) => {
         btn.addEventListener("click", () => menuActions(menuActive));
     });
-    sectionBtns.forEach((btn) => {
-        btn.addEventListener("click", () => scrollSection(btn));
+    sectionBtns.forEach((sectionBtn) => {
+        sectionBtn.addEventListener("click", () => {
+            const thisName = sectionBtn.getAttribute("name");
+            sectionBtns.forEach((innerSectionBtn) => {
+                innerSectionBtn.setAttribute("btn-active", false);
+                if (innerSectionBtn.getAttribute("name") === thisName) {
+                    innerSectionBtn.setAttribute("btn-active", true);
+                }
+            });
+            scrollSection(sectionBtn);
+        });
     });
     socialMenuBtns.forEach((btn) => {
         btn.addEventListener("click", () => menuSocialActions(menuSocialActive));
