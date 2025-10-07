@@ -1087,6 +1087,7 @@ I {
 [section-action]:hover,
 .nav_btn:hover {
   background: var(--h) !important;
+  color: var(--whiteOff);
 }
 
 .bar {
@@ -2395,6 +2396,7 @@ I {
 
 [btn-active=true] {
   background: var(--fc) !important;
+  color: var(--whiteOff);
 }
 
 [btn-active=false] {
