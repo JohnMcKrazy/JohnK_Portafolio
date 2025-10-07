@@ -2064,10 +2064,14 @@ I {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  overflow: hidden;
 }
 .nav_menu .icon_container:not(.logo_btn) {
   --iconSize: 3.5rem;
   fill: var(--tc);
+}
+.nav_menu .icon_container:not(.logo_btn):hover {
+  fill: var(--whiteOff);
 }
 .nav_menu .btn_active .icon_btn {
   fill: var(--bgC);
@@ -2397,6 +2401,9 @@ I {
 [btn-active=true] {
   background: var(--fc) !important;
   color: var(--whiteOff);
+}
+[btn-active=true] .icon_container {
+  fill: var(--whiteOff) !important;
 }
 
 [btn-active=false] {

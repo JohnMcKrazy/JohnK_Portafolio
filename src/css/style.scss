@@ -2014,11 +2014,15 @@ I {
     .menu_container {
         @include flex(row, space-between, center);
         height: 100%;
+        overflow: hidden;
     }
 
     .icon_container:not(.logo_btn) {
         --iconSize: 3.5rem;
         fill: var(--tc);
+        &:hover {
+            fill: var(--whiteOff);
+        }
     }
     .btn_active {
         .icon_btn {
@@ -2311,6 +2315,9 @@ I {
 [btn-active="true"] {
     background: var(--fc) !important;
     color: var(--whiteOff);
+    .icon_container {
+        fill: var(--whiteOff) !important;
+    }
 }
 [btn-active="false"] {
     background: inherit !important;
